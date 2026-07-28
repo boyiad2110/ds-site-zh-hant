@@ -48,6 +48,10 @@
 | `docs/translation-guide.md` | 翻譯規則、報告格式、術語裁決紀錄（附錄 A） |
 | `docs/samples/alignment-my-life-for-yours.md` | 報告格式的實際範例，照這個格式產出 |
 | `review-2026-07-28-manifest.md` | 詞彙系統的最終狀態與刻意不做的事 |
+| `docs/alignment/method-validation.md` | 抽取方法的驗證結果**與其適用邊界**——結論只對懲戒者招式與狀態成立 |
+| `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
+| `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
+| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-4）。產生中文時是待辦清單，不是靠記憶 |
 
 ---
 
@@ -145,10 +149,14 @@ BIN="C:/Users/boyia/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppl
 
 ### 產出
 
-1. 英文正典 → `data/canon/*.json`（schema 見規劃 §5.3，注意 `TierResult.threshold` 是門檻不是階層編號、`extraCosts` 存第二段花費）
-2. 精確術語依賴清單 → `releases/m0.json`（**須涵蓋全部 M0 發布文字**，含三教團與怒火說明）
-3. 對齊報告 → 照 `docs/samples/` 的格式
-4. 未決術語 → `data/decisions.json` 的 `pending`（**不要直接改生成檔**）
+1. 英文正典 → `data/canon/`（已有 abilities/ 與 conditions/ 兩類，另有 _normalized/ 存雜湊計算對象）
+   實際採用的 schema 已與規劃 §5.3 有出入，以**現有 23 個條目為準**，差異見指南 §4.3–4.3.2：
+   `distance` 已結構化且含 `choice`（二選一）；`potency.characteristic` 逐招式不同；
+   `followUpActions` 與 `extraCosts` 是兩種不同東西；`cost` 沒有費用一律 `null`
+2. 中文譯文 → `data/zh-Hant/`（與 canon 同構逐段對應；名稱權威在此，glossary 只放 entityRef）
+3. 精確術語依賴清單 → `releases/m0.json`（**須涵蓋全部 M0 發布文字**，含三教團與怒火說明）
+4. 對齊報告 → 照 `docs/alignment/` 的格式（三維度標記見指南 §8.1）
+5. 未決術語 → `data/decisions.json` 的 `pending`（**不要直接改生成檔**）
 
 ---
 
@@ -164,6 +172,33 @@ BIN="C:/Users/boyia/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppl
 `Natural 19 or 20`＝天然 19/20。**C 段不等於「不重要」，抽取時發現缺詞要隨時回頭補裁。**
 
 重新產生清單：`node scripts/report-term-frequency.mjs`（唯讀，不動 data/）
+
+---
+
+## Git 現況（2026-07-29 建立）
+
+```
+remote    https://github.com/boyiad2110/ds-site-zh-hant.git （private）
+branch    main（已追蹤 origin/main）
+baseline  a86aba9  chore: establish M0 data and localization baseline
+```
+
+**專案已納入版本控制。** 之後修改資料時：
+
+1. 照常改 `data/decisions.json` → 重跑生成 → `validate-terms --commit`
+2. **commit 前必須跑完整驗證**：`node --test`、`validate-terms`、`verify-canon-hash`
+3. `data/id-ledger.candidate.json` 已被忽略（執行中途的暫存檔，提升後即刪）
+
+### 🔒 這個 repository 必須維持 private
+
+`data/canon/` 含約 **2,200 字官方英文逐字規則原文**，`docs/alignment/` 另引用多處作三欄對照。
+**「已排除 PDF」不等於「不含官方內容」。** 日後若考慮公開，須先另做授權與內容範圍審查。
+
+刻意不納入版控（理由寫在 `.gitignore` 各段註解）：
+官方 PDF、官方字型、由 PDF 算繪的頁面圖像、原始 Notion 匯出、review 用的 `*.patch`、`.claude/settings.local.json`。
+
+> `.gitattributes` 鎖定 LF：`normalizedHash` 是偵測正典漂移的核心機制，
+> 換行符隨作業系統飄動會讓同一份內容算出不同雜湊。**不要移除。**
 
 ---
 
