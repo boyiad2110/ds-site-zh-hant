@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/import-glossary.mjs 從 sources/glossary_old.csv 生成，不可手改。glossary_old.csv 匯入後凍結。狀態詞條以 entityRef 指向實體，名稱由實體負責——此舉不保證規則散文不漂移，仍需一致性檢查（指南 §9.3）。",
   "sourceHash": "499fc97aec25c645",
-  "decisionsHash": "89d775de277671a4",
+  "decisionsHash": "0133cc7a570e5e73",
   "terms": [
     {
       "id": "term.a-lie-cloaked-in-star-s-silver",
@@ -1141,21 +1141,6 @@
       "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #60（M0 4 檔／全語料 77 檔），建議譯名取自舊譯，一次批准。"
     },
     {
-      "id": "term.charge",
-      "idStatus": "stable",
-      "en": "Charge",
-      "categories": [
-        "規則/主要動作"
-      ],
-      "status": "approved",
-      "aliasesEn": [],
-      "aliasesZhHant": [],
-      "zhHant": "衝鋒",
-      "decidedAt": "2026-07-28",
-      "decidedBy": "owner",
-      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #50（M0 6 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。"
-    },
-    {
       "id": "term.chimeron",
       "idStatus": "stable",
       "en": "Chimeron",
@@ -1925,6 +1910,21 @@
       "decidedAt": "2026-07-28",
       "decidedBy": "owner",
       "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #87（M0 3 檔／全語料 3 檔），建議譯名取自舊譯，一次批准。"
+    },
+    {
+      "id": "term.director",
+      "idStatus": "stable",
+      "en": "Director",
+      "zhHant": "GM",
+      "categories": [
+        "規則/術語"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者裁定沿用 GM。舊語料 241 個檔案一律直接寫 GM，從未翻譯 Director。"
     },
     {
       "id": "term.dis",
@@ -4174,6 +4174,21 @@
       "zhHant": "時間法則"
     },
     {
+      "id": "term.lead",
+      "idStatus": "stable",
+      "en": "Lead",
+      "zhHant": "領導",
+      "categories": [
+        "規則/技能"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者照舊譯批准（舊語料 29 個檔案）。典範教團授予的技能。"
+    },
+    {
       "id": "term.leader",
       "idStatus": "stable",
       "en": "Leader",
@@ -4355,6 +4370,22 @@
       "aliasesEn": [],
       "aliasesZhHant": [],
       "zhHant": "魔導師塔"
+    },
+    {
+      "id": "term.magic.skill",
+      "idStatus": "stable",
+      "en": "Magic",
+      "zhHant": "魔法",
+      "sense": "skill",
+      "categories": [
+        "規則/技能"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者批准新增獨立詞義。神諭教團授予的技能名稱，與招式關鍵詞 ability-keyword.magic 為不同概念，即使中文同為「魔法」也不得共用 ID（2026-07-29 外部 review 指出）。與 Read Person＝觀色、Lead＝領導同組，皆為三個教團授予的技能。"
     },
     {
       "id": "term.malice",
@@ -5801,6 +5832,21 @@
       "zhHant": "橡樹王庭"
     },
     {
+      "id": "term.quick-build",
+      "idStatus": "stable",
+      "en": "Quick Build",
+      "zhHant": "推薦選項",
+      "categories": [
+        "規則/術語"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者裁定。舊語料無固定譯法。原文為給新手的快速建角建議（如「(Quick Build: Paragon.)」），擁有者選擇以白話的「推薦選項」呈現。"
+    },
+    {
       "id": "term.quintessence",
       "idStatus": "stable",
       "en": "Quintessence",
@@ -5892,6 +5938,21 @@
       "aliasesEn": [],
       "aliasesZhHant": [],
       "zhHant": "被動考驗"
+    },
+    {
+      "id": "term.read-person",
+      "idStatus": "stable",
+      "en": "Read Person",
+      "zhHant": "觀色",
+      "categories": [
+        "規則/技能"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者照舊譯批准（舊語料 14 個檔案，且舊技能表有正式條目「觀色,Read Person,交涉類」）。驅邪教團授予的技能。"
     },
     {
       "id": "term.reason",
@@ -6850,6 +6911,21 @@
       "decidedAt": "2026-07-28",
       "decidedBy": "owner",
       "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #124（M0 1 檔／全語料 43 檔），建議譯名取自舊譯，一次批准。"
+    },
+    {
+      "id": "term.strike-now",
+      "idStatus": "stable",
+      "en": "Strike Now",
+      "zhHant": "快出手",
+      "categories": [
+        "招式名"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者裁定。舊譯作「快出手！」，但擁有者查原版規則書後確認無驚嘆號的 Strike Now 較多，故中文一律省略驚嘆號。戰術家一級招式，戰術家不在 M0；M0 僅在「出血」狀態說明中引用其名。招式名出現在內文敘述時前後加【】，見指南 §6。"
     },
     {
       "id": "term.styrich",
@@ -7830,6 +7906,21 @@
       "decidedAt": "2026-07-28",
       "decidedBy": "owner",
       "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #47（M0 6 檔／全語料 32 檔），建議譯名取自舊譯，一次批准。"
+    },
+    {
+      "id": "term.vertical-pull",
+      "idStatus": "stable",
+      "en": "Vertical Pull",
+      "zhHant": "垂直拉動",
+      "categories": [
+        "規則/術語"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "2026-07-29 擁有者照舊譯批准（舊語料 15 個檔案一致）。出現在典範教團的審判加成。與已批准的 Pull＝拉動 為不同動作，垂直方向。"
     },
     {
       "id": "term.vhoric",

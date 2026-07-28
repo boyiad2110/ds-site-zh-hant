@@ -1,6 +1,6 @@
 {
   "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
-  "decisionsHash": "89d775de277671a4",
+  "decisionsHash": "0133cc7a570e5e73",
   "vocabulary": "ability-keywords",
   "values": [
     {
@@ -13,6 +13,18 @@
       "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #53（M0 5 檔／全語料 110 檔），建議譯名取自舊譯，一次批准。",
       "decidedAt": "2026-07-28",
       "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.charge",
+      "idStatus": "stable",
+      "value": "charge",
+      "en": "Charge",
+      "zhHant": "衝鋒",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "status": "approved",
+      "note": "2026-07-29 擁有者裁定。Charge 同時是主要動作與招式關鍵詞；系統禁止同一英文詞在 glossary 與 vocabulary 都存權威譯名（dual-authority）。擁有者選擇歸到關鍵詞表，與近戰／遠程／打擊／武器／魔法／區域一致。譯名「衝鋒」沿用 2026-07-28 的裁決，未改變。",
       "aliasesZhHant": []
     },
     {

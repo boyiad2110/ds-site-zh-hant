@@ -1,0 +1,1357 @@
+{
+  "$comment": "由 scripts/build-m0-release.mjs 從 data/canon/ 掃描產生，不可手改。 這是 M0 的精確術語依賴清單——網站發布 M0 內容時，這裡的每個詞都必須有已批准的譯名。",
+  "release": "m0",
+  "sourceFingerprint": "777dee09e302be26",
+  "scannedCanonEntries": 28,
+  "$exclusionNote": "通道 B（散文文字掃描）必然有假命中。以下是人工判定為假命中、刻意不計入依賴的詞，每筆都附理由——沒有理由的排除等於偷偷放行。",
+  "exclusions": [
+    {
+      "termEn": "Line",
+      "reason": "Line＝線形是 Area 的一種範圍形狀，**本身是有效術語**，只是 M0 的 28 個條目都還沒用到；之後的招式會用到。目前掃到的 4 處全為假命中：3 處是 `line of effect`（＝效果線，另有 approved 條目 term.line-of-effect），1 處是「in a straight line」的日常用法。",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "occurrenceExclusions": [
+    {
+      "termId": "term.magic.skill",
+      "entityIds": [
+        "ability.censor.halt-miscreant",
+        "ability.censor.your-allies-cannot-save-you"
+      ],
+      "reason": "這兩處是 flavor 的「holy magic」與「your magic strike」，magic 作普通名詞用，既不是技能名稱也不是招式關鍵詞。真正用到技能名的只有 feature.censor.censor-order 的「You have the Magic skill.」。",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "$senseNote": "同一英文對應多個詞義時，字面比對無從分辨。以下為逐筆人工指定；未指定的歧義命中會讓產生程序中止，不猜。",
+  "senseAssignments": [
+    {
+      "entityId": "ability.censor.purifying-fire",
+      "surface": "Fire",
+      "termId": "term.fire.damage-type",
+      "reason": "「淨化聖火」只出現 fire weakness／fire damage，講的是傷害類型，與元素師精通「烈火」（term.fire.elementalist-mastery）無關。2026-07-29 外部 review 指出。",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ability-categorie.basic",
+      "en": "Basic",
+      "zhHant": "通用",
+      "source": "vocabulary:ability-categories",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike"
+      ]
+    },
+    {
+      "id": "ability-categorie.heroic",
+      "en": "Heroic",
+      "zhHant": "英雄",
+      "source": "vocabulary:ability-categories",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "ability-categorie.inherent",
+      "en": "Inherent",
+      "zhHant": "固有",
+      "source": "vocabulary:ability-categories",
+      "usedBy": [
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours"
+      ]
+    },
+    {
+      "id": "ability-categorie.signature",
+      "en": "Signature",
+      "zhHant": "招牌",
+      "source": "vocabulary:ability-categories",
+      "usedBy": [
+        "ability.censor.back-blasphemer",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "ability-keyword.area",
+      "en": "Area",
+      "zhHant": "區域",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.censor.back-blasphemer"
+      ]
+    },
+    {
+      "id": "ability-keyword.charge",
+      "en": "Charge",
+      "zhHant": "衝鋒",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike"
+      ]
+    },
+    {
+      "id": "ability-keyword.magic",
+      "en": "Magic",
+      "zhHant": "魔法",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.every-step-death",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "ability-keyword.melee",
+      "en": "Melee",
+      "zhHant": "近戰",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "ability-keyword.ranged",
+      "en": "Ranged",
+      "zhHant": "遠程",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.every-step-death",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent"
+      ]
+    },
+    {
+      "id": "ability-keyword.strike",
+      "en": "Strike",
+      "zhHant": "打擊",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "ability-keyword.weapon",
+      "en": "Weapon",
+      "zhHant": "武器",
+      "source": "vocabulary:ability-keywords",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "action-type.free-triggered",
+      "en": "Free Triggered Action",
+      "zhHant": "免費反應動作",
+      "source": "vocabulary:action-types",
+      "usedBy": [
+        "ability.censor.judgment",
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "action-type.main",
+      "en": "Main Action",
+      "zhHant": "主要動作",
+      "source": "vocabulary:action-types",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
+        "ability.censor.judgment",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.bleeding",
+        "condition.dazed"
+      ]
+    },
+    {
+      "id": "action-type.maneuver",
+      "en": "Maneuver",
+      "zhHant": "機動動作",
+      "source": "vocabulary:action-types",
+      "usedBy": [
+        "ability.censor.judgment",
+        "condition.dazed",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "action-type.triggered",
+      "en": "Triggered Action",
+      "zhHant": "反應動作",
+      "source": "vocabulary:action-types",
+      "usedBy": [
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "condition.bleeding",
+        "condition.dazed"
+      ]
+    },
+    {
+      "id": "potency-level.average",
+      "en": "Average",
+      "zhHant": "中",
+      "source": "vocabulary:potency-levels",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent"
+      ]
+    },
+    {
+      "id": "potency-level.strong",
+      "en": "Strong",
+      "zhHant": "強",
+      "source": "vocabulary:potency-levels",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent"
+      ]
+    },
+    {
+      "id": "potency-level.weak",
+      "en": "Weak",
+      "zhHant": "弱",
+      "source": "vocabulary:potency-levels",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent"
+      ]
+    },
+    {
+      "id": "target-component.ally",
+      "en": "ally",
+      "zhHant": "盟友",
+      "source": "vocabulary:target-components",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "target-component.creature",
+      "en": "creature",
+      "zhHant": "生物",
+      "source": "vocabulary:target-components",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
+        "ability.censor.judgment",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.bleeding",
+        "condition.dazed",
+        "condition.frightened",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.restrained",
+        "condition.slowed",
+        "condition.taunted",
+        "condition.weakened",
+        "feature.censor.judgment-order-benefit",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "target-component.enemy",
+      "en": "enemy",
+      "zhHant": "敵人",
+      "source": "vocabulary:target-components",
+      "usedBy": [
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.driving-assault",
+        "ability.censor.judgment",
+        "ability.censor.your-allies-cannot-save-you",
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "target-component.object",
+      "en": "object",
+      "zhHant": "物體",
+      "source": "vocabulary:target-components",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.driving-assault",
+        "ability.censor.halt-miscreant",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "target-component.self",
+      "en": "Self",
+      "zhHant": "自身",
+      "source": "vocabulary:target-components",
+      "usedBy": [
+        "ability.censor.my-life-for-yours"
+      ]
+    },
+    {
+      "id": "term.ability",
+      "en": "Ability",
+      "zhHant": "招式",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.censored",
+        "ability.censor.judgment",
+        "ability.censor.purifying-fire",
+        "condition.bleeding",
+        "condition.frightened",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.restrained",
+        "condition.taunted",
+        "feature.censor.judgment-order-benefit",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.ability-roll",
+      "en": "Ability Roll",
+      "zhHant": "招式檢定",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding",
+        "condition.frightened"
+      ]
+    },
+    {
+      "id": "term.adjacent",
+      "en": "Adjacent",
+      "zhHant": "相鄰",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.judgment",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.grabbed",
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.agility",
+      "en": "Agility",
+      "zhHant": "敏捷",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding",
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "term.bane",
+      "en": "Bane",
+      "zhHant": "劣勢",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.judgment",
+        "condition.frightened",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.restrained",
+        "condition.taunted",
+        "condition.weakened"
+      ]
+    },
+    {
+      "id": "term.bleeding",
+      "en": "Bleeding",
+      "zhHant": "出血",
+      "nameFrom": {
+        "entityRef": "condition.bleeding",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.burst",
+      "en": "Burst",
+      "zhHant": "爆發",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.your-allies-cannot-save-you"
+      ]
+    },
+    {
+      "id": "term.censor",
+      "en": "Censor",
+      "zhHant": "懲戒者",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "feature.censor.censor-order",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.climb",
+      "en": "Climb",
+      "zhHant": "攀爬",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.combat-round",
+      "en": "Combat Round",
+      "zhHant": "戰鬥輪",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.condition",
+      "en": "Condition",
+      "zhHant": "狀態",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding",
+        "condition.frightened",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.restrained",
+        "condition.taunted"
+      ]
+    },
+    {
+      "id": "term.corruption",
+      "en": "Corruption",
+      "zhHant": "腐朽",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.crawl",
+      "en": "Crawl",
+      "zhHant": "爬行",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.damage",
+      "en": "Damage",
+      "zhHant": "傷害",
+      "source": "glossary",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.bleeding",
+        "feature.censor.judgment-order-benefit",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.dazed",
+      "en": "Dazed",
+      "zhHant": "暈眩",
+      "nameFrom": {
+        "entityRef": "condition.dazed",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.repent",
+        "condition.dazed"
+      ]
+    },
+    {
+      "id": "term.defend",
+      "en": "Defend",
+      "zhHant": "防禦",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "term.director",
+      "en": "Director",
+      "zhHant": "GM",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.distance",
+      "en": "Distance",
+      "zhHant": "射程",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest"
+      ]
+    },
+    {
+      "id": "term.double-bane",
+      "en": "Double Bane",
+      "zhHant": "雙劣勢",
+      "source": "glossary",
+      "usedBy": [
+        "condition.taunted"
+      ]
+    },
+    {
+      "id": "term.edge",
+      "en": "Edge",
+      "zhHant": "優勢",
+      "source": "glossary",
+      "usedBy": [
+        "condition.frightened",
+        "condition.prone",
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "term.effect.rules-effect",
+      "en": "Effect",
+      "zhHant": "效果",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "condition.grabbed",
+        "condition.prone",
+        "condition.taunted",
+        "feature.censor.judgment-order-benefit",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.encounter",
+      "en": "Encounter",
+      "zhHant": "遭遇",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.escape-grab",
+      "en": "Escape Grab",
+      "zhHant": "掙脫",
+      "source": "glossary",
+      "usedBy": [
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "term.exorcist",
+      "en": "Exorcist",
+      "zhHant": "驅邪",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.fire.damage-type",
+      "en": "Fire",
+      "zhHant": "火焰",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.purifying-fire"
+      ]
+    },
+    {
+      "id": "term.fly",
+      "en": "Fly",
+      "zhHant": "飛行",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.free-strike",
+      "en": "Free Strike",
+      "zhHant": "基礎打擊",
+      "source": "glossary",
+      "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.judgment"
+      ]
+    },
+    {
+      "id": "term.frightened",
+      "en": "Frightened",
+      "zhHant": "畏縮",
+      "nameFrom": {
+        "entityRef": "condition.frightened",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "condition.frightened"
+      ]
+    },
+    {
+      "id": "term.god",
+      "en": "God",
+      "zhHant": "神祇",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.purifying-fire",
+        "ability.censor.the-gods-punish-and-defend",
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.grab",
+      "en": "Grab",
+      "zhHant": "擒抱",
+      "source": "glossary",
+      "usedBy": [
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "term.grabbed",
+      "en": "Grabbed",
+      "zhHant": "擒制",
+      "nameFrom": {
+        "entityRef": "condition.grabbed",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest",
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "term.ground",
+      "en": "Ground",
+      "zhHant": "地面",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.heal",
+      "en": "Heal",
+      "zhHant": "治療",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "term.heroic-resource",
+      "en": "Heroic Resource",
+      "zhHant": "英雄資源",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.holy",
+      "en": "Holy",
+      "zhHant": "神聖",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.halt-miscreant",
+        "ability.censor.judgment",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.jump",
+      "en": "Jump",
+      "zhHant": "跳躍",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.knockback",
+      "en": "Knockback",
+      "zhHant": "擊退",
+      "source": "glossary",
+      "usedBy": [
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "term.lead",
+      "en": "Lead",
+      "zhHant": "領導",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.leader",
+      "en": "Leader",
+      "zhHant": "首領",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.censored"
+      ]
+    },
+    {
+      "id": "term.line-of-effect",
+      "en": "Line of Effect",
+      "zhHant": "效果線",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "condition.taunted",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.magic.skill",
+      "en": "Magic",
+      "zhHant": "魔法",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.melee-free-strike",
+      "en": "Melee Free Strike",
+      "zhHant": "近戰基礎打擊",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment"
+      ]
+    },
+    {
+      "id": "term.might",
+      "en": "Might",
+      "zhHant": "力量",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "condition.bleeding",
+        "condition.grabbed",
+        "condition.restrained",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.move-action",
+      "en": "Move Action",
+      "zhHant": "移動動作",
+      "source": "glossary",
+      "usedBy": [
+        "condition.dazed"
+      ]
+    },
+    {
+      "id": "term.movement",
+      "en": "Movement",
+      "zhHant": "移動",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.oracle",
+      "en": "Oracle",
+      "zhHant": "神諭",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.order.censor-subclass",
+      "en": "Order",
+      "zhHant": "教團",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.paragon",
+      "en": "Paragon",
+      "zhHant": "典範",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.potency",
+      "en": "Potency",
+      "zhHant": "效力",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.judgment"
+      ]
+    },
+    {
+      "id": "term.power-roll",
+      "en": "Power Roll",
+      "zhHant": "檢定",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.presence",
+      "en": "Presence",
+      "zhHant": "氣場",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.judgment",
+        "ability.censor.your-allies-cannot-save-you",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.prone",
+      "en": "Prone",
+      "zhHant": "伏地",
+      "nameFrom": {
+        "entityRef": "condition.prone",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.my-life-for-yours",
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.psychic",
+      "en": "Psychic",
+      "zhHant": "心靈",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.every-step-death"
+      ]
+    },
+    {
+      "id": "term.pull",
+      "en": "Pull",
+      "zhHant": "拉動",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.push",
+      "en": "Push",
+      "zhHant": "推動",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.back-blasphemer",
+        "ability.censor.driving-assault"
+      ]
+    },
+    {
+      "id": "term.quick-build",
+      "en": "Quick Build",
+      "zhHant": "推薦選項",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.read-person",
+      "en": "Read Person",
+      "zhHant": "觀色",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.recovery",
+      "en": "Recovery",
+      "zhHant": "復元力",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.my-life-for-yours",
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "term.recovery-value",
+      "en": "Recovery Value",
+      "zhHant": "復元值",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.my-life-for-yours",
+        "ability.censor.the-gods-punish-and-defend"
+      ]
+    },
+    {
+      "id": "term.respite",
+      "en": "Respite",
+      "zhHant": "休整",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.restrained",
+      "en": "Restrained",
+      "zhHant": "束縛",
+      "nameFrom": {
+        "entityRef": "condition.restrained",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "term.save-ends",
+      "en": "Save Ends",
+      "zhHant": "豁免解除",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent"
+      ]
+    },
+    {
+      "id": "term.saving-throw",
+      "en": "Saving Throw",
+      "zhHant": "豁免",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.my-life-for-yours"
+      ]
+    },
+    {
+      "id": "term.shift",
+      "en": "Shift",
+      "zhHant": "遁移",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.driving-assault",
+        "ability.censor.judgment",
+        "condition.slowed"
+      ]
+    },
+    {
+      "id": "term.signature-ability",
+      "en": "Signature Ability",
+      "zhHant": "招牌招式",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.size",
+      "en": "Size",
+      "zhHant": "體型",
+      "source": "glossary",
+      "usedBy": [
+        "condition.grabbed"
+      ]
+    },
+    {
+      "id": "term.skill",
+      "en": "Skill",
+      "zhHant": "技能",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.slowed",
+      "en": "Slowed",
+      "zhHant": "緩速",
+      "nameFrom": {
+        "entityRef": "condition.slowed",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.halt-miscreant",
+        "condition.slowed"
+      ]
+    },
+    {
+      "id": "term.solo",
+      "en": "Solo",
+      "zhHant": "獨霸",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.censored"
+      ]
+    },
+    {
+      "id": "term.speed",
+      "en": "Speed",
+      "zhHant": "速度",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.driving-assault",
+        "ability.censor.judgment",
+        "condition.grabbed",
+        "condition.restrained",
+        "condition.slowed"
+      ]
+    },
+    {
+      "id": "term.square",
+      "en": "Square",
+      "zhHant": "格",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.every-step-death",
+        "ability.censor.judgment",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.prone",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.stamina",
+      "en": "Stamina",
+      "zhHant": "體力",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.censored",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.the-gods-punish-and-defend",
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.stand-up",
+      "en": "Stand Up",
+      "zhHant": "起身",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.my-life-for-yours",
+        "condition.prone",
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "term.strike-now",
+      "en": "Strike Now",
+      "zhHant": "快出手",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.subclass",
+      "en": "Subclass",
+      "zhHant": "子範型",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.censor-order"
+      ]
+    },
+    {
+      "id": "term.swim",
+      "en": "Swim",
+      "zhHant": "游泳",
+      "source": "glossary",
+      "usedBy": [
+        "condition.prone"
+      ]
+    },
+    {
+      "id": "term.tactician",
+      "en": "Tactician",
+      "zhHant": "戰術家",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding"
+      ]
+    },
+    {
+      "id": "term.target",
+      "en": "Target",
+      "zhHant": "目標",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.every-step-death",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.purifying-fire",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.grabbed",
+        "condition.taunted"
+      ]
+    },
+    {
+      "id": "term.taunted",
+      "en": "Taunted",
+      "zhHant": "嘲諷",
+      "nameFrom": {
+        "entityRef": "condition.taunted",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.judgment",
+        "condition.taunted"
+      ]
+    },
+    {
+      "id": "term.teleport",
+      "en": "Teleport",
+      "zhHant": "傳送",
+      "source": "glossary",
+      "usedBy": [
+        "condition.grabbed",
+        "condition.restrained",
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.test",
+      "en": "Test",
+      "zhHant": "考驗",
+      "source": "glossary",
+      "usedBy": [
+        "condition.bleeding",
+        "condition.restrained"
+      ]
+    },
+    {
+      "id": "term.turn",
+      "en": "Turn",
+      "zhHant": "回合",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.every-step-death",
+        "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.your-allies-cannot-save-you",
+        "condition.bleeding",
+        "condition.dazed",
+        "feature.censor.judgment-order-benefit",
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.vertical",
+      "en": "Vertical",
+      "zhHant": "垂直",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.vertical-pull",
+      "en": "Vertical Pull",
+      "zhHant": "垂直拉動",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.judgment-order-benefit"
+      ]
+    },
+    {
+      "id": "term.victory",
+      "en": "Victory",
+      "zhHant": "勝利值",
+      "source": "glossary",
+      "usedBy": [
+        "feature.censor.wrath"
+      ]
+    },
+    {
+      "id": "term.weakened",
+      "en": "Weakened",
+      "zhHant": "虛弱",
+      "nameFrom": {
+        "entityRef": "condition.weakened",
+        "entityStatus": "reviewed",
+        "reviewedBy": "owner"
+      },
+      "source": "glossary",
+      "usedBy": [
+        "condition.weakened"
+      ]
+    },
+    {
+      "id": "term.winded",
+      "en": "Winded",
+      "zhHant": "疲態",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.censored"
+      ]
+    },
+    {
+      "id": "term.wrath",
+      "en": "Wrath",
+      "zhHant": "怒火",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.arrest",
+        "ability.censor.judgment",
+        "feature.censor.wrath"
+      ]
+    }
+  ]
+}

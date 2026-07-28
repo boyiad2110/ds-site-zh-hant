@@ -1,13 +1,13 @@
 # 下一個對話的啟動說明
 
-> 建立於 2026-07-28，最後更新 **2026-07-29**（M0 英文正典抽取全部完成）。
+> 建立於 2026-07-28，最後更新 **2026-07-29**（第 6 步完成：術語依賴清單 releases/m0.json）。
 > **新對話請先讀本檔，再讀下列文件。**
 
 ---
 
 ## 現在在哪裡
 
-M0 的執行順序，**第 1–5 步已完成，下一步是第 6 步**：
+M0 的執行順序，**第 1–6 步已完成，下一步是第 7 步**：
 
 ```
 1. ✅ poppler 安裝與算繪驗證
@@ -20,23 +20,27 @@ M0 的執行順序，**第 1–5 步已完成，下一步是第 6 步**：
      ✅ 2 個基礎打擊
      ✅ 3 個教團／怒火特性（新 type `feature`）
      ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
-6. 🔄 產出術語依賴清單 → releases/m0.json  ← **下一步**
-7. ⏳ 中文逐句對齊，產出差異報告 + 兩份問題檔
+6. ✅ 產出術語依賴清單 → `releases/m0.json`（111 個術語，全部 approved）
+7. 🔄 中文逐句對齊，產出差異報告 + 兩份問題檔  ← **下一步**
 8. ⏳ 專案擁有者逐筆裁決
 9. ⏳ 此時才開始寫 UI
 ```
 
-### 第 6 步該做什麼
+### 第 7 步該做什麼
 
-`docs/scope.md`：「**清單來源必須涵蓋 M0 的全部發布文字**」，即現在 `data/canon/` 的 28 個條目
-（16 招式 ＋ 9 狀態 ＋ 3 特性）。逐條掃出用到的術語，寫入 `releases/m0.json`。
+28 條正典裡，**中文只做了 9 個狀態**，其餘 19 條（16 招式 ＋ 3 特性）尚未產出 `data/zh-Hant/`。
+逐句對齊舊譯與英文正典，照 `docs/samples/alignment-my-life-for-yours.md` 的格式產報告，
+差異一律標註待裁，**AI 不得逕行改寫舊譯**。
 
-⚠️ `releases/` 目前**不存在**，`validate-terms` 的 `provisional-in-release` 檢查一直是空過的。
-建立之後這個檢查才會真的跑起來——**建立當下請確認它真的擋得住 provisional id**，
-不要只看它印「通過」（本專案的既有教訓正是「測試走錯路徑遮住 bug」）。
+⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-7，全部 resolved）。
+那是待辦清單，不是靠記憶——例如 TI-5～7 規定章節交叉參照在 M0 只譯動作名、不加連結。
 
-⚠️ 第 6 步一定會撞上 C 段未裁決的低頻詞（見下方「術語批次裁決」的分段漏洞）。
-撞到就回頭補裁，不要略過。
+⚠️ **已知的三筆待對齊觀察**記在 `docs/alignment/m0-batch2-results.md` 末尾
+（怒火的段落搬移與「每輪 1 次」、遺漏的 `(see Judgment below)`、教團的 Quick Build）。
+
+> 第 6 步的兩個把關機制**已實測有效**，不必重驗：
+> `provisional-in-release`（塞假 id 進清單確認 exit 1）、
+> build 階段的 `idStatus` 守衛（approved 但 id 仍 provisional 也會擋）。
 
 **詞彙系統已凍結**，不再加固。
 唯一例外：2026-07-28 新增 `decisions.notTerms` 機制（擁有者裁定某 CSV 列不是術語時的移除路徑），
@@ -56,7 +60,9 @@ M0 的執行順序，**第 1–5 步已完成，下一步是第 6 步**：
 | `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
 | `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
 | `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
-| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-4）。產生中文時是待辦清單，不是靠記憶 |
+| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-7）。**產生中文時是待辦清單，不是靠記憶** |
+| `docs/m0-term-decisions-needed.md` | 第 6 步的術語裁決紀錄（已全數結案）——當初為什麼這樣決定 |
+| `releases/m0.json` | M0 的精確術語依賴清單。111 個術語，含排除理由與詞義指定 |
 
 > **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
 > 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
@@ -75,7 +81,7 @@ M0 的執行順序，**第 1–5 步已完成，下一步是第 6 步**：
 
 ---
 
-## 第 5 步該怎麼做
+## 正典抽取方法（第 5 步建立，M1 仍適用）
 
 ### 採混合抽取法：文字為主，圖像驗結構
 
@@ -307,21 +313,51 @@ data/glossary.json                         entityRef 指向實體，**刻意不�
 
 ## 驗證指令
 
-```bash
-node --test "scripts/**/*.test.mjs"      # 77 tests
-node scripts/build-vocabulary.mjs
-node scripts/import-glossary.mjs
-node scripts/validate-terms.mjs --commit
-```
-
-目前基線（**2026-07-29 收盤**）：
-glossary **600**（approved **253**）、vocabulary **21** 值（5 個詞彙表，全部 approved）、
-ledger **617**、pending **2**（Hakaan／Memonek）、測試 **77/77**、
-正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**
-（`node scripts/verify-canon-hash.mjs` 全部相符）、
-中文實體 **9** 個狀態（**中文側尚未跟上第二批的 5 個新條目**）、
-translation-issues **4** 項全 resolved。
+改完 `data/decisions.json` 後**四個都要跑**，順序不可顛倒：
 
 ```bash
-node scripts/verify-canon-hash.mjs   # 正典內容指紋（新增）
+node scripts/build-vocabulary.mjs        # 先重建詞彙表
+node scripts/import-glossary.mjs         # 再重建術語表
+node scripts/validate-terms.mjs --commit # 驗證並提升 ledger
+node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 ```
+
+> ⚠️ 只跑其中一部分會被 `stale-decisions-hash` 擋下（實際發生過：只重跑 glossary 沒重跑
+> vocabulary，5 項硬性失敗）。**那是機制正常運作，不是壞掉。**
+
+驗證：
+
+```bash
+node --test "scripts/**/*.test.mjs"   # 89 tests
+node scripts/verify-canon-hash.mjs    # 正典內容指紋
+node scripts/report-m0-terms.mjs      # 唯讀：術語用量掃描報告
+```
+
+目前基線（**2026-07-29 第 6 步收盤**）：
+glossary **606**（approved **259**）、vocabulary **23** 值（5 個詞彙表，全部 approved）、
+ledger **625**、pending **2**（Hakaan／Memonek）、測試 **89/89**、
+正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符）、
+中文實體 **9** 個狀態（**中文側尚未跟上其餘 19 條**）、
+translation-issues **7** 項全 resolved、
+`releases/m0.json` **111** 個依賴術語（全部 approved，來源指紋 `777dee09e302be26`）。
+
+### 術語掃描的三個通道（`scripts/lib/m0-scan.mjs`）
+
+`report-m0-terms.mjs` 與 `build-m0-release.mjs` **共用同一份掃描**，不會各說各話。
+
+| 通道 | 來源 | 可信度 |
+|---|---|---|
+| A · 受控值 | `keywords`／`actionType`／`abilityCategory`／`potency.level` 等結構欄位 | 確定性，免複核 |
+| B · 散文文字比對 | 招式敘述、狀態說明、特性段落 | **必然有假命中**，每筆留上下文 |
+| C · 疑似缺詞 | 把命中遮掉後剩下的規則用語 | 需人工判斷 |
+
+**結構型詞彙表**（效力等級、招式分類、招式關鍵詞）的英文是常見英文字，
+刻意**不參與**散文比對——它們本來就由通道 A 確定性取得。
+
+三個「不算數」的出口，**每筆都必須寫理由**：
+
+| 機制 | 用途 |
+|---|---|
+| `EXCLUSIONS` | 整個詞全域排除（目前只有 `Line`） |
+| `OCCURRENCE_EXCLUSIONS` | 逐處排除——同一個詞在某些條目是術語、在另一些是普通英文字 |
+| `SENSE_ASSIGNMENTS` | 詞義分裂（同一英文多個 sense）時逐筆指定；**未指定會中止產生，掃描器不猜** |

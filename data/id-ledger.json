@@ -253,9 +253,6 @@
     "term.characteristics": {
       "signature": "Characteristics|"
     },
-    "term.charge": {
-      "signature": "Charge|"
-    },
     "term.chimeron": {
       "signature": "Chimeron|"
     },
@@ -1851,6 +1848,33 @@
     },
     "term.fire.elementalist-mastery": {
       "signature": "Fire|elementalist-mastery"
+    },
+    "term.director": {
+      "signature": "Director|"
+    },
+    "term.lead": {
+      "signature": "Lead|"
+    },
+    "term.read-person": {
+      "signature": "Read Person|"
+    },
+    "term.strike-now": {
+      "signature": "Strike Now|"
+    },
+    "term.vertical-pull": {
+      "signature": "Vertical Pull|"
+    },
+    "ability-categorie.basic": {
+      "signature": "vocabulary|ability-categories|basic|Basic"
+    },
+    "term.quick-build": {
+      "signature": "Quick Build|"
+    },
+    "ability-keyword.charge": {
+      "signature": "vocabulary|ability-keywords|charge|Charge"
+    },
+    "term.magic.skill": {
+      "signature": "Magic|skill"
     }
   }
 }

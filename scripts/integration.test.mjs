@@ -292,6 +292,27 @@ describe('整合：生成器與驗證器', () => {
     } finally { cleanup(root) }
   })
 
+  test('12b. dual-authority：帶 sense 的同名條目是不同概念，不算雙重權威', () => {
+    // 2026-07-29 擁有者裁定：Magic 同時是招式關鍵詞與技能名稱，中文都是「魔法」，
+    // 但概念不同、id 必須各自獨立。dual-authority 原本只比對英文字面，會誤擋這種情形。
+    // 放寬條件是「明確帶 sense」——上一個測試守住沒有 sense 時照樣失敗的下界。
+    const root = makeFixture({
+      vocabulary: [{ vocabulary: 'action-types', value: 'alpha', en: 'Alpha', zhHant: '甲', status: 'approved', decidedAt: '2026-07-28', decidedBy: 'owner' }],
+      glossary: [{ en: 'Alpha', sense: 'skill', zhHant: '甲技能', category: '規則/技能', status: 'approved', decidedAt: '2026-07-28', decidedBy: 'owner' }],
+    })
+    try {
+      run(root, 'build-vocabulary.mjs')
+      run(root, 'import-glossary.mjs')
+      const v = run(root, 'validate-terms.mjs')
+      assert.equal(v.status, 0, `帶 sense 不該被 dual-authority 擋下：${v.stdout}`)
+      assert.equal(hasCode(v.stdout, 'dual-authority'), false, v.stdout)
+      const g = readJson(root, 'data/glossary.json')
+      const t = g.terms.find((x) => x.id === 'term.alpha.skill')
+      assert.ok(t, 'sense 應產生具語意的獨立 id term.alpha.skill')
+      assert.equal(t.zhHant, '甲技能')
+    } finally { cleanup(root) }
+  })
+
   test('13. ledger 在驗證失敗時不得被提升', () => {
     const root = makeFixture()
     try {

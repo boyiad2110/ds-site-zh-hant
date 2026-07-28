@@ -1,8 +1,20 @@
 {
   "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
-  "decisionsHash": "89d775de277671a4",
+  "decisionsHash": "0133cc7a570e5e73",
   "vocabulary": "ability-categories",
   "values": [
+    {
+      "id": "ability-categorie.basic",
+      "idStatus": "stable",
+      "value": "basic",
+      "en": "Basic",
+      "zhHant": "通用",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "status": "approved",
+      "note": "2026-07-29 擁有者裁定。基礎打擊不屬任何範型，需與招牌／英雄／固有並列的第四種分類。擁有者選「通用」而非「基礎」，取其「不屬於任何範型、人人可用」之意。",
+      "aliasesZhHant": []
+    },
     {
       "id": "ability-categorie.heroic",
       "idStatus": "stable",

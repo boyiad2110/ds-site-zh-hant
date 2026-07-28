@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/import-glossary.mjs 生成，不可手改。手動項目請寫入 data/decisions.json 的 pending 陣列。",
   "sourceHash": "499fc97aec25c645",
-  "decisionsHash": "89d775de277671a4",
+  "decisionsHash": "0133cc7a570e5e73",
   "items": [
     {
       "kind": "glossary",

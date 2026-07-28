@@ -173,10 +173,20 @@ for (const [key, zhs] of [...byEn].filter(([, s]) => s.size > 1)) {
 }
 
 // ══ dual-authority ══
+// 規則本意：**同一個受控值**不得在兩處各有一份權威譯名，否則不知道以誰為準。
+//
+// 但同一個英文字可以是兩個不同概念。例如 Magic：
+//   ability-keyword.magic  招式關鍵詞「魔法」（標示這是魔法招式）
+//   term.magic.skill       技能名稱「魔法」（神諭教團授予的技能）
+// 中文相同，概念不同，**id 必須各自獨立**（2026-07-29 擁有者裁定，外部 review 指出）。
+//
+// 故放寬條件：glossary 條目**明確帶 `sense`** 時視為已宣告「這是另一個概念」，不算雙重權威。
+// 放寬範圍刻意很窄——沒有 sense 的同名條目**照樣硬性失敗**，
+// 避免把「忘了移到 vocabulary」也一併放行。
 const vocabEn = new Set(vocabValues.map((x) => x.en.trim().toLowerCase()))
 for (const t of glossary.terms) {
-  if (vocabEn.has(t.en.trim().toLowerCase()) && t.zhHant) {
-    fail('dual-authority', `${t.en} 同時存在於 vocabulary 與 glossary 且皆有譯名`)
+  if (vocabEn.has(t.en.trim().toLowerCase()) && t.zhHant && !t.sense) {
+    fail('dual-authority', `${t.en} 同時存在於 vocabulary 與 glossary 且皆有譯名（若確為不同概念，請在裁決加上 sense）`)
   }
 }
 

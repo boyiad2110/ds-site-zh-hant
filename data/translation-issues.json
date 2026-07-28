@@ -80,6 +80,66 @@
       "decidedBy": "owner",
       "resolution": "規則文本一律用第二人稱「你」，即使原文為第三人稱。理由：讓玩家更好理解。已寫入指南 §7，不再逐條提報。",
       "applyTo": "全域通則，已寫入 docs/translation-guide.md §7"
+    },
+    {
+      "id": "TI-5",
+      "entityId": "condition.grabbed",
+      "field": "text[0]",
+      "sourceEn": "can’t use the Knockback maneuver (see Maneuvers in Chapter 10: Combat)",
+      "kind": "presentation",
+      "severity": "low",
+      "issue": "原文含指向紙本書章節的參照（see … in Chapter 10: Combat）。網站沒有章節結構，且三個參照目標（擊退、掙脫擒抱、起身）都不在 M0 範圍內，做成連結會是斷的。",
+      "resolution": "M0 只譯出動作名稱、不加連結、也不保留「見第 10 章」字樣；待 M1 收入那三張機動動作卡後，再改為站內連結。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "applyTo": "產生 data/zh-Hant/conditions/condition.grabbed 時套用",
+      "affectsOnly": "condition.grabbed"
+    },
+    {
+      "id": "TI-6",
+      "entityId": "condition.grabbed",
+      "field": "text[2]",
+      "sourceEn": "can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat)",
+      "kind": "presentation",
+      "severity": "low",
+      "issue": "原文含指向紙本書章節的參照（see … in Chapter 10: Combat）。網站沒有章節結構，且三個參照目標（擊退、掙脫擒抱、起身）都不在 M0 範圍內，做成連結會是斷的。",
+      "resolution": "M0 只譯出動作名稱、不加連結、也不保留「見第 10 章」字樣；待 M1 收入那三張機動動作卡後，再改為站內連結。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "applyTo": "產生 data/zh-Hant/conditions/condition.grabbed 時套用",
+      "affectsOnly": "condition.grabbed"
+    },
+    {
+      "id": "TI-7",
+      "entityId": "condition.prone",
+      "field": "text[1]",
+      "sourceEn": "a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat)",
+      "kind": "presentation",
+      "severity": "low",
+      "issue": "原文含指向紙本書章節的參照（see … in Chapter 10: Combat）。網站沒有章節結構，且三個參照目標（擊退、掙脫擒抱、起身）都不在 M0 範圍內，做成連結會是斷的。",
+      "resolution": "M0 只譯出動作名稱、不加連結、也不保留「見第 10 章」字樣；待 M1 收入那三張機動動作卡後，再改為站內連結。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "applyTo": "產生 data/zh-Hant/conditions/condition.prone 時套用",
+      "affectsOnly": "condition.prone"
     }
   ],
   "$auditNote": "每個 TI 只影響 entityId 指定的那一個實體。實體檔 data/zh-Hant/**/meta.decisions 只列出真正受影響的 TI，不做批次備註。"
