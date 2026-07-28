@@ -197,7 +197,7 @@ describe('m0-scan 迴歸', () => {
   test('逐處排除：同一個詞在某些條目是術語、在另一些是普通英文字', () => {
     // term.magic.skill 是技能名。但 flavor 的「holy magic」是普通名詞，
     // 全域排除會連真正的技能名一起殺掉，故排除必須能指定到條目層級。
-    // 這裡直接用正式資料的 OCCURRENCE_EXCLUSIONS 驗證機制本身有生效。
+    // 這裡直接用正式資料的 ENTITY_EXCLUSIONS 驗證機制本身有生效。
     const root = makeFixture({
       canon: { id: 'ability.censor.halt-miscreant', type: 'ability', name: 'T', keywords: [], effect: ['You infuse your weapon with holy magic.'] },
       glossaryTerms: [TERM('term.magic.skill', 'Magic', { sense: 'skill', zhHant: '魔法' })],

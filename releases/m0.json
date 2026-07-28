@@ -11,7 +11,7 @@
       "checkedAt": "2026-07-29"
     }
   ],
-  "occurrenceExclusions": [
+  "entityExclusions": [
     {
       "termId": "term.magic.skill",
       "entityIds": [
@@ -41,6 +41,9 @@
       "usedBy": [
         "ability.basic.melee-weapon-free-strike",
         "ability.basic.ranged-weapon-free-strike"
+      ],
+      "viaFields": [
+        "abilityCategory"
       ]
     },
     {
@@ -57,6 +60,9 @@
         "ability.censor.purifying-fire",
         "ability.censor.repent",
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "abilityCategory"
       ]
     },
     {
@@ -67,6 +73,9 @@
       "usedBy": [
         "ability.censor.judgment",
         "ability.censor.my-life-for-yours"
+      ],
+      "viaFields": [
+        "abilityCategory"
       ]
     },
     {
@@ -79,6 +88,9 @@
         "ability.censor.every-step-death",
         "ability.censor.halt-miscreant",
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "abilityCategory"
       ]
     },
     {
@@ -88,6 +100,10 @@
       "source": "vocabulary:ability-keywords",
       "usedBy": [
         "ability.censor.back-blasphemer"
+      ],
+      "viaFields": [
+        "distance.kind",
+        "keywords[]"
       ]
     },
     {
@@ -97,6 +113,9 @@
       "source": "vocabulary:ability-keywords",
       "usedBy": [
         "ability.basic.melee-weapon-free-strike"
+      ],
+      "viaFields": [
+        "keywords[]"
       ]
     },
     {
@@ -114,6 +133,9 @@
         "ability.censor.purifying-fire",
         "ability.censor.repent",
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "keywords[]"
       ]
     },
     {
@@ -133,6 +155,11 @@
         "ability.censor.purifying-fire",
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "distance.kind",
+        "distance.options[].kind",
+        "keywords[]"
       ]
     },
     {
@@ -148,6 +175,11 @@
         "ability.censor.my-life-for-yours",
         "ability.censor.purifying-fire",
         "ability.censor.repent"
+      ],
+      "viaFields": [
+        "distance.kind",
+        "distance.options[].kind",
+        "keywords[]"
       ]
     },
     {
@@ -169,6 +201,9 @@
         "ability.censor.repent",
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "keywords[]"
       ]
     },
     {
@@ -189,6 +224,9 @@
         "ability.censor.purifying-fire",
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "keywords[]"
       ]
     },
     {
@@ -199,6 +237,10 @@
       "usedBy": [
         "ability.censor.judgment",
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)",
+        "followUpActions[].actionType"
       ]
     },
     {
@@ -224,6 +266,10 @@
         "ability.censor.your-allies-cannot-save-you",
         "condition.bleeding",
         "condition.dazed"
+      ],
+      "viaFields": [
+        "(散文)",
+        "actionType"
       ]
     },
     {
@@ -237,6 +283,10 @@
         "condition.grabbed",
         "condition.prone",
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)",
+        "actionType"
       ]
     },
     {
@@ -249,6 +299,10 @@
         "ability.censor.my-life-for-yours",
         "condition.bleeding",
         "condition.dazed"
+      ],
+      "viaFields": [
+        "(散文)",
+        "actionType"
       ]
     },
     {
@@ -261,6 +315,9 @@
         "ability.censor.halt-miscreant",
         "ability.censor.purifying-fire",
         "ability.censor.repent"
+      ],
+      "viaFields": [
+        "tiers[].potency.level"
       ]
     },
     {
@@ -273,6 +330,9 @@
         "ability.censor.halt-miscreant",
         "ability.censor.purifying-fire",
         "ability.censor.repent"
+      ],
+      "viaFields": [
+        "tiers[].potency.level"
       ]
     },
     {
@@ -285,6 +345,9 @@
         "ability.censor.halt-miscreant",
         "ability.censor.purifying-fire",
         "ability.censor.repent"
+      ],
+      "viaFields": [
+        "tiers[].potency.level"
       ]
     },
     {
@@ -297,6 +360,9 @@
         "ability.censor.my-life-for-yours",
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -330,6 +396,9 @@
         "condition.weakened",
         "feature.censor.judgment-order-benefit",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -345,6 +414,9 @@
         "ability.censor.judgment",
         "ability.censor.your-allies-cannot-save-you",
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -361,6 +433,9 @@
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you",
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -370,6 +445,9 @@
       "source": "vocabulary:target-components",
       "usedBy": [
         "ability.censor.my-life-for-yours"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -390,6 +468,9 @@
         "condition.taunted",
         "feature.censor.judgment-order-benefit",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -400,6 +481,9 @@
       "usedBy": [
         "condition.bleeding",
         "condition.frightened"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -413,6 +497,9 @@
         "ability.censor.your-allies-cannot-save-you",
         "condition.grabbed",
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -421,8 +508,14 @@
       "zhHant": "敏捷",
       "source": "glossary",
       "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
         "condition.bleeding",
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)",
+        "powerRoll.characteristic.options[]"
       ]
     },
     {
@@ -439,6 +532,9 @@
         "condition.restrained",
         "condition.taunted",
         "condition.weakened"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -453,6 +549,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -462,6 +561,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.your-allies-cannot-save-you"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -473,6 +575,9 @@
         "ability.censor.judgment",
         "feature.censor.censor-order",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -482,6 +587,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -491,6 +599,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -505,6 +616,9 @@
         "condition.prone",
         "condition.restrained",
         "condition.taunted"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -514,6 +628,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -523,6 +640,21 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
+      ]
+    },
+    {
+      "id": "term.cube",
+      "en": "Cube",
+      "zhHant": "立方",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.back-blasphemer"
+      ],
+      "viaFields": [
+        "distance.area.shape"
       ]
     },
     {
@@ -550,6 +682,9 @@
         "condition.bleeding",
         "feature.censor.judgment-order-benefit",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -565,6 +700,9 @@
       "usedBy": [
         "ability.censor.repent",
         "condition.dazed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -574,6 +712,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -583,6 +724,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -592,6 +736,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.arrest"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -601,6 +748,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.taunted"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -612,6 +762,9 @@
         "condition.frightened",
         "condition.prone",
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -627,6 +780,9 @@
         "condition.taunted",
         "feature.censor.judgment-order-benefit",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -637,6 +793,9 @@
       "usedBy": [
         "ability.censor.judgment",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -646,6 +805,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -656,6 +818,9 @@
       "usedBy": [
         "feature.censor.censor-order",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -665,6 +830,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.purifying-fire"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -674,6 +842,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -685,6 +856,9 @@
         "ability.basic.melee-weapon-free-strike",
         "ability.basic.ranged-weapon-free-strike",
         "ability.censor.judgment"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -700,6 +874,9 @@
       "usedBy": [
         "ability.censor.behold-the-face-of-justice",
         "condition.frightened"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -711,6 +888,9 @@
         "ability.censor.purifying-fire",
         "ability.censor.the-gods-punish-and-defend",
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -720,6 +900,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -735,6 +918,9 @@
       "usedBy": [
         "ability.censor.arrest",
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -744,6 +930,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -753,6 +942,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -762,6 +954,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -782,6 +977,21 @@
         "ability.censor.the-gods-punish-and-defend",
         "ability.censor.your-allies-cannot-save-you",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
+      ]
+    },
+    {
+      "id": "term.intuition",
+      "en": "Intuition",
+      "zhHant": "直覺",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.repent"
+      ],
+      "viaFields": [
+        "tiers[].potency.characteristic"
       ]
     },
     {
@@ -791,6 +1001,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -800,6 +1013,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -809,6 +1025,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -818,6 +1037,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.censored"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -829,6 +1051,9 @@
         "ability.censor.judgment",
         "condition.taunted",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -838,6 +1063,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -847,6 +1075,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.judgment"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -855,11 +1086,27 @@
       "zhHant": "力量",
       "source": "glossary",
       "usedBy": [
+        "ability.basic.melee-weapon-free-strike",
+        "ability.basic.ranged-weapon-free-strike",
+        "ability.censor.arrest",
         "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
+        "ability.censor.halt-miscreant",
+        "ability.censor.purifying-fire",
+        "ability.censor.the-gods-punish-and-defend",
+        "ability.censor.your-allies-cannot-save-you",
         "condition.bleeding",
         "condition.grabbed",
         "condition.restrained",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)",
+        "powerRoll.characteristic",
+        "powerRoll.characteristic.options[]",
+        "tiers[].potency.characteristic"
       ]
     },
     {
@@ -869,6 +1116,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.dazed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -879,6 +1129,9 @@
       "usedBy": [
         "condition.prone",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -889,6 +1142,9 @@
       "usedBy": [
         "feature.censor.censor-order",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -899,6 +1155,9 @@
       "usedBy": [
         "feature.censor.censor-order",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -909,6 +1168,9 @@
       "usedBy": [
         "feature.censor.censor-order",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -919,6 +1181,9 @@
       "usedBy": [
         "ability.censor.behold-the-face-of-justice",
         "ability.censor.judgment"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -929,6 +1194,9 @@
       "usedBy": [
         "ability.censor.judgment",
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -938,10 +1206,19 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.arrest",
+        "ability.censor.back-blasphemer",
         "ability.censor.behold-the-face-of-justice",
+        "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
         "ability.censor.judgment",
+        "ability.censor.repent",
         "ability.censor.your-allies-cannot-save-you",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)",
+        "powerRoll.characteristic",
+        "tiers[].potency.characteristic"
       ]
     },
     {
@@ -957,6 +1234,9 @@
       "usedBy": [
         "ability.censor.my-life-for-yours",
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -967,6 +1247,9 @@
       "usedBy": [
         "ability.censor.behold-the-face-of-justice",
         "ability.censor.every-step-death"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -976,6 +1259,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -986,6 +1272,9 @@
       "usedBy": [
         "ability.censor.back-blasphemer",
         "ability.censor.driving-assault"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -995,6 +1284,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1004,6 +1296,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1014,6 +1309,9 @@
       "usedBy": [
         "ability.censor.my-life-for-yours",
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1024,6 +1322,9 @@
       "usedBy": [
         "ability.censor.my-life-for-yours",
         "ability.censor.the-gods-punish-and-defend"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1033,6 +1334,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1047,6 +1351,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1059,6 +1366,9 @@
         "ability.censor.halt-miscreant",
         "ability.censor.purifying-fire",
         "ability.censor.repent"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1068,6 +1378,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.my-life-for-yours"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1079,6 +1392,9 @@
         "ability.censor.driving-assault",
         "ability.censor.judgment",
         "condition.slowed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1088,6 +1404,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1097,6 +1416,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.grabbed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1106,6 +1428,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1121,6 +1446,9 @@
       "usedBy": [
         "ability.censor.halt-miscreant",
         "condition.slowed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1130,6 +1458,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.censored"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1143,6 +1474,9 @@
         "condition.grabbed",
         "condition.restrained",
         "condition.slowed"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1158,6 +1492,9 @@
         "ability.censor.your-allies-cannot-save-you",
         "condition.prone",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1171,6 +1508,9 @@
         "ability.censor.my-life-for-yours",
         "ability.censor.the-gods-punish-and-defend",
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1182,6 +1522,9 @@
         "ability.censor.my-life-for-yours",
         "condition.prone",
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1191,6 +1534,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1200,6 +1546,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.censor-order"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1209,6 +1558,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.prone"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1218,6 +1570,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.bleeding"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1237,6 +1592,9 @@
         "ability.censor.your-allies-cannot-save-you",
         "condition.grabbed",
         "condition.taunted"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1252,6 +1610,9 @@
       "usedBy": [
         "ability.censor.judgment",
         "condition.taunted"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1263,6 +1624,9 @@
         "condition.grabbed",
         "condition.restrained",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1273,6 +1637,9 @@
       "usedBy": [
         "condition.bleeding",
         "condition.restrained"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1290,6 +1657,9 @@
         "condition.dazed",
         "feature.censor.judgment-order-benefit",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1299,6 +1669,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1308,6 +1681,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1317,6 +1693,9 @@
       "source": "glossary",
       "usedBy": [
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1331,6 +1710,9 @@
       "source": "glossary",
       "usedBy": [
         "condition.weakened"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1340,6 +1722,9 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.censored"
+      ],
+      "viaFields": [
+        "(散文)"
       ]
     },
     {
@@ -1349,8 +1734,22 @@
       "source": "glossary",
       "usedBy": [
         "ability.censor.arrest",
+        "ability.censor.behold-a-shield-of-faith",
+        "ability.censor.behold-the-face-of-justice",
+        "ability.censor.censored",
+        "ability.censor.driving-assault",
         "ability.censor.judgment",
+        "ability.censor.my-life-for-yours",
+        "ability.censor.purifying-fire",
+        "ability.censor.repent",
+        "ability.censor.the-gods-punish-and-defend",
         "feature.censor.wrath"
+      ],
+      "viaFields": [
+        "(散文)",
+        "cost.resource",
+        "extraCosts[].resource",
+        "followUpActions[].cost.resource"
       ]
     }
   ]

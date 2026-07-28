@@ -13,23 +13,30 @@
 
 | 詞彙表 | 值 | 中文 | 狀態 | 用於幾個條目 |
 |---|---|---|---|---|
-| ability-categories | `basic` | 通用 | approved | 2 |
-| ability-categories | `heroic` | 英雄 | approved | 8 |
-| ability-categories | `inherent` | 固有 | approved | 2 |
-| ability-categories | `signature` | 招牌 | approved | 4 |
-| ability-keywords | `area` | 區域 | approved | 1 |
-| ability-keywords | `charge` | 衝鋒 | approved | 1 |
-| ability-keywords | `magic` | 魔法 | approved | 9 |
-| ability-keywords | `melee` | 近戰 | approved | 11 |
-| ability-keywords | `ranged` | 遠程 | approved | 7 |
-| ability-keywords | `strike` | 打擊 | approved | 13 |
-| ability-keywords | `weapon` | 武器 | approved | 12 |
-| action-types | `main` | 主要動作 | approved | 14 |
-| action-types | `maneuver` | 機動動作 | approved | 1 |
-| action-types | `triggered` | 反應動作 | approved | 1 |
-| potency-levels | `average` | 中 | approved | 4 |
-| potency-levels | `strong` | 強 | approved | 4 |
-| potency-levels | `weak` | 弱 | approved | 4 |
+| vocab:ability-categories | `basic` | 通用 | approved | 2 |
+| vocab:ability-categories | `heroic` | 英雄 | approved | 8 |
+| vocab:ability-categories | `inherent` | 固有 | approved | 2 |
+| vocab:ability-categories | `signature` | 招牌 | approved | 4 |
+| vocab:ability-keywords | `area` | 區域 | approved | 1 |
+| vocab:ability-keywords | `charge` | 衝鋒 | approved | 1 |
+| vocab:ability-keywords | `magic` | 魔法 | approved | 9 |
+| vocab:ability-keywords | `melee` | 近戰 | approved | 11 |
+| vocab:ability-keywords | `ranged` | 遠程 | approved | 7 |
+| vocab:ability-keywords | `strike` | 打擊 | approved | 13 |
+| vocab:ability-keywords | `weapon` | 武器 | approved | 12 |
+| vocab:action-types | `free-triggered` | 免費反應動作 | approved | 1 |
+| vocab:action-types | `main` | 主要動作 | approved | 14 |
+| vocab:action-types | `maneuver` | 機動動作 | approved | 1 |
+| vocab:action-types | `triggered` | 反應動作 | approved | 1 |
+| vocab:potency-levels | `average` | 中 | approved | 4 |
+| vocab:potency-levels | `strong` | 強 | approved | 4 |
+| vocab:potency-levels | `weak` | 弱 | approved | 4 |
+| glossary | `agility` | 敏捷 | approved | 2 |
+| glossary | `cube` | 立方 | approved | 1 |
+| glossary | `intuition` | 直覺 | approved | 1 |
+| glossary | `might` | 力量 | approved | 11 |
+| glossary | `presence` | 氣場 | approved | 5 |
+| glossary | `wrath` | 怒火 | approved | 10 |
 
 ✅ 通道 A 全部 `approved`。
 

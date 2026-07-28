@@ -20,7 +20,7 @@ M0 的執行順序，**第 1–6 步已完成，下一步是第 7 步**：
      ✅ 2 個基礎打擊
      ✅ 3 個教團／怒火特性（新 type `feature`）
      ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
-6. ✅ 產出術語依賴清單 → `releases/m0.json`（111 個術語，全部 approved）
+6. ✅ 產出術語依賴清單 → `releases/m0.json`（113 個術語，全部 approved）
 7. 🔄 中文逐句對齊，產出差異報告 + 兩份問題檔  ← **下一步**
 8. ⏳ 專案擁有者逐筆裁決
 9. ⏳ 此時才開始寫 UI
@@ -62,7 +62,7 @@ M0 的執行順序，**第 1–6 步已完成，下一步是第 7 步**：
 | `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
 | `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-7）。**產生中文時是待辦清單，不是靠記憶** |
 | `docs/m0-term-decisions-needed.md` | 第 6 步的術語裁決紀錄（已全數結案）——當初為什麼這樣決定 |
-| `releases/m0.json` | M0 的精確術語依賴清單。111 個術語，含排除理由與詞義指定 |
+| `releases/m0.json` | M0 的精確術語依賴清單。113 個術語，含 `viaFields`、排除理由與詞義指定 |
 
 > **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
 > 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
@@ -328,18 +328,19 @@ node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 驗證：
 
 ```bash
-node --test "scripts/**/*.test.mjs"   # 89 tests
+node --test "scripts/**/*.test.mjs"       # 102 tests
 node scripts/verify-canon-hash.mjs    # 正典內容指紋
-node scripts/report-m0-terms.mjs      # 唯讀：術語用量掃描報告
+node scripts/report-m0-terms.mjs          # 唯讀：術語用量掃描報告
+node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過期
 ```
 
 目前基線（**2026-07-29 第 6 步收盤**）：
 glossary **606**（approved **259**）、vocabulary **23** 值（5 個詞彙表，全部 approved）、
-ledger **625**、pending **2**（Hakaan／Memonek）、測試 **89/89**、
+ledger **625**、pending **2**（Hakaan／Memonek）、測試 **102/102**、
 正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符）、
 中文實體 **9** 個狀態（**中文側尚未跟上其餘 19 條**）、
 translation-issues **7** 項全 resolved、
-`releases/m0.json` **111** 個依賴術語（全部 approved，來源指紋 `777dee09e302be26`）。
+`releases/m0.json` **113** 個依賴術語（全部 approved，來源指紋 `777dee09e302be26`）。
 
 ### 術語掃描的三個通道（`scripts/lib/m0-scan.mjs`）
 
@@ -347,7 +348,7 @@ translation-issues **7** 項全 resolved、
 
 | 通道 | 來源 | 可信度 |
 |---|---|---|
-| A · 受控值 | `keywords`／`actionType`／`abilityCategory`／`potency.level` 等結構欄位 | 確定性，免複核 |
+| A · 受控值 | **全部影響中文呈現的結構欄位**（見下） | 確定性，免複核 |
 | B · 散文文字比對 | 招式敘述、狀態說明、特性段落 | **必然有假命中**，每筆留上下文 |
 | C · 疑似缺詞 | 把命中遮掉後剩下的規則用語 | 需人工判斷 |
 
@@ -361,3 +362,20 @@ translation-issues **7** 項全 resolved、
 | `EXCLUSIONS` | 整個詞全域排除（目前只有 `Line`） |
 | `OCCURRENCE_EXCLUSIONS` | 逐處排除——同一個詞在某些條目是術語、在另一些是普通英文字 |
 | `SENSE_ASSIGNMENTS` | 詞義分裂（同一英文多個 sense）時逐筆指定；**未指定會中止產生，掃描器不猜** |
+
+通道 A 掃描的結構欄位（2026-07-29 外部 review 指出原本只掃 4 個、其餘全漏）：
+
+```
+keywords[]                          actionType              abilityCategory
+powerRoll.characteristic            （含二選一的 .options[]）
+tiers[].potency.level               tiers[].potency.characteristic
+cost.resource                       extraCosts[].resource
+followUpActions[].actionType        followUpActions[].cost.resource
+distance.kind                       distance.options[].kind      distance.area.shape
+```
+
+manifest 每個條目帶 `viaFields`，標明依賴是從哪個欄位來的，可稽核。
+
+> ⚠️ **距離種類目前借用招式關鍵詞表**——`distance.kind` 的 melee／ranged／area
+> 在 `data/` 裡只有 `ability-keywords` 一個來源，沒有獨立的距離種類表。
+> 兩處確實同字同義，故照實對應；日後若要拆表，用 `viaFields` 就能找出受影響的條目。

@@ -7,16 +7,37 @@
  *
  * 三個通道，刻意分開：
  *
- *   A · 受控值（確定性）
- *     keywords / actionType / abilityCategory / potency.level 存的就是受控值本身，
- *     直接查 vocabulary。命中即為真。
+ *   A · 受控值（確定性，免人工複核）
+ *     結構欄位存的就是受控值本身，直接查表。命中即為真。涵蓋 15 個欄位路徑
+ *     （其中 14 個在目前 28 條正典裡實際出現；`distance.options[].area.shape`
+ *     是防禦性的，尚無「二選一的選項之一是區域」這種形狀）：
+ *
+ *       關鍵詞    keywords[]
+ *       動作類型  actionType、followUpActions[].actionType
+ *       分類      abilityCategory
+ *       屬性      powerRoll.characteristic（含二選一的 .options[]）
+ *                 tiers[].potency.characteristic（效力測的是目標的哪個屬性，逐招式不同）
+ *       效力      tiers[].potency.level
+ *       費用      cost.resource、extraCosts[].resource、followUpActions[].cost.resource
+ *       距離      distance.kind、distance.options[].kind
+ *                 distance.area.shape、distance.options[].area.shape
+ *
+ *     查表來源分兩種：受控詞彙表以 value 查，術語表以英文查（見 useControlled）。
+ *     ⚠️ 2026-07-29 外部 review 前這裡只掃前 4 個欄位，其餘全漏——漏掃不會報錯，
+ *     只會讓 releases/m0.json 少一個詞。改動這段時務必同步更新本註解與
+ *     scripts/m0-release.test.mjs 的真實資料斷言。
  *
  *   B · 散文文字掃描（需人工複核）
  *     自由文字以字界比對 glossary 與 vocabulary 的英文。**必然有假命中**
  *     （語氣詞 might 對上屬性 Might），故保留上下文供判讀，並由 EXCLUSIONS 排除已判定者。
+ *     結構型詞彙表（效力等級／招式分類／招式關鍵詞）刻意不參與，見下。
  *
  *   C · 疑似術語但表裡沒有
  *     把命中區間遮掉，看剩下什麼像規則用語。
+ *
+ * 三個「掃到卻不算數」的出口，每筆都必須寫理由：
+ *   EXCLUSIONS（整個詞全域）、ENTITY_EXCLUSIONS（逐條目）、
+ *   SENSE_ASSIGNMENTS（詞義分裂逐筆指定；未指定會中止產生，不猜）。
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -38,6 +59,14 @@ export const EXCLUSIONS = [
 ]
 
 /**
+ * 結構標記，**不是**術語，掃到要略過。
+ *
+ * `choice` 出現在 `distance.kind` 與 `powerRoll.characteristic.kind`，
+ * 意思是「二選一」。中文呈現的「或」由 renderer 產生，不是查表得來的詞。
+ */
+export const STRUCTURAL_MARKERS = new Set(['choice'])
+
+/**
  * 哪些詞彙表**只以結構欄位存在**，不參與散文比對。
  *
  * 這類受控值的英文是常見英文字，在散文裡出現時幾乎都是普通用法而非術語：
@@ -45,8 +74,15 @@ export const EXCLUSIONS = [
  *   - `You have the Magic skill` 的 Magic 是技能名，不是招式關鍵詞 magic
  *   - `holy magic`／`magic strike` 的 magic 是普通名詞
  *
- * 它們該由通道 A 從 `keywords`／`abilityCategory`／`potency.level` 等結構欄位確定性取得，
- * 拿去比對散文只會製造假命中。2026-07-29 外部 review 指出後新增。
+ * 它們該由通道 A 從結構欄位確定性取得，拿去比對散文只會製造假命中。
+ * 2026-07-29 外部 review 指出後新增。
+ *
+ * ⚠️ **附帶說明：距離種類目前借用招式關鍵詞表。**
+ * `distance.kind` 的 melee／ranged／area 在 `data/` 裡只有一個來源——
+ * `ability-keywords`，沒有獨立的「距離種類」表。這兩處確實是同一個詞、
+ * 同一個中文（近戰／遠程／區域），與 Magic 那種「同字不同概念」不同，故照實對應。
+ * 但**這是共用，不是專屬**：manifest 的 `viaFields` 標明每個依賴從哪個欄位來，
+ * 日後若要拆出 distance-kinds 表，從 viaFields 就能找出受影響的條目。
  */
 export const STRUCTURAL_ONLY_VOCABULARIES = new Set([
   'potency-levels',
@@ -55,16 +91,20 @@ export const STRUCTURAL_ONLY_VOCABULARIES = new Set([
 ])
 
 /**
- * **逐處**排除：某個術語在某個條目裡的命中不算數。
+ * **逐條目**排除：某個術語在某個正典條目裡的所有命中都不算數。
  *
- * 與 EXCLUSIONS（整個詞全域排除）的差別在粒度。有些字在同一批資料裡既是術語、
- * 又是普通英文字，只能逐處判斷：
- *   - `You have the Magic skill.`      → 是技能名 term.magic.skill ✅
- *   - `You infuse your weapon with holy magic` → 普通名詞，不是任何術語 ❌
+ * ⚠️ **粒度是「條目」，不是「出現位置」。** 同一個條目內若同時有正確用法與
+ * 普通英文字用法，這個機制**無法**分辨——它會把整個條目的命中一起排除。
+ * 目前資料沒有這種混合情形；真的遇到時要擴充到欄位或位置粒度，
+ * 不要硬套（2026-07-29 外部 review 指出命名誤導，已更正）。
+ *
+ * 與 EXCLUSIONS（整個詞全域排除）的差別在範圍：
+ *   - `You have the Magic skill.`（feature.censor.censor-order）→ 技能名 ✅
+ *   - `You infuse your weapon with holy magic`（ability.censor.halt-miscreant）→ 普通名詞 ❌
  *
  * 同樣**每筆都必須寫理由**。
  */
-export const OCCURRENCE_EXCLUSIONS = [
+export const ENTITY_EXCLUSIONS = [
   {
     termId: 'term.magic.skill',
     entityIds: ['ability.censor.halt-miscreant', 'ability.censor.your-allies-cannot-save-you'],
@@ -163,22 +203,96 @@ export function scan() {
   const vocabIndex = new Map()
   for (const v of vocabularies) vocabIndex.set(v.vocabulary, new Map(v.values.map((x) => [x.value, x])))
 
+  /** glossary 以英文查（結構欄位存的是小寫 value，如 "might" → 詞條 "Might"） */
+  const glossaryByEn = new Map()
+  for (const t of glossary.terms) {
+    const k = t.en.trim().toLowerCase()
+    if (!glossaryByEn.has(k)) glossaryByEn.set(k, [])
+    glossaryByEn.get(k).push(t)
+  }
+
   // ── 通道 A ─────────────────────────────────────────────
   const controlled = new Map()
-  const useControlled = (vocabName, value, fromId) => {
+  /**
+   * @param source `vocab:<表名>` 以 value 查詞彙表；`glossary` 以英文查術語表
+   * @param field  這個依賴是**哪個結構欄位**帶出來的，寫進 manifest 供稽核
+   */
+  const useControlled = (source, value, fromId, field) => {
     if (value === null || value === undefined) return
-    const found = vocabIndex.get(vocabName)?.get(value)
-    const key = found ? found.id : `⚠️ ${vocabName}:${value}（詞彙表沒有這個值）`
-    if (!controlled.has(key)) controlled.set(key, { entry: found ?? null, vocabName, value, from: new Set() })
-    controlled.get(key).from.add(fromId)
+    if (STRUCTURAL_MARKERS.has(value)) return    // choice 之類的結構標記不是術語
+
+    let found = null
+    let miss
+    if (source.startsWith('vocab:')) {
+      const tbl = source.slice(6)
+      found = vocabIndex.get(tbl)?.get(value) ?? null
+      miss = `${tbl}:${value}`
+    } else {
+      const hits = glossaryByEn.get(String(value).trim().toLowerCase()) ?? []
+      // 同一英文多個詞義時不猜——與通道 B 同一原則
+      found = hits.length === 1 ? hits[0] : null
+      miss = hits.length > 1 ? `glossary:${value}（${hits.length} 個詞義，需指定）` : `glossary:${value}`
+    }
+
+    const key = found ? found.id : `⚠️ ${miss}（查不到）`
+    if (!controlled.has(key)) {
+      controlled.set(key, {
+        entry: found, vocabName: source, value,
+        from: new Set(), fields: new Set(),
+        // ⚠️ `from` 與 `fields` 是**各自彙總**的集合，兩者相乘並不等於實際發生的組合。
+        // 例如某術語被 A 條目從欄位 X、B 條目從欄位 Y 用到，彙總後看起來像四種組合。
+        // `usages` 保留真正的 (條目, 欄位) 配對，才能證明「這個 usedBy 是這個欄位帶出來的」。
+        // 2026-07-29 外部 review 指出彙總無法佐證，故新增。
+        usages: new Set(),
+      })
+    }
+    const c = controlled.get(key)
+    c.from.add(fromId)
+    c.fields.add(field)
+    c.usages.add(`${fromId}|${field}`)
   }
+
   for (const item of canon) {
     if (item.type !== 'ability') continue
-    for (const k of item.keywords ?? []) useControlled('ability-keywords', k, item.id)
-    useControlled('action-types', item.actionType, item.id)
-    useControlled('ability-categories', item.abilityCategory, item.id)
+
+    for (const k of item.keywords ?? []) useControlled('vocab:ability-keywords', k, item.id, 'keywords[]')
+    useControlled('vocab:action-types', item.actionType, item.id, 'actionType')
+    useControlled('vocab:ability-categories', item.abilityCategory, item.id, 'abilityCategory')
+
+    // 檢定屬性：單一存字串、二選一存物件（見指南 §4.7(1)）
+    const ch = item.powerRoll?.characteristic
+    if (typeof ch === 'string') useControlled('glossary', ch, item.id, 'powerRoll.characteristic')
+    else if (ch && Array.isArray(ch.options)) {
+      for (const o of ch.options) useControlled('glossary', o, item.id, 'powerRoll.characteristic.options[]')
+    }
+
     for (const t of item.powerRoll?.tiers ?? []) {
-      if (t.potency?.level) useControlled('potency-levels', t.potency.level, item.id)
+      if (!t.potency) continue
+      useControlled('vocab:potency-levels', t.potency.level, item.id, 'tiers[].potency.level')
+      // 效力測的是**目標的哪個屬性**，逐招式不同（指南 §4.3.0）
+      useControlled('glossary', t.potency.characteristic, item.id, 'tiers[].potency.characteristic')
+    }
+
+    // 英雄資源費用
+    useControlled('glossary', item.cost?.resource, item.id, 'cost.resource')
+    for (const e of item.extraCosts ?? []) {
+      // 目前資料是 extraCosts[].resource；防禦性支援巢狀 cost.resource
+      useControlled('glossary', e.resource ?? e.cost?.resource, item.id, 'extraCosts[].resource')
+    }
+    for (const f of item.followUpActions ?? []) {
+      useControlled('vocab:action-types', f.actionType, item.id, 'followUpActions[].actionType')
+      useControlled('glossary', f.cost?.resource, item.id, 'followUpActions[].cost.resource')
+    }
+
+    // 距離：kind／二選一的 options／區域形狀
+    const d = item.distance
+    if (d) {
+      useControlled('vocab:ability-keywords', d.kind, item.id, 'distance.kind')
+      for (const o of d.options ?? []) {
+        useControlled('vocab:ability-keywords', o.kind, item.id, 'distance.options[].kind')
+        if (o.area?.shape) useControlled('glossary', o.area.shape, item.id, 'distance.options[].area.shape')
+      }
+      if (d.area?.shape) useControlled('glossary', d.area.shape, item.id, 'distance.area.shape')
     }
   }
 
@@ -251,7 +365,7 @@ export function scan() {
             if (term.id !== chosen) continue  // 人工指定的是另一個詞義
           }
           // 逐處排除：這個術語在這個條目裡的命中已人工判定為不算數
-          if (OCCURRENCE_EXCLUSIONS.some((o) => o.termId === term.id && o.entityIds.includes(item.id))) continue
+          if (ENTITY_EXCLUSIONS.some((o) => o.termId === term.id && o.entityIds.includes(item.id))) continue
           const key = `${term.id}@${field}@${m.index}-${m[0].length}`
           if (seen.has(key)) continue
           seen.add(key)
@@ -309,12 +423,27 @@ export function scan() {
   // 見指南 §9.2）。所以那些詞條的 zhHant 是 undefined。
   // 若不在這裡解析，release manifest 就會出現「有 id、沒中文」的條目，無從追溯——
   // 2026-07-29 外部 review 指出。
+  //
+  // ⚠️ 只確認 `nameZhHant` 存在**不夠**——那只證明「有人打了字」，不證明「已批准」。
+  // 必須同時滿足 `meta.status === 'reviewed'` 且有 `meta.reviewedBy`，
+  // 否則等於讓未審核的譯名混進 release manifest（2026-07-29 外部 review 指出）。
+  const ENTITY_REQUIRED_STATUS = 'reviewed'
   const entityNames = new Map()
   const zhDir = p('data/zh-Hant/conditions')
   if (existsSync(zhDir)) {
     for (const f of readdirSync(zhDir).filter((x) => x.endsWith('.json'))) {
       const e = JSON.parse(readFileSync(resolve(zhDir, f), 'utf8'))
-      entityNames.set(e.id, { nameZhHant: e.nameZhHant, status: e.meta?.status, reviewedBy: e.meta?.reviewedBy })
+      const status = e.meta?.status
+      const reviewedBy = e.meta?.reviewedBy
+      const problems = []
+      if (!e.nameZhHant) problems.push('缺 nameZhHant')
+      if (status !== ENTITY_REQUIRED_STATUS) problems.push(`meta.status=${status ?? '（無）'}，需為 ${ENTITY_REQUIRED_STATUS}`)
+      if (!reviewedBy) problems.push('缺 meta.reviewedBy')
+      entityNames.set(e.id, {
+        nameZhHant: e.nameZhHant, status, reviewedBy,
+        usable: problems.length === 0,
+        problems,
+      })
     }
   }
 
@@ -326,6 +455,15 @@ export function scan() {
     candidates,
     entityNames,
     unresolvedSenses: [...unresolvedSenses.values()],
+    /**
+     * 通道 A 的 (術語 id, 正典條目 id, 結構欄位) 三元組。
+     * manifest 只放彙總的 viaFields；要驗「某個 usedBy 確實由某個欄位帶出」得看這裡。
+     */
+    controlledUsages: [...controlled.entries()].flatMap(([id, v]) =>
+      [...v.usages].map((u) => {
+        const [entityId, field] = u.split('|')
+        return { termId: v.entry?.id ?? id, entityId, field }
+      })),
     /** 通道 B 扣掉人工判定的假命中後，真正算數的術語 */
     proseKept: [...prose.values()].filter((x) => !excluded.has((x.term.en ?? '').toLowerCase())),
     proseExcluded: [...prose.values()].filter((x) => excluded.has((x.term.en ?? '').toLowerCase())),
