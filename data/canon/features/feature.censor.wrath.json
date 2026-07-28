@@ -1,0 +1,59 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。type=feature 為 2026-07-29 新增的資料類型（散文式職業特性），欄位說明見 docs/translation-guide.md §4.7。",
+  "id": "feature.censor.wrath",
+  "type": "feature",
+  "name": "Wrath",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The power you serve grants you a Heroic Resource called wrath, fueling your abilities as you censor those your church deems to be heretics."
+        }
+      ]
+    },
+    {
+      "heading": "Wrath in Combat",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "At the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain wrath equal to your Victories. At the start of each of your turns during combat, you gain 2 wrath."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Additionally, the first time each combat round that a creature judged by you (see Judgment below) deals damage to you, you gain 1 wrath. The first time each combat round that you deal damage to a creature judged by you, you gain 1 wrath."
+        },
+        {
+          "kind": "paragraph",
+          "text": "You lose any remaining wrath at the end of the encounter."
+        }
+      ]
+    },
+    {
+      "heading": "Wrath Outside of Combat",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Though you can’t gain wrath outside of combat, you can use your heroic abilities and effects that cost wrath without spending it. Whenever you use an ability or effect outside of combat that costs wrath, you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite."
+        },
+        {
+          "kind": "paragraph",
+          "text": "When you use an ability outside of combat that lets you spend unlimited wrath on its effect, you can use it as if you had spent an amount of wrath equal to your Victories. (Such abilities aren’t part of the core rules for the censor, but they might appear in future products.)"
+        }
+      ]
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.censor" },
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 2,
+    "printedPage": 79,
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "ba99b5fdb71cc6796747b272aa4ac6c7c79c652f0fb4d2465d43e4e662dd80ac"
+  }
+}

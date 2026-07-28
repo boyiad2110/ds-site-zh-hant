@@ -1,0 +1,38 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.basic.ranged-weapon-free-strike",
+  "type": "ability",
+  "name": "Ranged Weapon Free Strike",
+  "aliasesEn": [],
+  "flavor": null,
+  "keywords": ["ranged", "strike", "weapon"],
+  "actionType": "main",
+  "cost": null,
+  "distance": { "kind": "ranged", "value": 5, "raw": "Ranged 5" },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": {
+      "kind": "choice",
+      "options": ["might", "agility"],
+      "raw": "Might or Agility"
+    },
+    "tiers": [
+      { "threshold": "≤11", "text": "2 + M or A damage", "potency": null, "raw": "2 + M or A damage" },
+      { "threshold": "12-16", "text": "4 + M or A damage", "potency": null, "raw": "4 + M or A damage" },
+      { "threshold": "17+", "text": "6 + M or A damage", "potency": null, "raw": "6 + M or A damage" }
+    ]
+  },
+  "extraCosts": [],
+  "origin": { "kind": "core", "id": null },
+  "abilityCategory": "basic",
+  "level": null,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
+    "version": "1.01",
+    "pdfPage": 32,
+    "printedPage": 17,
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "67ebbec9327d05fcdcf7cff16e49a394a39e98e64e0997e06e74160ea0f85ae6"
+  }
+}

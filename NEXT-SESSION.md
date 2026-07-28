@@ -1,38 +1,42 @@
 # 下一個對話的啟動說明
 
-> 建立於 2026-07-28，**同日更新兩次**（術語批次裁決完成、懲戒者 14 個招式正典抽取完成）。
+> 建立於 2026-07-28，最後更新 **2026-07-29**（M0 英文正典抽取全部完成）。
 > **新對話請先讀本檔，再讀下列文件。**
 
 ---
 
 ## 現在在哪裡
 
-規劃 §14.5 的執行順序，**第 1–4 步已完成，下一步是第 5 步**：
+M0 的執行順序，**第 1–5 步已完成，下一步是第 6 步**：
 
 ```
 1. ✅ poppler 安裝與算繪驗證
 2. ✅ 翻譯指南搬入 docs/translation-guide.md
 3. ✅ 「捨己為人」對齊報告樣張
 4. ✅ 閘門通過，指南已批准
-5. 🔄 抽取 M0 英文正典
-     ✅ 懲戒者一級 14 個招式（全部 verified）
+5. ✅ 抽取 M0 英文正典 —— 28 個條目，全部 verified
+     ✅ 懲戒者一級 14 個招式
      ✅ 9 個狀態（正典＋中文實體皆已建立，術語表 approved）
-     ⏳ 基礎打擊、速查、三教團、怒火說明
-6. ⏳ 產出術語依賴清單 → releases/m0.json
+     ✅ 2 個基礎打擊
+     ✅ 3 個教團／怒火特性（新 type `feature`）
+     ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
+6. 🔄 產出術語依賴清單 → releases/m0.json  ← **下一步**
 7. ⏳ 中文逐句對齊，產出差異報告 + 兩份問題檔
 8. ⏳ 專案擁有者逐筆裁決
 9. ⏳ 此時才開始寫 UI
 ```
 
-### 招式部分已完成，**下一個動作有兩個選項**
+### 第 6 步該做什麼
 
-**(a) 繼續抽 M0 剩下的英文正典**（基礎打擊／狀態／速查／三教團／怒火）——
-分冊不同，版式可能不一樣，抽之前先算繪 1 張 150dpi 驗版面。
+`docs/scope.md`：「**清單來源必須涵蓋 M0 的全部發布文字**」，即現在 `data/canon/` 的 28 個條目
+（16 招式 ＋ 9 狀態 ＋ 3 特性）。逐條掃出用到的術語，寫入 `releases/m0.json`。
 
-**(b) 先做 14 個招式的中文逐句對齊** —— 英文正典已備妥，可直接開工。
-會卡在 9 個狀態的中文名（緩速、暈眩、擒制、畏縮、伏地、嘲諷…目前 `needs-review`）。
+⚠️ `releases/` 目前**不存在**，`validate-terms` 的 `provisional-in-release` 檢查一直是空過的。
+建立之後這個檢查才會真的跑起來——**建立當下請確認它真的擋得住 provisional id**，
+不要只看它印「通過」（本專案的既有教訓正是「測試走錯路徑遮住 bug」）。
 
-**擁有者尚未指定先做哪個，請先問。**
+⚠️ 第 6 步一定會撞上 C 段未裁決的低頻詞（見下方「術語批次裁決」的分段漏洞）。
+撞到就回頭補裁，不要略過。
 
 **詞彙系統已凍結**，不再加固。
 唯一例外：2026-07-28 新增 `decisions.notTerms` 機制（擁有者裁定某 CSV 列不是術語時的移除路徑），
@@ -44,14 +48,20 @@
 
 | 檔案 | 為什麼要讀 |
 |---|---|
-| `~/.claude/plans/draw-steel-ux-velvety-frog.md` | 完整規劃。**特別是 §14.1.1／§14.1.3 的規則事實發現**——那些是算繪後才發現、改寫過資料結構的 |
-| `docs/translation-guide.md` | 翻譯規則、報告格式、術語裁決紀錄（附錄 A） |
+| `docs/scope.md` | **M0 範圍的唯一正式權威**，含逐筆有日期的範圍裁決。動手前先確認要做的東西在不在範圍內 |
+| `docs/translation-guide.md` | 翻譯規則、schema、抽取方式、報告格式、術語裁決紀錄（附錄 A） |
 | `docs/samples/alignment-my-life-for-yours.md` | 報告格式的實際範例，照這個格式產出 |
 | `review-2026-07-28-manifest.md` | 詞彙系統的最終狀態與刻意不做的事 |
 | `docs/alignment/method-validation.md` | 抽取方法的驗證結果**與其適用邊界**——結論只對懲戒者招式與狀態成立 |
 | `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
 | `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
+| `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
 | `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-4）。產生中文時是待辦清單，不是靠記憶 |
+
+> **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
+> 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
+> 2026-07-29 起只是擁有者的本機工作筆記。
+> 它原本承載的範圍權威已移入 `docs/scope.md`，規則事實已移入指南與對齊報告。
 
 ---
 
@@ -134,25 +144,21 @@ BIN="C:/Users/boyia/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppl
 
 再用 Read 工具讀 PNG。
 
-### M0 的確切範圍（不得擴張）
+### M0 的確切範圍
 
-| 項目 | 內容 | 已知位置 |
-|---|---|---|
-| 招式 | ✅ **已完成** 懲戒者一級 14 個（招牌 4／英雄 8／固有 2） | `04-censor.pdf` p.3、p.5、**p.6** |
-| 基礎打擊 | 近戰、遠程 | `00-the-basic…pdf` p.32 |
-| 狀態 | ✅ **已完成** 9 個（出血／暈眩／畏縮／擒制／伏地／束縛／緩速／嘲諷／虛弱） | `03-class-and-abilities.pdf` p.9（印刷頁 77） |
-| 速查 | Rules Reference 第 1 頁涵蓋範圍，**文字回溯 Heroes** | 待定位 |
-| 教團 | 驅邪／神諭／典範，**僅一級內容** | `04-censor.pdf` p.2、p.3 |
-| 怒火 | 最小必要說明 | `04-censor.pdf` p.2 |
+**權威在 [`docs/scope.md`](docs/scope.md)**，本檔不再另存一份（同一份範圍放兩處必然各自漂移）。
 
-**明確不含**：2 級以上任何內容、領域（Domain）與領域特性、套裝、範型頁面。
+已抽取的正典來源頁：招式 `04-censor.pdf` p.3／p.5／p.6、基礎打擊 `00-the-basic…pdf` p.32、
+狀態 `03-class-and-abilities.pdf` p.9、教團與怒火 `04-censor.pdf` p.2／p.3。
 
 ### 產出
 
-1. 英文正典 → `data/canon/`（已有 abilities/ 與 conditions/ 兩類，另有 _normalized/ 存雜湊計算對象）
-   實際採用的 schema 已與規劃 §5.3 有出入，以**現有 23 個條目為準**，差異見指南 §4.3–4.3.2：
+1. 英文正典 → `data/canon/`（三類：abilities/ conditions/ features/，另有 _normalized/ 存雜湊計算對象）
+   實際採用的 schema 以**現有 28 個條目為準**，差異見指南 §4.3–4.3.2 與 **§4.7**：
    `distance` 已結構化且含 `choice`（二選一）；`potency.characteristic` 逐招式不同；
-   `followUpActions` 與 `extraCosts` 是兩種不同東西；`cost` 沒有費用一律 `null`
+   `followUpActions` 與 `extraCosts` 是兩種不同東西；`cost` 沒有費用一律 `null`；
+   **`powerRoll.characteristic` 可能是字串也可能是二選一物件**（基礎打擊）；
+   **`feature` 這個新 type 用「章節 → 區塊」結構**，與招式完全不同
 2. 中文譯文 → `data/zh-Hant/`（與 canon 同構逐段對應；名稱權威在此，glossary 只放 entityRef）
 3. 精確術語依賴清單 → `releases/m0.json`（**須涵蓋全部 M0 發布文字**，含三教團與怒火說明）
 4. 對齊報告 → 照 `docs/alignment/` 的格式（三維度標記見指南 §8.1）
@@ -160,10 +166,9 @@ BIN="C:/Users/boyia/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppl
 
 ---
 
-## 術語批次裁決（進行中）
+## 術語批次裁決
 
-`docs/term-review-queue.md` 已產出，擁有者**已審完 A 段**，裁決結果會在新對話開頭提供。
-
+`docs/term-review-queue.md` 已產出。
 **A、B 段已於 2026-07-28 裁決完畢並套用。** C 段（346 條低頻）仍未審，依原判斷暫不處理。
 
 ⚠️ **一個已知的分段漏洞**：清單依「該中文譯名在舊語料出現幾個檔案」排序。舊 CSV 的 zh-tw 欄
@@ -212,15 +217,18 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 **真正的風險不是抽取失敗，而是過早認定 schema 已完整**——
 之後為了把新規則塞進舊結構，反而改變原文語意。
 
-剩下的基礎打擊、速查、三教團、怒火說明**本身就是不同的資料類型**。
+2026-07-29 抽的基礎打擊、三教團、怒火說明**本身就是不同的資料類型**，
+教團與怒火還需要一個全新的 `feature` 型別。這條邊界已被實際踩到一次。
 
 **做法**：不必擴張驗證規模。**第一次遇到新資料類型或明顯不同的版式時，
 先用一個代表樣本確認即可**，不必重做整套方法驗證。若該樣本出現 schema 裝不下的東西，
 **先問擁有者，不要自行擴大解釋既有欄位**。
 
-> 本輪已實際發生兩次過度概括：
+> 已實際發生三次過度概括：
 > (1) 只掃 p.3／p.5 就寫「14 個招式只有三種距離形狀」——p.6 出現第四種。
-> (2) 用 Rules Reference 當正典來源——內容與 Heroes 不同，產生假指控。
+> (2) 用錯來源判斷狀態文字，產生假指控（紀錄見 `docs/alignment/conditions.md`）。
+> (3) 2026-07-29 照來源 PDF 的頁面內容決定範圍，多做了不屬 M0 的條目
+>     （紀錄見 `docs/alignment/m0-batch2-results.md`）。
 
 ### 邊界二：資料驗證通過 ≠ 網站能正確使用
 
@@ -236,6 +244,9 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 | `followUpActions` 持續期間四選一 | 審判 |
 | 招式連到狀態實體 | 全部含狀態的招式 |
 | 中英文資料切換 | 全站 |
+| **`powerRoll.characteristic` 可能是字串或物件** | 近戰／遠程武器基礎打擊（2026-07-29 新增） |
+| **`feature` 的「章節 → 區塊」結構** | 教團、怒火、審判教團利益（2026-07-29 新增） |
+| **`definitionList` 的 `marker` 兩種版式** | 教團（無符號懸掛縮排）對 審判教團利益（項目符號） |
 
 **做法**：不阻擋目前的 M0 資料整理。但**在大量擴張資料之前，保留一個小型網站驗證點**——
 實際讀取一個懲戒者招式頁面，確認上述結構能被正確顯示與操作。
@@ -247,16 +258,12 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 
 | 來源 | 狀態 | 依據 |
 |---|---|---|
-| Foundry VTT `draw-steel` 系統 | ❌ **不採用** | 其 `LICENSE.md` 明文：內容為 MCDM 單獨授權，**Creator License 不適用**；GitHub 標示 `NOASSERTION`。規劃 §9.4.1 |
-| Forge Steel | ❌ 不採用 | GPL-3.0，避免授權混合。規劃 §9.4 |
-| Steel Compendium | ❌ 不採用 | `NOASSERTION`。規劃 §9.5 |
+| Foundry VTT `draw-steel` 系統 | ❌ **不採用** | 其 `LICENSE.md` 明文：內容為 MCDM 單獨授權，**Creator License 不適用**；GitHub 標示 `NOASSERTION` |
+| Forge Steel | ❌ 不採用 | GPL-3.0，避免授權混合 |
+| Steel Compendium | ❌ 不採用 | `NOASSERTION` |
+| `DrawSteelRulesReferenceV1.pdf` | ❌ **本階段完全不使用** | 擁有者 2026-07-29 裁定（見 `docs/scope.md` 裁決 #1）。PDF 已從本機移除。曾誤用的事故紀錄見 `docs/alignment/conditions.md` |
 
 **唯一內容來源：`sources/official/Draw_Steel_Heroes_v1.01/` 的官方 PDF。**
-
-> ⚠️ **`DrawSteelRulesReferenceV1.pdf` 不是正典來源。** 2026-07-28 實測：同一批狀態，
-> 它與 Heroes v1.01 至少 8 處文字不同，其中「出血」少了整句 `and only happens once per action.`，
-> 「擒制」的掙脫時機是不同的規則。**舊譯全部依 Heroes 翻譯。**
-> 曾因用錯來源而產生一次假的「舊譯多加規則」指控，見 `docs/alignment/conditions.md`。
 
 > Foundry 系統本機已安裝於 `C:/TRPG/FVTT V14/Data/systems/draw-steel`，GitHub 上有完整 JSON（`src/packs/**/*.json`），技術上完全可讀——**但不得使用**。允許的用法只有：研究其欄位切法作為 schema 參考、擁有者個人開著比對。其內容不得進入 `data/canon/`。
 
@@ -272,6 +279,13 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 | `Memonek` | 梅莫族 · 梅莫人 —— 同上。**M0 用不到** |
 
 在裁決前，相關條目不得進入 release manifest。**AI 不得代為裁決。**
+
+### 2026-07-29 新增的兩項待裁
+
+| # | 事項 | 情形 | 工作量 |
+|---|---|---|---|
+| 1 | **要不要統一 `_normalized/*.txt` 的大小寫慣例** | 同一批正典並存兩種寫法：4 個照 PDF 原樣（`actionType: Main action`）、10 個全小寫（`actionType: main`）。**功能沒壞**（hash 逐檔比對），但同一份資料兩套寫法。統一會讓那 10 個 hash 全部改變 | 改 10 個檔＋10 個 hash |
+| 2 | **`validate-terms` 的實體存在性檢查沒有真的看 `data/canon/`** | 它每次都警告「`condition.bleeding` 指向尚未建立的實體」，但那 9 個狀態實體**早就建立了**。原因是它的 `known` 只裝 glossary／vocabulary 的 id，從不掃 `data/canon/`，靠 allowlist 讓它降級成警告。**這正是本專案最怕的「檢查走錯路徑」**——只是這次方向相反，是誤報不是漏報 | 詞彙系統已凍結，故未動；要不要修由擁有者決定 |
 
 ### ✅ 9 個狀態已完成（2026-07-28）
 
@@ -294,17 +308,19 @@ data/glossary.json                         entityRef 指向實體，**刻意不�
 ## 驗證指令
 
 ```bash
-node --test "scripts/**/*.test.mjs"      # 74 tests
+node --test "scripts/**/*.test.mjs"      # 77 tests
 node scripts/build-vocabulary.mjs
 node scripts/import-glossary.mjs
 node scripts/validate-terms.mjs --commit
 ```
 
-目前基線（2026-07-28 收盤）：
+目前基線（**2026-07-29 收盤**）：
 glossary **600**（approved **253**）、vocabulary **21** 值（5 個詞彙表，全部 approved）、
 ledger **617**、pending **2**（Hakaan／Memonek）、測試 **77/77**、
-正典 **23** 條目＝14 招式 ＋ 9 狀態（`node scripts/verify-canon-hash.mjs` 全部相符）、
-中文實體 **9** 個狀態、translation-issues **4** 項全 resolved。
+正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**
+（`node scripts/verify-canon-hash.mjs` 全部相符）、
+中文實體 **9** 個狀態（**中文側尚未跟上第二批的 5 個新條目**）、
+translation-issues **4** 項全 resolved。
 
 ```bash
 node scripts/verify-canon-hash.mjs   # 正典內容指紋（新增）

@@ -1,0 +1,51 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。type=feature 為 2026-07-29 新增的資料類型（散文式職業特性），欄位說明見 docs/translation-guide.md §4.7。",
+  "id": "feature.censor.censor-order",
+  "type": "feature",
+  "name": "Censor Order",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Censors are the will of their god made physically manifest, and you act as your god’s agent in the world. As you shoulder that responsibility, you choose a censor order from the following options, each of which grants you a skill. (Quick Build: Paragon.)"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Exorcist",
+              "text": "You specialize in hunting your order’s hidden enemies, knowing that an open mind is an unguarded fortress. You have the Read Person skill."
+            },
+            {
+              "term": "Oracle",
+              "text": "Corruption has deep tendrils that can be missed, leading you to specialize in uncovering clandestine threats to your order. You have the Magic skill."
+            },
+            {
+              "term": "Paragon",
+              "text": "Without a strong example and a firm hand, the weak will be corrupted. You specialize in setting an example for your order. You have the Lead skill."
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your censor order is your subclass, and your choice of order determines many of the features you’ll gain as you gain new levels."
+        }
+      ]
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.censor" },
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 2,
+    "printedPage": 79,
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "71b3be4ea5f2a8fb89fe3f93da73e0324faf25bd2e2b9a18b830a2eafa46ad84"
+  }
+}

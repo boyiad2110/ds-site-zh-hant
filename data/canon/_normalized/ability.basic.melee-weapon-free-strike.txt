@@ -1,0 +1,9 @@
+name: Melee Weapon Free Strike
+keywords: Charge, Melee, Strike, Weapon
+actionType: Main action
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + Might or Agility
+tier<=11: 2 + M or A damage
+tier12-16: 5 + M or A damage
+tier17+: 7 + M or A damage

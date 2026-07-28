@@ -1,14 +1,17 @@
 # Draw Steel 正體中文翻譯指南
 
-> **狀態：草案。** 通過「捨己為人」樣張驗收後才批准。
+> **狀態：已批准**（2026-07-28 通過「捨己為人」樣張驗收）。
 > 建立日期 2026-07-28。內容**歸納自 `sources/notion-export/` 的既有譯文**，非憑空規定。
-> 實作規劃見 `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
+> **M0 範圍與範圍裁決見 `docs/scope.md`**（唯一正式權威）。本檔只管 schema、抽取方式與翻譯規則。
 
 ---
 
 ## 1. 權威順序
 
-翻譯工作的性質是**對齊**，不是從零重譯。專案已有完整舊譯與 643 條術語表，工作是核對新版正典、找出差異、補上缺漏。
+翻譯工作的性質是**對齊**，不是從零重譯。專案已有完整舊譯與既有術語表，工作是核對新版正典、找出差異、補上缺漏。
+
+> 術語表與詞彙表的**最新條目數與 approved 筆數見 `NEXT-SESSION.md` 的「目前基線」**。
+> 本檔不重複統計數字——那些數字每輪都在動，寫死在指南裡必然過期。
 
 衝突時依下列順序裁決：
 
@@ -26,10 +29,10 @@
 
 | 來源 | 為何只是參考 |
 |---|---|
-| `DrawSteelRulesReferenceV1.pdf` | 與 Heroes 內文**實質不同**。2026-07-28 實測 9 個狀態，至少 8 處文字有別，其中「擒制」的掙脫時機是不同的規則。曾因誤用此來源而對舊譯提出假指控（見 `docs/alignment/conditions.md`） |
+| `DrawSteelRulesReferenceV1.pdf` | ❌ **本階段完全不使用**（擁有者 2026-07-29 裁定，見 `docs/scope.md` 裁決 #1）。曾誤用的事故紀錄見 `docs/alignment/conditions.md` |
 | Heroes `00-the-basic` 的詞彙表 | 索引式一句話摘要，連觸發條件都與正文不同。**不是規則正文** |
 | 舊譯 `sources/notion-export/` | 見下 |
-| Foundry VTT／Forge Steel／Steel Compendium | 授權因素排除，且不得進入 `data/canon/`（規劃 §9.4–9.5） |
+| Foundry VTT／Forge Steel／Steel Compendium | 授權因素排除，且不得進入 `data/canon/`（清單見 `NEXT-SESSION.md`） |
 
 **抽任何條目前，先確認來源分冊是 Heroes 的規則正文。**
 
@@ -166,8 +169,19 @@ powerRoll.tiers[].text、
 | 懺悔吧！ | 氣場 Presence | **直覺 Intuition** |
 | 淨化聖火 | 力量 Might | **力量 Might** |
 
-規劃 §14.1.3(7) 講的是另一件事——WEAK／AVERAGE／STRONG 的**數值**由範型定義（懲戒者為氣場 −2／−1／−0）。
-兩者不可混為一談：**字母＝測誰的什麼屬性，範型定義＝門檻是多少。**
+**另一件事不可與此混為一談：WEAK／AVERAGE／STRONG 的「數值」是範型層級的定義，不是招式層級。**
+Heroes 印刷頁 79 的懲戒者基礎資料直接寫出三個門檻：
+
+```
+Weak Potency:    Presence − 2
+Average Potency: Presence − 1
+Strong Potency:  Presence
+```
+
+招式卡上的 `P<WEAK` 只是**引用**這個門檻。因此 `potency` 只存 `level`（weak／average／strong），
+實際數值要由範型資料解析——範型層需要 `potency: { weak, average, strong }` 一欄。
+
+**一句話分辨：字母＝測目標的什麼屬性（逐招式不同），範型定義＝門檻是多少（逐範型不同）。**
 
 存法：`text` 不含效力記號、`potency` 存 `{ characteristic, level }`、`raw` 存完整原文。
 
@@ -261,6 +275,82 @@ M0 只驗證下列常見句型可否由組合規則產生：
 | Recovery Value | 復元值 |
 | Stamina | 體力 |
 | **EoT / EoE** | **保留英文縮寫，不翻譯** |
+
+### 4.7 M0 第二批抽取新增的結構（2026-07-29）
+
+抽取基礎打擊、教團與怒火時遇到既有 schema 裝不下的東西，新增下列欄位與型別。
+**都是既有結構的自然延伸，沒有改寫任何既有的 23 個條目。**
+
+> 本節只描述**目前真的有正典條目在用**的結構。
+> 沒有使用者的欄位不留在這裡——未來實際遇到時再重新建模。
+
+#### (1) `powerRoll.characteristic` 可以是二選一
+
+兩個基礎打擊的檢定是 `Power Roll + Might or Agility`。
+既有 14 個招式都是單一屬性（存字串 `"might"`），故沿用 §4.3 `distance` 的做法，
+**單一時存字串、二選一時存物件**：
+
+| 原文 | 結構 |
+|---|---|
+| `Power Roll + Might` | `"characteristic": "might"` |
+| `Power Roll + Might or Agility` | `"characteristic": { kind:"choice", options:["might","agility"], raw:"Might or Agility" }` |
+
+⚠️ 這代表網站讀這個欄位時**必須判斷型別**，不能一律當字串。已列入驗證邊界二的待驗清單。
+
+#### (2) `abilityCategory` 新增 `basic`、`origin.kind` 新增 `core`
+
+基礎打擊**不屬於任何範型**，是全遊戲通用招式。
+
+```json
+"origin": { "kind": "core", "id": null },
+"abilityCategory": "basic",
+"level": null
+```
+
+`level: null` 的意思是「這個招式沒有等級」，不是「不知道等級」。
+（舊 CSV 把基礎打擊記為「招牌／1 級」，那是舊資料的分類方式，**正典不跟隨**。）
+
+#### (3) 新資料類型 `feature` —— 散文式職業特性
+
+教團、怒火、審判教團利益都不是招式卡，是**有標題階層的散文**，招式 schema 完全裝不下。
+放在 `data/canon/features/`，結構是「章節 → 區塊」兩層：
+
+```json
+{
+  "type": "feature",
+  "sections": [
+    { "heading": null | "小標題原文", "blocks": [ …區塊… ] }
+  ],
+  "origin": { "kind": "class", "id": "class.censor" },
+  "relatedTo": ["ability.censor.judgment"],
+  "level": 1
+}
+```
+
+區塊目前只有兩種，**遇到新版式再加，不預先發明**：
+
+| `kind` | 用途 | 欄位 | 出現在 |
+|---|---|---|---|
+| `paragraph` | 一般段落 | `text` | 全部 |
+| `definitionList` | 「**粗體詞**：說明」的清單 | `marker`（`"none"` 無項目符號／`"bullet"` 有）、`items[{term,text}]` | 教團、審判教團利益 |
+
+`marker` 存在的理由：教團三支是無項目符號的懸掛縮排，審判教團利益是 ¥ 項目符號清單，
+**版面不同但語意相同**，合併成同一種區塊會丟掉排版資訊。
+
+正規化檔（`_normalized/*.txt`）的行前綴：
+`name:` / `section:` / `p:` / `def: 詞 :: 說明`。
+
+#### (4) ⚠️ 既有 `_normalized/*.txt` 有兩套大小寫慣例（尚未處理）
+
+`verify-canon-hash.mjs` 是逐檔比對，所以**功能上沒有壞**，但同一批正典裡並存兩種寫法：
+
+| 慣例 | 條目數 | 例 |
+|---|---|---|
+| 照 PDF 原樣 | 4 | `actionType: Main action`、`keywords: Melee, Strike, Weapon`、`tier<=11:` |
+| 全小寫 | 10 | `actionType: main`、`keywords: melee, strike, weapon`、`tier≤11:` |
+
+本輪新增的 5 個條目一律採**照 PDF 原樣**（正規化檔的用途是逐字比對原文，愈接近原文愈好）。
+統一舊的 10 個會使那 10 個 hash 全部改變，**屬於要不要做的取捨，留給擁有者裁決**，本輪不動。
 
 ---
 
@@ -384,7 +474,9 @@ flavor 的差異一律列為 ⚪ low，**不阻擋批准**。
 > `exact` 與 `acceptable` 都不阻擋批准；差別在於 `acceptable` 必須附理由，讓裁決者能否決。
 > 統計摘要**必須分開列出兩者的筆數**，不得合併成一個「相符」數字。
 
-**維度二 · 問題**（可多個，可為 none）
+**維度三 · 問題**（可多個，可為 none）
+
+回答的是「這個欄位有沒有卡住批准的問題」。
 
 | 值 | 意義 | 阻擋批准 |
 |---|---|---|
@@ -393,8 +485,6 @@ flavor 的差異一律列為 ⚪ low，**不阻擋批准**。
 | `prose-issue` | 條目專屬譯文的語意問題（見 §8.2 分級） | 依嚴重度 |
 | `term-applied` | 術語**已裁決**、自動套用 | ❌ 僅供知悉 |
 | `none` | 無 | ❌ |
-
-**維度三 · 問題**（可多個，可為 none）——即上表。
 
 報告標頭同時顯示維度二與維度三；維度一寫在條目資訊區：
 
@@ -538,9 +628,9 @@ scripts/validate-terms.mjs      硬性驗證，失敗 exit 1
 node --test "scripts/**/*.test.mjs" && node scripts/build-vocabulary.mjs && node scripts/import-glossary.mjs && node scripts/validate-terms.mjs
 ```
 
-目前狀態：glossary 595 詞條（approved 4 / needs-review 591）、vocabulary 4 表 18 值（approved 7 / needs-review 11）。
+**條目數與各狀態筆數見 `NEXT-SESSION.md` 的「目前基線」**，本檔不重複統計。
 
-> **`needs-review` 佔絕大多數是刻意的。** 舊 CSV 的譯名不因存在就具權威（§附錄 A）。M0 的精確術語依賴清單產出後，將該批一次提交裁決，而非預先全數批准。
+> **`needs-review` 佔多數是刻意的。** 舊 CSV 的譯名不因存在就具權威（§附錄 A）。M0 的精確術語依賴清單產出後，將該批一次提交裁決，而非預先全數批准。
 
 #### `idStatus` 與 `status` 是兩個維度
 
@@ -558,13 +648,13 @@ node --test "scripts/**/*.test.mjs" && node scripts/build-vocabulary.mjs && node
 - 裁決後改為具語意的穩定 id，例如 `term.fire.damage-type`、`term.fire.elementalist-mastery`
 - 一旦 `stable` 且開始被引用，**id 永久不變**（由 `data/id-ledger.json` 把關）
 
-### 9.4 硬性失敗 vs 只警告
+### 9.3 硬性失敗 vs 只警告
 
 **失敗（CI exit 1）：** id 重複；stable id 被重新指派給不同詞義；`approved` 缺 `zhHant`／`decidedAt`／`decidedBy`；`provisional` 進入 release manifest；同英文不同譯名被靜默丟棄或未提報；vocabulary 與 glossary 同時保存同一受控值的權威譯名；`deprecated` 缺理由；`needs-review` 帶有裁決欄位。
 
 **只警告：** 語言欄位可疑（中文落在 `aliasesEn` 等）、別名與正式名相同、舊資料異常。**匯入器不自行修正這些**——搬移欄位屬於裁決。
 
-### 9.3 已記錄的後續工作
+### 9.4 已記錄的後續工作
 
 | 項目 | 狀態 |
 |---|---|

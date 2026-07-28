@@ -1,0 +1,38 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.basic.melee-weapon-free-strike",
+  "type": "ability",
+  "name": "Melee Weapon Free Strike",
+  "aliasesEn": [],
+  "flavor": null,
+  "keywords": ["charge", "melee", "strike", "weapon"],
+  "actionType": "main",
+  "cost": null,
+  "distance": { "kind": "melee", "value": 1, "raw": "Melee 1" },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": {
+      "kind": "choice",
+      "options": ["might", "agility"],
+      "raw": "Might or Agility"
+    },
+    "tiers": [
+      { "threshold": "≤11", "text": "2 + M or A damage", "potency": null, "raw": "2 + M or A damage" },
+      { "threshold": "12-16", "text": "5 + M or A damage", "potency": null, "raw": "5 + M or A damage" },
+      { "threshold": "17+", "text": "7 + M or A damage", "potency": null, "raw": "7 + M or A damage" }
+    ]
+  },
+  "extraCosts": [],
+  "origin": { "kind": "core", "id": null },
+  "abilityCategory": "basic",
+  "level": null,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
+    "version": "1.01",
+    "pdfPage": 32,
+    "printedPage": 17,
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "30b63390e7e0b9c4b1d475f22be23e3c66e1c75128aa6ca976e1f36b4c4b2c89"
+  }
+}
