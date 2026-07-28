@@ -1,0 +1,65 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.arrest",
+  "type": "ability",
+  "name": "Arrest",
+  "aliasesEn": [],
+  "flavor": "“I got you, you son of a bitch.”",
+  "keywords": [
+    "magic",
+    "melee",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 5
+  },
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "6 + M holy damage; grabbed"
+      },
+      {
+        "threshold": "12-16",
+        "text": "9 + M holy damage; grabbed"
+      },
+      {
+        "threshold": "17+",
+        "text": "13 + M holy damage; grabbed"
+      }
+    ]
+  },
+  "extraCosts": [
+    {
+      "resource": "wrath",
+      "value": 3,
+      "effect": "If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
+      "raw": "Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 83,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "1fbc4f0b82c1e1353f80483f52e901d7168f1543c572a3846114af39ccdf932c"
+  }
+}

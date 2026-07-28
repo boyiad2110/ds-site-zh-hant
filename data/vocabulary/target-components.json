@@ -1,0 +1,67 @@
+{
+  "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
+  "decisionsHash": "89d775de277671a4",
+  "vocabulary": "target-components",
+  "values": [
+    {
+      "id": "target-component.ally",
+      "idStatus": "stable",
+      "value": "ally",
+      "en": "ally",
+      "zhHant": "盟友",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #37（M0 7 檔／全語料 193 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "target-component.creature",
+      "idStatus": "stable",
+      "value": "creature",
+      "en": "creature",
+      "zhHant": "生物",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #1（M0 37 檔／全語料 405 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "target-component.enemy",
+      "idStatus": "stable",
+      "value": "enemy",
+      "en": "enemy",
+      "zhHant": "敵人",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #15（M0 14 檔／全語料 290 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "target-component.object",
+      "idStatus": "stable",
+      "value": "object",
+      "en": "object",
+      "zhHant": "物體",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #20（M0 13 檔／全語料 149 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "target-component.self",
+      "idStatus": "stable",
+      "value": "self",
+      "en": "Self",
+      "zhHant": "自身",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「自身」。",
+      "aliasesZhHant": []
+    }
+  ]
+}

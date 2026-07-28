@@ -1,0 +1,37 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.my-life-for-yours",
+  "type": "ability",
+  "name": "My Life for Yours",
+  "aliasesEn": [],
+  "flavor": "You channel some of your vitality into more resilience for you or an ally.",
+  "keywords": ["magic", "ranged"],
+  "actionType": "triggered",
+  "cost": null,
+  "distance": { "kind": "ranged", "value": 10, "raw": "Ranged 10" },
+  "target": "Self or one ally",
+  "trigger": "The target starts their turn or takes damage.",
+  "effect": [
+    "You spend a Recovery and the target regains Stamina equal to your recovery value."
+  ],
+  "extraCosts": [
+    {
+      "resource": "wrath",
+      "value": 1,
+      "effect": "You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.",
+      "raw": "Spend 1 Wrath: You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up."
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.censor" },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 3,
+    "printedPage": 80,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "cbf8265dd8ed89a33abaa434a11504bcc98b0c91c6ce4302a7928483364dd6fe"
+  }
+}

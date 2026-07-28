@@ -1,0 +1,57 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.every-step-death",
+  "type": "ability",
+  "name": "Every Step … Death!",
+  "aliasesEn": [],
+  "flavor": "You show your foe a glimpse of their fate after death.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "presence",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + P psychic damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "7 + P psychic damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "10 + P psychic damage"
+      }
+    ]
+  },
+  "effect": [
+    "Each time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 82,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "4a0cb31f829866e610c7aa99ede3117bc3ec5d608f3d9a94fd5846779bb3f752"
+  }
+}

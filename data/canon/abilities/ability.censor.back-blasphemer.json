@@ -1,0 +1,37 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.back-blasphemer",
+  "type": "ability",
+  "name": "Back Blasphemer!",
+  "aliasesEn": [],
+  "flavor": "You channel power through your weapon to repel foes.",
+  "keywords": ["area", "magic", "melee", "weapon"],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "area",
+    "area": { "shape": "cube", "size": 2, "within": 1 },
+    "raw": "2 cube within 1"
+  },
+  "target": "Each enemy in the area",
+  "powerRoll": {
+    "characteristic": "presence",
+    "tiers": [
+      { "threshold": "≤11", "text": "2 holy damage; push 1" },
+      { "threshold": "12-16", "text": "4 holy damage; push 2" },
+      { "threshold": "17+", "text": "6 holy damage; push 3" }
+    ]
+  },
+  "origin": { "kind": "class", "id": "class.censor" },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 82,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "973b5666fc99441444156a7759532204d19197cd3fd4511b3487153556e3a6f7"
+  }
+}

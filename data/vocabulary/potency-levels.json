@@ -1,0 +1,45 @@
+{
+  "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
+  "decisionsHash": "89d775de277671a4",
+  "vocabulary": "potency-levels",
+  "values": [
+    {
+      "id": "potency-level.average",
+      "idStatus": "stable",
+      "value": "average",
+      "en": "Average",
+      "zhHant": "中",
+      "aliasesZhHant": [
+        "平均"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值「中」與舊譯使用統計（「平均」僅 2 檔）後批准。"
+    },
+    {
+      "id": "potency-level.strong",
+      "idStatus": "stable",
+      "value": "strong",
+      "en": "Strong",
+      "zhHant": "強",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #16（M0 14 檔／全語料 283 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "potency-level.weak",
+      "idStatus": "stable",
+      "value": "weak",
+      "en": "Weak",
+      "zhHant": "弱",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #27（M0 9 檔／全語料 161 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    }
+  ]
+}

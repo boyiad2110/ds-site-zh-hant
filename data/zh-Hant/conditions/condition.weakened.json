@@ -1,0 +1,29 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.weakened",
+  "nameZhHant": "虛弱",
+  "aliasesZhHant": [],
+  "text": [
+    "若你陷入虛弱狀態，你進行的任何檢定都會承受 1 個劣勢。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 虛弱",
+    "commonProcessing": [],
+    "decisions": [
+      {
+        "id": "TI-3",
+        "effect": "裁決維持舊譯（保留「任何」），文字未變更"
+      }
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.weakened",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}

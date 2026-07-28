@@ -1,0 +1,86 @@
+{
+  "$comment": "非詞彙類的翻譯問題與裁決（規劃 §14.4）。詞彙問題請放 data/glossary-pending.json（由 decisions.json 生成）。本檔為人工維護，記錄已裁決與待裁決的譯文層問題，供產生 data/zh-Hant/ 時套用。",
+  "$schemaNote": "status: resolved | pending。resolved 必須有 decidedAt／decidedBy／resolution。applyTo 指出裁決要套用到哪個條目的哪個欄位；尚未產生譯文檔時，applyTo 就是待辦清單。",
+  "items": [
+    {
+      "id": "TI-1",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "condition.grabbed",
+      "field": "text[2]",
+      "issue": "舊譯多出原文沒有的時機限定「在自己回合」",
+      "sourceEn": "A grabbed creature can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat).",
+      "legacyZhHant": "你可以在自己回合使用掙脫機動動作來嘗試脫離。",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "resolution": "刪除「在自己回合」。原文未限定回合。",
+      "resolvedZhHant": "你可以使用掙脫機動動作來嘗試脫離。",
+      "applyTo": "產生 data/zh-Hant/conditions/condition.grabbed 時套用",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "affectsOnly": "condition.grabbed"
+    },
+    {
+      "id": "TI-2",
+      "kind": "source-inconsistency",
+      "severity": "low",
+      "entityId": "condition.grabbed",
+      "field": "text[0]",
+      "issue": "原文寫 abilities，舊譯寫「招式檢定」（ability rolls）。官方在 condition.restrained 寫的確實是 ability rolls，兩處用詞不同。",
+      "sourceEn": "takes a bane on abilities that don’t target the creature, object, or effect that has them grabbed",
+      "legacyZhHant": "對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "resolution": "維持舊譯「招式檢定」。疑點記錄於此，待官方勘誤釐清後再檢視。AI 不得自行歸一官方兩處不同的用詞。",
+      "resolvedZhHant": "（維持舊譯，不變更）",
+      "applyTo": "無需變更；本項僅為紀錄",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "affectsOnly": "condition.grabbed"
+    },
+    {
+      "id": "TI-3",
+      "kind": "prose-issue",
+      "severity": "low",
+      "entityId": "condition.weakened",
+      "field": "text[0]",
+      "issue": "舊譯加了原文沒有的「任何」",
+      "sourceEn": "A creature who is weakened takes a bane on power rolls.",
+      "legacyZhHant": "你進行的任何檢定都會承受 1 個劣勢。",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "resolution": "維持舊譯。power rolls 本就泛指，「任何」未擴大語意，屬語氣補強。",
+      "resolvedZhHant": "（維持舊譯，不變更）",
+      "applyTo": "無需變更；本項僅為紀錄",
+      "sourceRef": {
+        "document": "heroes-v1.01-03-class-and-abilities",
+        "pdfPage": 9,
+        "printedPage": 77
+      },
+      "affectsOnly": "condition.weakened"
+    },
+    {
+      "id": "TI-4",
+      "kind": "global-style",
+      "severity": "low",
+      "entityId": "*",
+      "field": "*",
+      "issue": "原文人稱不一致：招式用第二人稱、狀態用第三人稱；舊譯一律第二人稱",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "resolution": "規則文本一律用第二人稱「你」，即使原文為第三人稱。理由：讓玩家更好理解。已寫入指南 §7，不再逐條提報。",
+      "applyTo": "全域通則，已寫入 docs/translation-guide.md §7"
+    }
+  ],
+  "$auditNote": "每個 TI 只影響 entityId 指定的那一個實體。實體檔 data/zh-Hant/**/meta.decisions 只列出真正受影響的 TI，不做批次備註。"
+}

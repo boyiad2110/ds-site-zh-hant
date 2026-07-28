@@ -1,0 +1,2541 @@
+{
+  "$comment": "專案擁有者的術語裁決紀錄。approved 狀態由此檔疊加到 glossary.json 與 vocabulary/*.json。approved 是裁決的結果，不是裁決的理由——note 欄必須記錄實際檢視了什麼證據。",
+  "vocabulary": [
+    {
+      "vocabulary": "action-types",
+      "value": "main",
+      "en": "Main Action",
+      "zhHant": "主要動作",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #6（M0 21 檔／全語料 293 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "action-types",
+      "value": "maneuver",
+      "en": "Maneuver",
+      "zhHant": "機動動作",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值與舊譯使用統計（機動動作 202 檔）後批准。"
+    },
+    {
+      "vocabulary": "action-types",
+      "value": "triggered",
+      "en": "Triggered Action",
+      "zhHant": "反應動作",
+      "aliasesZhHant": [
+        "觸發式動作"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值「反應動作」與舊譯使用統計（觸發式動作 135 檔、反應動作 0 檔）後，批准「反應動作」為正式譯名；「觸發式動作」保留為搜尋別名，舊譯批次改寫。"
+    },
+    {
+      "vocabulary": "action-types",
+      "value": "free-triggered",
+      "en": "Free Triggered Action",
+      "zhHant": "免費反應動作",
+      "aliasesZhHant": [
+        "免費觸發式動作"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "隨 Triggered Action 的裁決連動。"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "magic",
+      "en": "Magic",
+      "zhHant": "魔法",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「魔法」。"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "weapon",
+      "en": "Weapon",
+      "zhHant": "武器",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「武器」。"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "melee",
+      "en": "Melee",
+      "zhHant": "近戰",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #10（M0 16 檔／全語料 203 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "ranged",
+      "en": "Ranged",
+      "zhHant": "遠程",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #36（M0 7 檔／全語料 233 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "strike",
+      "en": "Strike",
+      "zhHant": "打擊",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #7（M0 19 檔／全語料 276 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "ability-keywords",
+      "value": "area",
+      "en": "Area",
+      "zhHant": "區域",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #53（M0 5 檔／全語料 110 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "target-components",
+      "value": "self",
+      "en": "Self",
+      "zhHant": "自身",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「自身」。"
+    },
+    {
+      "vocabulary": "target-components",
+      "value": "creature",
+      "en": "creature",
+      "zhHant": "生物",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #1（M0 37 檔／全語料 405 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "target-components",
+      "value": "enemy",
+      "en": "enemy",
+      "zhHant": "敵人",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #15（M0 14 檔／全語料 290 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "target-components",
+      "value": "ally",
+      "en": "ally",
+      "zhHant": "盟友",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #37（M0 7 檔／全語料 193 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "target-components",
+      "value": "object",
+      "en": "object",
+      "zhHant": "物體",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #20（M0 13 檔／全語料 149 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "potency-levels",
+      "value": "weak",
+      "en": "Weak",
+      "zhHant": "弱",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #27（M0 9 檔／全語料 161 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "potency-levels",
+      "value": "average",
+      "en": "Average",
+      "zhHant": "中",
+      "aliasesZhHant": [
+        "平均"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值「中」與舊譯使用統計（「平均」僅 2 檔）後批准。"
+    },
+    {
+      "vocabulary": "potency-levels",
+      "value": "strong",
+      "en": "Strong",
+      "zhHant": "強",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #16（M0 14 檔／全語料 283 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    },
+    {
+      "vocabulary": "ability-categories",
+      "value": "signature",
+      "en": "Signature",
+      "zhHant": "招牌",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。擁有者：全稱維持 glossary 的「招牌招式」，需要短標籤時用「招牌」。"
+    },
+    {
+      "vocabulary": "ability-categories",
+      "value": "heroic",
+      "en": "Heroic",
+      "zhHant": "英雄",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。全稱為 glossary 的「英雄招式」。"
+    },
+    {
+      "vocabulary": "ability-categories",
+      "value": "inherent",
+      "en": "Inherent",
+      "zhHant": "固有",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。擁有者裁決 inherent＝固有。指由範型特性授予的招式（審判、捨己為人），既非招牌亦非英雄。沿用舊 CSV 類別欄的「固有」。"
+    }
+  ],
+  "glossary": [
+    {
+      "en": "Effect",
+      "sense": "rules-effect",
+      "zhHant": "效果",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「效果」。須與招式版式的段落標題 `Effect:` 區分——後者是版式標籤，非規則名詞。",
+      "status": "approved"
+    },
+    {
+      "en": "Save Ends",
+      "zhHant": "豁免解除",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者確認為規則術語，非「豁免」。",
+      "status": "approved"
+    },
+    {
+      "en": "EoT",
+      "zhHant": "EoT",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "保留英文縮寫不翻譯。擁有者裁決理由：便於玩家閱讀。通則——原文寫全文 `end of their turn` 時中文亦採縮寫。",
+      "status": "approved"
+    },
+    {
+      "en": "EoE",
+      "zhHant": "EoE",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "隨 EoT 的裁決連動。",
+      "status": "approved"
+    },
+    {
+      "en": "Power Roll",
+      "zhHant": "檢定",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #2（M0 27 檔／全語料 383 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ability",
+      "zhHant": "招式",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #3（M0 25 檔／全語料 278 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Might",
+      "zhHant": "力量",
+      "category": "規則/屬性",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #4（M0 25 檔／全語料 249 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Movement",
+      "zhHant": "移動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #5（M0 23 檔／全語料 169 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Speed",
+      "zhHant": "速度",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #8（M0 19 檔／全語料 139 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Damage",
+      "zhHant": "傷害",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #9（M0 17 檔／全語料 407 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Condition",
+      "zhHant": "狀態",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #11（M0 16 檔／全語料 75 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Class",
+      "zhHant": "範型",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #12（M0 15 檔／全語料 179 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Censor",
+      "zhHant": "懲戒者",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #13（M0 15 檔／全語料 73 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Target",
+      "zhHant": "目標",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #14（M0 14 檔／全語料 311 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Adjacent",
+      "zhHant": "相鄰",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #17（M0 14 檔／全語料 76 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Bane",
+      "zhHant": "劣勢",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #18（M0 14 檔／全語料 62 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Turn",
+      "zhHant": "回合",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #19（M0 13 檔／全語料 184 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Agility",
+      "zhHant": "敏捷",
+      "category": "規則/屬性",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #21（M0 13 檔／全語料 146 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Free Strike",
+      "zhHant": "基礎打擊",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #22（M0 12 檔／全語料 71 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Stamina",
+      "zhHant": "體力",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #23（M0 11 檔／全語料 137 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ability Roll",
+      "zhHant": "招式檢定",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #24（M0 11 檔／全語料 49 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Test",
+      "zhHant": "考驗",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #25（M0 10 檔／全語料 79 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Wrath",
+      "zhHant": "怒火",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #26（M0 10 檔／全語料 35 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Edge",
+      "zhHant": "優勢",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #28（M0 9 檔／全語料 89 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Size",
+      "zhHant": "體型",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #29（M0 9 檔／全語料 70 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Shift",
+      "zhHant": "遁移",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #30（M0 8 檔／全語料 86 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Recovery",
+      "zhHant": "復元力",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #31（M0 8 檔／全語料 81 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Kit",
+      "zhHant": "套裝",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #32（M0 8 檔／全語料 72 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Teleport",
+      "zhHant": "傳送",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #33（M0 8 檔／全語料 52 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Move Action",
+      "zhHant": "移動動作",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #34（M0 8 檔／全語料 38 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Fly",
+      "zhHant": "飛行",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #35（M0 8 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Presence",
+      "zhHant": "氣場",
+      "category": "規則/屬性",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #38（M0 7 檔／全語料 105 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Psychic",
+      "zhHant": "心靈",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #39（M0 7 檔／全語料 95 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Stand Up",
+      "zhHant": "起身",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #40（M0 7 檔／全語料 32 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Climb",
+      "zhHant": "攀爬",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #41（M0 7 檔／全語料 25 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Skill",
+      "zhHant": "技能",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #42（M0 6 檔／全語料 178 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Saving Throw",
+      "zhHant": "豁免",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #43（M0 6 檔／全語料 104 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Holy",
+      "zhHant": "神聖",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #44（M0 6 檔／全語料 77 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Jump",
+      "zhHant": "跳躍",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #45（M0 6 檔／全語料 39 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ground",
+      "zhHant": "地面",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #46（M0 6 檔／全語料 33 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Vertical",
+      "zhHant": "垂直",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #47（M0 6 檔／全語料 32 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Knockback",
+      "zhHant": "擊退",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #48（M0 6 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Recovery Value",
+      "zhHant": "復元值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #49（M0 6 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Charge",
+      "zhHant": "衝鋒",
+      "category": "規則/主要動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #50（M0 6 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Swim",
+      "zhHant": "游泳",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #51（M0 6 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Burrow",
+      "zhHant": "掘地",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #52（M0 6 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Push",
+      "zhHant": "推動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #54（M0 5 檔／全語料 72 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Grab",
+      "zhHant": "擒抱",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #55（M0 5 檔／全語料 22 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Line of Effect",
+      "zhHant": "效果線",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #56（M0 5 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Falling",
+      "zhHant": "墜落",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #57（M0 5 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Advance",
+      "zhHant": "行進",
+      "category": "規則/移動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #58（M0 5 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Crawl",
+      "zhHant": "爬行",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #59（M0 5 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Characteristics",
+      "zhHant": "屬性",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #60（M0 4 檔／全語料 77 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Signature Ability",
+      "zhHant": "招牌招式",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #61（M0 4 檔／全語料 68 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Disengage",
+      "zhHant": "撤離",
+      "category": "規則/移動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #62（M0 4 檔／全語料 58 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Heroic Ability",
+      "zhHant": "英雄招式",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #63（M0 4 檔／全語料 56 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Forced Movement",
+      "zhHant": "強制移動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #64（M0 4 檔／全語料 53 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Victory",
+      "zhHant": "勝利值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #66（M0 4 檔／全語料 30 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Heal",
+      "zhHant": "治療",
+      "category": "規則/主要動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #67（M0 4 檔／全語料 26 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Melee Free Strike",
+      "zhHant": "近戰基礎打擊",
+      "category": "規則/主要動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #68（M0 4 檔／全語料 17 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Double Bane",
+      "zhHant": "雙劣勢",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #69（M0 4 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ride",
+      "zhHant": "騎乘",
+      "category": "規則/移動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #70（M0 4 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Walk",
+      "zhHant": "步行",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #71（M0 4 檔／全語料 4 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Intuition",
+      "zhHant": "直覺",
+      "category": "規則/屬性",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #72（M0 3 檔／全語料 120 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Tactician",
+      "zhHant": "戰術家",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #73（M0 3 檔／全語料 64 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Potency",
+      "zhHant": "效力",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #74（M0 3 檔／全語料 55 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Cube",
+      "zhHant": "立方",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #75（M0 3 檔／全語料 35 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Hide",
+      "zhHant": "躲藏",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #76（M0 3 檔／全語料 34 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Mundane",
+      "zhHant": "尋常",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #77（M0 3 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Difficult Terrain",
+      "zhHant": "困難地形",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #78（M0 3 檔／全語料 27 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Free Maneuver",
+      "zhHant": "免費機動動作",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #79（M0 3 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Winded",
+      "zhHant": "疲態",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #80（M0 3 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Defend",
+      "zhHant": "防禦",
+      "category": "規則/主要動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #81（M0 3 檔／全語料 18 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Escape Grab",
+      "zhHant": "掙脫",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #82（M0 3 檔／全語料 18 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Cover",
+      "zhHant": "掩護",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #83（M0 3 檔／全語料 17 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Opportunity Attack",
+      "zhHant": "藉機攻擊",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #84（M0 3 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Catch Breath",
+      "zhHant": "喘息",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #85（M0 3 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Leader",
+      "zhHant": "首領",
+      "category": "規則/生物組織",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #86（M0 3 檔／全語料 11 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Dig",
+      "zhHant": "鑽地",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #87（M0 3 檔／全語料 3 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Hover",
+      "zhHant": "懸浮",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #88（M0 3 檔／全語料 3 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Reason",
+      "zhHant": "理智",
+      "category": "規則/屬性",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #89（M0 2 檔／全語料 147 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Bonus",
+      "zhHant": "加值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #90（M0 2 檔／全語料 108 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Elementalist",
+      "zhHant": "元素師",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #91（M0 2 檔／全語料 80 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Troubadour",
+      "zhHant": "遊唱家",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #92（M0 2 檔／全語料 78 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Shadow",
+      "zhHant": "影舞者",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #93（M0 2 檔／全語料 69 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Fury",
+      "zhHant": "熾怒者",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #94（M0 2 檔／全語料 62 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Focus",
+      "zhHant": "專注",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #95（M0 2 檔／全語料 51 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Insight",
+      "zhHant": "洞察",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #96（M0 2 檔／全語料 44 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Dying",
+      "zhHant": "瀕死",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #97（M0 2 檔／全語料 40 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Essence",
+      "zhHant": "精髓",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #98（M0 2 檔／全語料 34 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Heroic Resource",
+      "zhHant": "英雄資源",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #99（M0 2 檔／全語料 34 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Treasure",
+      "zhHant": "寶物",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #100（M0 2 檔／全語料 30 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Negotiation",
+      "zhHant": "談判",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #101（M0 2 檔／全語料 24 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Combat Round",
+      "zhHant": "戰鬥輪",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #102（M0 2 檔／全語料 20 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Consumable",
+      "zhHant": "消耗品",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #103（M0 2 檔／全語料 20 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Pull",
+      "zhHant": "拉動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #104（M0 2 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Subclass",
+      "zhHant": "子範型",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #105（M0 2 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Concealment",
+      "zhHant": "遮蔽",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #106（M0 2 檔／全語料 18 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Consequence",
+      "zhHant": "波折",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #107（M0 2 檔／全語料 13 檔），裁決不採舊譯「麻煩」，改用「波折」。擁有者另裁定舊譯「麻煩」保留為搜尋別名。",
+      "status": "approved",
+      "aliasesZhHant": [
+        "麻煩"
+      ]
+    },
+    {
+      "en": "Mount",
+      "zhHant": "坐騎",
+      "category": "規則/生物定位",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #108（M0 2 檔／全語料 8 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Solo",
+      "zhHant": "獨霸",
+      "category": "規則/生物組織",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #109（M0 2 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Aid Attack",
+      "zhHant": "助攻",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #110（M0 2 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Penalty",
+      "zhHant": "減值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #111（M0 2 檔／全語料 4 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Search for Hidden Creatures",
+      "zhHant": "搜索隱藏生物",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #112（M0 2 檔／全語料 4 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Damaging Terrain",
+      "zhHant": "危險地形",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #113（M0 2 檔／全語料 2 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "High Ground",
+      "zhHant": "高位",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #114（M0 2 檔／全語料 2 檔），裁決不採舊譯「高地」，改用「高位」。擁有者另裁定舊譯「高地」保留為搜尋別名。",
+      "status": "approved",
+      "aliasesZhHant": [
+        "高地"
+      ]
+    },
+    {
+      "en": "Use Consumable",
+      "zhHant": "使用消耗品",
+      "category": "規則/機動動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #115（M0 2 檔／全語料 2 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Conduit",
+      "zhHant": "神導士",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #116（M0 1 檔／全語料 77 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Null",
+      "zhHant": "無念者",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #117（M0 1 檔／全語料 74 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Talent",
+      "zhHant": "異能者",
+      "category": "規則/範型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #118（M0 1 檔／全語料 68 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Surge",
+      "zhHant": "鬥志",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #119（M0 1 檔／全語料 63 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Stability",
+      "zhHant": "穩度",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #120（M0 1 檔／全語料 58 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Saint",
+      "zhHant": "聖者",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #121（M0 1 檔／全語料 54 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Slide",
+      "zhHant": "滑動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #122（M0 1 檔／全語料 50 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Echelon",
+      "zhHant": "境界",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #123（M0 1 檔／全語料 49 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Strained",
+      "zhHant": "焦慮",
+      "category": "角色/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #124（M0 1 檔／全語料 43 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Perk",
+      "zhHant": "專長",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #125（M0 1 檔／全語料 40 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Research",
+      "zhHant": "研究",
+      "category": "規則/專案",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #126（M0 1 檔／全語料 40 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Lightning",
+      "zhHant": "閃電",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #128（M0 1 檔／全語料 34 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Human",
+      "zhHant": "人類",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #129（M0 1 檔／全語料 33 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Dwarf",
+      "zhHant": "矮人",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #130（M0 1 檔／全語料 32 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ferocity",
+      "zhHant": "狠勁",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #131（M0 1 檔／全語料 32 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Drama",
+      "zhHant": "張力",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #132（M0 1 檔／全語料 31 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Aura",
+      "zhHant": "靈光",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #134（M0 1 檔／全語料 29 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Discipline",
+      "zhHant": "紀律",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #135（M0 1 檔／全語料 29 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Piety",
+      "zhHant": "虔誠",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #136（M0 1 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Double Edge",
+      "zhHant": "雙優勢",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #137（M0 1 檔／全語料 27 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Clarity",
+      "zhHant": "明晰",
+      "category": "規則/英雄資源",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #138（M0 1 檔／全語料 26 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Orc",
+      "zhHant": "歐克",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #139（M0 1 檔／全語料 25 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Supernatural",
+      "zhHant": "超常",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #140（M0 1 檔／全語料 24 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Vasloria",
+      "zhHant": "華斯洛里亞",
+      "category": "地名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #141（M0 1 檔／全語料 24 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Rolled Damage",
+      "zhHant": "檢定傷害",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #142（M0 1 檔／全語料 23 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Damage Type",
+      "zhHant": "傷害類型",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #143（M0 1 檔／全語料 20 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Devil",
+      "zhHant": "魔鬼",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #144（M0 1 檔／全語料 20 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Timescape",
+      "zhHant": "時界",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #145（M0 1 檔／全語料 18 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Patience",
+      "zhHant": "耐心",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #146（M0 1 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Project Roll",
+      "zhHant": "專案檢定",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #147（M0 1 檔／全語料 13 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Reward",
+      "zhHant": "獎勵",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #148（M0 1 檔／全語料 13 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ajax",
+      "zhHant": "艾傑克斯",
+      "category": "人名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #149（M0 1 檔／全語料 12 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Capital",
+      "zhHant": "元城",
+      "category": "地名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #150（M0 1 檔／全語料 11 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Motivation",
+      "zhHant": "動機",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #151（M0 1 檔／全語料 11 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Respite",
+      "zhHant": "休整",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #152（M0 1 檔／全語料 10 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Surprised",
+      "zhHant": "措手不及",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #153（M0 1 檔／全語料 8 檔），裁決不採舊譯「奇襲」，改用「措手不及」。擁有者另裁定舊譯「奇襲」保留為搜尋別名。",
+      "status": "approved",
+      "aliasesZhHant": [
+        "奇襲"
+      ]
+    },
+    {
+      "en": "Claw Dirt",
+      "zhHant": "挖土",
+      "category": "規則/招式",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #154（M0 1 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Flanking",
+      "zhHant": "夾擊",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #155（M0 1 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Breakthrough",
+      "zhHant": "突破",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #156（M0 1 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Critical Hit",
+      "zhHant": "暴擊",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #157（M0 1 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Humanoid",
+      "zhHant": "類人生物",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #158（M0 1 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Hero Tokens",
+      "zhHant": "英雄幣",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #159（M0 1 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Suffocating",
+      "zhHant": "窒息",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #160（M0 1 檔／全語料 4 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Minion",
+      "zhHant": "雜魚",
+      "category": "規則/生物組織",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #161（M0 1 檔／全語料 3 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Side",
+      "zhHant": "陣營",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #162（M0 1 檔／全語料 3 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Bredbeddle",
+      "zhHant": "奪首巨人",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #163（M0 1 檔／全語料 2 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Experience",
+      "zhHant": "經驗值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #164（M0 1 檔／全語料 2 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Overmind",
+      "zhHant": "腦魔",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #166（M0 1 檔／全語料 2 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Mounted Combat",
+      "zhHant": "騎乘戰鬥",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #167（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Natural Roll",
+      "zhHant": "天然骰值",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #168（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Respite Activity",
+      "zhHant": "休整活動",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #169（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Unattended",
+      "zhHant": "無主",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #170（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Unattended Object",
+      "zhHant": "無主物體",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #171（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Underwater Combat",
+      "zhHant": "水下戰鬥",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #172（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Valok",
+      "zhHant": "華洛克",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #173（M0 1 檔／全語料 1 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ancestry",
+      "zhHant": "族裔",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #174（M0 0 檔／全語料 101 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Burst",
+      "zhHant": "爆發",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #175（M0 0 檔／全語料 57 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Corruption",
+      "zhHant": "腐朽",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #176（M0 0 檔／全語料 47 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Project Goal",
+      "zhHant": "專案目標",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #177（M0 0 檔／全語料 41 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Item Prerequisite",
+      "zhHant": "前置材料",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #178（M0 0 檔／全語料 37 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Project Source",
+      "zhHant": "專案來源",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #179（M0 0 檔／全語料 37 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Culture",
+      "zhHant": "文化",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #180（M0 0 檔／全語料 36 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Temporary Stamina",
+      "zhHant": "臨時體力",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #182（M0 0 檔／全語料 31 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Wode",
+      "zhHant": "幻林",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #183（M0 0 檔／全語料 31 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Green",
+      "zhHant": "翠息",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #184（M0 0 檔／全語料 29 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Career",
+      "zhHant": "職業",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #185（M0 0 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Void",
+      "zhHant": "虛冥",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #186（M0 0 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Wode Elf",
+      "zhHant": "幻林精靈",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #187（M0 0 檔／全語料 28 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "High Elves",
+      "zhHant": "高等精靈",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #188（M0 0 檔／全語料 27 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Poison",
+      "zhHant": "劇毒",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #189（M0 0 檔／全語料 26 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Cold",
+      "zhHant": "寒冷",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #190（M0 0 檔／全語料 23 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Sonic",
+      "zhHant": "音波",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #191（M0 0 檔／全語料 23 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Acid",
+      "zhHant": "強酸",
+      "category": "規則/傷害類型",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #192（M0 0 檔／全語料 22 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Dragon Knight",
+      "zhHant": "龍騎士",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #193（M0 0 檔／全語料 22 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Earth",
+      "zhHant": "磐土",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #194（M0 0 檔／全語料 22 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Malice",
+      "zhHant": "惡意",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #195（M0 0 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Orden",
+      "zhHant": "歐爾登",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #196（M0 0 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Renown",
+      "zhHant": "聲望",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #197（M0 0 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Time Raider",
+      "zhHant": "時空獵手",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #198（M0 0 檔／全語料 21 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Polder",
+      "zhHant": "波德人",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #200（M0 0 檔／全語料 20 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Caelian",
+      "zhHant": "凱利安語",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #201（M0 0 檔／全語料 19 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Revenant",
+      "zhHant": "還魂屍",
+      "category": "規則/族裔",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #203（M0 0 檔／全語料 16 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Background",
+      "zhHant": "背景",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #204（M0 0 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Project Points",
+      "zhHant": "專案點數",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #205（M0 0 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Sage",
+      "zhHant": "學者",
+      "category": "規則/追隨者",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #206（M0 0 檔／全語料 14 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Artisan",
+      "zhHant": "工匠",
+      "category": "規則/追隨者",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #207（M0 0 檔／全語料 13 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Interest",
+      "zhHant": "興趣",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #208（M0 0 檔／全語料 13 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Wealth",
+      "zhHant": "財富",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #209（M0 0 檔／全語料 13 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Draconian",
+      "zhHant": "龍人",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #210（M0 0 檔／全語料 11 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Damage Weakness",
+      "zhHant": "傷害弱點",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #211（M0 0 檔／全語料 10 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Cloak and Dagger",
+      "zhHant": "潛襲",
+      "category": "角色/套裝",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #212（M0 0 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Damage Immunity",
+      "zhHant": "傷害免疫",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #213（M0 0 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Manifold",
+      "zhHant": "衍界",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #214（M0 0 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Rot",
+      "zhHant": "枯蝕",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #215（M0 0 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Upbringing",
+      "zhHant": "成長經歷",
+      "category": "規則/文化",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #216（M0 0 檔／全語料 9 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Environment",
+      "zhHant": "生活環境",
+      "category": "規則/文化",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #217（M0 0 檔／全語料 8 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ranged Free Strike",
+      "zhHant": "遠程基礎打擊",
+      "category": "規則/主要動作",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #218（M0 0 檔／全語料 8 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Support",
+      "zhHant": "支援",
+      "category": "規則/生物定位",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #219（M0 0 檔／全語料 8 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Brute",
+      "zhHant": "鬥士",
+      "category": "規則/生物定位",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #220（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Cavall",
+      "zhHant": "卡瓦爾",
+      "category": "神明",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #221（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Implement",
+      "zhHant": "法器",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #222（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Kul",
+      "zhHant": "庫爾",
+      "category": "神明",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #223（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Ord",
+      "zhHant": "歐德",
+      "category": "神明",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #224（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Synliroi；Synlirii",
+      "zhHant": "心語者",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #225（M0 0 檔／全語料 7 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Adûn",
+      "zhHant": "艾杜恩",
+      "category": "神明",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #226（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Chronopathy",
+      "zhHant": "御劫流",
+      "category": "角色/異能者流派",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #227（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Follower",
+      "zhHant": "追隨者",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #228（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Omund",
+      "zhHant": "歐蒙",
+      "category": "人名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #229（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Quintessence",
+      "zhHant": "極粹界",
+      "category": "地名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #230（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Telekinesis",
+      "zhHant": "念動流",
+      "category": "角色/異能者流派",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #231（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Telepathy",
+      "zhHant": "傳心流",
+      "category": "角色/異能者流派",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #232（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Voll",
+      "zhHant": "沃爾語",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #233（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Yllyric",
+      "zhHant": "伊林語",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #234（M0 0 檔／全語料 6 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Air",
+      "zhHant": "翔風",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #235（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Axiom",
+      "zhHant": "公理界",
+      "category": "地名",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #236（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Complication",
+      "zhHant": "糾葛",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #237（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Downtime Project",
+      "zhHant": "休整專案",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #238（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Elite",
+      "zhHant": "精英",
+      "category": "規則/生物組織",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #239（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "God",
+      "zhHant": "神祇",
+      "category": "規則/術語",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #240（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Healing Potion",
+      "zhHant": "治療藥水",
+      "category": "冒險/德利安古墓",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #241（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Kalliak",
+      "zhHant": "卡力語",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #242（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Organization",
+      "zhHant": "組織型態",
+      "category": "規則/文化",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #243（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Steel Dwarf",
+      "zhHant": "鐵矮人",
+      "category": "生物",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #244（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Val",
+      "zhHant": "華爾",
+      "category": "神明",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #245（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Water",
+      "zhHant": "流水",
+      "category": "角色/元素精通",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #246（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Zaliac",
+      "zhHant": "札力語",
+      "category": "世界觀",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者批次審閱 docs/term-review-queue.md B 段 #247（M0 0 檔／全語料 5 檔），建議譯名取自舊譯，一次批准。",
+      "status": "approved"
+    },
+    {
+      "en": "Square",
+      "zhHant": "格",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者裁決：正式譯名「格」，「方格」保留為搜尋別名。原話並附帶「實際上需要看上下文，無法統一概括」——招式卡距離欄一律用「格」，其他語境出現時仍須個別確認。舊 CSV 的 zh-tw 欄寫「方格/格」，一欄兩候選，由擁有者選定。",
+      "aliasesZhHant": [
+        "方格"
+      ]
+    },
+    {
+      "en": "Distance",
+      "zhHant": "射程",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者裁決：招式的 Distance 欄譯「射程」；原話「其他情況需要看上下文」，故「距離」保留為搜尋別名，非招式語境出現時須個別確認。舊 CSV 的 zh-tw 欄寫「射程/距離」。",
+      "aliasesZhHant": [
+        "距離"
+      ]
+    },
+    {
+      "en": "Natural 19 or 20",
+      "zhHant": "天然 19/20",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者定稿「天然 19/20」。斜線為數字並列，非候選並列。"
+    },
+    {
+      "en": "XP",
+      "zhHant": "XP",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者裁決保留英文不譯，與 EoT／EoE 同一原則。全稱 Experience 譯「經驗值」（見 term.experience）。"
+    },
+    {
+      "en": "Exorcist",
+      "zhHant": "驅邪",
+      "category": "規則/教團",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "懲戒者三教團之一。不在 glossary_old.csv，擁有者裁決沿用舊譯「驅邪」。"
+    },
+    {
+      "en": "Oracle",
+      "zhHant": "神諭",
+      "category": "規則/教團",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "懲戒者三教團之一。不在 glossary_old.csv，擁有者裁決沿用舊譯「神諭」。"
+    },
+    {
+      "en": "Paragon",
+      "zhHant": "典範",
+      "category": "規則/教團",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "懲戒者三教團之一。不在 glossary_old.csv，擁有者裁決沿用舊譯「典範」。擁有者已知悉與 Class「範型」字面相近，仍採此譯。"
+    },
+    {
+      "en": "Encounter",
+      "zhHant": "遭遇",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "不在 glossary_old.csv，擁有者裁決沿用舊譯「遭遇」。用於「until the end of the encounter」等持續時間敘述。"
+    },
+    {
+      "en": "Order",
+      "sense": "censor-subclass",
+      "zhHant": "教團",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者裁決「教團」。官方原文直接以 subclass 稱呼 censor order（規劃 §14.1.3(5)）。舊譯用「審判教團益處」。"
+    },
+    {
+      "en": "Bleeding",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「出血」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.bleeding.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Dazed",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「暈眩」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.dazed.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Frightened",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「畏縮」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.frightened.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Grabbed",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「擒制」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.grabbed.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Prone",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「伏地」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.prone.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Restrained",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「束縛」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.restrained.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Slowed",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「緩速」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.slowed.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Taunted",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「嘲諷」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.taunted.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    },
+    {
+      "en": "Weakened",
+      "category": "規則/狀態",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者於 docs/alignment/conditions.md 逐條確認中文名「虛弱」與 Heroes v1.01 印刷頁 77 原文相符後，指示正式建立狀態實體。名稱不寫在此——權威在 data/zh-Hant/conditions/condition.weakened.json 的 nameZhHant，本條目以 entityRef 指向該實體。"
+    }
+  ],
+  "$schemaNote": "multiTranslations：同英文不同譯名的裁決。resolution='split' 時以 entries[] 指定各 sense；resolution='merge' 時以 sourceIds[] 合併為單一 stableId，未採用的舊譯自動保留為 aliasesZhHant。以 provisionalId 對應個別來源列（非僅以英文為 key），並比對 zhHant 防止對應漂移。tombstones：stable id 的合法移除紀錄，需 reason／decidedAt／decidedBy。 pending：手動提報的未裁決項，為 glossary-pending.json 的唯一人工來源（生成檔不再自我輸入）。",
+  "multiTranslations": [
+    {
+      "en": "Fire",
+      "resolution": "split",
+      "note": "擁有者裁決：兩者代表不同概念，各自獨立為正式詞條。M0 使用傷害類型「火焰」（淨化聖火的 fire weakness／fire damage）；「烈火」保留但本輪不影響。",
+      "entries": [
+        {
+          "provisionalId": "term.fire.s1",
+          "sourceZhHant": "火焰",
+          "stableId": "term.fire.damage-type",
+          "sense": "damage-type",
+          "zhHant": "火焰",
+          "status": "approved",
+          "decidedAt": "2026-07-28",
+          "decidedBy": "owner",
+          "note": "傷害類型。M0 由「淨化聖火」Purifying Fire 用到（fire weakness 3/5/7、fire damage）。"
+        },
+        {
+          "provisionalId": "term.fire.s2",
+          "sourceZhHant": "烈火",
+          "stableId": "term.fire.elementalist-mastery",
+          "sense": "elementalist-mastery",
+          "zhHant": "烈火",
+          "status": "approved",
+          "decidedAt": "2026-07-28",
+          "decidedBy": "owner",
+          "note": "元素師的元素精通。非 M0 範圍，但依裁決一併建立為獨立詞條。"
+        }
+      ]
+    }
+  ],
+  "tombstones": [
+    {
+      "id": "term.experience-xp",
+      "reason": "經 notTerms 裁定非術語，條目移除。語意由 term.experience 與 term.xp 承接。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    }
+  ],
+  "pending": [],
+  "notTerms": [
+    {
+      "en": "Experience (XP)",
+      "reason": "擁有者說明：這是當初自己註記用的寫法，不該成為獨立詞彙。正確拆法為 Experience=經驗值、XP=XP。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner"
+    }
+  ]
+}

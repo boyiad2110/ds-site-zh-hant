@@ -1,0 +1,20 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
+  "id": "condition.restrained",
+  "type": "condition",
+  "name": "Restrained",
+  "aliasesEn": [],
+  "text": [
+    "A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.",
+    "If a creature teleports while restrained, that condition ends."
+  ],
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "version": "1.01",
+    "pdfPage": 9,
+    "printedPage": 77,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "1b34f922af94439d3f0c2cdc3a38c53806a066a2372a6885196671dd93aa33f8"
+  }
+}

@@ -1,0 +1,12 @@
+name: Censored
+flavor: Judged and sentenced.
+keywords: melee, strike, weapon
+actionType: main
+cost: 5 wrath
+distance: Melee 1
+target: One creature
+powerRoll: Power Roll + might
+tier≤11: 2 + M holy damage
+tier12-16: 3 + M holy damage
+tier17+: 5 + M holy damage
+effect: When a target who is not a leader or solo creature is made winded by this ability, they are reduced to 0 Stamina.

@@ -1,0 +1,12 @@
+name: The Gods Punish and Defend
+flavor: You channel holy energy to smite a foe and heal an ally.
+keywords: magic, melee, strike, weapon
+actionType: main
+cost: 3 wrath
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + might
+tier≤11: 5 + M holy damage
+tier12-16: 8 + M holy damage
+tier17+: 11 + M holy damage
+effect: You can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value.

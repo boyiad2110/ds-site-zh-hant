@@ -1,0 +1,79 @@
+{
+  "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
+  "decisionsHash": "89d775de277671a4",
+  "vocabulary": "ability-keywords",
+  "values": [
+    {
+      "id": "ability-keyword.area",
+      "idStatus": "stable",
+      "value": "area",
+      "en": "Area",
+      "zhHant": "區域",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #53（M0 5 檔／全語料 110 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.magic",
+      "idStatus": "stable",
+      "value": "magic",
+      "en": "Magic",
+      "zhHant": "魔法",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「魔法」。",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.melee",
+      "idStatus": "stable",
+      "value": "melee",
+      "en": "Melee",
+      "zhHant": "近戰",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #10（M0 16 檔／全語料 203 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.ranged",
+      "idStatus": "stable",
+      "value": "ranged",
+      "en": "Ranged",
+      "zhHant": "遠程",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #36（M0 7 檔／全語料 233 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.strike",
+      "idStatus": "stable",
+      "value": "strike",
+      "en": "Strike",
+      "zhHant": "打擊",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #7（M0 19 檔／全語料 276 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-keyword.weapon",
+      "idStatus": "stable",
+      "value": "weapon",
+      "en": "Weapon",
+      "zhHant": "武器",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "舊 CSV 無此條。擁有者採舊譯用法「武器」。",
+      "aliasesZhHant": []
+    }
+  ]
+}

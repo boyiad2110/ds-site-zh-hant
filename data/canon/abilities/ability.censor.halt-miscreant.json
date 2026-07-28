@@ -1,0 +1,49 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.halt-miscreant",
+  "type": "ability",
+  "name": "Halt Miscreant!",
+  "aliasesEn": [],
+  "flavor": "You infuse your weapon with holy magic that makes it difficult for your foe to get away.",
+  "keywords": ["melee", "strike", "weapon"],
+  "actionType": "main",
+  "cost": null,
+  "distance": { "kind": "melee", "value": 1, "raw": "Melee 1" },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + M holy damage; slowed (save ends)",
+        "potency": { "characteristic": "presence", "level": "weak" },
+        "raw": "2 + M holy damage; P<WEAK, slowed (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + M holy damage; slowed (save ends)",
+        "potency": { "characteristic": "presence", "level": "average" },
+        "raw": "5 + M holy damage; P<AVERAGE, slowed (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "7 + M holy damage; slowed (save ends)",
+        "potency": { "characteristic": "presence", "level": "strong" },
+        "raw": "7 + M holy damage; P<STRONG, slowed (save ends)"
+      }
+    ]
+  },
+  "extraCosts": [],
+  "origin": { "kind": "class", "id": "class.censor" },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 82,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "573d9d7b5f59a32e1c9a2bda999c5616fb30b2af404599543bc5b9a09ab64a69"
+  }
+}

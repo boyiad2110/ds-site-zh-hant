@@ -1,0 +1,57 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.your-allies-cannot-save-you",
+  "type": "ability",
+  "name": "Your Allies Cannot Save You!",
+  "aliasesEn": [],
+  "flavor": "Your magic strike turns your foe’s guilt into a burst of holy power.",
+  "keywords": [
+    "melee",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + M holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + M holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + M holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "Each enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 82,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "15987e95e76e1bfbfa27e1f900374be4a018ec7824d1ed50ceb533b94be15209"
+  }
+}

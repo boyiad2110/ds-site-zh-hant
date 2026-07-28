@@ -1,0 +1,61 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.the-gods-punish-and-defend",
+  "type": "ability",
+  "name": "The Gods Punish and Defend",
+  "aliasesEn": [],
+  "flavor": "You channel holy energy to smite a foe and heal an ally.",
+  "keywords": [
+    "magic",
+    "melee",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 3
+  },
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + M holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "8 + M holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "11 + M holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "You can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 83,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "600118b334c67dc5a16641b7a9e7673394433c2889973ed84adbc4c1c93e3474"
+  }
+}

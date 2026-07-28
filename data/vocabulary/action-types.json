@@ -1,0 +1,59 @@
+{
+  "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
+  "decisionsHash": "89d775de277671a4",
+  "vocabulary": "action-types",
+  "values": [
+    {
+      "id": "action-type.free-triggered",
+      "idStatus": "stable",
+      "value": "free-triggered",
+      "en": "Free Triggered Action",
+      "zhHant": "免費反應動作",
+      "aliasesZhHant": [
+        "免費觸發式動作"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "隨 Triggered Action 的裁決連動。"
+    },
+    {
+      "id": "action-type.main",
+      "idStatus": "stable",
+      "value": "main",
+      "en": "Main Action",
+      "zhHant": "主要動作",
+      "status": "approved",
+      "note": "擁有者批次審閱 docs/term-review-queue.md A 段 #6（M0 21 檔／全語料 293 檔），建議譯名取自舊譯，一次批准。",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "action-type.maneuver",
+      "idStatus": "stable",
+      "value": "maneuver",
+      "en": "Maneuver",
+      "zhHant": "機動動作",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值與舊譯使用統計（機動動作 202 檔）後批准。",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "action-type.triggered",
+      "idStatus": "stable",
+      "value": "triggered",
+      "en": "Triggered Action",
+      "zhHant": "反應動作",
+      "aliasesZhHant": [
+        "觸發式動作"
+      ],
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "擁有者檢視舊 CSV 值「反應動作」與舊譯使用統計（觸發式動作 135 檔、反應動作 0 檔）後，批准「反應動作」為正式譯名；「觸發式動作」保留為搜尋別名，舊譯批次改寫。"
+    }
+  ]
+}

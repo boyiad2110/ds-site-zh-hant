@@ -1,0 +1,60 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.behold-a-shield-of-faith",
+  "type": "ability",
+  "name": "Behold a Shield of Faith!",
+  "aliasesEn": [],
+  "flavor": "A mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.",
+  "keywords": [
+    "melee",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 3
+  },
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + M holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + M holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + M holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "Until the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 82,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "78d6ef2e40eb2e0cc4956a550e71f04b973927bb144a5faa88baec280d311ef5"
+  }
+}

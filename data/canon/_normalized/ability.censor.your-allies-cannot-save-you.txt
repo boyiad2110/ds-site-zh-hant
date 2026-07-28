@@ -1,0 +1,12 @@
+name: Your Allies Cannot Save You!
+flavor: Your magic strike turns your foe’s guilt into a burst of holy power.
+keywords: melee, strike, weapon
+actionType: main
+cost: none
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + might
+tier≤11: 3 + M holy damage
+tier12-16: 5 + M holy damage
+tier17+: 8 + M holy damage
+effect: Each enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.

@@ -1,0 +1,43 @@
+{
+  "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
+  "decisionsHash": "89d775de277671a4",
+  "vocabulary": "ability-categories",
+  "values": [
+    {
+      "id": "ability-categorie.heroic",
+      "idStatus": "stable",
+      "value": "heroic",
+      "en": "Heroic",
+      "zhHant": "英雄",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。全稱為 glossary 的「英雄招式」。",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-categorie.inherent",
+      "idStatus": "stable",
+      "value": "inherent",
+      "en": "Inherent",
+      "zhHant": "固有",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。擁有者裁決 inherent＝固有。指由範型特性授予的招式（審判、捨己為人），既非招牌亦非英雄。沿用舊 CSV 類別欄的「固有」。",
+      "aliasesZhHant": []
+    },
+    {
+      "id": "ability-categorie.signature",
+      "idStatus": "stable",
+      "value": "signature",
+      "en": "Signature",
+      "zhHant": "招牌",
+      "status": "approved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "note": "招式分類短標籤。擁有者：全稱維持 glossary 的「招牌招式」，需要短標籤時用「招牌」。",
+      "aliasesZhHant": []
+    }
+  ]
+}

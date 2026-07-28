@@ -1,0 +1,19 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
+  "id": "condition.dazed",
+  "type": "condition",
+  "name": "Dazed",
+  "aliasesEn": [],
+  "text": [
+    "A creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers."
+  ],
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "version": "1.01",
+    "pdfPage": 9,
+    "printedPage": 77,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "3bc0ff6c4b1392fc395e0ffb1798c0b69cd09951deab2dcd2bd017e8fb61f4b0"
+  }
+}

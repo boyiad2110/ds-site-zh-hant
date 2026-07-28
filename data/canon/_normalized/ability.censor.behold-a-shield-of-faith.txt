@@ -1,0 +1,12 @@
+name: Behold a Shield of Faith!
+flavor: A mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.
+keywords: melee, strike, weapon
+actionType: main
+cost: 3 wrath
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + might
+tier≤11: 3 + M holy damage
+tier12-16: 6 + M holy damage
+tier17+: 9 + M holy damage
+effect: Until the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you.

@@ -1,0 +1,10 @@
+name: Halt Miscreant!
+flavor: You infuse your weapon with holy magic that makes it difficult for your foe to get away.
+keywords: Melee, Strike, Weapon
+actionType: Main action
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + Might
+tier<=11: 2 + M holy damage; P<WEAK, slowed (save ends)
+tier12-16: 5 + M holy damage; P<AVERAGE, slowed (save ends)
+tier17+: 7 + M holy damage; P<STRONG, slowed (save ends)

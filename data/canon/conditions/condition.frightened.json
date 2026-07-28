@@ -1,0 +1,19 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
+  "id": "condition.frightened",
+  "type": "condition",
+  "name": "Frightened",
+  "aliasesEn": [],
+  "text": [
+    "When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one."
+  ],
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "version": "1.01",
+    "pdfPage": 9,
+    "printedPage": 77,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "8d59f01bff916b49c378e558f538f38647eab102bdd45086d5b12d1af0853020"
+  }
+}

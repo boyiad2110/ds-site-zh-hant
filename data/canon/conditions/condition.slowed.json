@@ -1,0 +1,19 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
+  "id": "condition.slowed",
+  "type": "condition",
+  "name": "Slowed",
+  "aliasesEn": [],
+  "text": [
+    "A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift."
+  ],
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "version": "1.01",
+    "pdfPage": 9,
+    "printedPage": 77,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "d905500625188d7f6e185710ba76c9151683bd4d17244db0399c48e4c880bb0d"
+  }
+}

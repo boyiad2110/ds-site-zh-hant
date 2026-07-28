@@ -1,0 +1,27 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.restrained",
+  "nameZhHant": "束縛",
+  "aliasesZhHant": [],
+  "text": [
+    "若你被束縛，你的`速度`歸 0，無法使用起身機動動作，也無法被強制移動。你在進行招式檢定以及`力量`與`敏捷`考驗時會承受 1 個劣勢，而其他生物對你進行的招式檢定則會獲得 1 個優勢。",
+    "若你進行傳送，束縛狀態就會立刻解除。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 束縛",
+    "commonProcessing": [
+      "Notion 內部連結拆為純文字：起身"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.restrained",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}

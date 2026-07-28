@@ -1,0 +1,43 @@
+{
+  "$comment": "由 scripts/import-glossary.mjs 生成，不可手改。手動項目請寫入 data/decisions.json 的 pending 陣列。",
+  "sourceHash": "499fc97aec25c645",
+  "decisionsHash": "89d775de277671a4",
+  "items": [
+    {
+      "kind": "glossary",
+      "en": "Hakaan",
+      "issue": "multiple-translations",
+      "candidates": [
+        {
+          "provisionalId": "term.hakaan.s1",
+          "sourceZhHant": "哈肯族",
+          "category": "規則/族裔"
+        },
+        {
+          "provisionalId": "term.hakaan.s2",
+          "sourceZhHant": "哈肯人",
+          "category": "角色/族裔"
+        }
+      ],
+      "note": "舊 CSV 同一英文對到不同中文。於 decisions.multiTranslations 以 resolution \"split\" 或 \"merge\" 裁決，且必須完整涵蓋全部 provisionalId。裁決後本項自動離開 pending。"
+    },
+    {
+      "kind": "glossary",
+      "en": "Memonek",
+      "issue": "multiple-translations",
+      "candidates": [
+        {
+          "provisionalId": "term.memonek.s1",
+          "sourceZhHant": "梅莫族",
+          "category": "規則/族裔"
+        },
+        {
+          "provisionalId": "term.memonek.s2",
+          "sourceZhHant": "梅莫人",
+          "category": "角色/族裔"
+        }
+      ],
+      "note": "舊 CSV 同一英文對到不同中文。於 decisions.multiTranslations 以 resolution \"split\" 或 \"merge\" 裁決，且必須完整涵蓋全部 provisionalId。裁決後本項自動離開 pending。"
+    }
+  ]
+}

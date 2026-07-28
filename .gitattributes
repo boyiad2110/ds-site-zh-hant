@@ -1,0 +1,14 @@
+# 全部文字檔在 repository 內一律以 LF 儲存。
+#
+# 理由不只是整潔：data/canon/_normalized/*.txt 的內容雜湊（normalizedHash）
+# 是本專案偵測正典漂移的核心機制。若換行符隨作業系統改變，
+# 同一份內容在不同機器上會算出不同雜湊，保護就失效了。
+# scripts/verify-canon-hash.mjs 雖已在計算前正規化 CRLF→LF，
+# 但來源端統一才是根本解，不應只依賴單一防線。
+* text=auto eol=lf
+
+# 明確標示二進位，避免被當成文字做換行轉換
+*.png binary
+*.pdf binary
+*.otf binary
+*.ttf binary

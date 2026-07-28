@@ -1,0 +1,24 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.frightened",
+  "nameZhHant": "畏縮",
+  "aliasesZhHant": [],
+  "text": [
+    "若你處於畏縮狀態，你對恐懼來源進行的任何招式檢定都會承受 1 個劣勢。若恐懼來源為生物，該來源對你進行的招式檢定會獲得 1 個優勢。你若知道恐懼來源的位置，你就無法主動接近該來源。若你已經因為某個來源而陷入畏縮，然後又從其他來源陷入畏縮，則新的畏縮狀態會取代舊的狀態。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 畏縮",
+    "commonProcessing": [],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.frightened",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}

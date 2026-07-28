@@ -1,0 +1,12 @@
+name: Driving Assault
+flavor: As you force your enemy back with your weapon, you use your faith to stay close.
+keywords: melee, strike, weapon
+actionType: main
+cost: 3 wrath
+distance: Melee 1
+target: One creature or object
+powerRoll: Power Roll + might
+tier≤11: 3 + M damage; push 1
+tier12-16: 6 + M damage; push 3
+tier17+: 9 + M damage; push 5
+effect: You can shift up to your speed in a straight line toward the target after pushing them.

@@ -1,0 +1,88 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.behold-the-face-of-justice",
+  "type": "ability",
+  "name": "Behold the Face of Justice!",
+  "aliasesEn": [],
+  "flavor": "You attack a foe and your enemies behold a vision of the true nature of your resolve.",
+  "keywords": [
+    "magic",
+    "melee",
+    "ranged",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 5
+  },
+  "distance": {
+    "kind": "choice",
+    "options": [
+      {
+        "kind": "melee",
+        "value": 1,
+        "raw": "Melee 1"
+      },
+      {
+        "kind": "ranged",
+        "value": 5,
+        "raw": "Ranged 5"
+      }
+    ],
+    "raw": "Melee 1 or ranged 5"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + M holy damage; if the target has this potency, each enemy within 2 squares of them is frightened of you (save ends)",
+        "potency": {
+          "characteristic": "presence",
+          "level": "weak"
+        },
+        "raw": "3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + M holy damage; if the target has this potency, each enemy within 2 squares of them is frightened of you (save ends)",
+        "potency": {
+          "characteristic": "presence",
+          "level": "average"
+        },
+        "raw": "5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + M holy damage; if the target has this potency, each enemy within 2 squares of them is frightened of you (save ends)",
+        "potency": {
+          "characteristic": "presence",
+          "level": "strong"
+        },
+        "raw": "8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)"
+      }
+    ]
+  },
+  "effect": [
+    "Each enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 83,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "1c369dcf2b3b916d76ad740a9f526c8700b5094774b7a8ac7d817b649b908fc9"
+  }
+}

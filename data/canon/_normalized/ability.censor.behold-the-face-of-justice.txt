@@ -1,0 +1,12 @@
+name: Behold the Face of Justice!
+flavor: You attack a foe and your enemies behold a vision of the true nature of your resolve.
+keywords: magic, melee, ranged, strike, weapon
+actionType: main
+cost: 5 wrath
+distance: Melee 1 or ranged 5
+target: One creature
+powerRoll: Power Roll + might
+tier≤11: 3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)
+tier12-16: 5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)
+tier17+: 8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)
+effect: Each enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.

@@ -1,0 +1,72 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.repent",
+  "type": "ability",
+  "name": "Repent!",
+  "aliasesEn": [],
+  "flavor": "You conjure memories of their sins to harry your foes.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 3
+  },
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "presence",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + P holy damage; dazed (save ends)",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "weak"
+        },
+        "raw": "5 + P holy damage; I<WEAK, dazed (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "8 + P holy damage; dazed (save ends)",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "average"
+        },
+        "raw": "8 + P holy damage; I<AVERAGE, dazed (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "11 + P holy damage; dazed (save ends)",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "strong"
+        },
+        "raw": "11 + P holy damage; I<STRONG, dazed (save ends)"
+      }
+    ]
+  },
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 83,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "9f03083ac036503a118f851058cb6bc8ea075e141c259b289374d7425c506dfb"
+  }
+}

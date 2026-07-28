@@ -1,0 +1,1856 @@
+{
+  "$comment": "stable id 的追加式帳本，用於偵測 id 被改指或消失。由 validate-terms.mjs --commit 提升，不可手改。",
+  "ids": {
+    "term.a-lie-cloaked-in-star-s-silver": {
+      "signature": "A Lie Cloaked In Star’s Silver|"
+    },
+    "term.a-mist-curls-around-dying-embers": {
+      "signature": "A Mist Curls Around Dying Embers|"
+    },
+    "term.a-sea-of-suns": {
+      "signature": "A Sea of Suns|"
+    },
+    "term.aan": {
+      "signature": "Aan|"
+    },
+    "term.abbott-loric": {
+      "signature": "Abbott Loric|"
+    },
+    "term.ability": {
+      "signature": "Ability|"
+    },
+    "term.ability-roll": {
+      "signature": "Ability Roll|"
+    },
+    "term.abyssal-waste": {
+      "signature": "Abyssal Waste|"
+    },
+    "term.acid": {
+      "signature": "Acid|"
+    },
+    "term.actian-school": {
+      "signature": "Actian School|"
+    },
+    "term.adjacent": {
+      "signature": "Adjacent|"
+    },
+    "term.ad-n": {
+      "signature": "Adûn|"
+    },
+    "term.advance": {
+      "signature": "Advance|"
+    },
+    "term.aendrim": {
+      "signature": "Aendrim|"
+    },
+    "term.aerithyst": {
+      "signature": "Aerithyst|"
+    },
+    "term.age-of-chaos": {
+      "signature": "Age of Chaos|"
+    },
+    "term.agility": {
+      "signature": "Agility|"
+    },
+    "term.aid-attack": {
+      "signature": "Aid Attack|"
+    },
+    "term.air": {
+      "signature": "Air|"
+    },
+    "term.ajax": {
+      "signature": "Ajax|"
+    },
+    "term.aldiva": {
+      "signature": "Aldiva|"
+    },
+    "term.alloy": {
+      "signature": "Alloy|"
+    },
+    "term.alvaro": {
+      "signature": "Alvaro|"
+    },
+    "term.ambusher": {
+      "signature": "Ambusher|"
+    },
+    "term.amulet-of-the-delian-order": {
+      "signature": "Amulet of the Delian Order|"
+    },
+    "term.ananjali": {
+      "signature": "Ananjali|"
+    },
+    "term.ancestry": {
+      "signature": "Ancestry|"
+    },
+    "term.angulotl": {
+      "signature": "Angulotl|"
+    },
+    "term.animapathy": {
+      "signature": "Animapathy|"
+    },
+    "term.anjali": {
+      "signature": "Anjali|"
+    },
+    "term.arbitros-fiat": {
+      "signature": "Arbitros Fiat|"
+    },
+    "term.arcadia": {
+      "signature": "Arcadia|"
+    },
+    "term.archduke-dispater": {
+      "signature": "Archduke Dispater|"
+    },
+    "term.ardashir": {
+      "signature": "Ardashir|"
+    },
+    "term.area-of-effect": {
+      "signature": "Area of Effect|"
+    },
+    "term.argument": {
+      "signature": "Argument|"
+    },
+    "term.arixx": {
+      "signature": "Arixx|"
+    },
+    "term.arixx-nest": {
+      "signature": "Arixx Nest|"
+    },
+    "term.army-of-night": {
+      "signature": "Army of Night|"
+    },
+    "term.artifact": {
+      "signature": "Artifact|"
+    },
+    "term.artillery": {
+      "signature": "Artillery|"
+    },
+    "term.artisan": {
+      "signature": "Artisan|"
+    },
+    "term.ashleigh": {
+      "signature": "Ashleigh|"
+    },
+    "term.astragalus-court": {
+      "signature": "Astragalus Court|"
+    },
+    "term.aura": {
+      "signature": "Aura|"
+    },
+    "term.aurumvas": {
+      "signature": "Aurumvas|"
+    },
+    "term.axiom": {
+      "signature": "Axiom|"
+    },
+    "term.axiomatic": {
+      "signature": "Axiomatic|"
+    },
+    "term.background": {
+      "signature": "Background|"
+    },
+    "term.bale-sea": {
+      "signature": "Bale Sea|"
+    },
+    "term.bane": {
+      "signature": "Bane|"
+    },
+    "term.battle-of-dur-mothe": {
+      "signature": "Battle of Dur Mothe|"
+    },
+    "term.beastheart": {
+      "signature": "Beastheart|"
+    },
+    "term.bedegar": {
+      "signature": "Bedegar|"
+    },
+    "term.berrick": {
+      "signature": "Berrick|"
+    },
+    "term.blackbottom": {
+      "signature": "Blackbottom|"
+    },
+    "term.blade-of-quintessence": {
+      "signature": "Blade of Quintessence|"
+    },
+    "term.blade-of-the-luxurious-fop": {
+      "signature": "Blade of the Luxurious Fop|"
+    },
+    "term.bleeding": {
+      "signature": "Bleeding|"
+    },
+    "term.bloodbound-band": {
+      "signature": "Bloodbound Band|"
+    },
+    "term.boddorff-buckfeather": {
+      "signature": "Boddorff Buckfeather|"
+    },
+    "term.body-bank": {
+      "signature": "Body bank|"
+    },
+    "term.bonus": {
+      "signature": "Bonus|"
+    },
+    "term.breakthrough": {
+      "signature": "Breakthrough|"
+    },
+    "term.bredbeddle": {
+      "signature": "Bredbeddle|"
+    },
+    "term.broadhurst": {
+      "signature": "Broadhurst|"
+    },
+    "term.brune": {
+      "signature": "Brune|"
+    },
+    "term.brute": {
+      "signature": "Brute|"
+    },
+    "term.burrow": {
+      "signature": "Burrow|"
+    },
+    "term.burst": {
+      "signature": "Burst|"
+    },
+    "term.buzz-balm": {
+      "signature": "Buzz Balm|"
+    },
+    "term.caelian": {
+      "signature": "Caelian|"
+    },
+    "term.caelian-empire": {
+      "signature": "Caelian Empire|"
+    },
+    "term.capital": {
+      "signature": "Capital|"
+    },
+    "term.career": {
+      "signature": "Career|"
+    },
+    "term.castle-andreas": {
+      "signature": "Castle Andreas|"
+    },
+    "term.caswyn-the-pestilent": {
+      "signature": "Caswyn the Pestilent|"
+    },
+    "term.catch-breath": {
+      "signature": "Catch Breath|"
+    },
+    "term.cavall": {
+      "signature": "Cavall|"
+    },
+    "term.ceiling": {
+      "signature": "Ceiling|"
+    },
+    "term.censor": {
+      "signature": "Censor|"
+    },
+    "term.ceredyn": {
+      "signature": "Ceredyn|"
+    },
+    "term.changeship": {
+      "signature": "Changeship|"
+    },
+    "term.characteristics": {
+      "signature": "Characteristics|"
+    },
+    "term.charge": {
+      "signature": "Charge|"
+    },
+    "term.chimeron": {
+      "signature": "Chimeron|"
+    },
+    "term.chronokinetic": {
+      "signature": "Chronokinetic|"
+    },
+    "term.chronopathy": {
+      "signature": "Chronopathy|"
+    },
+    "term.chrysopolis": {
+      "signature": "Chrysopolis|"
+    },
+    "term.church-of-saint-ysabella-the-pitiless": {
+      "signature": "Church of Saint Ysabella the Pitiless|"
+    },
+    "term.cinis": {
+      "signature": "Cinis|"
+    },
+    "term.clarity": {
+      "signature": "Clarity|"
+    },
+    "term.class": {
+      "signature": "Class|"
+    },
+    "term.claw-dirt": {
+      "signature": "Claw Dirt|"
+    },
+    "term.climb": {
+      "signature": "Climb|"
+    },
+    "term.cloak-and-dagger": {
+      "signature": "Cloak and Dagger|"
+    },
+    "term.clock": {
+      "signature": "Clock|"
+    },
+    "term.codex-mortis": {
+      "signature": "Codex Mortis|"
+    },
+    "term.codex-pax": {
+      "signature": "Codex Pax|"
+    },
+    "term.cold": {
+      "signature": "Cold|"
+    },
+    "term.combat-round": {
+      "signature": "Combat Round|"
+    },
+    "term.complication": {
+      "signature": "Complication|"
+    },
+    "term.concealment": {
+      "signature": "Concealment|"
+    },
+    "term.condition": {
+      "signature": "Condition|"
+    },
+    "term.conduit": {
+      "signature": "Conduit|"
+    },
+    "term.consequence": {
+      "signature": "Consequence|"
+    },
+    "term.consumable": {
+      "signature": "Consumable|"
+    },
+    "term.controller": {
+      "signature": "Controller|"
+    },
+    "term.corruption": {
+      "signature": "Corruption|"
+    },
+    "term.corwell": {
+      "signature": "Corwell|"
+    },
+    "term.costmary-leaf": {
+      "signature": "Costmary Leaf|"
+    },
+    "term.coursers": {
+      "signature": "Coursers|"
+    },
+    "term.cover": {
+      "signature": "Cover|"
+    },
+    "term.crafting": {
+      "signature": "Crafting|"
+    },
+    "term.crawl": {
+      "signature": "Crawl|"
+    },
+    "term.cressan-tomb": {
+      "signature": "Cressan Tomb|"
+    },
+    "term.critical-hit": {
+      "signature": "Critical Hit|"
+    },
+    "term.cryokinesis": {
+      "signature": "Cryokinesis|"
+    },
+    "term.cryokinetic": {
+      "signature": "Cryokinetic|"
+    },
+    "term.cthrion-uroniziir": {
+      "signature": "Cthrion Uroniziir|"
+    },
+    "term.cube": {
+      "signature": "Cube|"
+    },
+    "term.cult-of-undoing": {
+      "signature": "Cult of Undoing|"
+    },
+    "term.culture": {
+      "signature": "Culture|"
+    },
+    "term.cup-of-iulius": {
+      "signature": "Cup of Iulius|"
+    },
+    "term.cyrvis-the-lich": {
+      "signature": "Cyrvis the Lich|"
+    },
+    "term.dalrath": {
+      "signature": "Dalrath|"
+    },
+    "term.damage": {
+      "signature": "Damage|"
+    },
+    "term.damage-immunity": {
+      "signature": "Damage Immunity|"
+    },
+    "term.damage-type": {
+      "signature": "Damage Type|"
+    },
+    "term.damage-weakness": {
+      "signature": "Damage Weakness|"
+    },
+    "term.damaging-terrain": {
+      "signature": "Damaging Terrain|"
+    },
+    "term.dazar": {
+      "signature": "Dazar|"
+    },
+    "term.dazed": {
+      "signature": "Dazed|"
+    },
+    "term.defend": {
+      "signature": "Defend|"
+    },
+    "term.defender": {
+      "signature": "Defender|"
+    },
+    "term.delian-knight-commander-s-ring": {
+      "signature": "Delian Knight Commander’s Ring|"
+    },
+    "term.delian-tomb": {
+      "signature": "Delian Tomb|"
+    },
+    "term.derwic": {
+      "signature": "Derwic|"
+    },
+    "term.devil": {
+      "signature": "Devil|"
+    },
+    "term.difficult-terrain": {
+      "signature": "Difficult Terrain|"
+    },
+    "term.dig": {
+      "signature": "Dig|"
+    },
+    "term.dis": {
+      "signature": "Dis|"
+    },
+    "term.discipline": {
+      "signature": "Discipline|"
+    },
+    "term.disengage": {
+      "signature": "Disengage|"
+    },
+    "term.distance": {
+      "signature": "Distance|"
+    },
+    "term.double-bane": {
+      "signature": "Double Bane|"
+    },
+    "term.double-edge": {
+      "signature": "Double Edge|"
+    },
+    "term.downtime-project": {
+      "signature": "Downtime Project|"
+    },
+    "term.draconian": {
+      "signature": "Draconian|"
+    },
+    "term.dragon-knight": {
+      "signature": "Dragon Knight|"
+    },
+    "term.dragon-phalanx": {
+      "signature": "Dragon Phalanx|"
+    },
+    "term.drama": {
+      "signature": "Drama|"
+    },
+    "term.dreamleaf": {
+      "signature": "Dreamleaf|"
+    },
+    "term.dryad": {
+      "signature": "Dryad|"
+    },
+    "term.duke-melianus": {
+      "signature": "Duke Melianus|"
+    },
+    "term.dunquat": {
+      "signature": "Dunquat|"
+    },
+    "term.dwarf": {
+      "signature": "Dwarf|"
+    },
+    "term.dying": {
+      "signature": "Dying|"
+    },
+    "term.earth": {
+      "signature": "Earth|"
+    },
+    "term.echelon": {
+      "signature": "Echelon|"
+    },
+    "term.edge": {
+      "signature": "Edge|"
+    },
+    "term.effect.rules-effect": {
+      "signature": "Effect|rules-effect"
+    },
+    "term.elder-god": {
+      "signature": "Elder God|"
+    },
+    "term.elementalist": {
+      "signature": "Elementalist|"
+    },
+    "term.eleven-who-shall-not-be-named": {
+      "signature": "Eleven Who Shall Not Be Named|"
+    },
+    "term.elite": {
+      "signature": "Elite|"
+    },
+    "term.ellery": {
+      "signature": "Ellery|"
+    },
+    "term.enhancement": {
+      "signature": "Enhancement|"
+    },
+    "term.environment": {
+      "signature": "Environment|"
+    },
+    "term.eoe": {
+      "signature": "EoE|"
+    },
+    "term.eot": {
+      "signature": "EoT|"
+    },
+    "term.equinox": {
+      "signature": "Equinox|"
+    },
+    "term.escape-grab": {
+      "signature": "Escape Grab|"
+    },
+    "term.eseld-of-the-eye": {
+      "signature": "Eseld of the Eye|"
+    },
+    "term.essence": {
+      "signature": "Essence|"
+    },
+    "term.eth": {
+      "signature": "Eth|"
+    },
+    "term.every-strike-of-lightning-a-lover-betrayed": {
+      "signature": "Every Strike of Lightning a Lover Betrayed|"
+    },
+    "term.experience": {
+      "signature": "Experience|"
+    },
+    "term.falling": {
+      "signature": "Falling|"
+    },
+    "term.far-mariners": {
+      "signature": "Far Mariners|"
+    },
+    "term.farrier-s-guild": {
+      "signature": "Farrier’s Guild|"
+    },
+    "term.farrow": {
+      "signature": "Farrow|"
+    },
+    "term.ferocity": {
+      "signature": "Ferocity|"
+    },
+    "term.filliaric": {
+      "signature": "Filliaric|"
+    },
+    "term.first-psychic-war": {
+      "signature": "First Psychic War|"
+    },
+    "term.flanking": {
+      "signature": "Flanking|"
+    },
+    "term.fly": {
+      "signature": "Fly|"
+    },
+    "term.focus": {
+      "signature": "Focus|"
+    },
+    "term.foesense-lenses": {
+      "signature": "Foesense Lenses|"
+    },
+    "term.follower": {
+      "signature": "Follower|"
+    },
+    "term.font": {
+      "signature": "Font|"
+    },
+    "term.forbin": {
+      "signature": "Forbin|"
+    },
+    "term.forced-movement": {
+      "signature": "Forced Movement|"
+    },
+    "term.forg": {
+      "signature": "Forg|"
+    },
+    "term.forsaken-wraiths": {
+      "signature": "Forsaken Wraiths|"
+    },
+    "term.fort-forsaken": {
+      "signature": "Fort Forsaken|"
+    },
+    "term.free-maneuver": {
+      "signature": "Free Maneuver|"
+    },
+    "term.free-strike": {
+      "signature": "Free Strike|"
+    },
+    "term.frightened": {
+      "signature": "Frightened|"
+    },
+    "term.fulcrum": {
+      "signature": "Fulcrum|"
+    },
+    "term.fury": {
+      "signature": "Fury|"
+    },
+    "term.gant": {
+      "signature": "Gant|"
+    },
+    "term.gilded-hand": {
+      "signature": "Gilded Hand|"
+    },
+    "term.glauer": {
+      "signature": "Glauer|"
+    },
+    "term.god": {
+      "signature": "God|"
+    },
+    "term.gorek": {
+      "signature": "Gorek|"
+    },
+    "term.grab": {
+      "signature": "Grab|"
+    },
+    "term.grabbed": {
+      "signature": "Grabbed|"
+    },
+    "term.graid": {
+      "signature": "Graid|"
+    },
+    "term.granite-mountains": {
+      "signature": "Granite Mountains|"
+    },
+    "term.great-fire": {
+      "signature": "Great Fire|"
+    },
+    "term.great-tet": {
+      "signature": "Great Tet|"
+    },
+    "term.great-wode": {
+      "signature": "Great Wode|"
+    },
+    "term.green": {
+      "signature": "Green|"
+    },
+    "term.grivllyfyr": {
+      "signature": "Grivllyfyr|"
+    },
+    "term.grole-the-one-handed": {
+      "signature": "Grole the One-Handed|"
+    },
+    "term.ground": {
+      "signature": "Ground|"
+    },
+    "term.group-test": {
+      "signature": "Group Test|"
+    },
+    "term.gruul": {
+      "signature": "Gruul|"
+    },
+    "term.gryffyn-the-stout": {
+      "signature": "Gryffyn the Stout|"
+    },
+    "term.guide": {
+      "signature": "Guide|"
+    },
+    "term.gweldyr": {
+      "signature": "Gweldyr|"
+    },
+    "term.gwenllian-the-fell-handed": {
+      "signature": "Gwenllian the Fell-Handed|"
+    },
+    "term.halcyon-the-moonmaiden": {
+      "signature": "Halcyon the Moonmaiden|"
+    },
+    "term.hanging-city": {
+      "signature": "Hanging City|"
+    },
+    "term.harim": {
+      "signature": "Harim|"
+    },
+    "term.harrier": {
+      "signature": "Harrier|"
+    },
+    "term.hawklord": {
+      "signature": "Hawklord|"
+    },
+    "term.heal": {
+      "signature": "Heal|"
+    },
+    "term.healing-potion": {
+      "signature": "Healing Potion|"
+    },
+    "term.heliopolis": {
+      "signature": "Heliopolis|"
+    },
+    "term.helriath-harriers": {
+      "signature": "Helriath Harriers|"
+    },
+    "term.hero-tokens": {
+      "signature": "Hero Tokens|"
+    },
+    "term.heroic-ability": {
+      "signature": "Heroic Ability|"
+    },
+    "term.heroic-resource": {
+      "signature": "Heroic Resource|"
+    },
+    "term.hexer": {
+      "signature": "Hexer|"
+    },
+    "term.hide": {
+      "signature": "Hide|"
+    },
+    "term.higara": {
+      "signature": "Higara|"
+    },
+    "term.higaran": {
+      "signature": "Higaran|"
+    },
+    "term.high-aerie": {
+      "signature": "High Aerie|"
+    },
+    "term.high-city-of-dalrath": {
+      "signature": "High City of Dalrath|"
+    },
+    "term.high-elves": {
+      "signature": "High Elves|"
+    },
+    "term.high-ground": {
+      "signature": "High Ground|"
+    },
+    "term.high-kuric": {
+      "signature": "High Kuric|"
+    },
+    "term.high-rhyvian": {
+      "signature": "High Rhyvian|"
+    },
+    "term.holkatya": {
+      "signature": "Holkatya|"
+    },
+    "term.holy": {
+      "signature": "Holy|"
+    },
+    "term.horde": {
+      "signature": "Horde|"
+    },
+    "term.hover": {
+      "signature": "Hover|"
+    },
+    "term.human": {
+      "signature": "Human|"
+    },
+    "term.humanoid": {
+      "signature": "Humanoid|"
+    },
+    "term.hyrallic": {
+      "signature": "Hyrallic|"
+    },
+    "term.illwyth": {
+      "signature": "Illwyth|"
+    },
+    "term.illyvric": {
+      "signature": "Illyvric|"
+    },
+    "term.imperial-navy": {
+      "signature": "Imperial Navy|"
+    },
+    "term.imperial-university": {
+      "signature": "Imperial University|"
+    },
+    "term.imperial-war-college": {
+      "signature": "Imperial War College|"
+    },
+    "term.implement": {
+      "signature": "Implement|"
+    },
+    "term.in-n-al-adwiyya": {
+      "signature": "Inān al-Adwiyya|"
+    },
+    "term.insight": {
+      "signature": "Insight|"
+    },
+    "term.interest": {
+      "signature": "Interest|"
+    },
+    "term.intuition": {
+      "signature": "Intuition|"
+    },
+    "term.iridoss": {
+      "signature": "Iridoss|"
+    },
+    "term.irranys": {
+      "signature": "Irranys|"
+    },
+    "term.item-prerequisite": {
+      "signature": "Item Prerequisite|"
+    },
+    "term.ix": {
+      "signature": "Ix|"
+    },
+    "term.jackson-bootblack": {
+      "signature": "Jackson Bootblack|"
+    },
+    "term.jagged-edge": {
+      "signature": "Jagged Edge|"
+    },
+    "term.jump": {
+      "signature": "Jump|"
+    },
+    "term.k-r-a-d-1-fearless": {
+      "signature": "K.R.A.D.1 Fearless|"
+    },
+    "term.kal-kalavar": {
+      "signature": "Kal Kalavar|"
+    },
+    "term.kalas-mithral": {
+      "signature": "Kalas Mithral|"
+    },
+    "term.kalas-valiar": {
+      "signature": "Kalas Valiar|"
+    },
+    "term.kalliak": {
+      "signature": "Kalliak|"
+    },
+    "term.kas-koriar": {
+      "signature": "Kas Koriar|"
+    },
+    "term.kashimir": {
+      "signature": "Kashimir|"
+    },
+    "term.kethaic": {
+      "signature": "Kethaic|"
+    },
+    "term.khamish": {
+      "signature": "Khamish|"
+    },
+    "term.khelt": {
+      "signature": "Khelt|"
+    },
+    "term.kheltivari": {
+      "signature": "Kheltivari|"
+    },
+    "term.khemhara": {
+      "signature": "Khemhara|"
+    },
+    "term.khemharic": {
+      "signature": "Khemharic|"
+    },
+    "term.khorsekef": {
+      "signature": "Khorsekef|"
+    },
+    "term.khorva": {
+      "signature": "Khorva|"
+    },
+    "term.khorvath-who-slew-a-thousand": {
+      "signature": "Khorvath Who Slew A Thousand|"
+    },
+    "term.khoursirian": {
+      "signature": "Khoursirian|"
+    },
+    "term.khravila-who-ran-forty-leagues": {
+      "signature": "Khravila Who Ran Forty Leagues|"
+    },
+    "term.kit": {
+      "signature": "Kit|"
+    },
+    "term.kites": {
+      "signature": "Kites|"
+    },
+    "term.knockback": {
+      "signature": "Knockback|"
+    },
+    "term.kora": {
+      "signature": "Kora|"
+    },
+    "term.koursir": {
+      "signature": "Koursir|"
+    },
+    "term.kul": {
+      "signature": "Kul|"
+    },
+    "term.kuran-zoi": {
+      "signature": "Kuran’zoi|"
+    },
+    "term.lady-filliamo": {
+      "signature": "Lady Filliamo|"
+    },
+    "term.laesi": {
+      "signature": "Laesi|"
+    },
+    "term.law-of-time": {
+      "signature": "Law of Time|"
+    },
+    "term.leader": {
+      "signature": "Leader|"
+    },
+    "term.lenore": {
+      "signature": "Lenore|"
+    },
+    "term.leveled-treasure": {
+      "signature": "Leveled Treasure|"
+    },
+    "term.lightbender": {
+      "signature": "Lightbender|"
+    },
+    "term.lightning": {
+      "signature": "Lightning|"
+    },
+    "term.lilac-night": {
+      "signature": "Lilac Night|"
+    },
+    "term.line": {
+      "signature": "Line|"
+    },
+    "term.line-of-effect": {
+      "signature": "Line of Effect|"
+    },
+    "term.lord-kenway": {
+      "signature": "Lord Kenway|"
+    },
+    "term.lord-of-swords": {
+      "signature": "Lord of Swords|"
+    },
+    "term.low-kuric": {
+      "signature": "Low Kuric|"
+    },
+    "term.low-rhyvian": {
+      "signature": "Low Rhyvian|"
+    },
+    "term.lumbering-egress": {
+      "signature": "Lumbering Egress|"
+    },
+    "term.mage-tower": {
+      "signature": "Mage Tower|"
+    },
+    "term.malice": {
+      "signature": "Malice|"
+    },
+    "term.mandrake": {
+      "signature": "Mandrake|"
+    },
+    "term.manifold": {
+      "signature": "Manifold|"
+    },
+    "term.manticore": {
+      "signature": "Manticore|"
+    },
+    "term.mara": {
+      "signature": "Mara|"
+    },
+    "term.marco-vorona": {
+      "signature": "Marco Vorona|"
+    },
+    "term.maximo": {
+      "signature": "Maximo|"
+    },
+    "term.melee-free-strike": {
+      "signature": "Melee Free Strike|"
+    },
+    "term.metakinetic": {
+      "signature": "Metakinetic|"
+    },
+    "term.metamorphosis": {
+      "signature": "Metamorphosis|"
+    },
+    "term.might": {
+      "signature": "Might|"
+    },
+    "term.mikael": {
+      "signature": "Mikael|"
+    },
+    "term.mindkiller": {
+      "signature": "Mindkiller|"
+    },
+    "term.mindspeech": {
+      "signature": "Mindspeech|"
+    },
+    "term.minion": {
+      "signature": "Minion|"
+    },
+    "term.mohler": {
+      "signature": "Mohler|"
+    },
+    "term.montage-test": {
+      "signature": "Montage Test|"
+    },
+    "term.moon-elf": {
+      "signature": "Moon Elf|"
+    },
+    "term.morath-of-many-tendrils": {
+      "signature": "Morath of Many Tendrils|"
+    },
+    "term.morning-dew-on-a-single-leaf-like-a-tear-from-the-sun": {
+      "signature": "Morning Dew on a Single Leaf Like a Tear from the Sun|"
+    },
+    "term.mortum": {
+      "signature": "Mortum|"
+    },
+    "term.motivation": {
+      "signature": "Motivation|"
+    },
+    "term.mount": {
+      "signature": "Mount|"
+    },
+    "term.mounted-combat": {
+      "signature": "Mounted Combat|"
+    },
+    "term.move-action": {
+      "signature": "Move Action|"
+    },
+    "term.movement": {
+      "signature": "Movement|"
+    },
+    "term.multivok": {
+      "signature": "Multivok|"
+    },
+    "term.mundane": {
+      "signature": "Mundane|"
+    },
+    "term.murkik": {
+      "signature": "Murkik|"
+    },
+    "term.mynoth-the-way": {
+      "signature": "Mynoth the Way|"
+    },
+    "term.myr": {
+      "signature": "Myr|"
+    },
+    "term.natural-19-or-20": {
+      "signature": "Natural 19 or 20|"
+    },
+    "term.natural-roll": {
+      "signature": "Natural Roll|"
+    },
+    "term.navarr": {
+      "signature": "Navarr|"
+    },
+    "term.nebular-the-star-mother": {
+      "signature": "Nebular the Star Mother|"
+    },
+    "term.necropolitan-ruin": {
+      "signature": "Necropolitan Ruin|"
+    },
+    "term.negotiation": {
+      "signature": "Negotiation|"
+    },
+    "term.nikros-the-tyrant": {
+      "signature": "Nikros the Tyrant|"
+    },
+    "term.null": {
+      "signature": "Null|"
+    },
+    "term.nymph": {
+      "signature": "Nymph|"
+    },
+    "term.oaxuatl": {
+      "signature": "Oaxuatl|"
+    },
+    "term.old-class-ring": {
+      "signature": "Old Class Ring|"
+    },
+    "term.old-variac": {
+      "signature": "Old Variac|"
+    },
+    "term.oleq": {
+      "signature": "Oleq|"
+    },
+    "term.olothec": {
+      "signature": "Olothec|"
+    },
+    "term.olvaria": {
+      "signature": "Olvaria|"
+    },
+    "term.omnivok": {
+      "signature": "Omnivok|"
+    },
+    "term.omund": {
+      "signature": "Omund|"
+    },
+    "term.omund-s-land": {
+      "signature": "Omund’s Land|"
+    },
+    "term.operator": {
+      "signature": "Operator|"
+    },
+    "term.opportunity-attack": {
+      "signature": "Opportunity Attack|"
+    },
+    "term.opposed-power-roll": {
+      "signature": "Opposed Power Roll|"
+    },
+    "term.or-mazaar-city-of-the-black-star": {
+      "signature": "Or-Mazaar City of the Black Star|"
+    },
+    "term.orc": {
+      "signature": "Orc|"
+    },
+    "term.orchid-court": {
+      "signature": "Orchid Court|"
+    },
+    "term.ord": {
+      "signature": "Ord|"
+    },
+    "term.orden": {
+      "signature": "Orden|"
+    },
+    "term.order-of-desolation": {
+      "signature": "Order of Desolation|"
+    },
+    "term.order-of-fabrication": {
+      "signature": "Order of Fabrication|"
+    },
+    "term.organization": {
+      "signature": "Organization|"
+    },
+    "term.orsino": {
+      "signature": "Orsino|"
+    },
+    "term.orson": {
+      "signature": "Orson|"
+    },
+    "term.overmind": {
+      "signature": "Overmind|"
+    },
+    "term.oxor-myr": {
+      "signature": "Oxor-myr|"
+    },
+    "term.paperfeathers": {
+      "signature": "Paperfeathers|"
+    },
+    "term.patience": {
+      "signature": "Patience|"
+    },
+    "term.penalty": {
+      "signature": "Penalty|"
+    },
+    "term.pentalion-the-paladin": {
+      "signature": "Pentalion the Paladin|"
+    },
+    "term.percival": {
+      "signature": "Percival|"
+    },
+    "term.perk": {
+      "signature": "Perk|"
+    },
+    "term.phaedran": {
+      "signature": "Phaedran|"
+    },
+    "term.phaedros": {
+      "signature": "Phaedros|"
+    },
+    "term.phorialtic": {
+      "signature": "Phorialtic|"
+    },
+    "term.piety": {
+      "signature": "Piety|"
+    },
+    "term.pitfall": {
+      "signature": "Pitfall|"
+    },
+    "term.platoon": {
+      "signature": "Platoon|"
+    },
+    "term.poison": {
+      "signature": "Poison|"
+    },
+    "term.polder": {
+      "signature": "Polder|"
+    },
+    "term.potency": {
+      "signature": "Potency|"
+    },
+    "term.power-roll": {
+      "signature": "Power Roll|"
+    },
+    "term.presence": {
+      "signature": "Presence|"
+    },
+    "term.primordial-chaos": {
+      "signature": "Primordial Chaos|"
+    },
+    "term.project-event": {
+      "signature": "Project Event|"
+    },
+    "term.project-goal": {
+      "signature": "Project Goal|"
+    },
+    "term.project-points": {
+      "signature": "Project Points|"
+    },
+    "term.project-roll": {
+      "signature": "Project Roll|"
+    },
+    "term.project-source": {
+      "signature": "Project Source|"
+    },
+    "term.prone": {
+      "signature": "Prone|"
+    },
+    "term.prospero": {
+      "signature": "Prospero|"
+    },
+    "term.protean": {
+      "signature": "Protean|"
+    },
+    "term.proteus": {
+      "signature": "Proteus|"
+    },
+    "term.proto-ctholl": {
+      "signature": "Proto-Ctholl|"
+    },
+    "term.psychic": {
+      "signature": "Psychic|"
+    },
+    "term.pull": {
+      "signature": "Pull|"
+    },
+    "term.push": {
+      "signature": "Push|"
+    },
+    "term.pyrokinesis": {
+      "signature": "Pyrokinesis|"
+    },
+    "term.quantum-satchel": {
+      "signature": "Quantum Satchel|"
+    },
+    "term.quasax-the-ultra-nova": {
+      "signature": "Quasax the Ultra Nova|"
+    },
+    "term.queen-bargnot": {
+      "signature": "Queen Bargnot|"
+    },
+    "term.queen-imyrr": {
+      "signature": "Queen Imyrr|"
+    },
+    "term.quercus-court": {
+      "signature": "Quercus Court|"
+    },
+    "term.quintessence": {
+      "signature": "Quintessence|"
+    },
+    "term.radenwight": {
+      "signature": "Radenwight|"
+    },
+    "term.raider-s-awe": {
+      "signature": "Raider's Awe|"
+    },
+    "term.rallarian": {
+      "signature": "Rallarian|"
+    },
+    "term.ranged-free-strike": {
+      "signature": "Ranged Free Strike|"
+    },
+    "term.reactive-test": {
+      "signature": "Reactive Test|"
+    },
+    "term.reason": {
+      "signature": "Reason|"
+    },
+    "term.recovery": {
+      "signature": "Recovery|"
+    },
+    "term.recovery-value": {
+      "signature": "Recovery Value|"
+    },
+    "term.reeve-rosamund": {
+      "signature": "Reeve Rosamund|"
+    },
+    "term.renown": {
+      "signature": "Renown|"
+    },
+    "term.research": {
+      "signature": "Research|"
+    },
+    "term.resopathy": {
+      "signature": "Resopathy|"
+    },
+    "term.respite": {
+      "signature": "Respite|"
+    },
+    "term.respite-activity": {
+      "signature": "Respite Activity|"
+    },
+    "term.restrained": {
+      "signature": "Restrained|"
+    },
+    "term.retainer": {
+      "signature": "Retainer|"
+    },
+    "term.revenant": {
+      "signature": "Revenant|"
+    },
+    "term.reward": {
+      "signature": "Reward|"
+    },
+    "term.rh-l": {
+      "signature": "Rhöl|"
+    },
+    "term.ride": {
+      "signature": "Ride|"
+    },
+    "term.rioja": {
+      "signature": "Rioja|"
+    },
+    "term.riojan": {
+      "signature": "Riojan|"
+    },
+    "term.robin": {
+      "signature": "Robin|"
+    },
+    "term.rolled-damage": {
+      "signature": "Rolled Damage|"
+    },
+    "term.rot": {
+      "signature": "Rot|"
+    },
+    "term.saberna": {
+      "signature": "Saberna|"
+    },
+    "term.saera": {
+      "signature": "Saera|"
+    },
+    "term.sage": {
+      "signature": "Sage|"
+    },
+    "term.saint": {
+      "signature": "Saint|"
+    },
+    "term.saint-elspeth-the-blithe": {
+      "signature": "Saint Elspeth the Blithe|"
+    },
+    "term.saint-gwiddon-the-vigilant": {
+      "signature": "Saint Gwiddon the Vigilant|"
+    },
+    "term.saint-llewellyn-the-valiant": {
+      "signature": "Saint Llewellyn the Valiant|"
+    },
+    "term.salorna-the-summer-storm": {
+      "signature": "Salorna the Summer Storm|"
+    },
+    "term.sarah": {
+      "signature": "Sarah|"
+    },
+    "term.s-rda": {
+      "signature": "Sărda|"
+    },
+    "term.save-ends": {
+      "signature": "Save Ends|"
+    },
+    "term.saving-throw": {
+      "signature": "Saving Throw|"
+    },
+    "term.saxton": {
+      "signature": "Saxton|"
+    },
+    "term.sea-of-stars": {
+      "signature": "Sea of Stars|"
+    },
+    "term.search-for-hidden-creatures": {
+      "signature": "Search for Hidden Creatures|"
+    },
+    "term.sednia": {
+      "signature": "Sednia|"
+    },
+    "term.sektahre-the-boatman": {
+      "signature": "Sektahre the Boatman|"
+    },
+    "term.servok": {
+      "signature": "Servok|"
+    },
+    "term.seven-cities-of-hell": {
+      "signature": "Seven Cities of Hell|"
+    },
+    "term.shadow": {
+      "signature": "Shadow|"
+    },
+    "term.shadow-elf": {
+      "signature": "Shadow Elf|"
+    },
+    "term.shift": {
+      "signature": "Shift|"
+    },
+    "term.shirome": {
+      "signature": "Shirome|"
+    },
+    "term.side": {
+      "signature": "Side|"
+    },
+    "term.signature-ability": {
+      "signature": "Signature Ability|"
+    },
+    "term.silver-wood": {
+      "signature": "Silver Wood|"
+    },
+    "term.size": {
+      "signature": "Size|"
+    },
+    "term.skewra": {
+      "signature": "Skewra|"
+    },
+    "term.skill": {
+      "signature": "Skill|"
+    },
+    "term.sky-elf": {
+      "signature": "Sky Elf|"
+    },
+    "term.slide": {
+      "signature": "Slide|"
+    },
+    "term.slowed": {
+      "signature": "Slowed|"
+    },
+    "term.snapdragon": {
+      "signature": "Snapdragon|"
+    },
+    "term.solo": {
+      "signature": "Solo|"
+    },
+    "term.solta": {
+      "signature": "Solta|"
+    },
+    "term.sonic": {
+      "signature": "Sonic|"
+    },
+    "term.soulraker": {
+      "signature": "Soulraker|"
+    },
+    "term.speed": {
+      "signature": "Speed|"
+    },
+    "term.square": {
+      "signature": "Square|"
+    },
+    "term.stability": {
+      "signature": "Stability|"
+    },
+    "term.stamina": {
+      "signature": "Stamina|"
+    },
+    "term.stand-up": {
+      "signature": "Stand Up|"
+    },
+    "term.star-elf": {
+      "signature": "Star Elf|"
+    },
+    "term.starmetal": {
+      "signature": "Starmetal|"
+    },
+    "term.starskimmer": {
+      "signature": "Starskimmer|"
+    },
+    "term.starslayers": {
+      "signature": "Starslayers|"
+    },
+    "term.steel-dwarf": {
+      "signature": "Steel Dwarf|"
+    },
+    "term.stone-of-hyllc": {
+      "signature": "Stone of Hyllc|"
+    },
+    "term.strained": {
+      "signature": "Strained|"
+    },
+    "term.styrich": {
+      "signature": "Styrich|"
+    },
+    "term.subclass": {
+      "signature": "Subclass|"
+    },
+    "term.substance-of-creation": {
+      "signature": "Substance of Creation|"
+    },
+    "term.suffocating": {
+      "signature": "Suffocating|"
+    },
+    "term.sun-elf": {
+      "signature": "Sun Elf|"
+    },
+    "term.supernatural": {
+      "signature": "Supernatural|"
+    },
+    "term.support": {
+      "signature": "Support|"
+    },
+    "term.surge": {
+      "signature": "Surge|"
+    },
+    "term.surprised": {
+      "signature": "Surprised|"
+    },
+    "term.swim": {
+      "signature": "Swim|"
+    },
+    "term.synliroi-synlirii": {
+      "signature": "Synliroi；Synlirii|"
+    },
+    "term.szetch": {
+      "signature": "Szetch|"
+    },
+    "term.tactician": {
+      "signature": "Tactician|"
+    },
+    "term.talent": {
+      "signature": "Talent|"
+    },
+    "term.tansy": {
+      "signature": "Tansy|"
+    },
+    "term.target": {
+      "signature": "Target|"
+    },
+    "term.targon": {
+      "signature": "Targon|"
+    },
+    "term.taunted": {
+      "signature": "Taunted|"
+    },
+    "term.taxiarch-lycaon": {
+      "signature": "Taxiarch Lycaon|"
+    },
+    "term.telekinesis": {
+      "signature": "Telekinesis|"
+    },
+    "term.telepathy": {
+      "signature": "Telepathy|"
+    },
+    "term.teleport": {
+      "signature": "Teleport|"
+    },
+    "term.temporary-stamina": {
+      "signature": "Temporary Stamina|"
+    },
+    "term.test": {
+      "signature": "Test|"
+    },
+    "term.the-conversations": {
+      "signature": "The Conversations|"
+    },
+    "term.the-first-language": {
+      "signature": "The First Language|"
+    },
+    "term.the-gol": {
+      "signature": "The Gol|"
+    },
+    "term.tholl": {
+      "signature": "Tholl|"
+    },
+    "term.thrazz": {
+      "signature": "Thrazz|"
+    },
+    "term.three-sisters-below": {
+      "signature": "Three Sisters Below|"
+    },
+    "term.throne-of-hell": {
+      "signature": "Throne of Hell|"
+    },
+    "term.thurston": {
+      "signature": "Thurston|"
+    },
+    "term.time-raider": {
+      "signature": "Time Raider|"
+    },
+    "term.timescape": {
+      "signature": "Timescape|"
+    },
+    "term.tor": {
+      "signature": "Tor|"
+    },
+    "term.tower-of-translation": {
+      "signature": "Tower of Translation|"
+    },
+    "term.trade-integrity-board": {
+      "signature": "Trade Integrity Board|"
+    },
+    "term.treasure": {
+      "signature": "Treasure|"
+    },
+    "term.trinket": {
+      "signature": "Trinket|"
+    },
+    "term.troll": {
+      "signature": "Troll|"
+    },
+    "term.troubadour": {
+      "signature": "Troubadour|"
+    },
+    "term.tubert": {
+      "signature": "Tubert|"
+    },
+    "term.tull": {
+      "signature": "Tull|"
+    },
+    "term.turn": {
+      "signature": "Turn|"
+    },
+    "term.ullorvic": {
+      "signature": "Ullorvic|"
+    },
+    "term.unattended": {
+      "signature": "Unattended|"
+    },
+    "term.unattended-object": {
+      "signature": "Unattended Object|"
+    },
+    "term.unbinder-boots": {
+      "signature": "Unbinder Boots|"
+    },
+    "term.underwater-combat": {
+      "signature": "Underwater Combat|"
+    },
+    "term.universal-solar-league": {
+      "signature": "Universal Solar League|"
+    },
+    "term.untyped-damage": {
+      "signature": "Untyped Damage|"
+    },
+    "term.upbringing": {
+      "signature": "Upbringing|"
+    },
+    "term.urollialic": {
+      "signature": "Urollialic|"
+    },
+    "term.use-consumable": {
+      "signature": "Use Consumable|"
+    },
+    "term.uvalic": {
+      "signature": "Uvalic|"
+    },
+    "term.vaantikalisax": {
+      "signature": "Vaantikalisax|"
+    },
+    "term.val": {
+      "signature": "Val|"
+    },
+    "term.valak-koth-the-seeker": {
+      "signature": "Valak-koth the Seeker|"
+    },
+    "term.valetta": {
+      "signature": "Valetta|"
+    },
+    "term.valiar": {
+      "signature": "Valiar|"
+    },
+    "term.valok": {
+      "signature": "Valok|"
+    },
+    "term.vanigar": {
+      "signature": "Vanigar|"
+    },
+    "term.vaniric": {
+      "signature": "Vaniric|"
+    },
+    "term.variac": {
+      "signature": "Variac|"
+    },
+    "term.vasloria": {
+      "signature": "Vasloria|"
+    },
+    "term.vaslorian": {
+      "signature": "Vaslorian|"
+    },
+    "term.vastariax": {
+      "signature": "Vastariax|"
+    },
+    "term.vaughn": {
+      "signature": "Vaughn|"
+    },
+    "term.velloparatha": {
+      "signature": "Velloparatha|"
+    },
+    "term.vertical": {
+      "signature": "Vertical|"
+    },
+    "term.vhoric": {
+      "signature": "Vhoric|"
+    },
+    "term.victory": {
+      "signature": "Victory|"
+    },
+    "term.vigbordh": {
+      "signature": "Vigbordh|"
+    },
+    "term.violet": {
+      "signature": "Violet|"
+    },
+    "term.viras": {
+      "signature": "Viras|"
+    },
+    "term.vitae": {
+      "signature": "Vitae|"
+    },
+    "term.vithyaranu": {
+      "signature": "Vithyaranu|"
+    },
+    "term.void": {
+      "signature": "Void|"
+    },
+    "term.voll": {
+      "signature": "Voll|"
+    },
+    "term.vordokov": {
+      "signature": "Vordokov|"
+    },
+    "term.vorgosh": {
+      "signature": "Vorgosh|"
+    },
+    "term.vorona": {
+      "signature": "Vorona|"
+    },
+    "term.vurkor": {
+      "signature": "Vurkor|"
+    },
+    "term.walk": {
+      "signature": "Walk|"
+    },
+    "term.wall": {
+      "signature": "Wall|"
+    },
+    "term.water": {
+      "signature": "Water|"
+    },
+    "term.weakened": {
+      "signature": "Weakened|"
+    },
+    "term.wealth": {
+      "signature": "Wealth|"
+    },
+    "term.wend": {
+      "signature": "Wend|"
+    },
+    "term.white-ravine": {
+      "signature": "White Ravine|"
+    },
+    "term.winded": {
+      "signature": "Winded|"
+    },
+    "term.wode": {
+      "signature": "Wode|"
+    },
+    "term.wode-elf": {
+      "signature": "Wode Elf|"
+    },
+    "term.wof-den": {
+      "signature": "Wof Den|"
+    },
+    "term.world-below": {
+      "signature": "World Below|"
+    },
+    "term.wrath": {
+      "signature": "Wrath|"
+    },
+    "term.yerris": {
+      "signature": "Yerris|"
+    },
+    "term.yllyric": {
+      "signature": "Yllyric|"
+    },
+    "term.za-hariax": {
+      "signature": "Za’hariax|"
+    },
+    "term.zaliac": {
+      "signature": "Zaliac|"
+    },
+    "term.zarok-the-law-giver": {
+      "signature": "Zarok the Law-Giver|"
+    },
+    "ability-keyword.area": {
+      "signature": "vocabulary|ability-keywords|area|Area"
+    },
+    "ability-keyword.magic": {
+      "signature": "vocabulary|ability-keywords|magic|Magic"
+    },
+    "ability-keyword.melee": {
+      "signature": "vocabulary|ability-keywords|melee|Melee"
+    },
+    "ability-keyword.ranged": {
+      "signature": "vocabulary|ability-keywords|ranged|Ranged"
+    },
+    "ability-keyword.strike": {
+      "signature": "vocabulary|ability-keywords|strike|Strike"
+    },
+    "ability-keyword.weapon": {
+      "signature": "vocabulary|ability-keywords|weapon|Weapon"
+    },
+    "action-type.free-triggered": {
+      "signature": "vocabulary|action-types|free-triggered|Free Triggered Action"
+    },
+    "action-type.main": {
+      "signature": "vocabulary|action-types|main|Main Action"
+    },
+    "action-type.maneuver": {
+      "signature": "vocabulary|action-types|maneuver|Maneuver"
+    },
+    "action-type.triggered": {
+      "signature": "vocabulary|action-types|triggered|Triggered Action"
+    },
+    "potency-level.average": {
+      "signature": "vocabulary|potency-levels|average|Average"
+    },
+    "potency-level.strong": {
+      "signature": "vocabulary|potency-levels|strong|Strong"
+    },
+    "potency-level.weak": {
+      "signature": "vocabulary|potency-levels|weak|Weak"
+    },
+    "target-component.ally": {
+      "signature": "vocabulary|target-components|ally|ally"
+    },
+    "target-component.creature": {
+      "signature": "vocabulary|target-components|creature|creature"
+    },
+    "target-component.enemy": {
+      "signature": "vocabulary|target-components|enemy|enemy"
+    },
+    "target-component.object": {
+      "signature": "vocabulary|target-components|object|object"
+    },
+    "target-component.self": {
+      "signature": "vocabulary|target-components|self|Self"
+    },
+    "term.xp": {
+      "signature": "XP|"
+    },
+    "term.encounter": {
+      "signature": "Encounter|"
+    },
+    "term.exorcist": {
+      "signature": "Exorcist|"
+    },
+    "term.oracle": {
+      "signature": "Oracle|"
+    },
+    "term.order.censor-subclass": {
+      "signature": "Order|censor-subclass"
+    },
+    "term.paragon": {
+      "signature": "Paragon|"
+    },
+    "ability-categorie.heroic": {
+      "signature": "vocabulary|ability-categories|heroic|Heroic"
+    },
+    "ability-categorie.inherent": {
+      "signature": "vocabulary|ability-categories|inherent|Inherent"
+    },
+    "ability-categorie.signature": {
+      "signature": "vocabulary|ability-categories|signature|Signature"
+    },
+    "term.fire.damage-type": {
+      "signature": "Fire|damage-type"
+    },
+    "term.fire.elementalist-mastery": {
+      "signature": "Fire|elementalist-mastery"
+    }
+  }
+}

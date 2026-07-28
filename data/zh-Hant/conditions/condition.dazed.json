@@ -1,0 +1,26 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.dazed",
+  "nameZhHant": "暈眩",
+  "aliasesZhHant": [],
+  "text": [
+    "若你處於暈眩狀態，你在自己回合中只能執行其中 1 種動作：主要動作、機動動作，或移動動作。你也無法使用反應動作、免費反應動作，以及免費機動動作。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 暈眩",
+    "commonProcessing": [
+      "已批准術語批次改寫：觸發式動作→反應動作、免費觸發式動作→免費反應動作"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.dazed",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}

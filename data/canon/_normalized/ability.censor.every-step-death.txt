@@ -1,0 +1,12 @@
+name: Every Step … Death!
+flavor: You show your foe a glimpse of their fate after death.
+keywords: magic, ranged, strike
+actionType: main
+cost: none
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + presence
+tier≤11: 5 + P psychic damage
+tier12-16: 7 + P psychic damage
+tier17+: 10 + P psychic damage
+effect: Each time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move.

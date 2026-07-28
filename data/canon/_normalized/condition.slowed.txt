@@ -1,0 +1,2 @@
+name: Slowed
+text: A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift.

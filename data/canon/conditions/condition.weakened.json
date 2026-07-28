@@ -1,0 +1,19 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
+  "id": "condition.weakened",
+  "type": "condition",
+  "name": "Weakened",
+  "aliasesEn": [],
+  "text": [
+    "A creature who is weakened takes a bane on power rolls."
+  ],
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "version": "1.01",
+    "pdfPage": 9,
+    "printedPage": 77,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "f54c0ad9c292deda57fb2b0195e2553b7dbdacc32429e9375d2f2da4d8091c09"
+  }
+}

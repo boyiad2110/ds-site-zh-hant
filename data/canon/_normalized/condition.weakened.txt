@@ -1,0 +1,2 @@
+name: Weakened
+text: A creature who is weakened takes a bane on power rolls.

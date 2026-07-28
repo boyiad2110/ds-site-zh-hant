@@ -1,0 +1,88 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
+  "id": "ability.censor.purifying-fire",
+  "type": "ability",
+  "name": "Purifying Fire",
+  "aliasesEn": [],
+  "flavor": "The gods judge, fire cleanses.",
+  "keywords": [
+    "magic",
+    "melee",
+    "ranged",
+    "strike",
+    "weapon"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "wrath",
+    "value": 5
+  },
+  "distance": {
+    "kind": "choice",
+    "options": [
+      {
+        "kind": "melee",
+        "value": 1,
+        "raw": "Melee 1"
+      },
+      {
+        "kind": "ranged",
+        "value": 5,
+        "raw": "Ranged 5"
+      }
+    ],
+    "raw": "Melee 1 or ranged 5"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "might",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + M holy damage; the target has fire weakness 3 (save ends)",
+        "potency": {
+          "characteristic": "might",
+          "level": "weak"
+        },
+        "raw": "5 + M holy damage; M<WEAK, the target has fire weakness 3 (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "9 + M holy damage; the target has fire weakness 5 (save ends)",
+        "potency": {
+          "characteristic": "might",
+          "level": "average"
+        },
+        "raw": "9 + M holy damage; M<AVERAGE, the target has fire weakness 5 (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "12 + M holy damage; the target has fire weakness 7 (save ends)",
+        "potency": {
+          "characteristic": "might",
+          "level": "strong"
+        },
+        "raw": "12 + M holy damage; M<STRONG, the target has fire weakness 7 (save ends)"
+      }
+    ]
+  },
+  "effect": [
+    "While the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage."
+  ],
+  "extraCosts": [],
+  "origin": {
+    "kind": "class",
+    "id": "class.censor"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-04-censor",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 83,
+    "checkedAt": "2026-07-28",
+    "normalizedHash": "55f5a43529a1ded61438380fb239e0ef441d04a4d30b1c6f9b72676a0c9688b6"
+  }
+}

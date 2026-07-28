@@ -1,0 +1,39 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.grabbed",
+  "nameZhHant": "擒制",
+  "aliasesZhHant": [],
+  "text": [
+    "若你被擒制，你的`速度`歸 0，而且只能被擒抱者（生物、物體或效果）強制移動。你無法使用擊退機動動作，而且對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢。當擒抱者移動時，你會一起移動。若擒抱者的`體型` ≦ 你，則擒抱者在擒抱期間的`速度`會減半。",
+    "擒抱者可以使用機動動作將你移動至相鄰的未占據空間。",
+    "擒抱者可以隨時釋放你來解除該狀態（無需動作）。你可以使用掙脫機動動作來嘗試脫離。若你進行傳送，或你與擒抱者任一方被強制移動到雙方不相鄰的位置，擒制狀態就會立刻解除。",
+    "生物只能擒抱`體型` ≦ 自己的生物。若生物的`力量`為 2 以上，則可以擒抱`體型` ≦ 其`力量`的生物。",
+    "除非另有說明，生物同時只能擒抱 1 個生物。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 擒制",
+    "commonProcessing": [
+      "Notion 內部連結拆為純文字：擊退、掙脫、擒抱"
+    ],
+    "decisions": [
+      {
+        "id": "TI-1",
+        "effect": "已套用，文字已變更：刪除「在自己回合」"
+      },
+      {
+        "id": "TI-2",
+        "effect": "裁決維持舊譯「招式檢定」，文字未變更；疑點待官方勘誤釐清"
+      }
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.grabbed",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}

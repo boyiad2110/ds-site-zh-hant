@@ -1,0 +1,10 @@
+name: Back Blasphemer!
+flavor: You channel power through your weapon to repel foes.
+keywords: Area, Magic, Melee, Weapon
+actionType: Main action
+distance: 2 cube within 1
+target: Each enemy in the area
+powerRoll: Power Roll + Presence
+tier<=11: 2 holy damage; push 1
+tier12-16: 4 holy damage; push 2
+tier17+: 6 holy damage; push 3

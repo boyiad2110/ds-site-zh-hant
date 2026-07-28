@@ -1,0 +1,11 @@
+name: Repent!
+flavor: You conjure memories of their sins to harry your foes.
+keywords: magic, ranged, strike
+actionType: main
+cost: 3 wrath
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + presence
+tier≤11: 5 + P holy damage; I<WEAK, dazed (save ends)
+tier12-16: 8 + P holy damage; I<AVERAGE, dazed (save ends)
+tier17+: 11 + P holy damage; I<STRONG, dazed (save ends)

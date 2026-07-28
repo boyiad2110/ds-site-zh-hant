@@ -1,0 +1,27 @@
+{
+  "$comment": "中文譯文層。與 data/canon/conditions/ 同構逐段對應。名稱為此狀態實體的權威中文名（glossary 以 entityRef 指向此處）。",
+  "id": "condition.prone",
+  "nameZhHant": "伏地",
+  "aliasesZhHant": [],
+  "text": [
+    "若你處於伏地狀態，你的身體會平貼地面。在此狀態下，你發動的任何打擊都會承受 1 個劣勢，而其他生物對你發動的近戰招式則會獲得 1 個優勢。你只能用爬行的方式移動，每移動 1 格都需要額外消耗 1 格移動力。你在伏地時無法進行攀爬、跳躍、游泳或飛行。若你在攀爬、飛行或跳躍時被擊倒伏地，則會立刻墜落。",
+    "除非造成伏地狀態的招式或效果另有說明，否則你可以使用起身機動動作來解除伏地。此外，若你願意，相鄰的生物也可以對你使用起身機動動作來將你拉起來。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-28",
+    "nameApproval": "名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。",
+    "translationSource": "舊 Notion 狀態列表 · 伏地",
+    "commonProcessing": [
+      "Notion 內部連結拆為純文字：起身"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。"
+  },
+  "canonRef": {
+    "id": "condition.prone",
+    "document": "heroes-v1.01-03-class-and-abilities",
+    "printedPage": 77
+  }
+}
