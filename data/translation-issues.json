@@ -140,7 +140,249 @@
       },
       "applyTo": "產生 data/zh-Hant/conditions/condition.prone 時套用",
       "affectsOnly": "condition.prone"
+    },
+    {
+      "id": "TI-8",
+      "kind": "prose-issue",
+      "severity": "high",
+      "entityId": "feature.censor.wrath",
+      "field": "sections[2].blocks[0]",
+      "issue": "舊譯漏譯 “that same”，把「同一個招式不能再用」擴大成「所有需要怒火的招式都鎖住」",
+      "sourceEn": "you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite.",
+      "legacyZhHant": "才能在戰鬥外再次發動需要`怒火`的招式或效果。",
+      "resolution": "補回限定範圍，用「同個」。原文限制的是同一個招式，別的怒火招式仍可使用。",
+      "resolvedZhHant": "才能在戰鬥外再次發動同個招式或效果。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.wrath 時套用",
+      "affectsOnly": "feature.censor.wrath",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-9",
+      "kind": "global-style",
+      "severity": "low",
+      "entityId": "*",
+      "field": "英雄資源說明",
+      "issue": "舊譯把「回合開始獲得 2 點怒火」從第一段搬進項目清單，並加上原文沒有的「每輪 1 次」",
+      "sourceEn": "At the start of each of your turns during combat, you gain 2 wrath.",
+      "legacyZhHant": "每輪 1 次，當你的回合開始時，你獲得 2 點`怒火`。",
+      "resolution": "維持舊譯。擁有者說明：「每輪 1 次」是為了讓玩家好懂而加的提醒，規則上無差異；**其他範型的英雄資源也採用同樣的描述方式統一說明**。故此為全站風格，不是個別條目的偏差，之後 8 個範型的英雄資源比照辦理，不再逐條提報。",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "全部範型的英雄資源說明",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-10",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "feature.censor.wrath",
+      "field": "sections[1].blocks[0]",
+      "issue": "原文的 “(as determined by the Director)” 未譯出",
+      "sourceEn": "or some other stressful situation tracked in combat rounds (as determined by the Director)",
+      "legacyZhHant": "或其他需要以戰鬥輪計算的緊張情境",
+      "resolution": "維持舊譯，不補譯。擁有者裁定。",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.wrath 時套用",
+      "affectsOnly": "feature.censor.wrath",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-11",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "feature.censor.censor-order",
+      "field": "sections[0].blocks[0]",
+      "issue": "原文句尾的 “(Quick Build: Paragon.)” 未譯出",
+      "sourceEn": "(Quick Build: Paragon.)",
+      "legacyZhHant": "（未譯出）",
+      "resolution": "補上。`Quick Build` ＝推薦選項（2026-07-29 裁定）；括號內句尾不加句號（指南 §6）。",
+      "resolvedZhHant": "（推薦選項：典範）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.censor-order 時套用",
+      "affectsOnly": "feature.censor.censor-order",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-12",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "feature.censor.censor-order",
+      "field": "sections[0].blocks[0]",
+      "issue": "原文後半句是第二人稱「你擔任神明的代行者」，舊譯合併為第三人稱陳述",
+      "sourceEn": "Censors are the will of their god made physically manifest, and you act as your god’s agent in the world.",
+      "legacyZhHant": "懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。",
+      "resolution": "維持舊譯。擁有者裁定。（TI-4 的第二人稱通則不強制回溯改寫此類敘述句）",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.censor-order 時套用",
+      "affectsOnly": "feature.censor.censor-order",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-13",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "feature.censor.censor-order",
+      "field": "sections[0].blocks[1].items[0]",
+      "issue": "原文 “hidden enemies”（隱藏的敵人）舊譯作「躲避你教團的敵人」，指涉對象不同",
+      "sourceEn": "You specialize in hunting your order’s hidden enemies",
+      "legacyZhHant": "你擅長獵捕躲避你教團的敵人",
+      "resolution": "改寫。擁有者指定措辭。",
+      "resolvedZhHant": "你擅長獵捕尚未被教團發現的潛藏敵人",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.censor-order 時套用",
+      "affectsOnly": "feature.censor.censor-order",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-14",
+      "kind": "naming",
+      "severity": "medium",
+      "entityId": "feature.censor.judgment-order-benefit",
+      "field": "nameZhHant",
+      "issue": "舊譯作「審判教團益處」，docs/scope.md 作「審判教團利益」，兩處不一致",
+      "sourceEn": "Judgment Order Benefit",
+      "legacyZhHant": "審判教團益處",
+      "resolution": "確定譯為「審判：教團益處」（含全形冒號）。擁有者裁定。docs/scope.md 一併更新。",
+      "resolvedZhHant": "審判：教團益處",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.judgment-order-benefit 時套用；docs/scope.md 已同步",
+      "affectsOnly": "feature.censor.judgment-order-benefit",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-15",
+      "kind": "prose-issue",
+      "severity": "low",
+      "entityId": "feature.censor.censor-order",
+      "field": "sections[0].blocks[1].items[2]",
+      "issue": "「必定墮落腐化」比原文 “will be corrupted” 語氣強",
+      "sourceEn": "Without a strong example and a firm hand, the weak will be corrupted.",
+      "legacyZhHant": "若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。",
+      "resolution": "維持舊譯。純敘述，§7.2 允許改寫。",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.censor-order 時套用",
+      "affectsOnly": "feature.censor.censor-order",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-16",
+      "kind": "presentation",
+      "severity": "low",
+      "entityId": "feature.censor.wrath",
+      "field": "sections[1].blocks[1]",
+      "issue": "原文 “(see Judgment below)” 是指向同頁下方【審判】的參照，網站沒有「下方」",
+      "sourceEn": "a creature judged by you (see Judgment below) deals damage to you",
+      "legacyZhHant": "當 1 個被你審判的生物首次對你造成傷害時",
+      "resolution": "**做成站內連結**。與 TI-5～7 不同：那三處的目標不在 M0，此處的【審判】（ability.censor.judgment）在 M0 範圍內，可直接連。不保留「下方」等紙本位置指示。",
+      "resolvedZhHant": "（同舊譯，「審判」渲染為連向 ability.censor.judgment 的站內連結）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/features/feature.censor.wrath 時套用；renderer 需支援實體連結",
+      "affectsOnly": "feature.censor.wrath",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-17",
+      "kind": "naming",
+      "severity": "medium",
+      "entityId": "*",
+      "field": "三個教團的名稱",
+      "issue": "舊譯在相鄰兩段用了「驅邪教團」與「驅邪」兩種寫法；原文兩處都只有 Exorcist/Oracle/Paragon",
+      "sourceEn": "Exorcist: / Oracle: / Paragon:",
+      "legacyZhHant": "驅邪教團／神諭教團／典範教團（懲戒者教團一節）　驅邪／神諭／典範（審判教團益處一節）",
+      "resolution": "**正式名稱用「驅邪／神諭／典範」**（與已批准術語一致，作為條目名稱、選項標籤、資料值）；**一般句子中需要時可組合為「驅邪教團」**等長式，屬行文用法，不是另一個名稱。擁有者裁定。",
+      "resolvedZhHant": "正式：驅邪／神諭／典範　行文可用：驅邪教團／神諭教團／典範教團",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "全站教團名稱；懲戒者教團與審判：教團益處兩處一併適用",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
+    },
+    {
+      "id": "TI-18",
+      "kind": "term-conflict",
+      "severity": "medium",
+      "entityId": "*",
+      "field": "Respite",
+      "issue": "術語表批准「休整」，但舊譯 63 個檔案用「長休」、僅 10 個用「休整」；原裁決依據只統計了「休整」的檔案數，未統計競爭譯名「長休」",
+      "sourceEn": "Respite",
+      "legacyZhHant": "長休（63 檔）／休整（10 檔）",
+      "resolution": "**維持「休整」**。擁有者在知悉 63 vs 10 的實際用量後重新確認，原裁決成立。舊譯的「長休」由工具批次套用改為「休整」（term-applied）。",
+      "resolvedZhHant": "休整",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "全站；本批影響 feature.censor.wrath 1 筆",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
     }
   ],
-  "$auditNote": "每個 TI 只影響 entityId 指定的那一個實體。實體檔 data/zh-Hant/**/meta.decisions 只列出真正受影響的 TI，不做批次備註。"
+  "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite 屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。"
 }

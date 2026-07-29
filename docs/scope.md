@@ -25,7 +25,7 @@ schema、抽取方式、欄位語意 → `docs/translation-guide.md`
 | 狀況 | 9 個：出血 Bleeding、暈眩 Dazed、畏縮 Frightened、擒制 Grabbed、伏地 Prone、束縛 Restrained、緩速 Slowed、嘲諷 Taunted、虛弱 Weakened | ✅ 已完成 |
 | 英雄資源說明 | 一段最小必要說明（懲戒者的「怒火 Wrath」如何取得與花費），僅供理解招式費用。**不是範型頁** | ✅ 已完成 |
 | 教團（Subclass） | 3 個：驅邪 Exorcist、神諭 Oracle、典範 Paragon —— 各含說明與授予技能。**僅一級內容** | ✅ 已完成 |
-| 審判教團利益 | 獨立的特性條目（`feature.censor.judgment-order-benefit`），列出三支教團各自的加成 | ✅ 已完成 |
+| 審判：教團益處 | 獨立的特性條目（`feature.censor.judgment-order-benefit`），列出三支教團各自的加成。中文名依 2026-07-29 裁決（`data/translation-issues.json` TI-14） | ✅ 已完成 |
 | ~~速查~~ | — | ⏸ **不屬 M0**，延後至上線前（見裁決 #1） |
 
 **M0 明確不包含**：懲戒者 2–3 級招式、2 級以上的教團特性與教團招式、升級表、

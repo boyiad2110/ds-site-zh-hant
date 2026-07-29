@@ -1,0 +1,31 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.basic.ranged-weapon-free-strike",
+  "nameZhHant": "遠程武器基礎打擊",
+  "aliasesZhHant": [],
+  "powerRoll": {
+    "tiers": [
+      { "threshold": "≤11", "text": "2 + `力量`或`敏捷`傷害" },
+      { "threshold": "12-16", "text": "4 + `力量`或`敏捷`傷害" },
+      { "threshold": "17+", "text": "6 + `力量`或`敏捷`傷害" }
+    ]
+  },
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-29",
+    "nameApproval": "名稱與三階層逐欄比對，全部 exact，對齊報告見 docs/alignment/zh-batch1-alignment.md。",
+    "translationSource": "舊 Notion 招式列表 · 遠程武器基礎打擊",
+    "commonProcessing": [
+      "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
+      "flavor 為 null——原文卡片無敘述文字"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.basic.ranged-weapon-free-strike",
+    "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
+    "printedPage": 17
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應——sections 與 blocks 的數量與順序必須與正典一致。blocks[].kind 允許與正典不同（見 meta.commonProcessing 與指南 §4.7(3)）。",
+  "id": "feature.censor.wrath",
+  "nameZhHant": "怒火",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你侍奉的神明賜予你名為「`怒火`」的`英雄資源`，這股力量會在你懲戒教會認定的異端時，驅動你的各種招式。"
+        }
+      ]
+    },
+    {
+      "heading": "戰鬥中的怒火",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "在戰鬥或其他需要以`戰鬥輪`計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。"
+        },
+        {
+          "kind": "bulletList",
+          "lead": "此外，當以下條件觸發時，你會再額外獲得`怒火`。",
+          "items": [
+            "每輪 1 次，當你的回合開始時，你獲得 2 點`怒火`。",
+            "每輪 1 次，當 1 個被你[審判](ability.censor.judgment)的生物首次對你造成傷害時，你獲得 1 點`怒火`。",
+            "每輪 1 次，當你首次對 1 個被你[審判](ability.censor.judgment)的生物造成傷害時，你獲得 1 點`怒火`。"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "`遭遇`結束時，你失去所有剩餘的`怒火`。"
+        }
+      ]
+    },
+    {
+      "heading": "戰鬥外的怒火",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次`休整`，才能在戰鬥外再次發動同個招式或效果。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "若你在戰鬥外發動 1 個允許你花費無限`怒火`的招式，你可以將其視為花費等於你`勝利值`的`怒火`（懲戒者的核心規則目前不包括這類招式，但可能會在未來的產品中出現）。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-29",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，6 項差異已於 2026-07-29 逐筆裁決。",
+    "translationSource": "舊 Notion 懲戒者 · 怒火",
+    "commonProcessing": [
+      "sections[1].blocks[1] 的正典是散文段落，中文改為「引導句＋項目清單」。這是擁有者裁定的全站風格（TI-9），其他 8 個範型的英雄資源說明比照辦理",
+      "因此 blocks[].kind 允許與正典不同；但 sections 與 blocks 的數量與順序仍須一一對應，否則無法逐段比對",
+      "「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定",
+      "TI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」",
+      "TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析"
+    ],
+    "decisions": ["TI-8", "TI-9", "TI-10", "TI-16", "TI-18"],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "feature.censor.wrath",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 79
+  }
+}

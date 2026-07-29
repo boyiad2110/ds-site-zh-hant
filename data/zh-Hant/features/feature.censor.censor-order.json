@@ -1,0 +1,57 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應——sections 與 blocks 的索引必須與正典一一對應。",
+  "id": "feature.censor.censor-order",
+  "nameZhHant": "懲戒者教團",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。\n\n當你承擔這個責任時，從以下選項中選擇 1 支教團。每支教團都會賦予你 1 項技能。（推薦選項：典範）"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "驅邪",
+              "text": "你擅長獵捕尚未被教團發現的潛藏敵人，深知敞開的心靈就如同毫無防備的堡壘。你擁有`觀色`技能。"
+            },
+            {
+              "term": "神諭",
+              "text": "腐敗如同深入骨髓的觸鬚，容易被忽視，因此你擅長揭露威脅教團的隱藏威脅。你擁有`魔法`技能。"
+            },
+            {
+              "term": "典範",
+              "text": "若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。你擅長為教團樹立榜樣。你擁有`領導`技能。"
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "你的懲戒者教團代表你的`子範型`，你選擇的教團將決定你在升級時獲得的許多特性。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-29",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，7 項差異已於 2026-07-29 逐筆裁決。",
+    "translationSource": "舊 Notion 懲戒者 · 懲戒者教團",
+    "commonProcessing": [
+      "教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」；行文中需要時可組合為「驅邪教團」",
+      "舊譯把原文第 1 段拆成兩段，維持舊譯的分段（TI-12），以段內換行保留"
+    ],
+    "decisions": ["TI-11", "TI-12", "TI-13", "TI-15", "TI-17"],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "feature.censor.censor-order",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 79
+  }
+}
