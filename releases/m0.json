@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/build-m0-release.mjs 從 data/canon/ 掃描產生，不可手改。 這是 M0 的精確術語依賴清單——網站發布 M0 內容時，這裡的每個詞都必須有已批准的譯名。",
   "release": "m0",
-  "sourceFingerprint": "777dee09e302be26",
+  "sourceFingerprint": "7e3ef15cadc28c27",
   "scannedCanonEntries": 28,
   "$exclusionNote": "通道 B（散文文字掃描）必然有假命中。以下是人工判定為假命中、刻意不計入依賴的詞，每筆都附理由——沒有理由的排除等於偷偷放行。",
   "exclusions": [
@@ -818,6 +818,18 @@
       "usedBy": [
         "feature.censor.censor-order",
         "feature.censor.judgment-order-benefit"
+      ],
+      "viaFields": [
+        "(散文)"
+      ]
+    },
+    {
+      "id": "term.fire-weakness",
+      "en": "Fire Weakness",
+      "zhHant": "火焰弱點",
+      "source": "glossary",
+      "usedBy": [
+        "ability.censor.purifying-fire"
       ],
       "viaFields": [
         "(散文)"

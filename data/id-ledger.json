@@ -1875,6 +1875,9 @@
     },
     "term.magic.skill": {
       "signature": "Magic|skill"
+    },
+    "term.fire-weakness": {
+      "signature": "Fire Weakness|"
     }
   }
 }

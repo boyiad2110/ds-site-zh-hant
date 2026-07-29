@@ -1,0 +1,44 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.behold-a-shield-of-faith",
+  "nameZhHant": "聖盾在此！",
+  "aliasesZhHant": [],
+  "flavor": "強力一擊將敵人的生命力轉化為神聖之光，環繞著你和盟友，使敵人不敢輕舉妄動。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + `力量`神聖傷害"
+      }
+    ]
+  },
+  "effect": [
+    "若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
+    "translationSource": "舊 Notion 招式列表 · 聖盾在此！",
+    "commonProcessing": [
+      "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+      "effect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.behold-a-shield-of-faith",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 82
+  }
+}

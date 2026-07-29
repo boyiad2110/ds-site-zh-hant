@@ -427,7 +427,173 @@
         "pdfPage": 5,
         "printedPage": 82
       }
+    },
+    {
+      "id": "TI-21",
+      "kind": "prose-issue",
+      "severity": "low",
+      "entityId": "ability.censor.my-life-for-yours",
+      "field": "flavor",
+      "issue": "“some of” 的程度限定未譯出；另增原文沒有的「體內」",
+      "sourceEn": "You channel some of your vitality into more resilience for you or an ally.",
+      "legacyZhHant": "你將生命能量注入自己或盟友體內來增強韌性。",
+      "resolution": "維持舊譯。此項確立了專案通則：flavor 敘述允許適度改寫以求通順與風格，不採逐字直譯（已寫入指南 §7.2），並定為 ⚪ low 不阻擋批准。",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.my-life-for-yours 時套用",
+      "affectsOnly": "ability.censor.my-life-for-yours",
+      "backfilledAt": "2026-07-29",
+      "backfillNote": "本項原僅記於 docs/samples/alignment-my-life-for-yours.md 的 PN-1，未進入本檔。2026-07-29 第三批對齊時發現此追蹤缺口（B3-3），依擁有者指示補登。裁決內容與日期未變動。",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-22",
+      "kind": "prose-issue",
+      "severity": "high",
+      "entityId": "ability.censor.my-life-for-yours",
+      "field": "extraCosts[0].effect",
+      "issue": "限定語 “on the target” 未譯出，擴大了可解除效果的適用範圍",
+      "sourceEn": "You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.",
+      "legacyZhHant": "你可以解除 1 個能夠透過豁免解除或 EoT 的狀態或效果，或是讓伏地的目標起身。",
+      "resolution": "補入「目標身上」。原文限定效果須在目標身上；此招式目標為「自身或 1 個盟友」，未限定時可讀成能解除場上任何符合條件的效果。與 TI-23 同時套用。",
+      "resolvedZhHant": "你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.my-life-for-yours 時套用",
+      "affectsOnly": "ability.censor.my-life-for-yours",
+      "evidence": "docs/samples/evidence/mlfy-spend1wrath-03.png（300dpi 裁切）",
+      "backfilledAt": "2026-07-29",
+      "backfillNote": "原記於樣張 PN-2，未進入本檔。2026-07-29 依擁有者指示補登（B3-3）。裁決內容與日期未變動。",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-23",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "ability.censor.my-life-for-yours",
+      "field": "extraCosts[0].effect",
+      "issue": "「狀態或效果」較原文多出「狀態」",
+      "sourceEn": "one effect",
+      "legacyZhHant": "1 個…的狀態或效果",
+      "resolution": "刪除「狀態或」。原文僅寫 effect；Draw Steel 中狀態本身即是一種效果，舊譯的補充屬詮釋而非翻譯，違反 §7.1(2)。定稿文字見 TI-22。",
+      "resolvedZhHant": "（併入 TI-22 的定稿文字）",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.my-life-for-yours 時套用",
+      "affectsOnly": "ability.censor.my-life-for-yours",
+      "backfilledAt": "2026-07-29",
+      "backfillNote": "原記於樣張 PN-3，未進入本檔。2026-07-29 依擁有者指示補登（B3-3）。裁決內容與日期未變動。",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-24",
+      "kind": "global-style",
+      "severity": "low",
+      "entityId": "*",
+      "field": "end of their turn / end of the encounter",
+      "issue": "原文寫全文 “that ends at the end of their turn”，舊譯自行縮寫為 EoT",
+      "sourceEn": "that ends at the end of their turn",
+      "legacyZhHant": "EoT",
+      "resolution": "維持 EoT。理由：讓玩家更方便閱讀。通則：`end of their turn` 等時機描述，中文一律採 EoT／EoE 縮寫，**不論原文寫全文或縮寫**。此通則擴充了 2026-07-28 的 EoT／EoE 裁決（該裁決只處理「原文出現縮寫時不譯」）。",
+      "resolvedZhHant": "EoT／EoE",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "applyTo": "全站時機描述；本批影響 ability.censor.my-life-for-yours 1 筆",
+      "affectsOnly": "*",
+      "backfilledAt": "2026-07-29",
+      "backfillNote": "原記於樣張 PN-4，未進入本檔。2026-07-29 依擁有者指示補登（B3-3）。**這是一條全域通則卻只存在於單一條目的樣張裡**，是本次追蹤缺口中影響面最大的一項。裁決內容與日期未變動。",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-25",
+      "kind": "prose-issue",
+      "severity": "low",
+      "entityId": "ability.censor.back-blasphemer",
+      "field": "flavor",
+      "issue": "原文只說 “power”，舊譯補上「神聖」",
+      "sourceEn": "You channel power through your weapon to repel foes.",
+      "legacyZhHant": "你使用武器引導神聖力量來擊退敵人。",
+      "resolution": "維持舊譯。flavor 依 §7.2 允許改寫；懲戒者的力量來源為神明，補字未擴大規則語意。",
+      "resolvedZhHant": "（同舊譯）",
+      "status": "resolved",
+      "decidedAt": "2026-07-28",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.back-blasphemer 時套用（已套用）",
+      "affectsOnly": "ability.censor.back-blasphemer",
+      "backfilledAt": "2026-07-29",
+      "backfillNote": "原僅記於 docs/alignment/back-blasphemer.md 的 PN-1，未進入本檔。2026-07-29 依擁有者指示一併補登，以免同類追蹤缺口繼續存在。裁決內容與日期未變動。",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 5,
+        "printedPage": 82
+      }
+    },
+    {
+      "id": "TI-26",
+      "kind": "prose-issue",
+      "severity": "medium",
+      "entityId": "ability.censor.judgment",
+      "field": "followUpActions[0].options[2]",
+      "issue": "限定語 “for that creature” 未譯出；原文 “that targets only one creature” 的修飾對象（ability 或 potency）有歧義",
+      "sourceEn": "When a creature judged by you within 10 squares uses an ability with a potency that targets only one creature, the potency is reduced by 1 for that creature.",
+      "legacyZhHant": "當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力會減少 1 點。",
+      "resolution": "採第三批報告 B3-2 的建議 (a)：**維持舊譯對修飾對象的理解**（“that targets only one creature” 修飾 ability），**但補回限定語 “for that creature”**。這是擁有者對原文讀法的正式裁決，歧義就此定案，日後不再重開。",
+      "resolvedZhHant": "當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.judgment 時套用",
+      "affectsOnly": "ability.censor.judgment",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 80
+      }
+    },
+    {
+      "id": "TI-27",
+      "kind": "modeling-rule",
+      "severity": "medium",
+      "entityId": "ability.censor.behold-the-face-of-justice",
+      "field": "tiers[0-2].text",
+      "issue": "正典 text 保留了 “if the target has this potency,” 的條件從句，剝除效力記號後中文沒有對應文字",
+      "sourceEn": "3 + M holy damage; if the target has this potency, each enemy within 2 squares of them is frightened of you (save ends)",
+      "legacyZhHant": "`氣場 < 弱`，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）",
+      "resolution": "**沿用舊譯，不補寫條件句。** 擁有者裁定：原文的 “if the target has X < potency” 屬重複描述——效力記號 `X < potency` 本身就表示「若目標未通過該效力」，中文省略重複句不代表效果變成無條件。本項改記為**擁有者批准的結構化省略**，不再列為 missing 或阻擋批准的 prose-issue。\n**renderer 的義務**：必須把結構化的 `potency` 與該階層的後續效果**一起呈現**，讓讀者清楚知道畏縮效果受效力條件控制。若 renderer 做不到這一點，本裁決的前提就不成立，須回頭重議。",
+      "resolvedZhHant": "3 + `力量`神聖傷害，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）（其餘兩階層同樣處理）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.behold-the-face-of-justice 時套用",
+      "affectsOnly": "ability.censor.behold-the-face-of-justice",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 6,
+        "printedPage": 83
+      }
     }
   ],
-  "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite、TI-20 willing／willingly 片語規則屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。"
+  "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite、TI-20 willing／willingly 片語規則、TI-24 EoT／EoE 縮寫屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。",
+  "$backfillNote": "TI-21～TI-25 帶有 backfilledAt／backfillNote：裁決本身早已完成（日期見 decidedAt），但當時只寫在對齊報告或樣張裡，沒有進入本檔。2026-07-29 第三批對齊時發現此追蹤缺口（zh-batch3-alignment.md 的 B3-3），依擁有者指示補登，裁決內容與日期一律未變動。**教訓：本檔被當成產生中文的正式待辦清單，任何寫在報告裡的裁決若沒有回寫本檔，照清單作業就會漏掉。日後對齊報告一經裁決，同一輪內即回寫本檔。**"
 }

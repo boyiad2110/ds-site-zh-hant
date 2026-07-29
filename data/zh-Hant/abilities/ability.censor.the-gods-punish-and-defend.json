@@ -1,0 +1,43 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.the-gods-punish-and-defend",
+  "nameZhHant": "神之懲護",
+  "aliasesZhHant": [],
+  "flavor": "你引導神聖能量來懲戒敵人並守護盟友。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "8 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "11 + `力量`神聖傷害"
+      }
+    ]
+  },
+  "effect": [
+    "你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。",
+    "translationSource": "舊 Notion 招式列表 · 神之懲護",
+    "commonProcessing": [
+      "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.the-gods-punish-and-defend",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}

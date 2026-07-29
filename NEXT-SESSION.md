@@ -1,66 +1,79 @@
 # 下一個對話的啟動說明
 
-> 建立於 2026-07-28，最後更新 **2026-07-29**（第 6 步完成：術語依賴清單 releases/m0.json）。
+> 建立於 2026-07-28，最後更新 **2026-07-29**（第 7 步第三批：對齊完成、譯文層裁決全數結案）。
 > **新對話請先讀本檔，再讀下列文件。**
 
 ---
 
 ## 現在在哪裡
 
-M0 的執行順序，**第 1–6 步已完成，下一步是第 7 步**：
+M0 的執行順序，**第 1–6 步已完成，第 7 步進行中**：
 
 ```
 1. ✅ poppler 安裝與算繪驗證
 2. ✅ 翻譯指南搬入 docs/translation-guide.md
 3. ✅ 「捨己為人」對齊報告樣張
 4. ✅ 閘門通過，指南已批准
-5. ✅ 抽取 M0 英文正典 —— 28 個條目，全部 verified
+5. ✅ 抽取 M0 英文正典 —— 28 個條目（⚠️ 抽取報告自評 verified，
+     但 **`canonReviewStatus` 全部仍是 `draft`**，見下方「正典狀態」）
      ✅ 懲戒者一級 14 個招式
      ✅ 9 個狀態（正典＋中文實體皆已建立，術語表 approved）
      ✅ 2 個基礎打擊
      ✅ 3 個教團／怒火特性（新 type `feature`）
      ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
-6. ✅ 產出術語依賴清單 → `releases/m0.json`（113 個術語，全部 approved）
+6. ✅ 產出術語依賴清單 → `releases/m0.json`（114 個術語，全部 approved）
 7. 🔄 中文逐句對齊
      ✅ 第一批 5 條（2 基礎打擊 ＋ 3 教團／怒火特性）—— 已裁決、已產出中文
-     🔶 第二批 4 個招牌招式 —— **已對齊、已裁決，中文尚未產出**  ← **下一步先做這個**
-     ⏳ 第三批 8 個英雄 ＋ 2 個固有招式
+     🔶 第二批 4 個招牌招式 —— 已產出中文，**meta 維持 draft，待擁有者驗收 diff**
+     🔶 第三批 —— **9 條中文已產出**（draft）；【當場拘捕】待正典資料模型定案
+        ← **下一步：裁 `docs/proposal-arrest-data-model.md`**
+     ✅ 呈現驗證點（`preview/index.html`）—— 見 `docs/render-validation-m0.md`
+        ⚠️ **發現：TI-27 的前提只满足一半**，依其文字應回頭重議
 8. ⏳ 專案擁有者逐筆裁決
 9. ⏳ 此時才開始寫 UI
 ```
 
 ### 第 7 步該做什麼
 
-28 條正典裡，中文已完成 **14 條**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性）。
+28 條正典裡，中文已完成 **27 條**。差【當場拘捕】 1 條，卡在資料模型。
 
-#### ⏭️ 下一件事：產出 4 個招牌招式的中文
+#### ⏭️ 下一件事：兩個決定
 
-**對齊與裁決都做完了**（見 `docs/alignment/zh-batch2-alignment.md`），
-只差產出 `data/zh-Hant/abilities/` 這四個檔案：
+**(1) 裁【當場拘捕】的正典資料模型** —— 見 `docs/proposal-arrest-data-model.md`。
+這是第三批唯一剩下的阻擋項，只擋這 1 條。
+原文的 3 怒火是**目標之後發動打擊時才付**，目前放在 `extraCosts` 會被讀成「發動招式時付」，
+**時序語意是錯的**。只加 `label` 欄不夠（擁有者 2026-07-29 裁定）。
 
-```
-ability.censor.back-blasphemer              瀆神者退散！
-ability.censor.every-step-death             踏向死亡！
-ability.censor.halt-miscreant               惡徒止步！
-ability.censor.your-allies-cannot-save-you  你的同夥救不了你！
-```
+**(2) 指示是否產出其餘 9 條中文** —— 譯文層裁決已全部完成（TI-21～TI-27）。
 
-產出時必須套用的兩筆裁決與兩條建模規則：
+第三批報告：`docs/alignment/zh-batch3-alignment.md`（已依裁決結果重算統計，
+每項都分「裁決前分析」與「擁有者裁決」）。
+
+#### 產出中文時的建模規則（第二批建立，第三批沿用）
 
 | 項目 | 內容 |
 |---|---|
-| **TI-19** | 「你的同夥救不了你！」的 effect 補「最多」：「…推動**最多**等於你`氣場`的格數。」 |
-| **TI-20** | `willingly moves` ＝「主動移動」（維持舊譯） |
-| N-1 | 「惡徒止步！」的 `tiers[].text` **不可含**「`氣場 < 弱`」——效力已結構化，由 renderer 從 `potency` 組出 |
-| N-2 | 舊譯的階層表格是多欄（傷害／推動分開），正典是單一字串，產出時合併為一個 `text` |
+| **TI-19** | 「你的同夥救不了你！」的 effect 已補「最多」 |
+| **TI-20** | `willingly` ＝「主動」（`willingly moves`＝主動移動；`willing`＝自願的） |
+| **TI-24** | **全域**：`end of their turn` 等時機一律用 EoT／EoE 縮寫，不論原文寫全文或縮寫 |
+| **TI-26** | 審判的效力減免補「對該生物」；原文的修飾歧義已定案，不再重開 |
+| **TI-27** | 直視正義威儀！ 的效力條件句**刻意不譯**（擁有者批准的結構化省略）。⚠️ **前提是 renderer 必須把 `potency` 與該階層後續效果一起呈現**；做不到就要回頭重議 |
+| N-1 | `tiers[].text` **不可含**效力記號（如「`氣場 < 弱`」）——由 renderer 從 `potency` 組出 |
+| N-2 | 多欄階層表格合併為單一 `text`，**欄間以全形逗號「，」分隔**（已補為指南 §6 正式規則） |
+| 狀態連結 | 狀態名在 `tiers[].text` 存**純文字**。TI-16 處理的是原文明確要求的參照，不同一件事；日後由統一的 renderer 機制處理 |
 
-之後接第三批：8 個英雄 ＋ 2 個固有招式（含審判的四選一、淨化聖火的二選一射程、
-捨己為人與當場拘捕的追加花費）。
+> ⚠️ **中文檔的 `meta.status` 一律先寫 `draft`。** 對齊裁決完成 ≠ 資料檔已驗收；
+> 擁有者看過完整 diff 後才升 `reviewed`。第二批四個檔案曾誤標 reviewed，已更正。
 
-⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-20，全部 resolved）。
+⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-27，全部 resolved）。
 那是待辦清單，不是靠記憶。**特別注意 `affectsOnly: "*"` 的全域通則**：
 TI-4（一律第二人稱）、TI-9（英雄資源的描述方式，8 個範型比照）、
-TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing／willingly 片語規則）。
+TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing／willingly 片語規則）、
+**TI-24（EoT／EoE 縮寫，原文寫全文時亦採縮寫）**。
+
+⚠️ **裁決一經作成，同一輪內就要回寫 `translation-issues.json`。**
+2026-07-29 發現「捨己為人」的 4 項裁決只寫在樣張裡、從未進入本檔，
+照待辦清單作業會整批漏掉（已補登為 TI-21～TI-25，帶 `backfilledAt` 可稽核）。
 
 ⚠️ **已知的三筆待對齊觀察**記在 `docs/alignment/m0-batch2-results.md` 末尾
 （怒火的段落搬移與「每輪 1 次」、遺漏的 `(see Judgment below)`、教團的 Quick Build）。
@@ -87,11 +100,14 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing�
 | `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
 | `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
 | `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
-| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-20）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20） |
+| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-27）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20／**24**） |
 | `docs/alignment/zh-batch1-alignment.md` | 第一批 5 條的對齊報告與 11 項裁決；格式可沿用 |
-| `docs/alignment/zh-batch2-alignment.md` | **第二批 4 個招牌招式的對齊報告與 2 項裁決；產出中文前必讀**（含 N-1／N-2 建模規則） |
+| `docs/alignment/zh-batch2-alignment.md` | 第二批 4 個招牌招式的對齊報告與 2 項裁決（含 N-1／N-2 建模規則）。中文已產出 |
+| `docs/alignment/zh-batch3-alignment.md` | **第三批 10 個招式的對齊報告；譯文層已全數裁決，中文未產出** ← 目前的工作面 |
+| `docs/proposal-arrest-data-model.md` | **【當場拘捕】的正典建模提案**——第三批唯一剩下的阻擋項 |
+| `docs/render-validation-m0.md` | **呈現驗證結果**。含一項紙上看不到的發現：效力做不成「若…則…」 |
 | `docs/m0-term-decisions-needed.md` | 第 6 步的術語裁決紀錄（已全數結案）——當初為什麼這樣決定 |
-| `releases/m0.json` | M0 的精確術語依賴清單。113 個術語，含 `viaFields`、排除理由與詞義指定 |
+| `releases/m0.json` | M0 的精確術語依賴清單。114 個術語，含 `viaFields`、排除理由與詞義指定 |
 
 > **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
 > 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
@@ -363,21 +379,42 @@ node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 驗證：
 
 ```bash
-node --test "scripts/**/*.test.mjs"       # 102 tests
+node --test "scripts/**/*.test.mjs"       # 126 tests
 node scripts/verify-canon-hash.mjs        # 正典內容指紋
-node scripts/verify-zh-structure.mjs      # 中文與正典的逐段對應（含 flavor 存在性）
+node scripts/verify-zh-structure.mjs      # 中文與正典的逐段對應
+                                          # （數量 ＋ 每個元素非空 ＋ Array.isArray 三層）
 node scripts/report-m0-terms.mjs          # 唯讀：術語用量掃描報告
 node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過期
 ```
 
-目前基線（**2026-07-29 第 6 步收盤**）：
-glossary **606**（approved **259**）、vocabulary **23** 值（5 個詞彙表，全部 approved）、
-ledger **625**、pending **2**（Hakaan／Memonek）、測試 **102/102**、
-正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符）、
-中文 **14／28**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性）；
-**4 個招牌招式已對齊裁決、中文待產出**；**8 英雄 ＋ 2 固有未動**、
-translation-issues **20** 項全 resolved、
-`releases/m0.json` **113** 個依賴術語（全部 approved，來源指紋 `777dee09e302be26`）。
+目前基線（**2026-07-29 第 7 步第二批收盤**，以下數字皆為當日實跑結果）：
+glossary **607**（含 2026-07-29 新增 `Fire Weakness ＝火焰弱點`）、
+vocabulary **23** 值（5 個詞彙表，全部 approved）、
+ledger **626**、pending **2**（Hakaan／Memonek）、測試 **126/126**、
+正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符，
+但 **`canonReviewStatus` 全部仍是 `draft`**）、
+中文 **27／28**（全部 `draft`，差【當場拘捕】）、
+translation-issues **27** 項全 resolved（TI-21～25 為補登的既有裁決）、
+`releases/m0.json` **114** 個依賴術語（全部 approved，來源指紋 `7e3ef15cadc28c27`）。
+
+### ⚠️ 正典狀態：28 條全部是 `draft`，沒有一條是正式 verified
+
+2026-07-29 外部 review 抓到的一項不一致，**記在這裡以免再誤讀**：
+
+| 東西 | 它證明什麼 | 它不證明什麼 |
+|---|---|---|
+| 抽取報告的「✅ verified」 | 抽取當下做過逐欄核對 | **不是正式批准狀態** |
+| `verify-canon-hash` 通過 | 現在的 JSON 與 `_normalized/` 快照一致，**內容沒被偷改** | **完全不知道當初抽得對不對** |
+| `canonReviewStatus` | 正式的來源驗證狀態 | —— 目前 **28/28 都是 `draft`** |
+
+**不要因為 hash 通過就把狀態升成 `verified`。**
+升級的前提寫在 `docs/alignment/censor-level1-results.md`（其中「中文對齊逐筆完成」正在做）。
+
+證據強度也不是齊一的：**只有 4 個招牌招式做過完整三來源逐欄人工比對**；
+其餘 10 個（＝第三批）是「`-layout` 文字抽取 ＋ 150dpi 整頁目視 ＋ 舊 CSV 比對等級／費用／分類」，
+而舊 CSV **沒有效果文字可比**，所以效果文字只有兩個來源。p.6 只做過一次目視，未逐字放大。
+
+---
 
 ### 術語掃描的三個通道（`scripts/lib/m0-scan.mjs`）
 

@@ -1,0 +1,35 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.your-allies-cannot-save-you",
+  "nameZhHant": "你的同夥救不了你！",
+  "aliasesZhHant": [],
+  "flavor": "你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。",
+  "powerRoll": {
+    "tiers": [
+      { "threshold": "≤11", "text": "3 + `力量`神聖傷害" },
+      { "threshold": "12-16", "text": "5 + `力量`神聖傷害" },
+      { "threshold": "17+", "text": "8 + `力量`神聖傷害" }
+    ]
+  },
+  "effect": [
+    "與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。",
+    "translationSource": "舊 Notion 招式列表 · 你的同夥救不了你！",
+    "commonProcessing": [
+      "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+      "PN-D2：flavor 的 burst 譯為「衝擊力」而非術語表的區域形狀「爆發」，屬 §7.2 允許的改寫，已列入報告供知悉"
+    ],
+    "decisions": ["TI-19"],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.your-allies-cannot-save-you",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 82
+  }
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draw Steel 招式卡 · 驗證點</title>
+<style>
+  :root {
+    --bg: #f6f4ef; --card: #fffdf8; --ink: #1c1a17; --muted: #6b6558;
+    --line: #d8d2c4; --accent: #7a2020; --chip: #ece7db;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; background: var(--bg); color: var(--ink);
+         font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+         line-height: 1.7; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .lang { margin-bottom: 20px; }
+  .lang button { font: inherit; padding: 6px 14px; border: 1px solid var(--line);
+                 background: var(--card); cursor: pointer; border-radius: 4px; }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+          padding: 18px 20px; }
+  .card h2 { font-size: 18px; margin: 0 0 2px; }
+  .en { color: var(--muted); font-size: 13px; font-weight: normal; }
+  .flavor { font-style: italic; color: var(--muted); margin: 10px 0 14px;
+            border-left: 3px solid var(--line); padding-left: 10px; }
+  .meta { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px;
+          font-size: 14px; margin-bottom: 14px; }
+  .meta dt { color: var(--muted); }
+  .meta dd { margin: 0; }
+  .chip { display: inline-block; background: var(--chip); border-radius: 3px;
+          padding: 1px 7px; font-size: 13px; margin-right: 4px; }
+  table.tiers { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 14px; }
+  table.tiers th, table.tiers td { border-top: 1px solid var(--line); padding: 7px 6px;
+                                   text-align: left; vertical-align: top; }
+  table.tiers th { width: 68px; color: var(--accent); font-variant-numeric: tabular-nums;
+                   white-space: nowrap; }
+  .potency { display: block; color: var(--accent); font-size: 13px; margin-top: 2px; }
+  .sect { margin-top: 12px; font-size: 14px; }
+  .sect b { color: var(--accent); }
+  .sect ul { margin: 6px 0 0; padding-left: 20px; }
+  .sect li { margin-bottom: 5px; }
+  code { background: var(--chip); border-radius: 3px; padding: 0 4px;
+         font-family: inherit; font-size: 0.95em; }
+  .cond { border-bottom: 1px dotted var(--accent); cursor: help; }
+  .note { margin-top: 28px; font-size: 13px; color: var(--muted);
+          border-top: 1px solid var(--line); padding-top: 12px; }
+  .note li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<h1>Draw Steel 招式卡 · 驗證點</h1>
+<div class="sub">
+  本頁**只是驗證點**，不是網站。目的是確認資料層的六種結構能不能被正確呈現。
+  資料直接讀 <code>data/canon/</code> 與 <code>data/zh-Hant/</code>，沒有任何硬寫的文字。
+</div>
+
+<div class="lang">
+  <button id="btn-zh" aria-pressed="true">中文</button>
+  <button id="btn-en" aria-pressed="false">English</button>
+</div>
+
+<div class="grid" id="grid">載入中…</div>
+
+<div class="note" id="note"></div>
+
+<script type="module">
+const IDS = ['ability.censor.judgment', 'ability.censor.purifying-fire', 'ability.censor.behold-the-face-of-justice']
+const VOCAB = ['ability-keywords', 'action-types', 'potency-levels', 'ability-categories']
+
+const j = (p) => fetch('../' + p).then(r => {
+  if (!r.ok) throw new Error(p + ' → ' + r.status)
+  return r.json()
+})
+
+const state = { lang: 'zh', canon: {}, zh: {}, vocab: {}, conds: {} }
+const colon = () => (state.lang === 'en' ? ': ' : '：')
+
+/** 受控值 → 中文，一律查詞彙表，畫面不硬寫任何譯名 */
+const term = (table, id) => {
+  if (state.lang === 'en') return state.vocab[table]?.[id]?.en ?? id
+  return state.vocab[table]?.[id]?.zhHant ?? `⚠️${id}`
+}
+
+const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
+
+/** `力量` → <code>，[文字](id) → 站內連結 */
+const rich = (s) => esc(s)
+  .replace(/`([^`]+)`/g, '<code>$1</code>')
+  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="#$2">$1</a>')
+
+/** 距離：單一或二選一 */
+const distance = (d) => {
+  if (!d) return '—'
+  const one = (o) => {
+    if (o.kind === 'area') {
+      const a = o.area
+      return state.lang === 'en'
+        ? `${a.size} ${a.shape} within ${a.within}`
+        : `${a.within} 格內 ${a.size} ${a.shape === 'cube' ? '立方' : a.shape}`
+    }
+    return `${term('ability-keywords', 'ability-keyword.' + o.kind)} ${o.value}`
+  }
+  if (d.kind === 'choice') {
+    return d.options.map(one).join(state.lang === 'en' ? ' or ' : ' 或 ')
+  }
+  return one(d)
+}
+
+/**
+ * ⚠️ 這裡是 TI-27 的義務所在：
+ * 中文的階層文字**刻意不含**效力條件句，效力只存在結構化的 potency。
+ * renderer 必須把兩者一起呈現，否則讀者不會知道後段效果受效力條件控制。
+ */
+const CH_ZH = { might: '力量', agility: '敏捷', reason: '理智', intuition: '直覺', presence: '氣場' }
+const potencyLine = (p) => {
+  if (!p) return ''
+  const lv = term('potency-levels', 'potency-level.' + p.level)
+  // ❗ 目前只能做成「標籤」，不能做成「若…則…」的句子。
+  //   因為中文的階層是**合併後的單一字串**，renderer 無法知道
+  //   哪一段受效力控制、哪一段不論如何都發生（傷害）。見頁尾發現二。
+  return state.lang === 'en'
+    ? `<span class="potency">▸ potency: ${p.characteristic} &lt; ${p.level}</span>`
+    : `<span class="potency">▸ 效力：<code>${CH_ZH[p.characteristic] ?? p.characteristic} &lt; ${lv}</code></span>`
+}
+
+/**
+ * target 的組合規則（指南 §4.4）。
+ * 中文層**刻意不存** target，由這裡組。M0 只需要五種句型。
+ * 備註：這是第一次真的把組合規則實作出來——先前只在指南上寫著。
+ */
+const TARGET_MAP = {
+  'One creature': '1 個生物',
+  'One creature or object': '1 個生物或物體',
+  'One enemy': '1 個敵人',
+  'Self or one ally': '自身或 1 個盟友',
+  'Each enemy in the area': '區域內每個敵人',
+}
+const targetText = (t) => {
+  if (!t) return '—'
+  if (state.lang === 'en') return t
+  return TARGET_MAP[t] ?? `⚠️ 無組合規則：${t}`
+}
+
+function card(id) {
+  const c = state.canon[id], z = state.zh[id]
+  const en = state.lang === 'en'
+  const name = en ? c.name : (z?.nameZhHant ?? `⚠️ 缺中文：${id}`)
+  const flavor = en ? c.flavor : z?.flavor
+  const tiers = en ? c.powerRoll?.tiers : z?.powerRoll?.tiers
+  const effect = en ? c.effect : z?.effect
+  const fua = c.followUpActions ?? []
+  const zfua = z?.followUpActions ?? []
+
+  const kw = (c.keywords ?? []).map(k =>
+    `<span class="chip">${term('ability-keywords', 'ability-keyword.' + k)}</span>`).join('')
+
+  let h = `<div class="card" id="${id}">
+    <h2>${esc(name)}${en ? '' : `<br><span class="en">${esc(c.name)}</span>`}</h2>`
+  if (flavor) h += `<div class="flavor">${rich(flavor)}</div>`
+
+  h += `<dl class="meta">
+    <dt>${en ? 'Keywords' : '關鍵詞'}</dt><dd>${kw}</dd>
+    <dt>${en ? 'Action' : '動作'}</dt><dd>${term('action-types', 'action-type.' + c.actionType)}</dd>
+    <dt>${en ? 'Distance' : '射程'}</dt><dd>${distance(c.distance)}</dd>
+    <dt>${en ? 'Target' : '目標'}</dt><dd>${esc(targetText(c.target))}</dd>`
+  if (c.cost) h += `<dt>${en ? 'Cost' : '費用'}</dt><dd>${c.cost.value} ${en ? c.cost.resource : '怒火'}</dd>`
+  h += `</dl>`
+
+  if (tiers?.length) {
+    h += `<table class="tiers">`
+    tiers.forEach((t, i) => {
+      const p = c.powerRoll.tiers[i].potency
+      h += `<tr><th>${t.threshold}</th><td>${rich(t.text)}${potencyLine(p)}</td></tr>`
+    })
+    h += `</table>`
+  }
+
+  if (c.trigger) {
+    h += `<div class="sect"><b>${en ? 'Trigger' : '觸發'}</b>${colon()}${rich(en ? c.trigger : z.trigger)}</div>`
+  }
+  ;(effect ?? []).forEach((e) => {
+    h += `<div class="sect"><b>${en ? 'Effect' : '效果'}</b>${colon()}${rich(e)}</div>`
+  })
+  ;(c.extraCosts ?? []).forEach((x, i) => {
+    const txt = en ? x.effect : z.extraCosts[i].effect
+    h += `<div class="sect"><b>${en ? `Spend ${x.value} Wrath` : `花費 ${x.value} 怒火`}</b>${colon()}${rich(txt)}</div>`
+  })
+  fua.forEach((a, i) => {
+    const za = zfua[i] ?? {}
+    h += `<div class="sect">${rich(en ? a.lead : za.lead)}<ul>` +
+      (en ? a.options : za.options).map(o => `<li>${rich(o)}</li>`).join('') +
+      `</ul><div style="margin-top:6px">${rich(en ? a.constraint : za.constraint)}</div></div>`
+  })
+  return h + `</div>`
+}
+
+function render() {
+  document.getElementById('grid').innerHTML = IDS.map(card).join('')
+  document.getElementById('btn-zh').setAttribute('aria-pressed', String(state.lang === 'zh'))
+  document.getElementById('btn-en').setAttribute('aria-pressed', String(state.lang === 'en'))
+}
+
+const load = async () => {
+  for (const id of IDS) {
+    state.canon[id] = await j(`data/canon/abilities/${id}.json`)
+    state.zh[id] = await j(`data/zh-Hant/abilities/${id}.json`)
+  }
+  for (const v of VOCAB) {
+    const data = await j(`data/vocabulary/${v}.json`)
+    state.vocab[v] = Object.fromEntries(data.values.map(x => [x.id, x]))
+  }
+  render()
+  document.getElementById('note').innerHTML =
+    `<b>這一頁想確認的六件事</b><ul>
+      <li>二選一射程 <code>Melee 1 or ranged 5</code>（淨化聖火）</li>
+      <li>效力與階層效果一起呈現 —— <b>TI-27 的前提</b>（兩張卡都有）</li>
+      <li>檢定屬性與效力抵抗屬性不同（淨化聖火：力量／力量；懺悔吧！：氣場／直覺）</li>
+      <li><code>followUpActions</code> 四選一（審判）</li>
+      <li><code>trigger</code> 與 <code>extraCosts</code>（捨己為人，未列入本頁）</li>
+      <li>中英文切換 —— 按上方按鈕</li>
+    </ul>`
+}
+document.getElementById('btn-zh').onclick = () => { state.lang = 'zh'; render() }
+document.getElementById('btn-en').onclick = () => { state.lang = 'en'; render() }
+load().catch(e => { document.getElementById('grid').textContent = '載入失敗：' + e.message })
+</script>
+</body>
+</html>

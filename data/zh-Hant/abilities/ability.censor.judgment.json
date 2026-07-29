@@ -1,0 +1,50 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.judgment",
+  "nameZhHant": "審判",
+  "aliasesZhHant": [],
+  "flavor": "你吟誦禱文，用神聖能量籠罩你的敵人。",
+  "effect": [
+    "目標被你審判，持續到`遭遇`結束、你再次發動此招式、你主動解除此效果（無需動作），或其他懲戒者審判相同的目標。",
+    "每當 1 個被你審判的生物使用主要動作時，只要他在你的效果線內，你可以使用免費反應動作對他造成等於你`氣場` ×2 的神聖傷害。",
+    "當 1 個被你審判的生物`體力`歸 0 時，你可以使用免費反應動作對 1 個新目標發動此招式。"
+  ],
+  "followUpActions": [
+    {
+      "lead": "此外，你可以花費 1 點`怒火`來執行以下 1 項免費反應動作：",
+      "options": [
+        "當 1 個與你相鄰且被你審判的生物開始遁移時，你對他發動 1 次近戰基礎打擊，並讓他的`速度`歸 0 而無法遁移，直到他當前回合結束。",
+        "當 1 個被你審判且位於你 10 格內的生物進行檢定時，你讓他的檢定承受 1 個劣勢。",
+        "當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。",
+        "若你使用近戰招式對 1 個被你審判的生物造成傷害，該生物會被你嘲諷，直到他下個回合結束。"
+      ],
+      "constraint": "即使有多個選項由相同的效果觸發，你每次也只能選擇 1 項免費反應動作。"
+    }
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
+    "translationSource": "舊 Notion 招式列表 · 審判",
+    "commonProcessing": [
+      "TI-26：options[2] 補回限定語「對該生物」。原文 “that targets only one creature” 的修飾對象有歧義，擁有者裁定維持舊譯的讀法（修飾 ability），歧義就此定案",
+      "TA-B3-1：舊譯的「免費觸發式動作」（3 處）改為已批准術語「**免費反應動作**」（action-type.free-triggered）",
+      "「`氣場` × 2」依指南 §6 歸一為「`氣場` ×2」（乘號緊貼數字）",
+      "effect[0] 的「相同的目標」為補字，原文 the target 已回指同一目標（報告 ⚪ 第 8 項）",
+      "options[0] 的「他當前回合」較原文 the current turn 多了「他」；因觸發條件是該生物開始遁移，必為他的回合（報告 ⚪ 第 11 項）",
+      "「嘲諷」存為純文字，與「緩速」同一處理（狀態的實體引用日後由統一的 renderer 機制處理）",
+      "⚠️ 排版未定：`遭遇` 加了 inline code（沿用 feature.censor.wrath 的既有寫法），但「效果線」維持純文字（沿用舊譯）。兩者都不屬指南 §6 明列的「屬性／資源／遊戲數值」，慣例尚未統一",
+      "target「1 個敵人」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
+      "本條無檢定，故無 powerRoll"
+    ],
+    "decisions": [
+      "TI-26"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.judgment",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 80
+  }
+}

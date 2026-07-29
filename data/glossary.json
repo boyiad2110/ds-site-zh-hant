@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/import-glossary.mjs 從 sources/glossary_old.csv 生成，不可手改。glossary_old.csv 匯入後凍結。狀態詞條以 entityRef 指向實體，名稱由實體負責——此舉不保證規則散文不漂移，仍需一致性檢查（指南 §9.3）。",
   "sourceHash": "499fc97aec25c645",
-  "decisionsHash": "0133cc7a570e5e73",
+  "decisionsHash": "891193dc50e7ca23",
   "terms": [
     {
       "id": "term.a-lie-cloaked-in-star-s-silver",
@@ -2613,6 +2613,21 @@
       "decidedBy": "owner",
       "note": "元素師的元素精通。非 M0 範圍，但依裁決一併建立為獨立詞條。",
       "sense": "elementalist-mastery"
+    },
+    {
+      "id": "term.fire-weakness",
+      "idStatus": "stable",
+      "en": "Fire Weakness",
+      "zhHant": "火焰弱點",
+      "categories": [
+        "規則/術語"
+      ],
+      "status": "approved",
+      "aliasesEn": [],
+      "aliasesZhHant": [],
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "擁有者裁決（見 docs/alignment/zh-batch3-alignment.md 的 UT-B3-1）：確立構詞規則「<傷害類型> Weakness ＝ <傷害類型>弱點」，與既有的 Damage Weakness ＝傷害弱點 同構。**裁決範圍僅限傷害類型弱點這個規則 sense**——刻意不建立無範圍的 Weakness ＝弱點 詞條，避免套用到一般語境。日後酸蝕弱點、寒冷弱點等依同一構詞規則逐一建立詞條。構詞規則本身記於 docs/translation-guide.md 附錄 A。"
     },
     {
       "id": "term.first-psychic-war",

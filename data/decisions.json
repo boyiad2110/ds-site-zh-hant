@@ -2562,6 +2562,15 @@
       "decidedBy": "owner",
       "status": "approved",
       "note": "2026-07-29 擁有者批准新增獨立詞義。神諭教團授予的技能名稱，與招式關鍵詞 ability-keyword.magic 為不同概念，即使中文同為「魔法」也不得共用 ID（2026-07-29 外部 review 指出）。與 Read Person＝觀色、Lead＝領導同組，皆為三個教團授予的技能。"
+    },
+    {
+      "en": "Fire Weakness",
+      "zhHant": "火焰弱點",
+      "category": "規則/術語",
+      "status": "approved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "note": "擁有者裁決（見 docs/alignment/zh-batch3-alignment.md 的 UT-B3-1）：確立構詞規則「<傷害類型> Weakness ＝ <傷害類型>弱點」，與既有的 Damage Weakness ＝傷害弱點 同構。**裁決範圍僅限傷害類型弱點這個規則 sense**——刻意不建立無範圍的 Weakness ＝弱點 詞條，避免套用到一般語境。日後酸蝕弱點、寒冷弱點等依同一構詞規則逐一建立詞條。構詞規則本身記於 docs/translation-guide.md 附錄 A。"
     }
   ],
   "$schemaNote": "multiTranslations：同英文不同譯名的裁決。resolution='split' 時以 entries[] 指定各 sense；resolution='merge' 時以 sourceIds[] 合併為單一 stableId，未採用的舊譯自動保留為 aliasesZhHant。以 provisionalId 對應個別來源列（非僅以英文為 key），並比對 zhHant 防止對應漂移。tombstones：stable id 的合法移除紀錄，需 reason／decidedAt／decidedBy。 pending：手動提報的未裁決項，為 glossary-pending.json 的唯一人工來源（生成檔不再自我輸入）。",

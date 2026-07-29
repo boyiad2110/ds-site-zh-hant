@@ -1,0 +1,32 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.back-blasphemer",
+  "nameZhHant": "瀆神者退散！",
+  "aliasesZhHant": [],
+  "flavor": "你使用武器引導神聖力量來擊退敵人。",
+  "powerRoll": {
+    "tiers": [
+      { "threshold": "≤11", "text": "2 神聖傷害，推動 1" },
+      { "threshold": "12-16", "text": "4 神聖傷害，推動 2" },
+      { "threshold": "17+", "text": "6 神聖傷害，推動 3" }
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條零待裁項）；flavor 的「神聖」補字已於 2026-07-28 裁決維持舊譯，正式紀錄為 TI-25。",
+    "translationSource": "舊 Notion 招式列表 · 瀆神者退散！",
+    "commonProcessing": [
+      "N-2：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）",
+      "target「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+    ],
+    "decisions": ["TI-25"],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.back-blasphemer",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 82
+  }
+}

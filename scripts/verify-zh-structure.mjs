@@ -10,9 +10,18 @@
  *   2. `canonRef.id` 與檔案 id 一致
  *   3. feature：sections 數量、每個 section 的 blocks 數量、heading 有無，全部一致
  *   4. ability：powerRoll.tiers 數量與 threshold 一致、effect 段落數一致、
- *      flavor 存在性（正典非空 → 中文必須非空；正典 null → 中文可省略）
+ *      flavor 存在性（正典非空 → 中文必須非空；正典 null → 中文可省略）、
+ *      trigger 存在性、extraCosts 數量與各 effect 非空、
+ *      followUpActions 數量與各 options 數量、lead／constraint 存在性
  *   5. condition：text 段落數一致
  *   6. meta.status 為 reviewed 時必須有 reviewedBy
+ *
+ * ⚠️ **陣列欄位一律查三件事：型別是陣列、數量、每個元素非空。**
+ *    這三層是分三次補齊的，每一層都擋掉前一層放行的東西：
+ *      只查數量        → 「段落在、內容是空字串」靜默通過
+ *      只查數量＋非空  → `effect: "x"` 靜默通過（字串也有 .length 與數字索引，
+ *                        會冒充成「1 段、內容是 x」，前兩層全數通過）
+ *    型別檢查走 zhArray()，見下。
  *
  * ⚠️ **`target` 刻意不檢查。** 依指南 §4.4，可組合的 target（`One creature`、
  * `One creature or object`、`Each enemy in the area` 等）**刻意不存**於中文層，
@@ -48,6 +57,25 @@ const zh = readAll('data/zh-Hant')
 const errors = []
 const fail = (id, msg) => errors.push(`${id}：${msg}`)
 
+/**
+ * 取中文層的陣列欄位，**型別必須真的是陣列**。
+ *
+ * ⚠️ 這一關不能省：字串同樣有 `.length` 與數字索引。
+ *    `effect: "x"` 會冒充成「1 段、內容是 x」——長度對得上、每個元素也是非空字串，
+ *    整套數量檢查與非空檢查**全部通過**，但那根本不是段落陣列。
+ *    `options: "abc"` 同理，會冒充成 3 個選項。
+ *
+ * 回傳 null 代表型別已錯（並已記錄），呼叫端應跳過該欄位的後續檢查。
+ */
+const zhArray = (id, path, v) => {
+  if (v === undefined || v === null) return []
+  if (!Array.isArray(v)) {
+    fail(id, `${path} 必須是陣列，實際是 ${typeof v}`)
+    return null
+  }
+  return v
+}
+
 for (const [id, z] of zh) {
   const c = canon.get(id)
   if (!c) { fail(id, `中文檔 ${z._file} 沒有對應的正典條目`); continue }
@@ -60,7 +88,8 @@ for (const [id, z] of zh) {
 
   if (c.type === 'feature') {
     const cs = c.sections ?? []
-    const zs = z.sections ?? []
+    const zs = zhArray(id, 'sections', z.sections)
+    if (zs === null) continue
     if (cs.length !== zs.length) { fail(id, `sections 數量不符：正典 ${cs.length}、中文 ${zs.length}`); continue }
     for (const [i, cSec] of cs.entries()) {
       const zSec = zs[i]
@@ -70,7 +99,8 @@ for (const [id, z] of zh) {
         fail(id, `sections[${i}] 的小標題有無不符：正典 ${cHasHeading ? '有' : '無'}、中文 ${zHasHeading ? '有' : '無'}`)
       }
       const cb = cSec.blocks ?? []
-      const zb = zSec.blocks ?? []
+      const zb = zhArray(id, `sections[${i}].blocks`, zSec.blocks)
+      if (zb === null) continue
       if (cb.length !== zb.length) {
         fail(id, `sections[${i}].blocks 數量不符：正典 ${cb.length}、中文 ${zb.length}`)
       }
@@ -99,7 +129,7 @@ for (const [id, z] of zh) {
     }
 
     const ct = c.powerRoll?.tiers ?? []
-    const zt = z.powerRoll?.tiers ?? []
+    const zt = zhArray(id, 'powerRoll.tiers', z.powerRoll?.tiers) ?? []
     if (ct.length && ct.length !== zt.length) {
       fail(id, `powerRoll.tiers 數量不符：正典 ${ct.length}、中文 ${zt.length}`)
     }
@@ -112,16 +142,83 @@ for (const [id, z] of zh) {
     // 中文**完全沒有** effect 時 ze.length 為 0，整個條件短路，
     // 「正典有 3 段效果、中文一段都沒翻」會靜默通過。直接比數量。
     const ce = c.effect ?? []
-    const ze = z.effect ?? []
-    if (ce.length !== ze.length) {
+    const ze = zhArray(id, 'effect', z.effect)
+    if (ze === null) { /* 型別已錯，跳過段落比對 */ } else if (ce.length !== ze.length) {
       fail(id, `effect 段落數不符：正典 ${ce.length}、中文 ${ze.length}`)
+    } else {
+      // 只比數量擋不住「段落在、內容是空字串」——那和漏譯一樣沒有徵兆。
+      for (const [i] of ce.entries()) {
+        const s = ze[i]
+        if (typeof s !== 'string' || !s.trim()) fail(id, `effect[${i}] 缺漏或為空字串`)
+      }
+    }
+
+    // ── 以下三組於 2026-07-29 加入（第三批對齊的 V-B3-1）。
+    // 這是第三次出現同一類漏洞：正典有、中文整段缺漏，驗證靜默放行
+    // （effect 於第一批補、flavor 於第二批補）。一律採**最小存在性／數量**檢查：
+    // 只問「有沒有」「幾個」，不問內容——內容對不對是人工對齊的事。
+    //
+    // ⚠️ 全部直接比數量，不可寫成 `c.length && z.length && …`——
+    // 中文完全沒有該欄位時 length 為 0，短路後整項檢查等於不存在。
+
+    // (1) trigger：正典有非空字串 → 中文必須有非空字串
+    const cTrig = typeof c.trigger === 'string' ? c.trigger.trim() : ''
+    if (cTrig) {
+      const zTrig = typeof z.trigger === 'string' ? z.trigger.trim() : ''
+      if (!zTrig) fail(id, '正典有 trigger，中文缺漏或為空字串')
+    }
+
+    // (2) extraCosts：數量一致，且每個 effect 非空
+    const cx = c.extraCosts ?? []
+    const zx = zhArray(id, 'extraCosts', z.extraCosts)
+    if (zx === null) { /* 型別已錯 */ } else if (cx.length !== zx.length) {
+      fail(id, `extraCosts 數量不符：正典 ${cx.length}、中文 ${zx.length}`)
+    } else {
+      for (const [i] of cx.entries()) {
+        const e = zx[i]?.effect
+        if (typeof e !== 'string' || !e.trim()) {
+          fail(id, `extraCosts[${i}].effect 缺漏或為空字串`)
+        }
+      }
+    }
+
+    // (3) followUpActions：數量一致；每組 options 數量一致；lead／constraint 存在性
+    //     審判有 4 個免費反應動作選項——少譯一個就是玩家少一種戰術，且原本毫無徵兆。
+    const cfa = c.followUpActions ?? []
+    const zfa = zhArray(id, 'followUpActions', z.followUpActions)
+    if (zfa === null) { /* 型別已錯 */ } else if (cfa.length !== zfa.length) {
+      fail(id, `followUpActions 數量不符：正典 ${cfa.length}、中文 ${zfa.length}`)
+    } else {
+      for (const [i, cAct] of cfa.entries()) {
+        const zAct = zfa[i] ?? {}
+        const cOpts = cAct.options ?? []
+        const zOpts = zhArray(id, `followUpActions[${i}].options`, zAct.options)
+        if (zOpts === null) { /* 型別已錯 */ } else if (cOpts.length !== zOpts.length) {
+          fail(id, `followUpActions[${i}].options 數量不符：正典 ${cOpts.length}、中文 ${zOpts.length}`)
+        } else {
+          for (const [j] of cOpts.entries()) {
+            const s = zOpts[j]
+            if (typeof s !== 'string' || !s.trim()) {
+              fail(id, `followUpActions[${i}].options[${j}] 缺漏或為空字串`)
+            }
+          }
+        }
+        for (const key of ['lead', 'constraint']) {
+          const cv = typeof cAct[key] === 'string' ? cAct[key].trim() : ''
+          if (!cv) continue
+          const zv = typeof zAct[key] === 'string' ? zAct[key].trim() : ''
+          if (!zv) fail(id, `followUpActions[${i}].${key} 缺漏或為空字串`)
+        }
+      }
     }
   }
 
   if (c.type === 'condition') {
     const ct = c.text ?? []
-    const zt = z.text ?? []
-    if (ct.length !== zt.length) fail(id, `text 段落數不符：正典 ${ct.length}、中文 ${zt.length}`)
+    const zt = zhArray(id, 'text', z.text)
+    if (zt !== null && ct.length !== zt.length) {
+      fail(id, `text 段落數不符：正典 ${ct.length}、中文 ${zt.length}`)
+    }
   }
 }
 

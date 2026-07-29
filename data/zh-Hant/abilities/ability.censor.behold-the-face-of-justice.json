@@ -1,0 +1,49 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.behold-the-face-of-justice",
+  "nameZhHant": "直視正義威儀！",
+  "aliasesZhHant": [],
+  "flavor": "你攻擊一名敵人，讓他看清楚你堅定的決心。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `力量`神聖傷害，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `力量`神聖傷害，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + `力量`神聖傷害，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）"
+      }
+    ]
+  },
+  "effect": [
+    "因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你`氣場`的心靈傷害。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
+    "translationSource": "舊 Notion 招式列表 · 直視正義威儀！",
+    "commonProcessing": [
+      "TI-27：正典 tiers[].text 含條件從句 “if the target has this potency,”，中文**刻意不譯**——效力記號本身即表示「若目標未通過該效力」，屬擁有者批准的結構化省略",
+      "⚠️ TI-27 的前提是 renderer **必須**把結構化的 potency 與該階層後續效果一起呈現；做不到就要回頭重議",
+      "N-1：效力記號「`氣場 < 弱`」已剝除，效力存於正典 tiers[].potency",
+      "N-2：舊譯的階層表格分成「傷害／效力」兩欄，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）",
+      "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+    ],
+    "decisions": [
+      "TI-27"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.behold-the-face-of-justice",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}

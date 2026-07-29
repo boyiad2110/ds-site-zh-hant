@@ -1,6 +1,6 @@
 {
   "$comment": "由 scripts/build-vocabulary.mjs 從 data/decisions.json 生成，不可手改。",
-  "decisionsHash": "0133cc7a570e5e73",
+  "decisionsHash": "891193dc50e7ca23",
   "vocabulary": "target-components",
   "values": [
     {

@@ -1,0 +1,48 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.purifying-fire",
+  "nameZhHant": "淨化聖火",
+  "aliasesZhHant": [],
+  "flavor": "神明審判、火焰淨化。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + `力量`神聖傷害，火焰弱點 3（豁免解除）"
+      },
+      {
+        "threshold": "12-16",
+        "text": "9 + `力量`神聖傷害，火焰弱點 5（豁免解除）"
+      },
+      {
+        "threshold": "17+",
+        "text": "12 + `力量`神聖傷害，火焰弱點 7（豁免解除）"
+      }
+    ]
+  },
+  "effect": [
+    "若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
+    "translationSource": "舊 Notion 招式列表 · 淨化聖火",
+    "commonProcessing": [
+      "「火焰弱點」依 2026-07-29 裁決的構詞規則 `<傷害類型> Weakness ＝ <傷害類型>弱點`（glossary term.fire-weakness，指南附錄 A.1）",
+      "N-1：效力記號「`力量 < 弱`」已剝除；**本條的效力屬性是力量，與檢定屬性相同**",
+      "N-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）",
+      "tiers 省略正典的主詞「the target has」，沿用舊譯的階層儲存格慣例（報告 ⚪ 第 9 項）",
+      "effect 的 While（持續期間）舊譯作「若」（條件）；因火焰弱點帶豁免解除，兩者外延相同（報告 ⚪ 第 10 項）",
+      "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.purifying-fire",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}

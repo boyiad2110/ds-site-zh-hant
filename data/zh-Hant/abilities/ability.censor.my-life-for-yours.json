@@ -1,0 +1,44 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.my-life-for-yours",
+  "nameZhHant": "捨己為人",
+  "aliasesZhHant": [],
+  "flavor": "你將生命能量注入自己或盟友體內來增強韌性。",
+  "trigger": "當目標開始回合或受到傷害時。",
+  "effect": [
+    "你花費 1 點`復元力`，並讓目標恢復等於你`復元值`的`體力`。"
+  ],
+  "extraCosts": [
+    {
+      "effect": "你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。"
+    }
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。",
+    "translationSource": "舊 Notion 招式列表 · 捨己為人",
+    "commonProcessing": [
+      "TI-21：flavor 維持舊譯（“some of” 未譯出、另增「體內」）。此項確立了 flavor 允許改寫的通則，正式落點在指南 §7.2",
+      "TI-22：extraCosts 補入限定語「目標身上」",
+      "TI-23：extraCosts 刪除原文沒有的「狀態或」",
+      "TI-24：`end of their turn` 採 EoT 縮寫（全域通則，不論原文寫全文或縮寫）",
+      "trigger 的「當…時」為中文條件句的必要語法框架，非增添語意",
+      "extraCosts 的費用（1 點`怒火`）是受控欄位，不存於本層；段落標記由 renderer 依 cost 產生",
+      "target「自身或 1 個盟友」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
+      "本條無檢定，故無 powerRoll"
+    ],
+    "decisions": [
+      "TI-21",
+      "TI-22",
+      "TI-23",
+      "TI-24"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.my-life-for-yours",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 80
+  }
+}

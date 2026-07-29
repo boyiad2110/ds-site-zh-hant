@@ -1,0 +1,44 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.repent",
+  "nameZhHant": "懺悔吧！",
+  "aliasesZhHant": [],
+  "flavor": "你喚起敵人的罪惡記憶，使他心神不寧。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "5 + `氣場`神聖傷害，暈眩（豁免解除）"
+      },
+      {
+        "threshold": "12-16",
+        "text": "8 + `氣場`神聖傷害，暈眩（豁免解除）"
+      },
+      {
+        "threshold": "17+",
+        "text": "11 + `氣場`神聖傷害，暈眩（豁免解除）"
+      }
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
+    "translationSource": "舊 Notion 招式列表 · 懺悔吧！",
+    "commonProcessing": [
+      "**檢定屬性與效力屬性不同**：檢定用`氣場`、效力抵抗用`直覺`。兩者皆為受控欄位，不存於本層",
+      "N-1：效力記號「`直覺 < 弱`」已剝除",
+      "N-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）",
+      "本條正典沒有 effect 段落",
+      "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.repent",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}

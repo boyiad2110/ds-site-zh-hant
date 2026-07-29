@@ -1,0 +1,45 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency）不進此層，算繪時從 vocabulary 解析（指南 §2.1）。",
+  "id": "ability.censor.censored",
+  "nameZhHant": "斷罪",
+  "aliasesZhHant": [],
+  "flavor": "審判、定罪。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "3 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "5 + `力量`神聖傷害"
+      }
+    ]
+  },
+  "effect": [
+    "若目標因此招式而陷入`疲態`，只要他不是首領或獨霸生物，他的`體力`會直接歸 0。"
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
+    "translationSource": "舊 Notion 招式列表 · 斷罪",
+    "commonProcessing": [
+      "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
+      "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+      "effect 的關係子句「who is not a leader or solo creature」由主語內移到後半句，限定條件完整保留（報告 ⚪ 第 7 項）",
+      "flavor「審判、定罪」與招式【審判】同字，但 flavor 不加【】標記（指南 §6）"
+    ],
+    "decisions": [],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+  },
+  "canonRef": {
+    "id": "ability.censor.censored",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}
