@@ -9,9 +9,15 @@
  *   1. 每個中文檔都有對應的正典條目（反之不強制——中文可以還沒跟上）
  *   2. `canonRef.id` 與檔案 id 一致
  *   3. feature：sections 數量、每個 section 的 blocks 數量、heading 有無，全部一致
- *   4. ability：powerRoll.tiers 數量與 threshold 一致
+ *   4. ability：powerRoll.tiers 數量與 threshold 一致、effect 段落數一致、
+ *      flavor 存在性（正典非空 → 中文必須非空；正典 null → 中文可省略）
  *   5. condition：text 段落數一致
  *   6. meta.status 為 reviewed 時必須有 reviewedBy
+ *
+ * ⚠️ **`target` 刻意不檢查。** 依指南 §4.4，可組合的 target（`One creature`、
+ * `One creature or object`、`Each enemy in the area` 等）**刻意不存**於中文層，
+ * 由結構化資料交給 renderer 組合。程式目前無從分辨「該走組合」與「特殊、須存原文」，
+ * 未來出現無法組合的 target 時再評估。
  *
  * ⚠️ `blocks[].kind` **刻意不比對**——中文可以把散文改成清單（TI-9 的全站風格），
  * 但數量與順序仍須一一對應。
@@ -81,6 +87,17 @@ for (const [id, z] of zh) {
   }
 
   if (c.type === 'ability') {
+    // flavor 的最小存在性檢查（2026-07-29 加入）：
+    //   正典 flavor 是非空字串 → 中文必須也是非空字串
+    //   正典 flavor 是 null    → 中文可省略
+    // 只檢查「有沒有」，不檢查內容——內容對不對是人工對齊的事。
+    // 沒有這一條的話，漏譯一整句 flavor 不會有任何徵兆（與先前的 effect 漏洞同類）。
+    const cf = typeof c.flavor === 'string' ? c.flavor.trim() : ''
+    if (cf) {
+      const zf = typeof z.flavor === 'string' ? z.flavor.trim() : ''
+      if (!zf) fail(id, `正典有 flavor，中文缺漏或為空字串`)
+    }
+
     const ct = c.powerRoll?.tiers ?? []
     const zt = z.powerRoll?.tiers ?? []
     if (ct.length && ct.length !== zt.length) {

@@ -382,7 +382,52 @@
         "pdfPage": 2,
         "printedPage": 79
       }
+    },
+    {
+      "id": "TI-19",
+      "kind": "prose-issue",
+      "severity": "high",
+      "entityId": "ability.censor.your-allies-cannot-save-you",
+      "field": "effect[0]",
+      "issue": "舊譯漏譯 “up to”，把「最多推動 N 格（可選擇推少）」變成「固定推動 N 格」",
+      "sourceEn": "Each enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.",
+      "legacyZhHant": "與目標相鄰的每個敵人都會朝遠離目標的方向推動等於你`氣場`的格數。",
+      "resolution": "補回「最多」。強制移動的「up to」在 Draw Steel 有戰術意義（可選擇推少一點，例如不把敵人推出區域或推下懸崖）。舊譯在「審判：教團益處」的驅邪條有正確譯出同樣的 up to，可見此處是遺漏而非譯法選擇。",
+      "resolvedZhHant": "與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "產生 data/zh-Hant/abilities/ability.censor.your-allies-cannot-save-you 時套用",
+      "affectsOnly": "ability.censor.your-allies-cannot-save-you",
+      "evidence": "docs/alignment/evidence/your-allies-effect-300dpi-05.png（300dpi 裁切，已實際判讀）",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 5,
+        "printedPage": 82
+      }
+    },
+    {
+      "id": "TI-20",
+      "kind": "phrase-rule",
+      "severity": "medium",
+      "entityId": "*",
+      "field": "willing / willingly",
+      "issue": "`willingly` 與 `willing` 沒有定案譯名；舊譯用「主動移動」，但指南 §4.4 的目標組合規則寫 `willing`→「自願的」，同一英文字兩種中文",
+      "sourceEn": "willingly moves ／ One willing creature",
+      "legacyZhHant": "主動移動 ／ 1 個自願的生物",
+      "resolution": "**維持舊譯，兩者並存，記為片語規則**：副詞與形容詞不強求使用完全相同的中文字。\n  `One willing creature` ＝「1 個自願的生物」——管的是目標是否同意被指定，與移動無關\n  `willingly moves`      ＝「主動移動」——管的是區分自行移動與被強制移動\n兩種譯法都保留「自願」的概念，但各自的中文更自然（「目標每自願移動 1 格」拗口）。其中只有 `willingly moves` 涉及移動規則。擁有者裁定。",
+      "resolvedZhHant": "見上（片語規則，非單一詞條）",
+      "status": "resolved",
+      "decidedAt": "2026-07-29",
+      "decidedBy": "owner",
+      "applyTo": "全站移動類規則；本批影響 ability.censor.every-step-death 1 筆",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 5,
+        "printedPage": 82
+      }
     }
   ],
-  "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite 屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。"
+  "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite、TI-20 willing／willingly 片語規則屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。"
 }

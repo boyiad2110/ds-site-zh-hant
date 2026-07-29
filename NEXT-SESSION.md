@@ -22,23 +22,45 @@ M0 的執行順序，**第 1–6 步已完成，下一步是第 7 步**：
      ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
 6. ✅ 產出術語依賴清單 → `releases/m0.json`（113 個術語，全部 approved）
 7. 🔄 中文逐句對齊
-     ✅ 第一批 5 條（2 基礎打擊 ＋ 3 教團／怒火特性）—— 已裁決並產出中文
-     ⏳ 第二批 14 個懲戒者招式  ← **下一步**
+     ✅ 第一批 5 條（2 基礎打擊 ＋ 3 教團／怒火特性）—— 已裁決、已產出中文
+     🔶 第二批 4 個招牌招式 —— **已對齊、已裁決，中文尚未產出**  ← **下一步先做這個**
+     ⏳ 第三批 8 個英雄 ＋ 2 個固有招式
 8. ⏳ 專案擁有者逐筆裁決
 9. ⏳ 此時才開始寫 UI
 ```
 
 ### 第 7 步該做什麼
 
-28 條正典裡，中文已完成 **14 條**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性），
-**其餘 14 個懲戒者招式**尚未產出 `data/zh-Hant/`。
-逐句對齊舊譯與英文正典，照 `docs/samples/alignment-my-life-for-yours.md` 的格式產報告，
-差異一律標註待裁，**AI 不得逕行改寫舊譯**。
+28 條正典裡，中文已完成 **14 條**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性）。
 
-⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-18，全部 resolved）。
+#### ⏭️ 下一件事：產出 4 個招牌招式的中文
+
+**對齊與裁決都做完了**（見 `docs/alignment/zh-batch2-alignment.md`），
+只差產出 `data/zh-Hant/abilities/` 這四個檔案：
+
+```
+ability.censor.back-blasphemer              瀆神者退散！
+ability.censor.every-step-death             踏向死亡！
+ability.censor.halt-miscreant               惡徒止步！
+ability.censor.your-allies-cannot-save-you  你的同夥救不了你！
+```
+
+產出時必須套用的兩筆裁決與兩條建模規則：
+
+| 項目 | 內容 |
+|---|---|
+| **TI-19** | 「你的同夥救不了你！」的 effect 補「最多」：「…推動**最多**等於你`氣場`的格數。」 |
+| **TI-20** | `willingly moves` ＝「主動移動」（維持舊譯） |
+| N-1 | 「惡徒止步！」的 `tiers[].text` **不可含**「`氣場 < 弱`」——效力已結構化，由 renderer 從 `potency` 組出 |
+| N-2 | 舊譯的階層表格是多欄（傷害／推動分開），正典是單一字串，產出時合併為一個 `text` |
+
+之後接第三批：8 個英雄 ＋ 2 個固有招式（含審判的四選一、淨化聖火的二選一射程、
+捨己為人與當場拘捕的追加花費）。
+
+⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-20，全部 resolved）。
 那是待辦清單，不是靠記憶。**特別注意 `affectsOnly: "*"` 的全域通則**：
 TI-4（一律第二人稱）、TI-9（英雄資源的描述方式，8 個範型比照）、
-TI-17（教團名稱短式）、TI-18（Respite ＝休整）。
+TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing／willingly 片語規則）。
 
 ⚠️ **已知的三筆待對齊觀察**記在 `docs/alignment/m0-batch2-results.md` 末尾
 （怒火的段落搬移與「每輪 1 次」、遺漏的 `(see Judgment below)`、教團的 Quick Build）。
@@ -65,8 +87,9 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）。
 | `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
 | `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
 | `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
-| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-18）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則 |
-| `docs/alignment/zh-batch1-alignment.md` | 第一批 5 條的對齊報告與 11 項裁決；格式可直接沿用到第二批 |
+| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-20）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20） |
+| `docs/alignment/zh-batch1-alignment.md` | 第一批 5 條的對齊報告與 11 項裁決；格式可沿用 |
+| `docs/alignment/zh-batch2-alignment.md` | **第二批 4 個招牌招式的對齊報告與 2 項裁決；產出中文前必讀**（含 N-1／N-2 建模規則） |
 | `docs/m0-term-decisions-needed.md` | 第 6 步的術語裁決紀錄（已全數結案）——當初為什麼這樣決定 |
 | `releases/m0.json` | M0 的精確術語依賴清單。113 個術語，含 `viaFields`、排除理由與詞義指定 |
 
@@ -122,7 +145,7 @@ Power Roll + Might:
 1. **每個 PDF 章節算繪 1–2 頁 150dpi**，確認版面結構：哪些招式在哪個標題下、有沒有側欄穿插、表格在哪
 2. 結構確認後，**用文字抽取逐個招式取內容**
 3. **用舊 CSV 交叉驗證**——`sources/notion-export/.../招式列表*.csv` 已有每個招式的等級、費用、類別。文字抽取結果必須與它一致，**不一致就算繪那一頁**
-4. 只有 🔴 high 級疑點才用 300dpi 裁切
+4. **先看 150dpi，讀得出來就不要再裁 300dpi**（擁有者 2026-07-29 重申）
 
 第 3 點是關鍵：**兩個獨立來源互相檢核**，比單靠算繪更可靠（算繪只有 AI 一雙眼睛）。
 
@@ -134,7 +157,13 @@ Power Roll + Might:
 恰好沒觸發。
 
 **(2) 算繪預設 150dpi**（擁有者要求，300dpi 太耗 token）。150dpi 下符號與小字皆清晰，已實測。
-只有 🔴 high 級疑點才用 300dpi 裁切。
+
+⚠️ **2026-07-29 擁有者重申：150dpi 看得清楚就不要再畫 300dpi。**
+先算繪 150dpi、**實際讀過**，讀得出爭議字句就直接引用該圖，結束。
+只有 150dpi 真的辨識不出來時才裁切放大。
+
+> 這條也適用於對齊報告的 🔴 high 證據（指南 §8.3 已同步修訂）。
+> 2026-07-29 實際發生過一次浪費：150dpi 整頁已能讀出 `up to`，仍多裁了一張 300dpi。
 
 **方法驗證已完成**（見 `docs/alignment/method-validation.md`）：基本卡片、長效果＋巢狀選項、
 效力記號、真正的第二段花費四種結構全部驗過。其中「捨己為人」與上一輪 300dpi 人工判讀的結果
@@ -336,7 +365,7 @@ node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 ```bash
 node --test "scripts/**/*.test.mjs"       # 102 tests
 node scripts/verify-canon-hash.mjs        # 正典內容指紋
-node scripts/verify-zh-structure.mjs      # 中文與正典的逐段對應
+node scripts/verify-zh-structure.mjs      # 中文與正典的逐段對應（含 flavor 存在性）
 node scripts/report-m0-terms.mjs          # 唯讀：術語用量掃描報告
 node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過期
 ```
@@ -345,8 +374,9 @@ node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過
 glossary **606**（approved **259**）、vocabulary **23** 值（5 個詞彙表，全部 approved）、
 ledger **625**、pending **2**（Hakaan／Memonek）、測試 **102/102**、
 正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符）、
-中文 **14／28**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性；**尚缺 14 個招式**）、
-translation-issues **18** 項全 resolved、
+中文 **14／28**（9 狀態 ＋ 2 基礎打擊 ＋ 3 特性）；
+**4 個招牌招式已對齊裁決、中文待產出**；**8 英雄 ＋ 2 固有未動**、
+translation-issues **20** 項全 resolved、
 `releases/m0.json` **113** 個依賴術語（全部 approved，來源指紋 `777dee09e302be26`）。
 
 ### 術語掃描的三個通道（`scripts/lib/m0-scan.mjs`）
