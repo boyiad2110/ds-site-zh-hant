@@ -34,9 +34,27 @@ const CANON = {
   distance: { kind: 'ranged', value: 10, raw: 'Ranged 10' },
   target: 'Self or one ally',
   trigger: 'The target starts their turn.',
+  powerRoll: {
+    characteristic: 'might',
+    tiers: [
+      {
+        threshold: '≤11',
+        text: '2 + M damage',
+        potency: { characteristic: 'presence', level: 'weak', effect: 'The target is slowed (save ends).' },
+      },
+    ],
+  },
   effect: ['Effect paragraph one.'],
   extraCosts: [
     { resource: 'wrath', value: 1, effect: 'Extra cost effect.', raw: 'Spend 1 Wrath: Extra cost effect.' },
+  ],
+  conditionalEffects: [
+    {
+      trigger: 'The target makes a strike.',
+      optional: true,
+      cost: { resource: 'wrath', value: 3 },
+      effect: 'Change the target of the strike.',
+    },
   ],
   followUpActions: [
     {
@@ -56,8 +74,12 @@ const ZH_OK = {
   nameZhHant: '測試招式',
   flavor: '敘述文字。',
   trigger: '當目標開始回合時。',
+  powerRoll: {
+    tiers: [{ threshold: '≤11', text: '2 + `力量`傷害', potencyEffect: '目標陷入緩速（豁免解除）。' }],
+  },
   effect: ['效果第一段。'],
   extraCosts: [{ effect: '追加花費的效果。' }],
+  conditionalEffects: [{ trigger: '目標發動打擊。', effect: '改變該次打擊的目標。' }],
   followUpActions: [
     {
       lead: '你可以花費 1 點`怒火`來執行以下 1 項：',
@@ -254,6 +276,45 @@ describe('verify-zh-structure：陣列欄位的型別（字串冒充陣列）', 
     )
     assert.equal(r.status, 1, r.out)
     assert.ok(r.out.includes('powerRoll.tiers 必須是陣列'), r.out)
+  })
+})
+
+describe('verify-zh-structure：Potency 與 conditionalEffects', () => {
+  test('Potency 基本結果與條件效果都有翻譯時通過', () => {
+    const r = run()
+    assert.equal(r.status, 0, r.out)
+  })
+
+  test('有 potency.effect 卻缺 potencyEffect 必失敗', () => {
+    const r = run((z) => { delete z.powerRoll.tiers[0].potencyEffect; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.ok(r.out.includes('potencyEffect'), r.out)
+  })
+
+  test('正典 potency 缺 effect 必失敗', () => {
+    const r = run((z) => z, (c) => { delete c.powerRoll.tiers[0].potency.effect; return c })
+    assert.equal(r.status, 1, r.out)
+    assert.ok(r.out.includes('potency.effect'), r.out)
+  })
+
+  test('conditionalEffects 數量不符必失敗', () => {
+    const r = run((z) => { z.conditionalEffects = []; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.ok(r.out.includes('conditionalEffects 數量不符'), r.out)
+  })
+
+  test('conditionalEffects trigger 或 effect 為空必失敗', () => {
+    for (const key of ['trigger', 'effect']) {
+      const r = run((z) => { z.conditionalEffects[0][key] = ''; return z })
+      assert.equal(r.status, 1, r.out)
+      assert.ok(r.out.includes(`conditionalEffects[0].${key}`), r.out)
+    }
+  })
+
+  test('conditionalEffects 不是陣列必失敗', () => {
+    const r = run((z) => { z.conditionalEffects = 'x'; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.ok(r.out.includes('conditionalEffects 必須是陣列'), r.out)
   })
 })
 

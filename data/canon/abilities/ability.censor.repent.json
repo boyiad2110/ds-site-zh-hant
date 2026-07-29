@@ -26,28 +26,31 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "5 + P holy damage; dazed (save ends)",
+        "text": "5 + P holy damage",
         "potency": {
           "characteristic": "intuition",
-          "level": "weak"
+          "level": "weak",
+          "effect": "The target is dazed (save ends)."
         },
         "raw": "5 + P holy damage; I<WEAK, dazed (save ends)"
       },
       {
         "threshold": "12-16",
-        "text": "8 + P holy damage; dazed (save ends)",
+        "text": "8 + P holy damage",
         "potency": {
           "characteristic": "intuition",
-          "level": "average"
+          "level": "average",
+          "effect": "The target is dazed (save ends)."
         },
         "raw": "8 + P holy damage; I<AVERAGE, dazed (save ends)"
       },
       {
         "threshold": "17+",
-        "text": "11 + P holy damage; dazed (save ends)",
+        "text": "11 + P holy damage",
         "potency": {
           "characteristic": "intuition",
-          "level": "strong"
+          "level": "strong",
+          "effect": "The target is dazed (save ends)."
         },
         "raw": "11 + P holy damage; I<STRONG, dazed (save ends)"
       }
@@ -66,7 +69,7 @@
     "version": "1.01",
     "pdfPage": 6,
     "printedPage": 83,
-    "checkedAt": "2026-07-28",
-    "normalizedHash": "9f03083ac036503a118f851058cb6bc8ea075e141c259b289374d7425c506dfb"
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "527a156fefcb3ca1ca33b674e066f695726d269aef624b51902272d47e183bd6"
   }
 }

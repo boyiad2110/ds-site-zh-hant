@@ -39,11 +39,16 @@
       }
     ]
   },
-  "extraCosts": [
+  "extraCosts": [],
+  "conditionalEffects": [
     {
-      "resource": "wrath",
-      "value": 3,
-      "effect": "If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
+      "trigger": "The target makes a strike against a creature while grabbed this way.",
+      "optional": true,
+      "cost": {
+        "resource": "wrath",
+        "value": 3
+      },
+      "effect": "You deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
       "raw": "Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
     }
   ],
@@ -59,7 +64,7 @@
     "version": "1.01",
     "pdfPage": 6,
     "printedPage": 83,
-    "checkedAt": "2026-07-28",
-    "normalizedHash": "1fbc4f0b82c1e1353f80483f52e901d7168f1543c572a3846114af39ccdf932c"
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "fc6f43c5be37569095f1fa5fb5d707ee8ee412bb2c4b4840224ccd1f794dfced"
   }
 }

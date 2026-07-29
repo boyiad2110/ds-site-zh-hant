@@ -6,6 +6,12 @@ cost: 3 wrath
 distance: Ranged 10
 target: One creature
 powerRoll: Power Roll + presence
-tier≤11: 5 + P holy damage; I<WEAK, dazed (save ends)
-tier12-16: 8 + P holy damage; I<AVERAGE, dazed (save ends)
-tier17+: 11 + P holy damage; I<STRONG, dazed (save ends)
+tier≤11.text: 5 + P holy damage
+tier≤11.potency: I<WEAK
+tier≤11.potencyEffect: The target is dazed (save ends).
+tier12-16.text: 8 + P holy damage
+tier12-16.potency: I<AVERAGE
+tier12-16.potencyEffect: The target is dazed (save ends).
+tier17+.text: 11 + P holy damage
+tier17+.potency: I<STRONG
+tier17+.potencyEffect: The target is dazed (save ends).

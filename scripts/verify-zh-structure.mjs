@@ -11,7 +11,8 @@
  *   3. feature：sections 數量、每個 section 的 blocks 數量、heading 有無，全部一致
  *   4. ability：powerRoll.tiers 數量與 threshold 一致、effect 段落數一致、
  *      flavor 存在性（正典非空 → 中文必須非空；正典 null → 中文可省略）、
- *      trigger 存在性、extraCosts 數量與各 effect 非空、
+ *      potencyEffect 與 canon potency.effect 對齊、trigger 存在性、
+ *      extraCosts／conditionalEffects 數量與可翻譯欄位非空、
  *      followUpActions 數量與各 options 數量、lead／constraint 存在性
  *   5. condition：text 段落數一致
  *   6. meta.status 為 reviewed 時必須有 reviewedBy
@@ -137,6 +138,17 @@ for (const [id, z] of zh) {
       if (zt[i] && zt[i].threshold !== t.threshold) {
         fail(id, `tiers[${i}].threshold 不符：正典 ${t.threshold}、中文 ${zt[i].threshold}`)
       }
+      const potencyEffect = typeof t.potency?.effect === 'string' ? t.potency.effect.trim() : ''
+      const zhPotencyEffect = typeof zt[i]?.potencyEffect === 'string' ? zt[i].potencyEffect.trim() : ''
+      if (t.potency && !potencyEffect) {
+        fail(id, `tiers[${i}].potency.effect 缺漏或為空字串`)
+      }
+      if (potencyEffect && !zhPotencyEffect) {
+        fail(id, `tiers[${i}].potencyEffect 缺漏或為空字串`)
+      }
+      if (!t.potency && zhPotencyEffect) {
+        fail(id, `tiers[${i}].potencyEffect 無對應正典 potency`)
+      }
     }
     // ⚠️ 不可寫成 `ce.length && ze.length && ce.length !== ze.length`——
     // 中文**完全沒有** effect 時 ze.length 為 0，整個條件短路，
@@ -182,7 +194,24 @@ for (const [id, z] of zh) {
       }
     }
 
-    // (3) followUpActions：數量一致；每組 options 數量一致；lead／constraint 存在性
+    // (3) conditionalEffects：數量一致；每組 trigger／effect 必須存在
+    const cce = c.conditionalEffects ?? []
+    const zce = zhArray(id, 'conditionalEffects', z.conditionalEffects)
+    if (zce === null) { /* 型別已錯 */ } else if (cce.length !== zce.length) {
+      fail(id, `conditionalEffects 數量不符：正典 ${cce.length}、中文 ${zce.length}`)
+    } else {
+      for (const [i, cEffect] of cce.entries()) {
+        const zEffect = zce[i] ?? {}
+        for (const key of ['trigger', 'effect']) {
+          const cv = typeof cEffect[key] === 'string' ? cEffect[key].trim() : ''
+          const zv = typeof zEffect[key] === 'string' ? zEffect[key].trim() : ''
+          if (!cv) fail(id, `conditionalEffects[${i}].${key} 正典缺漏或為空字串`)
+          if (cv && !zv) fail(id, `conditionalEffects[${i}].${key} 缺漏或為空字串`)
+        }
+      }
+    }
+
+    // (4) followUpActions：數量一致；每組 options 數量一致；lead／constraint 存在性
     //     審判有 4 個免費反應動作選項——少譯一個就是玩家少一種戰術，且原本毫無徵兆。
     const cfa = c.followUpActions ?? []
     const zfa = zhArray(id, 'followUpActions', z.followUpActions)

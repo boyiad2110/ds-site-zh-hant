@@ -1,0 +1,37 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位由 renderer 從 vocabulary 解析。",
+  "id": "ability.censor.arrest",
+  "nameZhHant": "當場拘捕",
+  "aliasesZhHant": [],
+  "flavor": "終於被我逮到了，你這混帳。",
+  "powerRoll": {
+    "tiers": [
+      { "threshold": "≤11", "text": "6 + `力量`神聖傷害，擒制" },
+      { "threshold": "12-16", "text": "9 + `力量`神聖傷害，擒制" },
+      { "threshold": "17+", "text": "13 + `力量`神聖傷害，擒制" }
+    ]
+  },
+  "conditionalEffects": [
+    {
+      "trigger": "目標在以此方式被擒制期間，對一個生物發動打擊。",
+      "effect": "你對目標造成等同於你`氣場`分數的神聖傷害，然後將該次打擊的目標改為打擊射程內的另一個目標。"
+    }
+  ],
+  "meta": {
+    "status": "draft",
+    "nameApproval": "既有名稱；逐筆擁有者驗收前維持 draft。",
+    "translationSource": "舊 Notion 招式列表 · 當場拘捕",
+    "commonProcessing": [
+      "條件式後續效果依 docs/proposal-arrest-data-model.md 拆為 trigger、optional、cost 與 effect；中文層只保存 trigger 與 effect。",
+      "費用 3 點怒火發生在目標之後發動打擊時，不是施放本招式時的追加費用。",
+      "受控欄位與效力標記不重複存入中文層。"
+    ],
+    "decisions": ["ARREST-CONDITIONAL-EFFECT"],
+    "conventions": "全域通則見 docs/translation-guide.md。"
+  },
+  "canonRef": {
+    "id": "ability.censor.arrest",
+    "document": "heroes-v1.01-04-censor",
+    "printedPage": 83
+  }
+}

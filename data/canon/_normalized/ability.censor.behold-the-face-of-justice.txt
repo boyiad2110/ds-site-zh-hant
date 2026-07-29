@@ -6,7 +6,13 @@ cost: 5 wrath
 distance: Melee 1 or ranged 5
 target: One creature
 powerRoll: Power Roll + might
-tier≤11: 3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)
-tier12-16: 5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)
-tier17+: 8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)
+tier≤11.text: 3 + M holy damage
+tier≤11.potency: P<WEAK
+tier≤11.potencyEffect: Each enemy within 2 squares of the target is frightened of you (save ends).
+tier12-16.text: 5 + M holy damage
+tier12-16.potency: P<AVERAGE
+tier12-16.potencyEffect: Each enemy within 2 squares of the target is frightened of you (save ends).
+tier17+.text: 8 + M holy damage
+tier17+.potency: P<STRONG
+tier17+.potencyEffect: Each enemy within 2 squares of the target is frightened of you (save ends).
 effect: Each enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.

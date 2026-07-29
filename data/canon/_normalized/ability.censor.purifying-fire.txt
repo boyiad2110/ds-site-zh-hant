@@ -6,7 +6,13 @@ cost: 5 wrath
 distance: Melee 1 or ranged 5
 target: One creature
 powerRoll: Power Roll + might
-tier≤11: 5 + M holy damage; M<WEAK, the target has fire weakness 3 (save ends)
-tier12-16: 9 + M holy damage; M<AVERAGE, the target has fire weakness 5 (save ends)
-tier17+: 12 + M holy damage; M<STRONG, the target has fire weakness 7 (save ends)
+tier≤11.text: 5 + M holy damage
+tier≤11.potency: M<WEAK
+tier≤11.potencyEffect: The target has fire weakness 3 (save ends).
+tier12-16.text: 9 + M holy damage
+tier12-16.potency: M<AVERAGE
+tier12-16.potencyEffect: The target has fire weakness 5 (save ends).
+tier17+.text: 12 + M holy damage
+tier17+.potency: M<STRONG
+tier17+.potencyEffect: The target has fire weakness 7 (save ends).
 effect: While the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage.

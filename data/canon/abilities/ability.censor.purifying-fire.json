@@ -39,28 +39,31 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "5 + M holy damage; the target has fire weakness 3 (save ends)",
+        "text": "5 + M holy damage",
         "potency": {
           "characteristic": "might",
-          "level": "weak"
+          "level": "weak",
+          "effect": "The target has fire weakness 3 (save ends)."
         },
         "raw": "5 + M holy damage; M<WEAK, the target has fire weakness 3 (save ends)"
       },
       {
         "threshold": "12-16",
-        "text": "9 + M holy damage; the target has fire weakness 5 (save ends)",
+        "text": "9 + M holy damage",
         "potency": {
           "characteristic": "might",
-          "level": "average"
+          "level": "average",
+          "effect": "The target has fire weakness 5 (save ends)."
         },
         "raw": "9 + M holy damage; M<AVERAGE, the target has fire weakness 5 (save ends)"
       },
       {
         "threshold": "17+",
-        "text": "12 + M holy damage; the target has fire weakness 7 (save ends)",
+        "text": "12 + M holy damage",
         "potency": {
           "characteristic": "might",
-          "level": "strong"
+          "level": "strong",
+          "effect": "The target has fire weakness 7 (save ends)."
         },
         "raw": "12 + M holy damage; M<STRONG, the target has fire weakness 7 (save ends)"
       }
@@ -82,7 +85,7 @@
     "version": "1.01",
     "pdfPage": 6,
     "printedPage": 83,
-    "checkedAt": "2026-07-28",
-    "normalizedHash": "55f5a43529a1ded61438380fb239e0ef441d04a4d30b1c6f9b72676a0c9688b6"
+    "checkedAt": "2026-07-29",
+    "normalizedHash": "524f94c6953b8f8ca9024e9333c8cc58fc6c56860f6585e3ce3922904772d905"
   }
 }

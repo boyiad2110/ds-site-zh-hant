@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/build-m0-release.mjs 從 data/canon/ 掃描產生，不可手改。 這是 M0 的精確術語依賴清單——網站發布 M0 內容時，這裡的每個詞都必須有已批准的譯名。",
   "release": "m0",
-  "sourceFingerprint": "7e3ef15cadc28c27",
+  "sourceFingerprint": "28c5a2c2ab7957b2",
   "scannedCanonEntries": 28,
   "$exclusionNote": "通道 B（散文文字掃描）必然有假命中。以下是人工判定為假命中、刻意不計入依賴的詞，每筆都附理由——沒有理由的排除等於偷偷放行。",
   "exclusions": [
@@ -1191,7 +1191,6 @@
       "zhHant": "效力",
       "source": "glossary",
       "usedBy": [
-        "ability.censor.behold-the-face-of-justice",
         "ability.censor.judgment"
       ],
       "viaFields": [
@@ -1598,9 +1597,11 @@
         "ability.censor.censored",
         "ability.censor.driving-assault",
         "ability.censor.every-step-death",
+        "ability.censor.halt-miscreant",
         "ability.censor.judgment",
         "ability.censor.my-life-for-yours",
         "ability.censor.purifying-fire",
+        "ability.censor.repent",
         "ability.censor.your-allies-cannot-save-you",
         "condition.grabbed",
         "condition.taunted"
@@ -1759,6 +1760,7 @@
       ],
       "viaFields": [
         "(散文)",
+        "conditionalEffects[].cost.resource",
         "cost.resource",
         "extraCosts[].resource",
         "followUpActions[].cost.resource"

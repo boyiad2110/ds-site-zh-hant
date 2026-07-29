@@ -9,4 +9,8 @@ powerRoll: Power Roll + might
 tier≤11: 6 + M holy damage; grabbed
 tier12-16: 9 + M holy damage; grabbed
 tier17+: 13 + M holy damage; grabbed
-extraCost: Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.
+conditionalEffect.trigger: The target makes a strike against a creature while grabbed this way.
+conditionalEffect.optional: true
+conditionalEffect.cost: 3 wrath
+conditionalEffect.effect: You deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.
+conditionalEffect.raw: Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.

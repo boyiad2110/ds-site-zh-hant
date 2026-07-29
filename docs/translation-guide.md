@@ -70,11 +70,12 @@ AI 產出中文的方式是生成，內部沒有可稽核的步驟鏈。紀律�
 
 ```
 name、flavor、trigger、effect、extraCosts[].effect、
-powerRoll.tiers[].text、
+conditionalEffects[].trigger／effect、
+powerRoll.tiers[].text／potencyEffect、
 以及無法可靠結構化的 target 或其他規則文字
 ```
 
-⚠️ **`powerRoll.tiers[].text` 必須進翻譯層。** 階層結果除傷害數值外常附帶推動、狀態、移動或特殊效果，不可能全靠 vocabulary 組合產生。
+⚠️ **`powerRoll.tiers[].text` 與 `potencyEffect` 必須進翻譯層。** `text` 是無條件結果；`potencyEffect` 是只有目標未通過該效力時發生的結果。兩者不可重新合併成同一句，否則畫面會把條件結果誤讀成必然結果。
 
 此清單**不是固定欄位表**——其他型別（族裔特性、專長、糾葛、狀態）各有自己的條目專屬文字欄位，於各型別建模時個別決定。
 
@@ -183,7 +184,7 @@ Strong Potency:  Presence
 
 **一句話分辨：字母＝測目標的什麼屬性（逐招式不同），範型定義＝門檻是多少（逐範型不同）。**
 
-存法：`text` 不含效力記號、`potency` 存 `{ characteristic, level }`、`raw` 存完整原文。
+存法：`text` 只存無條件結果；`potency` 存 `{ characteristic, level, effect }`，其中 `effect` 是條件式結果；`raw` 保存完整原文。中文層用同階層的 `potencyEffect` 對應 `potency.effect`。renderer 必須先呈現 `text`，再以「若目標未通過{屬性}〈{效力級別}〉」標示 `potencyEffect`，不可只靠顏色暗示。
 
 ### 4.3.1 費用：沒有費用一律存 `null`
 
@@ -219,6 +220,22 @@ Strong Potency:  Presence
 
 `extraCosts` 只保留**真正的追加花費**——例如「捨己為人」效果段內獨立的 `Spend 1 Wrath:` 子句，
 那是在使用招式時額外支付以獲得額外效果，與上者性質不同。
+
+### 4.3.3 條件式後續效果不是追加花費
+
+若費用是在招式結算後、另一個規則事件發生時才可選擇支付，使用 `conditionalEffects`：
+
+```json
+"conditionalEffects": [{
+  "trigger": "…觸發事件…",
+  "optional": true,
+  "cost": { "resource": "wrath", "value": 3 },
+  "effect": "…支付後效果…",
+  "raw": "…完整原文…"
+}]
+```
+
+中文層只保存 `trigger` 與 `effect`；`optional` 和 `cost` 為受控資料。此結構只表明時序、可選性與成本，`trigger` 仍是散文，不代表規則引擎可以自動判定。
 
 ### 4.4 目標 —— 不建整句翻譯表
 
@@ -430,7 +447,7 @@ M0 只驗證下列常見句型可否由組合規則產生：
 
 ### 7.1 規則文字 —— 嚴格
 
-適用：`trigger`、`effect`、`extraCosts[].effect`、`powerRoll.tiers[].text`、以及任何影響機制的敘述。
+適用：`trigger`、`effect`、`extraCosts[].effect`、`conditionalEffects[].trigger／effect`、`powerRoll.tiers[].text／potencyEffect`、以及任何影響機制的敘述。
 
 用祈使／陳述語氣，不加語助詞。**四項禁令：**
 

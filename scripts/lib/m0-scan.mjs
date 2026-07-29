@@ -8,8 +8,8 @@
  * 三個通道，刻意分開：
  *
  *   A · 受控值（確定性，免人工複核）
- *     結構欄位存的就是受控值本身，直接查表。命中即為真。涵蓋 15 個欄位路徑
- *     （其中 14 個在目前 28 條正典裡實際出現；`distance.options[].area.shape`
+ *     結構欄位存的就是受控值本身，直接查表。命中即為真。涵蓋 16 個欄位路徑
+ *     （其中 15 個在目前 28 條正典裡實際出現；`distance.options[].area.shape`
  *     是防禦性的，尚無「二選一的選項之一是區域」這種形狀）：
  *
  *       關鍵詞    keywords[]
@@ -18,7 +18,8 @@
  *       屬性      powerRoll.characteristic（含二選一的 .options[]）
  *                 tiers[].potency.characteristic（效力測的是目標的哪個屬性，逐招式不同）
  *       效力      tiers[].potency.level
- *       費用      cost.resource、extraCosts[].resource、followUpActions[].cost.resource
+ *       費用      cost.resource、extraCosts[].resource、conditionalEffects[].cost.resource、
+ *                 followUpActions[].cost.resource
  *       距離      distance.kind、distance.options[].kind
  *                 distance.area.shape、distance.options[].area.shape
  *
@@ -152,9 +153,16 @@ export function proseOf(item) {
     add('flavor', item.flavor)
     add('target', item.target)
     add('trigger', item.trigger)
-    for (const [i, t] of (item.powerRoll?.tiers ?? []).entries()) add(`tier[${i}]`, t.text)
+    for (const [i, t] of (item.powerRoll?.tiers ?? []).entries()) {
+      add(`tier[${i}]`, t.text)
+      add(`tier[${i}].potency.effect`, t.potency?.effect)
+    }
     for (const [i, e] of (item.effect ?? []).entries()) add(`effect[${i}]`, e)
     for (const [i, c] of (item.extraCosts ?? []).entries()) add(`extraCosts[${i}]`, c.effect)
+    for (const [i, c] of (item.conditionalEffects ?? []).entries()) {
+      add(`conditionalEffects[${i}].trigger`, c.trigger)
+      add(`conditionalEffects[${i}].effect`, c.effect)
+    }
     for (const [i, f] of (item.followUpActions ?? []).entries()) {
       add(`followUp[${i}].lead`, f.lead)
       for (const [j, o] of (f.options ?? []).entries()) add(`followUp[${i}].option[${j}]`, o)
@@ -278,6 +286,9 @@ export function scan() {
     for (const e of item.extraCosts ?? []) {
       // 目前資料是 extraCosts[].resource；防禦性支援巢狀 cost.resource
       useControlled('glossary', e.resource ?? e.cost?.resource, item.id, 'extraCosts[].resource')
+    }
+    for (const e of item.conditionalEffects ?? []) {
+      useControlled('glossary', e.cost?.resource, item.id, 'conditionalEffects[].cost.resource')
     }
     for (const f of item.followUpActions ?? []) {
       useControlled('vocab:action-types', f.actionType, item.id, 'followUpActions[].actionType')
