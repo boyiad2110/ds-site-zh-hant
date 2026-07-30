@@ -349,6 +349,18 @@ glossary 就失去作為術語權威的清晰度。
 
 **不要因為 hash 通過就把狀態升成 `verified`。**
 
+### 這張表在 2026-07-31 補上了兩道防線
+
+上表右欄那兩個空白**各自變成了一次實際事故**，兩者現在都有機器在守：
+
+| 原本的盲點 | 實際後果 | 現在由誰守 |
+|---|---|---|
+| 「不知道當初抽得對不對」 | 【惡徒止步！】【懺悔吧！】的效力效果比書上多寫了「The target is…」，通過所有既有檢查與三輪人工驗收 | `verify-canon-roundtrip` —— 把結構化欄位重組回原文與 `raw` 比對，不變式是**不存在未宣告的偏離** |
+| 「不證明畫面能正確呈現」 | 兩個基礎打擊整頁空白（`powerRoll.characteristic` 是物件而非字串）；更早還有 `trigger` 從未渲染、`definitionList` 讀錯 key | Playwright「28 筆條目頁全部渲染得出來，且沒有 runtime 錯誤」 |
+
+**教訓本身也值得記：** 後面那一類問題在文件裡被記錄過三次，但只有寫成測試之後才真的降低了再犯機率。
+遇到同類問題時，先問「這能不能變成一條會紅燈的檢查」，而不是再寫一次教訓。
+
 ---
 
 ## 9. 驗證指令
@@ -365,7 +377,7 @@ node scripts/build-vocabulary.mjs && node scripts/import-glossary.mjs && node sc
 驗證：
 
 ```bash
-node --test "scripts/**/*.test.mjs" && node scripts/verify-canon-hash.mjs && node scripts/verify-zh-structure.mjs && node scripts/build-m0-release.mjs --check
+node --test "scripts/**/*.test.mjs" && node scripts/verify-canon-hash.mjs && node scripts/verify-canon-roundtrip.mjs && node scripts/verify-zh-structure.mjs && node scripts/build-m0-release.mjs --check
 ```
 
 唯讀報告（不動 `data/`）：
@@ -380,8 +392,14 @@ node scripts/report-m0-terms.mjs
 |---|---|
 | `validate-terms` | id 重複、stable id 被改指、`approved` 缺欄位、`provisional` 進 release、同英文不同譯名被靜默丟棄 |
 | `verify-canon-hash` | 正典 JSON 與 `_normalized/` 快照的內容指紋 |
+| `verify-canon-roundtrip` | 結構化欄位重組後是否仍等於 `raw` 原文；未宣告的偏離即失敗（`--list` 可列出全部差異） |
 | `verify-zh-structure` | 中文與正典的逐段對應（數量 ＋ 每元素非空 ＋ `Array.isArray` 三層） |
 | `build-m0-release --check` | 已提交的 `releases/m0.json` 是否過期 |
+
+> 呈現規則（格式化、標記解析、階層組合）放在 `shared/canon-format.mjs`，
+> **網站與驗收頁共用同一份**。純 ESM、不依賴 React／DOM／Node，只輸出資料與 token，
+> 不吐 JSX 也不拼 HTML；型別由相鄰的 `canon-format.d.mts` 提供。
+> 先前兩邊各寫一份，同一條規則出現兩種答案——新增格式化規則請加在這裡，不要各自實作。
 
 ⚠️ `.gitattributes` 鎖定 LF —— `normalizedHash` 是偵測正典漂移的核心機制，
 換行符隨作業系統飄動會讓同一份內容算出不同雜湊。**不要移除。**

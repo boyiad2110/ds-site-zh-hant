@@ -1,0 +1,34 @@
+{
+  "$comment": [
+    "結構化正典與 raw 原文之間**已知且經擁有者裁決**的偏離。",
+    "由 scripts/verify-canon-roundtrip.mjs 讀取；不在此清單中的差異一律視為失敗。",
+    "這不是忽略名單：每一筆都要能回答「哪一筆、哪個欄位、原文是什麼、結構化後變成什麼、為什麼、對應哪條裁決」。",
+    "偏離消失時（例如原文修正後兩者一致）驗證會反過來報錯，提醒把該筆從這裡移除。"
+  ],
+  "deviations": [
+    {
+      "entry": "ability.censor.behold-the-face-of-justice",
+      "field": "powerRoll.tiers[0]",
+      "raw": "3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)",
+      "structured": "3 + M holy damage; P<WEAK, Each enemy within 2 squares of the target is frightened of you (save ends).",
+      "reason": "兩處差異都是結構化的必然結果，不是補述：(1) 書上此招用「if the target has P<LEVEL」的完整句寫法，其他招式用「P<LEVEL,」簡寫；結構化後效力記號一律由 potency 欄位組出，故統一為簡寫。(2) 原文的 them 指向同句前面的 the target，但 potency.effect 是獨立欄位、會單獨取出呈現，保留 them 會失去指涉對象，故消歧義為 the target。內容本身沒有增刪。",
+      "ruling": "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現，不得自行補述；但書上本來就寫完整句子的維持原樣（見 NEXT-SESSION.md、docs/translation-guide.md §6.1b）。同日確認本筆無需修改。"
+    },
+    {
+      "entry": "ability.censor.behold-the-face-of-justice",
+      "field": "powerRoll.tiers[1]",
+      "raw": "5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)",
+      "structured": "5 + M holy damage; P<AVERAGE, Each enemy within 2 squares of the target is frightened of you (save ends).",
+      "reason": "同 tiers[0]：效力記號改用簡寫、them 消歧義為 the target。內容本身沒有增刪。",
+      "ruling": "2026-07-31 擁有者裁決，同 tiers[0]。"
+    },
+    {
+      "entry": "ability.censor.behold-the-face-of-justice",
+      "field": "powerRoll.tiers[2]",
+      "raw": "8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)",
+      "structured": "8 + M holy damage; P<STRONG, Each enemy within 2 squares of the target is frightened of you (save ends).",
+      "reason": "同 tiers[0]：效力記號改用簡寫、them 消歧義為 the target。內容本身沒有增刪。",
+      "ruling": "2026-07-31 擁有者裁決，同 tiers[0]。"
+    }
+  ]
+}

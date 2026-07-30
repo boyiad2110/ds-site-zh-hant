@@ -16,5 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  // shared/canon-format.mjs 的型別由相鄰的 canon-format.d.mts 提供，TypeScript 自動找得到
   "include": ["src"]
 }

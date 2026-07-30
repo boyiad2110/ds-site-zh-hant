@@ -457,13 +457,20 @@ node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 驗證：
 
 ```bash
-node --test "scripts/**/*.test.mjs"       # 126 tests
-node scripts/verify-canon-hash.mjs        # 正典內容指紋
-node scripts/verify-zh-structure.mjs      # 中文與正典的逐段對應
-                                          # （數量 ＋ 每個元素非空 ＋ Array.isArray 三層）
-node scripts/report-m0-terms.mjs          # 唯讀：術語用量掃描報告
-node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過期
+node --test "scripts/**/*.test.mjs"        # 140 tests
+node scripts/verify-canon-hash.mjs         # 正典內容指紋
+node scripts/verify-canon-roundtrip.mjs    # 結構化欄位重組後與 raw 比對（忠於原文）
+node scripts/verify-zh-structure.mjs       # 中文與正典的逐段對應
+                                           # （數量 ＋ 每個元素非空 ＋ Array.isArray 三層）
+node scripts/report-m0-terms.mjs           # 唯讀：術語用量掃描報告
+node scripts/build-m0-release.mjs --check  # 驗證已提交的 m0.json 是否過期
 ```
+
+> `verify-canon-roundtrip` 補的是前三者共同的盲點：它們驗的都是**內部一致**，
+> 都通過卻仍發生過結構化欄位比書上多寫字（2026-07-31）。它把每個帶 `raw` 的欄位
+> 用 `shared/canon-format.mjs` 的 `compose*` 重組回原文再比對，**不變式是
+> 「不存在未宣告的偏離」**——合理的偏離要寫進 `shared/canon-deviations.json` 附理由。
+> 起草宣告用 `node scripts/verify-canon-roundtrip.mjs --list`。
 
 目前基線（**2026-07-30 擁有者第一輪驗收收盤**，以下數字皆為當日實跑結果；
 術語相關數字承襲 2026-07-29，本輪未變動 `data/decisions.json`）：

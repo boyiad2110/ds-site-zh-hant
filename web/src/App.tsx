@@ -4,6 +4,12 @@ import { Link, NavLink, Route, Routes, useLocation, useNavigate, useParams, useS
 import { loadCatalog } from './catalog'
 import { applyFilters } from './search'
 import type { Catalog, CatalogEntry, EntryType, Filters } from './types'
+// 與驗收頁共用同一份轉換規則（shared/canon-format.mjs）——先前兩邊各寫一份，
+// 導致同一條規則出現兩種答案。這裡只取資料與 token，畫面仍由本檔負責。
+import {
+  GLYPH, TIER_GLYPHS,
+  characteristicLabel, distanceLabel, parseRichText, plainText, potencyLabel, targetLabel,
+} from '../../shared/canon-format.mjs'
 
 const typeLabels = { ability: '招式', condition: '狀態', feature: '特性' }
 const typeNames: Record<EntryType, { zhHant: string; en: string }> = {
@@ -13,25 +19,6 @@ const typeNames: Record<EntryType, { zhHant: string; en: string }> = {
 }
 const typeOrder: EntryType[] = ['ability', 'condition', 'feature']
 const tocIndex = ['一', '二', '三']
-const characteristicLabels: Record<string, string> = {
-  might: '力量', agility: '敏捷', reason: '理性', intuition: '直覺', presence: '氣場', choice: '任選',
-}
-
-/** powerRoll.characteristic 可能是字串，也可能是 { kind:'choice', options:[…] }（兩個基礎打擊都是
- * 「力量或敏捷」）。直接把物件丟進 JSX 會讓整頁崩成空白，所以一律走這個函式。 */
-function characteristicLabel(value: any): string {
-  if (!value) return ''
-  if (typeof value === 'string') return characteristicLabels[value] ?? value
-  if (value.kind === 'choice') return (value.options ?? []).map((option: string) => characteristicLabels[option] ?? option).join('或')
-  return value.raw ?? ''
-}
-
-/** 官方符號字型的字元對應，出自官方字符表 sources/drawsteelglyphs/Draw Steel Glyphs Chart.pdf，非推測。
- * 圓角屬性框（AIMPR）用在傷害算式；階層徽章 á/é/í 對應 ≤11／12-16／17+；o 是距離、x 是目標。 */
-const glyphChars = { distance: 'o', target: 'x' }
-const tierGlyphs = ['á', 'é', 'í']
-const attributeNames = new Set(['力量', '敏捷', '理性', '直覺', '氣場'])
-
 /** 符號本身對輔助技術沒有意義（字型把 o、á 這些拉丁字元畫成圖示），一律隱藏並補等值文字。 */
 function Glyph({ char, label }: { char: string; label: string }) {
   return <span className="glyph-wrap"><span className="glyph" aria-hidden="true">{char}</span><span className="sr-only">{label}</span></span>
@@ -45,41 +32,9 @@ function label(catalog: Catalog, group: string, value?: string | null) {
   return value ? catalog.labels[group]?.[value]?.zhHant ?? value : '—'
 }
 
-const targetLabels: Record<string, string> = {
-  'One creature': '1 個生物',
-  'One creature or object': '1 個生物或物體',
-  'One enemy': '1 個敵人',
-  'Self or one ally': '自身或 1 個盟友',
-  'Each enemy in the area': '區域內每個敵人',
-  'One willing creature': '1 個自願的生物',
-}
-
-function targetLabel(target?: string | null): string {
-  if (!target) return '—'
-  return targetLabels[target] ?? target
-}
-
-const areaShapeLabels: Record<string, string> = { cube: '立方' }
-
-function distanceLabel(distance: any): string {
-  if (!distance) return '—'
-  if (distance.kind === 'choice') return (distance.options ?? []).map(distanceLabel).join(' 或 ')
-  if (distance.kind === 'area') {
-    const shape = areaShapeLabels[distance.area?.shape] ?? distance.area?.shape ?? ''
-    return `${distance.area?.within ?? ''} 格內 ${distance.area?.size ?? ''} ${shape}`.trim()
-  }
-  const names: Record<string, string> = { melee: '近戰', ranged: '遠程', self: '自身' }
-  return `${names[distance.kind] ?? distance.kind}${distance.value != null ? ` ${distance.value}` : ''}`
-}
-
 /** flavor 只有在原文本身是引言（book 用引號標出角色台詞）時才加中文引號；純敘述句不加。 */
 function isQuotedFlavor(canonFlavor?: string | null): boolean {
   return !!canonFlavor && /^["“]/.test(canonFlavor.trim())
-}
-
-/** 摘要是純文字顯示，把資料層的行內標記（`術語` 與 [標籤](實體 id)）還原成可讀文字。 */
-function plainText(text: string): string {
-  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1').replace(/`([^`]+)`/g, '$1')
 }
 
 function SearchIcon() {
@@ -91,29 +46,24 @@ function SearchIcon() {
   )
 }
 
-/** attributeBadges 只在傷害算式（powerRoll 階層文字）開啟——原版規則書也只有那裡把屬性做成方框，
+/** 標記解析由 shared 的 parseRichText 負責，這裡只把中立 token 畫成 JSX。
+ * attributeBadges 只在傷害算式（powerRoll 階層文字）開啟——原版規則書也只有那裡把屬性做成方框，
  * 內文提到力量、敏捷時是寫字不是畫框。徽章用中文加黑底白字，與效力記號同一套視覺。 */
 function RichText({ text, byId, attributeBadges = false }: { text: string; byId: Map<string, CatalogEntry>; attributeBadges?: boolean }) {
-  const pattern = /\[([^\]]+)\]\(([^)]+)\)|`([^`]+)`/g
-  const nodes = []
-  let cursor = 0
-  let match: RegExpExecArray | null
-  while ((match = pattern.exec(text)) !== null) {
-    if (match.index > cursor) nodes.push(text.slice(cursor, match.index))
-    if (match[1] && match[2]) {
-      const target = byId.get(match[2])
-      nodes.push(target
-        ? <Link key={match.index} className="entity-link" to={routeOf(target)}>{match[1]}</Link>
-        : <span key={match.index}>{match[1]}</span>)
-    } else if (attributeBadges && attributeNames.has(match[3])) {
-      nodes.push(<span key={match.index} className="attr-tag">{match[3]}</span>)
-    } else {
-      nodes.push(<strong key={match.index} className="term">{match[3]}</strong>)
+  return <>{parseRichText(text).map((token, index) => {
+    if (token.kind === 'ref') {
+      const target = byId.get(token.id)
+      return target
+        ? <Link key={index} className="entity-link" to={routeOf(target)}>{token.text}</Link>
+        : <span key={index}>{token.text}</span>
     }
-    cursor = pattern.lastIndex
-  }
-  if (cursor < text.length) nodes.push(text.slice(cursor))
-  return <>{nodes}</>
+    if (token.kind === 'term') {
+      return attributeBadges && token.isAttribute
+        ? <span key={index} className="attr-tag">{token.text}</span>
+        : <strong key={index} className="term">{token.text}</strong>
+    }
+    return <Fragment key={index}>{token.text}</Fragment>
+  })}</>
 }
 
 function Header() {
@@ -371,8 +321,8 @@ function AbilityContent({ entry, catalog, byId }: { entry: CatalogEntry; catalog
         <span>{label(catalog, 'action-types', c.actionType)}</span>
       </div>
       <div className="bar-row">
-        <span><Glyph char={glyphChars.distance} label="射程" />{distanceLabel(c.distance)}</span>
-        <span><Glyph char={glyphChars.target} label="目標" />{targetLabel(c.target)}</span>
+        <span><Glyph char={GLYPH.distance} label="射程" />{distanceLabel(c.distance)}</span>
+        <span><Glyph char={GLYPH.target} label="目標" />{targetLabel(c.target)}</span>
       </div>
     </div>
     <div className="card-body">
@@ -382,10 +332,10 @@ function AbilityContent({ entry, catalog, byId }: { entry: CatalogEntry; catalog
         <div className="tier-list">{tiers.map((tier: any, index: number) => {
           const zTier = z.powerRoll.tiers[index]
           return <p className="tier" key={tier.threshold}>
-            <Glyph char={tierGlyphs[index] ?? ''} label={tier.threshold} />
+            <Glyph char={TIER_GLYPHS[index] ?? ''} label={tier.threshold} />
             <span>
               <RichText text={zTier.text} byId={byId} attributeBadges />
-              {tier.potency && <>；<span className="potency-tag">{characteristicLabel(tier.potency.characteristic)} &lt; {label(catalog, 'potency-levels', tier.potency.level)}</span>，<RichText text={zTier.potencyEffect} byId={byId} /></>}
+              {tier.potency && <>；<span className="potency-tag">{potencyLabel(tier.potency, catalog.labels['potency-levels'])}</span>，<RichText text={zTier.potencyEffect} byId={byId} /></>}
             </span>
           </p>
         })}</div>

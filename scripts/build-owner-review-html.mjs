@@ -9,6 +9,10 @@
  */
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { p } from './lib/root.mjs'
+import {
+  ATTRIBUTE_NAMES_ZH, GLYPH, TIER_GLYPHS,
+  characteristicLabel, distanceLabel, parseRichText, potencyLabel, targetLabel,
+} from '../shared/canon-format.mjs'
 
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
 
@@ -16,10 +20,6 @@ const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
  * 這份檔案會被單獨開啟或轉寄，不能依賴相對路徑的字型檔。 */
 const GLYPH_FONT_BASE64 = readFileSync(p('web/public/fonts/DrawSteelGlyphs-Regular.otf')).toString('base64')
 
-/** 字元對應出自官方字符表，與網站 web/src/App.tsx 同一套，不得各自為政。 */
-const GLYPH = { distance: 'o', target: 'x' }
-const TIER_GLYPHS = ['á', 'é', 'í']
-const ATTRIBUTE_NAMES = new Set(['力量', '敏捷', '理性', '直覺', '氣場'])
 const glyph = (char, label) => `<span class="glyph-wrap"><span class="glyph" aria-hidden="true">${esc(char)}</span><span class="sr-only">${esc(label)}</span></span>`
 
 const vocabFiles = ['ability-keywords', 'action-types', 'ability-categories', 'potency-levels', 'target-components']
@@ -33,26 +33,22 @@ for (const name of vocabFiles) {
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-/** `詞` → 標色術語；[文字](id) → 站內錨點（中文層專用，英文正典本身無此標記）。
+/** 標記解析由 shared 的 parseRichText 負責，這裡只把中立 token 畫成 HTML。
  * attributeBadges 只在傷害算式開啟，屬性改成黑底白字徽章——與網站一致。 */
 function richText(str, idSet, attributeBadges = false) {
   if (str == null) return ''
-  const pattern = /\[([^\]]+)\]\(([^)]+)\)|`([^`]+)`/g
   let out = ''
-  let cursor = 0
-  let m
-  while ((m = pattern.exec(str)) !== null) {
-    out += esc(str.slice(cursor, m.index))
-    if (m[1] && m[2]) {
-      out += idSet.has(m[2]) ? `<a class="ref" href="#entry-${m[2]}">${esc(m[1])}</a>` : esc(m[1])
-    } else if (attributeBadges && ATTRIBUTE_NAMES.has(m[3])) {
-      out += `<span class="attr-tag">${esc(m[3])}</span>`
+  for (const token of parseRichText(str)) {
+    if (token.kind === 'ref') {
+      out += idSet.has(token.id) ? `<a class="ref" href="#entry-${token.id}">${esc(token.text)}</a>` : esc(token.text)
+    } else if (token.kind === 'term') {
+      out += attributeBadges && token.isAttribute
+        ? `<span class="attr-tag">${esc(token.text)}</span>`
+        : `<b class="term">${esc(token.text)}</b>`
     } else {
-      out += `<b class="term">${esc(m[3])}</b>`
+      out += esc(token.text)
     }
-    cursor = pattern.lastIndex
   }
-  out += esc(str.slice(cursor))
   return out
 }
 
@@ -67,42 +63,14 @@ function paragraphsEn(str) {
 }
 
 // ---- 受控欄位：中英對照 ----
+// 格式化一律走 shared/canon-format.mjs，與網站同一份來源；這裡只做語言的薄包裝。
 
-const CHAR_ZH = { might: '力量', agility: '敏捷', reason: '理性', intuition: '直覺', presence: '氣場' }
-const CHAR_EN = { might: 'Might', agility: 'Agility', reason: 'Reason', intuition: 'Intuition', presence: 'Presence' }
-// 6 個句型取自 docs/translation-guide.md §4.4「M0 只驗證下列常見句型」＋ willing 條款；不在表中的字串照原文顯示。
-const TARGET_ZH = {
-  'One creature': '1 個生物',
-  'One creature or object': '1 個生物或物體',
-  'One enemy': '1 個敵人',
-  'Self or one ally': '自身或 1 個盟友',
-  'Each enemy in the area': '區域內每個敵人',
-  'One willing creature': '1 個自願的生物',
-}
+const distanceZh = (d) => distanceLabel(d, 'zh')
+const distanceEn = (d) => (d ? d.raw ?? distanceLabel(d, 'en') : '—')
+const targetZh = (t) => targetLabel(t, 'zh')
+const targetEn = (t) => targetLabel(t, 'en')
 
-function characteristic(value, dict) {
-  if (!value) return null
-  if (typeof value === 'string') return dict[value] ?? value
-  // 中文不加空格，與網站 characteristicLabel() 一致
-  if (value.kind === 'choice') return value.options.map((o) => dict[o] ?? o).join(dict === CHAR_ZH ? '或' : ' or ')
-  return value.raw ?? String(value)
-}
-
-const AREA_SHAPE_ZH = { cube: '立方' }
-
-function distanceZh(d) {
-  if (!d) return '—'
-  if (d.kind === 'choice') return d.options.map(distanceZh).join(' 或 ')
-  if (d.kind === 'area') return `${d.area?.within ?? ''} 格內 ${d.area?.size ?? ''} ${AREA_SHAPE_ZH[d.area?.shape] ?? d.area?.shape ?? ''}`.trim()
-  const names = { melee: '近戰', ranged: '遠程', self: '自身' }
-  return `${names[d.kind] ?? d.kind}${d.value != null ? ` ${d.value}` : ''}`
-}
-const distanceEn = (d) => (d ? d.raw ?? d.kind : '—')
-
-const targetZh = (t) => (t ? TARGET_ZH[t] ?? t : '—')
-const targetEn = (t) => t ?? '—'
-
-const costZh = (c) => (c ? `${c.value} 點怒火` : '無')
+const costZh = (c) => (c ? `${c.value} 怒火` : '無')
 const costEn = (c) => (c ? `${c.value} Wrath` : 'None')
 
 /** flavor 只有在原文本身是引言（book 用引號標出角色台詞）才加中文引號；純敘述句不加。 */
@@ -137,8 +105,8 @@ function tierBlock(canonTier, zhTier) {
   if (!canonTier.potency) {
     return { threshold: canonTier.threshold, zh: richText(zhTier.text, idSet, true), en: esc(canonTier.text) }
   }
-  const potencyZh = `${CHAR_ZH[canonTier.potency.characteristic] ?? canonTier.potency.characteristic} < ${labels['potency-levels'][canonTier.potency.level]?.zh ?? canonTier.potency.level}`
-  const potencyEn = `${CHAR_EN[canonTier.potency.characteristic] ?? canonTier.potency.characteristic} < ${(labels['potency-levels'][canonTier.potency.level]?.en ?? canonTier.potency.level).toUpperCase()}`
+  const potencyZh = potencyLabel(canonTier.potency, labels['potency-levels'], 'zh')
+  const potencyEn = potencyLabel(canonTier.potency, labels['potency-levels'], 'en')
   const zhMerged = `${richText(zhTier.text, idSet, true)}；<span class="potency-tag">${esc(potencyZh)}</span>，${richText(zhTier.potencyEffect, idSet)}`
   const enMerged = `${esc(canonTier.text)}; <span class="potency-tag">${esc(potencyEn)}</span>, ${esc(canonTier.potency.effect)}`
   return { threshold: canonTier.threshold, zh: zhMerged, en: enMerged }
@@ -166,8 +134,8 @@ function abilityBody(canon, zh) {
   </div><div class="card-body">`
 
   if (canon.powerRoll?.tiers?.length) {
-    const charZh = characteristic(canon.powerRoll.characteristic, CHAR_ZH)
-    const charEn = characteristic(canon.powerRoll.characteristic, CHAR_EN)
+    const charZh = characteristicLabel(canon.powerRoll.characteristic, 'zh')
+    const charEn = characteristicLabel(canon.powerRoll.characteristic, 'en')
     const tiers = canon.powerRoll.tiers.map((t, i) => tierBlock(t, zh.powerRoll.tiers[i]))
     zhHtml += `<p class="power-roll-label">檢定 ＋ ${esc(charZh)}</p>${tierRows(tiers, 'zh')}`
     enHtml += `<p class="power-roll-label">Power Roll + ${esc(charEn)}</p>${tierRows(tiers, 'en')}`
