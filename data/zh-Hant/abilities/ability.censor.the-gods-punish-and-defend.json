@@ -24,7 +24,7 @@
     "你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 神之懲護",
     "commonProcessing": [
@@ -33,7 +33,9 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.the-gods-punish-and-defend",

@@ -5,9 +5,18 @@
   "aliasesZhHant": [],
   "powerRoll": {
     "tiers": [
-      { "threshold": "≤11", "text": "2 + `力量`或`敏捷`傷害" },
-      { "threshold": "12-16", "text": "4 + `力量`或`敏捷`傷害" },
-      { "threshold": "17+", "text": "6 + `力量`或`敏捷`傷害" }
+      {
+        "threshold": "≤11",
+        "text": "2 + `力量`或`敏捷`傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "4 + `力量`或`敏捷`傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "6 + `力量`或`敏捷`傷害"
+      }
     ]
   },
   "meta": {

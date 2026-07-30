@@ -6,16 +6,25 @@
   "flavor": "你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。",
   "powerRoll": {
     "tiers": [
-      { "threshold": "≤11", "text": "3 + `力量`神聖傷害" },
-      { "threshold": "12-16", "text": "5 + `力量`神聖傷害" },
-      { "threshold": "17+", "text": "8 + `力量`神聖傷害" }
+      {
+        "threshold": "≤11",
+        "text": "3 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `力量`神聖傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + `力量`神聖傷害"
+      }
     ]
   },
   "effect": [
     "與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。",
     "translationSource": "舊 Notion 招式列表 · 你的同夥救不了你！",
     "commonProcessing": [
@@ -24,8 +33,12 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
       "PN-D2：flavor 的 burst 譯為「衝擊力」而非術語表的區域形狀「爆發」，屬 §7.2 允許的改寫，已列入報告供知悉"
     ],
-    "decisions": ["TI-19"],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "decisions": [
+      "TI-19"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.your-allies-cannot-save-you",

@@ -19,7 +19,7 @@
 
 - ID：`ability.basic.melee-weapon-free-strike`
 - 來源：Heroes v1.01，印刷頁 17（PDF 頁 32）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -82,7 +82,7 @@
   },
   "abilityCategory": "basic",
   "level": null,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
     "version": "1.01",
@@ -156,7 +156,7 @@
 
 - ID：`ability.basic.ranged-weapon-free-strike`
 - 來源：Heroes v1.01，印刷頁 17（PDF 頁 32）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -218,7 +218,7 @@
   },
   "abilityCategory": "basic",
   "level": null,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
     "version": "1.01",
@@ -292,8 +292,8 @@
 
 - ID：`ability.censor.arrest`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
-- TI／裁決：ARREST-CONDITIONAL-EFFECT
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
+- TI／裁決：TI-28、TI-29
 
 **英文正典**
 
@@ -339,17 +339,8 @@
     ]
   },
   "extraCosts": [],
-  "conditionalEffects": [
-    {
-      "trigger": "The target makes a strike against a creature while grabbed this way.",
-      "optional": true,
-      "cost": {
-        "resource": "wrath",
-        "value": 3
-      },
-      "effect": "You deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
-      "raw": "Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
-    }
+  "effect": [
+    "If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
   ],
   "origin": {
     "kind": "class",
@@ -357,13 +348,13 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
     "pdfPage": 6,
     "printedPage": 83,
-    "checkedAt": "2026-07-29"
+    "checkedAt": "2026-07-30"
   }
 }
 ```
@@ -380,37 +371,37 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "6 + `力量`神聖傷害，擒制"
+        "text": "6 + `力量`神聖傷害；擒制"
       },
       {
         "threshold": "12-16",
-        "text": "9 + `力量`神聖傷害，擒制"
+        "text": "9 + `力量`神聖傷害；擒制"
       },
       {
         "threshold": "17+",
-        "text": "13 + `力量`神聖傷害，擒制"
+        "text": "13 + `力量`神聖傷害；擒制"
       }
     ]
   },
-  "conditionalEffects": [
-    {
-      "trigger": "目標在以此方式被擒制期間，對一個生物發動打擊。",
-      "effect": "你對目標造成等同於你`氣場`分數的神聖傷害，然後將該次打擊的目標改為打擊射程內的另一個目標。"
-    }
+  "effect": [
+    "若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你`氣場`的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。"
   ],
   "meta": {
-    "status": "draft",
-    "nameApproval": "既有名稱；逐筆擁有者驗收前維持 draft。",
+    "status": "reviewed",
+    "nameApproval": "既有名稱；2026-07-30 擁有者核准（M0 驗收清單第二輪）。",
     "translationSource": "舊 Notion 招式列表 · 當場拘捕",
     "commonProcessing": [
-      "條件式後續效果依 docs/proposal-arrest-data-model.md 拆為 trigger、optional、cost 與 effect；中文層只保存 trigger 與 effect。",
-      "費用 3 點怒火發生在目標之後發動打擊時，不是施放本招式時的追加費用。",
+      "2026-07-30 擁有者裁決：撤銷 docs/proposal-arrest-data-model.md 的 conditionalEffects 結構，改回單一 effect 段落——原版規則書本就把這句寫在 Effect: 之下，不是獨立的方框內容。舊裁決 ARREST-CONDITIONAL-EFFECT 已由本次裁決取代，紀錄保留於 docs/proposal-arrest-data-model.md 與 data/translation-issues.json TI-28。",
+      "tiers[].text 依全域裁決（TI-29）改用「；」分隔同一階層內的多個子句，不再用「，」。",
       "受控欄位與效力標記不重複存入中文層。"
     ],
     "decisions": [
-      "ARREST-CONDITIONAL-EFFECT"
+      "TI-28",
+      "TI-29"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md。"
+    "conventions": "全域通則見 docs/translation-guide.md。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.arrest",
@@ -422,8 +413,8 @@
 
 **結構與翻譯注意事項**
 
-- 條件式後續效果依 docs/proposal-arrest-data-model.md 拆為 trigger、optional、cost 與 effect；中文層只保存 trigger 與 effect。
-- 費用 3 點怒火發生在目標之後發動打擊時，不是施放本招式時的追加費用。
+- 2026-07-30 擁有者裁決：撤銷 docs/proposal-arrest-data-model.md 的 conditionalEffects 結構，改回單一 effect 段落——原版規則書本就把這句寫在 Effect: 之下，不是獨立的方框內容。舊裁決 ARREST-CONDITIONAL-EFFECT 已由本次裁決取代，紀錄保留於 docs/proposal-arrest-data-model.md 與 data/translation-issues.json TI-28。
+- tiers[].text 依全域裁決（TI-29）改用「；」分隔同一階層內的多個子句，不再用「，」。
 - 受控欄位與效力標記不重複存入中文層。
 
 **擁有者裁決**
@@ -440,8 +431,8 @@
 
 - ID：`ability.censor.back-blasphemer`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
-- TI／裁決：TI-25
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
+- TI／裁決：TI-25、TI-29
 
 **英文正典**
 
@@ -493,7 +484,7 @@
   },
   "abilityCategory": "signature",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -516,32 +507,35 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "2 神聖傷害，推動 1"
+        "text": "2 神聖傷害；推動 1"
       },
       {
         "threshold": "12-16",
-        "text": "4 神聖傷害，推動 2"
+        "text": "4 神聖傷害；推動 2"
       },
       {
         "threshold": "17+",
-        "text": "6 神聖傷害，推動 3"
+        "text": "6 神聖傷害；推動 3"
       }
     ]
   },
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條零待裁項）；flavor 的「神聖」補字已於 2026-07-28 裁決維持舊譯，正式紀錄為 TI-25。",
     "translationSource": "舊 Notion 招式列表 · 瀆神者退散！",
     "commonProcessing": [
-      "N-2：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）",
+      "N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）",
       "target「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層",
-      "distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層",
+      "distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層（cube＝立方，2026-07-30 補上 renderer 遺漏的形狀翻譯）",
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [
-      "TI-25"
+      "TI-25",
+      "TI-29"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.back-blasphemer",
@@ -553,9 +547,9 @@
 
 **結構與翻譯注意事項**
 
-- N-2：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）
+- N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）
 - target「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層
-- distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層
+- distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層（cube＝立方，2026-07-30 補上 renderer 遺漏的形狀翻譯）
 - 階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）
 
 **擁有者裁決**
@@ -572,7 +566,7 @@
 
 - ID：`ability.censor.behold-a-shield-of-faith`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -627,7 +621,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -666,7 +660,7 @@
     "若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 聖盾在此！",
     "commonProcessing": [
@@ -676,7 +670,9 @@
       "effect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.behold-a-shield-of-faith",
@@ -707,7 +703,7 @@
 
 - ID：`ability.censor.behold-the-face-of-justice`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-27
 
 **英文正典**
@@ -793,7 +789,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -835,7 +831,7 @@
     "因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你`氣場`的心靈傷害。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
     "translationSource": "舊 Notion 招式列表 · 直視正義威儀！",
     "commonProcessing": [
@@ -850,7 +846,9 @@
     "decisions": [
       "TI-27"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.behold-the-face-of-justice",
@@ -884,7 +882,7 @@
 
 - ID：`ability.censor.censored`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -939,7 +937,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -978,7 +976,7 @@
     "若目標因此招式而陷入`疲態`，只要他不是首領或獨霸生物，他的`體力`會直接歸 0。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 斷罪",
     "commonProcessing": [
@@ -989,7 +987,9 @@
       "flavor「審判、定罪」與招式【審判】同字，但 flavor 不加【】標記（指南 §6）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.censored",
@@ -1021,8 +1021,8 @@
 
 - ID：`ability.censor.driving-assault`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
-- TI／裁決：無個別 TI；套用全域指南
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
+- TI／裁決：TI-29
 
 **英文正典**
 
@@ -1076,7 +1076,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1099,15 +1099,15 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "3 + `力量`傷害，推動 1"
+        "text": "3 + `力量`傷害；推動 1"
       },
       {
         "threshold": "12-16",
-        "text": "6 + `力量`傷害，推動 3"
+        "text": "6 + `力量`傷害；推動 3"
       },
       {
         "threshold": "17+",
-        "text": "9 + `力量`傷害，推動 5"
+        "text": "9 + `力量`傷害；推動 5"
       }
     ]
   },
@@ -1115,18 +1115,22 @@
     "在推動目標後，你可以朝目標直線遁移最多等於你`速度`的距離。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 衝刺追擊",
     "commonProcessing": [
       "**本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對",
-      "N-2：舊譯的階層表格分成「傷害／推動」兩欄，本層合併，欄內以全形逗號「，」分隔（指南 §6）",
+      "N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，本層合併；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）",
       "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
       "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
-    "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "decisions": [
+      "TI-29"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.driving-assault",
@@ -1139,7 +1143,7 @@
 **結構與翻譯注意事項**
 
 - **本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對
-- N-2：舊譯的階層表格分成「傷害／推動」兩欄，本層合併，欄內以全形逗號「，」分隔（指南 §6）
+- N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，本層合併；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）
 - target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層
 - distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層
 - 階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）
@@ -1158,7 +1162,7 @@
 
 - ID：`ability.censor.every-step-death`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-20
 
 **英文正典**
@@ -1210,7 +1214,7 @@
   },
   "abilityCategory": "signature",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1249,7 +1253,7 @@
     "在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一待裁項（willingly 譯名）已裁為 TI-20。",
     "translationSource": "舊 Notion 招式列表 · 踏向死亡！",
     "commonProcessing": [
@@ -1260,7 +1264,9 @@
     "decisions": [
       "TI-20"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.every-step-death",
@@ -1290,7 +1296,7 @@
 
 - ID：`ability.censor.halt-miscreant`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -1357,7 +1363,7 @@
   },
   "abilityCategory": "signature",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1396,7 +1402,7 @@
     ]
   },
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。",
     "translationSource": "舊 Notion 招式列表 · 惡徒止步！",
     "commonProcessing": [
@@ -1408,7 +1414,9 @@
       "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.halt-miscreant",
@@ -1441,7 +1449,7 @@
 
 - ID：`ability.censor.judgment`
 - 來源：Heroes v1.01，印刷頁 80（PDF 頁 3）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-26
 
 **英文正典**
@@ -1496,7 +1504,7 @@
   },
   "abilityCategory": "inherent",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1533,7 +1541,7 @@
     }
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
     "translationSource": "舊 Notion 招式列表 · 審判",
     "commonProcessing": [
@@ -1551,7 +1559,9 @@
     "decisions": [
       "TI-26"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.judgment",
@@ -1588,7 +1598,7 @@
 
 - ID：`ability.censor.my-life-for-yours`
 - 來源：Heroes v1.01，印刷頁 80（PDF 頁 3）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-21、TI-22、TI-23、TI-24
 
 **英文正典**
@@ -1630,7 +1640,7 @@
   },
   "abilityCategory": "inherent",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1659,7 +1669,7 @@
     }
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。",
     "translationSource": "舊 Notion 招式列表 · 捨己為人",
     "commonProcessing": [
@@ -1679,7 +1689,9 @@
       "TI-23",
       "TI-24"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.my-life-for-yours",
@@ -1715,7 +1727,7 @@
 
 - ID：`ability.censor.purifying-fire`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -1801,7 +1813,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -1843,7 +1855,7 @@
     "若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
     "translationSource": "舊 Notion 招式列表 · 淨化聖火",
     "commonProcessing": [
@@ -1857,7 +1869,9 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.purifying-fire",
@@ -1892,7 +1906,7 @@
 
 - ID：`ability.censor.repent`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -1962,7 +1976,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -2001,7 +2015,7 @@
     ]
   },
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 懺悔吧！",
     "commonProcessing": [
@@ -2014,7 +2028,9 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.repent",
@@ -2048,7 +2064,7 @@
 
 - ID：`ability.censor.the-gods-punish-and-defend`
 - 來源：Heroes v1.01，印刷頁 83（PDF 頁 6）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2104,7 +2120,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -2143,7 +2159,7 @@
     "你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 神之懲護",
     "commonProcessing": [
@@ -2152,7 +2168,9 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.the-gods-punish-and-defend",
@@ -2182,7 +2200,7 @@
 
 - ID：`ability.censor.your-allies-cannot-save-you`
 - 來源：Heroes v1.01，印刷頁 82（PDF 頁 5）
-- Canon 狀態：`draft`；繁中狀態：`draft`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-19
 
 **英文正典**
@@ -2234,7 +2252,7 @@
   },
   "abilityCategory": "signature",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -2273,7 +2291,7 @@
     "與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。",
     "translationSource": "舊 Notion 招式列表 · 你的同夥救不了你！",
     "commonProcessing": [
@@ -2285,7 +2303,9 @@
     "decisions": [
       "TI-19"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.your-allies-cannot-save-you",
@@ -2319,7 +2339,7 @@
 
 - ID：`condition.bleeding`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2334,7 +2354,7 @@
     "While a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.",
     "You take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2396,7 +2416,7 @@
 
 - ID：`condition.dazed`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2410,7 +2430,7 @@
   "text": [
     "A creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2469,7 +2489,7 @@
 
 - ID：`condition.frightened`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2483,7 +2503,7 @@
   "text": [
     "When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2540,7 +2560,7 @@
 
 - ID：`condition.grabbed`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：[object Object]、[object Object]
 
 **英文正典**
@@ -2558,7 +2578,7 @@
     "A creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.",
     "Unless otherwise indicated, a creature can grab only one creature at a time."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2630,7 +2650,7 @@
 
 - ID：`condition.prone`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2645,7 +2665,7 @@
     "While a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.",
     "Unless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2705,7 +2725,7 @@
 
 - ID：`condition.restrained`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2720,7 +2740,7 @@
     "A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.",
     "If a creature teleports while restrained, that condition ends."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2780,7 +2800,7 @@
 
 - ID：`condition.slowed`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2794,7 +2814,7 @@
   "text": [
     "A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2851,7 +2871,7 @@
 
 - ID：`condition.taunted`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：無個別 TI；套用全域指南
 
 **英文正典**
@@ -2865,7 +2885,7 @@
   "text": [
     "A creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -2922,7 +2942,7 @@
 
 - ID：`condition.weakened`
 - 來源：Heroes v1.01，印刷頁 77（PDF 頁 9）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：[object Object]
 
 **英文正典**
@@ -2936,7 +2956,7 @@
   "text": [
     "A creature who is weakened takes a bane on power rolls."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",
@@ -3001,7 +3021,7 @@
 
 - ID：`feature.censor.censor-order`
 - 來源：Heroes v1.01，印刷頁 79（PDF 頁 2）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
 - TI／裁決：TI-11、TI-12、TI-13、TI-15、TI-17
 
 **英文正典**
@@ -3050,7 +3070,7 @@
     "id": "class.censor"
   },
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -3147,8 +3167,8 @@
 
 - ID：`feature.censor.judgment-order-benefit`
 - 來源：Heroes v1.01，印刷頁 80（PDF 頁 3）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
-- TI／裁決：TI-14、TI-17
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
+- TI／裁決：TI-14、TI-17、TI-30
 
 **英文正典**
 
@@ -3195,7 +3215,7 @@
     "ability.censor.judgment"
   ],
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -3227,15 +3247,15 @@
           "items": [
             {
               "term": "驅邪",
-              "text": "你可以`傳送`最多等於你`氣場` ×2 的`格`數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有`效果線`。"
+              "text": "你可以傳送最多等於你`氣場` ×2 的格數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有效果線。"
             },
             {
               "term": "神諭",
-              "text": "你可以對被審判的生物造成等於你`氣場` ×2 的`神聖`傷害。"
+              "text": "你可以對被審判的生物造成等於你`氣場` ×2 的神聖傷害。"
             },
             {
               "term": "典範",
-              "text": "你可以將被審判的生物`垂直拉動`最多等於你`氣場` ×2 的`格`數。"
+              "text": "你可以將被審判的生物垂直拉動最多等於你`氣場` ×2 的格數。"
             }
           ]
         }
@@ -3245,17 +3265,19 @@
   "meta": {
     "status": "reviewed",
     "reviewedBy": "owner",
-    "reviewedAt": "2026-07-29",
+    "reviewedAt": "2026-07-30",
     "nameApproval": "名稱依 TI-14 裁定為「審判：教團益處」（舊譯作「審判教團益處」）。逐句對齊報告見 docs/alignment/zh-batch1-alignment.md。",
     "translationSource": "舊 Notion 懲戒者 · 審判 · 審判教團益處",
     "commonProcessing": [
       "排版級自動歸一：舊譯驅邪條作「`氣場` × 2」，依指南 §6「乘號緊貼阿拉伯數字」統一為「×2」，與神諭／典範兩條一致",
       "教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」（此處舊譯本就是短式）",
-      "TI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理"
+      "TI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理",
+      "2026-07-30 擁有者裁決：移除「傳送、格、效果線、神聖、垂直拉動」的醒目標示，只保留真正的遊戲數值／屬性用語（`氣場`）加註記；一般規則名詞不需要每個都標成術語"
     ],
     "decisions": [
       "TI-14",
-      "TI-17"
+      "TI-17",
+      "TI-30"
     ],
     "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
   },
@@ -3272,6 +3294,7 @@
 - 排版級自動歸一：舊譯驅邪條作「`氣場` × 2」，依指南 §6「乘號緊貼阿拉伯數字」統一為「×2」，與神諭／典範兩條一致
 - 教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」（此處舊譯本就是短式）
 - TI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理
+- 2026-07-30 擁有者裁決：移除「傳送、格、效果線、神聖、垂直拉動」的醒目標示，只保留真正的遊戲數值／屬性用語（`氣場`）加註記；一般規則名詞不需要每個都標成術語
 
 **擁有者裁決**
 
@@ -3287,8 +3310,8 @@
 
 - ID：`feature.censor.wrath`
 - 來源：Heroes v1.01，印刷頁 79（PDF 頁 2）
-- Canon 狀態：`draft`；繁中狀態：`reviewed`
-- TI／裁決：TI-8、TI-9、TI-10、TI-16、TI-18
+- Canon 狀態：`verified`；繁中狀態：`reviewed`
+- TI／裁決：TI-8、TI-9、TI-10、TI-16、TI-18、TI-30
 
 **英文正典**
 
@@ -3344,7 +3367,7 @@
     "id": "class.censor"
   },
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",
@@ -3377,7 +3400,7 @@
       "blocks": [
         {
           "kind": "paragraph",
-          "text": "在戰鬥或其他需要以`戰鬥輪`計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。"
+          "text": "在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。"
         },
         {
           "kind": "bulletList",
@@ -3390,7 +3413,7 @@
         },
         {
           "kind": "paragraph",
-          "text": "`遭遇`結束時，你失去所有剩餘的`怒火`。"
+          "text": "遭遇結束時，你失去所有剩餘的`怒火`。"
         }
       ]
     },
@@ -3399,7 +3422,7 @@
       "blocks": [
         {
           "kind": "paragraph",
-          "text": "雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次`休整`，才能在戰鬥外再次發動同個招式或效果。"
+          "text": "雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。"
         },
         {
           "kind": "paragraph",
@@ -3411,7 +3434,7 @@
   "meta": {
     "status": "reviewed",
     "reviewedBy": "owner",
-    "reviewedAt": "2026-07-29",
+    "reviewedAt": "2026-07-30",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，6 項差異已於 2026-07-29 逐筆裁決。",
     "translationSource": "舊 Notion 懲戒者 · 怒火",
     "commonProcessing": [
@@ -3419,14 +3442,16 @@
       "因此 blocks[].kind 允許與正典不同；但 sections 與 blocks 的數量與順序仍須一一對應，否則無法逐段比對",
       "「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定",
       "TI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」",
-      "TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析"
+      "TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析",
+      "2026-07-30 擁有者裁決：移除「戰鬥輪、遭遇、休整」的醒目標示，只保留真正的遊戲數值／屬性用語（`怒火`、`勝利值`）加註記"
     ],
     "decisions": [
       "TI-8",
       "TI-9",
       "TI-10",
       "TI-16",
-      "TI-18"
+      "TI-18",
+      "TI-30"
     ],
     "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
   },
@@ -3445,6 +3470,7 @@
 - 「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定
 - TI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」
 - TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析
+- 2026-07-30 擁有者裁決：移除「戰鬥輪、遭遇、休整」的醒目標示，只保留真正的遊戲數值／屬性用語（`怒火`、`勝利值`）加註記
 
 **擁有者裁決**
 

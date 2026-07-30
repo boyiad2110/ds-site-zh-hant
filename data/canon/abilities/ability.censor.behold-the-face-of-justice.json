@@ -79,7 +79,7 @@
   },
   "abilityCategory": "heroic",
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-04-censor",
     "version": "1.01",

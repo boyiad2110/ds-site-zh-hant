@@ -6,13 +6,25 @@
   "flavor": "你為武器注入神聖魔法，使敵人難以逃離。",
   "powerRoll": {
     "tiers": [
-      { "threshold": "≤11", "text": "2 + `力量`神聖傷害", "potencyEffect": "目標陷入緩速（豁免解除）" },
-      { "threshold": "12-16", "text": "5 + `力量`神聖傷害", "potencyEffect": "目標陷入緩速（豁免解除）" },
-      { "threshold": "17+", "text": "7 + `力量`神聖傷害", "potencyEffect": "目標陷入緩速（豁免解除）" }
+      {
+        "threshold": "≤11",
+        "text": "2 + `力量`神聖傷害",
+        "potencyEffect": "目標陷入緩速（豁免解除）"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `力量`神聖傷害",
+        "potencyEffect": "目標陷入緩速（豁免解除）"
+      },
+      {
+        "threshold": "17+",
+        "text": "7 + `力量`神聖傷害",
+        "potencyEffect": "目標陷入緩速（豁免解除）"
+      }
     ]
   },
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。",
     "translationSource": "舊 Notion 招式列表 · 惡徒止步！",
     "commonProcessing": [
@@ -24,7 +36,9 @@
       "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.halt-miscreant",

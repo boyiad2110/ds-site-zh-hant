@@ -8,15 +8,15 @@
     "tiers": [
       {
         "threshold": "≤11",
-        "text": "3 + `力量`傷害，推動 1"
+        "text": "3 + `力量`傷害；推動 1"
       },
       {
         "threshold": "12-16",
-        "text": "6 + `力量`傷害，推動 3"
+        "text": "6 + `力量`傷害；推動 3"
       },
       {
         "threshold": "17+",
-        "text": "9 + `力量`傷害，推動 5"
+        "text": "9 + `力量`傷害；推動 5"
       }
     ]
   },
@@ -24,18 +24,22 @@
     "在推動目標後，你可以朝目標直線遁移最多等於你`速度`的距離。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 衝刺追擊",
     "commonProcessing": [
       "**本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對",
-      "N-2：舊譯的階層表格分成「傷害／推動」兩欄，本層合併，欄內以全形逗號「，」分隔（指南 §6）",
+      "N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，本層合併；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）",
       "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
       "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
-    "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "decisions": [
+      "TI-29"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.driving-assault",

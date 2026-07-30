@@ -7,7 +7,7 @@
   "text": [
     "When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",

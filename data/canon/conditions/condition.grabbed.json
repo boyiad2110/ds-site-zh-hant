@@ -11,7 +11,7 @@
     "A creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.",
     "Unless otherwise indicated, a creature can grab only one creature at a time."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",

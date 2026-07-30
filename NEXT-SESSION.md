@@ -1,7 +1,53 @@
 # 下一個對話的啟動說明
 
-> 建立於 2026-07-28，最後更新 **2026-07-29**（Codex 接手：M0 資料收尾完成，正式規則庫已建立）。
+> 建立於 2026-07-28，最後更新 **2026-07-30**（Claude：M0 第 8 步逐筆驗收**三輪後全數完成**——28／28 筆 `canonReviewStatus: verified`、`meta.status: reviewed`）。
 > **新對話請先讀本檔，再讀下列文件。**
+
+---
+
+## ✅ M0 第 8 步已全數完成（2026-07-30）
+
+28 筆內容（16 招式、9 狀態、3 職業特性）**全部核准**，`canonReviewStatus` 與繁中 `meta.status` 均已升級。
+`node scripts/verify-zh-structure.mjs`、`verify-canon-hash.mjs`、`build-m0-release.mjs --check`、
+`node --test "scripts/**/*.test.mjs"`（132/132）、`web` 的 vitest（8/8）與 `tsc -b` 全數通過。
+
+**M0 資料與呈現面已無阻擋項。** 下一個對話可以視擁有者指示，決定是否：
+(a) 把 M0 當成正式上線內容，處理部署／分享相關事宜；或
+(b) 開始 M1（下一批內容）的抽取，方法沿用本檔「正典抽取方法」一節。
+
+具體改了什麼、為什麼改，見下方三輪摘要——**新 Agent 不必重讀就能照現有程式碼運作，
+但遇到「為什麼是這樣設計」的疑問時，這三輪記錄是唯一解釋。**
+
+---
+
+## 2026-07-30 更新摘要（第一、二輪；第三輪見上方「✅ 已全數完成」）
+
+擁有者透過新增的白話驗收頁面（`docs/m0-owner-review.html`，由 `scripts/build-owner-review-html.mjs` 產生，可用 Artifact 發布方便瀏覽）完成第一輪 28 筆逐條驗收：**核准 10 筆（9 狀態 ＋ 懲戒者教團）、需要修改 18 筆（14 招式 ＋ 2 基礎打擊 ＋ 審判：教團益處 ＋ 怒火）**。
+
+已套用的修正：
+
+1. **兩個既有網站 bug**：`feature` 的 `definitionList` 呈現用錯欄位名（`item.definition`→應為 `item.text`，教團說明整段空白）；招式「目標」欄直接顯示英文，未套用已核准的組合規則。兩者已修正（`web/src/App.tsx`）。
+2. **三項全域呈現修正**：`距離`→`射程`、`威力擲骰`→`檢定`（兩者原本就是 2026-07-28 已 approved 的 glossary 詞，只是網站沒套用）；flavor 是否加中文引號改依英文正典是否本身就是引言（只有【當場拘捕】需要）。
+3. **效果段落改貼近書本排版**：`extraCosts`／`followUpActions` 不再各自獨立成方框，改接在「效果」標題下方連續呈現；`conditionalEffects` 這個型別**已撤銷**（TI-28），唯一使用者【當場拘捕】改回單一 `effect`，`docs/proposal-arrest-data-model.md` 已標記為撤銷。
+4. **威力擲骰的效力呈現**：`tiers[].text` 與 `potencyEffect` 不再分兩行、加虛線框，改成同一行呈現（`{text}；\`{屬性} < {等級}\`，{potencyEffect}`），格式仿照原文的 `; P<LEVEL,` 標點。指南 §6.1b。
+5. **多欄階層分隔符改回分號**：撤銷 2026-07-29 的逗號裁決，改用「；」貼近原文標點（TI-29）。已套用到 arrest／back-blasphemer／driving-assault 三筆。
+6. **`cube` 形狀翻譯遺漏**：距離裡的 `cube` 從未被翻成「立方」，只顯示英文，已補上（back-blasphemer 的射程現在正確顯示「1 格內 2 立方」）。
+7. **兩個 feature 移除過度醒目標示**：審判：教團益處、怒火，各自的部分一般規則名詞（傳送、格、效果線、神聖、垂直拉動、戰鬥輪、遭遇、休整）不再用反引號標成術語（TI-30）。
+
+新增裁決：`data/translation-issues.json` TI-28／TI-29／TI-30。9 個狀態 ＋ 懲戒者教團的 `canonReviewStatus` 已升級為 `verified`（其餘 18 筆仍 `draft`，含前述修正、待擁有者第二輪確認）。
+
+### 第二輪驗收（同日 2026-07-30）
+
+擁有者看過第一輪的修正後，追加 4 項呈現細節：
+
+1. **效力標記改回徽章樣式**：「屬性 < 等級」不再是純文字加粗，改成黑底白字的行內徽章（`.potency-tag`），維持同一行呈現，只是改標記本身的視覺樣式。仿照原版規則書 `P<WEAK` 這類符號的視覺份量。
+2. **`extraCosts`（花費 N 怒火）改回獨立段落**：第一輪把它折進「效果」段落內文，擁有者看過後不喜歡，改回跟「觸發」「效果」平行的獨立標題段落（標題本身就是「花費 N 點怒火」，無需再加冒號或粗體前綴）。`followUpActions`（審判的後續戰術）維持折進「效果」不變——這條沒被要求改。
+3. **`followUpActions.constraint` 移除特殊樣式**：「即使有多個選項…」那句話原本用較小、較淡的顏色（`.constraint` class），現在跟其他內文完全一樣的字級與顏色。
+4. **意外抓到一個更早就存在的 bug**：`trigger` 欄位從來沒有在網站上顯示過——不是這次改壞的，是原本就沒接。【捨己為人】是唯一有 `trigger` 的招式，之前它的觸發條件「當目標開始回合或受到傷害時」完全沒有出現在畫面上。已補上，順序是 觸發 → 效果 → 花費 N 點怒火。
+
+**第二輪結束時**：22／28 已核准，6 筆（直視正義威儀！、惡徒止步！、審判、淨化聖火、懺悔吧！、捨己為人）待擁有者看過修正後的版本再確認。
+
+**第三輪（同日）**：擁有者看過修正後的版本，**6 筆全數核准，28／28 全數完成**——見本檔最上方「✅ M0 第 8 步已全數完成」。
 
 ---
 
@@ -25,22 +71,28 @@ M0 的執行順序，**第 1–7 與第 9 步已完成；第 8 步等待擁有�
 7. ✅ 中文逐句對齊
      ✅ 第一批 5 條（2 基礎打擊 ＋ 3 教團／怒火特性）—— 已裁決、已產出中文
      🔶 第二批 4 個招牌招式 —— 已產出中文，**meta 維持 draft，待擁有者驗收 diff**
-     🔶 第三批 —— **10 條中文均已產出**（draft）；【當場拘捕】已採 `conditionalEffects`
+     🔶 第三批 —— **10 條中文均已產出**（draft）
      ✅ 呈現驗證點（`preview/index.html`）—— 見 `docs/render-validation-m0.md`
         ✅ TI-27 已以 `text`／`potency.effect`／`potencyEffect` 拆分，正式 renderer 可正確標示條件
-8. 🔄 專案擁有者逐筆裁決 —— 使用 `docs/m0-owner-review.md`，28 筆均須逐筆核准
+8. 🔶 專案擁有者逐筆裁決 —— 第一輪已完成（2026-07-30，見上方摘要）：10 筆核准（`verified`／`reviewed`），
+     18 筆依裁決修正後待第二輪確認。使用 `docs/m0-owner-review.html`（白話版，優先）或 `docs/m0-owner-review.md`（JSON 版）
 9. ✅ 正式規則庫第一版 —— `web/`（React／Vite；搜尋、篩選、路由、英文對照、響應式）
 ```
 
-### 下一步：完成第 8 步逐筆驗收
+### 下一步：完成第 8 步逐筆驗收（第一輪已完成，進入第二輪）
 
-28 條正典與繁中資料均已齊備，但不得因結構測試通過而視為內容核准。
+28 條正典與繁中資料均已齊備。第一輪驗收已於 2026-07-30 完成（見上方「2026-07-30 更新摘要」），
+10 筆核准並升級為 `verified`／`reviewed`，18 筆依裁決修正後仍是 `draft`，等擁有者看過修正後的版本再批次升級。
 
 #### ⏭️ 擁有者要做的事
 
-開啟 `docs/m0-owner-review.md`，依序核對 16 招式、9 狀態與 3 特性。每筆勾選「核准」或「需要修改」並留下備註。未完成前，Canon 的 `canonReviewStatus` 與繁中草稿狀態不得批次升級。
+打開白話驗收頁面（`docs/m0-owner-review.html`，或請 Agent 用 Artifact 工具發布方便瀏覽），
+針對上一輪標「需要修改」的 18 筆重新確認呈現是否符合預期。舊版 `docs/m0-owner-review.md`（JSON 版）仍在，
+但白話版才是給擁有者實際審閱用的介面；兩者由不同腳本產生（`build-m0-owner-review.mjs` 與 `build-owner-review-html.mjs`），
+資料源頭相同，改資料後兩個都要重新產生。
 
-【當場拘捕】的 3 怒火已從 `extraCosts` 移至 `conditionalEffects`，清楚表達「目標之後發動打擊時才可選擇支付」；完整理由保留於 `docs/proposal-arrest-data-model.md`。
+【當場拘捕】原本用 `conditionalEffects`（3 怒火追加效果），**已於 2026-07-30 撤銷改回單一 `effect`**（TI-28）；
+`docs/proposal-arrest-data-model.md` 保留原提案內容供稽核，但已標記撤銷，不要照它重新套用 `conditionalEffects`。
 
 第三批報告：`docs/alignment/zh-batch3-alignment.md`（已依裁決結果重算統計，
 每項都分「裁決前分析」與「擁有者裁決」）。
@@ -383,15 +435,17 @@ node scripts/report-m0-terms.mjs          # 唯讀：術語用量掃描報告
 node scripts/build-m0-release.mjs --check # 驗證已提交的 m0.json 是否過期
 ```
 
-目前基線（**2026-07-29 第 7 步第二批收盤**，以下數字皆為當日實跑結果）：
+目前基線（**2026-07-30 擁有者第一輪驗收收盤**，以下數字皆為當日實跑結果；
+術語相關數字承襲 2026-07-29，本輪未變動 `data/decisions.json`）：
 glossary **607**（含 2026-07-29 新增 `Fire Weakness ＝火焰弱點`）、
 vocabulary **23** 值（5 個詞彙表，全部 approved）、
-ledger **626**、pending **2**（Hakaan／Memonek）、測試 **126/126**、
-正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符，
-但 **`canonReviewStatus` 全部仍是 `draft`**）、
-中文 **27／28**（全部 `draft`，差【當場拘捕】）、
-translation-issues **27** 項全 resolved（TI-21～25 為補登的既有裁決）、
-`releases/m0.json` **114** 個依賴術語（全部 approved，來源指紋 `7e3ef15cadc28c27`）。
+ledger **626**、pending **2**（Hakaan／Memonek）、測試 **132/132**、
+正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符；
+**9 狀態 ＋ 懲戒者教團共 10 筆 `canonReviewStatus` 已升級為 `verified`，其餘 18 筆仍 `draft`**）、
+中文 **28／28** 均已產出（10 筆 `reviewed`、18 筆 `draft` 待第二輪確認；
+【當場拘捕】已改回單一 `effect`，不再是 27/28 卡在 `conditionalEffects` 未定案的狀態）、
+translation-issues **30** 項全 resolved（TI-28～30 為 2026-07-30 新增）、
+`releases/m0.json` **114** 個依賴術語（全部 approved，來源指紋 `b96db16eb89740aa`）。
 
 ### ⚠️ 正典狀態：28 條全部是 `draft`，沒有一條是正式 verified
 

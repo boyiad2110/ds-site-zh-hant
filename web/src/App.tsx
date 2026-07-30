@@ -19,12 +19,36 @@ function label(catalog: Catalog, group: string, value?: string | null) {
   return value ? catalog.labels[group]?.[value]?.zhHant ?? value : '—'
 }
 
+const targetLabels: Record<string, string> = {
+  'One creature': '1 個生物',
+  'One creature or object': '1 個生物或物體',
+  'One enemy': '1 個敵人',
+  'Self or one ally': '自身或 1 個盟友',
+  'Each enemy in the area': '區域內每個敵人',
+  'One willing creature': '1 個自願的生物',
+}
+
+function targetLabel(target?: string | null): string {
+  if (!target) return '—'
+  return targetLabels[target] ?? target
+}
+
+const areaShapeLabels: Record<string, string> = { cube: '立方' }
+
 function distanceLabel(distance: any): string {
   if (!distance) return '—'
   if (distance.kind === 'choice') return (distance.options ?? []).map(distanceLabel).join(' 或 ')
-  if (distance.kind === 'area') return `${distance.area?.within ?? ''} 格內 ${distance.area?.size ?? ''} ${distance.area?.shape ?? ''}`.trim()
+  if (distance.kind === 'area') {
+    const shape = areaShapeLabels[distance.area?.shape] ?? distance.area?.shape ?? ''
+    return `${distance.area?.within ?? ''} 格內 ${distance.area?.size ?? ''} ${shape}`.trim()
+  }
   const names: Record<string, string> = { melee: '近戰', ranged: '遠程', self: '自身' }
   return `${names[distance.kind] ?? distance.kind}${distance.value != null ? ` ${distance.value}` : ''}`
+}
+
+/** flavor 只有在原文本身是引言（book 用引號標出角色台詞）時才加中文引號；純敘述句不加。 */
+function isQuotedFlavor(canonFlavor?: string | null): boolean {
+  return !!canonFlavor && /^["“]/.test(canonFlavor.trim())
 }
 
 function RichText({ text, byId }: { text: string; byId: Map<string, CatalogEntry> }) {
@@ -220,27 +244,47 @@ function AbilityContent({ entry, catalog, byId }: { entry: CatalogEntry; catalog
     <div className="ability-stats">
       <div><span>動作</span><strong>{label(catalog, 'action-types', c.actionType)}</strong></div>
       <div><span>費用</span><strong>{c.cost ? `${c.cost.value} 怒火` : '無'}</strong></div>
-      <div><span>距離</span><strong>{distanceLabel(c.distance)}</strong></div>
-      <div><span>目標</span><strong>{c.target}</strong></div>
+      <div><span>射程</span><strong>{distanceLabel(c.distance)}</strong></div>
+      <div><span>目標</span><strong>{targetLabel(c.target)}</strong></div>
     </div>
+    {c.trigger && <section className="rule-section"><div className="rule-heading"><h2>觸發</h2></div><p><RichText text={z.trigger} byId={byId} /></p></section>}
     {tiers.length > 0 && <section className="rule-section power-roll">
-      <div className="rule-heading"><h2>威力擲骰</h2><span>＋ {characteristicLabels[c.powerRoll.characteristic] ?? c.powerRoll.characteristic}</span></div>
-      <div className="tier-list">{tiers.map((tier: any, index: number) => <div className="tier" key={tier.threshold}>
-        <b>{tier.threshold}</b>
-        <div><p><RichText text={z.powerRoll.tiers[index].text} byId={byId} /></p>
-          {tier.potency && <p className="potency"><span>{characteristicLabels[tier.potency.characteristic] ?? tier.potency.characteristic} &lt; {label(catalog, 'potency-levels', tier.potency.level)}</span><RichText text={z.powerRoll.tiers[index].potencyEffect} byId={byId} /></p>}
+      <div className="rule-heading"><h2>檢定</h2><span>＋ {characteristicLabels[c.powerRoll.characteristic] ?? c.powerRoll.characteristic}</span></div>
+      <div className="tier-list">{tiers.map((tier: any, index: number) => {
+        const zTier = z.powerRoll.tiers[index]
+        return <div className="tier" key={tier.threshold}>
+          <b>{tier.threshold}</b>
+          <div><p>
+            <RichText text={zTier.text} byId={byId} />
+            {tier.potency && <>；<span className="potency-tag">{characteristicLabels[tier.potency.characteristic] ?? tier.potency.characteristic} &lt; {label(catalog, 'potency-levels', tier.potency.level)}</span>，<RichText text={zTier.potencyEffect} byId={byId} /></>}
+          </p></div>
         </div>
-      </div>)}</div>
+      })}</div>
     </section>}
-    {(z.effect ?? []).length > 0 && <RuleSection title="效果" items={z.effect} byId={byId} />}
-    {(z.extraCosts ?? []).map((item: any, index: number) => <section className="rule-section accent" key={index}><div className="rule-heading"><h2>追加花費</h2><span>{c.extraCosts[index].value} 怒火</span></div><p><RichText text={item.effect} byId={byId} /></p></section>)}
-    {(z.conditionalEffects ?? []).map((item: any, index: number) => <section className="rule-section conditional" key={index}>
-      <div className="rule-heading"><h2>條件式效果</h2><span>{c.conditionalEffects[index].cost.value} 怒火 · 可選</span></div>
-      <dl className="trigger-effect"><div><dt>觸發</dt><dd><RichText text={item.trigger} byId={byId} /></dd></div><div><dt>效果</dt><dd><RichText text={item.effect} byId={byId} /></dd></div></dl>
-    </section>)}
-    {(z.followUpActions ?? []).map((item: any, index: number) => <section className="rule-section follow-up" key={index}>
-      <div className="rule-heading"><h2>後續戰術</h2><span>{label(catalog, 'action-types', c.followUpActions[index].actionType)} · {c.followUpActions[index].cost.value} 怒火</span></div>
-      <p><RichText text={item.lead} byId={byId} /></p><ol>{item.options.map((option: string) => <li key={option}><RichText text={option} byId={byId} /></li>)}</ol><p className="constraint"><RichText text={item.constraint} byId={byId} /></p>
+    <EffectSection z={z} c={c} byId={byId} />
+  </>
+}
+
+/** 招式的效果、追加花費、後續戰術，統一在同一個「效果」段落下方連續呈現——
+ * 原版規則書把後續戰術寫在同一個 Effect: 段落裡，故不獨立成方框；
+ * 但 extraCosts（花費 N 怒火）在書上是自己的引言＋句子，比照 Trigger／Effect 給獨立標題。 */
+function EffectSection({ z, c, byId }: { z: any; c: any; byId: Map<string, CatalogEntry> }) {
+  const effect: string[] = z.effect ?? []
+  const followUpActions: any[] = z.followUpActions ?? []
+  const extraCosts: any[] = z.extraCosts ?? []
+  return <>
+    {(effect.length > 0 || followUpActions.length > 0) && <section className="rule-section">
+      <div className="rule-heading"><h2>效果</h2></div>
+      {effect.map((text, index) => <p key={`e${index}`}><RichText text={text} byId={byId} /></p>)}
+      {followUpActions.map((item, index) => <Fragment key={`f${index}`}>
+        <p><RichText text={item.lead} byId={byId} /></p>
+        <ol>{item.options.map((option: string, optionIndex: number) => <li key={optionIndex}><RichText text={option} byId={byId} /></li>)}</ol>
+        <p><RichText text={item.constraint} byId={byId} /></p>
+      </Fragment>)}
+    </section>}
+    {extraCosts.map((item, index) => <section className="rule-section" key={index}>
+      <div className="rule-heading"><h2>花費 {c.extraCosts[index].value} 點怒火</h2></div>
+      <p><RichText text={item.effect} byId={byId} /></p>
     </section>)}
   </>
 }
@@ -256,7 +300,7 @@ function FeatureContent({ entry, byId }: { entry: CatalogEntry; byId: Map<string
     {section.blocks.map((block: any, blockIndex: number) => <Fragment key={blockIndex}>
       {block.kind === 'paragraph' && <p><RichText text={block.text} byId={byId} /></p>}
       {block.kind === 'bulletList' && <><p><RichText text={block.lead} byId={byId} /></p><ul>{block.items.map((item: string) => <li key={item}><RichText text={item} byId={byId} /></li>)}</ul></>}
-      {block.kind === 'definitionList' && <dl className="definition-list">{block.items.map((item: any) => <div key={item.term}><dt>{item.term}</dt><dd><RichText text={item.definition} byId={byId} /></dd></div>)}</dl>}
+      {block.kind === 'definitionList' && <dl className="definition-list">{block.items.map((item: any) => <div key={item.term}><dt>{item.term}</dt><dd><RichText text={item.text} byId={byId} /></dd></div>)}</dl>}
     </Fragment>)}
   </section>)}</>
 }
@@ -276,7 +320,7 @@ function Detail({ catalog }: { catalog: Catalog }) {
     <article className="detail-shell">
       <header className="detail-header">
         <div><div className="detail-badges"><EntryBadge entry={entry} />{entry.tags.abilityCategory && <span>{label(catalog, 'ability-categories', entry.tags.abilityCategory)}</span>}</div>
-          <h1>{entry.name.zhHant}</h1><p className="english-name">{entry.name.en}</p>{z.flavor && <blockquote>「{z.flavor}」</blockquote>}
+          <h1>{entry.name.zhHant}</h1><p className="english-name">{entry.name.en}</p>{z.flavor && <blockquote>{isQuotedFlavor(c.flavor) ? `「${z.flavor}」` : z.flavor}</blockquote>}
         </div>
         <div className="source-stamp"><span>HEROES</span><strong>V{entry.source.version}</strong><small>印刷頁 {entry.source.printedPage}</small></div>
       </header>
@@ -286,7 +330,7 @@ function Detail({ catalog }: { catalog: Catalog }) {
         {entry.type === 'condition' && <RuleSection title="規則" items={z.text ?? []} byId={byId} />}
         {entry.type === 'feature' && <FeatureContent entry={entry} byId={byId} />}
         {entry.relatedIds.length > 0 && <section className="related"><h2>相關條目</h2><div>{entry.relatedIds.map((id) => { const related = byId.get(id)!; return <Link key={id} to={routeOf(related)}><EntryBadge entry={related} /><span><strong>{related.name.zhHant}</strong><small>{related.name.en}</small></span><b>→</b></Link> })}</div></section>}
-        <details className="english-panel"><summary><span>核對英文正典</span><small>English canon</small></summary><div><h2>{c.name}</h2>{c.flavor && <blockquote>“{c.flavor}”</blockquote>}<pre>{JSON.stringify(c, (key, value) => ['$comment', 'normalizedHash'].includes(key) ? undefined : value, 2)}</pre></div></details>
+        <details className="english-panel"><summary><span>核對英文正典</span><small>English canon</small></summary><div><h2>{c.name}</h2>{c.flavor && <blockquote>{c.flavor}</blockquote>}<pre>{JSON.stringify(c, (key, value) => ['$comment', 'normalizedHash'].includes(key) ? undefined : value, 2)}</pre></div></details>
       </div>
     </article>
   </main>

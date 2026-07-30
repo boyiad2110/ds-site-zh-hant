@@ -24,7 +24,7 @@
     ]
   },
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 懺悔吧！",
     "commonProcessing": [
@@ -37,7 +37,9 @@
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.repent",

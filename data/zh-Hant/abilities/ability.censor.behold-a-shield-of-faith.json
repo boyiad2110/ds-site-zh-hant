@@ -24,7 +24,7 @@
     "若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
     "translationSource": "舊 Notion 招式列表 · 聖盾在此！",
     "commonProcessing": [
@@ -34,7 +34,9 @@
       "effect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）"
     ],
     "decisions": [],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.behold-a-shield-of-faith",

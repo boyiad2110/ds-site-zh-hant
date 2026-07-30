@@ -48,8 +48,8 @@ describe('M0 catalog', () => {
 
   test('Arrest 與 Potency 使用新結構', () => {
     const arrest = catalog.entries.find((entry) => entry.id === 'ability.censor.arrest')!
-    expect(arrest.content.canon.conditionalEffects).toHaveLength(1)
-    expect(arrest.content.zhHant.conditionalEffects[0].trigger).toContain('擒制')
+    expect(arrest.content.canon.effect).toHaveLength(1)
+    expect(arrest.content.zhHant.effect[0]).toContain('擒制')
     const justice = catalog.entries.find((entry) => entry.id === 'ability.censor.behold-the-face-of-justice')!
     expect(justice.content.canon.powerRoll.tiers[0].text).not.toContain('if the target')
     expect(justice.content.canon.powerRoll.tiers[0].potency.effect).toBeTruthy()

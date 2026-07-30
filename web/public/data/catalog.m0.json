@@ -1,6 +1,6 @@
 {
   "release": "m0",
-  "sourceFingerprint": "28c5a2c2ab7957b2",
+  "sourceFingerprint": "b96db16eb89740aa",
   "counts": {
     "total": 28,
     "abilities": 16,
@@ -4492,7 +4492,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -4504,7 +4504,7 @@
         "normalizedHash": "30b63390e7e0b9c4b1d475f22be23e3c66e1c75128aa6ca976e1f36b4c4b2c89"
       },
       "relatedIds": [],
-      "searchText": "近戰武器基礎打擊\nMelee Weapon Free Strike\ncharge\n衝鋒\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nbasic\n通用\nability.basic.melee-weapon-free-strike\n近戰武器基礎打擊\n≤11\n2 + `力量`或`敏捷`傷害\n12-16\n5 + `力量`或`敏捷`傷害\n17+\n7 + `力量`或`敏捷`傷害\nreviewed\nowner\n2026-07-29\n名稱與三階層逐欄比對，全部 exact，對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 招式列表 · 近戰武器基礎打擊\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\nflavor 為 null——原文卡片無敘述文字\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.basic.melee-weapon-free-strike\nheroes-v1.01-00-the-basic-and-making-a-hero\nability.basic.melee-weapon-free-strike\nability\nMelee Weapon Free Strike\ncharge\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nchoice\nmight\nagility\nMight or Agility\n≤11\n2 + M or A damage\n2 + M or A damage\n12-16\n5 + M or A damage\n5 + M or A damage\n17+\n7 + M or A damage\n7 + M or A damage\ncore\nbasic\ndraft\nheroes-v1.01-00-the-basic-and-making-a-hero\n1.01\n2026-07-29",
+      "searchText": "近戰武器基礎打擊\nMelee Weapon Free Strike\ncharge\n衝鋒\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nbasic\n通用\nability.basic.melee-weapon-free-strike\n近戰武器基礎打擊\n≤11\n2 + `力量`或`敏捷`傷害\n12-16\n5 + `力量`或`敏捷`傷害\n17+\n7 + `力量`或`敏捷`傷害\nreviewed\nowner\n2026-07-29\n名稱與三階層逐欄比對，全部 exact，對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 招式列表 · 近戰武器基礎打擊\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\nflavor 為 null——原文卡片無敘述文字\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.basic.melee-weapon-free-strike\nheroes-v1.01-00-the-basic-and-making-a-hero\nability.basic.melee-weapon-free-strike\nability\nMelee Weapon Free Strike\ncharge\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nchoice\nmight\nagility\nMight or Agility\n≤11\n2 + M or A damage\n2 + M or A damage\n12-16\n5 + M or A damage\n5 + M or A damage\n17+\n7 + M or A damage\n7 + M or A damage\ncore\nbasic\nverified\nheroes-v1.01-00-the-basic-and-making-a-hero\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -4564,7 +4564,7 @@
           },
           "abilityCategory": "basic",
           "level": null,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
             "version": "1.01",
@@ -4645,7 +4645,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -4657,7 +4657,7 @@
         "normalizedHash": "67ebbec9327d05fcdcf7cff16e49a394a39e98e64e0997e06e74160ea0f85ae6"
       },
       "relatedIds": [],
-      "searchText": "遠程武器基礎打擊\nRanged Weapon Free Strike\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nbasic\n通用\nability.basic.ranged-weapon-free-strike\n遠程武器基礎打擊\n≤11\n2 + `力量`或`敏捷`傷害\n12-16\n4 + `力量`或`敏捷`傷害\n17+\n6 + `力量`或`敏捷`傷害\nreviewed\nowner\n2026-07-29\n名稱與三階層逐欄比對，全部 exact，對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 招式列表 · 遠程武器基礎打擊\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\nflavor 為 null——原文卡片無敘述文字\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.basic.ranged-weapon-free-strike\nheroes-v1.01-00-the-basic-and-making-a-hero\nability.basic.ranged-weapon-free-strike\nability\nRanged Weapon Free Strike\nranged\nstrike\nweapon\nmain\nranged\nRanged 5\nOne creature or object\nchoice\nmight\nagility\nMight or Agility\n≤11\n2 + M or A damage\n2 + M or A damage\n12-16\n4 + M or A damage\n4 + M or A damage\n17+\n6 + M or A damage\n6 + M or A damage\ncore\nbasic\ndraft\nheroes-v1.01-00-the-basic-and-making-a-hero\n1.01\n2026-07-29",
+      "searchText": "遠程武器基礎打擊\nRanged Weapon Free Strike\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nbasic\n通用\nability.basic.ranged-weapon-free-strike\n遠程武器基礎打擊\n≤11\n2 + `力量`或`敏捷`傷害\n12-16\n4 + `力量`或`敏捷`傷害\n17+\n6 + `力量`或`敏捷`傷害\nreviewed\nowner\n2026-07-29\n名稱與三階層逐欄比對，全部 exact，對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 招式列表 · 遠程武器基礎打擊\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\nflavor 為 null——原文卡片無敘述文字\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.basic.ranged-weapon-free-strike\nheroes-v1.01-00-the-basic-and-making-a-hero\nability.basic.ranged-weapon-free-strike\nability\nRanged Weapon Free Strike\nranged\nstrike\nweapon\nmain\nranged\nRanged 5\nOne creature or object\nchoice\nmight\nagility\nMight or Agility\n≤11\n2 + M or A damage\n2 + M or A damage\n12-16\n4 + M or A damage\n4 + M or A damage\n17+\n6 + M or A damage\n6 + M or A damage\ncore\nbasic\nverified\nheroes-v1.01-00-the-basic-and-making-a-hero\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -4716,7 +4716,7 @@
           },
           "abilityCategory": "basic",
           "level": null,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-00-the-basic-and-making-a-hero",
             "version": "1.01",
@@ -4801,19 +4801,19 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
         "version": "1.01",
         "pdfPage": 6,
         "printedPage": 83,
-        "checkedAt": "2026-07-29",
-        "normalizedHash": "fc6f43c5be37569095f1fa5fb5d707ee8ee412bb2c4b4840224ccd1f794dfced"
+        "checkedAt": "2026-07-30",
+        "normalizedHash": "34afa1a80f0eb71e69f8c4f9fc12179fd2db62337dbfcd46c4343cc9dba0cba3"
       },
       "relatedIds": [],
-      "searchText": "當場拘捕\nArrest\nmagic\n魔法\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.arrest\n當場拘捕\n終於被我逮到了，你這混帳。\n≤11\n6 + `力量`神聖傷害，擒制\n12-16\n9 + `力量`神聖傷害，擒制\n17+\n13 + `力量`神聖傷害，擒制\n目標在以此方式被擒制期間，對一個生物發動打擊。\n你對目標造成等同於你`氣場`分數的神聖傷害，然後將該次打擊的目標改為打擊射程內的另一個目標。\ndraft\n既有名稱；逐筆擁有者驗收前維持 draft。\n舊 Notion 招式列表 · 當場拘捕\n條件式後續效果依 docs/proposal-arrest-data-model.md 拆為 trigger、optional、cost 與 effect；中文層只保存 trigger 與 effect。\n費用 3 點怒火發生在目標之後發動打擊時，不是施放本招式時的追加費用。\n受控欄位與效力標記不重複存入中文層。\nARREST-CONDITIONAL-EFFECT\n全域通則見 docs/translation-guide.md。\nability.censor.arrest\nheroes-v1.01-04-censor\nability.censor.arrest\nability\nArrest\n“I got you, you son of a bitch.”\nmagic\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature\nmight\n≤11\n6 + M holy damage; grabbed\n12-16\n9 + M holy damage; grabbed\n17+\n13 + M holy damage; grabbed\nThe target makes a strike against a creature while grabbed this way.\nwrath\nYou deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.\nEffect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "當場拘捕\nArrest\nmagic\n魔法\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.arrest\n當場拘捕\n終於被我逮到了，你這混帳。\n≤11\n6 + `力量`神聖傷害；擒制\n12-16\n9 + `力量`神聖傷害；擒制\n17+\n13 + `力量`神聖傷害；擒制\n若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你`氣場`的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。\nreviewed\n既有名稱；2026-07-30 擁有者核准（M0 驗收清單第二輪）。\n舊 Notion 招式列表 · 當場拘捕\n2026-07-30 擁有者裁決：撤銷 docs/proposal-arrest-data-model.md 的 conditionalEffects 結構，改回單一 effect 段落——原版規則書本就把這句寫在 Effect: 之下，不是獨立的方框內容。舊裁決 ARREST-CONDITIONAL-EFFECT 已由本次裁決取代，紀錄保留於 docs/proposal-arrest-data-model.md 與 data/translation-issues.json TI-28。\ntiers[].text 依全域裁決（TI-29）改用「；」分隔同一階層內的多個子句，不再用「，」。\n受控欄位與效力標記不重複存入中文層。\nTI-28\nTI-29\n全域通則見 docs/translation-guide.md。\nowner\n2026-07-30\nability.censor.arrest\nheroes-v1.01-04-censor\nability.censor.arrest\nability\nArrest\n“I got you, you son of a bitch.”\nmagic\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature\nmight\n≤11\n6 + M holy damage; grabbed\n12-16\n9 + M holy damage; grabbed\n17+\n13 + M holy damage; grabbed\nIf the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-30",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -4857,17 +4857,8 @@
             ]
           },
           "extraCosts": [],
-          "conditionalEffects": [
-            {
-              "trigger": "The target makes a strike against a creature while grabbed this way.",
-              "optional": true,
-              "cost": {
-                "resource": "wrath",
-                "value": 3
-              },
-              "effect": "You deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
-              "raw": "Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
-            }
+          "effect": [
+            "If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance."
           ],
           "origin": {
             "kind": "class",
@@ -4875,14 +4866,14 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
             "pdfPage": 6,
             "printedPage": 83,
-            "checkedAt": "2026-07-29",
-            "normalizedHash": "fc6f43c5be37569095f1fa5fb5d707ee8ee412bb2c4b4840224ccd1f794dfced"
+            "checkedAt": "2026-07-30",
+            "normalizedHash": "34afa1a80f0eb71e69f8c4f9fc12179fd2db62337dbfcd46c4343cc9dba0cba3"
           }
         },
         "zhHant": {
@@ -4895,37 +4886,37 @@
             "tiers": [
               {
                 "threshold": "≤11",
-                "text": "6 + `力量`神聖傷害，擒制"
+                "text": "6 + `力量`神聖傷害；擒制"
               },
               {
                 "threshold": "12-16",
-                "text": "9 + `力量`神聖傷害，擒制"
+                "text": "9 + `力量`神聖傷害；擒制"
               },
               {
                 "threshold": "17+",
-                "text": "13 + `力量`神聖傷害，擒制"
+                "text": "13 + `力量`神聖傷害；擒制"
               }
             ]
           },
-          "conditionalEffects": [
-            {
-              "trigger": "目標在以此方式被擒制期間，對一個生物發動打擊。",
-              "effect": "你對目標造成等同於你`氣場`分數的神聖傷害，然後將該次打擊的目標改為打擊射程內的另一個目標。"
-            }
+          "effect": [
+            "若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你`氣場`的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。"
           ],
           "meta": {
-            "status": "draft",
-            "nameApproval": "既有名稱；逐筆擁有者驗收前維持 draft。",
+            "status": "reviewed",
+            "nameApproval": "既有名稱；2026-07-30 擁有者核准（M0 驗收清單第二輪）。",
             "translationSource": "舊 Notion 招式列表 · 當場拘捕",
             "commonProcessing": [
-              "條件式後續效果依 docs/proposal-arrest-data-model.md 拆為 trigger、optional、cost 與 effect；中文層只保存 trigger 與 effect。",
-              "費用 3 點怒火發生在目標之後發動打擊時，不是施放本招式時的追加費用。",
+              "2026-07-30 擁有者裁決：撤銷 docs/proposal-arrest-data-model.md 的 conditionalEffects 結構，改回單一 effect 段落——原版規則書本就把這句寫在 Effect: 之下，不是獨立的方框內容。舊裁決 ARREST-CONDITIONAL-EFFECT 已由本次裁決取代，紀錄保留於 docs/proposal-arrest-data-model.md 與 data/translation-issues.json TI-28。",
+              "tiers[].text 依全域裁決（TI-29）改用「；」分隔同一階層內的多個子句，不再用「，」。",
               "受控欄位與效力標記不重複存入中文層。"
             ],
             "decisions": [
-              "ARREST-CONDITIONAL-EFFECT"
+              "TI-28",
+              "TI-29"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md。"
+            "conventions": "全域通則見 docs/translation-guide.md。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.arrest",
@@ -4965,8 +4956,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -4977,7 +4968,7 @@
         "normalizedHash": "973b5666fc99441444156a7759532204d19197cd3fd4511b3487153556e3a6f7"
       },
       "relatedIds": [],
-      "searchText": "瀆神者退散！\nBack Blasphemer!\narea\n區域\nmagic\n魔法\nmelee\n近戰\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.back-blasphemer\n瀆神者退散！\n你使用武器引導神聖力量來擊退敵人。\n≤11\n2 神聖傷害，推動 1\n12-16\n4 神聖傷害，推動 2\n17+\n6 神聖傷害，推動 3\ndraft\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條零待裁項）；flavor 的「神聖」補字已於 2026-07-28 裁決維持舊譯，正式紀錄為 TI-25。\n舊 Notion 招式列表 · 瀆神者退散！\nN-2：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層\ndistance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-25\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.back-blasphemer\nheroes-v1.01-04-censor\nability.censor.back-blasphemer\nability\nBack Blasphemer!\nYou channel power through your weapon to repel foes.\narea\nmagic\nmelee\nweapon\nmain\narea\ncube\n2 cube within 1\nEach enemy in the area\npresence\n≤11\n2 holy damage; push 1\n12-16\n4 holy damage; push 2\n17+\n6 holy damage; push 3\nclass\nclass.censor\nsignature\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "瀆神者退散！\nBack Blasphemer!\narea\n區域\nmagic\n魔法\nmelee\n近戰\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.back-blasphemer\n瀆神者退散！\n你使用武器引導神聖力量來擊退敵人。\n≤11\n2 神聖傷害；推動 1\n12-16\n4 神聖傷害；推動 2\n17+\n6 神聖傷害；推動 3\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條零待裁項）；flavor 的「神聖」補字已於 2026-07-28 裁決維持舊譯，正式紀錄為 TI-25。\n舊 Notion 招式列表 · 瀆神者退散！\nN-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）\ntarget「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層\ndistance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層（cube＝立方，2026-07-30 補上 renderer 遺漏的形狀翻譯）\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-25\nTI-29\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.back-blasphemer\nheroes-v1.01-04-censor\nability.censor.back-blasphemer\nability\nBack Blasphemer!\nYou channel power through your weapon to repel foes.\narea\nmagic\nmelee\nweapon\nmain\narea\ncube\n2 cube within 1\nEach enemy in the area\npresence\n≤11\n2 holy damage; push 1\n12-16\n4 holy damage; push 2\n17+\n6 holy damage; push 3\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5027,7 +5018,7 @@
           },
           "abilityCategory": "signature",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5047,32 +5038,35 @@
             "tiers": [
               {
                 "threshold": "≤11",
-                "text": "2 神聖傷害，推動 1"
+                "text": "2 神聖傷害；推動 1"
               },
               {
                 "threshold": "12-16",
-                "text": "4 神聖傷害，推動 2"
+                "text": "4 神聖傷害；推動 2"
               },
               {
                 "threshold": "17+",
-                "text": "6 神聖傷害，推動 3"
+                "text": "6 神聖傷害；推動 3"
               }
             ]
           },
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條零待裁項）；flavor 的「神聖」補字已於 2026-07-28 裁決維持舊譯，正式紀錄為 TI-25。",
             "translationSource": "舊 Notion 招式列表 · 瀆神者退散！",
             "commonProcessing": [
-              "N-2：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）",
+              "N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，正典是單一字串（2 holy damage; push 1），本層合併為一個 text；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）",
               "target「區域內每個敵人」可由 §4.4 的組合規則產生，不存於本層",
-              "distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層",
+              "distance「1 格內 2 立方」為受控欄位，由 vocabulary 解析，不存於本層（cube＝立方，2026-07-30 補上 renderer 遺漏的形狀翻譯）",
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
             ],
             "decisions": [
-              "TI-25"
+              "TI-25",
+              "TI-29"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.back-blasphemer",
@@ -5114,8 +5108,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5126,7 +5120,7 @@
         "normalizedHash": "78d6ef2e40eb2e0cc4956a550e71f04b973927bb144a5faa88baec280d311ef5"
       },
       "relatedIds": [],
-      "searchText": "聖盾在此！\nBehold a Shield of Faith!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.behold-a-shield-of-faith\n聖盾在此！\n強力一擊將敵人的生命力轉化為神聖之光，環繞著你和盟友，使敵人不敢輕舉妄動。\n≤11\n3 + `力量`神聖傷害\n12-16\n6 + `力量`神聖傷害\n17+\n9 + `力量`神聖傷害\n若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 聖盾在此！\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\neffect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.behold-a-shield-of-faith\nheroes-v1.01-04-censor\nability.censor.behold-a-shield-of-faith\nability\nBehold a Shield of Faith!\nA mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M holy damage\n12-16\n6 + M holy damage\n17+\n9 + M holy damage\nUntil the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "聖盾在此！\nBehold a Shield of Faith!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.behold-a-shield-of-faith\n聖盾在此！\n強力一擊將敵人的生命力轉化為神聖之光，環繞著你和盟友，使敵人不敢輕舉妄動。\n≤11\n3 + `力量`神聖傷害\n12-16\n6 + `力量`神聖傷害\n17+\n9 + `力量`神聖傷害\n若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 聖盾在此！\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\neffect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.behold-a-shield-of-faith\nheroes-v1.01-04-censor\nability.censor.behold-a-shield-of-faith\nability\nBehold a Shield of Faith!\nA mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M holy damage\n12-16\n6 + M holy damage\n17+\n9 + M holy damage\nUntil the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5178,7 +5172,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5214,7 +5208,7 @@
             "若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
             "translationSource": "舊 Notion 招式列表 · 聖盾在此！",
             "commonProcessing": [
@@ -5224,7 +5218,9 @@
               "effect 的時間限定「直到你下個回合開始」由句首移到句尾，語意一致（報告 ⚪ 第 6 項）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.behold-a-shield-of-faith",
@@ -5268,8 +5264,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5280,7 +5276,7 @@
         "normalizedHash": "8feb97d26ea6ec50d0220fcff00b9f4a26d8a0b0f9aa097446b3f390e74be469"
       },
       "relatedIds": [],
-      "searchText": "直視正義威儀！\nBehold the Face of Justice!\nmagic\n魔法\nmelee\n近戰\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.behold-the-face-of-justice\n直視正義威儀！\n你攻擊一名敵人，讓他看清楚你堅定的決心。\n≤11\n3 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n12-16\n5 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n17+\n8 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你`氣場`的心靈傷害。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 直視正義威儀！\nTI-27：正典 tiers[].text 含條件從句 “if the target has this potency,”，中文**刻意不譯**——效力記號本身即表示「若目標未通過該效力」，屬擁有者批准的結構化省略\n⚠️ TI-27 的前提是 renderer **必須**把結構化的 potency 與該階層後續效果一起呈現；做不到就要回頭重議\nN-1：效力記號「`氣場 < 弱`」已剝除，效力存於正典 tiers[].potency\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-27\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.behold-the-face-of-justice\nheroes-v1.01-04-censor\nability.censor.behold-the-face-of-justice\nability\nBehold the Face of Justice!\nYou attack a foe and your enemies behold a vision of the true nature of your resolve.\nmagic\nmelee\nranged\nstrike\nweapon\nmain\nwrath\nchoice\nmelee\nMelee 1\nranged\nRanged 5\nMelee 1 or ranged 5\nOne creature\nmight\n≤11\n3 + M holy damage\npresence\nweak\nEach enemy within 2 squares of the target is frightened of you (save ends).\n3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nEach enemy within 2 squares of the target is frightened of you (save ends).\n5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)\n17+\n8 + M holy damage\npresence\nstrong\nEach enemy within 2 squares of the target is frightened of you (save ends).\n8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)\nEach enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "直視正義威儀！\nBehold the Face of Justice!\nmagic\n魔法\nmelee\n近戰\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.behold-the-face-of-justice\n直視正義威儀！\n你攻擊一名敵人，讓他看清楚你堅定的決心。\n≤11\n3 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n12-16\n5 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n17+\n8 + `力量`神聖傷害\n目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）\n因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你`氣場`的心靈傷害。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 直視正義威儀！\nTI-27：正典 tiers[].text 含條件從句 “if the target has this potency,”，中文**刻意不譯**——效力記號本身即表示「若目標未通過該效力」，屬擁有者批准的結構化省略\n⚠️ TI-27 的前提是 renderer **必須**把結構化的 potency 與該階層後續效果一起呈現；做不到就要回頭重議\nN-1：效力記號「`氣場 < 弱`」已剝除，效力存於正典 tiers[].potency\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-27\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.behold-the-face-of-justice\nheroes-v1.01-04-censor\nability.censor.behold-the-face-of-justice\nability\nBehold the Face of Justice!\nYou attack a foe and your enemies behold a vision of the true nature of your resolve.\nmagic\nmelee\nranged\nstrike\nweapon\nmain\nwrath\nchoice\nmelee\nMelee 1\nranged\nRanged 5\nMelee 1 or ranged 5\nOne creature\nmight\n≤11\n3 + M holy damage\npresence\nweak\nEach enemy within 2 squares of the target is frightened of you (save ends).\n3 + M holy damage; if the target has P<WEAK, each enemy within 2 squares of them is frightened of you (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nEach enemy within 2 squares of the target is frightened of you (save ends).\n5 + M holy damage; if the target has P<AVERAGE, each enemy within 2 squares of them is frightened of you (save ends)\n17+\n8 + M holy damage\npresence\nstrong\nEach enemy within 2 squares of the target is frightened of you (save ends).\n8 + M holy damage; if the target has P<STRONG, each enemy within 2 squares of them is frightened of you (save ends)\nEach enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5363,7 +5359,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5402,7 +5398,7 @@
             "因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你`氣場`的心靈傷害。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
             "translationSource": "舊 Notion 招式列表 · 直視正義威儀！",
             "commonProcessing": [
@@ -5417,7 +5413,9 @@
             "decisions": [
               "TI-27"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.behold-the-face-of-justice",
@@ -5459,8 +5457,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5471,7 +5469,7 @@
         "normalizedHash": "3f4e232ebd31a43916b98aa2dbe56d1df456fe635dbb62886d7804c0b0532dbc"
       },
       "relatedIds": [],
-      "searchText": "斷罪\nCensored\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.censored\n斷罪\n審判、定罪。\n≤11\n2 + `力量`神聖傷害\n12-16\n3 + `力量`神聖傷害\n17+\n5 + `力量`神聖傷害\n若目標因此招式而陷入`疲態`，只要他不是首領或獨霸生物，他的`體力`會直接歸 0。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 斷罪\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\neffect 的關係子句「who is not a leader or solo creature」由主語內移到後半句，限定條件完整保留（報告 ⚪ 第 7 項）\nflavor「審判、定罪」與招式【審判】同字，但 flavor 不加【】標記（指南 §6）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.censored\nheroes-v1.01-04-censor\nability.censor.censored\nability\nCensored\nJudged and sentenced.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature\nmight\n≤11\n2 + M holy damage\n12-16\n3 + M holy damage\n17+\n5 + M holy damage\nWhen a target who is not a leader or solo creature is made winded by this ability, they are reduced to 0 Stamina.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "斷罪\nCensored\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.censored\n斷罪\n審判、定罪。\n≤11\n2 + `力量`神聖傷害\n12-16\n3 + `力量`神聖傷害\n17+\n5 + `力量`神聖傷害\n若目標因此招式而陷入`疲態`，只要他不是首領或獨霸生物，他的`體力`會直接歸 0。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 斷罪\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\neffect 的關係子句「who is not a leader or solo creature」由主語內移到後半句，限定條件完整保留（報告 ⚪ 第 7 項）\nflavor「審判、定罪」與招式【審判】同字，但 flavor 不加【】標記（指南 §6）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.censored\nheroes-v1.01-04-censor\nability.censor.censored\nability\nCensored\nJudged and sentenced.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature\nmight\n≤11\n2 + M holy damage\n12-16\n3 + M holy damage\n17+\n5 + M holy damage\nWhen a target who is not a leader or solo creature is made winded by this ability, they are reduced to 0 Stamina.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5523,7 +5521,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5559,7 +5557,7 @@
             "若目標因此招式而陷入`疲態`，只要他不是首領或獨霸生物，他的`體力`會直接歸 0。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
             "translationSource": "舊 Notion 招式列表 · 斷罪",
             "commonProcessing": [
@@ -5570,7 +5568,9 @@
               "flavor「審判、定罪」與招式【審判】同字，但 flavor 不加【】標記（指南 §6）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.censored",
@@ -5612,8 +5612,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5624,7 +5624,7 @@
         "normalizedHash": "ce382527012f5423edbce91021137964406a7b2df5b08f9f8f045b7f726558b3"
       },
       "relatedIds": [],
-      "searchText": "衝刺追擊\nDriving Assault\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.driving-assault\n衝刺追擊\n你逼退敵人，並運用信仰的力量緊隨其後。\n≤11\n3 + `力量`傷害，推動 1\n12-16\n6 + `力量`傷害，推動 3\n17+\n9 + `力量`傷害，推動 5\n在推動目標後，你可以朝目標直線遁移最多等於你`速度`的距離。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 衝刺追擊\n**本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對\nN-2：舊譯的階層表格分成「傷害／推動」兩欄，本層合併，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.driving-assault\nheroes-v1.01-04-censor\nability.censor.driving-assault\nability\nDriving Assault\nAs you force your enemy back with your weapon, you use your faith to stay close.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M damage; push 1\n12-16\n6 + M damage; push 3\n17+\n9 + M damage; push 5\nYou can shift up to your speed in a straight line toward the target after pushing them.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "衝刺追擊\nDriving Assault\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.driving-assault\n衝刺追擊\n你逼退敵人，並運用信仰的力量緊隨其後。\n≤11\n3 + `力量`傷害；推動 1\n12-16\n6 + `力量`傷害；推動 3\n17+\n9 + `力量`傷害；推動 5\n在推動目標後，你可以朝目標直線遁移最多等於你`速度`的距離。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 衝刺追擊\n**本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對\nN-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，本層合併；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-29\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.driving-assault\nheroes-v1.01-04-censor\nability.censor.driving-assault\nability\nDriving Assault\nAs you force your enemy back with your weapon, you use your faith to stay close.\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M damage; push 1\n12-16\n6 + M damage; push 3\n17+\n9 + M damage; push 5\nYou can shift up to your speed in a straight line toward the target after pushing them.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5676,7 +5676,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5696,15 +5696,15 @@
             "tiers": [
               {
                 "threshold": "≤11",
-                "text": "3 + `力量`傷害，推動 1"
+                "text": "3 + `力量`傷害；推動 1"
               },
               {
                 "threshold": "12-16",
-                "text": "6 + `力量`傷害，推動 3"
+                "text": "6 + `力量`傷害；推動 3"
               },
               {
                 "threshold": "17+",
-                "text": "9 + `力量`傷害，推動 5"
+                "text": "9 + `力量`傷害；推動 5"
               }
             ]
           },
@@ -5712,18 +5712,22 @@
             "在推動目標後，你可以朝目標直線遁移最多等於你`速度`的距離。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
             "translationSource": "舊 Notion 招式列表 · 衝刺追擊",
             "commonProcessing": [
               "**本條沒有神聖傷害**——正典是 `3 + M damage`，非 holy。本批唯一如此的招式，已特別核對",
-              "N-2：舊譯的階層表格分成「傷害／推動」兩欄，本層合併，欄內以全形逗號「，」分隔（指南 §6）",
+              "N-2（2026-07-30 修訂為 TI-29）：舊譯的階層表格分成「傷害／推動」兩欄，本層合併；分隔符原採全形逗號「，」，2026-07-30 擁有者改裁為分號「；」以貼近原文標點（指南 §6 已同步修訂）",
               "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
               "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
             ],
-            "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "decisions": [
+              "TI-29"
+            ],
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.driving-assault",
@@ -5762,8 +5766,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5774,7 +5778,7 @@
         "normalizedHash": "4a0cb31f829866e610c7aa99ede3117bc3ec5d608f3d9a94fd5846779bb3f752"
       },
       "relatedIds": [],
-      "searchText": "踏向死亡！\nEvery Step … Death!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nsignature\n招牌\nability.censor.every-step-death\n踏向死亡！\n你讓敵人窺見他們死後的命運。\n≤11\n5 + `氣場`心靈傷害\n12-16\n7 + `氣場`心靈傷害\n17+\n10 + `氣場`心靈傷害\n在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。\ndraft\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一待裁項（willingly 譯名）已裁為 TI-20。\n舊 Notion 招式列表 · 踏向死亡！\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-20\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.every-step-death\nheroes-v1.01-04-censor\nability.censor.every-step-death\nability\nEvery Step … Death!\nYou show your foe a glimpse of their fate after death.\nmagic\nranged\nstrike\nmain\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P psychic damage\n12-16\n7 + P psychic damage\n17+\n10 + P psychic damage\nEach time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move.\nclass\nclass.censor\nsignature\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "踏向死亡！\nEvery Step … Death!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nsignature\n招牌\nability.censor.every-step-death\n踏向死亡！\n你讓敵人窺見他們死後的命運。\n≤11\n5 + `氣場`心靈傷害\n12-16\n7 + `氣場`心靈傷害\n17+\n10 + `氣場`心靈傷害\n在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一待裁項（willingly 譯名）已裁為 TI-20。\n舊 Notion 招式列表 · 踏向死亡！\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nTI-20\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.every-step-death\nheroes-v1.01-04-censor\nability.censor.every-step-death\nability\nEvery Step … Death!\nYou show your foe a glimpse of their fate after death.\nmagic\nranged\nstrike\nmain\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P psychic damage\n12-16\n7 + P psychic damage\n17+\n10 + P psychic damage\nEach time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move.\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5823,7 +5827,7 @@
           },
           "abilityCategory": "signature",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -5859,7 +5863,7 @@
             "在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一待裁項（willingly 譯名）已裁為 TI-20。",
             "translationSource": "舊 Notion 招式列表 · 踏向死亡！",
             "commonProcessing": [
@@ -5870,7 +5874,9 @@
             "decisions": [
               "TI-20"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.every-step-death",
@@ -5909,8 +5915,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -5921,7 +5927,7 @@
         "normalizedHash": "92ad636206c0197cc99f84e5185a9d943c681e98e03e050259285e309e317125"
       },
       "relatedIds": [],
-      "searchText": "惡徒止步！\nHalt Miscreant!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.halt-miscreant\n惡徒止步！\n你為武器注入神聖魔法，使敵人難以逃離。\n≤11\n2 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n12-16\n5 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n17+\n7 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\ndraft\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。\n舊 Notion 招式列表 · 惡徒止步！\nN-1：舊譯的階層儲存格含效力記號「`氣場 < 弱`」，本層一律剝除——效力已在正典結構化為 tiers[].potency，由 renderer 從 potency ＋ 詞彙表組出，不得在此存第二份\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，正典是單一字串，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.halt-miscreant\nheroes-v1.01-04-censor\nability.censor.halt-miscreant\nability\nHalt Miscreant!\nYou infuse your weapon with holy magic that makes it difficult for your foe to get away.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n2 + M holy damage\npresence\nweak\nThe target is slowed (save ends).\n2 + M holy damage; P<WEAK, slowed (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nThe target is slowed (save ends).\n5 + M holy damage; P<AVERAGE, slowed (save ends)\n17+\n7 + M holy damage\npresence\nstrong\nThe target is slowed (save ends).\n7 + M holy damage; P<STRONG, slowed (save ends)\nclass\nclass.censor\nsignature\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "惡徒止步！\nHalt Miscreant!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.halt-miscreant\n惡徒止步！\n你為武器注入神聖魔法，使敵人難以逃離。\n≤11\n2 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n12-16\n5 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n17+\n7 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。\n舊 Notion 招式列表 · 惡徒止步！\nN-1：舊譯的階層儲存格含效力記號「`氣場 < 弱`」，本層一律剝除——效力已在正典結構化為 tiers[].potency，由 renderer 從 potency ＋ 詞彙表組出，不得在此存第二份\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，正典是單一字串，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.halt-miscreant\nheroes-v1.01-04-censor\nability.censor.halt-miscreant\nability\nHalt Miscreant!\nYou infuse your weapon with holy magic that makes it difficult for your foe to get away.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n2 + M holy damage\npresence\nweak\nThe target is slowed (save ends).\n2 + M holy damage; P<WEAK, slowed (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nThe target is slowed (save ends).\n5 + M holy damage; P<AVERAGE, slowed (save ends)\n17+\n7 + M holy damage\npresence\nstrong\nThe target is slowed (save ends).\n7 + M holy damage; P<STRONG, slowed (save ends)\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5985,7 +5991,7 @@
           },
           "abilityCategory": "signature",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6021,7 +6027,7 @@
             ]
           },
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。",
             "translationSource": "舊 Notion 招式列表 · 惡徒止步！",
             "commonProcessing": [
@@ -6033,7 +6039,9 @@
               "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.halt-miscreant",
@@ -6071,8 +6079,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6083,7 +6091,7 @@
         "normalizedHash": "6ae447a7aaefc862daf6308c1aed781e09dd26985d1a0790564398ea15685d7f"
       },
       "relatedIds": [],
-      "searchText": "審判\nJudgment\nmagic\n魔法\nranged\n遠程\nmaneuver\n機動動作\ninherent\n固有\nability.censor.judgment\n審判\n你吟誦禱文，用神聖能量籠罩你的敵人。\n目標被你審判，持續到`遭遇`結束、你再次發動此招式、你主動解除此效果（無需動作），或其他懲戒者審判相同的目標。\n每當 1 個被你審判的生物使用主要動作時，只要他在你的效果線內，你可以使用免費反應動作對他造成等於你`氣場` ×2 的神聖傷害。\n當 1 個被你審判的生物`體力`歸 0 時，你可以使用免費反應動作對 1 個新目標發動此招式。\n此外，你可以花費 1 點`怒火`來執行以下 1 項免費反應動作：\n當 1 個與你相鄰且被你審判的生物開始遁移時，你對他發動 1 次近戰基礎打擊，並讓他的`速度`歸 0 而無法遁移，直到他當前回合結束。\n當 1 個被你審判且位於你 10 格內的生物進行檢定時，你讓他的檢定承受 1 個劣勢。\n當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。\n若你使用近戰招式對 1 個被你審判的生物造成傷害，該生物會被你嘲諷，直到他下個回合結束。\n即使有多個選項由相同的效果觸發，你每次也只能選擇 1 項免費反應動作。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 審判\nTI-26：options[2] 補回限定語「對該生物」。原文 “that targets only one creature” 的修飾對象有歧義，擁有者裁定維持舊譯的讀法（修飾 ability），歧義就此定案\nTA-B3-1：舊譯的「免費觸發式動作」（3 處）改為已批准術語「**免費反應動作**」（action-type.free-triggered）\n「`氣場` × 2」依指南 §6 歸一為「`氣場` ×2」（乘號緊貼數字）\neffect[0] 的「相同的目標」為補字，原文 the target 已回指同一目標（報告 ⚪ 第 8 項）\noptions[0] 的「他當前回合」較原文 the current turn 多了「他」；因觸發條件是該生物開始遁移，必為他的回合（報告 ⚪ 第 11 項）\n「嘲諷」存為純文字，與「緩速」同一處理（狀態的實體引用日後由統一的 renderer 機制處理）\n⚠️ 排版未定：`遭遇` 加了 inline code（沿用 feature.censor.wrath 的既有寫法），但「效果線」維持純文字（沿用舊譯）。兩者都不屬指南 §6 明列的「屬性／資源／遊戲數值」，慣例尚未統一\ntarget「1 個敵人」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n本條無檢定，故無 powerRoll\nTI-26\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.judgment\nheroes-v1.01-04-censor\nability.censor.judgment\nability\nJudgment\nYou utter a prayer that outlines your foe in holy energy.\nmagic\nranged\nmaneuver\nranged\nRanged 10\nOne enemy\nThe target is judged by you until the end of the encounter, you use this ability again, you willingly end this effect (no action required), or another censor judges the target.\nWhenever a creature judged by you uses a main action and is within your line of effect, you can use a free triggered action to deal holy damage equal to twice your Presence score to them.\nWhen a creature judged by you is reduced to 0 Stamina, you can use a free triggered action to use this ability against a new target.\nwhile-effect-active\nfree-triggered\nwrath\none\nAdditionally, you can spend 1 wrath to take one of the following free triggered actions:\nWhen an adjacent creature judged by you starts to shift, you make a melee free strike against them and their speed becomes 0 until the end of the current turn, preventing them from shifting.\nWhen a creature judged by you within 10 squares makes a power roll, you cause them to take a bane on the roll.\nWhen a creature judged by you within 10 squares uses an ability with a potency that targets only one creature, the potency is reduced by 1 for that creature.\nIf you damage a creature judged by you with a melee ability, the creature is taunted by you until the end of their next turn.\nYou can choose only one free triggered action option at a time, even if multiple options are triggered by the same effect.\nclass\nclass.censor\ninherent\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "審判\nJudgment\nmagic\n魔法\nranged\n遠程\nmaneuver\n機動動作\ninherent\n固有\nability.censor.judgment\n審判\n你吟誦禱文，用神聖能量籠罩你的敵人。\n目標被你審判，持續到`遭遇`結束、你再次發動此招式、你主動解除此效果（無需動作），或其他懲戒者審判相同的目標。\n每當 1 個被你審判的生物使用主要動作時，只要他在你的效果線內，你可以使用免費反應動作對他造成等於你`氣場` ×2 的神聖傷害。\n當 1 個被你審判的生物`體力`歸 0 時，你可以使用免費反應動作對 1 個新目標發動此招式。\n此外，你可以花費 1 點`怒火`來執行以下 1 項免費反應動作：\n當 1 個與你相鄰且被你審判的生物開始遁移時，你對他發動 1 次近戰基礎打擊，並讓他的`速度`歸 0 而無法遁移，直到他當前回合結束。\n當 1 個被你審判且位於你 10 格內的生物進行檢定時，你讓他的檢定承受 1 個劣勢。\n當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。\n若你使用近戰招式對 1 個被你審判的生物造成傷害，該生物會被你嘲諷，直到他下個回合結束。\n即使有多個選項由相同的效果觸發，你每次也只能選擇 1 項免費反應動作。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 審判\nTI-26：options[2] 補回限定語「對該生物」。原文 “that targets only one creature” 的修飾對象有歧義，擁有者裁定維持舊譯的讀法（修飾 ability），歧義就此定案\nTA-B3-1：舊譯的「免費觸發式動作」（3 處）改為已批准術語「**免費反應動作**」（action-type.free-triggered）\n「`氣場` × 2」依指南 §6 歸一為「`氣場` ×2」（乘號緊貼數字）\neffect[0] 的「相同的目標」為補字，原文 the target 已回指同一目標（報告 ⚪ 第 8 項）\noptions[0] 的「他當前回合」較原文 the current turn 多了「他」；因觸發條件是該生物開始遁移，必為他的回合（報告 ⚪ 第 11 項）\n「嘲諷」存為純文字，與「緩速」同一處理（狀態的實體引用日後由統一的 renderer 機制處理）\n⚠️ 排版未定：`遭遇` 加了 inline code（沿用 feature.censor.wrath 的既有寫法），但「效果線」維持純文字（沿用舊譯）。兩者都不屬指南 §6 明列的「屬性／資源／遊戲數值」，慣例尚未統一\ntarget「1 個敵人」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n本條無檢定，故無 powerRoll\nTI-26\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.judgment\nheroes-v1.01-04-censor\nability.censor.judgment\nability\nJudgment\nYou utter a prayer that outlines your foe in holy energy.\nmagic\nranged\nmaneuver\nranged\nRanged 10\nOne enemy\nThe target is judged by you until the end of the encounter, you use this ability again, you willingly end this effect (no action required), or another censor judges the target.\nWhenever a creature judged by you uses a main action and is within your line of effect, you can use a free triggered action to deal holy damage equal to twice your Presence score to them.\nWhen a creature judged by you is reduced to 0 Stamina, you can use a free triggered action to use this ability against a new target.\nwhile-effect-active\nfree-triggered\nwrath\none\nAdditionally, you can spend 1 wrath to take one of the following free triggered actions:\nWhen an adjacent creature judged by you starts to shift, you make a melee free strike against them and their speed becomes 0 until the end of the current turn, preventing them from shifting.\nWhen a creature judged by you within 10 squares makes a power roll, you cause them to take a bane on the roll.\nWhen a creature judged by you within 10 squares uses an ability with a potency that targets only one creature, the potency is reduced by 1 for that creature.\nIf you damage a creature judged by you with a melee ability, the creature is taunted by you until the end of their next turn.\nYou can choose only one free triggered action option at a time, even if multiple options are triggered by the same effect.\nclass\nclass.censor\ninherent\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6135,7 +6143,7 @@
           },
           "abilityCategory": "inherent",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6169,7 +6177,7 @@
             }
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
             "translationSource": "舊 Notion 招式列表 · 審判",
             "commonProcessing": [
@@ -6187,7 +6195,9 @@
             "decisions": [
               "TI-26"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.judgment",
@@ -6225,8 +6235,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6237,7 +6247,7 @@
         "normalizedHash": "cbf8265dd8ed89a33abaa434a11504bcc98b0c91c6ce4302a7928483364dd6fe"
       },
       "relatedIds": [],
-      "searchText": "捨己為人\nMy Life for Yours\nmagic\n魔法\nranged\n遠程\ntriggered\n反應動作\ninherent\n固有\nability.censor.my-life-for-yours\n捨己為人\n你將生命能量注入自己或盟友體內來增強韌性。\n當目標開始回合或受到傷害時。\n你花費 1 點`復元力`，並讓目標恢復等於你`復元值`的`體力`。\n你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。\ndraft\n逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。\n舊 Notion 招式列表 · 捨己為人\nTI-21：flavor 維持舊譯（“some of” 未譯出、另增「體內」）。此項確立了 flavor 允許改寫的通則，正式落點在指南 §7.2\nTI-22：extraCosts 補入限定語「目標身上」\nTI-23：extraCosts 刪除原文沒有的「狀態或」\nTI-24：`end of their turn` 採 EoT 縮寫（全域通則，不論原文寫全文或縮寫）\ntrigger 的「當…時」為中文條件句的必要語法框架，非增添語意\nextraCosts 的費用（1 點`怒火`）是受控欄位，不存於本層；段落標記由 renderer 依 cost 產生\ntarget「自身或 1 個盟友」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n本條無檢定，故無 powerRoll\nTI-21\nTI-22\nTI-23\nTI-24\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.my-life-for-yours\nheroes-v1.01-04-censor\nability.censor.my-life-for-yours\nability\nMy Life for Yours\nYou channel some of your vitality into more resilience for you or an ally.\nmagic\nranged\ntriggered\nranged\nRanged 10\nSelf or one ally\nThe target starts their turn or takes damage.\nYou spend a Recovery and the target regains Stamina equal to your recovery value.\nwrath\nYou can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.\nSpend 1 Wrath: You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.\nclass\nclass.censor\ninherent\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "捨己為人\nMy Life for Yours\nmagic\n魔法\nranged\n遠程\ntriggered\n反應動作\ninherent\n固有\nability.censor.my-life-for-yours\n捨己為人\n你將生命能量注入自己或盟友體內來增強韌性。\n當目標開始回合或受到傷害時。\n你花費 1 點`復元力`，並讓目標恢復等於你`復元值`的`體力`。\n你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。\nreviewed\n逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。\n舊 Notion 招式列表 · 捨己為人\nTI-21：flavor 維持舊譯（“some of” 未譯出、另增「體內」）。此項確立了 flavor 允許改寫的通則，正式落點在指南 §7.2\nTI-22：extraCosts 補入限定語「目標身上」\nTI-23：extraCosts 刪除原文沒有的「狀態或」\nTI-24：`end of their turn` 採 EoT 縮寫（全域通則，不論原文寫全文或縮寫）\ntrigger 的「當…時」為中文條件句的必要語法框架，非增添語意\nextraCosts 的費用（1 點`怒火`）是受控欄位，不存於本層；段落標記由 renderer 依 cost 產生\ntarget「自身或 1 個盟友」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n本條無檢定，故無 powerRoll\nTI-21\nTI-22\nTI-23\nTI-24\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.my-life-for-yours\nheroes-v1.01-04-censor\nability.censor.my-life-for-yours\nability\nMy Life for Yours\nYou channel some of your vitality into more resilience for you or an ally.\nmagic\nranged\ntriggered\nranged\nRanged 10\nSelf or one ally\nThe target starts their turn or takes damage.\nYou spend a Recovery and the target regains Stamina equal to your recovery value.\nwrath\nYou can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.\nSpend 1 Wrath: You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.\nclass\nclass.censor\ninherent\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6276,7 +6286,7 @@
           },
           "abilityCategory": "inherent",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6302,7 +6312,7 @@
             }
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。",
             "translationSource": "舊 Notion 招式列表 · 捨己為人",
             "commonProcessing": [
@@ -6322,7 +6332,9 @@
               "TI-23",
               "TI-24"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.my-life-for-yours",
@@ -6366,8 +6378,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6378,7 +6390,7 @@
         "normalizedHash": "524f94c6953b8f8ca9024e9333c8cc58fc6c56860f6585e3ce3922904772d905"
       },
       "relatedIds": [],
-      "searchText": "淨化聖火\nPurifying Fire\nmagic\n魔法\nmelee\n近戰\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.purifying-fire\n淨化聖火\n神明審判、火焰淨化。\n≤11\n5 + `力量`神聖傷害\n目標獲得火焰弱點 3（豁免解除）\n12-16\n9 + `力量`神聖傷害\n目標獲得火焰弱點 5（豁免解除）\n17+\n12 + `力量`神聖傷害\n目標獲得火焰弱點 7（豁免解除）\n若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 淨化聖火\n「火焰弱點」依 2026-07-29 裁決的構詞規則 `<傷害類型> Weakness ＝ <傷害類型>弱點`（glossary term.fire-weakness，指南附錄 A.1）\nN-1：效力記號「`力量 < 弱`」已剝除；**本條的效力屬性是力量，與檢定屬性相同**\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\ntiers 省略正典的主詞「the target has」，沿用舊譯的階層儲存格慣例（報告 ⚪ 第 9 項）\neffect 的 While（持續期間）舊譯作「若」（條件）；因火焰弱點帶豁免解除，兩者外延相同（報告 ⚪ 第 10 項）\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.purifying-fire\nheroes-v1.01-04-censor\nability.censor.purifying-fire\nability\nPurifying Fire\nThe gods judge, fire cleanses.\nmagic\nmelee\nranged\nstrike\nweapon\nmain\nwrath\nchoice\nmelee\nMelee 1\nranged\nRanged 5\nMelee 1 or ranged 5\nOne creature\nmight\n≤11\n5 + M holy damage\nmight\nweak\nThe target has fire weakness 3 (save ends).\n5 + M holy damage; M<WEAK, the target has fire weakness 3 (save ends)\n12-16\n9 + M holy damage\nmight\naverage\nThe target has fire weakness 5 (save ends).\n9 + M holy damage; M<AVERAGE, the target has fire weakness 5 (save ends)\n17+\n12 + M holy damage\nmight\nstrong\nThe target has fire weakness 7 (save ends).\n12 + M holy damage; M<STRONG, the target has fire weakness 7 (save ends)\nWhile the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "淨化聖火\nPurifying Fire\nmagic\n魔法\nmelee\n近戰\nranged\n遠程\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.purifying-fire\n淨化聖火\n神明審判、火焰淨化。\n≤11\n5 + `力量`神聖傷害\n目標獲得火焰弱點 3（豁免解除）\n12-16\n9 + `力量`神聖傷害\n目標獲得火焰弱點 5（豁免解除）\n17+\n12 + `力量`神聖傷害\n目標獲得火焰弱點 7（豁免解除）\n若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。\n舊 Notion 招式列表 · 淨化聖火\n「火焰弱點」依 2026-07-29 裁決的構詞規則 `<傷害類型> Weakness ＝ <傷害類型>弱點`（glossary term.fire-weakness，指南附錄 A.1）\nN-1：效力記號「`力量 < 弱`」已剝除；**本條的效力屬性是力量，與檢定屬性相同**\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\ntiers 省略正典的主詞「the target has」，沿用舊譯的階層儲存格慣例（報告 ⚪ 第 9 項）\neffect 的 While（持續期間）舊譯作「若」（條件）；因火焰弱點帶豁免解除，兩者外延相同（報告 ⚪ 第 10 項）\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1 或遠程 5（二選一）」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.purifying-fire\nheroes-v1.01-04-censor\nability.censor.purifying-fire\nability\nPurifying Fire\nThe gods judge, fire cleanses.\nmagic\nmelee\nranged\nstrike\nweapon\nmain\nwrath\nchoice\nmelee\nMelee 1\nranged\nRanged 5\nMelee 1 or ranged 5\nOne creature\nmight\n≤11\n5 + M holy damage\nmight\nweak\nThe target has fire weakness 3 (save ends).\n5 + M holy damage; M<WEAK, the target has fire weakness 3 (save ends)\n12-16\n9 + M holy damage\nmight\naverage\nThe target has fire weakness 5 (save ends).\n9 + M holy damage; M<AVERAGE, the target has fire weakness 5 (save ends)\n17+\n12 + M holy damage\nmight\nstrong\nThe target has fire weakness 7 (save ends).\n12 + M holy damage; M<STRONG, the target has fire weakness 7 (save ends)\nWhile the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6461,7 +6473,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6500,7 +6512,7 @@
             "若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。",
             "translationSource": "舊 Notion 招式列表 · 淨化聖火",
             "commonProcessing": [
@@ -6514,7 +6526,9 @@
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.purifying-fire",
@@ -6556,8 +6570,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6568,7 +6582,7 @@
         "normalizedHash": "527a156fefcb3ca1ca33b674e066f695726d269aef624b51902272d47e183bd6"
       },
       "relatedIds": [],
-      "searchText": "懺悔吧！\nRepent!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nheroic\n英雄\nability.censor.repent\n懺悔吧！\n你喚起敵人的罪惡記憶，使他心神不寧。\n≤11\n5 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n12-16\n8 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n17+\n11 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 懺悔吧！\n**檢定屬性與效力屬性不同**：檢定用`氣場`、效力抵抗用`直覺`。兩者皆為受控欄位，不存於本層\nN-1：效力記號「`直覺 < 弱`」已剝除\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\n本條正典沒有 effect 段落\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.repent\nheroes-v1.01-04-censor\nability.censor.repent\nability\nRepent!\nYou conjure memories of their sins to harry your foes.\nmagic\nranged\nstrike\nmain\nwrath\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P holy damage\nintuition\nweak\nThe target is dazed (save ends).\n5 + P holy damage; I<WEAK, dazed (save ends)\n12-16\n8 + P holy damage\nintuition\naverage\nThe target is dazed (save ends).\n8 + P holy damage; I<AVERAGE, dazed (save ends)\n17+\n11 + P holy damage\nintuition\nstrong\nThe target is dazed (save ends).\n11 + P holy damage; I<STRONG, dazed (save ends)\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "懺悔吧！\nRepent!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nheroic\n英雄\nability.censor.repent\n懺悔吧！\n你喚起敵人的罪惡記憶，使他心神不寧。\n≤11\n5 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n12-16\n8 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n17+\n11 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 懺悔吧！\n**檢定屬性與效力屬性不同**：檢定用`氣場`、效力抵抗用`直覺`。兩者皆為受控欄位，不存於本層\nN-1：效力記號「`直覺 < 弱`」已剝除\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\n本條正典沒有 effect 段落\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.repent\nheroes-v1.01-04-censor\nability.censor.repent\nability\nRepent!\nYou conjure memories of their sins to harry your foes.\nmagic\nranged\nstrike\nmain\nwrath\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P holy damage\nintuition\nweak\nThe target is dazed (save ends).\n5 + P holy damage; I<WEAK, dazed (save ends)\n12-16\n8 + P holy damage\nintuition\naverage\nThe target is dazed (save ends).\n8 + P holy damage; I<AVERAGE, dazed (save ends)\n17+\n11 + P holy damage\nintuition\nstrong\nThe target is dazed (save ends).\n11 + P holy damage; I<STRONG, dazed (save ends)\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6635,7 +6649,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6671,7 +6685,7 @@
             ]
           },
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。",
             "translationSource": "舊 Notion 招式列表 · 懺悔吧！",
             "commonProcessing": [
@@ -6684,7 +6698,9 @@
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.repent",
@@ -6727,8 +6743,8 @@
         }
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6739,7 +6755,7 @@
         "normalizedHash": "600118b334c67dc5a16641b7a9e7673394433c2889973ed84adbc4c1c93e3474"
       },
       "relatedIds": [],
-      "searchText": "神之懲護\nThe Gods Punish and Defend\nmagic\n魔法\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.the-gods-punish-and-defend\n神之懲護\n你引導神聖能量來懲戒敵人並守護盟友。\n≤11\n5 + `力量`神聖傷害\n12-16\n8 + `力量`神聖傷害\n17+\n11 + `力量`神聖傷害\n你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。\ndraft\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。\n舊 Notion 招式列表 · 神之懲護\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.the-gods-punish-and-defend\nheroes-v1.01-04-censor\nability.censor.the-gods-punish-and-defend\nability\nThe Gods Punish and Defend\nYou channel holy energy to smite a foe and heal an ally.\nmagic\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n5 + M holy damage\n12-16\n8 + M holy damage\n17+\n11 + M holy damage\nYou can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value.\nclass\nclass.censor\nheroic\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "神之懲護\nThe Gods Punish and Defend\nmagic\n魔法\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nheroic\n英雄\nability.censor.the-gods-punish-and-defend\n神之懲護\n你引導神聖能量來懲戒敵人並守護盟友。\n≤11\n5 + `力量`神聖傷害\n12-16\n8 + `力量`神聖傷害\n17+\n11 + `力量`神聖傷害\n你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。\n舊 Notion 招式列表 · 神之懲護\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.the-gods-punish-and-defend\nheroes-v1.01-04-censor\nability.censor.the-gods-punish-and-defend\nability\nThe Gods Punish and Defend\nYou channel holy energy to smite a foe and heal an ally.\nmagic\nmelee\nstrike\nweapon\nmain\nwrath\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n5 + M holy damage\n12-16\n8 + M holy damage\n17+\n11 + M holy damage\nYou can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value.\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6792,7 +6808,7 @@
           },
           "abilityCategory": "heroic",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6828,7 +6844,7 @@
             "你可以花費 1 點`復元力`，讓自己或 10 格內的 1 個盟友恢復等於你`復元值`的`體力`。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條逐欄全部 exact，零待裁項。",
             "translationSource": "舊 Notion 招式列表 · 神之懲護",
             "commonProcessing": [
@@ -6837,7 +6853,9 @@
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
             ],
             "decisions": [],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.the-gods-punish-and-defend",
@@ -6876,8 +6894,8 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
-        "zhHant": "draft"
+        "canon": "verified",
+        "zhHant": "reviewed"
       },
       "source": {
         "document": "heroes-v1.01-04-censor",
@@ -6888,7 +6906,7 @@
         "normalizedHash": "15987e95e76e1bfbfa27e1f900374be4a018ec7824d1ed50ceb533b94be15209"
       },
       "relatedIds": [],
-      "searchText": "你的同夥救不了你！\nYour Allies Cannot Save You!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.your-allies-cannot-save-you\n你的同夥救不了你！\n你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。\n≤11\n3 + `力量`神聖傷害\n12-16\n5 + `力量`神聖傷害\n17+\n8 + `力量`神聖傷害\n與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。\ndraft\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。\n舊 Notion 招式列表 · 你的同夥救不了你！\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nPN-D2：flavor 的 burst 譯為「衝擊力」而非術語表的區域形狀「爆發」，屬 §7.2 允許的改寫，已列入報告供知悉\nTI-19\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nability.censor.your-allies-cannot-save-you\nheroes-v1.01-04-censor\nability.censor.your-allies-cannot-save-you\nability\nYour Allies Cannot Save You!\nYour magic strike turns your foe’s guilt into a burst of holy power.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M holy damage\n12-16\n5 + M holy damage\n17+\n8 + M holy damage\nEach enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.\nclass\nclass.censor\nsignature\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
+      "searchText": "你的同夥救不了你！\nYour Allies Cannot Save You!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.your-allies-cannot-save-you\n你的同夥救不了你！\n你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。\n≤11\n3 + `力量`神聖傷害\n12-16\n5 + `力量`神聖傷害\n17+\n8 + `力量`神聖傷害\n與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。\n舊 Notion 招式列表 · 你的同夥救不了你！\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\nPN-D2：flavor 的 burst 譯為「衝擊力」而非術語表的區域形狀「爆發」，屬 §7.2 允許的改寫，已列入報告供知悉\nTI-19\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.your-allies-cannot-save-you\nheroes-v1.01-04-censor\nability.censor.your-allies-cannot-save-you\nability\nYour Allies Cannot Save You!\nYour magic strike turns your foe’s guilt into a burst of holy power.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n3 + M holy damage\n12-16\n5 + M holy damage\n17+\n8 + M holy damage\nEach enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6937,7 +6955,7 @@
           },
           "abilityCategory": "signature",
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -6973,7 +6991,7 @@
             "與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你`氣場`的格數。"
           ],
           "meta": {
-            "status": "draft",
+            "status": "reviewed",
             "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一 🔴 待裁項（漏譯 up to）已裁為 TI-19 並套用。",
             "translationSource": "舊 Notion 招式列表 · 你的同夥救不了你！",
             "commonProcessing": [
@@ -6985,7 +7003,9 @@
             "decisions": [
               "TI-19"
             ],
-            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+            "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+            "reviewedBy": "owner",
+            "reviewedAt": "2026-07-30"
           },
           "canonRef": {
             "id": "ability.censor.your-allies-cannot-save-you",
@@ -7017,7 +7037,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7029,7 +7049,7 @@
         "normalizedHash": "c1982445dcef37646398e9368af7b7f95c3a27c8b24c725d939955eb294ba2ac"
       },
       "relatedIds": [],
-      "searchText": "出血\nBleeding\ncondition.bleeding\n出血\n若你處於出血狀態，每當你使用主要動作或反應動作，或使用`力量`或`敏捷`進行考驗或招式檢定時，在動作或檢定結算後，你會失去 1D6 + 等級的`體力`（無法透過任何方式避免，而且每個動作只會失去 1 次`體力`）。\n若你在自己的回合外使用主要動作，你也會受到此狀態的傷害。例如，若你在戰術家的「快出手！」招式協助下使用免費反應動作發動招牌招式，你也會觸發出血狀態的傷害。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 出血\n已批准術語批次改寫：觸發式動作→反應動作、免費觸發式動作→免費反應動作\nNotion 內部連結拆為純文字：快出手！\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.bleeding\nheroes-v1.01-03-class-and-abilities\ncondition.bleeding\ncondition\nBleeding\nWhile a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.\nYou take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "出血\nBleeding\ncondition.bleeding\n出血\n若你處於出血狀態，每當你使用主要動作或反應動作，或使用`力量`或`敏捷`進行考驗或招式檢定時，在動作或檢定結算後，你會失去 1D6 + 等級的`體力`（無法透過任何方式避免，而且每個動作只會失去 1 次`體力`）。\n若你在自己的回合外使用主要動作，你也會受到此狀態的傷害。例如，若你在戰術家的「快出手！」招式協助下使用免費反應動作發動招牌招式，你也會觸發出血狀態的傷害。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 出血\n已批准術語批次改寫：觸發式動作→反應動作、免費觸發式動作→免費反應動作\nNotion 內部連結拆為純文字：快出手！\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.bleeding\nheroes-v1.01-03-class-and-abilities\ncondition.bleeding\ncondition\nBleeding\nWhile a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.\nYou take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7041,7 +7061,7 @@
             "While a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.",
             "You take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7103,7 +7123,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7115,7 +7135,7 @@
         "normalizedHash": "3bc0ff6c4b1392fc395e0ffb1798c0b69cd09951deab2dcd2bd017e8fb61f4b0"
       },
       "relatedIds": [],
-      "searchText": "暈眩\nDazed\ncondition.dazed\n暈眩\n若你處於暈眩狀態，你在自己回合中只能執行其中 1 種動作：主要動作、機動動作，或移動動作。你也無法使用反應動作、免費反應動作，以及免費機動動作。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 暈眩\n已批准術語批次改寫：觸發式動作→反應動作、免費觸發式動作→免費反應動作\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.dazed\nheroes-v1.01-03-class-and-abilities\ncondition.dazed\ncondition\nDazed\nA creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "暈眩\nDazed\ncondition.dazed\n暈眩\n若你處於暈眩狀態，你在自己回合中只能執行其中 1 種動作：主要動作、機動動作，或移動動作。你也無法使用反應動作、免費反應動作，以及免費機動動作。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 暈眩\n已批准術語批次改寫：觸發式動作→反應動作、免費觸發式動作→免費反應動作\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.dazed\nheroes-v1.01-03-class-and-abilities\ncondition.dazed\ncondition\nDazed\nA creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7126,7 +7146,7 @@
           "text": [
             "A creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7186,7 +7206,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7198,7 +7218,7 @@
         "normalizedHash": "8d59f01bff916b49c378e558f538f38647eab102bdd45086d5b12d1af0853020"
       },
       "relatedIds": [],
-      "searchText": "畏縮\nFrightened\ncondition.frightened\n畏縮\n若你處於畏縮狀態，你對恐懼來源進行的任何招式檢定都會承受 1 個劣勢。若恐懼來源為生物，該來源對你進行的招式檢定會獲得 1 個優勢。你若知道恐懼來源的位置，你就無法主動接近該來源。若你已經因為某個來源而陷入畏縮，然後又從其他來源陷入畏縮，則新的畏縮狀態會取代舊的狀態。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 畏縮\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.frightened\nheroes-v1.01-03-class-and-abilities\ncondition.frightened\ncondition\nFrightened\nWhen a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "畏縮\nFrightened\ncondition.frightened\n畏縮\n若你處於畏縮狀態，你對恐懼來源進行的任何招式檢定都會承受 1 個劣勢。若恐懼來源為生物，該來源對你進行的招式檢定會獲得 1 個優勢。你若知道恐懼來源的位置，你就無法主動接近該來源。若你已經因為某個來源而陷入畏縮，然後又從其他來源陷入畏縮，則新的畏縮狀態會取代舊的狀態。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 畏縮\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.frightened\nheroes-v1.01-03-class-and-abilities\ncondition.frightened\ncondition\nFrightened\nWhen a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7209,7 +7229,7 @@
           "text": [
             "When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7267,7 +7287,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7279,7 +7299,7 @@
         "normalizedHash": "205b7a77a98e77a099107197263d3ca595e9908393879ab2b9d4918514c2f044"
       },
       "relatedIds": [],
-      "searchText": "擒制\nGrabbed\ncondition.grabbed\n擒制\n若你被擒制，你的`速度`歸 0，而且只能被擒抱者（生物、物體或效果）強制移動。你無法使用擊退機動動作，而且對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢。當擒抱者移動時，你會一起移動。若擒抱者的`體型` ≦ 你，則擒抱者在擒抱期間的`速度`會減半。\n擒抱者可以使用機動動作將你移動至相鄰的未占據空間。\n擒抱者可以隨時釋放你來解除該狀態（無需動作）。你可以使用掙脫機動動作來嘗試脫離。若你進行傳送，或你與擒抱者任一方被強制移動到雙方不相鄰的位置，擒制狀態就會立刻解除。\n生物只能擒抱`體型` ≦ 自己的生物。若生物的`力量`為 2 以上，則可以擒抱`體型` ≦ 其`力量`的生物。\n除非另有說明，生物同時只能擒抱 1 個生物。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 擒制\nNotion 內部連結拆為純文字：擊退、掙脫、擒抱\nTI-1\n已套用，文字已變更：刪除「在自己回合」\nTI-2\n裁決維持舊譯「招式檢定」，文字未變更；疑點待官方勘誤釐清\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.grabbed\nheroes-v1.01-03-class-and-abilities\ncondition.grabbed\ncondition\nGrabbed\nA creature who is grabbed has speed 0, can’t be force moved except by a creature, object, or effect that has them grabbed, can’t use the Knockback maneuver (see Maneuvers in Chapter 10: Combat), and takes a bane on abilities that don’t target the creature, object, or effect that has them grabbed. If a creature is grabbed by another creature and that creature moves, they bring the grabbed creature with them. If a creature’s size is equal to or less than the size of a creature they have grabbed, their speed is halved while they have that creature grabbed.\nA creature who has another creature grabbed can use a maneuver to move the grabbed creature into an unoccupied space adjacent to them.\nA creature can release a creature they have grabbed at any time to end that condition (no action required). A grabbed creature can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat). If a grabbed creature teleports, or if either the grabbed creature or the creature grabbing them is force moved so that both creatures are not adjacent to each other, that creature is no longer grabbed.\nA creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.\nUnless otherwise indicated, a creature can grab only one creature at a time.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "擒制\nGrabbed\ncondition.grabbed\n擒制\n若你被擒制，你的`速度`歸 0，而且只能被擒抱者（生物、物體或效果）強制移動。你無法使用擊退機動動作，而且對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢。當擒抱者移動時，你會一起移動。若擒抱者的`體型` ≦ 你，則擒抱者在擒抱期間的`速度`會減半。\n擒抱者可以使用機動動作將你移動至相鄰的未占據空間。\n擒抱者可以隨時釋放你來解除該狀態（無需動作）。你可以使用掙脫機動動作來嘗試脫離。若你進行傳送，或你與擒抱者任一方被強制移動到雙方不相鄰的位置，擒制狀態就會立刻解除。\n生物只能擒抱`體型` ≦ 自己的生物。若生物的`力量`為 2 以上，則可以擒抱`體型` ≦ 其`力量`的生物。\n除非另有說明，生物同時只能擒抱 1 個生物。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 擒制\nNotion 內部連結拆為純文字：擊退、掙脫、擒抱\nTI-1\n已套用，文字已變更：刪除「在自己回合」\nTI-2\n裁決維持舊譯「招式檢定」，文字未變更；疑點待官方勘誤釐清\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.grabbed\nheroes-v1.01-03-class-and-abilities\ncondition.grabbed\ncondition\nGrabbed\nA creature who is grabbed has speed 0, can’t be force moved except by a creature, object, or effect that has them grabbed, can’t use the Knockback maneuver (see Maneuvers in Chapter 10: Combat), and takes a bane on abilities that don’t target the creature, object, or effect that has them grabbed. If a creature is grabbed by another creature and that creature moves, they bring the grabbed creature with them. If a creature’s size is equal to or less than the size of a creature they have grabbed, their speed is halved while they have that creature grabbed.\nA creature who has another creature grabbed can use a maneuver to move the grabbed creature into an unoccupied space adjacent to them.\nA creature can release a creature they have grabbed at any time to end that condition (no action required). A grabbed creature can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat). If a grabbed creature teleports, or if either the grabbed creature or the creature grabbing them is force moved so that both creatures are not adjacent to each other, that creature is no longer grabbed.\nA creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.\nUnless otherwise indicated, a creature can grab only one creature at a time.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7294,7 +7314,7 @@
             "A creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.",
             "Unless otherwise indicated, a creature can grab only one creature at a time."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7367,7 +7387,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7379,7 +7399,7 @@
         "normalizedHash": "b2c26461c8484d02bf19dd5f0b92b1daa508dfbc3a9bf1ce6e8492f0f3ef0021"
       },
       "relatedIds": [],
-      "searchText": "伏地\nProne\ncondition.prone\n伏地\n若你處於伏地狀態，你的身體會平貼地面。在此狀態下，你發動的任何打擊都會承受 1 個劣勢，而其他生物對你發動的近戰招式則會獲得 1 個優勢。你只能用爬行的方式移動，每移動 1 格都需要額外消耗 1 格移動力。你在伏地時無法進行攀爬、跳躍、游泳或飛行。若你在攀爬、飛行或跳躍時被擊倒伏地，則會立刻墜落。\n除非造成伏地狀態的招式或效果另有說明，否則你可以使用起身機動動作來解除伏地。此外，若你願意，相鄰的生物也可以對你使用起身機動動作來將你拉起來。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 伏地\nNotion 內部連結拆為純文字：起身\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.prone\nheroes-v1.01-03-class-and-abilities\ncondition.prone\ncondition\nProne\nWhile a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.\nUnless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "伏地\nProne\ncondition.prone\n伏地\n若你處於伏地狀態，你的身體會平貼地面。在此狀態下，你發動的任何打擊都會承受 1 個劣勢，而其他生物對你發動的近戰招式則會獲得 1 個優勢。你只能用爬行的方式移動，每移動 1 格都需要額外消耗 1 格移動力。你在伏地時無法進行攀爬、跳躍、游泳或飛行。若你在攀爬、飛行或跳躍時被擊倒伏地，則會立刻墜落。\n除非造成伏地狀態的招式或效果另有說明，否則你可以使用起身機動動作來解除伏地。此外，若你願意，相鄰的生物也可以對你使用起身機動動作來將你拉起來。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 伏地\nNotion 內部連結拆為純文字：起身\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.prone\nheroes-v1.01-03-class-and-abilities\ncondition.prone\ncondition\nProne\nWhile a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.\nUnless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7391,7 +7411,7 @@
             "While a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.",
             "Unless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7452,7 +7472,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7464,7 +7484,7 @@
         "normalizedHash": "1b34f922af94439d3f0c2cdc3a38c53806a066a2372a6885196671dd93aa33f8"
       },
       "relatedIds": [],
-      "searchText": "束縛\nRestrained\ncondition.restrained\n束縛\n若你被束縛，你的`速度`歸 0，無法使用起身機動動作，也無法被強制移動。你在進行招式檢定以及`力量`與`敏捷`考驗時會承受 1 個劣勢，而其他生物對你進行的招式檢定則會獲得 1 個優勢。\n若你進行傳送，束縛狀態就會立刻解除。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 束縛\nNotion 內部連結拆為純文字：起身\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.restrained\nheroes-v1.01-03-class-and-abilities\ncondition.restrained\ncondition\nRestrained\nA creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.\nIf a creature teleports while restrained, that condition ends.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "束縛\nRestrained\ncondition.restrained\n束縛\n若你被束縛，你的`速度`歸 0，無法使用起身機動動作，也無法被強制移動。你在進行招式檢定以及`力量`與`敏捷`考驗時會承受 1 個劣勢，而其他生物對你進行的招式檢定則會獲得 1 個優勢。\n若你進行傳送，束縛狀態就會立刻解除。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 束縛\nNotion 內部連結拆為純文字：起身\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.restrained\nheroes-v1.01-03-class-and-abilities\ncondition.restrained\ncondition\nRestrained\nA creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.\nIf a creature teleports while restrained, that condition ends.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7476,7 +7496,7 @@
             "A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.",
             "If a creature teleports while restrained, that condition ends."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7537,7 +7557,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7549,7 +7569,7 @@
         "normalizedHash": "d905500625188d7f6e185710ba76c9151683bd4d17244db0399c48e4c880bb0d"
       },
       "relatedIds": [],
-      "searchText": "緩速\nSlowed\ncondition.slowed\n緩速\n若你被緩速，你的`速度`為 2（除非你的`速度`已經 < 2），而且無法進行遁移。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 緩速\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.slowed\nheroes-v1.01-03-class-and-abilities\ncondition.slowed\ncondition\nSlowed\nA creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "緩速\nSlowed\ncondition.slowed\n緩速\n若你被緩速，你的`速度`為 2（除非你的`速度`已經 < 2），而且無法進行遁移。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 緩速\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.slowed\nheroes-v1.01-03-class-and-abilities\ncondition.slowed\ncondition\nSlowed\nA creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7560,7 +7580,7 @@
           "text": [
             "A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7618,7 +7638,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7630,7 +7650,7 @@
         "normalizedHash": "5c1afb0d4eb97316d8dec7cba6395aca23793bc1b32ac67910b481b612b0d55c"
       },
       "relatedIds": [],
-      "searchText": "嘲諷\nTaunted\ncondition.taunted\n嘲諷\n若你被嘲諷，只要你與嘲諷者之間保持效果線，你對嘲諷者以外的目標進行的任何招式檢定都會承受雙劣勢。若你已經被嘲諷，然後又受到其他來源的嘲諷，則新的嘲諷狀態會取代舊的狀態。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 嘲諷\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.taunted\nheroes-v1.01-03-class-and-abilities\ncondition.taunted\ncondition\nTaunted\nA creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "嘲諷\nTaunted\ncondition.taunted\n嘲諷\n若你被嘲諷，只要你與嘲諷者之間保持效果線，你對嘲諷者以外的目標進行的任何招式檢定都會承受雙劣勢。若你已經被嘲諷，然後又受到其他來源的嘲諷，則新的嘲諷狀態會取代舊的狀態。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 嘲諷\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.taunted\nheroes-v1.01-03-class-and-abilities\ncondition.taunted\ncondition\nTaunted\nA creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7641,7 +7661,7 @@
           "text": [
             "A creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7699,7 +7719,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7711,7 +7731,7 @@
         "normalizedHash": "f54c0ad9c292deda57fb2b0195e2553b7dbdacc32429e9375d2f2da4d8091c09"
       },
       "relatedIds": [],
-      "searchText": "虛弱\nWeakened\ncondition.weakened\n虛弱\n若你陷入虛弱狀態，你進行的任何檢定都會承受 1 個劣勢。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 虛弱\nTI-3\n裁決維持舊譯（保留「任何」），文字未變更\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.weakened\nheroes-v1.01-03-class-and-abilities\ncondition.weakened\ncondition\nWeakened\nA creature who is weakened takes a bane on power rolls.\ndraft\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
+      "searchText": "虛弱\nWeakened\ncondition.weakened\n虛弱\n若你陷入虛弱狀態，你進行的任何檢定都會承受 1 個劣勢。\nreviewed\nowner\n2026-07-28\n名稱經擁有者於 docs/alignment/conditions.md 逐條確認與 Heroes v1.01 原文相符後批准。\n舊 Notion 狀態列表 · 虛弱\nTI-3\n裁決維持舊譯（保留「任何」），文字未變更\n全域通則見 docs/translation-guide.md §7（規則文本一律第二人稱，即使原文為第三人稱）。\ncondition.weakened\nheroes-v1.01-03-class-and-abilities\ncondition.weakened\ncondition\nWeakened\nA creature who is weakened takes a bane on power rolls.\nverified\nheroes-v1.01-03-class-and-abilities\n1.01\n2026-07-28",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算。",
@@ -7722,7 +7742,7 @@
           "text": [
             "A creature who is weakened takes a bane on power rolls."
           ],
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-03-class-and-abilities",
             "version": "1.01",
@@ -7788,7 +7808,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7800,7 +7820,7 @@
         "normalizedHash": "71b3be4ea5f2a8fb89fe3f93da73e0324faf25bd2e2b9a18b830a2eafa46ad84"
       },
       "relatedIds": [],
-      "searchText": "懲戒者教團\nCensor Order\nfeature.censor.censor-order\n懲戒者教團\nparagraph\n懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。\n\n當你承擔這個責任時，從以下選項中選擇 1 支教團。每支教團都會賦予你 1 項技能。（推薦選項：典範）\ndefinitionList\nnone\n驅邪\n你擅長獵捕尚未被教團發現的潛藏敵人，深知敞開的心靈就如同毫無防備的堡壘。你擁有`觀色`技能。\n神諭\n腐敗如同深入骨髓的觸鬚，容易被忽視，因此你擅長揭露威脅教團的隱藏威脅。你擁有`魔法`技能。\n典範\n若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。你擅長為教團樹立榜樣。你擁有`領導`技能。\nparagraph\n你的懲戒者教團代表你的`子範型`，你選擇的教團將決定你在升級時獲得的許多特性。\nreviewed\nowner\n2026-07-29\n逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，7 項差異已於 2026-07-29 逐筆裁決。\n舊 Notion 懲戒者 · 懲戒者教團\n教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」；行文中需要時可組合為「驅邪教團」\n舊譯把原文第 1 段拆成兩段，維持舊譯的分段（TI-12），以段內換行保留\nTI-11\nTI-12\nTI-13\nTI-15\nTI-17\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.censor-order\nheroes-v1.01-04-censor\nfeature.censor.censor-order\nfeature\nCensor Order\nparagraph\nCensors are the will of their god made physically manifest, and you act as your god’s agent in the world. As you shoulder that responsibility, you choose a censor order from the following options, each of which grants you a skill. (Quick Build: Paragon.)\ndefinitionList\nnone\nExorcist\nYou specialize in hunting your order’s hidden enemies, knowing that an open mind is an unguarded fortress. You have the Read Person skill.\nOracle\nCorruption has deep tendrils that can be missed, leading you to specialize in uncovering clandestine threats to your order. You have the Magic skill.\nParagon\nWithout a strong example and a firm hand, the weak will be corrupted. You specialize in setting an example for your order. You have the Lead skill.\nparagraph\nYour censor order is your subclass, and your choice of order determines many of the features you’ll gain as you gain new levels.\nclass\nclass.censor\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "懲戒者教團\nCensor Order\nfeature.censor.censor-order\n懲戒者教團\nparagraph\n懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。\n\n當你承擔這個責任時，從以下選項中選擇 1 支教團。每支教團都會賦予你 1 項技能。（推薦選項：典範）\ndefinitionList\nnone\n驅邪\n你擅長獵捕尚未被教團發現的潛藏敵人，深知敞開的心靈就如同毫無防備的堡壘。你擁有`觀色`技能。\n神諭\n腐敗如同深入骨髓的觸鬚，容易被忽視，因此你擅長揭露威脅教團的隱藏威脅。你擁有`魔法`技能。\n典範\n若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。你擅長為教團樹立榜樣。你擁有`領導`技能。\nparagraph\n你的懲戒者教團代表你的`子範型`，你選擇的教團將決定你在升級時獲得的許多特性。\nreviewed\nowner\n2026-07-29\n逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，7 項差異已於 2026-07-29 逐筆裁決。\n舊 Notion 懲戒者 · 懲戒者教團\n教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」；行文中需要時可組合為「驅邪教團」\n舊譯把原文第 1 段拆成兩段，維持舊譯的分段（TI-12），以段內換行保留\nTI-11\nTI-12\nTI-13\nTI-15\nTI-17\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.censor-order\nheroes-v1.01-04-censor\nfeature.censor.censor-order\nfeature\nCensor Order\nparagraph\nCensors are the will of their god made physically manifest, and you act as your god’s agent in the world. As you shoulder that responsibility, you choose a censor order from the following options, each of which grants you a skill. (Quick Build: Paragon.)\ndefinitionList\nnone\nExorcist\nYou specialize in hunting your order’s hidden enemies, knowing that an open mind is an unguarded fortress. You have the Read Person skill.\nOracle\nCorruption has deep tendrils that can be missed, leading you to specialize in uncovering clandestine threats to your order. You have the Magic skill.\nParagon\nWithout a strong example and a firm hand, the weak will be corrupted. You specialize in setting an example for your order. You have the Lead skill.\nparagraph\nYour censor order is your subclass, and your choice of order determines many of the features you’ll gain as you gain new levels.\nclass\nclass.censor\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。type=feature 為 2026-07-29 新增的資料類型（散文式職業特性），欄位說明見 docs/translation-guide.md §4.7。",
@@ -7846,7 +7866,7 @@
             "id": "class.censor"
           },
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -7946,7 +7966,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -7960,7 +7980,7 @@
       "relatedIds": [
         "ability.censor.judgment"
       ],
-      "searchText": "審判：教團益處\nJudgment Order Benefit\nfeature.censor.judgment-order-benefit\n審判：教團益處\nparagraph\n當你在 1 個回合中首次發動[審判](ability.censor.judgment)招式審判 1 個生物時，你會根據所屬教團獲得以下益處：\ndefinitionList\nbullet\n驅邪\n你可以`傳送`最多等於你`氣場` ×2 的`格`數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有`效果線`。\n神諭\n你可以對被審判的生物造成等於你`氣場` ×2 的`神聖`傷害。\n典範\n你可以將被審判的生物`垂直拉動`最多等於你`氣場` ×2 的`格`數。\nreviewed\nowner\n2026-07-29\n名稱依 TI-14 裁定為「審判：教團益處」（舊譯作「審判教團益處」）。逐句對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 懲戒者 · 審判 · 審判教團益處\n排版級自動歸一：舊譯驅邪條作「`氣場` × 2」，依指南 §6「乘號緊貼阿拉伯數字」統一為「×2」，與神諭／典範兩條一致\n教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」（此處舊譯本就是短式）\nTI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理\nTI-14\nTI-17\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.judgment-order-benefit\nheroes-v1.01-04-censor\nfeature.censor.judgment-order-benefit\nfeature\nJudgment Order Benefit\nparagraph\nThe first time on a turn that you use your Judgment ability to judge a creature, you gain the following benefit based on your order:\ndefinitionList\nbullet\nExorcist\nYou can teleport up to a number of squares equal to twice your Presence score. This movement must take you closer to the judged creature. You do not need line of effect to your destination.\nOracle\nYou can deal holy damage equal to twice your Presence score to the judged creature.\nParagon\nYou can vertical pull the judged creature up to a number of squares equal to twice your Presence score.\nclass\nclass.censor\nability.censor.judgment\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "審判：教團益處\nJudgment Order Benefit\nfeature.censor.judgment-order-benefit\n審判：教團益處\nparagraph\n當你在 1 個回合中首次發動[審判](ability.censor.judgment)招式審判 1 個生物時，你會根據所屬教團獲得以下益處：\ndefinitionList\nbullet\n驅邪\n你可以傳送最多等於你`氣場` ×2 的格數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有效果線。\n神諭\n你可以對被審判的生物造成等於你`氣場` ×2 的神聖傷害。\n典範\n你可以將被審判的生物垂直拉動最多等於你`氣場` ×2 的格數。\nreviewed\nowner\n2026-07-30\n名稱依 TI-14 裁定為「審判：教團益處」（舊譯作「審判教團益處」）。逐句對齊報告見 docs/alignment/zh-batch1-alignment.md。\n舊 Notion 懲戒者 · 審判 · 審判教團益處\n排版級自動歸一：舊譯驅邪條作「`氣場` × 2」，依指南 §6「乘號緊貼阿拉伯數字」統一為「×2」，與神諭／典範兩條一致\n教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」（此處舊譯本就是短式）\nTI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理\n2026-07-30 擁有者裁決：移除「傳送、格、效果線、神聖、垂直拉動」的醒目標示，只保留真正的遊戲數值／屬性用語（`氣場`）加註記；一般規則名詞不需要每個都標成術語\nTI-14\nTI-17\nTI-30\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.judgment-order-benefit\nheroes-v1.01-04-censor\nfeature.censor.judgment-order-benefit\nfeature\nJudgment Order Benefit\nparagraph\nThe first time on a turn that you use your Judgment ability to judge a creature, you gain the following benefit based on your order:\ndefinitionList\nbullet\nExorcist\nYou can teleport up to a number of squares equal to twice your Presence score. This movement must take you closer to the judged creature. You do not need line of effect to your destination.\nOracle\nYou can deal holy damage equal to twice your Presence score to the judged creature.\nParagon\nYou can vertical pull the judged creature up to a number of squares equal to twice your Presence score.\nclass\nclass.censor\nability.censor.judgment\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。type=feature 為 2026-07-29 新增的資料類型（散文式職業特性），欄位說明見 docs/translation-guide.md §4.7。",
@@ -8005,7 +8025,7 @@
             "ability.censor.judgment"
           ],
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -8034,15 +8054,15 @@
                   "items": [
                     {
                       "term": "驅邪",
-                      "text": "你可以`傳送`最多等於你`氣場` ×2 的`格`數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有`效果線`。"
+                      "text": "你可以傳送最多等於你`氣場` ×2 的格數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有效果線。"
                     },
                     {
                       "term": "神諭",
-                      "text": "你可以對被審判的生物造成等於你`氣場` ×2 的`神聖`傷害。"
+                      "text": "你可以對被審判的生物造成等於你`氣場` ×2 的神聖傷害。"
                     },
                     {
                       "term": "典範",
-                      "text": "你可以將被審判的生物`垂直拉動`最多等於你`氣場` ×2 的`格`數。"
+                      "text": "你可以將被審判的生物垂直拉動最多等於你`氣場` ×2 的格數。"
                     }
                   ]
                 }
@@ -8052,17 +8072,19 @@
           "meta": {
             "status": "reviewed",
             "reviewedBy": "owner",
-            "reviewedAt": "2026-07-29",
+            "reviewedAt": "2026-07-30",
             "nameApproval": "名稱依 TI-14 裁定為「審判：教團益處」（舊譯作「審判教團益處」）。逐句對齊報告見 docs/alignment/zh-batch1-alignment.md。",
             "translationSource": "舊 Notion 懲戒者 · 審判 · 審判教團益處",
             "commonProcessing": [
               "排版級自動歸一：舊譯驅邪條作「`氣場` × 2」，依指南 §6「乘號緊貼阿拉伯數字」統一為「×2」，與神諭／典範兩條一致",
               "教團名稱依 TI-17 採正式短式「驅邪／神諭／典範」（此處舊譯本就是短式）",
-              "TI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理"
+              "TI-16 的連結慣例：招式名以 [文字](實體 id) 標記；依指南 §6，內文提及招式名時前後加【】由 renderer 處理",
+              "2026-07-30 擁有者裁決：移除「傳送、格、效果線、神聖、垂直拉動」的醒目標示，只保留真正的遊戲數值／屬性用語（`氣場`）加註記；一般規則名詞不需要每個都標成術語"
             ],
             "decisions": [
               "TI-14",
-              "TI-17"
+              "TI-17",
+              "TI-30"
             ],
             "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
           },
@@ -8099,7 +8121,7 @@
         "cost": null
       },
       "reviewStatus": {
-        "canon": "draft",
+        "canon": "verified",
         "zhHant": "reviewed"
       },
       "source": {
@@ -8113,7 +8135,7 @@
       "relatedIds": [
         "ability.censor.judgment"
       ],
-      "searchText": "怒火\nWrath\nfeature.censor.wrath\n怒火\nparagraph\n你侍奉的神明賜予你名為「`怒火`」的`英雄資源`，這股力量會在你懲戒教會認定的異端時，驅動你的各種招式。\n戰鬥中的怒火\nparagraph\n在戰鬥或其他需要以`戰鬥輪`計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。\nbulletList\n此外，當以下條件觸發時，你會再額外獲得`怒火`。\n每輪 1 次，當你的回合開始時，你獲得 2 點`怒火`。\n每輪 1 次，當 1 個被你[審判](ability.censor.judgment)的生物首次對你造成傷害時，你獲得 1 點`怒火`。\n每輪 1 次，當你首次對 1 個被你[審判](ability.censor.judgment)的生物造成傷害時，你獲得 1 點`怒火`。\nparagraph\n`遭遇`結束時，你失去所有剩餘的`怒火`。\n戰鬥外的怒火\nparagraph\n雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次`休整`，才能在戰鬥外再次發動同個招式或效果。\nparagraph\n若你在戰鬥外發動 1 個允許你花費無限`怒火`的招式，你可以將其視為花費等於你`勝利值`的`怒火`（懲戒者的核心規則目前不包括這類招式，但可能會在未來的產品中出現）。\nreviewed\nowner\n2026-07-29\n逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，6 項差異已於 2026-07-29 逐筆裁決。\n舊 Notion 懲戒者 · 怒火\nsections[1].blocks[1] 的正典是散文段落，中文改為「引導句＋項目清單」。這是擁有者裁定的全站風格（TI-9），其他 8 個範型的英雄資源說明比照辦理\n因此 blocks[].kind 允許與正典不同；但 sections 與 blocks 的數量與順序仍須一一對應，否則無法逐段比對\n「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定\nTI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」\nTI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析\nTI-8\nTI-9\nTI-10\nTI-16\nTI-18\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.wrath\nheroes-v1.01-04-censor\nfeature.censor.wrath\nfeature\nWrath\nparagraph\nThe power you serve grants you a Heroic Resource called wrath, fueling your abilities as you censor those your church deems to be heretics.\nWrath in Combat\nparagraph\nAt the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain wrath equal to your Victories. At the start of each of your turns during combat, you gain 2 wrath.\nparagraph\nAdditionally, the first time each combat round that a creature judged by you (see Judgment below) deals damage to you, you gain 1 wrath. The first time each combat round that you deal damage to a creature judged by you, you gain 1 wrath.\nparagraph\nYou lose any remaining wrath at the end of the encounter.\nWrath Outside of Combat\nparagraph\nThough you can’t gain wrath outside of combat, you can use your heroic abilities and effects that cost wrath without spending it. Whenever you use an ability or effect outside of combat that costs wrath, you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite.\nparagraph\nWhen you use an ability outside of combat that lets you spend unlimited wrath on its effect, you can use it as if you had spent an amount of wrath equal to your Victories. (Such abilities aren’t part of the core rules for the censor, but they might appear in future products.)\nclass\nclass.censor\ndraft\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "怒火\nWrath\nfeature.censor.wrath\n怒火\nparagraph\n你侍奉的神明賜予你名為「`怒火`」的`英雄資源`，這股力量會在你懲戒教會認定的異端時，驅動你的各種招式。\n戰鬥中的怒火\nparagraph\n在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。\nbulletList\n此外，當以下條件觸發時，你會再額外獲得`怒火`。\n每輪 1 次，當你的回合開始時，你獲得 2 點`怒火`。\n每輪 1 次，當 1 個被你[審判](ability.censor.judgment)的生物首次對你造成傷害時，你獲得 1 點`怒火`。\n每輪 1 次，當你首次對 1 個被你[審判](ability.censor.judgment)的生物造成傷害時，你獲得 1 點`怒火`。\nparagraph\n遭遇結束時，你失去所有剩餘的`怒火`。\n戰鬥外的怒火\nparagraph\n雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。\nparagraph\n若你在戰鬥外發動 1 個允許你花費無限`怒火`的招式，你可以將其視為花費等於你`勝利值`的`怒火`（懲戒者的核心規則目前不包括這類招式，但可能會在未來的產品中出現）。\nreviewed\nowner\n2026-07-30\n逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，6 項差異已於 2026-07-29 逐筆裁決。\n舊 Notion 懲戒者 · 怒火\nsections[1].blocks[1] 的正典是散文段落，中文改為「引導句＋項目清單」。這是擁有者裁定的全站風格（TI-9），其他 8 個範型的英雄資源說明比照辦理\n因此 blocks[].kind 允許與正典不同；但 sections 與 blocks 的數量與順序仍須一一對應，否則無法逐段比對\n「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定\nTI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」\nTI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析\n2026-07-30 擁有者裁決：移除「戰鬥輪、遭遇、休整」的醒目標示，只保留真正的遊戲數值／屬性用語（`怒火`、`勝利值`）加註記\nTI-8\nTI-9\nTI-10\nTI-16\nTI-18\nTI-30\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nfeature.censor.wrath\nheroes-v1.01-04-censor\nfeature.censor.wrath\nfeature\nWrath\nparagraph\nThe power you serve grants you a Heroic Resource called wrath, fueling your abilities as you censor those your church deems to be heretics.\nWrath in Combat\nparagraph\nAt the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain wrath equal to your Victories. At the start of each of your turns during combat, you gain 2 wrath.\nparagraph\nAdditionally, the first time each combat round that a creature judged by you (see Judgment below) deals damage to you, you gain 1 wrath. The first time each combat round that you deal damage to a creature judged by you, you gain 1 wrath.\nparagraph\nYou lose any remaining wrath at the end of the encounter.\nWrath Outside of Combat\nparagraph\nThough you can’t gain wrath outside of combat, you can use your heroic abilities and effects that cost wrath without spending it. Whenever you use an ability or effect outside of combat that costs wrath, you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite.\nparagraph\nWhen you use an ability outside of combat that lets you spend unlimited wrath on its effect, you can use it as if you had spent an amount of wrath equal to your Victories. (Such abilities aren’t part of the core rules for the censor, but they might appear in future products.)\nclass\nclass.censor\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。type=feature 為 2026-07-29 新增的資料類型（散文式職業特性），欄位說明見 docs/translation-guide.md §4.7。",
@@ -8167,7 +8189,7 @@
             "id": "class.censor"
           },
           "level": 1,
-          "canonReviewStatus": "draft",
+          "canonReviewStatus": "verified",
           "source": {
             "document": "heroes-v1.01-04-censor",
             "version": "1.01",
@@ -8197,7 +8219,7 @@
               "blocks": [
                 {
                   "kind": "paragraph",
-                  "text": "在戰鬥或其他需要以`戰鬥輪`計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。"
+                  "text": "在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於`勝利值`的`怒火`。"
                 },
                 {
                   "kind": "bulletList",
@@ -8210,7 +8232,7 @@
                 },
                 {
                   "kind": "paragraph",
-                  "text": "`遭遇`結束時，你失去所有剩餘的`怒火`。"
+                  "text": "遭遇結束時，你失去所有剩餘的`怒火`。"
                 }
               ]
             },
@@ -8219,7 +8241,7 @@
               "blocks": [
                 {
                   "kind": "paragraph",
-                  "text": "雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次`休整`，才能在戰鬥外再次發動同個招式或效果。"
+                  "text": "雖然你無法在戰鬥外獲得`怒火`，但你可以在不花費`怒火`的情況下發動 1 次英雄招式或需要`怒火`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。"
                 },
                 {
                   "kind": "paragraph",
@@ -8231,7 +8253,7 @@
           "meta": {
             "status": "reviewed",
             "reviewedBy": "owner",
-            "reviewedAt": "2026-07-29",
+            "reviewedAt": "2026-07-30",
             "nameApproval": "逐句對齊報告見 docs/alignment/zh-batch1-alignment.md，6 項差異已於 2026-07-29 逐筆裁決。",
             "translationSource": "舊 Notion 懲戒者 · 怒火",
             "commonProcessing": [
@@ -8239,14 +8261,16 @@
               "因此 blocks[].kind 允許與正典不同；但 sections 與 blocks 的數量與順序仍須一一對應，否則無法逐段比對",
               "「回合開始獲得 2 點怒火」在正典屬 blocks[0] 句尾，中文移入 blocks[1] 的清單首項——同屬 TI-9 的風格裁定",
               "TI-18：Respite 的舊譯「長休」批次套用為已批准譯名「休整」",
-              "TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析"
+              "TI-16：【審判】做成站內連結，以 [文字](實體 id) 標記，renderer 解析",
+              "2026-07-30 擁有者裁決：移除「戰鬥輪、遭遇、休整」的醒目標示，只保留真正的遊戲數值／屬性用語（`怒火`、`勝利值`）加註記"
             ],
             "decisions": [
               "TI-8",
               "TI-9",
               "TI-10",
               "TI-16",
-              "TI-18"
+              "TI-18",
+              "TI-30"
             ],
             "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
           },

@@ -8,7 +8,7 @@
     "A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.",
     "If a creature teleports while restrained, that condition ends."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",

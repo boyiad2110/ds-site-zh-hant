@@ -592,6 +592,72 @@
         "pdfPage": 6,
         "printedPage": 83
       }
+    },
+    {
+      "id": "TI-28",
+      "kind": "modeling-rule",
+      "severity": "high",
+      "entityId": "ability.censor.arrest",
+      "field": "conditionalEffects → effect",
+      "issue": "正典的 conditionalEffects 是 2026-07-29 依 docs/proposal-arrest-data-model.md 建立的新結構，網站呈現時把它做成獨立的「條件式效果」方框（觸發／效果兩欄）。擁有者於 2026-07-30 M0 驗收檢視實際呈現後認為多此一舉——原版規則書這句話本就寫在同一個 Effect: 段落裡，不是獨立方框。",
+      "sourceEn": "Effect: If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.",
+      "legacyZhHant": null,
+      "resolution": "撤銷 ARREST-CONDITIONAL-EFFECT 的結構決定。canon 與 zh 都改回單一 effect 陣列，不再使用 conditionalEffects。docs/proposal-arrest-data-model.md 標記為已由本裁決取代，保留原文供稽核。",
+      "resolvedZhHant": "若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你`氣場`的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。",
+      "status": "resolved",
+      "decidedAt": "2026-07-30",
+      "decidedBy": "owner",
+      "applyTo": "data/canon/abilities/ability.censor.arrest.json 與 data/zh-Hant/abilities/ability.censor.arrest.json",
+      "affectsOnly": "ability.censor.arrest",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 6,
+        "printedPage": 83
+      }
+    },
+    {
+      "id": "TI-29",
+      "kind": "formatting-rule",
+      "severity": "medium",
+      "entityId": "*",
+      "field": "powerRoll.tiers[].text（複合子句分隔符）",
+      "issue": "指南 §6 於 2026-07-29 訂為「多欄階層合併用全形逗號，不用分號」。擁有者於 2026-07-30 M0 驗收時檢視實際呈現後改裁為分號，理由是更貼近原版規則書的標點（原文用 「;」 分隔，如 \"2 holy damage; push 1\"）。",
+      "sourceEn": "2 holy damage; push 1（back-blasphemer 範例）",
+      "legacyZhHant": "2 神聖傷害，推動 1",
+      "resolution": "撤銷 2026-07-29 的逗號裁決，改採全形分號「；」分隔同一階層字串內的多個子句。翻譯指南 §6 已同步修訂。已套用到本輪已知的三筆：ability.censor.arrest、ability.censor.back-blasphemer、ability.censor.driving-assault。日後新增的招式若有相同的複合子句情形，比照辦理。",
+      "resolvedZhHant": "2 神聖傷害；推動 1",
+      "status": "resolved",
+      "decidedAt": "2026-07-30",
+      "decidedBy": "owner",
+      "applyTo": "全站 tiers[].text 內的複合子句分隔符；本輪已套用 arrest／back-blasphemer／driving-assault",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 3,
+        "printedPage": 82
+      }
+    },
+    {
+      "id": "TI-30",
+      "kind": "formatting-rule",
+      "severity": "low",
+      "entityId": "*",
+      "field": "`term` 醒目標示的使用範圍",
+      "issue": "審判：教團益處與怒火兩個 feature 條目把一般規則名詞（傳送、格、效果線、神聖、垂直拉動、戰鬥輪、遭遇、休整）也用反引號標成醒目術語，擁有者於 2026-07-30 M0 驗收時認為不必要——這些是一般敘述用詞，不是需要玩家特別留意的遊戲數值或屬性名稱。",
+      "sourceEn": null,
+      "legacyZhHant": null,
+      "resolution": "移除上述詞的醒目標示；保留真正的遊戲數值／屬性用語（氣場、怒火、勝利值等）繼續標示。這是排版級判斷：哪些詞算「遊戲數值或屬性」由擁有者逐案認定，非固定規則，日後遇到類似情形個別確認。",
+      "resolvedZhHant": null,
+      "status": "resolved",
+      "decidedAt": "2026-07-30",
+      "decidedBy": "owner",
+      "applyTo": "data/zh-Hant/features/feature.censor.judgment-order-benefit.json 與 data/zh-Hant/features/feature.censor.wrath.json",
+      "affectsOnly": "*",
+      "sourceRef": {
+        "document": "heroes-v1.01-04-censor",
+        "pdfPage": 2,
+        "printedPage": 79
+      }
     }
   ],
   "$auditNote": "每個 TI 只影響 entityId／affectsOnly 指定的範圍；`*` 代表全域通則（目前 TI-4 第二人稱、TI-9 英雄資源描述方式、TI-17 教團名稱、TI-18 Respite、TI-20 willing／willingly 片語規則、TI-24 EoT／EoE 縮寫屬此類）。實體檔 data/zh-Hant/**/meta.decisions 只列真正套用到該實體的 TI，不做無關的批次備註。",

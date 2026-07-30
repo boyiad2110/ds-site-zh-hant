@@ -14,7 +14,7 @@
     }
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐句對齊樣張見 docs/samples/alignment-my-life-for-yours.md（2026-07-28 裁決），裁決紀錄已於 2026-07-29 補登為 TI-21～TI-24。",
     "translationSource": "舊 Notion 招式列表 · 捨己為人",
     "commonProcessing": [
@@ -34,7 +34,9 @@
       "TI-23",
       "TI-24"
     ],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.my-life-for-yours",

@@ -7,7 +7,7 @@
   "text": [
     "A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift."
   ],
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-03-class-and-abilities",
     "version": "1.01",

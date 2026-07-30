@@ -6,16 +6,25 @@
   "flavor": "你讓敵人窺見他們死後的命運。",
   "powerRoll": {
     "tiers": [
-      { "threshold": "≤11", "text": "5 + `氣場`心靈傷害" },
-      { "threshold": "12-16", "text": "7 + `氣場`心靈傷害" },
-      { "threshold": "17+", "text": "10 + `氣場`心靈傷害" }
+      {
+        "threshold": "≤11",
+        "text": "5 + `氣場`心靈傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "7 + `氣場`心靈傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "10 + `氣場`心靈傷害"
+      }
     ]
   },
   "effect": [
     "在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。"
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "nameApproval": "逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md；唯一待裁項（willingly 譯名）已裁為 TI-20。",
     "translationSource": "舊 Notion 招式列表 · 踏向死亡！",
     "commonProcessing": [
@@ -23,8 +32,12 @@
       "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
     ],
-    "decisions": ["TI-20"],
-    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。"
+    "decisions": [
+      "TI-20"
+    ],
+    "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-30"
   },
   "canonRef": {
     "id": "ability.censor.every-step-death",

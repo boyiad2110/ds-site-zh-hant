@@ -159,18 +159,10 @@ main { flex: 1; }
 .tier > b { display: grid; place-items: center; background: #292d2f; color: #f1e8d8; font: 18px Georgia,serif; }
 .tier > div { padding: 14px 17px; }
 .tier p { margin: 0; }
-.potency { display: grid; grid-template-columns: max-content 1fr; gap: 12px; align-items: start; margin-top: 10px !important; padding-top: 10px; border-top: 1px dashed #b6afa1; color: #4d3b38; }
-.potency > span { background: #743732; color: #fff7ea; font: 10px ui-monospace,monospace; padding: 5px 7px; }
 .term { color: #743732; font-weight: 800; }
 .entity-link { color: #8c2f2c; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 700; }
-.accent, .conditional, .follow-up { margin: 18px 0; padding: 22px; border: 1px solid #ae9d8e; background: rgba(255,255,255,.25); }
-.conditional { border-left: 5px solid var(--red); }
-.trigger-effect { margin: 0; display: grid; gap: 14px; }
-.trigger-effect div { display: grid; grid-template-columns: 55px 1fr; gap: 15px; }
-.trigger-effect dt { color: #7a3936; font-weight: 800; }
-.trigger-effect dd { margin: 0; line-height: 1.75; }
 .rule-section li { margin: 8px 0; line-height: 1.7; }
-.constraint { color: #70524c; font-size: 13px; }
+.potency-tag { display: inline-block; background: #292d2f; color: #f1e8d8; font: 700 11px ui-monospace,Consolas,monospace; padding: 3px 7px; margin: 0 2px; }
 .definition-list div { display: grid; grid-template-columns: 140px 1fr; gap: 18px; padding: 13px 0; border-bottom: 1px solid #c4bdb1; }
 .definition-list dt { font-weight: 800; color: #783a35; }
 .definition-list dd { margin: 0; line-height: 1.7; }
@@ -238,9 +230,7 @@ main { flex: 1; }
   .ability-stats div:nth-child(2) { border-right: 0; }
   .ability-stats div:nth-child(-n+2) { border-bottom: 1px solid #b5afa2; }
   .tier { grid-template-columns: 65px minmax(0,1fr); }
-  .potency { grid-template-columns: 1fr; }
   .rule-heading { align-items: flex-start; flex-direction: column; }
-  .trigger-effect div { grid-template-columns: 1fr; gap: 3px; }
   .definition-list div { grid-template-columns: 1fr; gap: 5px; }
   .related > div { grid-template-columns: 1fr; }
   .site-footer { align-items: flex-start; flex-direction: column; }
