@@ -16,19 +16,19 @@
       {
         "threshold": "≤11",
         "text": "2 + M holy damage",
-        "potency": { "characteristic": "presence", "level": "weak", "effect": "The target is slowed (save ends)." },
+        "potency": { "characteristic": "presence", "level": "weak", "effect": "slowed (save ends)" },
         "raw": "2 + M holy damage; P<WEAK, slowed (save ends)"
       },
       {
         "threshold": "12-16",
         "text": "5 + M holy damage",
-        "potency": { "characteristic": "presence", "level": "average", "effect": "The target is slowed (save ends)." },
+        "potency": { "characteristic": "presence", "level": "average", "effect": "slowed (save ends)" },
         "raw": "5 + M holy damage; P<AVERAGE, slowed (save ends)"
       },
       {
         "threshold": "17+",
         "text": "7 + M holy damage",
-        "potency": { "characteristic": "presence", "level": "strong", "effect": "The target is slowed (save ends)." },
+        "potency": { "characteristic": "presence", "level": "strong", "effect": "slowed (save ends)" },
         "raw": "7 + M holy damage; P<STRONG, slowed (save ends)"
       }
     ]
@@ -44,6 +44,6 @@
     "pdfPage": 5,
     "printedPage": 82,
     "checkedAt": "2026-07-29",
-    "normalizedHash": "92ad636206c0197cc99f84e5185a9d943c681e98e03e050259285e309e317125"
+    "normalizedHash": "d865575059209385001ccf6d18ade4bee01e0c0ee8e8d27484361f67f5362a52"
   }
 }

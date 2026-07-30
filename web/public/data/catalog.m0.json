@@ -1,6 +1,6 @@
 {
   "release": "m0",
-  "sourceFingerprint": "b96db16eb89740aa",
+  "sourceFingerprint": "ea2b8880d75b2cb2",
   "counts": {
     "total": 28,
     "abilities": 16,
@@ -5924,10 +5924,10 @@
         "pdfPage": 5,
         "printedPage": 82,
         "checkedAt": "2026-07-29",
-        "normalizedHash": "92ad636206c0197cc99f84e5185a9d943c681e98e03e050259285e309e317125"
+        "normalizedHash": "d865575059209385001ccf6d18ade4bee01e0c0ee8e8d27484361f67f5362a52"
       },
       "relatedIds": [],
-      "searchText": "惡徒止步！\nHalt Miscreant!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.halt-miscreant\n惡徒止步！\n你為武器注入神聖魔法，使敵人難以逃離。\n≤11\n2 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n12-16\n5 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\n17+\n7 + `力量`神聖傷害\n目標陷入緩速（豁免解除）\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。\n舊 Notion 招式列表 · 惡徒止步！\nN-1：舊譯的階層儲存格含效力記號「`氣場 < 弱`」，本層一律剝除——效力已在正典結構化為 tiers[].potency，由 renderer 從 potency ＋ 詞彙表組出，不得在此存第二份\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，正典是單一字串，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.halt-miscreant\nheroes-v1.01-04-censor\nability.censor.halt-miscreant\nability\nHalt Miscreant!\nYou infuse your weapon with holy magic that makes it difficult for your foe to get away.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n2 + M holy damage\npresence\nweak\nThe target is slowed (save ends).\n2 + M holy damage; P<WEAK, slowed (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nThe target is slowed (save ends).\n5 + M holy damage; P<AVERAGE, slowed (save ends)\n17+\n7 + M holy damage\npresence\nstrong\nThe target is slowed (save ends).\n7 + M holy damage; P<STRONG, slowed (save ends)\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "惡徒止步！\nHalt Miscreant!\nmelee\n近戰\nstrike\n打擊\nweapon\n武器\nmain\n主要動作\nsignature\n招牌\nability.censor.halt-miscreant\n惡徒止步！\n你為武器注入神聖魔法，使敵人難以逃離。\n≤11\n2 + `力量`神聖傷害\n緩速（豁免解除）\n12-16\n5 + `力量`神聖傷害\n緩速（豁免解除）\n17+\n7 + `力量`神聖傷害\n緩速（豁免解除）\nreviewed\n逐欄對齊報告見 docs/alignment/zh-batch2-alignment.md（本條逐欄全部 exact，零待裁項）。\n舊 Notion 招式列表 · 惡徒止步！\nN-1：舊譯的階層儲存格含效力記號「`氣場 < 弱`」，本層一律剝除——效力已在正典結構化為 tiers[].potency，由 renderer 從 potency ＋ 詞彙表組出，不得在此存第二份\nN-2：舊譯的階層表格分成「傷害／效力」兩欄，正典是單一字串，本層合併為一個 text，欄內以全形逗號「，」分隔（指南 §6）\ntarget「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層\ndistance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）\n2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-31\nability.censor.halt-miscreant\nheroes-v1.01-04-censor\nability.censor.halt-miscreant\nability\nHalt Miscreant!\nYou infuse your weapon with holy magic that makes it difficult for your foe to get away.\nmelee\nstrike\nweapon\nmain\nmelee\nMelee 1\nOne creature or object\nmight\n≤11\n2 + M holy damage\npresence\nweak\nslowed (save ends)\n2 + M holy damage; P<WEAK, slowed (save ends)\n12-16\n5 + M holy damage\npresence\naverage\nslowed (save ends)\n5 + M holy damage; P<AVERAGE, slowed (save ends)\n17+\n7 + M holy damage\npresence\nstrong\nslowed (save ends)\n7 + M holy damage; P<STRONG, slowed (save ends)\nclass\nclass.censor\nsignature\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -5958,7 +5958,7 @@
                 "potency": {
                   "characteristic": "presence",
                   "level": "weak",
-                  "effect": "The target is slowed (save ends)."
+                  "effect": "slowed (save ends)"
                 },
                 "raw": "2 + M holy damage; P<WEAK, slowed (save ends)"
               },
@@ -5968,7 +5968,7 @@
                 "potency": {
                   "characteristic": "presence",
                   "level": "average",
-                  "effect": "The target is slowed (save ends)."
+                  "effect": "slowed (save ends)"
                 },
                 "raw": "5 + M holy damage; P<AVERAGE, slowed (save ends)"
               },
@@ -5978,7 +5978,7 @@
                 "potency": {
                   "characteristic": "presence",
                   "level": "strong",
-                  "effect": "The target is slowed (save ends)."
+                  "effect": "slowed (save ends)"
                 },
                 "raw": "7 + M holy damage; P<STRONG, slowed (save ends)"
               }
@@ -5998,7 +5998,7 @@
             "pdfPage": 5,
             "printedPage": 82,
             "checkedAt": "2026-07-29",
-            "normalizedHash": "92ad636206c0197cc99f84e5185a9d943c681e98e03e050259285e309e317125"
+            "normalizedHash": "d865575059209385001ccf6d18ade4bee01e0c0ee8e8d27484361f67f5362a52"
           }
         },
         "zhHant": {
@@ -6012,17 +6012,17 @@
               {
                 "threshold": "≤11",
                 "text": "2 + `力量`神聖傷害",
-                "potencyEffect": "目標陷入緩速（豁免解除）"
+                "potencyEffect": "緩速（豁免解除）"
               },
               {
                 "threshold": "12-16",
                 "text": "5 + `力量`神聖傷害",
-                "potencyEffect": "目標陷入緩速（豁免解除）"
+                "potencyEffect": "緩速（豁免解除）"
               },
               {
                 "threshold": "17+",
                 "text": "7 + `力量`神聖傷害",
-                "potencyEffect": "目標陷入緩速（豁免解除）"
+                "potencyEffect": "緩速（豁免解除）"
               }
             ]
           },
@@ -6036,12 +6036,13 @@
               "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
               "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
               "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
-              "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）"
+              "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）",
+              "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。"
             ],
             "decisions": [],
             "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
             "reviewedBy": "owner",
-            "reviewedAt": "2026-07-30"
+            "reviewedAt": "2026-07-31"
           },
           "canonRef": {
             "id": "ability.censor.halt-miscreant",
@@ -6579,10 +6580,10 @@
         "pdfPage": 6,
         "printedPage": 83,
         "checkedAt": "2026-07-29",
-        "normalizedHash": "527a156fefcb3ca1ca33b674e066f695726d269aef624b51902272d47e183bd6"
+        "normalizedHash": "b22cbf23cf3948d70b9e74cb1a7e0d1fc483921d57d82bba40f5a64b99b4af0a"
       },
       "relatedIds": [],
-      "searchText": "懺悔吧！\nRepent!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nheroic\n英雄\nability.censor.repent\n懺悔吧！\n你喚起敵人的罪惡記憶，使他心神不寧。\n≤11\n5 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n12-16\n8 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\n17+\n11 + `氣場`神聖傷害\n目標陷入暈眩（豁免解除）\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 懺悔吧！\n**檢定屬性與效力屬性不同**：檢定用`氣場`、效力抵抗用`直覺`。兩者皆為受控欄位，不存於本層\nN-1：效力記號「`直覺 < 弱`」已剝除\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\n本條正典沒有 effect 段落\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-30\nability.censor.repent\nheroes-v1.01-04-censor\nability.censor.repent\nability\nRepent!\nYou conjure memories of their sins to harry your foes.\nmagic\nranged\nstrike\nmain\nwrath\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P holy damage\nintuition\nweak\nThe target is dazed (save ends).\n5 + P holy damage; I<WEAK, dazed (save ends)\n12-16\n8 + P holy damage\nintuition\naverage\nThe target is dazed (save ends).\n8 + P holy damage; I<AVERAGE, dazed (save ends)\n17+\n11 + P holy damage\nintuition\nstrong\nThe target is dazed (save ends).\n11 + P holy damage; I<STRONG, dazed (save ends)\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
+      "searchText": "懺悔吧！\nRepent!\nmagic\n魔法\nranged\n遠程\nstrike\n打擊\nmain\n主要動作\nheroic\n英雄\nability.censor.repent\n懺悔吧！\n你喚起敵人的罪惡記憶，使他心神不寧。\n≤11\n5 + `氣場`神聖傷害\n暈眩（豁免解除）\n12-16\n8 + `氣場`神聖傷害\n暈眩（豁免解除）\n17+\n11 + `氣場`神聖傷害\n暈眩（豁免解除）\nreviewed\n逐句對齊報告見 docs/alignment/zh-batch3-alignment.md（2026-07-29 擁有者逐項裁決）。 本條零待裁項。\n舊 Notion 招式列表 · 懺悔吧！\n**檢定屬性與效力屬性不同**：檢定用`氣場`、效力抵抗用`直覺`。兩者皆為受控欄位，不存於本層\nN-1：效力記號「`直覺 < 弱`」已剝除\nN-2：多欄合併，欄內以全形逗號「，」分隔（指南 §6）\n本條正典沒有 effect 段落\ntarget「1 個生物」可由 §4.4 的組合規則產生，不存於本層\ndistance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層\n階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）\n2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。\n全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。\nowner\n2026-07-31\nability.censor.repent\nheroes-v1.01-04-censor\nability.censor.repent\nability\nRepent!\nYou conjure memories of their sins to harry your foes.\nmagic\nranged\nstrike\nmain\nwrath\nranged\nRanged 10\nOne creature\npresence\n≤11\n5 + P holy damage\nintuition\nweak\ndazed (save ends)\n5 + P holy damage; I<WEAK, dazed (save ends)\n12-16\n8 + P holy damage\nintuition\naverage\ndazed (save ends)\n8 + P holy damage; I<AVERAGE, dazed (save ends)\n17+\n11 + P holy damage\nintuition\nstrong\ndazed (save ends)\n11 + P holy damage; I<STRONG, dazed (save ends)\nclass\nclass.censor\nheroic\nverified\nheroes-v1.01-04-censor\n1.01\n2026-07-29",
       "content": {
         "canon": {
           "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。",
@@ -6616,7 +6617,7 @@
                 "potency": {
                   "characteristic": "intuition",
                   "level": "weak",
-                  "effect": "The target is dazed (save ends)."
+                  "effect": "dazed (save ends)"
                 },
                 "raw": "5 + P holy damage; I<WEAK, dazed (save ends)"
               },
@@ -6626,7 +6627,7 @@
                 "potency": {
                   "characteristic": "intuition",
                   "level": "average",
-                  "effect": "The target is dazed (save ends)."
+                  "effect": "dazed (save ends)"
                 },
                 "raw": "8 + P holy damage; I<AVERAGE, dazed (save ends)"
               },
@@ -6636,7 +6637,7 @@
                 "potency": {
                   "characteristic": "intuition",
                   "level": "strong",
-                  "effect": "The target is dazed (save ends)."
+                  "effect": "dazed (save ends)"
                 },
                 "raw": "11 + P holy damage; I<STRONG, dazed (save ends)"
               }
@@ -6656,7 +6657,7 @@
             "pdfPage": 6,
             "printedPage": 83,
             "checkedAt": "2026-07-29",
-            "normalizedHash": "527a156fefcb3ca1ca33b674e066f695726d269aef624b51902272d47e183bd6"
+            "normalizedHash": "b22cbf23cf3948d70b9e74cb1a7e0d1fc483921d57d82bba40f5a64b99b4af0a"
           }
         },
         "zhHant": {
@@ -6670,17 +6671,17 @@
               {
                 "threshold": "≤11",
                 "text": "5 + `氣場`神聖傷害",
-                "potencyEffect": "目標陷入暈眩（豁免解除）"
+                "potencyEffect": "暈眩（豁免解除）"
               },
               {
                 "threshold": "12-16",
                 "text": "8 + `氣場`神聖傷害",
-                "potencyEffect": "目標陷入暈眩（豁免解除）"
+                "potencyEffect": "暈眩（豁免解除）"
               },
               {
                 "threshold": "17+",
                 "text": "11 + `氣場`神聖傷害",
-                "potencyEffect": "目標陷入暈眩（豁免解除）"
+                "potencyEffect": "暈眩（豁免解除）"
               }
             ]
           },
@@ -6695,12 +6696,13 @@
               "本條正典沒有 effect 段落",
               "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
               "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
-              "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+              "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+              "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。"
             ],
             "decisions": [],
             "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
             "reviewedBy": "owner",
-            "reviewedAt": "2026-07-30"
+            "reviewedAt": "2026-07-31"
           },
           "canonRef": {
             "id": "ability.censor.repent",

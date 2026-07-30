@@ -9,17 +9,17 @@
       {
         "threshold": "≤11",
         "text": "5 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       },
       {
         "threshold": "12-16",
         "text": "8 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       },
       {
         "threshold": "17+",
         "text": "11 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       }
     ]
   },
@@ -34,12 +34,13 @@
       "本條正典沒有 effect 段落",
       "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
       "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
-      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+      "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。"
     ],
     "decisions": [],
     "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
     "reviewedBy": "owner",
-    "reviewedAt": "2026-07-30"
+    "reviewedAt": "2026-07-31"
   },
   "canonRef": {
     "id": "ability.censor.repent",

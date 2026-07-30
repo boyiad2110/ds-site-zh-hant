@@ -1330,7 +1330,7 @@
         "potency": {
           "characteristic": "presence",
           "level": "weak",
-          "effect": "The target is slowed (save ends)."
+          "effect": "slowed (save ends)"
         },
         "raw": "2 + M holy damage; P<WEAK, slowed (save ends)"
       },
@@ -1340,7 +1340,7 @@
         "potency": {
           "characteristic": "presence",
           "level": "average",
-          "effect": "The target is slowed (save ends)."
+          "effect": "slowed (save ends)"
         },
         "raw": "5 + M holy damage; P<AVERAGE, slowed (save ends)"
       },
@@ -1350,7 +1350,7 @@
         "potency": {
           "characteristic": "presence",
           "level": "strong",
-          "effect": "The target is slowed (save ends)."
+          "effect": "slowed (save ends)"
         },
         "raw": "7 + M holy damage; P<STRONG, slowed (save ends)"
       }
@@ -1387,17 +1387,17 @@
       {
         "threshold": "≤11",
         "text": "2 + `力量`神聖傷害",
-        "potencyEffect": "目標陷入緩速（豁免解除）"
+        "potencyEffect": "緩速（豁免解除）"
       },
       {
         "threshold": "12-16",
         "text": "5 + `力量`神聖傷害",
-        "potencyEffect": "目標陷入緩速（豁免解除）"
+        "potencyEffect": "緩速（豁免解除）"
       },
       {
         "threshold": "17+",
         "text": "7 + `力量`神聖傷害",
-        "potencyEffect": "目標陷入緩速（豁免解除）"
+        "potencyEffect": "緩速（豁免解除）"
       }
     ]
   },
@@ -1411,12 +1411,13 @@
       "target「1 個生物或物體」可由 §4.4 的組合規則產生，不存於本層",
       "distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層",
       "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
-      "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）"
+      "「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）",
+      "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。"
     ],
     "decisions": [],
     "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
     "reviewedBy": "owner",
-    "reviewedAt": "2026-07-30"
+    "reviewedAt": "2026-07-31"
   },
   "canonRef": {
     "id": "ability.censor.halt-miscreant",
@@ -1434,6 +1435,7 @@
 - distance「近戰 1」為受控欄位，由 vocabulary 解析，不存於本層
 - 階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）
 - 「緩速」存為純文字。TI-16 處理的是原文明確要求參照【審判】的情形，與舊 Notion 替狀態文字加連結不是同一件事；狀態的實體引用日後由統一的 renderer 機制處理（2026-07-29 擁有者裁定）
+- 2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。
 
 **擁有者裁決**
 
@@ -1943,7 +1945,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "weak",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "5 + P holy damage; I<WEAK, dazed (save ends)"
       },
@@ -1953,7 +1955,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "average",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "8 + P holy damage; I<AVERAGE, dazed (save ends)"
       },
@@ -1963,7 +1965,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "strong",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "11 + P holy damage; I<STRONG, dazed (save ends)"
       }
@@ -2000,17 +2002,17 @@
       {
         "threshold": "≤11",
         "text": "5 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       },
       {
         "threshold": "12-16",
         "text": "8 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       },
       {
         "threshold": "17+",
         "text": "11 + `氣場`神聖傷害",
-        "potencyEffect": "目標陷入暈眩（豁免解除）"
+        "potencyEffect": "暈眩（豁免解除）"
       }
     ]
   },
@@ -2025,12 +2027,13 @@
       "本條正典沒有 effect 段落",
       "target「1 個生物」可由 §4.4 的組合規則產生，不存於本層",
       "distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層",
-      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）"
+      "階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）",
+      "2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。"
     ],
     "decisions": [],
     "conventions": "全域通則見 docs/translation-guide.md §6（排版）與 §7（規則文本一律第二人稱）。",
     "reviewedBy": "owner",
-    "reviewedAt": "2026-07-30"
+    "reviewedAt": "2026-07-31"
   },
   "canonRef": {
     "id": "ability.censor.repent",
@@ -2049,6 +2052,7 @@
 - target「1 個生物」可由 §4.4 的組合規則產生，不存於本層
 - distance「遠程 10」為受控欄位，由 vocabulary 解析，不存於本層
 - 階層改用官方門檻徽章 ≤11／12-16／17+（指南 §5，排版級自動歸一）
+- 2026-07-31 擁有者裁決：效力效果照原版規則書逐字呈現。書上此招寫的是「；P<LEVEL, <效果>」的簡寫形式，本身即含「若效力通過則目標受此效果」之意，不補「目標陷入…」。
 
 **擁有者裁決**
 

@@ -30,7 +30,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "weak",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "5 + P holy damage; I<WEAK, dazed (save ends)"
       },
@@ -40,7 +40,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "average",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "8 + P holy damage; I<AVERAGE, dazed (save ends)"
       },
@@ -50,7 +50,7 @@
         "potency": {
           "characteristic": "intuition",
           "level": "strong",
-          "effect": "The target is dazed (save ends)."
+          "effect": "dazed (save ends)"
         },
         "raw": "11 + P holy damage; I<STRONG, dazed (save ends)"
       }
@@ -70,6 +70,6 @@
     "pdfPage": 6,
     "printedPage": 83,
     "checkedAt": "2026-07-29",
-    "normalizedHash": "527a156fefcb3ca1ca33b674e066f695726d269aef624b51902272d47e183bd6"
+    "normalizedHash": "b22cbf23cf3948d70b9e74cb1a7e0d1fc483921d57d82bba40f5a64b99b4af0a"
   }
 }
