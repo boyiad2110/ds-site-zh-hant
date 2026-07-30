@@ -8,29 +8,41 @@
  * 本腳本驗的是**忠於原文**：把結構化欄位用 shared/canon-format.mjs 的
  * compose* 重新組回書上原文，與同一物件的 raw 比對。
  *
- * 不變式：**不存在未宣告的偏離。**
- * 合理的偏離（消歧義、結構化需要）允許存在，但必須寫進 canon-deviations.json
- * 並附理由，才不會靜默累積。
+ * 三個不變式：
+ *   1. 不存在未宣告的偏離
+ *   2. 宣告是**裁決快照**——條目、欄位、raw、結構化內容都要相符，才算涵蓋；
+ *      同一欄位換成另一個差異時不得沿用舊裁決
+ *   3. 資料裡每個帶 raw 的路徑都必須有對應的組合規則，不得靜默落在檢查範圍外
  *
  *   node scripts/verify-canon-roundtrip.mjs           驗證，失敗 exit 1
  *   node scripts/verify-canon-roundtrip.mjs --list    列出全部差異（用來起草宣告）
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { pathToFileURL } from 'node:url'
 import { p } from './lib/root.mjs'
 import {
   composeCharacteristic, composeDistance, composeExtraCost, composeTier, normalizeForCompare,
 } from '../shared/canon-format.mjs'
 
-const listMode = process.argv.includes('--list')
-const CANON = p('data/canon')
-const declared = existsSync(p('shared/canon-deviations.json'))
-  ? JSON.parse(readFileSync(p('shared/canon-deviations.json'), 'utf8')).deviations
-  : []
+/**
+ * 走訪整個條目，找出**所有**帶 raw 的路徑。
+ * raw 是「這裡有一段書上原文」的標記，用途是守住 checks() 的覆蓋面：
+ * 日後 M1 出現新的資料形狀而 checks() 沒跟上時，該欄位不會靜默落在驗證範圍外。
+ * 路徑格式必須與 checks() 產生的一致（distance.options[0]、powerRoll.tiers[0] …）。
+ */
+export function* rawPaths(node, path = '') {
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i += 1) yield* rawPaths(node[i], `${path}[${i}]`)
+    return
+  }
+  if (node && typeof node === 'object') {
+    if ('raw' in node) yield path
+    for (const [key, value] of Object.entries(node)) yield* rawPaths(value, path ? `${path}.${key}` : key)
+  }
+}
 
-const declaredKey = new Set(declared.map((d) => `${d.entry}|${d.field}`))
-
-/** 每個帶 raw 的欄位配一個組合函式；日後新增欄位只要在這裡登記就自動被守住。 */
-function* checks(entry) {
+/** 每個帶 raw 的欄位配一個組合規則；漏掉的會被 rawPaths 覆蓋面檢查抓出來。 */
+export function* checks(entry) {
   if (entry.distance?.raw) {
     yield { field: 'distance', raw: entry.distance.raw, composed: composeDistance(entry.distance) }
     const options = entry.distance.options ?? []
@@ -55,60 +67,123 @@ function* checks(entry) {
   }
 }
 
-const files = []
-const walk = (dir) => {
-  for (const item of readdirSync(dir, { withFileTypes: true })) {
-    if (item.isDirectory()) { if (item.name !== '_normalized') walk(`${dir}/${item.name}`); continue }
-    if (item.name.endsWith('.json')) files.push(`${dir}/${item.name}`)
-  }
-}
-walk(CANON)
-
-let compared = 0
-const undeclaredList = []
-const differences = []
-
-for (const file of files.sort()) {
-  const entry = JSON.parse(readFileSync(file, 'utf8'))
-  for (const check of checks(entry)) {
-    compared += 1
-    if (normalizeForCompare(check.raw) === normalizeForCompare(check.composed)) continue
-    const record = { entry: entry.id, ...check }
-    differences.push(record)
-    if (!declaredKey.has(`${entry.id}|${check.field}`)) undeclaredList.push(record)
-  }
+/**
+ * 宣告是否涵蓋這筆差異。
+ * 只比對「條目＋欄位」是不夠的：同一欄位日後若變成**另一個**錯誤，舊裁決會把它放行。
+ * 宣告要當成裁決快照，所以 raw 與結構化內容也必須逐字相同——此處刻意用嚴格比對，
+ * 不套 normalizeForCompare，因為擁有者裁決的是那兩段確切的文字。
+ */
+export function declarationMatches(declaration, difference) {
+  return declaration.raw === difference.raw && declaration.structured === difference.composed
 }
 
-if (listMode) {
-  console.log(`共比對 ${compared} 處，其中 ${differences.length} 處與 raw 不同：\n`)
+/** 掃描全部正典條目，回傳差異、覆蓋面缺口與比對次數。 */
+export function scanCanon(canonDir) {
+  const files = []
+  const walk = (dir) => {
+    for (const item of readdirSync(dir, { withFileTypes: true })) {
+      if (item.isDirectory()) { if (item.name !== '_normalized') walk(`${dir}/${item.name}`); continue }
+      if (item.name.endsWith('.json')) files.push(`${dir}/${item.name}`)
+    }
+  }
+  walk(canonDir)
+
+  const differences = []
+  const uncovered = []
+  let compared = 0
+
+  for (const file of files.sort()) {
+    const entry = JSON.parse(readFileSync(file, 'utf8'))
+    const checked = new Set()
+    for (const check of checks(entry)) {
+      compared += 1
+      checked.add(check.field)
+      if (normalizeForCompare(check.raw) === normalizeForCompare(check.composed)) continue
+      differences.push({ entry: entry.id, ...check })
+    }
+    for (const path of rawPaths(entry)) {
+      if (!checked.has(path)) uncovered.push({ entry: entry.id, field: path })
+    }
+  }
+  return { files, compared, differences, uncovered }
+}
+
+function main() {
+  const listMode = process.argv.includes('--list')
+  const declared = existsSync(p('shared/canon-deviations.json'))
+    ? JSON.parse(readFileSync(p('shared/canon-deviations.json'), 'utf8')).deviations
+    : []
+  const { files, compared, differences, uncovered } = scanCanon(p('data/canon'))
+  const declarationOf = (d) => declared.find((x) => x.entry === d.entry && x.field === d.field)
+
+  if (listMode) {
+    console.log(`共比對 ${compared} 處，其中 ${differences.length} 處與 raw 不同：\n`)
+    for (const d of differences) {
+      const declaration = declarationOf(d)
+      const state = !declaration ? '⚠️ 未宣告' : declarationMatches(declaration, d) ? '（已宣告）' : '⚠️ 宣告內容不符'
+      console.log(`${d.entry}  ${d.field}  ${state}`)
+      console.log(`  raw      ${d.raw}`)
+      console.log(`  composed ${d.composed}\n`)
+    }
+    for (const u of uncovered) console.log(`${u.entry}  ${u.field}  ⚠️ 尚未納入檢查`)
+    process.exit(0)
+  }
+
+  const failures = []
+
+  for (const u of uncovered) {
+    failures.push(`${u.entry} · ${u.field} 帶有 raw 但尚未納入 round-trip 檢查`
+      + '\n       請在 scripts/verify-canon-roundtrip.mjs 的 checks() 補上對應的組合規則')
+  }
+
+  // 宣告本身的健全性：不得重複、理由與裁決不得留白
+  const seen = new Set()
+  for (const declaration of declared) {
+    const key = `${declaration.entry}|${declaration.field}`
+    if (seen.has(key)) failures.push(`${declaration.entry} · ${declaration.field} 在 canon-deviations.json 重複宣告`)
+    seen.add(key)
+    if (!String(declaration.reason ?? '').trim()) failures.push(`${declaration.entry} · ${declaration.field} 的 reason 留白`)
+    if (!String(declaration.ruling ?? '').trim()) failures.push(`${declaration.entry} · ${declaration.field} 的 ruling 留白`)
+  }
+
+  let covered = 0
   for (const d of differences) {
-    console.log(`${d.entry}  ${d.field}${declaredKey.has(`${d.entry}|${d.field}`) ? '  （已宣告）' : '  ⚠️ 未宣告'}`)
-    console.log(`  raw      ${d.raw}`)
-    console.log(`  composed ${d.composed}\n`)
+    const declaration = declarationOf(d)
+    if (!declaration) {
+      failures.push(`${d.entry} · ${d.field} 未宣告的偏離\n       raw      ${d.raw}\n       composed ${d.composed}`)
+    } else if (!declarationMatches(declaration, d)) {
+      failures.push([
+        `${d.entry} · ${d.field} 的偏離內容與宣告不符 —— 這是另一個差異，不能沿用舊裁決`,
+        `       宣告的 raw        ${declaration.raw}`,
+        `       實際的 raw        ${d.raw}`,
+        `       宣告的 structured ${declaration.structured}`,
+        `       實際的 structured ${d.composed}`,
+      ].join('\n'))
+    } else {
+      covered += 1
+    }
   }
-  process.exit(0)
+
+  // 反向：宣告了卻已經不存在的偏離要清掉，否則清單會慢慢變成無人看管的忽略名單
+  for (const declaration of declared) {
+    if (!differences.some((d) => d.entry === declaration.entry && d.field === declaration.field)) {
+      failures.push(`${declaration.entry} · ${declaration.field} 已宣告但實際已無差異 —— 請從 canon-deviations.json 移除`)
+    }
+  }
+
+  console.log(`  比對 ${compared} 處帶 raw 的欄位（${files.length} 個正典條目）`)
+  console.log(`  差異 ${differences.length} 處，其中宣告相符 ${covered} 處`)
+  console.log('──────────────────────────────────────────')
+
+  if (failures.length === 0) {
+    console.log('  ✅ 不存在未宣告的偏離，且所有帶 raw 的欄位都在檢查範圍內')
+    process.exit(0)
+  }
+  for (const failure of failures) console.log(`  ❌ ${failure}`)
+  console.log(`  ${failures.length} 項失敗`)
+  console.log('  逐項檢視：node scripts/verify-canon-roundtrip.mjs --list')
+  process.exit(1)
 }
 
-// 反向：宣告了卻已經不存在的偏離要清掉，否則清單會慢慢變成無人看管的忽略名單
-const differenceKey = new Set(differences.map((d) => `${d.entry}|${d.field}`))
-const stale = declared.filter((d) => !differenceKey.has(`${d.entry}|${d.field}`))
-
-console.log(`  比對 ${compared} 處帶 raw 的欄位（${files.length} 個正典條目）`)
-console.log(`  差異 ${differences.length} 處，其中已宣告 ${differences.length - undeclaredList.length} 處`)
-console.log('──────────────────────────────────────────')
-
-if (undeclaredList.length === 0 && stale.length === 0) {
-  console.log('  ✅ 不存在未宣告的偏離')
-  process.exit(0)
-}
-for (const d of undeclaredList) {
-  console.log(`  ❌ ${d.entry} · ${d.field} 未宣告的偏離`)
-  console.log(`       raw      ${d.raw}`)
-  console.log(`       composed ${d.composed}`)
-}
-for (const d of stale) {
-  console.log(`  ❌ ${d.entry} · ${d.field} 已宣告但實際已無差異 —— 請從 canon-deviations.json 移除`)
-}
-console.log(`  ${undeclaredList.length + stale.length} 項失敗`)
-console.log('  逐項檢視：node scripts/verify-canon-roundtrip.mjs --list')
-process.exit(1)
+// 供測試 import 而不觸發執行
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) main()

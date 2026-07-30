@@ -2,8 +2,11 @@
   "$comment": [
     "結構化正典與 raw 原文之間**已知且經擁有者裁決**的偏離。",
     "由 scripts/verify-canon-roundtrip.mjs 讀取；不在此清單中的差異一律視為失敗。",
-    "這不是忽略名單：每一筆都要能回答「哪一筆、哪個欄位、原文是什麼、結構化後變成什麼、為什麼、對應哪條裁決」。",
-    "偏離消失時（例如原文修正後兩者一致）驗證會反過來報錯，提醒把該筆從這裡移除。"
+    "這不是忽略名單，是**裁決快照**——驗證會比對 entry、field、raw、structured 四者是否全部相符：",
+    "  · raw 或 structured 只要有一個字不同，就代表那是另一個差異，不得沿用舊裁決，必須重新確認。",
+    "  · reason 與 ruling 不得留白；同一個 entry+field 不得重複宣告。",
+    "  · 偏離消失時（例如原文修正後兩者一致）驗證會反過來報錯，提醒把該筆移除。",
+    "起草新宣告：node scripts/verify-canon-roundtrip.mjs --list（raw 與 composed 可直接複製）。"
   ],
   "deviations": [
     {

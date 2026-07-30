@@ -468,8 +468,14 @@ node scripts/build-m0-release.mjs --check  # 驗證已提交的 m0.json 是否�
 
 > `verify-canon-roundtrip` 補的是前三者共同的盲點：它們驗的都是**內部一致**，
 > 都通過卻仍發生過結構化欄位比書上多寫字（2026-07-31）。它把每個帶 `raw` 的欄位
-> 用 `shared/canon-format.mjs` 的 `compose*` 重組回原文再比對，**不變式是
-> 「不存在未宣告的偏離」**——合理的偏離要寫進 `shared/canon-deviations.json` 附理由。
+> 用 `shared/canon-format.mjs` 的 `compose*` 重組回原文再比對。三個不變式：
+>
+> 1. **不存在未宣告的偏離** —— 合理的偏離寫進 `shared/canon-deviations.json`
+> 2. **宣告是裁決快照** —— 比對 entry／field／raw／structured 四者；同一欄位換成
+>    另一個差異時不得沿用舊裁決，reason 與 ruling 不得留白，不得重複宣告
+> 3. **覆蓋面自我檢查** —— 資料裡每個帶 `raw` 的路徑都要有對應的組合規則；
+>    M1 若出現新的資料形狀而 `checks()` 沒跟上，會直接報「尚未納入檢查」而不是靜默略過
+>
 > 起草宣告用 `node scripts/verify-canon-roundtrip.mjs --list`。
 
 目前基線（**2026-07-30 擁有者第一輪驗收收盤**，以下數字皆為當日實跑結果；

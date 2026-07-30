@@ -10,6 +10,7 @@ import {
   characteristicLabel, composeCharacteristic, composeDistance, composeExtraCost, composePotencyMark,
   composeTier, distanceLabel, normalizeForCompare, parseRichText, plainText, targetLabel,
 } from '../shared/canon-format.mjs'
+import { checks, declarationMatches, rawPaths } from './verify-canon-roundtrip.mjs'
 
 test('characteristicLabel：字串與 choice 物件都要處理', () => {
   assert.equal(characteristicLabel('might'), '力量')
@@ -88,4 +89,55 @@ test('round-trip 會抓到「效力效果被補述」這個實際發生過的缺
 
   tier.potency.effect = 'slowed (save ends)'
   assert.equal(normalizeForCompare(composeTier(tier)), normalizeForCompare(tier.raw))
+})
+
+test('宣告是裁決快照：同一欄位換成另一個差異不得沿用舊裁決', () => {
+  const declaration = {
+    entry: 'ability.x', field: 'powerRoll.tiers[0]',
+    raw: '3 + M holy damage; if the target has P<WEAK, each enemy is frightened of you (save ends)',
+    structured: '3 + M holy damage; P<WEAK, Each enemy is frightened of you (save ends).',
+  }
+  const sameDifference = { raw: declaration.raw, composed: declaration.structured }
+  assert.equal(declarationMatches(declaration, sameDifference), true)
+
+  // 結構化內容變成另一個錯誤（frightened → dazed）：raw 沒變，但不能再視為已宣告
+  assert.equal(declarationMatches(declaration, {
+    raw: declaration.raw,
+    composed: '3 + M holy damage; P<WEAK, Each enemy is dazed (save ends).',
+  }), false)
+
+  // 原文本身被改動，也要重新裁決
+  assert.equal(declarationMatches(declaration, {
+    raw: '3 + M holy damage; if the target has P<AVERAGE, each enemy is frightened of you (save ends)',
+    composed: declaration.structured,
+  }), false)
+})
+
+test('覆蓋面：rawPaths 找得到的路徑，checks() 都要處理得到', () => {
+  const entry = {
+    id: 'ability.x',
+    distance: { kind: 'choice', raw: 'Melee 1 or ranged 5', options: [
+      { kind: 'melee', value: 1, raw: 'Melee 1' }, { kind: 'ranged', value: 5, raw: 'Ranged 5' },
+    ] },
+    powerRoll: {
+      characteristic: { kind: 'choice', options: ['might', 'agility'], raw: 'Might or Agility' },
+      tiers: [{ threshold: '≤11', text: '2 damage', raw: '2 damage' }],
+    },
+    extraCosts: [{ resource: 'wrath', value: 1, effect: 'X.', raw: 'Spend 1 Wrath: X.' }],
+  }
+  const found = [...rawPaths(entry)].sort()
+  const checked = [...checks(entry)].map((c) => c.field).sort()
+  assert.deepEqual(found, [
+    'distance', 'distance.options[0]', 'distance.options[1]',
+    'extraCosts[0]', 'powerRoll.characteristic', 'powerRoll.tiers[0]',
+  ])
+  assert.deepEqual(checked, found, 'checks() 沒涵蓋到所有帶 raw 的路徑')
+})
+
+test('覆蓋面：新增未知的 raw 欄位會被指出來（模擬 M1 的新資料形狀）', () => {
+  const entry = { id: 'ability.x', duration: { kind: 'encounter', raw: 'Until the end of the encounter' } }
+  const found = [...rawPaths(entry)]
+  const checked = new Set([...checks(entry)].map((c) => c.field))
+  assert.deepEqual(found, ['duration'])
+  assert.equal(checked.has('duration'), false, '若日後 checks() 支援了 duration，請同步更新本測試')
 })
