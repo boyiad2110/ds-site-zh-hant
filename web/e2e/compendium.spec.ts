@@ -1,5 +1,8 @@
+import { readFileSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
+
+const catalog = JSON.parse(readFileSync(new URL('../public/data/catalog.m0.json', import.meta.url), 'utf8'))
 
 test('搜尋、篩選與網址狀態', async ({ page }) => {
   await page.goto('/compendium')
@@ -39,6 +42,21 @@ test('手機版沒有水平溢位且主要流程可操作', async ({ page }) => 
   expect(widths.scroll).toBeLessThanOrEqual(widths.client)
   await page.getByLabel('搜尋規則庫').fill('Judgment')
   await expect(page.getByRole('link', { name: /審判/ }).first()).toBeVisible()
+})
+
+/** 每一筆條目都要真的畫得出來。資料層的驗證只保證欄位齊全，不保證渲染路徑走得通——
+ * 基礎打擊的 powerRoll.characteristic 是物件而非字串，就曾讓那兩頁整頁空白。 */
+test('28 筆條目頁全部渲染得出來，且沒有 runtime 錯誤', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(String(error)))
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()) })
+
+  for (const entry of catalog.entries) {
+    errors.length = 0
+    await page.goto(`/compendium/${entry.type}/${entry.slug}`)
+    await expect(page.getByRole('heading', { level: 1, name: entry.name.zhHant })).toBeVisible()
+    expect(errors, `${entry.id}：${errors[0] ?? ''}`).toEqual([])
+  }
 })
 
 test('首頁與條目頁沒有嚴重無障礙問題', async ({ page }) => {

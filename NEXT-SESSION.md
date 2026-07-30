@@ -1,15 +1,45 @@
 # 下一個對話的啟動說明
 
-> 建立於 2026-07-28，最後更新 **2026-07-30**（Claude：M0 第 8 步逐筆驗收**三輪後全數完成**——28／28 筆 `canonReviewStatus: verified`、`meta.status: reviewed`）。
+> 建立於 2026-07-28，最後更新 **2026-07-31**（Claude：網站視覺全面重做為「紙本規則書」；
+> 導入官方符號字型；效力效果照書逐字修正並經擁有者重新核准）。
 > **新對話請先讀本檔，再讀下列文件。**
 
 ---
 
-## ✅ M0 第 8 步已全數完成（2026-07-30）
+## ✅ M0 仍是 28／28 全數核准（2026-07-31 重新確認）
 
-28 筆內容（16 招式、9 狀態、3 職業特性）**全部核准**，`canonReviewStatus` 與繁中 `meta.status` 均已升級。
-`node scripts/verify-zh-structure.mjs`、`verify-canon-hash.mjs`、`build-m0-release.mjs --check`、
-`node --test "scripts/**/*.test.mjs"`（132/132）、`web` 的 vitest（8/8）與 `tsc -b` 全數通過。
+2026-07-31 擁有者指出**效力效果多寫了原版規則書沒有的字**，已修正並當日重新核准：
+
+| 招式 | 書上原文尾段 | 原本存的（已修正） |
+|---|---|---|
+| 惡徒止步！ | `slowed (save ends)` | `The target is slowed (save ends).`／「目標陷入緩速（豁免解除）」 |
+| 懺悔吧！ | `dazed (save ends)` | `The target is dazed (save ends).`／「目標陷入暈眩（豁免解除）」 |
+
+**裁決：`；P<LEVEL, <效果>` 這個簡寫本身就含「若效力通過則目標受此效果」之意，不得自行補述。**
+書上本來就寫完整句子的（如【直視正義威儀！】的 `if the target has P<WEAK, each enemy…`）維持原樣。
+【當場拘捕】內文的「花費 3 點怒火」**不改**——內文為求語句通順可以加「點」，只有段落標題不加。
+
+修正涵蓋正典、`_normalized` 快照（雜湊重算）與繁中三層，流程上先退回 `draft` 再由擁有者核准，
+`reviewedAt` 為 2026-07-31。
+
+## 網站（2026-07-31 全面重做）
+
+視覺方向由擁有者裁定為**紙本規則書**，取代前一版的深色風格（評語：「AI 味、廉價、裝飾太用力」）。
+站名亦更正為 **英雄爭鋒｜Draw Steel 中文資料庫**（前一版自創的「鑄鋼典藏」已全數移除）。
+
+- 招式頁仿原版規則書卡片：名稱＋右上角費用、引言在關鍵詞上方、關鍵詞／動作／射程／目標同一區塊、
+  段落標題內嵌成粗體引導詞、全卡只有兩條分隔線。
+- **官方符號字型已導入**：`web/public/fonts/DrawSteelGlyphs-Regular.otf`（CC BY-SA 4.0，
+  已在頁尾標示出處，`.gitignore` 為此開了單一例外）。字元對應見 `docs/alignment/method-validation.md`，
+  **不得自行猜測**。效力記號與傷害屬性則用中文黑底白字徽章，不用字型的拉丁縮寫。
+- 驗收頁 `docs/m0-owner-review.html` 已改用與網站相同的樣式與排版（符號字型以 base64 內嵌，
+  維持單一自足檔案），避免兩邊不一致造成混淆。
+- 新增迴歸測試「28 筆條目頁全部渲染得出來」——修復基礎打擊因 `powerRoll.characteristic`
+  是物件而整頁空白的缺陷時補上，堵住「資料驗證通過但畫不出來」這個既有缺口。
+
+驗證現況：`verify-canon-hash`（28/28）、`verify-zh-structure`（28/28）、`validate-terms`、
+`build-m0-release --check`、`node --test "scripts/**/*.test.mjs"`（132/132）、
+`web` 的 vitest（8/8）、Playwright（12/12，含 axe）與 `tsc -b` 全數通過。
 
 **M0 資料與呈現面已無阻擋項。** 下一個對話可以視擁有者指示，決定是否：
 (a) 把 M0 當成正式上線內容，處理部署／分享相關事宜；或

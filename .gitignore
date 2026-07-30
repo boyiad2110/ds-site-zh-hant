@@ -1,7 +1,12 @@
 # ─────────────────────────────────────────────────────────────
 # 授權素材 —— 絕對不得進版控
-# 官方 PDF 與字型為 MCDM 授權素材，不得散布。
-# 專案僅在本機持有並用於抽取，抽取結果的範圍另見 README 的授權說明。
+# 官方 PDF 為 MCDM 授權素材，不得散布。專案僅在本機持有並用於抽取。
+#
+# ⚠️ 符號字型是例外，不要跟 PDF 混為一談：
+# `sources/drawsteelglyphs/FontLicense.txt` 明載 Draw Steel Glyphs Font
+# © 2025 MCDM Productions 採 **CC BY-SA 4.0**，允許散布，條件是標示出處。
+# 因此網站實際使用的那一份放在 web/public/fonts/ 並納入版控（見下方例外），
+# 頁尾已附授權標示。sources/ 下的工作副本仍排除，避免與官方字符表 PDF 混在一起。
 # ─────────────────────────────────────────────────────────────
 sources/official/
 sources/drawsteelglyphs/
@@ -10,6 +15,9 @@ sources/drawsteelglyphs/
 *.ttf
 *.woff
 *.woff2
+
+# 網站散布用的官方符號字型（CC BY-SA 4.0）—— 少了它，射程／目標／階層符號會退回拉丁字母
+!web/public/fonts/DrawSteelGlyphs-Regular.otf
 
 # 由官方 PDF 算繪出的頁面圖像 —— 等同於重製官方版面，一律排除
 docs/**/evidence/

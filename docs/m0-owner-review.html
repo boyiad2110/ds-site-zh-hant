@@ -2,135 +2,158 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M0 驗收清單（白話版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap">
 <style>
+@font-face {
+  font-family: "Draw Steel Glyphs";
+  src: url(data:font/otf;base64,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e/hJFSYKE++AJwr7FDkVKAoT94ApCv3G2hUqClJ1FSsK+FOEFSwKDviR856m1veGngGWnvcc1fcangP3X/cqFZ+cnJ+fep13d3p5d3ecep8fpfcNFZT3LwWRhpGFHlsGhYWFhR+V+y8FhZCGkR6oBpGRkJEf+1v7AxX3ogefnJyfHveiBp+ce3cf+6IHd3p5dx77ogZ3epyfH3h8FXWeeKEe98AGoZ6foR/3wAeheJ11HvvABnV4eHUfDviR+1y90vdV+Qq9AYu99/X3VPfvvQP4hzwVwLa2wcBgtlZWYGBWVbZgwB/O984VovgnBZt+mHse+xEGe35+ex+j/CcFe5h+mx7YBpuZmJsf/Jj7tBX5UQe+t7i+HvlRBr64X1gf/VEHV19dWB79UQZYXrm+H1lkFS0KDvtc/wB5V0z/AMCn7/8AXBH//wHNair/AH6EnAH4h///sVdAFf//ysfA///U5ID/ACsbwP8ANThA/wA1OED/ACsbgP8AKxvA/wA1OED/ADU4QP8AKxvA///U5ED//8rHwP//ysfA///U5ED//9TkQP//ysfAH/8AQoaA/wE5/0AV///wCMD///KxwP//8rIA///wCMAe//+y1MAG///wCMD///KyAP8ADU4A/wAP90Af///oDQD/AZLfwAX/AA/3QP8ADU5A/wANTgD/AA/3QB7/AH0RAAb/AA/3QP8ADU4A///ysgD///AIwB///bKGwP/9JcnAFS0KDvin+YgV///4gAD/AAyAAP//84AA/wAGQAD///OAAIv///OAAIv///OAAP//+cAA///4gAD///OAAAj7GPur+8NmBf//7ZOI///8DVT///Tvu///7+3xi///7zOxi///90TI/wAC/TP///cSdv8ABn+K///4ecwI93L7alP7vgX////bDv///prg////7gP///6gNIv///6mKov//+qcaP8AEZ0n///wchL/ABQ0zIv/AAUMO4v/AAU1pf8AAPh//wAFIxz/AAIXyQj3ofcj96H7IwX/AAUjHP///eg3/wAFLGH///8Hgf8ABP04i/8AE+5Ii/8AEP24/wAPfa6L/wAVUlCL/wABZJ/////tb/8AAWr+////2dz/AAFwrQhU9773cvdqBf8ABlVV/wAHVVX/AALjj/8ACKqri/8ACIS+i/8AEQl7///0ccf/ABBxx///7VVV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B+wA///rN3CL///rN3CL///rPZD///gUAP//8DRA///wNED///AbtP//8BtW///4CLT//+svRYv//+scdAiL///4iYT/AAEES///+Icd/wACCQ3///i9UP//+K5h/wACFWv///h2//8AAQq2///4ebSL///rQzKL///rV7f///gWPv//8CwD///wLGH///AbwP//8BvA///4DeD//+s3cIv//+s3cIv//+s3cP8AB/Ig///rN3D/AA/kQP//8BvA/wAP1OH///Arv/8AFL1S///4FFD/ABTBV4sI/wAUyYaL/wAUzY//AAfx8P8AD+dh/wAP5wEI/wJh6ID/AF29QBX//+XugP//5e5ABf8AH2ZA///lwED/ABrywP//4JAA/wAVKsD//9zUQAj/ACC8gP8AILwABf8AAgiA///9ZcD/AAImQP///XRA/wACZYD///2agP8AD+SA///wG+D/ABTIkP//+A3w/wAUyHiL/wAUyHiL/wAUyGD/AAfyEP8AD+Qg/wAP5CD/AA/U8f8AD9Ux/wAH7AD/ABS9fIv/ABTBbIv/ABTJcf//+A3g/wAUzWX///AYr/8AD+dR///wLMb/AA/TOv//6z1N/wAH6ar//+tIc4sI///4e4+L///4fQf///71Sv//+Ltk///96pL/AAIK9f8ABz0l/wABBe//AAd41Yv/AAd56ov/ABTQzP//+BF+/wAU2S7///APXv8AD/Ci///wMPH/AA/PD///6ziV/wAH7CL//+s2iov//+s+lIv//+s8i///+Bn+///wKxH///Aq0f//8Buw///wG/D///gUEP//6zF6i///6zeNCIv//+s3Y/8AB+wQ///rPXb/AA/LsP//8DQw/wACbUD///2TQP8AApPA///90UD/AAKkAP///fDACP8AXNuA//2sUEAV///9kkD///2SwP///dFA///9a8D///3xQP///VwACP//vlVA/wBBqoAF///uuED//+ttgP//7GOA///tAMD//+noAP//7yxA///080D///ePgP//9riA///2EwD///ilgP//9Q4ACP8AQiQA//+928AF///9ZcD///33AP///XTA///92kD///2aAP///ZqACBPkYP//8Bvg///wG4D///gN8P//6zdwi///6zeIi///6zeI/wAH8hD//+s3oP8AD+Qg///wG+D/AA/U8f//8CrP/wAUvXz///gT4P8AFMF8i/8AFMmBi/8AFM2F/wAH8kD/AA/nUf8AD+eR/wAP08P/AA/Tw/8AB+oI/wAUwxKL/wAUt5uL/wAHhCj///71U/8AB4Kl///96qL/AAdEQwj/AAc9Hf///fUN/wAHeMz///76Ef8AB3nhi/8AFNDVi/8AFNk4/wAH7pv/AA/wqf8AD/EH/wAPzw//AA/PD/8AB+wi/wAUx2uL/wAUyXaL/wAUwWz///gZ/v8AFMN1///wKtH/AA/U7///8Bvg/wAP5GD//+sxYP8AB+wQ///rN3iL///rN3iL///rPZD///gT8P//8DRA///wNCAI//3GpcD////kgBX//+kQQP8AETZA///rgYD/ABN5wP//7h9A/wAVTUAI//++eAD//754QAX///3xQP8AAqPA///90cD/AAKUAP///ZJA/wACbkD///AxAf8AD87f///rOK//AAfr8v//6zani///6z6Hi///6zyB///4Gg7///ArIf//8Csh///wG8D///AbgP//+BQA///rMVCL///rN4CL///rN4D/AAfsAP//6z2w/wAPy8D///A0QP8AD+R////wG4H/ABTROv//+Ai0/wAU47qLCP8AB3Yyi/8AB3iO/wABBDL/AAdCTf8AAgjZCBP0QP///eqV///4rmH///71Sv//+Hb/i///+Hm2i///60M5/wAH6cL//+tX0P8AD9Of///wLGH/AA/kgP//8BuA/wAUyJD///gNwP8AFMiAi/8AFMiAi/8AFMhw/wAH8kD/AA/kQP8AD+SA/wAP1RH/AA/U0f8AB+wQ/wAUvWyL/wAUwXSL/wAUyXn///gN0P8AFM2F///wGI//AA/nUQj///2agP8AAmWA///9c8D/AAIlQP///WVA/wACCIAI/wBCPwD/AEI/QAX///kTQP8ACo4A///3bcD/AAlegP//9eZA/wAHjgAI/wGpZID/ABJQgBUT7tD/AFIJ3f8APnvT/wA1Eg//AGK4gYv/AG85t4v/AA6uC////xNX/wAO5c////4Yff8ADw+b///sbcD/AJsYQP//ghDA/wB7pED//2SigP8AESSA///y3Rv/AAFzNv//8v4P/wAAtOf///MoaYv//0LQj4v//2a4Hv//ZqS2i///Qsfti///j9UA/wA128D//5yEwP8AU0gA///BgYAI/wAiSQD//+ZbQP8AEwgA///W1ACL///VNsAI///Zh8AH///iKwD/ABgpQP//59dA/wAd1MAe/wAHsUD/AC0VgAb/AAqHgP8ACICA/wAIgID/AAqHgP8ACoeA/wAIgID///d/gP//9XiAHv//0uqA/wAhV4D/AC0VgAf/AAqHgP8ACICA/wAIgID/AAqHgP8ACoeA/wAIgID///d/gP//9XiAHv//0uqA/wAhV0D/AC0VgAf/AAqHgP8ACIDA/wAIgID/AAqHgP8ACoeA/wAIgID///d/gP//9XiAHv//0uqA/wAHsUAH/wAd1MD/ABgpQP8AGClA/wAd1IAf/wAow0AH/wAAAYD/ACsOgP8AFQ6A/wAnr0D/ACJIwP8AGi7ACP/+m/DA/wBz+EAV///OWID//9fbQP8AKCTA/wAxp4D/ADGLQP8AKCTA/wAoJMD/ADGngB8T7UD/ADGLwP8AOmSA///8jYD//850QP//zlkA///Fm4D//7MpAP//znRAH/8AuIwA//9v3sAV//+4EsD/AAALQAX///L+/P8AAAI3///22JL/AAqs1Yv/AAuCbYv/AAQSm/8AASVu/wAELVn/AAKHBP8AA9iTCP8AI/NA/wA2tUAF/wAEXuD/AAanQP8ABxAw/wADU6D/AAcQOIv/AAcQOIv/AAcQQP///Kxg/wAEXwD///lYwAj/ACP6gP//yT+ABf8AAoae///8J5X/AAElO///+9Lpi///++2mi///9HwB///21oD///VR2///8v3Hi/////7gi/////7gi/////7giwj/AHCkgP8AkCFAFf//znRA///Fm4D/AEzXAP8AMaeA/wAxi8D/ADpkgP8AA3KA/wAxi8AfE+VQ/wAxp4D/ACgkwP//19tA///OdMD//85YAP//19tA///X20D//85YgB8O//9M1T//ASOqwf8AKarB/wEjqn//ACmqwP8BI6rBAf8AFNU//wEjqsH/ACmqwf8BI6p//wApqsD/ASOqwQP/ATiAAP8CzKrAFf8AI2qA///k6sD/ABsVgP//3JVAHv//WVVABv//3JWA///k6oD//+TqgP//3JWAH///WVVAB///3qrA/wAbFYD//+LVQP8AI2qAHv8ApqrABv8AI2rA/wAbFUD/AB0qwP8AIVVAH///WVVABP8AI2rA///k6sD/ABsVQP//3JVAHv//WVVABv//3JWA///k6oD//+TqwP//3JVAH///WVWAB///3qqA/wAbFYD//+LVgP8AI2qAHv8ApqrABv8AI2rA/wAbFUD/AB0qgP8AIVWAH///WVVABP8AI2rA///k6sD/ABsVQP//3JVAHv//WVVABv//3JWA///k6oD//+TqwP//3JVAH///WVVAB///3qrA/wAbFYD//+LVQP8AI2qAHv8ApqrABv8AI2rA/wAbFUD/AB0qwP8AIVVAH/8BTVVA/wNBVYAV/wAjaoD//+TqwP8AGxWA///clUAe//9ZVYAG///clUD//+TqwP//5OqA///clYAf//9ZVUAH///eqsD/ABsVQP//4tVA/wAjasAe/wCmqoAG/wAjasD/ABsVQP8AHSrA/wAhVUAfi///WVVAFf8AI2rA///k6sD/ABsVQP//3JVAHv//WVWABv//+FKHi///+LbJ///+ujD///lL8P///aVF///+/In///+k3v///v/x////nor///8Dhv///5hg///pa1b///a7cf//8L9q///qHWuL///la+cI//9ZVYAH///eqoD/ABsVQP//4tWA/wAjasAe/wCmqoAG/wAjasD/ABsVQP8AHSqA/wAhVYAfi///WVVAFf8AI2rA///k6sD/ABsVQP//3JVAHv//WVWABv//3JVA///k6sD//+TqwP//3JVAH///WVVAB///3qrA/wAbFUD//+LVQP8AI2rAHv8ApqqABv8AI2rA/wAbFUD/AB0qwP8AIVVAH/8BTVWA/wNBVYAV/wAjaoD//+TqgP8AGxWA///clYAe//9ZVUAG///clUD//+TqwP//5OqA///clYAf//9ZVUAH///eqsD/ABsVQP//4tVA/wAjasAe/wCmqsAG/wAjaoD/ABsVgP8AHSrA/wAhVUAfi///WVVAFf8AI2rA///k6oD/ABsVQP//3JWAHv//WVVABv//3JVA///k6sD//+TqwP//3JVAH///WVWAB///3qqA/wAbFUD//+LVgP8AI2rAHv8ApqrABv8AI2qA/wAbFYD/AB0qgP8AIVWAH4v//1lVQBX/ACNqwP//5OqA/wAbFUD//9yVgB7//1lVQAb//9yVQP//5OrA///k6sD//9yVQB///1lVQAf//96qwP8AGxVA///i1UD/ACNqwB7/AKaqwAb/ACNqgP8AGxWA/wAdKsD/ACFVQB8O+1H4Q9j4bAH3nPhsA/iI99MVzIvDorm5ubmiw4vMi8x0w125XblTokqLSotTdF1dXV10U4tKCItKolO5Xbldw3TMiwiLBPgx+64Vip6IoIehh6GGoIWehZ+CnoCegJ5/nXyZfJp4lnWUdpRzjnKLCIGLgYd4f3+EfoJ8gX6DeoR2hHaEdYd2i3aLdo92knaSeZJ+kwh8lX6Tf5N4l4KPgYtyi3KIdoJ1gnmAfHx8fX55gHiAeIN4hXcIhXiFdod1h3WIdop4iniLeIt3i1ibYqtsq220fL6LCPhsBr6LtZqrqauqm7SLvoufip6KngiLBA74iv//xeAA/wAcA48B/wCoIAD/ABqQAAP/AG+QAPktFf8AH0AA//2lgAAF/wAJvwD/AAodgP8ACk7A/wAJLUD/AAsyQP8ACIVA/wAAADD/AAAAK/8AAAAX/wAAAd2L/wAAA42L/wAD/en//+H/uf8CJWyCi4v/AL3Y+P//pDIy/wB9MEL/AF67I/8AutbG//9lgqv/ABiwAP8AGpAA/wAoUAD/ACZwAP8AGLAA/wAYEAD//50nt/8AWG3a//+pXIP/ABNcyv//rPBaiwj//79JUov//8F1Pv//9D8v//+/jH+L///JZ8uL///ICRr/AAhu5v//xC94/wAfJ0eF/wADIAD///8WAP8AAdZA///7f0CL///3YECL///4/8D///j/wIv///dgQIv///1uwP8AAKFA///9jkD/AAEZgP///dzA/wAIJ0D///JygP8ACsYA///0gAD/AAzywP//9v2ACP8DJaAA/YwV///jUzX/AByuO///+Bao/wAoS/iL/wAwQoWL/wA7aon/AAv9/P8AR3yKi/8ATL1Ni/8AYv1X///sC67/AGu6+P//pJx5/wBl1pn/AAAACP8AAAAb/wAAAAT/AAAAFov/AAAAEwj/AAAALf/////q/wAAABb/////1P///9O9///prHn//+l/eYse//+8gAD//7yAAAX/AJ3ZoP//RU3p//+gAJz//4FKZ/8AWqXE//9BB7D///1xdIv//jXdW/8AGdOS//+sfTCL///3ph+L///7ZSj///+94v////i6////bowI///k0AD//+TQAP8CXVAA///gwAAF/wAXGU3//+VNJf8ADeB2///4DtP/AAhVv4v/AAwclov/AABo6P8AEMUmi/8AAFuii/8ABLlA///98AD/AAQ+gP///LsA/wAC64AI//1+wAD/AEtQABX/AAPFXP8AA8Vc/wABIgD/AAsI14v/AAu3Z4v/AAtz6v///uro/wAMGrX///89vP8ABpvH///+gAD/AA0QAP8AA8AA/wAcEAD//+rAAIsI///jQAAG///7zM2L///0KwL/AADdL///9Cx7i///8zAxi///8zHr///+/Gv///zpmv//+8ZmCP///YAA///9gAD//+DAAP//4lAA///Q0AD//8/gAAX///06AP///S4A///+ScD///wiAIv///u8QIv///dggP8ABwCA///4/4D/AAifgIv/AABAAIv/AAedGf8AACA+/wAAPyf/AAADgp2M/wASsAD/AAEQAP8AEnAA/wAA8AAITwf/AAAewP//93rA/wAG9ED///kegP8ACIyAi/8ABEHAi/8AA90A/wABs0D/AALRwP8AAsOACIuLBf8AAAIA/wArwAD/ACu+AIse/wAz4AD/AIAgABX/AgowAP8CCKAA/wAnsAD//9hQAAX/AALRQP///T6A/wAD2wD///5NAP8ABD/Ai/8AB5PAi/8ABlPA/wAFawD/AAFsgP8ABymACP8AFjAA9xEF/wAAHyr/AADGgf8AAA4W/wAAy7+L/wAAzwCL/wAIy8D///jbwP8AByRA///3NECL////MQCL////OID////sgP///zlA////4kAIi//////+/wAAAAH//////v///+WD//+DGoH//+nP/4se///4t8D///6HwP//+oJA///5j0CL///4SYCL///7xMD/AAGkQP///CWA/wACscD///0lQAiLiwX/AAAEOf8AHQvH///iUACLH/8ACvAA///1EAD//7/wAP//wEAA//420AD//jaAAAX/AArLQP///VWA/wAImcD///e3wP8AAxsA///1YsAIDnb7R3b6fHcBi/d69xD3BQP4Z/m0FfwYBl9oaF8f/d4HX65otx74GAb7BfmAFfyQ+xD4kAcO9w6zFWRlVFQFhISLf5KEj4eQipCLoIupjqCMCEYHgZODlR6Qi5CNjo4Ivb62tgWOjo2Ri5MIicsFmoiceR5qBoaLfox+i3yLfImHhwj4sIgV9x/7H+rq+x/3HwVsdG9xc22HhoeFh4YIgfcIFYCBBXJ1eG95b3pxf3Z9aIiDi4KOg46DkoSTiI+JkIuPi5iLl5KQmAi29wPe2/cMwY+Njo2OjpGRjpOLlIuQio+JkIiThJGDjoeMh4yHiwiGi4eKh4lIalRmYWMI9yn74RWShJSIlIuUi5WOkpIIqKjo6QWSko6Ti5WLlYiUhJKEkoGOgouCi4KIhIQI+w77DwWEhIeDi4GLgY+CkoQI/Mj6VxX7WJIFg4uDiIWFhYWIg4uCCJL7VwWLgo+DkoUI+K78Z6CpBZidmZybmwj8f/h/BYiOi5COjo2NjYuNi42LjIuNiQj4f/x/BaWkqKKrnwj8aPivBYWSg4+Ciwj3IvzQFfsq+yoFl4iVgY9/CPcr9ysF+K341xWKjImKiYsI+yRxBYGJhIGNgYyIjYiNiAitaZd+QUL7O/s8o2/3iPeIuV0FkoSXi5KSjY2Mj4yOCKX3JQWNlYOWgYsIDvg9+1z3hPiQ95ABi/d6+M73BQP6JftcFfp8/dYHX2hoXx/93gdfrmi3Hvll+YAVPQoO7f//aeTd/wEcUrAS/wABKTv/ASDWyf//y//8v/c8/wAWsAATsPhg97AVjY6MjoyNjpSPk42U/wAFG93/ABI+7/8AApQm/wASHNiL/wAR4eCL/wAfHxz///gwhf8AHmx////wH3j/AB02voSYg5iCl32eept6nAh+mX2YfplpsW60dLmGlIeVhpSKjYqNiIoIi3+LMQWLIIohiyCLQ4pCi0OLiYuJioiIjIiMiYyFjoaPhY7//+qDNv8ACyRD///onM7/AAYTKv//57h1iwj///nFa4v///m2ZP///5ml///5q7j///8u7luEaHN0YAgT0P//9KtZ///qavL///p94v//6iBsi///6f4ai///7Tgs/wAEAuv//+0fLv8AB9Pa///tHy6Td5l6m33/ABpr2f//6CK4/wAeDan///PCHP8AIa95i/8ABdZqi/8ABfJX/wAAXh7/AAYORP8AAL0OtZCsnaStCBOwn6aWqYutCIuii/fji/UFi46JjY6Nj42NiI2JpW+ocql0lYSUg5SDonaccpFsCIuJjImMiAgO//9W8CH/AE5Ov/8AHyKj/wA+frL/AAA/S/8AXa++///BWL//AD6GK/8AH0K9/wA+hPH//8GZRf8AXcf9////4b3/AD5lr///4P8u/wBdx/3//+B72v8APnzu/wAARyv/AF2Ywf//wWMm/wA+frL/AB9l6v8APof9/wAfP/L/AD6Hwv8AH0Au/wBN+QMS/wAfP33/AKv/vv//g1Fv/wB8rpj/AC6w3/8AjLeN//9zSHP/AF3Hwv8AHyDy/wBeBoH/AB8/5f8AXaiA/wAfP/P/AF3Hwv8AH0Au/wBdx8IT5Vyc9633chX//+DwQP///9cABRPlXFyL//+iOAD/AB9IAP8AAB5ABf8AFUxA/wAAiED/AAAgQP//39RA///qsoD/AABjwAgT5Vyc///gmQD////hwAUT5Vx8//+iUED/AB9HwAf/AAAnqP8AAADh/wAAJ1//AAAAb/8AACcViwj/AApXw/8ABSvh///4L0j///gvSP//+C9I///61B////gvSP//9ag9H////9jri////9ih/wAAAG/////YWP8AAADhCP//4LhA//+C+EAG/wAACMD///dfAP8ABwXA///5CED/AAihQP8AAAiACP8AThgA/wAADwCL/wAfMIAF////1MD/AAikQP8ABuDA/wAHIwD/AAikQP8AACbA/wAIz0D/AAAeQP8AByPA///4woD////UAP//9zFACIv//+DPgP8AXgaA////8QCL/wAfQAAF////5gD/AAiVQP8ABtcA/wAHDsD/AAiUwP8AACrA/wAI0gD/AAAtgP8ABzbA///41gD////lgP//9y3ACIv//+DAAP8AXaiA/wAADwCL/wAfMIAF////1ED/AAitAP8ABu9A/wAHJ0D/AAitgP8AABnA/wAI0kD/AAAeQP8AByjA///4xcD////UAP//9y4ACP//4M+A/wBdx8D/AB8wgAf////UQP8ACK0A/wAG74D/AAcnQP8ACK2A/wAAGcD/AAjSQP8AAB5A/wAHKID///jFwP///9QA///3LgAI///gz4D/AF3HwP8AHzCAB////9RA/wAIpED/AAbhQP8AByMA/wAIpED/AAAmwP8ACNuA/wAALYD/AAc3QP//+L/A////04D///ckwAiL///gz4D/AE35AP////EABf8ADN/A/wAACAD/AAdSAP8ADrUA///4QcD/AApJQAj//VCPwP8Dij5ABf///SOA/wAD0kD///uMgP8AAk5A///7OkD/AAAhQP//9ysA/wAAPID///i5wP//+OHA/wAADcD///cqQAiL+xH/AB9IAP8AAB5ABf8AACyn/wAAAR3/AAAsSf8AAACO/wAAK+2LCP8AClVW/wAFLp7///gslP//+C35///4MMH///rVEf//+DIk///1okgf////38+L////35z/AAAATP///99r/wAAAJcI///gmQD////hwIv//6IogP8AH0fA/wAALUAF/wAVTID/AACIQP8AACBA///f1ED//+qygP8AAGPACP//4JkA////0oCL//+iZ0D/AB9HwIsF/wAALKf/AAABHf8AACxK/wAAAI7/AAAr7YsI/wAKVZ7/AAUuvf//+Cxo///4LeP///gw1v//+tUr///4Mk////WigR/////fp4v////fc/8AAABM////30H/AAAAmQgT5Vyc///gmQD//6I4AAb/ACAigP8AAAgABf8AFoUA////w8D///5oQP//3xaAdY0I//8V0ED/AiKPABX///dfAP////cA///5CED///j6QP8AAAiA///3XwAIi///wbbA/wAfZwD////hwAX/AAAivf8AAACs/wAAIoT/AAAAVv8AACJLiwj/AApZjv8ABSjf///4MkT///gwx///+C3P///60zP///gsUv//9a4+H////9Isi////9HI/wAAAJv////RYv8AAAE3CP//4LhA/wAAHgCL///BeED/AB9nAP///+HABf8AFU1A/wAAagD////fwP//38gA///qs8D/AACOQAj//+C4AP8AAB5Ai///wXgA/wAfZ0D////hwAX/AAplaP////iG/wAFLtn///g0oYv///gzOAgTwD4c///4LKL///rIYf//+Cs1///1mI0e////+R2L////+Rv/AAAAA/////kZ/wAAAAcIE8BeHP//4LhA/wAAHkCL///BgED/AB9nAP///+HABRPavhz/AAAivf8AAACs/wAAIoX/AAAAVv8AACJLiwj/AApZrf8ABSjv///4MkP///gwwP//+C24///60w////gsM///9a32H////9JAi////9Hc/wAAAJr////Rdv8AAAE2CP//4LhA/wAAHkCL///BgED/AB9nAP///+HABf8AACK9/wAAAKz/AAAihP8AAABW/wAAIkuLCP8AClmW/wAFKO////gyN///+DC6///4Lb7///rTHv//+Cw////1rf8f////0kCL////0dz/AAAAmv///9F2/wAAATYI///guED/AAAeQIv//8GXgP8AH2cA////4cAF/wAAItL/AAAArf8AACKY/wAAAFb/AAAiYIsI/wAKWWT/AAUoy///+DJj///4MNf///gtwP//+tMe///4LDP///WuFR/////SQYv////R3P8AAACa////0Xf/AAABNgj//+C4QP8AAB5Ai///wXhA/wAfZwD////hwAX/AAAivf8AAACs/wAAIoT/AAAAVv8AACJLiwj/AApZjv8ABSjf///4MkT///gwx///+C3P///60zP///gsUv//9a4+H////9Isi////9HI/wAAAJv////RYv8AAAE3CP//4LgA/wAAHkCL///BeAD/AB9nQP///+HABf8ACmVo////+Ib/AAUu2f//+DShi///+DM4i///+Cyi///6yGH///grNf//9ZiNi/////kdi/////kb/wAAAAP////5Gf8AAAAHCP//4LhA/wAAHkCL///BgED/AB9nAP///+HABf8AACK+/wAAAKz/AAAihP8AAABW/wAAIkyLCBPAPRz/AApZrP8ABSjv///4MlP///gw0P//+C3I///60w////gsQ///9a33H////9JAi////9Hb/wAAAJr////Rdv8AAAE2CBPAPhz//+C4QP8AAB5Ai///wWDABf////eA///3XwD/AAb3wP//+PpA/wAIoQD////3QAj/AIy/wAb/AAitQP////gA/wAHCwD/AAcKQP////eA/wAIrUAI/wOKQIAH/wAACED/AAitQP//+PVA/wAHCsD///dSwP////eACP8A2sgA//5p/cAV/wAEzMD////0QP8ABIMA///9v8D/AALtAP///DHACP8A2s+A//7mx8AF/wAID0D///W4wP//+KSA///w9QD///LwQP8AAA2ACP//JTCABhPAHJz///dbwP8AAAgA///5BwD/AAcLQP8AAAzA/wAIpEAI/wEZMEAH////94D/AAitQP8ABwsA/wAHCsD/AAitQP////eACA73f/tHdviZ9xju95ABi/d69w/3HPcR9wED+Wf5tBX9GAZfaGhfH/3eB1+uaLce+RgG/Ab4NhU+Csf3OBU/Cg73iftc94T3qPcV8veQAYv3evcO9yj3EfcAA9r5tBVfaGhfH/3eB1+uaLce+SL6fAb79PzMFUAKgvgXFUEKDhwKhvtc94Tp8DTn1/cU+wj3Bz7s4PeQ+4j3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9ZdA///7tQD///k7QP//9dWAi///9L+ACP//rIEA//+qpgAH///0wAD/AAAAgP//9dWA///5O8D///u1AP//9ZbA///7rYD///WXQP8AAmSA///0CgD/AAf2gP//+AmACP8AqNkA//9XJ0AF/wAFOED///rIAP8ABxDA///9EID/AAdkgIsI/wBjzcCL/wCe1gD//2EqAAX/AAAowP///9dA/wAAN4D////0gP8AACnA////2ED/AAVvjv//+s/H/wAG2dv///1hQ/8ABt1fi/8ABtHfi/8ABtVW/wAClf3/AAV5A/8ABTj5/wAF3X7/AAWZJP8AAtK8/wAHMaCL/wAHJyiL/wAG8rz///1WDv8ABujb///633j/AAVe/Qj//+v2gP8Bx9uAFf//uMkAi///vKrA///t4cD//8NeAP//47LACP8AVWCA//+qn0AF/wAj1UD/AAvqgP8AJjEA/wAGssD/ACfIAIsI/wAAAOyLBf8Ax38U/wCiUAD//12vMf//OIDP//84gID//12vgP//Xa8A//84gAD//ziAAP//Xa+A/wCiUID/AMeAAB+L/wAnyAD/AAazQP8AJjEA/wAL6gD/ACPVAAj//6qfQP8AVWDABf//47PA///DXYD//+3hQP//vKrAi///uMkACP/++xrA/wDWGcD//ynlwP8BBOVA/wEE5UD/ANYaQP8A1hpA/wEE5UD/AQTlQP//KebA/wDWGcD//vsZwB7//x99gAT//+KVAIv//+QrAP//+fhA///lwQD///akgAiL///edwD/AEBXgP//v6hABf8ABlIA/wAA4kD/AAZGgP8AAQ3A/wAGjwCLCP8ATLrA/wA+bkD//8GRwP//s0VA//+zRUD//8GRwP//wZHA//+zRUD//7NFQP//wZHA/wA+bkD/AEy6wB+L/wAGj4D/AAENwP8ABkaA/wAA4kD/AAZRgAj//7+owP8AQFgA///edwCLBf//9qSA///lwQD///n4QP//5CsAi///4pUACP//dd+A/wBwXID//4+kAP8AiiAA/wCKIAD/AHBdAP8AcFwA/wCKIID/AIoggP//j6OA/wBwXAD//3XfgB4O+0sO+AutAfgLBPp8rf58Bg77C7P4Wq0B+C0ERAoO+wuz+FqtAfmX+B4VRQr9l5oVRAoO+Vf4HBX7YPdgBYmNiYuJiQj7YPtg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) format("opentype");
+  font-weight: 400;
+}
 :root {
-  --ink: #111416; --ink-soft: #181c1f; --steel: #20262a; --line: #3b4144;
-  --paper: #e5dfd2; --paper-line: #b5afa2; --ink-on-paper: #24211c;
-  --muted: #a9aaa4; --red: #b63a36; --red-bright: #e05a4d; --gold: #c9a65b;
-  --approve: #6f9366; --approve-bright: #86ac7c; --revise: #c9a65b;
+  --paper: #f7f3ea; --paper-2: #fffcf6; --paper-3: #efe9dc;
+  --ink: #2a2724; --ink-2: #57524b; --ink-3: #6e675c;
+  --rule: #dcd4c4; --rule-2: #bfb5a1;
+  --accent: #8c2f2c; --accent-2: #6f2422; --gold-ink: #7a5a1e; --term: #5e3330;
+  --approve: #3b6d11; --revise: #7a5a1e;
+  --serif: "Noto Serif TC","Source Han Serif TC",Georgia,"PMingLiU",serif;
+  --sans: "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; font-family: "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif; background: var(--ink); color: #ece7dc; }
+body { margin: 0; font-family: var(--sans); font-synthesis: none; background: var(--paper); color: var(--ink); line-height: 1.9; }
 a { color: inherit; }
-button { font: inherit; }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+button { font: inherit; color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0; line-height: 1.4; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.glyph-wrap { display: inline-flex; align-items: baseline; }
+.glyph { font-family: "Draw Steel Glyphs"; font-style: normal; line-height: 1; letter-spacing: 0; }
 
-.shell { display: grid; grid-template-columns: 300px minmax(0,1fr); min-height: 100vh; }
+.shell { display: grid; grid-template-columns: 290px minmax(0,1fr); min-height: 100vh; }
 
-.sidebar { position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto; background: var(--ink-soft); border-right: 1px solid var(--line); padding: 26px 20px; display: flex; flex-direction: column; gap: 22px; }
-.sidebar h1 { font: 700 20px/1.3 Georgia,"Noto Serif TC",serif; margin: 0; }
-.sidebar .eyebrow { font: 11px ui-monospace,Consolas,monospace; letter-spacing: .16em; color: var(--red-bright); margin: 0 0 6px; }
+.sidebar { position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto; background: var(--paper-2); border-right: 1px solid var(--rule); padding: 26px 20px; display: flex; flex-direction: column; gap: 22px; }
+.sidebar h1 { font-size: 20px; margin: 0; }
+.sidebar .eyebrow { font-size: 12px; letter-spacing: .1em; color: var(--ink-3); margin: 0 0 6px; }
 .progress { display: grid; gap: 8px; font-size: 13px; }
-.progress-bar { height: 8px; background: #2a2f32; display: flex; overflow: hidden; }
+.progress-bar { height: 8px; background: var(--paper-3); display: flex; overflow: hidden; }
 .progress-bar span { display: block; height: 100%; }
-.progress-bar .p-approve { background: var(--approve-bright); }
+.progress-bar .p-approve { background: var(--approve); }
 .progress-bar .p-revise { background: var(--revise); }
-.progress-legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
-.progress-legend b { color: #ece7dc; font-variant-numeric: tabular-nums; }
+.progress-legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--ink-3); font-size: 12px; }
+.progress-legend b { color: var(--ink); font-variant-numeric: tabular-nums; }
 .legend-dot { display: inline-block; width: 8px; height: 8px; margin-right: 5px; }
-.legend-dot.approve { background: var(--approve-bright); }
+.legend-dot.approve { background: var(--approve); }
 .legend-dot.revise { background: var(--revise); }
-.legend-dot.pending { background: #4a5054; }
+.legend-dot.pending { background: var(--rule-2); }
 
-.export-btn { min-height: 44px; border: 1px solid var(--gold); background: rgba(201,166,91,.12); color: var(--gold); font-weight: 700; letter-spacing: .03em; cursor: pointer; }
-.export-btn:hover { background: rgba(201,166,91,.22); }
-.reset-btn { border: 0; background: none; color: #8b8e8a; font-size: 12px; text-decoration: underline; cursor: pointer; padding: 0; text-align: left; }
+.export-btn { min-height: 44px; border: 1px solid var(--accent); background: var(--paper); color: var(--accent); font-weight: 500; cursor: pointer; }
+.export-btn:hover { background: var(--paper-3); }
+.reset-btn { border: 0; background: none; color: var(--ink-3); font-size: 12px; text-decoration: underline; cursor: pointer; padding: 0; text-align: left; }
 
 .nav { display: grid; gap: 18px; overflow-y: auto; }
-.nav-group { font: 11px ui-monospace,monospace; letter-spacing: .14em; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+.nav-group { font-size: 12px; letter-spacing: .14em; color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: 10px; margin-top: 4px; }
 .nav-group:first-child { border-top: 0; margin-top: 0; }
-.nav-item { display: flex; align-items: center; gap: 9px; padding: 7px 4px; font-size: 13px; color: #cfcbc0; border-left: 2px solid transparent; }
-.nav-item:hover { color: #fff; }
-.nav-item .dot { width: 7px; height: 7px; border-radius: 50%; background: #4a5054; flex: 0 0 auto; }
-.nav-item.is-approve .dot { background: var(--approve-bright); }
+.nav-item { display: flex; align-items: center; gap: 9px; padding: 6px 4px; font-size: 13px; color: var(--ink-2); border-left: 2px solid transparent; text-decoration: none; }
+.nav-item:hover { color: var(--accent); }
+.nav-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rule-2); flex: 0 0 auto; }
+.nav-item.is-approve .dot { background: var(--approve); }
 .nav-item.is-revise .dot { background: var(--revise); }
-.nav-item.is-approve { border-left-color: var(--approve-bright); }
+.nav-item.is-approve { border-left-color: var(--approve); }
 .nav-item.is-revise { border-left-color: var(--revise); }
 
-main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
-.intro { border: 1px solid var(--line); background: var(--ink-soft); padding: 22px 26px; margin-bottom: 44px; font-size: 14px; line-height: 1.85; color: #cfcbc0; }
-.intro h2 { margin: 0 0 10px; font: 700 17px Georgia,"Noto Serif TC",serif; color: #fff; }
+main { padding: 40px clamp(20px,4vw,56px) 120px; max-width: 820px; }
+.intro { border-left: 3px solid var(--accent); background: var(--paper-3); padding: 18px 22px; margin-bottom: 40px; font-size: 14px; line-height: 1.85; color: var(--ink-2); }
+.intro h2 { margin: 0 0 8px; font-size: 17px; color: var(--ink); }
 .intro ol { margin: 10px 0 0; padding-left: 20px; }
 .intro li { margin: 6px 0; }
 
-.group-heading { font: 700 30px Georgia,"Noto Serif TC",serif; margin: 0 0 26px; padding-top: 10px; border-top: 1px solid var(--line); }
-.group-heading:first-of-type { border-top: 0; padding-top: 0; }
+.group-heading { font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .18em; color: var(--ink-3); margin: 44px 0 4px; }
+.group-heading:first-of-type { margin-top: 0; }
 
-.card { background: var(--paper); color: var(--ink-on-paper); margin-bottom: 34px; box-shadow: 10px 10px 0 rgba(0,0,0,.28); scroll-margin-top: 24px; }
-.card-head { background: #1b2023; color: #f2ede3; padding: 26px clamp(20px,3vw,36px); }
-.badges { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; }
-.badges span { font: 10px ui-monospace,monospace; letter-spacing: .12em; border: 1px solid #585d5f; color: #cfcbc0; padding: 4px 8px; text-transform: uppercase; }
-.card-head h2 { font: 700 30px/1.2 Georgia,"Noto Serif TC",serif; margin: 0; }
-.en-name { display: block; font: 13px ui-monospace,monospace; color: #9a9d99; letter-spacing: .03em; margin-top: 5px; }
-.card-head blockquote { margin: 18px 0 0; font-family: Georgia,"Noto Serif TC",serif; font-style: italic; color: #babbb6; }
+.entry { scroll-margin-top: 16px; }
+.kind-line { font-size: 12px; color: var(--ink-3); margin: 26px 0 10px; }
+.kind-label { display: inline-block; margin-right: 9px; padding: 1px 6px; background: var(--paper-3); color: var(--ink-2); letter-spacing: .05em; }
 
-.card-body { padding: 26px clamp(20px,3vw,36px); }
-.card-body.en { background: #ded6c4; border-top: 1px dashed var(--paper-line); }
-.en-name-line { font: 700 15px ui-monospace,monospace; margin-bottom: 6px; color: #55524a; }
+.card { border: 1px solid var(--rule-2); background: var(--paper-2); }
+.card-head { padding: 20px clamp(18px,3vw,26px) 16px; }
+.card-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.card-head h2 { font-size: clamp(23px,3.2vw,28px); margin: 0; }
+.card-head h3 { font-size: 20px; margin: 0; }
+.en-name { color: var(--ink-3); font-size: 13px; letter-spacing: .06em; margin: 5px 0 0; }
+.card-cost { flex: 0 0 auto; font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--accent); white-space: nowrap; padding-top: 4px; }
+.card-flavor { font-family: var(--serif); font-style: italic; font-synthesis: style; color: var(--ink-2); font-size: 15px; line-height: 1.8; margin: 12px 0 0; }
 
-.stats-row { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--paper-line); margin-bottom: 22px; }
-.stats-row div { padding: 12px 14px; border-right: 1px solid var(--paper-line); min-width: 0; }
-.stats-row div:last-child { border-right: 0; }
-.stats-row span { display: block; font: 10px ui-monospace,monospace; letter-spacing: .1em; color: #6b6a62; margin-bottom: 5px; }
-.stats-row strong { font-size: 13px; overflow-wrap: anywhere; }
+.card-bar { padding: 9px clamp(18px,3vw,26px) 10px; border-top: 1px solid var(--rule); font-size: 14px; }
+.bar-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+.bar-row + .bar-row { margin-top: 7px; }
+.bar-row > span { display: inline-flex; align-items: center; gap: 8px; }
+.bar-row .glyph { font-size: 17px; }
+.keywords { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.keywords li { border: 1px solid var(--rule-2); padding: 0 7px; color: var(--ink-2); }
 
-.block { padding: 18px 0; border-top: 1px solid var(--paper-line); }
-.block:first-child { border-top: 0; padding-top: 0; }
-.block h3 { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 12px; font: 700 18px Georgia,"Noto Serif TC",serif; }
-.block p { margin: 8px 0; line-height: 1.8; }
-.chip { font: 10px ui-monospace,monospace; border: 1px solid #a89e8f; color: #5c3a34; padding: 4px 8px; white-space: nowrap; }
-.term { color: #743732; font-weight: 800; }
-.ref { color: #8c2f2c; text-decoration: underline; text-underline-offset: 3px; }
+.card-body { padding: 15px clamp(18px,3vw,26px) 19px; }
+.card-body p, .card-body li { font-size: 15px; line-height: 1.9; }
+.card-body > p { margin: 0 0 .7em; }
+.card-body > p:last-child { margin-bottom: 0; }
+.card-label { font-family: var(--serif); font-weight: 700; }
+.card-label::after { content: "："; }
+.power-roll-label { font-family: var(--serif); font-weight: 700; margin: 0 0 6px; }
+.power-roll-label::after { content: "："; }
+.term { color: var(--term); font-weight: 700; }
+.ref { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.potency-tag, .attr-tag { display: inline-block; background: var(--ink); color: #f7f3ea; font-size: 13px; font-weight: 500; padding: 1px 7px; margin: 0 2px; white-space: nowrap; }
 
-.tier-list { border: 1px solid var(--paper-line); }
-.tier { display: grid; grid-template-columns: 78px minmax(0,1fr); border-bottom: 1px solid var(--paper-line); }
-.tier:last-child { border-bottom: 0; }
-.tier > b { display: grid; place-items: center; background: #292d2f; color: #f1e8d8; font: 17px Georgia,serif; }
-.tier > div { padding: 12px 15px; }
-.tier p { margin: 0; }
-.potency-tag { display: inline-block; background: #292d2f; color: #f1e8d8; font: 700 11px ui-monospace,Consolas,monospace; padding: 3px 7px; margin: 0 2px; }
+.tier-list { margin: 0 0 14px; }
+.tier { display: flex; align-items: baseline; gap: 12px; margin: 0 0 9px; }
+.tier > .glyph-wrap { flex: 0 0 auto; min-width: 46px; }
+.tier .glyph { font-size: 22px; }
 
-.block ol, .block ul { margin: 8px 0; padding-left: 20px; }
-.block li { margin: 6px 0; line-height: 1.7; }
-.definition-list { display: grid; gap: 0; }
-.definition-list div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid #c4bdb1; }
-.definition-list dt { font-weight: 800; color: #783a35; }
-.definition-list dd { margin: 0; line-height: 1.7; }
+.block { margin-bottom: 18px; }
+.block:last-child { margin-bottom: 0; }
+.block h3 { font-size: 17px; margin: 0 0 6px; }
+.block ol, .block ul, .card-body ol, .card-body ul { margin: 0 0 .7em; padding-left: 1.4em; }
+.block li { margin: 5px 0; }
+.definition-list { margin: 0; }
+.definition-list div { padding: 9px 0; }
+.definition-list div:first-child { padding-top: 0; }
+.definition-list dt { font-family: var(--serif); font-weight: 700; color: var(--accent); }
+.definition-list dd { margin: 2px 0 0; }
 
-.source-line { padding: 12px clamp(20px,3vw,36px); font: 11px ui-monospace,monospace; color: #726d61; border-top: 1px solid var(--paper-line); }
-.toggle-en { width: 100%; text-align: left; padding: 13px clamp(20px,3vw,36px); background: #d8cfba; border: 0; border-top: 1px solid var(--paper-line); color: #5c5748; cursor: pointer; font-size: 12px; letter-spacing: .04em; }
-.toggle-en:hover { background: #cfc4aa; }
+.source-line { padding: 10px clamp(18px,3vw,26px); font-size: 12px; color: var(--ink-3); border-top: 1px solid var(--rule); }
+.toggle-en { width: 100%; text-align: left; padding: 11px clamp(18px,3vw,26px); background: var(--paper-3); border: 0; border-top: 1px solid var(--rule); color: var(--ink-2); cursor: pointer; font-size: 13px; }
+.toggle-en:hover { color: var(--accent); }
+.en-panel { border-top: 1px solid var(--rule-2); background: var(--paper); }
 
-.decision { background: #1b2023; padding: 20px clamp(20px,3vw,36px) 24px; display: grid; gap: 12px; }
+.decision { border-top: 1px solid var(--rule-2); background: var(--paper-3); padding: 16px clamp(18px,3vw,26px) 18px; display: grid; gap: 10px; }
 .decision-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-.dec-btn { min-height: 44px; padding: 0 18px; border: 1px solid #4c5255; background: transparent; color: #d8d5cb; cursor: pointer; font-weight: 700; }
-.dec-btn.approve:hover { border-color: var(--approve-bright); color: var(--approve-bright); }
+.dec-btn { min-height: 42px; padding: 0 18px; border: 1px solid var(--rule-2); background: var(--paper-2); color: var(--ink-2); cursor: pointer; font-weight: 500; }
+.dec-btn.approve:hover { border-color: var(--approve); color: var(--approve); }
 .dec-btn.revise:hover { border-color: var(--revise); color: var(--revise); }
-.dec-btn.approve.active { background: var(--approve); border-color: var(--approve); color: #0e1710; }
-.dec-btn.revise.active { background: var(--revise); border-color: var(--revise); color: #241a04; }
-.note { min-height: 52px; background: #22282b; border: 1px solid #3c4245; color: #ece7dc; padding: 10px 12px; font: inherit; font-size: 13px; resize: vertical; }
-.note::placeholder { color: #71756f; }
+.dec-btn.approve.active { background: var(--approve); border-color: var(--approve); color: #fff; }
+.dec-btn.revise.active { background: var(--revise); border-color: var(--revise); color: #fff; }
+.note { min-height: 50px; background: var(--paper-2); border: 1px solid var(--rule-2); color: var(--ink); padding: 9px 11px; font: inherit; font-size: 13px; resize: vertical; }
+.note::placeholder { color: var(--ink-3); }
 
-.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(42,39,36,.55); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; }
 .modal-backdrop.open { display: flex; }
-.modal { background: var(--ink-soft); border: 1px solid var(--line); max-width: 640px; width: 100%; max-height: 82vh; display: flex; flex-direction: column; box-shadow: 12px 12px 0 rgba(0,0,0,.35); }
-.modal-head { padding: 18px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
-.modal-head h2 { margin: 0; font: 700 17px Georgia,"Noto Serif TC",serif; }
-.modal-head button { border: 0; background: none; color: #cfcbc0; font-size: 20px; cursor: pointer; }
-.modal-body { padding: 18px 22px; overflow-y: auto; display: grid; gap: 12px; }
-.modal-body p { margin: 0; font-size: 13px; color: #b6b3a9; }
-.modal textarea { width: 100%; min-height: 260px; background: #14171a; border: 1px solid #3c4245; color: #ece7dc; padding: 12px; font: 12px/1.7 ui-monospace,Consolas,monospace; }
-.copy-btn { min-height: 42px; border: 1px solid var(--gold); background: rgba(201,166,91,.12); color: var(--gold); font-weight: 700; cursor: pointer; }
-.copy-btn:hover { background: rgba(201,166,91,.22); }
-.copy-status { font-size: 12px; color: var(--approve-bright); min-height: 16px; }
+.modal { background: var(--paper-2); border: 1px solid var(--rule-2); max-width: 640px; width: 100%; max-height: 82vh; display: flex; flex-direction: column; }
+.modal-head { padding: 16px 20px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+.modal-head h2 { margin: 0; font-size: 17px; }
+.modal-head button { border: 0; background: none; color: var(--ink-2); font-size: 20px; cursor: pointer; }
+.modal-body { padding: 16px 20px; overflow-y: auto; display: grid; gap: 12px; }
+.modal-body p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.modal textarea { width: 100%; min-height: 260px; background: var(--paper); border: 1px solid var(--rule-2); color: var(--ink); padding: 12px; font: 12px/1.7 ui-monospace,Consolas,monospace; }
+.copy-btn { min-height: 42px; border: 1px solid var(--accent); background: var(--paper); color: var(--accent); font-weight: 500; cursor: pointer; }
+.copy-btn:hover { background: var(--paper-3); }
+.copy-status { font-size: 12px; color: var(--approve); min-height: 16px; }
 
 @media (max-width: 880px) {
   .shell { grid-template-columns: 1fr; }
-  .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
-  .stats-row { grid-template-columns: repeat(2,1fr); }
-  .stats-row div:nth-child(-n+2) { border-bottom: 1px solid var(--paper-line); }
+  .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--rule); }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -168,29 +191,34 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
   </ol>
 </div>
     <h2 class="group-heading">招式 · 16 筆</h2>
-<article class="card" id="entry-ability.basic.melee-weapon-free-strike" data-id="ability.basic.melee-weapon-free-strike">
+<section class="entry" id="entry-ability.basic.melee-weapon-free-strike" data-id="ability.basic.melee-weapon-free-strike">
+<p class="kind-line"><span class="kind-label">分類</span>招式・通用</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>通用</span></div>
-    <h2>近戰武器基礎打擊 <span class="en-name">Melee Weapon Free Strike</span></h2>
+    <div class="card-title-row">
+      <div><h2>近戰武器基礎打擊</h2><p class="en-name">Melee Weapon Free Strike</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量 或 敏捷</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div><div class="tier"><b>12-16</b><div><p>5 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div><div class="tier"><b>17+</b><div><p>7 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div></div></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>衝鋒</li><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量或敏捷</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>7 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p></div></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 17 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Melee Weapon Free Strike</div>
-    
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might or Agility</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + M or A damage</p></div></div><div class="tier"><b>12-16</b><div><p>5 + M or A damage</p></div></div><div class="tier"><b>17+</b><div><p>7 + M or A damage</p></div></div></div></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Melee Weapon Free Strike</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Charge</li><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might or Agility</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + M or A damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + M or A damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>7 + M or A damage</span></p></div></div>
   </div>
   <div class="decision" data-id="ability.basic.melee-weapon-free-strike">
     <div class="decision-buttons">
@@ -200,29 +228,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.basic.ranged-weapon-free-strike" data-id="ability.basic.ranged-weapon-free-strike">
+</section>
+<section class="entry" id="entry-ability.basic.ranged-weapon-free-strike" data-id="ability.basic.ranged-weapon-free-strike">
+<p class="kind-line"><span class="kind-label">分類</span>招式・通用</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>通用</span></div>
-    <h2>遠程武器基礎打擊 <span class="en-name">Ranged Weapon Free Strike</span></h2>
+    <div class="card-title-row">
+      <div><h2>遠程武器基礎打擊</h2><p class="en-name">Ranged Weapon Free Strike</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>遠程 5</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量 或 敏捷</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div><div class="tier"><b>12-16</b><div><p>4 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div><div class="tier"><b>17+</b><div><p>6 + <b class="term">力量</b>或<b class="term">敏捷</b>傷害</p></div></div></div></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>遠程</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>遠程 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量或敏捷</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>4 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>6 + <span class="attr-tag">力量</span>或<span class="attr-tag">敏捷</span>傷害</span></p></div></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 17 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Ranged Weapon Free Strike</div>
-    
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Ranged 5</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might or Agility</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + M or A damage</p></div></div><div class="tier"><b>12-16</b><div><p>4 + M or A damage</p></div></div><div class="tier"><b>17+</b><div><p>6 + M or A damage</p></div></div></div></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Ranged Weapon Free Strike</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Ranged</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Ranged 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might or Agility</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + M or A damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>4 + M or A damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>6 + M or A damage</span></p></div></div>
   </div>
   <div class="decision" data-id="ability.basic.ranged-weapon-free-strike">
     <div class="decision-buttons">
@@ -232,29 +266,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.arrest" data-id="ability.censor.arrest">
+</section>
+<section class="entry" id="entry-ability.censor.arrest" data-id="ability.censor.arrest">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>當場拘捕 <span class="en-name">Arrest</span></h2>
-    <blockquote>「終於被我逮到了，你這混帳。」</blockquote>
+    <div class="card-title-row">
+      <div><h2>當場拘捕</h2><p class="en-name">Arrest</p></div>
+      <span class="card-cost">5 怒火</span>
+    </div>
+    <p class="card-flavor">「終於被我逮到了，你這混帳。」</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>5 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>6 + <b class="term">力量</b>神聖傷害；擒制</p></div></div><div class="tier"><b>12-16</b><div><p>9 + <b class="term">力量</b>神聖傷害；擒制</p></div></div><div class="tier"><b>17+</b><div><p>13 + <b class="term">力量</b>神聖傷害；擒制</p></div></div></div></section><section class="block"><h3>效果</h3><p>若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你<b class="term">氣場</b>的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>6 + <span class="attr-tag">力量</span>神聖傷害；擒制</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>9 + <span class="attr-tag">力量</span>神聖傷害；擒制</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>13 + <span class="attr-tag">力量</span>神聖傷害；擒制</span></p></div><p><b class="card-label">效果</b>若被此招式擒制的目標對 1 個生物發動打擊，你可以花費 3 點怒火對他造成等於你<b class="term">氣場</b>的神聖傷害，並將該次打擊的目標改為打擊射程內的另 1 個目標。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Arrest</div>
-    <blockquote>“I got you, you son of a bitch.”</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>5 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>6 + M holy damage; grabbed</p></div></div><div class="tier"><b>12-16</b><div><p>9 + M holy damage; grabbed</p></div></div><div class="tier"><b>17+</b><div><p>13 + M holy damage; grabbed</p></div></div></div></section><section class="block"><h3>Effect</h3><p>If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Arrest</h3></div>
+        <span class="card-cost">5 Wrath</span>
+      </div>
+      <p class="card-flavor">“I got you, you son of a bitch.”</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>6 + M holy damage; grabbed</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>9 + M holy damage; grabbed</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>13 + M holy damage; grabbed</span></p></div><p><b class="card-label">Effect</b>If the target makes a strike against a creature while grabbed this way, you can spend 3 wrath to deal holy damage to them equal to your Presence score, then change the target of the strike to another target within the strike’s distance.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.arrest">
     <div class="decision-buttons">
@@ -264,29 +304,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.back-blasphemer" data-id="ability.censor.back-blasphemer">
+</section>
+<section class="entry" id="entry-ability.censor.back-blasphemer" data-id="ability.censor.back-blasphemer">
+<p class="kind-line"><span class="kind-label">分類</span>招式・招牌・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>招牌</span><span>等級 1</span></div>
-    <h2>瀆神者退散！ <span class="en-name">Back Blasphemer!</span></h2>
-    <blockquote>你使用武器引導神聖力量來擊退敵人。</blockquote>
+    <div class="card-title-row">
+      <div><h2>瀆神者退散！</h2><p class="en-name">Back Blasphemer!</p></div>
+      
+    </div>
+    <p class="card-flavor">你使用武器引導神聖力量來擊退敵人。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>1 格內 2 立方</strong></div>
-    <div><span>目標</span><strong>區域內每個敵人</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 氣場</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 神聖傷害；推動 1</p></div></div><div class="tier"><b>12-16</b><div><p>4 神聖傷害；推動 2</p></div></div><div class="tier"><b>17+</b><div><p>6 神聖傷害；推動 3</p></div></div></div></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>區域</li><li>魔法</li><li>近戰</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>1 格內 2 立方</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>區域內每個敵人</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 氣場</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 神聖傷害；推動 1</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>4 神聖傷害；推動 2</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>6 神聖傷害；推動 3</span></p></div></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Back Blasphemer!</div>
-    <blockquote>You channel power through your weapon to repel foes.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>2 cube within 1</strong></div>
-    <div><span>Target</span><strong>Each enemy in the area</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Presence</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 holy damage; push 1</p></div></div><div class="tier"><b>12-16</b><div><p>4 holy damage; push 2</p></div></div><div class="tier"><b>17+</b><div><p>6 holy damage; push 3</p></div></div></div></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Back Blasphemer!</h3></div>
+        
+      </div>
+      <p class="card-flavor">You channel power through your weapon to repel foes.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Area</li><li>Magic</li><li>Melee</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>2 cube within 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>Each enemy in the area</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Presence</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 holy damage; push 1</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>4 holy damage; push 2</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>6 holy damage; push 3</span></p></div></div>
   </div>
   <div class="decision" data-id="ability.censor.back-blasphemer">
     <div class="decision-buttons">
@@ -296,29 +342,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.behold-a-shield-of-faith" data-id="ability.censor.behold-a-shield-of-faith">
+</section>
+<section class="entry" id="entry-ability.censor.behold-a-shield-of-faith" data-id="ability.censor.behold-a-shield-of-faith">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>聖盾在此！ <span class="en-name">Behold a Shield of Faith!</span></h2>
-    <blockquote>強力一擊將敵人的生命力轉化為神聖之光，環繞著你和盟友，使敵人不敢輕舉妄動。</blockquote>
+    <div class="card-title-row">
+      <div><h2>聖盾在此！</h2><p class="en-name">Behold a Shield of Faith!</p></div>
+      <span class="card-cost">3 怒火</span>
+    </div>
+    <p class="card-flavor">強力一擊將敵人的生命力轉化為神聖之光，環繞著你和盟友，使敵人不敢輕舉妄動。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>3 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>12-16</b><div><p>6 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>17+</b><div><p>9 + <b class="term">力量</b>神聖傷害</p></div></div></div></section><section class="block"><h3>效果</h3><p>若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>6 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>9 + <span class="attr-tag">力量</span>神聖傷害</span></p></div><p><b class="card-label">效果</b>若敵人針對你或任何與你相鄰的盟友進行招式檢定，他會承受 1 個劣勢，直到你下個回合開始。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Behold a Shield of Faith!</div>
-    <blockquote>A mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>3 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + M holy damage</p></div></div><div class="tier"><b>12-16</b><div><p>6 + M holy damage</p></div></div><div class="tier"><b>17+</b><div><p>9 + M holy damage</p></div></div></div></section><section class="block"><h3>Effect</h3><p>Until the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Behold a Shield of Faith!</h3></div>
+        <span class="card-cost">3 Wrath</span>
+      </div>
+      <p class="card-flavor">A mighty blow turns your foe’s vitality into a holy light that envelops you and an ally, discouraging enemies who might attack you.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>6 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>9 + M holy damage</span></p></div><p><b class="card-label">Effect</b>Until the start of your next turn, enemies take a bane on ability rolls made against you or any ally adjacent to you.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.behold-a-shield-of-faith">
     <div class="decision-buttons">
@@ -328,29 +380,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.behold-the-face-of-justice" data-id="ability.censor.behold-the-face-of-justice">
+</section>
+<section class="entry" id="entry-ability.censor.behold-the-face-of-justice" data-id="ability.censor.behold-the-face-of-justice">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>直視正義威儀！ <span class="en-name">Behold the Face of Justice!</span></h2>
-    <blockquote>你攻擊一名敵人，讓他看清楚你堅定的決心。</blockquote>
+    <div class="card-title-row">
+      <div><h2>直視正義威儀！</h2><p class="en-name">Behold the Face of Justice!</p></div>
+      <span class="card-cost">5 怒火</span>
+    </div>
+    <p class="card-flavor">你攻擊一名敵人，讓他看清楚你堅定的決心。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>5 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1 或 遠程 5</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 弱</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</p></div></div><div class="tier"><b>12-16</b><div><p>5 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 中</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</p></div></div><div class="tier"><b>17+</b><div><p>8 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 強</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</p></div></div></div></section><section class="block"><h3>效果</h3><p>因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你<b class="term">氣場</b>的心靈傷害。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>近戰</li><li>遠程</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1 或 遠程 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 弱</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 中</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>8 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 強</span>，目標 2 格內的每個敵人都會對你陷入畏縮（豁免解除）</span></p></div><p><b class="card-label">效果</b>因此招式陷入畏縮的每個敵人都會朝遠離目標的方向推動最多 2 格，並受到等於你<b class="term">氣場</b>的心靈傷害。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Behold the Face of Justice!</div>
-    <blockquote>You attack a foe and your enemies behold a vision of the true nature of your resolve.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>5 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1 or ranged 5</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + M holy damage; <span class="potency-tag">Presence &lt; WEAK</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</p></div></div><div class="tier"><b>12-16</b><div><p>5 + M holy damage; <span class="potency-tag">Presence &lt; AVERAGE</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</p></div></div><div class="tier"><b>17+</b><div><p>8 + M holy damage; <span class="potency-tag">Presence &lt; STRONG</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</p></div></div></div></section><section class="block"><h3>Effect</h3><p>Each enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Behold the Face of Justice!</h3></div>
+        <span class="card-cost">5 Wrath</span>
+      </div>
+      <p class="card-flavor">You attack a foe and your enemies behold a vision of the true nature of your resolve.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Melee</li><li>Ranged</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1 or ranged 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + M holy damage; <span class="potency-tag">Presence &lt; WEAK</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + M holy damage; <span class="potency-tag">Presence &lt; AVERAGE</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>8 + M holy damage; <span class="potency-tag">Presence &lt; STRONG</span>, Each enemy within 2 squares of the target is frightened of you (save ends).</span></p></div><p><b class="card-label">Effect</b>Each enemy frightened this way is pushed up to 2 squares away from the target and takes psychic damage equal to your Presence score.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.behold-the-face-of-justice">
     <div class="decision-buttons">
@@ -360,29 +418,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.censored" data-id="ability.censor.censored">
+</section>
+<section class="entry" id="entry-ability.censor.censored" data-id="ability.censor.censored">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>斷罪 <span class="en-name">Censored</span></h2>
-    <blockquote>審判、定罪。</blockquote>
+    <div class="card-title-row">
+      <div><h2>斷罪</h2><p class="en-name">Censored</p></div>
+      <span class="card-cost">5 怒火</span>
+    </div>
+    <p class="card-flavor">審判、定罪。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>5 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>12-16</b><div><p>3 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>17+</b><div><p>5 + <b class="term">力量</b>神聖傷害</p></div></div></div></section><section class="block"><h3>效果</h3><p>若目標因此招式而陷入<b class="term">疲態</b>，只要他不是首領或獨霸生物，他的<b class="term">體力</b>會直接歸 0。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>3 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害</span></p></div><p><b class="card-label">效果</b>若目標因此招式而陷入<b class="term">疲態</b>，只要他不是首領或獨霸生物，他的<b class="term">體力</b>會直接歸 0。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Censored</div>
-    <blockquote>Judged and sentenced.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>5 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + M holy damage</p></div></div><div class="tier"><b>12-16</b><div><p>3 + M holy damage</p></div></div><div class="tier"><b>17+</b><div><p>5 + M holy damage</p></div></div></div></section><section class="block"><h3>Effect</h3><p>When a target who is not a leader or solo creature is made winded by this ability, they are reduced to 0 Stamina.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Censored</h3></div>
+        <span class="card-cost">5 Wrath</span>
+      </div>
+      <p class="card-flavor">Judged and sentenced.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>3 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>5 + M holy damage</span></p></div><p><b class="card-label">Effect</b>When a target who is not a leader or solo creature is made winded by this ability, they are reduced to 0 Stamina.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.censored">
     <div class="decision-buttons">
@@ -392,29 +456,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.driving-assault" data-id="ability.censor.driving-assault">
+</section>
+<section class="entry" id="entry-ability.censor.driving-assault" data-id="ability.censor.driving-assault">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>衝刺追擊 <span class="en-name">Driving Assault</span></h2>
-    <blockquote>你逼退敵人，並運用信仰的力量緊隨其後。</blockquote>
+    <div class="card-title-row">
+      <div><h2>衝刺追擊</h2><p class="en-name">Driving Assault</p></div>
+      <span class="card-cost">3 怒火</span>
+    </div>
+    <p class="card-flavor">你逼退敵人，並運用信仰的力量緊隨其後。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>3 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + <b class="term">力量</b>傷害；推動 1</p></div></div><div class="tier"><b>12-16</b><div><p>6 + <b class="term">力量</b>傷害；推動 3</p></div></div><div class="tier"><b>17+</b><div><p>9 + <b class="term">力量</b>傷害；推動 5</p></div></div></div></section><section class="block"><h3>效果</h3><p>在推動目標後，你可以朝目標直線遁移最多等於你<b class="term">速度</b>的距離。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + <span class="attr-tag">力量</span>傷害；推動 1</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>6 + <span class="attr-tag">力量</span>傷害；推動 3</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>9 + <span class="attr-tag">力量</span>傷害；推動 5</span></p></div><p><b class="card-label">效果</b>在推動目標後，你可以朝目標直線遁移最多等於你<b class="term">速度</b>的距離。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Driving Assault</div>
-    <blockquote>As you force your enemy back with your weapon, you use your faith to stay close.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>3 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + M damage; push 1</p></div></div><div class="tier"><b>12-16</b><div><p>6 + M damage; push 3</p></div></div><div class="tier"><b>17+</b><div><p>9 + M damage; push 5</p></div></div></div></section><section class="block"><h3>Effect</h3><p>You can shift up to your speed in a straight line toward the target after pushing them.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Driving Assault</h3></div>
+        <span class="card-cost">3 Wrath</span>
+      </div>
+      <p class="card-flavor">As you force your enemy back with your weapon, you use your faith to stay close.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + M damage; push 1</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>6 + M damage; push 3</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>9 + M damage; push 5</span></p></div><p><b class="card-label">Effect</b>You can shift up to your speed in a straight line toward the target after pushing them.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.driving-assault">
     <div class="decision-buttons">
@@ -424,29 +494,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.every-step-death" data-id="ability.censor.every-step-death">
+</section>
+<section class="entry" id="entry-ability.censor.every-step-death" data-id="ability.censor.every-step-death">
+<p class="kind-line"><span class="kind-label">分類</span>招式・招牌・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>招牌</span><span>等級 1</span></div>
-    <h2>踏向死亡！ <span class="en-name">Every Step … Death!</span></h2>
-    <blockquote>你讓敵人窺見他們死後的命運。</blockquote>
+    <div class="card-title-row">
+      <div><h2>踏向死亡！</h2><p class="en-name">Every Step … Death!</p></div>
+      
+    </div>
+    <p class="card-flavor">你讓敵人窺見他們死後的命運。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>遠程 10</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 氣場</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + <b class="term">氣場</b>心靈傷害</p></div></div><div class="tier"><b>12-16</b><div><p>7 + <b class="term">氣場</b>心靈傷害</p></div></div><div class="tier"><b>17+</b><div><p>10 + <b class="term">氣場</b>心靈傷害</p></div></div></div></section><section class="block"><h3>效果</h3><p>在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>遠程</li><li>打擊</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>遠程 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 氣場</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + <span class="attr-tag">氣場</span>心靈傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>7 + <span class="attr-tag">氣場</span>心靈傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>10 + <span class="attr-tag">氣場</span>心靈傷害</span></p></div><p><b class="card-label">效果</b>在你下個回合結束前，目標每主動移動 1 格都會受到 1 點心靈傷害。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Every Step … Death!</div>
-    <blockquote>You show your foe a glimpse of their fate after death.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Ranged 10</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Presence</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + P psychic damage</p></div></div><div class="tier"><b>12-16</b><div><p>7 + P psychic damage</p></div></div><div class="tier"><b>17+</b><div><p>10 + P psychic damage</p></div></div></div></section><section class="block"><h3>Effect</h3><p>Each time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Every Step … Death!</h3></div>
+        
+      </div>
+      <p class="card-flavor">You show your foe a glimpse of their fate after death.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Ranged</li><li>Strike</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Ranged 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Presence</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + P psychic damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>7 + P psychic damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>10 + P psychic damage</span></p></div><p><b class="card-label">Effect</b>Each time the target willingly moves before the end of your next turn, they take 1 psychic damage for each square they move.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.every-step-death">
     <div class="decision-buttons">
@@ -456,29 +532,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.halt-miscreant" data-id="ability.censor.halt-miscreant">
+</section>
+<section class="entry" id="entry-ability.censor.halt-miscreant" data-id="ability.censor.halt-miscreant">
+<p class="kind-line"><span class="kind-label">分類</span>招式・招牌・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>招牌</span><span>等級 1</span></div>
-    <h2>惡徒止步！ <span class="en-name">Halt Miscreant!</span></h2>
-    <blockquote>你為武器注入神聖魔法，使敵人難以逃離。</blockquote>
+    <div class="card-title-row">
+      <div><h2>惡徒止步！</h2><p class="en-name">Halt Miscreant!</p></div>
+      
+    </div>
+    <p class="card-flavor">你為武器注入神聖魔法，使敵人難以逃離。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 弱</span>，目標陷入緩速（豁免解除）</p></div></div><div class="tier"><b>12-16</b><div><p>5 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 中</span>，目標陷入緩速（豁免解除）</p></div></div><div class="tier"><b>17+</b><div><p>7 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">氣場 &lt; 強</span>，目標陷入緩速（豁免解除）</p></div></div></div></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 弱</span>，緩速（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 中</span>，緩速（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>7 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">氣場 &lt; 強</span>，緩速（豁免解除）</span></p></div></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Halt Miscreant!</div>
-    <blockquote>You infuse your weapon with holy magic that makes it difficult for your foe to get away.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>2 + M holy damage; <span class="potency-tag">Presence &lt; WEAK</span>, The target is slowed (save ends).</p></div></div><div class="tier"><b>12-16</b><div><p>5 + M holy damage; <span class="potency-tag">Presence &lt; AVERAGE</span>, The target is slowed (save ends).</p></div></div><div class="tier"><b>17+</b><div><p>7 + M holy damage; <span class="potency-tag">Presence &lt; STRONG</span>, The target is slowed (save ends).</p></div></div></div></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Halt Miscreant!</h3></div>
+        
+      </div>
+      <p class="card-flavor">You infuse your weapon with holy magic that makes it difficult for your foe to get away.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>2 + M holy damage; <span class="potency-tag">Presence &lt; WEAK</span>, slowed (save ends)</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + M holy damage; <span class="potency-tag">Presence &lt; AVERAGE</span>, slowed (save ends)</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>7 + M holy damage; <span class="potency-tag">Presence &lt; STRONG</span>, slowed (save ends)</span></p></div></div>
   </div>
   <div class="decision" data-id="ability.censor.halt-miscreant">
     <div class="decision-buttons">
@@ -488,29 +570,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.judgment" data-id="ability.censor.judgment">
+</section>
+<section class="entry" id="entry-ability.censor.judgment" data-id="ability.censor.judgment">
+<p class="kind-line"><span class="kind-label">分類</span>招式・固有・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>固有</span><span>等級 1</span></div>
-    <h2>審判 <span class="en-name">Judgment</span></h2>
-    <blockquote>你吟誦禱文，用神聖能量籠罩你的敵人。</blockquote>
+    <div class="card-title-row">
+      <div><h2>審判</h2><p class="en-name">Judgment</p></div>
+      
+    </div>
+    <p class="card-flavor">你吟誦禱文，用神聖能量籠罩你的敵人。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>機動動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>遠程 10</strong></div>
-    <div><span>目標</span><strong>1 個敵人</strong></div>
-  </div><section class="block"><h3>效果</h3><p>目標被你審判，持續到<b class="term">遭遇</b>結束、你再次發動此招式、你主動解除此效果（無需動作），或其他懲戒者審判相同的目標。</p><p>每當 1 個被你審判的生物使用主要動作時，只要他在你的效果線內，你可以使用免費反應動作對他造成等於你<b class="term">氣場</b> ×2 的神聖傷害。</p><p>當 1 個被你審判的生物<b class="term">體力</b>歸 0 時，你可以使用免費反應動作對 1 個新目標發動此招式。</p><p>此外，你可以花費 1 點<b class="term">怒火</b>來執行以下 1 項免費反應動作：</p><ol><li>當 1 個與你相鄰且被你審判的生物開始遁移時，你對他發動 1 次近戰基礎打擊，並讓他的<b class="term">速度</b>歸 0 而無法遁移，直到他當前回合結束。</li><li>當 1 個被你審判且位於你 10 格內的生物進行檢定時，你讓他的檢定承受 1 個劣勢。</li><li>當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。</li><li>若你使用近戰招式對 1 個被你審判的生物造成傷害，該生物會被你嘲諷，直到他下個回合結束。</li></ol><p>即使有多個選項由相同的效果觸發，你每次也只能選擇 1 項免費反應動作。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>遠程</li></ul><span>機動動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>遠程 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個敵人</span></div>
+  </div><div class="card-body"><p><b class="card-label">效果</b>目標被你審判，持續到<b class="term">遭遇</b>結束、你再次發動此招式、你主動解除此效果（無需動作），或其他懲戒者審判相同的目標。</p><p>每當 1 個被你審判的生物使用主要動作時，只要他在你的效果線內，你可以使用免費反應動作對他造成等於你<b class="term">氣場</b> ×2 的神聖傷害。</p><p>當 1 個被你審判的生物<b class="term">體力</b>歸 0 時，你可以使用免費反應動作對 1 個新目標發動此招式。</p><p>此外，你可以花費 1 點<b class="term">怒火</b>來執行以下 1 項免費反應動作：</p><ol><li>當 1 個與你相鄰且被你審判的生物開始遁移時，你對他發動 1 次近戰基礎打擊，並讓他的<b class="term">速度</b>歸 0 而無法遁移，直到他當前回合結束。</li><li>當 1 個被你審判且位於你 10 格內的生物進行檢定時，你讓他的檢定承受 1 個劣勢。</li><li>當 1 個被你審判且位於你 10 格內的生物發動具有效力的招式時，若該招式只指定 1 個生物，該招式的效力對該生物減少 1 點。</li><li>若你使用近戰招式對 1 個被你審判的生物造成傷害，該生物會被你嘲諷，直到他下個回合結束。</li></ol><p>即使有多個選項由相同的效果觸發，你每次也只能選擇 1 項免費反應動作。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 80 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Judgment</div>
-    <blockquote>You utter a prayer that outlines your foe in holy energy.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Maneuver</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Ranged 10</strong></div>
-    <div><span>Target</span><strong>One enemy</strong></div>
-  </div><section class="block"><h3>Effect</h3><p>The target is judged by you until the end of the encounter, you use this ability again, you willingly end this effect (no action required), or another censor judges the target.</p><p>Whenever a creature judged by you uses a main action and is within your line of effect, you can use a free triggered action to deal holy damage equal to twice your Presence score to them.</p><p>When a creature judged by you is reduced to 0 Stamina, you can use a free triggered action to use this ability against a new target.</p><p>Additionally, you can spend 1 wrath to take one of the following free triggered actions:</p><ol><li>When an adjacent creature judged by you starts to shift, you make a melee free strike against them and their speed becomes 0 until the end of the current turn, preventing them from shifting.</li><li>When a creature judged by you within 10 squares makes a power roll, you cause them to take a bane on the roll.</li><li>When a creature judged by you within 10 squares uses an ability with a potency that targets only one creature, the potency is reduced by 1 for that creature.</li><li>If you damage a creature judged by you with a melee ability, the creature is taunted by you until the end of their next turn.</li></ol><p>You can choose only one free triggered action option at a time, even if multiple options are triggered by the same effect.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Judgment</h3></div>
+        
+      </div>
+      <p class="card-flavor">You utter a prayer that outlines your foe in holy energy.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Ranged</li></ul><span>Maneuver</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Ranged 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One enemy</span></div>
+  </div><div class="card-body"><p><b class="card-label">Effect</b>The target is judged by you until the end of the encounter, you use this ability again, you willingly end this effect (no action required), or another censor judges the target.</p><p>Whenever a creature judged by you uses a main action and is within your line of effect, you can use a free triggered action to deal holy damage equal to twice your Presence score to them.</p><p>When a creature judged by you is reduced to 0 Stamina, you can use a free triggered action to use this ability against a new target.</p><p>Additionally, you can spend 1 wrath to take one of the following free triggered actions:</p><ol><li>When an adjacent creature judged by you starts to shift, you make a melee free strike against them and their speed becomes 0 until the end of the current turn, preventing them from shifting.</li><li>When a creature judged by you within 10 squares makes a power roll, you cause them to take a bane on the roll.</li><li>When a creature judged by you within 10 squares uses an ability with a potency that targets only one creature, the potency is reduced by 1 for that creature.</li><li>If you damage a creature judged by you with a melee ability, the creature is taunted by you until the end of their next turn.</li></ol><p>You can choose only one free triggered action option at a time, even if multiple options are triggered by the same effect.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.judgment">
     <div class="decision-buttons">
@@ -520,29 +608,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.my-life-for-yours" data-id="ability.censor.my-life-for-yours">
+</section>
+<section class="entry" id="entry-ability.censor.my-life-for-yours" data-id="ability.censor.my-life-for-yours">
+<p class="kind-line"><span class="kind-label">分類</span>招式・固有・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>固有</span><span>等級 1</span></div>
-    <h2>捨己為人 <span class="en-name">My Life for Yours</span></h2>
-    <blockquote>你將生命能量注入自己或盟友體內來增強韌性。</blockquote>
+    <div class="card-title-row">
+      <div><h2>捨己為人</h2><p class="en-name">My Life for Yours</p></div>
+      
+    </div>
+    <p class="card-flavor">你將生命能量注入自己或盟友體內來增強韌性。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>反應動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>遠程 10</strong></div>
-    <div><span>目標</span><strong>自身或 1 個盟友</strong></div>
-  </div><section class="block"><h3>觸發</h3><p>當目標開始回合或受到傷害時。</p></section><section class="block"><h3>效果</h3><p>你花費 1 點<b class="term">復元力</b>，並讓目標恢復等於你<b class="term">復元值</b>的<b class="term">體力</b>。</p></section><section class="block"><h3>花費 1 點怒火</h3><p>你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>遠程</li></ul><span>反應動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>遠程 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>自身或 1 個盟友</span></div>
+  </div><div class="card-body"><p><b class="card-label">觸發</b>當目標開始回合或受到傷害時。</p><p><b class="card-label">效果</b>你花費 1 點<b class="term">復元力</b>，並讓目標恢復等於你<b class="term">復元值</b>的<b class="term">體力</b>。</p><p><b class="card-label">花費 1 怒火</b>你可以解除目標身上 1 個能夠透過豁免解除或 EoT 的效果，或是讓伏地的目標起身。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 80 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">My Life for Yours</div>
-    <blockquote>You channel some of your vitality into more resilience for you or an ally.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Triggered Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Ranged 10</strong></div>
-    <div><span>Target</span><strong>Self or one ally</strong></div>
-  </div><section class="block"><h3>Trigger</h3><p>The target starts their turn or takes damage.</p></section><section class="block"><h3>Effect</h3><p>You spend a Recovery and the target regains Stamina equal to your recovery value.</p></section><section class="block"><h3>Spend 1 Wrath</h3><p>Spend 1 Wrath: You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>My Life for Yours</h3></div>
+        
+      </div>
+      <p class="card-flavor">You channel some of your vitality into more resilience for you or an ally.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Ranged</li></ul><span>Triggered Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Ranged 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>Self or one ally</span></div>
+  </div><div class="card-body"><p><b class="card-label">Trigger</b>The target starts their turn or takes damage.</p><p><b class="card-label">Effect</b>You spend a Recovery and the target regains Stamina equal to your recovery value.</p><p><b class="card-label">Spend 1 Wrath</b>Spend 1 Wrath: You can end one effect on the target that is ended by a saving throw or that ends at the end of their turn, or a prone target can stand up.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.my-life-for-yours">
     <div class="decision-buttons">
@@ -552,29 +646,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.purifying-fire" data-id="ability.censor.purifying-fire">
+</section>
+<section class="entry" id="entry-ability.censor.purifying-fire" data-id="ability.censor.purifying-fire">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>淨化聖火 <span class="en-name">Purifying Fire</span></h2>
-    <blockquote>神明審判、火焰淨化。</blockquote>
+    <div class="card-title-row">
+      <div><h2>淨化聖火</h2><p class="en-name">Purifying Fire</p></div>
+      <span class="card-cost">5 怒火</span>
+    </div>
+    <p class="card-flavor">神明審判、火焰淨化。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>5 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1 或 遠程 5</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">力量 &lt; 弱</span>，目標獲得火焰弱點 3（豁免解除）</p></div></div><div class="tier"><b>12-16</b><div><p>9 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">力量 &lt; 中</span>，目標獲得火焰弱點 5（豁免解除）</p></div></div><div class="tier"><b>17+</b><div><p>12 + <b class="term">力量</b>神聖傷害；<span class="potency-tag">力量 &lt; 強</span>，目標獲得火焰弱點 7（豁免解除）</p></div></div></div></section><section class="block"><h3>效果</h3><p>若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>近戰</li><li>遠程</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1 或 遠程 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">力量 &lt; 弱</span>，目標獲得火焰弱點 3（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>9 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">力量 &lt; 中</span>，目標獲得火焰弱點 5（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>12 + <span class="attr-tag">力量</span>神聖傷害；<span class="potency-tag">力量 &lt; 強</span>，目標獲得火焰弱點 7（豁免解除）</span></p></div><p><b class="card-label">效果</b>若目標因此招式而擁有火焰弱點，你可以選擇讓你的招式對目標造成火焰傷害，而非神聖傷害。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Purifying Fire</div>
-    <blockquote>The gods judge, fire cleanses.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>5 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1 or ranged 5</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + M holy damage; <span class="potency-tag">Might &lt; WEAK</span>, The target has fire weakness 3 (save ends).</p></div></div><div class="tier"><b>12-16</b><div><p>9 + M holy damage; <span class="potency-tag">Might &lt; AVERAGE</span>, The target has fire weakness 5 (save ends).</p></div></div><div class="tier"><b>17+</b><div><p>12 + M holy damage; <span class="potency-tag">Might &lt; STRONG</span>, The target has fire weakness 7 (save ends).</p></div></div></div></section><section class="block"><h3>Effect</h3><p>While the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Purifying Fire</h3></div>
+        <span class="card-cost">5 Wrath</span>
+      </div>
+      <p class="card-flavor">The gods judge, fire cleanses.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Melee</li><li>Ranged</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1 or ranged 5</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + M holy damage; <span class="potency-tag">Might &lt; WEAK</span>, The target has fire weakness 3 (save ends).</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>9 + M holy damage; <span class="potency-tag">Might &lt; AVERAGE</span>, The target has fire weakness 5 (save ends).</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>12 + M holy damage; <span class="potency-tag">Might &lt; STRONG</span>, The target has fire weakness 7 (save ends).</span></p></div><p><b class="card-label">Effect</b>While the target has fire weakness from this ability, you can choose to have your abilities deal fire damage to the target instead of holy damage.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.purifying-fire">
     <div class="decision-buttons">
@@ -584,29 +684,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.repent" data-id="ability.censor.repent">
+</section>
+<section class="entry" id="entry-ability.censor.repent" data-id="ability.censor.repent">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>懺悔吧！ <span class="en-name">Repent!</span></h2>
-    <blockquote>你喚起敵人的罪惡記憶，使他心神不寧。</blockquote>
+    <div class="card-title-row">
+      <div><h2>懺悔吧！</h2><p class="en-name">Repent!</p></div>
+      <span class="card-cost">3 怒火</span>
+    </div>
+    <p class="card-flavor">你喚起敵人的罪惡記憶，使他心神不寧。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>3 點怒火</strong></div>
-    <div><span>射程</span><strong>遠程 10</strong></div>
-    <div><span>目標</span><strong>1 個生物</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 氣場</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + <b class="term">氣場</b>神聖傷害；<span class="potency-tag">直覺 &lt; 弱</span>，目標陷入暈眩（豁免解除）</p></div></div><div class="tier"><b>12-16</b><div><p>8 + <b class="term">氣場</b>神聖傷害；<span class="potency-tag">直覺 &lt; 中</span>，目標陷入暈眩（豁免解除）</p></div></div><div class="tier"><b>17+</b><div><p>11 + <b class="term">氣場</b>神聖傷害；<span class="potency-tag">直覺 &lt; 強</span>，目標陷入暈眩（豁免解除）</p></div></div></div></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>遠程</li><li>打擊</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>遠程 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 氣場</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + <span class="attr-tag">氣場</span>神聖傷害；<span class="potency-tag">直覺 &lt; 弱</span>，暈眩（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>8 + <span class="attr-tag">氣場</span>神聖傷害；<span class="potency-tag">直覺 &lt; 中</span>，暈眩（豁免解除）</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>11 + <span class="attr-tag">氣場</span>神聖傷害；<span class="potency-tag">直覺 &lt; 強</span>，暈眩（豁免解除）</span></p></div></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Repent!</div>
-    <blockquote>You conjure memories of their sins to harry your foes.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>3 Wrath</strong></div>
-    <div><span>Distance</span><strong>Ranged 10</strong></div>
-    <div><span>Target</span><strong>One creature</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Presence</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + P holy damage; <span class="potency-tag">Intuition &lt; WEAK</span>, The target is dazed (save ends).</p></div></div><div class="tier"><b>12-16</b><div><p>8 + P holy damage; <span class="potency-tag">Intuition &lt; AVERAGE</span>, The target is dazed (save ends).</p></div></div><div class="tier"><b>17+</b><div><p>11 + P holy damage; <span class="potency-tag">Intuition &lt; STRONG</span>, The target is dazed (save ends).</p></div></div></div></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Repent!</h3></div>
+        <span class="card-cost">3 Wrath</span>
+      </div>
+      <p class="card-flavor">You conjure memories of their sins to harry your foes.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Ranged</li><li>Strike</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Ranged 10</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Presence</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + P holy damage; <span class="potency-tag">Intuition &lt; WEAK</span>, dazed (save ends)</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>8 + P holy damage; <span class="potency-tag">Intuition &lt; AVERAGE</span>, dazed (save ends)</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>11 + P holy damage; <span class="potency-tag">Intuition &lt; STRONG</span>, dazed (save ends)</span></p></div></div>
   </div>
   <div class="decision" data-id="ability.censor.repent">
     <div class="decision-buttons">
@@ -616,29 +722,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.the-gods-punish-and-defend" data-id="ability.censor.the-gods-punish-and-defend">
+</section>
+<section class="entry" id="entry-ability.censor.the-gods-punish-and-defend" data-id="ability.censor.the-gods-punish-and-defend">
+<p class="kind-line"><span class="kind-label">分類</span>招式・英雄・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>英雄</span><span>等級 1</span></div>
-    <h2>神之懲護 <span class="en-name">The Gods Punish and Defend</span></h2>
-    <blockquote>你引導神聖能量來懲戒敵人並守護盟友。</blockquote>
+    <div class="card-title-row">
+      <div><h2>神之懲護</h2><p class="en-name">The Gods Punish and Defend</p></div>
+      <span class="card-cost">3 怒火</span>
+    </div>
+    <p class="card-flavor">你引導神聖能量來懲戒敵人並守護盟友。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>3 點怒火</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>12-16</b><div><p>8 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>17+</b><div><p>11 + <b class="term">力量</b>神聖傷害</p></div></div></div></section><section class="block"><h3>效果</h3><p>你可以花費 1 點<b class="term">復元力</b>，讓自己或 10 格內的 1 個盟友恢復等於你<b class="term">復元值</b>的<b class="term">體力</b>。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>魔法</li><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>8 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>11 + <span class="attr-tag">力量</span>神聖傷害</span></p></div><p><b class="card-label">效果</b>你可以花費 1 點<b class="term">復元力</b>，讓自己或 10 格內的 1 個盟友恢復等於你<b class="term">復元值</b>的<b class="term">體力</b>。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 83 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">The Gods Punish and Defend</div>
-    <blockquote>You channel holy energy to smite a foe and heal an ally.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>3 Wrath</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>5 + M holy damage</p></div></div><div class="tier"><b>12-16</b><div><p>8 + M holy damage</p></div></div><div class="tier"><b>17+</b><div><p>11 + M holy damage</p></div></div></div></section><section class="block"><h3>Effect</h3><p>You can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>The Gods Punish and Defend</h3></div>
+        <span class="card-cost">3 Wrath</span>
+      </div>
+      <p class="card-flavor">You channel holy energy to smite a foe and heal an ally.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Magic</li><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>5 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>8 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>11 + M holy damage</span></p></div><p><b class="card-label">Effect</b>You can spend a Recovery to allow yourself or one ally within 10 squares to regain Stamina equal to your recovery value.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.the-gods-punish-and-defend">
     <div class="decision-buttons">
@@ -648,29 +760,35 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-ability.censor.your-allies-cannot-save-you" data-id="ability.censor.your-allies-cannot-save-you">
+</section>
+<section class="entry" id="entry-ability.censor.your-allies-cannot-save-you" data-id="ability.censor.your-allies-cannot-save-you">
+<p class="kind-line"><span class="kind-label">分類</span>招式・招牌・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>招式</span><span>招牌</span><span>等級 1</span></div>
-    <h2>你的同夥救不了你！ <span class="en-name">Your Allies Cannot Save You!</span></h2>
-    <blockquote>你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。</blockquote>
+    <div class="card-title-row">
+      <div><h2>你的同夥救不了你！</h2><p class="en-name">Your Allies Cannot Save You!</p></div>
+      
+    </div>
+    <p class="card-flavor">你的魔法打擊將敵人的罪惡感轉化為神聖的衝擊力。</p>
   </header>
-  <div class="card-body zh"><div class="stats-row">
-    <div><span>動作</span><strong>主要動作</strong></div>
-    <div><span>費用</span><strong>無</strong></div>
-    <div><span>射程</span><strong>近戰 1</strong></div>
-    <div><span>目標</span><strong>1 個生物或物體</strong></div>
-  </div><section class="block"><h3>檢定 <span class="chip">＋ 力量</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>12-16</b><div><p>5 + <b class="term">力量</b>神聖傷害</p></div></div><div class="tier"><b>17+</b><div><p>8 + <b class="term">力量</b>神聖傷害</p></div></div></div></section><section class="block"><h3>效果</h3><p>與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你<b class="term">氣場</b>的格數。</p></section></div>
+  <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>近戰</li><li>打擊</li><li>武器</li></ul><span>主要動作</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">射程</span></span>近戰 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">目標</span></span>1 個生物或物體</span></div>
+  </div><div class="card-body"><p class="power-roll-label">檢定 ＋ 力量</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + <span class="attr-tag">力量</span>神聖傷害</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>8 + <span class="attr-tag">力量</span>神聖傷害</span></p></div><p><b class="card-label">效果</b>與目標相鄰的每個敵人都會朝遠離目標的方向推動最多等於你<b class="term">氣場</b>的格數。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 82 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Your Allies Cannot Save You!</div>
-    <blockquote>Your magic strike turns your foe’s guilt into a burst of holy power.</blockquote>
-    <div class="stats-row">
-    <div><span>Action</span><strong>Main Action</strong></div>
-    <div><span>Cost</span><strong>None</strong></div>
-    <div><span>Distance</span><strong>Melee 1</strong></div>
-    <div><span>Target</span><strong>One creature or object</strong></div>
-  </div><section class="block"><h3>Power Roll <span class="chip">+ Might</span></h3><div class="tier-list"><div class="tier"><b>≤11</b><div><p>3 + M holy damage</p></div></div><div class="tier"><b>12-16</b><div><p>5 + M holy damage</p></div></div><div class="tier"><b>17+</b><div><p>8 + M holy damage</p></div></div></div></section><section class="block"><h3>Effect</h3><p>Each enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Your Allies Cannot Save You!</h3></div>
+        
+      </div>
+      <p class="card-flavor">Your magic strike turns your foe’s guilt into a burst of holy power.</p>
+    </header>
+    <div class="card-bar">
+    <div class="bar-row"><ul class="keywords"><li>Melee</li><li>Strike</li><li>Weapon</li></ul><span>Main Action</span></div>
+    <div class="bar-row"><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">o</span><span class="sr-only">Distance</span></span>Melee 1</span><span><span class="glyph-wrap"><span class="glyph" aria-hidden="true">x</span><span class="sr-only">Target</span></span>One creature or object</span></div>
+  </div><div class="card-body"><p class="power-roll-label">Power Roll + Might</p><div class="tier-list"><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">á</span><span class="sr-only">≤11</span></span><span>3 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">é</span><span class="sr-only">12-16</span></span><span>5 + M holy damage</span></p><p class="tier"><span class="glyph-wrap"><span class="glyph" aria-hidden="true">í</span><span class="sr-only">17+</span></span><span>8 + M holy damage</span></p></div><p><b class="card-label">Effect</b>Each enemy adjacent to the target is pushed away from the target up to a number of squares equal to your Presence score.</p></div>
   </div>
   <div class="decision" data-id="ability.censor.your-allies-cannot-save-you">
     <div class="decision-buttons">
@@ -679,20 +797,30 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     </div>
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
-</article><h2 class="group-heading">狀態 · 9 筆</h2>
-<article class="card" id="entry-condition.bleeding" data-id="condition.bleeding">
+</article>
+</section><h2 class="group-heading">狀態 · 9 筆</h2>
+<section class="entry" id="entry-condition.bleeding" data-id="condition.bleeding">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>出血 <span class="en-name">Bleeding</span></h2>
+    <div class="card-title-row">
+      <div><h2>出血</h2><p class="en-name">Bleeding</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你處於出血狀態，每當你使用主要動作或反應動作，或使用<b class="term">力量</b>或<b class="term">敏捷</b>進行考驗或招式檢定時，在動作或檢定結算後，你會失去 1D6 + 等級的<b class="term">體力</b>（無法透過任何方式避免，而且每個動作只會失去 1 次<b class="term">體力</b>）。</p><p>若你在自己的回合外使用主要動作，你也會受到此狀態的傷害。例如，若你在戰術家的「快出手！」招式協助下使用免費反應動作發動招牌招式，你也會觸發出血狀態的傷害。</p></section></div>
+  <div class="card-body"><p>若你處於出血狀態，每當你使用主要動作或反應動作，或使用<b class="term">力量</b>或<b class="term">敏捷</b>進行考驗或招式檢定時，在動作或檢定結算後，你會失去 1D6 + 等級的<b class="term">體力</b>（無法透過任何方式避免，而且每個動作只會失去 1 次<b class="term">體力</b>）。</p><p>若你在自己的回合外使用主要動作，你也會受到此狀態的傷害。例如，若你在戰術家的「快出手！」招式協助下使用免費反應動作發動招牌招式，你也會觸發出血狀態的傷害。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Bleeding</div>
-    
-    <section class="block"><p>While a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.</p><p>You take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Bleeding</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>While a creature is bleeding, whenever they use a main action, use a triggered action, or make a test or ability roll using Might or Agility, they lose Stamina equal to 1d6 + their level after the main action, triggered action, or power roll is resolved. This Stamina loss can’t be prevented in any way, and only happens once per action.</p><p>You take damage from this condition when you use a main action off your turn. For example, a signature ability used as a free triggered action with the assistance of the tactician’s Strike Now ability triggers the damage from the bleeding condition.</p></div>
   </div>
   <div class="decision" data-id="condition.bleeding">
     <div class="decision-buttons">
@@ -702,19 +830,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.dazed" data-id="condition.dazed">
+</section>
+<section class="entry" id="entry-condition.dazed" data-id="condition.dazed">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>暈眩 <span class="en-name">Dazed</span></h2>
+    <div class="card-title-row">
+      <div><h2>暈眩</h2><p class="en-name">Dazed</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你處於暈眩狀態，你在自己回合中只能執行其中 1 種動作：主要動作、機動動作，或移動動作。你也無法使用反應動作、免費反應動作，以及免費機動動作。</p></section></div>
+  <div class="card-body"><p>若你處於暈眩狀態，你在自己回合中只能執行其中 1 種動作：主要動作、機動動作，或移動動作。你也無法使用反應動作、免費反應動作，以及免費機動動作。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Dazed</div>
-    
-    <section class="block"><p>A creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Dazed</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is dazed can do only one thing on their turn: use a main action, use a maneuver, or use a move action. A dazed creature also can’t use triggered actions, free triggered actions, or free maneuvers.</p></div>
   </div>
   <div class="decision" data-id="condition.dazed">
     <div class="decision-buttons">
@@ -724,19 +862,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.frightened" data-id="condition.frightened">
+</section>
+<section class="entry" id="entry-condition.frightened" data-id="condition.frightened">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>畏縮 <span class="en-name">Frightened</span></h2>
+    <div class="card-title-row">
+      <div><h2>畏縮</h2><p class="en-name">Frightened</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你處於畏縮狀態，你對恐懼來源進行的任何招式檢定都會承受 1 個劣勢。若恐懼來源為生物，該來源對你進行的招式檢定會獲得 1 個優勢。你若知道恐懼來源的位置，你就無法主動接近該來源。若你已經因為某個來源而陷入畏縮，然後又從其他來源陷入畏縮，則新的畏縮狀態會取代舊的狀態。</p></section></div>
+  <div class="card-body"><p>若你處於畏縮狀態，你對恐懼來源進行的任何招式檢定都會承受 1 個劣勢。若恐懼來源為生物，該來源對你進行的招式檢定會獲得 1 個優勢。你若知道恐懼來源的位置，你就無法主動接近該來源。若你已經因為某個來源而陷入畏縮，然後又從其他來源陷入畏縮，則新的畏縮狀態會取代舊的狀態。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Frightened</div>
-    
-    <section class="block"><p>When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Frightened</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>When a creature is frightened, any ability roll they make against the source of their fear takes a bane. If that source is a creature, their ability rolls made against the frightened creature gain an edge. A frightened creature can’t willingly move closer to the source of their fear if they know the location of that source. If a creature gains the frightened condition from one source while already frightened by a different source, the new condition replaces the old one.</p></div>
   </div>
   <div class="decision" data-id="condition.frightened">
     <div class="decision-buttons">
@@ -746,19 +894,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.grabbed" data-id="condition.grabbed">
+</section>
+<section class="entry" id="entry-condition.grabbed" data-id="condition.grabbed">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>擒制 <span class="en-name">Grabbed</span></h2>
+    <div class="card-title-row">
+      <div><h2>擒制</h2><p class="en-name">Grabbed</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你被擒制，你的<b class="term">速度</b>歸 0，而且只能被擒抱者（生物、物體或效果）強制移動。你無法使用擊退機動動作，而且對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢。當擒抱者移動時，你會一起移動。若擒抱者的<b class="term">體型</b> ≦ 你，則擒抱者在擒抱期間的<b class="term">速度</b>會減半。</p><p>擒抱者可以使用機動動作將你移動至相鄰的未占據空間。</p><p>擒抱者可以隨時釋放你來解除該狀態（無需動作）。你可以使用掙脫機動動作來嘗試脫離。若你進行傳送，或你與擒抱者任一方被強制移動到雙方不相鄰的位置，擒制狀態就會立刻解除。</p><p>生物只能擒抱<b class="term">體型</b> ≦ 自己的生物。若生物的<b class="term">力量</b>為 2 以上，則可以擒抱<b class="term">體型</b> ≦ 其<b class="term">力量</b>的生物。</p><p>除非另有說明，生物同時只能擒抱 1 個生物。</p></section></div>
+  <div class="card-body"><p>若你被擒制，你的<b class="term">速度</b>歸 0，而且只能被擒抱者（生物、物體或效果）強制移動。你無法使用擊退機動動作，而且對擒抱者以外的目標進行的任何招式檢定都會承受 1 個劣勢。當擒抱者移動時，你會一起移動。若擒抱者的<b class="term">體型</b> ≦ 你，則擒抱者在擒抱期間的<b class="term">速度</b>會減半。</p><p>擒抱者可以使用機動動作將你移動至相鄰的未占據空間。</p><p>擒抱者可以隨時釋放你來解除該狀態（無需動作）。你可以使用掙脫機動動作來嘗試脫離。若你進行傳送，或你與擒抱者任一方被強制移動到雙方不相鄰的位置，擒制狀態就會立刻解除。</p><p>生物只能擒抱<b class="term">體型</b> ≦ 自己的生物。若生物的<b class="term">力量</b>為 2 以上，則可以擒抱<b class="term">體型</b> ≦ 其<b class="term">力量</b>的生物。</p><p>除非另有說明，生物同時只能擒抱 1 個生物。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Grabbed</div>
-    
-    <section class="block"><p>A creature who is grabbed has speed 0, can’t be force moved except by a creature, object, or effect that has them grabbed, can’t use the Knockback maneuver (see Maneuvers in Chapter 10: Combat), and takes a bane on abilities that don’t target the creature, object, or effect that has them grabbed. If a creature is grabbed by another creature and that creature moves, they bring the grabbed creature with them. If a creature’s size is equal to or less than the size of a creature they have grabbed, their speed is halved while they have that creature grabbed.</p><p>A creature who has another creature grabbed can use a maneuver to move the grabbed creature into an unoccupied space adjacent to them.</p><p>A creature can release a creature they have grabbed at any time to end that condition (no action required). A grabbed creature can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat). If a grabbed creature teleports, or if either the grabbed creature or the creature grabbing them is force moved so that both creatures are not adjacent to each other, that creature is no longer grabbed.</p><p>A creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.</p><p>Unless otherwise indicated, a creature can grab only one creature at a time.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Grabbed</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is grabbed has speed 0, can’t be force moved except by a creature, object, or effect that has them grabbed, can’t use the Knockback maneuver (see Maneuvers in Chapter 10: Combat), and takes a bane on abilities that don’t target the creature, object, or effect that has them grabbed. If a creature is grabbed by another creature and that creature moves, they bring the grabbed creature with them. If a creature’s size is equal to or less than the size of a creature they have grabbed, their speed is halved while they have that creature grabbed.</p><p>A creature who has another creature grabbed can use a maneuver to move the grabbed creature into an unoccupied space adjacent to them.</p><p>A creature can release a creature they have grabbed at any time to end that condition (no action required). A grabbed creature can attempt to escape being grabbed using the Escape Grab maneuver (see Chapter 10: Combat). If a grabbed creature teleports, or if either the grabbed creature or the creature grabbing them is force moved so that both creatures are not adjacent to each other, that creature is no longer grabbed.</p><p>A creature can grab only creatures of their size or smaller. If a creature’s Might score is 2 or higher, they can grab any creature larger than them with a size equal to or less than their Might score.</p><p>Unless otherwise indicated, a creature can grab only one creature at a time.</p></div>
   </div>
   <div class="decision" data-id="condition.grabbed">
     <div class="decision-buttons">
@@ -768,19 +926,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.prone" data-id="condition.prone">
+</section>
+<section class="entry" id="entry-condition.prone" data-id="condition.prone">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>伏地 <span class="en-name">Prone</span></h2>
+    <div class="card-title-row">
+      <div><h2>伏地</h2><p class="en-name">Prone</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你處於伏地狀態，你的身體會平貼地面。在此狀態下，你發動的任何打擊都會承受 1 個劣勢，而其他生物對你發動的近戰招式則會獲得 1 個優勢。你只能用爬行的方式移動，每移動 1 格都需要額外消耗 1 格移動力。你在伏地時無法進行攀爬、跳躍、游泳或飛行。若你在攀爬、飛行或跳躍時被擊倒伏地，則會立刻墜落。</p><p>除非造成伏地狀態的招式或效果另有說明，否則你可以使用起身機動動作來解除伏地。此外，若你願意，相鄰的生物也可以對你使用起身機動動作來將你拉起來。</p></section></div>
+  <div class="card-body"><p>若你處於伏地狀態，你的身體會平貼地面。在此狀態下，你發動的任何打擊都會承受 1 個劣勢，而其他生物對你發動的近戰招式則會獲得 1 個優勢。你只能用爬行的方式移動，每移動 1 格都需要額外消耗 1 格移動力。你在伏地時無法進行攀爬、跳躍、游泳或飛行。若你在攀爬、飛行或跳躍時被擊倒伏地，則會立刻墜落。</p><p>除非造成伏地狀態的招式或效果另有說明，否則你可以使用起身機動動作來解除伏地。此外，若你願意，相鄰的生物也可以對你使用起身機動動作來將你拉起來。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Prone</div>
-    
-    <section class="block"><p>While a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.</p><p>Unless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Prone</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>While a creature is prone, they are flat on the ground, any strike they make takes a bane, and melee abilities used against them gain an edge. A prone creature must crawl to move along the ground, which costs 1 additional square of movement for every square crawled. A creature can’t climb, jump, swim, or fly while prone. If they are climbing, flying, or jumping when knocked prone, they fall.</p><p>Unless the ability or effect that imposed the prone condition says otherwise, a prone creature can stand up using the Stand Up maneuver (see Maneuvers in Chapter 10: Combat). A creature adjacent to a willing prone creature can likewise use the Stand Up maneuver to make that creature stand up.</p></div>
   </div>
   <div class="decision" data-id="condition.prone">
     <div class="decision-buttons">
@@ -790,19 +958,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.restrained" data-id="condition.restrained">
+</section>
+<section class="entry" id="entry-condition.restrained" data-id="condition.restrained">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>束縛 <span class="en-name">Restrained</span></h2>
+    <div class="card-title-row">
+      <div><h2>束縛</h2><p class="en-name">Restrained</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你被束縛，你的<b class="term">速度</b>歸 0，無法使用起身機動動作，也無法被強制移動。你在進行招式檢定以及<b class="term">力量</b>與<b class="term">敏捷</b>考驗時會承受 1 個劣勢，而其他生物對你進行的招式檢定則會獲得 1 個優勢。</p><p>若你進行傳送，束縛狀態就會立刻解除。</p></section></div>
+  <div class="card-body"><p>若你被束縛，你的<b class="term">速度</b>歸 0，無法使用起身機動動作，也無法被強制移動。你在進行招式檢定以及<b class="term">力量</b>與<b class="term">敏捷</b>考驗時會承受 1 個劣勢，而其他生物對你進行的招式檢定則會獲得 1 個優勢。</p><p>若你進行傳送，束縛狀態就會立刻解除。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Restrained</div>
-    
-    <section class="block"><p>A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.</p><p>If a creature teleports while restrained, that condition ends.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Restrained</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is restrained has speed 0, can’t use the Stand Up maneuver, and can’t be force moved. A restrained creature takes a bane on ability rolls and on Might and Agility tests, and abilities used against them gain an edge.</p><p>If a creature teleports while restrained, that condition ends.</p></div>
   </div>
   <div class="decision" data-id="condition.restrained">
     <div class="decision-buttons">
@@ -812,19 +990,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.slowed" data-id="condition.slowed">
+</section>
+<section class="entry" id="entry-condition.slowed" data-id="condition.slowed">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>緩速 <span class="en-name">Slowed</span></h2>
+    <div class="card-title-row">
+      <div><h2>緩速</h2><p class="en-name">Slowed</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你被緩速，你的<b class="term">速度</b>為 2（除非你的<b class="term">速度</b>已經 &lt; 2），而且無法進行遁移。</p></section></div>
+  <div class="card-body"><p>若你被緩速，你的<b class="term">速度</b>為 2（除非你的<b class="term">速度</b>已經 &lt; 2），而且無法進行遁移。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Slowed</div>
-    
-    <section class="block"><p>A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Slowed</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is slowed has speed 2 unless their speed is already lower, and they can’t shift.</p></div>
   </div>
   <div class="decision" data-id="condition.slowed">
     <div class="decision-buttons">
@@ -834,19 +1022,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.taunted" data-id="condition.taunted">
+</section>
+<section class="entry" id="entry-condition.taunted" data-id="condition.taunted">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>嘲諷 <span class="en-name">Taunted</span></h2>
+    <div class="card-title-row">
+      <div><h2>嘲諷</h2><p class="en-name">Taunted</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你被嘲諷，只要你與嘲諷者之間保持效果線，你對嘲諷者以外的目標進行的任何招式檢定都會承受雙劣勢。若你已經被嘲諷，然後又受到其他來源的嘲諷，則新的嘲諷狀態會取代舊的狀態。</p></section></div>
+  <div class="card-body"><p>若你被嘲諷，只要你與嘲諷者之間保持效果線，你對嘲諷者以外的目標進行的任何招式檢定都會承受雙劣勢。若你已經被嘲諷，然後又受到其他來源的嘲諷，則新的嘲諷狀態會取代舊的狀態。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Taunted</div>
-    
-    <section class="block"><p>A creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Taunted</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is taunted has a double bane on ability rolls for any ability that doesn’t target the creature who taunted them, as long as they have line of effect to that creature. If a creature gains the taunted condition from one source while already taunted by a different source, the new condition replaces the old one.</p></div>
   </div>
   <div class="decision" data-id="condition.taunted">
     <div class="decision-buttons">
@@ -856,19 +1054,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-condition.weakened" data-id="condition.weakened">
+</section>
+<section class="entry" id="entry-condition.weakened" data-id="condition.weakened">
+<p class="kind-line"><span class="kind-label">分類</span>狀態</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>狀態</span></div>
-    <h2>虛弱 <span class="en-name">Weakened</span></h2>
+    <div class="card-title-row">
+      <div><h2>虛弱</h2><p class="en-name">Weakened</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>若你陷入虛弱狀態，你進行的任何檢定都會承受 1 個劣勢。</p></section></div>
+  <div class="card-body"><p>若你陷入虛弱狀態，你進行的任何檢定都會承受 1 個劣勢。</p></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 77 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Weakened</div>
-    
-    <section class="block"><p>A creature who is weakened takes a bane on power rolls.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Weakened</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><p>A creature who is weakened takes a bane on power rolls.</p></div>
   </div>
   <div class="decision" data-id="condition.weakened">
     <div class="decision-buttons">
@@ -877,20 +1085,30 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     </div>
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
-</article><h2 class="group-heading">職業特性 · 3 筆</h2>
-<article class="card" id="entry-feature.censor.censor-order" data-id="feature.censor.censor-order">
+</article>
+</section><h2 class="group-heading">職業特性 · 3 筆</h2>
+<section class="entry" id="entry-feature.censor.censor-order" data-id="feature.censor.censor-order">
+<p class="kind-line"><span class="kind-label">分類</span>特性・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>特性</span><span>等級 1</span></div>
-    <h2>懲戒者教團 <span class="en-name">Censor Order</span></h2>
+    <div class="card-title-row">
+      <div><h2>懲戒者教團</h2><p class="en-name">Censor Order</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。</p><p>當你承擔這個責任時，從以下選項中選擇 1 支教團。每支教團都會賦予你 1 項技能。（推薦選項：典範）</p><dl class="definition-list"><div><dt>驅邪</dt><dd>你擅長獵捕尚未被教團發現的潛藏敵人，深知敞開的心靈就如同毫無防備的堡壘。你擁有<b class="term">觀色</b>技能。</dd></div><div><dt>神諭</dt><dd>腐敗如同深入骨髓的觸鬚，容易被忽視，因此你擅長揭露威脅教團的隱藏威脅。你擁有<b class="term">魔法</b>技能。</dd></div><div><dt>典範</dt><dd>若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。你擅長為教團樹立榜樣。你擁有<b class="term">領導</b>技能。</dd></div></dl><p>你的懲戒者教團代表你的<b class="term">子範型</b>，你選擇的教團將決定你在升級時獲得的許多特性。</p></section></div>
+  <div class="card-body"><section class="block"><p>懲戒者作為其神明意志的實體化身，是神明在世界上的代行者。</p><p>當你承擔這個責任時，從以下選項中選擇 1 支教團。每支教團都會賦予你 1 項技能。（推薦選項：典範）</p><dl class="definition-list"><div><dt>驅邪</dt><dd>你擅長獵捕尚未被教團發現的潛藏敵人，深知敞開的心靈就如同毫無防備的堡壘。你擁有<b class="term">觀色</b>技能。</dd></div><div><dt>神諭</dt><dd>腐敗如同深入骨髓的觸鬚，容易被忽視，因此你擅長揭露威脅教團的隱藏威脅。你擁有<b class="term">魔法</b>技能。</dd></div><div><dt>典範</dt><dd>若沒有堅強的典範與嚴格的管束，弱者必定墮落腐化。你擅長為教團樹立榜樣。你擁有<b class="term">領導</b>技能。</dd></div></dl><p>你的懲戒者教團代表你的<b class="term">子範型</b>，你選擇的教團將決定你在升級時獲得的許多特性。</p></section></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 79 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Censor Order</div>
-    
-    <section class="block"><p>Censors are the will of their god made physically manifest, and you act as your god’s agent in the world. As you shoulder that responsibility, you choose a censor order from the following options, each of which grants you a skill. (Quick Build: Paragon.)</p><dl class="definition-list"><div><dt>Exorcist</dt><dd>You specialize in hunting your order’s hidden enemies, knowing that an open mind is an unguarded fortress. You have the Read Person skill.</dd></div><div><dt>Oracle</dt><dd>Corruption has deep tendrils that can be missed, leading you to specialize in uncovering clandestine threats to your order. You have the Magic skill.</dd></div><div><dt>Paragon</dt><dd>Without a strong example and a firm hand, the weak will be corrupted. You specialize in setting an example for your order. You have the Lead skill.</dd></div></dl><p>Your censor order is your subclass, and your choice of order determines many of the features you’ll gain as you gain new levels.</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Censor Order</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><section class="block"><p>Censors are the will of their god made physically manifest, and you act as your god’s agent in the world. As you shoulder that responsibility, you choose a censor order from the following options, each of which grants you a skill. (Quick Build: Paragon.)</p><dl class="definition-list"><div><dt>Exorcist</dt><dd>You specialize in hunting your order’s hidden enemies, knowing that an open mind is an unguarded fortress. You have the Read Person skill.</dd></div><div><dt>Oracle</dt><dd>Corruption has deep tendrils that can be missed, leading you to specialize in uncovering clandestine threats to your order. You have the Magic skill.</dd></div><div><dt>Paragon</dt><dd>Without a strong example and a firm hand, the weak will be corrupted. You specialize in setting an example for your order. You have the Lead skill.</dd></div></dl><p>Your censor order is your subclass, and your choice of order determines many of the features you’ll gain as you gain new levels.</p></section></div>
   </div>
   <div class="decision" data-id="feature.censor.censor-order">
     <div class="decision-buttons">
@@ -900,19 +1118,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-feature.censor.judgment-order-benefit" data-id="feature.censor.judgment-order-benefit">
+</section>
+<section class="entry" id="entry-feature.censor.judgment-order-benefit" data-id="feature.censor.judgment-order-benefit">
+<p class="kind-line"><span class="kind-label">分類</span>特性・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>特性</span><span>等級 1</span></div>
-    <h2>審判：教團益處 <span class="en-name">Judgment Order Benefit</span></h2>
+    <div class="card-title-row">
+      <div><h2>審判：教團益處</h2><p class="en-name">Judgment Order Benefit</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>當你在 1 個回合中首次發動<a class="ref" href="#entry-ability.censor.judgment">審判</a>招式審判 1 個生物時，你會根據所屬教團獲得以下益處：</p><dl class="definition-list"><div><dt>驅邪</dt><dd>你可以傳送最多等於你<b class="term">氣場</b> ×2 的格數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有效果線。</dd></div><div><dt>神諭</dt><dd>你可以對被審判的生物造成等於你<b class="term">氣場</b> ×2 的神聖傷害。</dd></div><div><dt>典範</dt><dd>你可以將被審判的生物垂直拉動最多等於你<b class="term">氣場</b> ×2 的格數。</dd></div></dl></section></div>
+  <div class="card-body"><section class="block"><p>當你在 1 個回合中首次發動<a class="ref" href="#entry-ability.censor.judgment">審判</a>招式審判 1 個生物時，你會根據所屬教團獲得以下益處：</p><dl class="definition-list"><div><dt>驅邪</dt><dd>你可以傳送最多等於你<b class="term">氣場</b> ×2 的格數。此移動必須讓你更接近被審判的生物。你與終點之間不需要有效果線。</dd></div><div><dt>神諭</dt><dd>你可以對被審判的生物造成等於你<b class="term">氣場</b> ×2 的神聖傷害。</dd></div><div><dt>典範</dt><dd>你可以將被審判的生物垂直拉動最多等於你<b class="term">氣場</b> ×2 的格數。</dd></div></dl></section></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 80 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Judgment Order Benefit</div>
-    
-    <section class="block"><p>The first time on a turn that you use your Judgment ability to judge a creature, you gain the following benefit based on your order:</p><dl class="definition-list"><div><dt>Exorcist</dt><dd>You can teleport up to a number of squares equal to twice your Presence score. This movement must take you closer to the judged creature. You do not need line of effect to your destination.</dd></div><div><dt>Oracle</dt><dd>You can deal holy damage equal to twice your Presence score to the judged creature.</dd></div><div><dt>Paragon</dt><dd>You can vertical pull the judged creature up to a number of squares equal to twice your Presence score.</dd></div></dl></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Judgment Order Benefit</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><section class="block"><p>The first time on a turn that you use your Judgment ability to judge a creature, you gain the following benefit based on your order:</p><dl class="definition-list"><div><dt>Exorcist</dt><dd>You can teleport up to a number of squares equal to twice your Presence score. This movement must take you closer to the judged creature. You do not need line of effect to your destination.</dd></div><div><dt>Oracle</dt><dd>You can deal holy damage equal to twice your Presence score to the judged creature.</dd></div><div><dt>Paragon</dt><dd>You can vertical pull the judged creature up to a number of squares equal to twice your Presence score.</dd></div></dl></section></div>
   </div>
   <div class="decision" data-id="feature.censor.judgment-order-benefit">
     <div class="decision-buttons">
@@ -922,19 +1150,29 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
-<article class="card" id="entry-feature.censor.wrath" data-id="feature.censor.wrath">
+</section>
+<section class="entry" id="entry-feature.censor.wrath" data-id="feature.censor.wrath">
+<p class="kind-line"><span class="kind-label">分類</span>特性・等級 1</p>
+<article class="card">
   <header class="card-head">
-    <div class="badges"><span>特性</span><span>等級 1</span></div>
-    <h2>怒火 <span class="en-name">Wrath</span></h2>
+    <div class="card-title-row">
+      <div><h2>怒火</h2><p class="en-name">Wrath</p></div>
+      
+    </div>
     
   </header>
-  <div class="card-body zh"><section class="block"><p>你侍奉的神明賜予你名為「<b class="term">怒火</b>」的<b class="term">英雄資源</b>，這股力量會在你懲戒教會認定的異端時，驅動你的各種招式。</p></section><section class="block"><h3>戰鬥中的怒火</h3><p>在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於<b class="term">勝利值</b>的<b class="term">怒火</b>。</p><p>遭遇結束時，你失去所有剩餘的<b class="term">怒火</b>。</p></section><section class="block"><h3>戰鬥外的怒火</h3><p>雖然你無法在戰鬥外獲得<b class="term">怒火</b>，但你可以在不花費<b class="term">怒火</b>的情況下發動 1 次英雄招式或需要<b class="term">怒火</b>的效果。若你這麼做，你必須獲得至少 1 點<b class="term">勝利值</b>或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。</p><p>若你在戰鬥外發動 1 個允許你花費無限<b class="term">怒火</b>的招式，你可以將其視為花費等於你<b class="term">勝利值</b>的<b class="term">怒火</b>（懲戒者的核心規則目前不包括這類招式，但可能會在未來的產品中出現）。</p></section></div>
+  <div class="card-body"><section class="block"><p>你侍奉的神明賜予你名為「<b class="term">怒火</b>」的<b class="term">英雄資源</b>，這股力量會在你懲戒教會認定的異端時，驅動你的各種招式。</p></section><section class="block"><h3>戰鬥中的怒火</h3><p>在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於<b class="term">勝利值</b>的<b class="term">怒火</b>。</p><p>遭遇結束時，你失去所有剩餘的<b class="term">怒火</b>。</p></section><section class="block"><h3>戰鬥外的怒火</h3><p>雖然你無法在戰鬥外獲得<b class="term">怒火</b>，但你可以在不花費<b class="term">怒火</b>的情況下發動 1 次英雄招式或需要<b class="term">怒火</b>的效果。若你這麼做，你必須獲得至少 1 點<b class="term">勝利值</b>或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。</p><p>若你在戰鬥外發動 1 個允許你花費無限<b class="term">怒火</b>的招式，你可以將其視為花費等於你<b class="term">勝利值</b>的<b class="term">怒火</b>（懲戒者的核心規則目前不包括這類招式，但可能會在未來的產品中出現）。</p></section></div>
   <div class="source-line">來源：Heroes 規則書 v1.01，第 79 頁</div>
   <button type="button" class="toggle-en" aria-expanded="false">查看英文原文 ▾</button>
-  <div class="card-body en" hidden>
-    <div class="en-name-line">Wrath</div>
-    
-    <section class="block"><p>The power you serve grants you a Heroic Resource called wrath, fueling your abilities as you censor those your church deems to be heretics.</p></section><section class="block"><h3>Wrath in Combat</h3><p>At the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain wrath equal to your Victories. At the start of each of your turns during combat, you gain 2 wrath.</p><p>Additionally, the first time each combat round that a creature judged by you (see Judgment below) deals damage to you, you gain 1 wrath. The first time each combat round that you deal damage to a creature judged by you, you gain 1 wrath.</p><p>You lose any remaining wrath at the end of the encounter.</p></section><section class="block"><h3>Wrath Outside of Combat</h3><p>Though you can’t gain wrath outside of combat, you can use your heroic abilities and effects that cost wrath without spending it. Whenever you use an ability or effect outside of combat that costs wrath, you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite.</p><p>When you use an ability outside of combat that lets you spend unlimited wrath on its effect, you can use it as if you had spent an amount of wrath equal to your Victories. (Such abilities aren’t part of the core rules for the censor, but they might appear in future products.)</p></section>
+  <div class="en-panel" hidden>
+    <header class="card-head">
+      <div class="card-title-row">
+        <div><h3>Wrath</h3></div>
+        
+      </div>
+      
+    </header>
+    <div class="card-body"><section class="block"><p>The power you serve grants you a Heroic Resource called wrath, fueling your abilities as you censor those your church deems to be heretics.</p></section><section class="block"><h3>Wrath in Combat</h3><p>At the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain wrath equal to your Victories. At the start of each of your turns during combat, you gain 2 wrath.</p><p>Additionally, the first time each combat round that a creature judged by you (see Judgment below) deals damage to you, you gain 1 wrath. The first time each combat round that you deal damage to a creature judged by you, you gain 1 wrath.</p><p>You lose any remaining wrath at the end of the encounter.</p></section><section class="block"><h3>Wrath Outside of Combat</h3><p>Though you can’t gain wrath outside of combat, you can use your heroic abilities and effects that cost wrath without spending it. Whenever you use an ability or effect outside of combat that costs wrath, you can’t use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite.</p><p>When you use an ability outside of combat that lets you spend unlimited wrath on its effect, you can use it as if you had spent an amount of wrath equal to your Victories. (Such abilities aren’t part of the core rules for the censor, but they might appear in future products.)</p></section></div>
   </div>
   <div class="decision" data-id="feature.censor.wrath">
     <div class="decision-buttons">
@@ -944,6 +1182,7 @@ main { padding: 46px clamp(20px,4vw,64px) 120px; max-width: 900px; }
     <textarea class="note" placeholder="備註（選填）——需要修改時，請盡量寫清楚要改成什麼"></textarea>
   </div>
 </article>
+</section>
   </main>
 </div>
 
