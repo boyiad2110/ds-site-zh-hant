@@ -111,13 +111,42 @@
 
 ### 下一步：M1
 
-M0 的資料與呈現面都沒有阻擋項。M1 沿用本檔「正典抽取方法」一節的做法，
-範圍由擁有者裁定後寫進 `docs/scope.md`（**不得自行擴張**）。
+M0 的資料與呈現面都沒有阻擋項。M1 沿用本檔「正典抽取方法」一節的做法。
 
-開工前建議先讀「⚠️ 驗證邊界」與下方「驗證指令」兩節——2026-07-31 補了兩道
-新防線（`verify-canon-roundtrip` 與「28 筆條目頁全部渲染」測試），M1 的新條目
-會自動受它們保護，但**新的資料形狀需要在 `checks()` 補上對應的組合規則**，
-否則 round-trip 會直接報「尚未納入檢查」。
+> 🚦 **M1 的第一步是由擁有者決定並寫入正式範圍（`docs/scope.md`），
+> 在此之前不得直接開始抽取。** 目前尚未批准任何 M1 內容範圍。
+> M0 曾發生過「照來源 PDF 的頁面內容決定範圍，多做了不屬 M0 的條目」（見 §邊界一）。
+
+#### ⛔ 加入 M1 資料**之前**必須先處理：目前程式仍是 M0 專用
+
+**不要以為新資料放進 `data/canon/` 就會自動出現在網站、驗收頁與測試裡。**
+以下是 2026-07-31 實查（並實測驗證）的硬編碼清單——加入第 29 筆條目會立刻撞上：
+
+| 位置 | 硬編碼內容 | 後果 |
+|---|---|---|
+| `web/scripts/build-catalog.mjs:21` | `canon.length !== 28 \|\| release.scannedCanonEntries !== 28` 即拋錯 | **最先擋下來**。`predev`／`prebuild`／`pretest` 都會跑它，所以 `npm run dev`、`npm run build`、`npm test` 會同時壞掉 |
+| `scripts/build-owner-review-html.mjs:85-87, 98, 268` | 招式 16／狀態 9／特性 3，總數必須正好 28 | 白話驗收頁產不出來 |
+| `scripts/build-m0-owner-review.mjs:7-9, 39, 76` | 同上（JSON 版） | JSON 驗收表產不出來 |
+| `web/e2e/compendium.spec.ts:5` | 讀固定的 `catalog.m0.json` | 全條目渲染測試只會涵蓋 M0，**M1 條目不會自動納入** |
+| `web/src/catalog.ts:7` | `fetch('/data/catalog.m0.json')` | 網站只載入 M0 |
+| `web/src/search.test.ts:2` | `import … catalog.m0.json` | 搜尋測試只用 M0 資料 |
+| `web/scripts/build-catalog.mjs:119, 134` | `release: 'm0'`、輸出檔名 `catalog.m0.json` | 產物名稱綁定 M0 |
+
+**要先決定的事**：採用**累積式 catalog**（M0＋M1 合併成單一 catalog），
+還是**各 milestone 獨立的 release／catalog**。兩者對上表的改法不同，
+決定後再一次調整固定數量檢查與檔名。**這是範圍裁定後的第一項技術決策，不要跳過。**
+
+> 這些固定數量檢查當初是刻意加的（M0 階段防止漏抽或多抽），不是疏漏。
+> 現在要做的是「換成適合多 milestone 的形式」，不是「拿掉檢查」。
+
+#### 兩道新防線與 M1 的關係
+
+2026-07-31 補的兩道防線，覆蓋範圍不同：
+
+- **`verify-canon-roundtrip`**：掃 `data/canon/` 全部檔案，**不綁 M0**，M1 條目一加入就自動受保護。
+  但**新的資料形狀要在 `checks()` 補上組合規則**，否則會直接報「尚未納入 round-trip 檢查」。
+- **「28 筆條目頁全部渲染」測試**：讀固定的 `catalog.m0.json`，**目前不會自動納入 M1**，
+  需依上表一併調整。
 
 #### 驗收流程（M1 沿用）
 
@@ -147,13 +176,13 @@ JSON 版 `docs/m0-owner-review.md` 仍在，供稽核用。兩者由不同腳本
 | **TI-26** | 審判的效力減免補「對該生物」；原文的修飾歧義已定案，不再重開 |
 | **TI-27** | 直視正義威儀！ 的基本結果與效力條件效果已分欄；renderer 先顯示 `text`，再以「屬性 < 效力級別」標示 `potencyEffect` |
 | N-1 | `tiers[].text` **不可含**效力記號（如「`氣場 < 弱`」）——由 renderer 從 `potency` 組出 |
-| N-2 | 多欄階層表格合併為單一 `text`，**欄間以全形逗號「，」分隔**（已補為指南 §6 正式規則） |
+| N-2 | 多欄階層表格合併為單一 `text`，**欄間以全形分號「；」分隔**（指南 §6 正式規則）。⚠️ 2026-07-29 曾裁定用逗號，**已由 TI-29 撤銷**——原文本身就是用 `;` 分隔（`2 holy damage; push 1`），逗號會弱化子句邊界 |
 | 狀態連結 | 狀態名在 `tiers[].text` 存**純文字**。TI-16 處理的是原文明確要求的參照，不同一件事；日後由統一的 renderer 機制處理 |
 
 > ⚠️ **中文檔的 `meta.status` 一律先寫 `draft`。** 對齊裁決完成 ≠ 資料檔已驗收；
 > 擁有者看過完整 diff 後才升 `reviewed`。第二批四個檔案曾誤標 reviewed，已更正。
 
-⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-27，全部 resolved）。
+⚠️ **產生中文前先讀 `data/translation-issues.json`**（TI-1～TI-30，共 30 項，全部 resolved）。
 那是待辦清單，不是靠記憶。**特別注意 `affectsOnly: "*"` 的全域通則**：
 TI-4（一律第二人稱）、TI-9（英雄資源的描述方式，8 個範型比照）、
 TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing／willingly 片語規則）、
@@ -188,7 +217,7 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing�
 | `docs/alignment/censor-level1-results.md` | 14 個招式的結果表；新結構（距離二選一、效力屬性逐招式不同）記在這裡 |
 | `docs/alignment/conditions.md` | 9 個狀態；**含一次「用錯來源產生假指控」的完整紀錄**，值得先看以免重演 |
 | `docs/alignment/m0-batch2-results.md` | 2026-07-29 第二批（基礎打擊／教團／怒火）；含**範型建模的四項規則事實**與一次範圍誤判的紀錄 |
-| `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-27）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20／**24**） |
+| `data/translation-issues.json` | 譯文層的裁決（**TI-1～TI-30，共 30 項全 resolved**）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20／**24**）。TI-28（撤銷 `conditionalEffects`）／TI-29（階層分隔符改回分號）／TI-30 是 2026-07-30 新增，**別漏看** |
 | `docs/alignment/zh-batch1-alignment.md` | 第一批 5 條的對齊報告與 11 項裁決；格式可沿用 |
 | `docs/alignment/zh-batch2-alignment.md` | 第二批 4 個招牌招式的對齊報告與 2 項裁決（含 N-1／N-2 建模規則）。中文已產出 |
 | `docs/alignment/zh-batch3-alignment.md` | 第三批 10 個招式的對齊報告；譯文層已全數裁決、中文已產出 |
@@ -204,7 +233,7 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing�
 | `shared/canon-format.mjs` | **網站與驗收頁共用的轉換層**。格式化、階層組合、RichText 解析、比對用正規化都在這裡。純 ESM，不依賴 React／DOM／Node；只輸出資料與 token，不吐 JSX 也不拼 HTML。**新增格式化規則請加在這裡，不要在兩邊各寫一份**（先前就是各寫一份，同一條規則出現兩種答案）。型別在相鄰的 `canon-format.d.mts`（`.mjs` 的宣告檔必須是 `.d.mts`） |
 | `scripts/verify-canon-roundtrip.mjs` | 忠於原文的驗證。**M1 出現新的帶 `raw` 欄位時，要在 `checks()` 補組合規則**，否則會直接報「尚未納入 round-trip 檢查」 |
 | `shared/canon-deviations.json` | 已裁決的偏離清單。**是裁決快照不是忽略名單**：比對 entry／field／raw／structured 四者，任一不同就要重新確認；`reason`／`ruling` 不得留白 |
-| `web/e2e/compendium.spec.ts` | 含「28 筆條目頁全部渲染得出來」的迴歸測試（M1 新條目自動納入） |
+| `web/e2e/compendium.spec.ts` | 含「28 筆條目頁全部渲染得出來」的迴歸測試。⚠️ 它讀固定的 `catalog.m0.json`，**M1 條目不會自動納入**，見上方硬編碼清單 |
 
 > **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
 > 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
@@ -428,7 +457,10 @@ branch    main（已追蹤 origin/main，2026-07-31 推送後與遠端一致）
 
 **這說明「在文件裡預測風險」不等於「防止風險發生」。** 現在改由機器守：
 Playwright 新增「28 筆條目頁全部渲染得出來，且沒有 runtime 錯誤」，逐一開啟每個條目頁，
-確認 h1 出得來且 console 無錯。M1 新增條目會自動納入。
+確認 h1 出得來且 console 無錯。
+
+⚠️ **但它讀的是固定的 `catalog.m0.json`，M1 條目不會自動納入**——
+要一併調整才會涵蓋新內容，見「⛔ 加入 M1 資料之前必須先處理」一節。
 
 **但要清楚它證明到哪裡**：它證明**每一頁都畫得出來、不會崩**，
 **不證明每個結構顯示得正確**（例如四選一的選項有沒有全部列出、標點對不對）。
@@ -504,7 +536,7 @@ node scripts/build-m0-release.mjs        # 重建 releases/m0.json
 驗證：
 
 ```bash
-node --test "scripts/**/*.test.mjs"        # 140 tests
+node --test "scripts/**/*.test.mjs"        # 143 tests
 node scripts/verify-canon-hash.mjs         # 正典內容指紋
 node scripts/verify-canon-roundtrip.mjs    # 結構化欄位重組後與 raw 比對（忠於原文）
 node scripts/verify-zh-structure.mjs       # 中文與正典的逐段對應
