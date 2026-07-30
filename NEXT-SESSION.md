@@ -38,7 +38,7 @@
   是物件而整頁空白的缺陷時補上，堵住「資料驗證通過但畫不出來」這個既有缺口。
 
 驗證現況：`verify-canon-hash`（28/28）、`verify-zh-structure`（28/28）、`validate-terms`、
-`build-m0-release --check`、`node --test "scripts/**/*.test.mjs"`（132/132）、
+`build-m0-release --check`、`node --test "scripts/**/*.test.mjs"`（143/143）、
 `web` 的 vitest（8/8）、Playwright（12/12，含 axe）與 `tsc -b` 全數通過。
 
 **M0 資料與呈現面已無阻擋項。** 下一個對話可以視擁有者指示，決定是否：
@@ -50,7 +50,11 @@
 
 ---
 
-## 2026-07-30 更新摘要（第一、二輪；第三輪見上方「✅ 已全數完成」）
+## 2026-07-30 更新摘要（第一、二輪）
+
+> 📜 **以下是歷史紀錄，不是目前狀態。** 當時的 10／18 分佈已經不成立——
+> 第三輪於同日完成、28 筆全數核准，現況見本檔開頭。
+> 這一節保留的價值在於「為什麼是這樣設計」，遇到相關疑問時回來看。
 
 擁有者透過新增的白話驗收頁面（`docs/m0-owner-review.html`，由 `scripts/build-owner-review-html.mjs` 產生，可用 Artifact 發布方便瀏覽）完成第一輪 28 筆逐條驗收：**核准 10 筆（9 狀態 ＋ 懲戒者教團）、需要修改 18 筆（14 招式 ＋ 2 基礎打擊 ＋ 審判：教團益處 ＋ 怒火）**。
 
@@ -83,43 +87,49 @@
 
 ## 現在在哪裡
 
-M0 的執行順序，**第 1–7 與第 9 步已完成；第 8 步等待擁有者逐筆驗收**：
+**M0 全部 9 步皆已完成（2026-07-31）。下一步是 M1。**
 
 ```
 1. ✅ poppler 安裝與算繪驗證
 2. ✅ 翻譯指南搬入 docs/translation-guide.md
 3. ✅ 「捨己為人」對齊報告樣張
 4. ✅ 閘門通過，指南已批准
-5. ✅ 抽取 M0 英文正典 —— 28 個條目（⚠️ 抽取報告自評 verified，
-     但 **`canonReviewStatus` 全部仍是 `draft`**，見下方「正典狀態」）
+5. ✅ 抽取 M0 英文正典 —— 28 個條目，`canonReviewStatus` 28／28 `verified`
      ✅ 懲戒者一級 14 個招式
      ✅ 9 個狀態（正典＋中文實體皆已建立，術語表 approved）
      ✅ 2 個基礎打擊
      ✅ 3 個教團／怒火特性（新 type `feature`）
      ⏸ 速查不屬 M0（2026-07-29 裁決，見 docs/scope.md）
 6. ✅ 產出術語依賴清單 → `releases/m0.json`（114 個術語，全部 approved）
-7. ✅ 中文逐句對齊
-     ✅ 第一批 5 條（2 基礎打擊 ＋ 3 教團／怒火特性）—— 已裁決、已產出中文
-     🔶 第二批 4 個招牌招式 —— 已產出中文，**meta 維持 draft，待擁有者驗收 diff**
-     🔶 第三批 —— **10 條中文均已產出**（draft）
+7. ✅ 中文逐句對齊 —— 28／28 `meta.status: reviewed`
      ✅ 呈現驗證點（`preview/index.html`）—— 見 `docs/render-validation-m0.md`
-        ✅ TI-27 已以 `text`／`potency.effect`／`potencyEffect` 拆分，正式 renderer 可正確標示條件
-8. 🔶 專案擁有者逐筆裁決 —— 第一輪已完成（2026-07-30，見上方摘要）：10 筆核准（`verified`／`reviewed`），
-     18 筆依裁決修正後待第二輪確認。使用 `docs/m0-owner-review.html`（白話版，優先）或 `docs/m0-owner-review.md`（JSON 版）
-9. ✅ 正式規則庫第一版 —— `web/`（React／Vite；搜尋、篩選、路由、英文對照、響應式）
+8. ✅ 專案擁有者逐筆裁決 —— 三輪完成（2026-07-30），
+     2026-07-31 因效力效果修正而重驗其中 2 筆，同日重新核准
+9. ✅ 正式規則庫第一版 —— `web/`（React／Vite；紙本規則書樣式、官方符號字型、
+     搜尋、篩選、路由、英文對照、響應式）
 ```
 
-### 下一步：完成第 8 步逐筆驗收（第一輪已完成，進入第二輪）
+### 下一步：M1
 
-28 條正典與繁中資料均已齊備。第一輪驗收已於 2026-07-30 完成（見上方「2026-07-30 更新摘要」），
-10 筆核准並升級為 `verified`／`reviewed`，18 筆依裁決修正後仍是 `draft`，等擁有者看過修正後的版本再批次升級。
+M0 的資料與呈現面都沒有阻擋項。M1 沿用本檔「正典抽取方法」一節的做法，
+範圍由擁有者裁定後寫進 `docs/scope.md`（**不得自行擴張**）。
 
-#### ⏭️ 擁有者要做的事
+開工前建議先讀「⚠️ 驗證邊界」與下方「驗證指令」兩節——2026-07-31 補了兩道
+新防線（`verify-canon-roundtrip` 與「28 筆條目頁全部渲染」測試），M1 的新條目
+會自動受它們保護，但**新的資料形狀需要在 `checks()` 補上對應的組合規則**，
+否則 round-trip 會直接報「尚未納入檢查」。
 
-打開白話驗收頁面（`docs/m0-owner-review.html`，或請 Agent 用 Artifact 工具發布方便瀏覽），
-針對上一輪標「需要修改」的 18 筆重新確認呈現是否符合預期。舊版 `docs/m0-owner-review.md`（JSON 版）仍在，
-但白話版才是給擁有者實際審閱用的介面；兩者由不同腳本產生（`build-m0-owner-review.mjs` 與 `build-owner-review-html.mjs`），
-資料源頭相同，改資料後兩個都要重新產生。
+#### 驗收流程（M1 沿用）
+
+擁有者用 `docs/m0-owner-review.html`（白話版，樣式與網站一致）逐筆核准。
+JSON 版 `docs/m0-owner-review.md` 仍在，供稽核用。兩者由不同腳本產生
+（`build-m0-owner-review.mjs` 與 `build-owner-review-html.mjs`），資料源頭相同，
+**改資料後兩個都要重新產生**。
+
+新條目一律從 `canonReviewStatus: draft`／`meta.status: draft` 開始。
+已核准內容若發生實質文字修改，**要退回 `draft` 再由擁有者重新核准**——
+這樣 `reviewed` 才代表擁有者看過的是目前版本，而不是修改前的版本
+（2026-07-31 確立，該次修正即照此流程走）。
 
 【當場拘捕】原本用 `conditionalEffects`（3 怒火追加效果），**已於 2026-07-30 撤銷改回單一 `effect`**（TI-28）；
 `docs/proposal-arrest-data-model.md` 保留原提案內容供稽核，但已標記撤銷，不要照它重新套用 `conditionalEffects`。
@@ -181,11 +191,20 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing�
 | `data/translation-issues.json` | 譯文層的裁決（TI-1～TI-27）。**產生中文時是待辦清單，不是靠記憶**；`affectsOnly: "*"` 是全域通則（TI-4／9／17／18／20／**24**） |
 | `docs/alignment/zh-batch1-alignment.md` | 第一批 5 條的對齊報告與 11 項裁決；格式可沿用 |
 | `docs/alignment/zh-batch2-alignment.md` | 第二批 4 個招牌招式的對齊報告與 2 項裁決（含 N-1／N-2 建模規則）。中文已產出 |
-| `docs/alignment/zh-batch3-alignment.md` | **第三批 10 個招式的對齊報告；譯文層已全數裁決，中文未產出** ← 目前的工作面 |
-| `docs/proposal-arrest-data-model.md` | **【當場拘捕】的正典建模提案**——第三批唯一剩下的阻擋項 |
+| `docs/alignment/zh-batch3-alignment.md` | 第三批 10 個招式的對齊報告；譯文層已全數裁決、中文已產出 |
+| `docs/proposal-arrest-data-model.md` | 【當場拘捕】的正典建模提案 —— **已於 TI-28 撤銷**，僅供稽核，不要照它實作 |
 | `docs/render-validation-m0.md` | **呈現驗證結果**。含一項紙上看不到的發現：效力做不成「若…則…」 |
 | `docs/m0-term-decisions-needed.md` | 第 6 步的術語裁決紀錄（已全數結案）——當初為什麼這樣決定 |
 | `releases/m0.json` | M0 的精確術語依賴清單。114 個術語，含 `viaFields`、排除理由與詞義指定 |
+
+### 2026-07-31 新增（M1 會直接用到）
+
+| 檔案 | 為什麼要看 |
+|---|---|
+| `shared/canon-format.mjs` | **網站與驗收頁共用的轉換層**。格式化、階層組合、RichText 解析、比對用正規化都在這裡。純 ESM，不依賴 React／DOM／Node；只輸出資料與 token，不吐 JSX 也不拼 HTML。**新增格式化規則請加在這裡，不要在兩邊各寫一份**（先前就是各寫一份，同一條規則出現兩種答案）。型別在相鄰的 `canon-format.d.mts`（`.mjs` 的宣告檔必須是 `.d.mts`） |
+| `scripts/verify-canon-roundtrip.mjs` | 忠於原文的驗證。**M1 出現新的帶 `raw` 欄位時，要在 `checks()` 補組合規則**，否則會直接報「尚未納入 round-trip 檢查」 |
+| `shared/canon-deviations.json` | 已裁決的偏離清單。**是裁決快照不是忽略名單**：比對 entry／field／raw／structured 四者，任一不同就要重新確認；`reason`／`ruling` 不得留白 |
+| `web/e2e/compendium.spec.ts` | 含「28 筆條目頁全部渲染得出來」的迴歸測試（M1 新條目自動納入） |
 
 > **不需要讀** `~/.claude/plans/draw-steel-ux-velvety-frog.md`。
 > 那個檔在 repository 之外（GitHub、新 clone、其他 Agent 都拿不到），
@@ -201,6 +220,15 @@ TI-17（教團名稱短式）、TI-18（Respite ＝休整）、TI-20（willing�
 3. **擁有者採用高強度外部 AI Review。** 交付時附 manifest，誠實列出限制與未覆蓋範圍——不要宣稱超出實際驗證的保證。
 4. **不要假裝驗證過。** 前幾輪的真實教訓：寫了 hash 卻從不比對、宣稱有測試但沒有、測試走錯路徑遮住 bug。說「驗過了」之前先實際跑。
 5. **共同原則**：先問「這一步是否必要？投入是否與目前風險相稱？」而非「還能不能再加一層保護」。
+6. **教訓要變成會紅燈的檢查，不要只寫進文件。**（2026-07-31 追加）
+   「資料驗證通過 ≠ 畫面正確」這件事在文件裡記過三次（`trigger` 從未渲染、
+   `definitionList` 讀錯 key、基礎打擊整頁空白），每次都寫了教訓，但同類問題持續發生。
+   只有寫成測試之後才真的降低再犯機率。遇到同類問題時先問
+   **「這能不能變成一條會失敗的檢查？」**，而不是再寫一次教訓。
+7. **視覺與呈現只能看實際畫面判斷。**（2026-07-31 追加）
+   字體有沒有真的載入、CSS 有沒有被後面的規則蓋掉、版面會不會溢位，
+   都無法從程式碼推斷。同理，格式規則（標點、分隔符、徽章樣式）的最終判準是
+   擁有者看實際呈現，紙上討論可能得出相反結論（TI-29 即為一例）。
 
 ---
 
@@ -315,18 +343,17 @@ BIN="C:/Users/boyia/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppl
 
 ---
 
-## Git 現況（2026-07-29 建立）
+## Git 現況（2026-07-31 更新）
 
 ```
 remote    https://github.com/boyiad2110/ds-site-zh-hant.git （private）
-branch    main（已追蹤 origin/main）
-baseline  a86aba9  chore: establish M0 data and localization baseline
+branch    main（已追蹤 origin/main，2026-07-31 推送後與遠端一致）
 ```
 
-**專案已納入版本控制。** 之後修改資料時：
+**專案已納入版本控制，M0 的資料、網站與驗證腳本都已推上遠端。** 之後修改資料時：
 
 1. 照常改 `data/decisions.json` → 重跑生成 → `validate-terms --commit`
-2. **commit 前必須跑完整驗證**：`node --test`、`validate-terms`、`verify-canon-hash`
+2. **commit 前必須跑完整驗證**：見下方「驗證指令」一節（現為 6 個指令）
 3. `data/id-ledger.candidate.json` 已被忽略（執行中途的暫存檔，提升後即刪）
 
 ### 🔒 這個 repository 必須維持 private
@@ -335,7 +362,13 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 **「已排除 PDF」不等於「不含官方內容」。** 日後若考慮公開，須先另做授權與內容範圍審查。
 
 刻意不納入版控（理由寫在 `.gitignore` 各段註解）：
-官方 PDF、官方字型、由 PDF 算繪的頁面圖像、原始 Notion 匯出、review 用的 `*.patch`、`.claude/settings.local.json`。
+官方 PDF、由 PDF 算繪的頁面圖像、原始 Notion 匯出、review 用的 `*.patch`、`.claude/settings.local.json`。
+
+> ⚠️ **符號字型是例外，不要跟 PDF 混為一談。** `sources/drawsteelglyphs/FontLicense.txt`
+> 明載 Draw Steel Glyphs Font © 2025 MCDM Productions 採 **CC BY-SA 4.0**，允許散布，
+> 條件是標示出處。網站實際使用的那一份在 `web/public/fonts/` 並**已納入版控**
+> （`.gitignore` 為它開了單一例外），頁尾附有授權標示。少了它，射程／目標／階層
+> 符號會退回顯示成拉丁字母。`sources/` 下的工作副本仍排除（該目錄另有官方字符表 PDF）。
 
 > `.gitattributes` 鎖定 LF：`normalizedHash` 是偵測正典漂移的核心機制，
 > 換行符隨作業系統飄動會讓同一份內容算出不同雜湊。**不要移除。**
@@ -386,6 +419,20 @@ baseline  a86aba9  chore: establish M0 data and localization baseline
 **做法**：不阻擋目前的 M0 資料整理。但**在大量擴張資料之前，保留一個小型網站驗證點**——
 實際讀取一個懲戒者招式頁面，確認上述結構能被正確顯示與操作。
 建議樣本：**審判**（四選一）＋**淨化聖火**（二選一射程＋效力＋狀態連結），兩個涵蓋五項。
+
+#### 📌 2026-07-31 後續：這一節說中了，而且事故真的發生了
+
+上表第 393 行早就標出「`powerRoll.characteristic` 可能是字串或物件」，**但兩個基礎打擊的
+頁面仍然整頁空白了**——程式把物件直接丟進 JSX，React 拒絕渲染，元件樹整棵掛掉。
+而且它通過了當時所有測試，也通過了三輪人工驗收（擁有者在驗收頁看得到內容，網站上卻是空白）。
+
+**這說明「在文件裡預測風險」不等於「防止風險發生」。** 現在改由機器守：
+Playwright 新增「28 筆條目頁全部渲染得出來，且沒有 runtime 錯誤」，逐一開啟每個條目頁，
+確認 h1 出得來且 console 無錯。M1 新增條目會自動納入。
+
+**但要清楚它證明到哪裡**：它證明**每一頁都畫得出來、不會崩**，
+**不證明每個結構顯示得正確**（例如四選一的選項有沒有全部列出、標點對不對）。
+後者仍然只能靠擁有者在驗收頁逐筆看。上表因此保留，作為人工驗收時的檢查清單。
 
 ---
 
@@ -478,30 +525,35 @@ node scripts/build-m0-release.mjs --check  # 驗證已提交的 m0.json 是否�
 >
 > 起草宣告用 `node scripts/verify-canon-roundtrip.mjs --list`。
 
-目前基線（**2026-07-30 擁有者第一輪驗收收盤**，以下數字皆為當日實跑結果；
-術語相關數字承襲 2026-07-29，本輪未變動 `data/decisions.json`）：
+目前基線（**2026-07-31 實跑結果**；術語相關數字承襲 2026-07-29，之後未再變動
+`data/decisions.json`）：
 glossary **607**（含 2026-07-29 新增 `Fire Weakness ＝火焰弱點`）、
 vocabulary **23** 值（5 個詞彙表，全部 approved）、
-ledger **626**、pending **2**（Hakaan／Memonek）、測試 **132/132**、
+ledger **626**、pending **2**（Hakaan／Memonek）、測試 **143/143**、
 正典 **28** 條目＝**16 招式 ＋ 9 狀態 ＋ 3 特性**（指紋全部相符；
-**9 狀態 ＋ 懲戒者教團共 10 筆 `canonReviewStatus` 已升級為 `verified`，其餘 18 筆仍 `draft`**）、
-中文 **28／28** 均已產出（10 筆 `reviewed`、18 筆 `draft` 待第二輪確認；
-【當場拘捕】已改回單一 `effect`，不再是 27/28 卡在 `conditionalEffects` 未定案的狀態）、
-translation-issues **30** 項全 resolved（TI-28～30 為 2026-07-30 新增）、
-`releases/m0.json` **114** 個依賴術語（全部 approved，來源指紋 `b96db16eb89740aa`）。
+**`canonReviewStatus` 28／28 皆為 `verified`**）、
+中文 **28／28** 皆為 `meta.status: reviewed`、
+translation-issues **30** 項全 resolved、
+`releases/m0.json` **114** 個依賴術語（全部 approved，來源指紋 `ea2b8880d75b2cb2`）。
 
-### ⚠️ 正典狀態：28 條全部是 `draft`，沒有一條是正式 verified
+> 指紋在 2026-07-31 因效力效果修正而更新（原 `b96db16eb89740aa`）。
 
-2026-07-29 外部 review 抓到的一項不一致，**記在這裡以免再誤讀**：
+### ⚠️ 「通過驗證」與「經過批准」是兩件事
+
+2026-07-29 外部 review 抓到的一項不一致，**記在這裡以免再誤讀**。
+M0 的 28 筆現在確實都是 `verified`／`reviewed`，但那是**擁有者逐筆看過**的結果，
+不是任何腳本推導出來的——M1 的新條目一律從 `draft` 開始：
 
 | 東西 | 它證明什麼 | 它不證明什麼 |
 |---|---|---|
 | 抽取報告的「✅ verified」 | 抽取當下做過逐欄核對 | **不是正式批准狀態** |
-| `verify-canon-hash` 通過 | 現在的 JSON 與 `_normalized/` 快照一致，**內容沒被偷改** | **完全不知道當初抽得對不對** |
-| `canonReviewStatus` | 正式的來源驗證狀態 | —— 目前 **28/28 都是 `draft`** |
+| `verify-canon-hash` 通過 | 現在的 JSON 與 `_normalized/` 快照一致，**內容沒被偷改** | 不證明當初抽得對不對 |
+| `verify-canon-roundtrip` 通過 | 結構化欄位重組後仍等於 `raw` 原文 | 不證明 `raw` 當初抄對了 |
+| 全部測試綠燈 | 資料層結構有效、每頁畫得出來 | **不證明譯文品質與規則理解正確** |
+| `canonReviewStatus` | 正式的來源驗證狀態 | —— 由擁有者裁決，**工具不得自行升級** |
 
-**不要因為 hash 通過就把狀態升成 `verified`。**
-升級的前提寫在 `docs/alignment/censor-level1-results.md`（其中「中文對齊逐筆完成」正在做）。
+**不要因為 hash 或 round-trip 通過就把狀態升成 `verified`。**
+升級的前提寫在 `docs/alignment/censor-level1-results.md`。
 
 證據強度也不是齊一的：**只有 4 個招牌招式做過完整三來源逐欄人工比對**；
 其餘 10 個（＝第三批）是「`-layout` 文字抽取 ＋ 150dpi 整頁目視 ＋ 舊 CSV 比對等級／費用／分類」，
