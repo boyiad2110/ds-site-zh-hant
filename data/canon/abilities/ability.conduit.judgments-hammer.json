@@ -1,0 +1,48 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收核准。",
+  "id": "ability.conduit.judgments-hammer",
+  "type": "ability",
+  "name": "Judgment's Hammer",
+  "aliasesEn": [],
+  "flavor": "Your divine fury is a hammer that crashes down upon the unrighteous.",
+  "keywords": ["magic", "ranged", "strike"],
+  "actionType": "main",
+  "cost": { "resource": "piety", "value": 3 },
+  "distance": { "kind": "ranged", "value": 10, "raw": "Ranged 10" },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I holy damage",
+        "potency": { "characteristic": "agility", "level": "weak", "effect": "prone" },
+        "raw": "3 + I holy damage; A<WEAK, prone"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + I holy damage",
+        "potency": { "characteristic": "agility", "level": "average", "effect": "prone" },
+        "raw": "6 + I holy damage; A<AVERAGE, prone"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + I holy damage",
+        "potency": { "characteristic": "agility", "level": "strong", "effect": "prone and can't stand (save ends)" },
+        "raw": "9 + I holy damage; A<STRONG, prone and can't stand (save ends)"
+      }
+    ]
+  },
+  "origin": { "kind": "class", "id": "class.conduit" },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "14b2acf904dc366ea8f18afa13d13654e2bcce08a6b6119dbe1c66b6957994c1"
+  }
+}

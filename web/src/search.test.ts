@@ -40,14 +40,18 @@ describe('繁中搜尋與篩選', () => {
   })
 })
 
-describe('M0 catalog', () => {
-  test('正好包含 16 招式、9 狀態、3 特性', () => {
-    expect(catalog.counts).toEqual({ total: 28, abilities: 16, conditions: 9, features: 3 })
+describe('累積式 catalog（M0＋M1）', () => {
+  test('正好包含 18 招式、9 狀態、7 特性（M0 16/9/3 ＋ M1 樣本 2/0/4）', () => {
+    expect(catalog.counts).toEqual({ total: 34, abilities: 18, conditions: 9, features: 7 })
+  })
+
+  test('milestones 標示兩者皆有內容', () => {
+    expect(catalog.milestones).toEqual(['m0', 'm1'])
   })
 
   test('路由與 id 唯一且所有條目都有繁中名稱', () => {
-    expect(new Set(catalog.entries.map((entry) => entry.id)).size).toBe(28)
-    expect(new Set(catalog.entries.map((entry) => `${entry.type}/${entry.slug}`)).size).toBe(28)
+    expect(new Set(catalog.entries.map((entry) => entry.id)).size).toBe(34)
+    expect(new Set(catalog.entries.map((entry) => `${entry.type}/${entry.slug}`)).size).toBe(34)
     expect(catalog.entries.every((entry) => entry.name.zhHant.length > 0)).toBe(true)
   })
 

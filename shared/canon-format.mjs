@@ -28,13 +28,14 @@ export const CHARACTERISTICS = {
 export const ATTRIBUTE_NAMES_ZH = new Set(Object.values(CHARACTERISTICS).map((c) => c.zh))
 
 /**
- * 英雄資源名稱。M0 只有懲戒者的怒火；新職業會有自己的資源（如導靈的 Piety，
- * 中文譯名待擁有者裁定，不得由此處自行假定），逐一新增即可，不需要改呼叫端——
- * 網站與驗收頁的「N 怒火」都曾寫死，一律改查這裡（2026-07-31 修正）。
- * 查不到時退回顯示原始 resource 字串，不讓畫面空白，但也不會偽裝成已核准的譯名。
+ * 英雄資源名稱。逐一新增即可，不需要改呼叫端——網站與驗收頁的「N 怒火」都曾寫死，
+ * 一律改查這裡（2026-07-31 修正）。查不到時退回顯示原始 resource 字串，
+ * 不讓畫面空白，但也不會偽裝成已核准的譯名。
+ * Piety＝虔誠為 2026-07-31 擁有者裁定（approved glossary term.piety），非 AI 自行假定。
  */
 export const RESOURCES = {
   wrath: { zh: '怒火', en: 'Wrath' },
+  piety: { zh: '虔誠', en: 'Piety' },
 }
 
 export function resourceLabel(resource, lang = 'zh') {
@@ -64,6 +65,9 @@ const TARGETS_ZH = {
   'Self or one ally': '自身或 1 個盟友',
   'Each enemy in the area': '區域內每個敵人',
   'One willing creature': '1 個自願的生物',
+  // 2026-07-31 M1 樣本新增：純自身鎖定的招式（如忠誠好友）target 就是單獨的 "Self"，
+  // 與 distance.kind:"self" 用同一個「自身」，不需要另外的中文譯文欄位。
+  Self: '自身',
 }
 
 /**

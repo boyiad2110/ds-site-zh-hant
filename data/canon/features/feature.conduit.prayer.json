@@ -1,0 +1,55 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收核准。",
+  "id": "feature.conduit.prayer",
+  "type": "feature",
+  "name": "Prayer",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your god answers a prayer with enhancements to your body and mind. Choose one of the following prayers. You can change your prayer along with your ward (see Conduit Ward below) by praying to your god as a respite activity. (Quick Build: Prayer of Distance.)"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Prayer of Destruction",
+              "text": "Your god infuses wrath within your being. You gain a +1 bonus to rolled damage with magic abilities."
+            },
+            {
+              "term": "Prayer of Distance",
+              "text": "Your god blesses you with the ability to stretch your divine magic farther. You have a +2 bonus to the distance of your ranged magic abilities."
+            },
+            {
+              "term": "Prayer of Soldier's Skill",
+              "text": "Your god gives your mind the training of a soldier. You can wear light armor and wield light weapons effectively, even though you don't have a kit. While you wear light armor, you gain a +3 bonus to Stamina, and that bonus increases by 3 at 4th, 7th, and 10th levels. While you wield a light weapon, you gain a +1 damage bonus with weapon abilities, including free strikes. You can use light armor treasures and light weapon treasures. If you have a kit, you can't take this blessing."
+            },
+            {
+              "term": "Prayer of Speed",
+              "text": "Your god blesses your flesh and infuses it with divine quickness. You gain a +1 bonus to speed and to the distance you can shift when you take the Disengage move action."
+            },
+            {
+              "term": "Prayer of Steel",
+              "text": "Your god fills your body with the light of creation, making you harder to hurt and move. You gain a +6 bonus to Stamina, and this bonus increases by 6 at 4th, 7th, and 10th levels. Additionally, you gain a +1 bonus to stability."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.conduit" },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 99,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "8b25ce0c67b7fb260000628d2af8635ead65faf7fadd92a4c487ae5e60442076"
+  }
+}

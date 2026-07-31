@@ -1,0 +1,78 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 擁有者核准。",
+  "id": "feature.conduit.piety",
+  "nameZhHant": "虔誠",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你的神明賦予你名為「`虔誠`」的`英雄資源`，讓你可以治療並強化盟友，同時向敵人釋放神聖力量。"
+        }
+      ]
+    },
+    {
+      "heading": "戰鬥中的虔誠",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "在戰鬥或其他需要以戰鬥輪計算的緊張情境開始時，你會獲得等於`勝利值`的`虔誠`。每輪 1 次，當你的回合開始時，你獲得 1D3 點`虔誠`。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "此外，你可以向神明祈禱來獲得更多`虔誠`，但要注意！神明討厭被打擾，這麼做很容易觸怒祂們。在你回合開始擲骰獲得`虔誠`之前，你可以進行祈禱（無需動作）。"
+        },
+        {
+          "kind": "bulletList",
+          "lead": "若你這麼做，你的擲骰會額外獲得以下效果：",
+          "items": [
+            "若擲出 1，你額外獲得 1 點`虔誠`（共獲得 2 點），但也激怒了神明！你受到 1D6 + 你等級的心靈傷害（無法以任何方式減免）。",
+            "若擲出 2，你額外獲得 1 點`虔誠`（共獲得 3 點）。",
+            "若擲出 3，你額外獲得 2 點`虔誠`（共獲得 5 點），而且可以啟動 1 個領域禱詞效果。"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "遭遇結束時，你失去所有剩餘的`虔誠`。"
+        }
+      ]
+    },
+    {
+      "heading": "戰鬥外的虔誠",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "雖然你無法在戰鬥外獲得`虔誠`，但你可以在不花費`虔誠`的情況下發動 1 次英雄招式或需要`虔誠`的效果。若你這麼做，你必須獲得至少 1 點`勝利值`或完成 1 次休整，才能在戰鬥外再次發動同個招式或效果。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "若你在戰鬥外發動 1 個允許你花費無限`虔誠`的招式（例如【治癒恩典】），你可以將其視為花費等於你`勝利值`的`虔誠`。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士 · 虔誠（sources/notion-export/class-notion/conduit/虔誠 239f74afd25b807281dccc99701737d8.md）",
+    "commonProcessing": [
+      "套用既有 TI-10（懲戒者怒火已裁決）：正典的 “(as determined by the Director)” 不補譯，舊譯本來就沒有，兩處是同一子句",
+      "套用既有 TI-9（全域通則，適用全部範型的英雄資源說明）：正典「At the start of each of your turns…you gain 1d3 piety」補「每輪 1 次」提示語",
+      "套用既有 TI-8 的修法：舊譯原寫「才能在戰鬥外再次發動需要虔誠的招式或效果」，未譯出正典 “that same ability or effect” 的限定，比照 TI-8 對怒火的裁決改為「同個招式或效果」",
+      "套用既有 TI-18：舊譯「長休」全部改為已批准譯名「休整」",
+      "「治癒恩典」（Healing Grace）不在本批樣本範圍內，故不做成站內連結，改用【】標記招式名稱（指南 §6「內文提及招式名時加【】」），待該招式建檔後再視需要改為連結",
+      "戰鬥中虔誠段落，正典本身在書上就是條列式（非 TI-9 那種散文改條列），故 canon／zh 兩側都用 bulletList，逐項對應",
+      "2026-07-31 第一輪驗收裁決：「（共獲得 N 點）」合計提示保留；「Before you roll」的時機語意原譯法不夠清楚，改為「在你回合開始擲骰獲得虔誠之前，你可以進行祈禱」"
+    ],
+    "decisions": ["TI-8", "TI-9", "TI-10", "TI-18"],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.piety",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 95
+  }
+}

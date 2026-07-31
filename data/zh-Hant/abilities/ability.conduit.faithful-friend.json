@@ -1,0 +1,27 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 擁有者核准。",
+  "id": "ability.conduit.faithful-friend",
+  "nameZhHant": "忠誠好友",
+  "aliasesZhHant": [],
+  "flavor": "一個動物靈魂被你吸引，與你分享牠的感官並忠實地為你服務。",
+  "effect": [
+    "你召喚 1 個精魂，以你曾見過的任何動物形態出現。這個虛體動物的`速度`為 5，可以飛行，但無法與世界進行物理互動。當你在靈魂 10 格範圍內時，你除了感知自己周圍的環境外，還能自動感知該動物所能感知的一切。你可以隨時解消靈魂（無需動作）。若精魂受到任何傷害，它會立刻消失，且你會受到 1D10 心靈傷害（無法以任何方式減免）。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 自然：忠誠好友（sources/notion-export/class-notion/conduit/領域特性 239f74afd25b80ecb057dab212ed9548.md）",
+    "commonProcessing": [
+      "target／distance 皆為「Self」，套用本批新增的組合規則（shared/canon-format.mjs 的 TARGETS_ZH.Self=自身），不存於本層",
+      "`速度`依指南 §6 屬性／遊戲數值一律 inline code 規則加上反引號，舊譯原文沒有加"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "ability.conduit.faithful-friend",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

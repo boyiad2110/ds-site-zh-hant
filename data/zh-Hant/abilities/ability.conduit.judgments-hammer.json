@@ -1,0 +1,45 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。M1 Batch 2 樣本，2026-07-31 擁有者核准。",
+  "id": "ability.conduit.judgments-hammer",
+  "nameZhHant": "審判之鎚",
+  "aliasesZhHant": [],
+  "flavor": "你的神聖怒意化為巨鎚，粉碎邪惡之徒。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `直覺`神聖傷害",
+        "potencyEffect": "伏地"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + `直覺`神聖傷害",
+        "potencyEffect": "伏地"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + `直覺`神聖傷害",
+        "potencyEffect": "伏地且無法起身（豁免解除）"
+      }
+    ]
+  },
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士招式 · 審判之鎚（sources/notion-export/class-notion/conduit/神導士招式 239f74afd25b80eb8f74ce7e7a785c42.md）",
+    "commonProcessing": [
+      "N-1：效力記號不存於 text，由 renderer 從 tiers[].potency 組出",
+      "N-2：階層文字若有多子句以全形分號合併——本招式各階層只有單一子句，不涉及此規則",
+      "potencyEffect 存純文字「伏地」／「伏地且無法起身（豁免解除）」，不補「目標陷入」前綴——套用 2026-07-31 對惡徒止步！／懺悔吧！的裁決（效力記號本身已含「若通過則生效」之意，效果文字逐字呈現，不重複語意），舊譯本身也是這個寫法，兩者剛好一致",
+      "target「1 個生物或物體」、distance「遠程 10」皆為既有組合規則／受控欄位，不存於本層"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "ability.conduit.judgments-hammer",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 101
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 擁有者核准。",
+  "id": "feature.conduit.prayer",
+  "nameZhHant": "禱詞",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你的神明回應了祈禱，賜予你身心的強化。從以下選項中選擇 1 種禱詞。作為 1 次休整活動，你可以向神明祈禱來更換你的禱詞和護咒。"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "毀滅禱詞",
+              "text": "你的神明在你體內灌注憤怒之力。你魔法招式的檢定傷害會獲得 +1 加值。"
+            },
+            {
+              "term": "遠距禱詞",
+              "text": "神明賜福你，讓你的神聖魔法可以延伸得更遠。你遠程魔法招式的射程會獲得 +2 加值。"
+            },
+            {
+              "term": "戰技禱詞",
+              "text": "你的神明賦予你戰士般的心智。即使你沒有`套裝`，你也能有效地穿戴輕甲和持用輕型武器。當你穿戴輕甲時，你的`體力`會獲得 +3 加值，這個加值在 4 級、7 級和 10 級時會再各增加 3 點。當你持用輕型武器時，你武器招式的傷害會獲得 +1 加值（包括基礎打擊）。你可以使用輕甲`寶物`和輕型武器`寶物`。若你擁有`套裝`，你不能選擇此禱詞。"
+            },
+            {
+              "term": "速度禱詞",
+              "text": "你的神明祝福你的身體，灌注了神聖的迅捷之力。你的`速度`，以及當你使用撤離移動動作時的`遁移`距離，都會獲得 +1 加值。"
+            },
+            {
+              "term": "鋼鐵禱詞",
+              "text": "你的神明將創生之光注入你的身軀，讓你更加強健與穩固。你的`體力`獲得 +6 加值，這個加值在 4 級、7 級和 10 級時會再各增加 6 點。此外，你的`穩度`獲得 +1 加值。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士 · 禱詞（sources/notion-export/class-notion/conduit/禱詞 239f74afd25b8019b486e7b46bd59335.md）",
+    "commonProcessing": [
+      "definitionList.term 沿用舊譯的中文短名（毀滅禱詞／遠距禱詞／戰技禱詞／速度禱詞／鋼鐵禱詞），與正典英文 term 逐項對應",
+      "戰技禱詞原文分兩段（主敘述＋「若你擁有套裝…」限定句），因 definitionList 的 renderer 目前不支援段內分段，比照舊譯合併為一段連續文字",
+      "「(see Conduit Ward below)」與「Conduit Ward」不在本批樣本範圍內，故不做站內連結，intro 段落沿用舊譯省略此頁內指示的做法（比照 TI-5～7 對頁面位置參照的處理）",
+      "`套裝`／`寶物`／`體力`／`穩度`／`遁移` 皆為既有 approved 詞彙表用詞，直接套用",
+      "2026-07-31 擁有者裁決：「禱詞」不加反引號，維持特性名稱的一般文字樣式"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.prayer",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

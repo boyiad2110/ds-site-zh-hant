@@ -1,0 +1,28 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收核准。origin.kind 沿用 Batch 1 裁決新增的 \"domain\" 值，表示這是由選擇該領域而授予的招式，而非職業一般招式。",
+  "id": "ability.conduit.faithful-friend",
+  "type": "ability",
+  "name": "Faithful Friend",
+  "aliasesEn": [],
+  "flavor": "An animal spirit is drawn to you, sharing their senses with you and serving you faithfully.",
+  "keywords": ["magic"],
+  "actionType": "main",
+  "cost": null,
+  "distance": { "kind": "self", "raw": "Self" },
+  "target": "Self",
+  "effect": [
+    "You conjure a spirit that takes the form of any animal you have seen. The incorporeal animal has speed 5 and can fly, but can't physically interact with the world. While you are within 10 squares of the spirit, you automatically sense everything that type of animal would sense, in addition to sensing your own surroundings. You can dismiss the spirit at any time (no action required). If the spirit takes any damage, they are dismissed and you take 1d10 psychic damage that can't be reduced in any way."
+  ],
+  "origin": { "kind": "domain", "id": "domain.nature" },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 4,
+    "printedPage": 97,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "138610bdb27988adf82619069c989f2c78ca9b7823d72a10cf0f517d86de7b18"
+  }
+}

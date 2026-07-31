@@ -1,0 +1,52 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收已核准內容與結構，但⚠️ 本條目目前只收錄自然（Nature）1 個領域，作為結構樣本；其餘 11 個領域留待 M1 完整抽取時比照補上，屆時本條目的 sections 會從 2 個擴充為 13 個（intro + 12 領域），id 與現有內容不變。canonReviewStatus 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 verified。",
+  "id": "feature.conduit.domain-piety-and-effects",
+  "type": "feature",
+  "name": "Domain Piety and Effects",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your choice of domains provides you with two additional ways to earn piety during combat, as triggered by specific events. You might even have a single event trigger both your piety effects. For example, the Sun domain grants piety when a nearby creature takes fire or holy damage, while the War domain grants piety when a nearby creature takes damage of 10 + your level or higher. If you have both those domains and a nearby creature takes an appropriate amount of fire damage, you gain piety from both your domains."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Additionally, whenever you activate a domain effect by praying for piety, you can choose one of your domains and have that domain's prayer effect take effect immediately."
+        }
+      ]
+    },
+    {
+      "heading": "Nature Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that you or a creature within 10 squares takes acid, cold, fire, lightning, poison, or sonic damage."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Vines whip up from the floor or ground within 10 squares, wrapping around a number of creatures equal to your Intuition score. You can slide each creature up to a number of squares equal to your Intuition score. The vines then fade away."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.conduit" },
+  "level": 1,
+  "canonReviewStatus": "draft",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 3,
+    "printedPage": 96,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "e95f7561ed4bdaecb3e01a5be1f1b5f957002e9a458f4bca18f75711c3fb8c60"
+  }
+}

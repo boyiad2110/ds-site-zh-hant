@@ -46,7 +46,7 @@ test('手機版沒有水平溢位且主要流程可操作', async ({ page }) => 
 
 /** 每一筆條目都要真的畫得出來。資料層的驗證只保證欄位齊全，不保證渲染路徑走得通——
  * 基礎打擊的 powerRoll.characteristic 是物件而非字串，就曾讓那兩頁整頁空白。 */
-test('28 筆條目頁全部渲染得出來，且沒有 runtime 錯誤', async ({ page }) => {
+test('全部條目頁都渲染得出來，且沒有 runtime 錯誤（累積式 catalog，數量隨 milestone 增加）', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(String(error)))
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()) })

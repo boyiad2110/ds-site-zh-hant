@@ -1,0 +1,68 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 擁有者核准。",
+  "id": "feature.conduit.piety",
+  "type": "feature",
+  "name": "Piety",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your deity grants you a Heroic Resource called piety, letting you heal and empower your allies, and unleash holy power upon your foes."
+        }
+      ]
+    },
+    {
+      "heading": "Piety in Combat",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "At the start of a combat encounter or some other stressful situation tracked in combat rounds (as determined by the Director), you gain piety equal to your Victories. At the start of each of your turns during combat, you gain 1d3 piety."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Additionally, you can gain more piety by praying to the gods—but beware! Doing so can easily draw their ire, as the gods hate to be annoyed. Before you roll to gain piety at the start of your turn, you can pray (no action required)."
+        },
+        {
+          "kind": "bulletList",
+          "lead": "If you do, your roll gains the following additional effects:",
+          "items": [
+            "If the roll is a 1, you gain 1 additional piety but anger the gods! You take psychic damage equal to 1d6 + your level, which can't be reduced in any way.",
+            "If the roll is a 2, you gain 1 additional piety.",
+            "If the roll is a 3, you gain 2 additional piety and can activate a domain effect of your choice (see below)."
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "You lose any remaining piety at the end of the encounter."
+        }
+      ]
+    },
+    {
+      "heading": "Piety Outside of Combat",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Though you can't gain piety outside of combat, you can use your heroic abilities and effects that cost piety without spending it. Whenever you use an ability or effect outside of combat that costs piety, you can't use that same ability or effect outside of combat again until you earn 1 or more Victories or finish a respite."
+        },
+        {
+          "kind": "paragraph",
+          "text": "When you use an ability outside of combat that lets you spend unlimited piety on its effect, such as Healing Grace, you can use it as if you had spent an amount of piety equal to your Victories."
+        }
+      ]
+    }
+  ],
+  "origin": { "kind": "class", "id": "class.conduit" },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 2,
+    "printedPage": 95,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "3d3abde5d0db0c54b61071b24084fe155d175929abc46c56547499dcbc5ef30e"
+  }
+}

@@ -1,0 +1,17 @@
+name: Judgment's Hammer
+flavor: Your divine fury is a hammer that crashes down upon the unrighteous.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+cost: 3 Piety
+distance: Ranged 10
+target: One creature or object
+powerRoll: Power Roll + Intuition
+tier≤11.text: 3 + I holy damage
+tier≤11.potency: A<WEAK
+tier≤11.potencyEffect: prone
+tier12-16.text: 6 + I holy damage
+tier12-16.potency: A<AVERAGE
+tier12-16.potencyEffect: prone
+tier17+.text: 9 + I holy damage
+tier17+.potency: A<STRONG
+tier17+.potencyEffect: prone and can't stand (save ends)

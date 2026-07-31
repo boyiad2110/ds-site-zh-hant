@@ -1,0 +1,45 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 第一輪驗收已核准內容與結構，但⚠️ 對照表目前只收錄自然（Nature）1 列，其餘 11 個領域待 M1 完整抽取時比照補上，故 meta.status 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 reviewed。",
+  "id": "feature.conduit.domain-feature-1st-level",
+  "nameZhHant": "1 級領域特性",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "1 級時，從你的 2 個領域中選擇其中 1 個領域，並獲得該領域的領域特性（如下所示）。此外，你從該領域提供的技能類別中獲得 1 項技能。（推薦選項：生命領域的活力儀式與醫療技能）"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "自然",
+              "text": "[忠誠好友](ability.conduit.faithful-friend)（探索類技能）"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "draft",
+    "translationSource": "舊 Notion 神導士 · 領域特性（sources/notion-export/class-notion/conduit/領域特性 239f74afd25b80ecb057dab212ed9548.md）",
+    "commonProcessing": [
+      "2026-07-31 擁有者裁決：句尾「(Quick Build: Revitalizing Ritual and the Heal skill from the Life domain.)」補譯，Quick Build 統一用已批准譯名「推薦選項」（TI-11）",
+      "「Revitalizing Ritual」譯「活力儀式」，取自舊譯 sources/notion-export/class-notion/conduit/領域特性…md 的生命領域列（非本批樣本範圍，僅取其譯名）",
+      "「Heal」（技能名）2026-07-31 擁有者正式裁決定稿為「醫療」，與 glossary 既有的 term.heal（zhHant「治療」，approved，類別「規則/主要動作」，指戰鬥中的治療主要動作）是不同詞義，不得混用。此裁決尚未寫入 data/decisions.json——原因與待辦見本檔外的對話紀錄，需要另外處理正典術語流程與 releases/m0.json 指紋的連動",
+      "definitionList 項目格式為「[具名特性或招式](id)（技能組）」，比照舊譯「造物之手（工藝類技能）」這類既有寫法，技能組維持「OO類技能」的既定格式",
+      "「忠誠好友」已建為獨立招式條目（ability.conduit.faithful-friend），故用行內連結；其餘 11 個領域授予的特性／招式尚未建檔，留待 M1 正式抽取時比照建立並補上連結"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature-1st-level",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 經兩輪驗收修訂（第二輪撤回第一輪加入的過渡句）。⚠️ 目前只收錄自然（Nature）1 個領域，其餘 11 個待 M1 完整抽取時比照補上，故 meta.status 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 reviewed。",
+  "id": "feature.conduit.domain-piety-and-effects",
+  "nameZhHant": "領域虔誠與禱詞效果",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你選擇的領域提供了兩種在戰鬥中額外獲得`虔誠`的方式，由特定條件觸發。甚至單一事件可能會同時觸發兩種虔誠效果。例如，太陽領域會在附近生物受到火焰或神聖傷害時賦予`虔誠`，而戰爭領域則會在附近生物受到至少 10 + 你等級的傷害時賦予`虔誠`。若你同時擁有這 2 個領域，而且附近生物受到超過一定數量的火焰傷害，你會從 2 個領域中同時獲得`虔誠`。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "此外，若你在回合開始時進行祈禱來獲得`虔誠`，而且能夠啟動領域禱詞效果，你可以選擇其中 1 個領域，並立刻讓該領域的禱詞效果生效。"
+        }
+      ]
+    },
+    {
+      "heading": "自然",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "虔誠",
+              "text": "每場遭遇 1 次，當你自己或 10 格內的 1 個生物首次受到強酸、寒冷、火焰、閃電、劇毒或音波傷害時，你獲得 2 點`虔誠`。"
+            },
+            {
+              "term": "禱詞效果",
+              "text": "藤蔓從 10 格內的地面竄出，纏繞住數量等於你`直覺`的生物。你可以將每個生物滑動最多等於你`直覺`的格數。然後藤蔓就會消失。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "draft",
+    "translationSource": "舊 Notion 神導士 · 虔誠（「領域的虔誠與禱詞效果」段落，同一份檔案）",
+    "commonProcessing": [
+      "2026-07-31 擁有者裁決：sections[1].heading 使用簡短領域名稱「自然」，不重複「領域虔誠與禱詞效果」字樣",
+      "本條目目前只有「自然」1 個領域的內容；其餘 11 個領域的虔誠／禱詞效果舊譯（虔誠.md）已全部翻好，留待 M1 正式全量抽取時比照套用，不在本批樣本範圍內",
+      "2026-07-31 第二輪裁決：撤回第一輪加入的過渡句「以下是各領域的虔誠與禱詞效果。」——不新增站方說明句，不調整 schema，intro 段落回復為逐字對應正典的兩段"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-piety-and-effects",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 96
+  }
+}
