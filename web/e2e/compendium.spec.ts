@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
-const catalog = JSON.parse(readFileSync(new URL('../public/data/catalog.m0.json', import.meta.url), 'utf8'))
+const catalog = JSON.parse(readFileSync(new URL('../public/data/catalog.json', import.meta.url), 'utf8'))
 
 test('搜尋、篩選與網址狀態', async ({ page }) => {
   await page.goto('/compendium')
@@ -13,10 +13,10 @@ test('搜尋、篩選與網址狀態', async ({ page }) => {
   await expect(page.getByLabel('搜尋規則庫')).toHaveValue('')
   await page.getByLabel('條目類型').selectOption('ability')
   await page.getByLabel('能力類別').selectOption('heroic')
-  await page.getByLabel('怒火成本').selectOption('5')
+  await page.getByLabel('英雄資源成本').selectOption('wrath:5')
   await expect(page.getByText('4 筆結果')).toBeVisible()
   await page.reload()
-  await expect(page.getByLabel('怒火成本')).toHaveValue('5')
+  await expect(page.getByLabel('英雄資源成本')).toHaveValue('wrath:5')
 })
 
 test('深層連結、Potency 條件與英文正典', async ({ page }) => {

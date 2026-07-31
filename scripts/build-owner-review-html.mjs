@@ -11,8 +11,14 @@ import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { p } from './lib/root.mjs'
 import {
   ATTRIBUTE_NAMES_ZH, GLYPH, TIER_GLYPHS,
-  characteristicLabel, distanceLabel, parseRichText, potencyLabel, targetLabel,
+  characteristicLabel, costLabel, distanceLabel, parseRichText, potencyLabel, targetLabel,
 } from '../shared/canon-format.mjs'
+
+// 通用產生器：一次只產一個 milestone 的驗收頁，用哪個 milestone 由呼叫時指定，
+// 不再假設「data/canon/ 全部內容＝要驗收的範圍」。已結案的 milestone（如 M0）
+// 的驗收頁不會因為別的 milestone 開始建置而被重新列出或覆寫成別的內容。
+// 省略參數時預設 m0，保留舊有「不帶參數」的呼叫方式仍然可用。
+const milestone = process.argv[2] ?? 'm0'
 
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
 
@@ -70,9 +76,6 @@ const distanceEn = (d) => (d ? d.raw ?? distanceLabel(d, 'en') : '—')
 const targetZh = (t) => targetLabel(t, 'zh')
 const targetEn = (t) => targetLabel(t, 'en')
 
-const costZh = (c) => (c ? `${c.value} 怒火` : '無')
-const costEn = (c) => (c ? `${c.value} Wrath` : 'None')
-
 /** flavor 只有在原文本身是引言（book 用引號標出角色台詞）才加中文引號；純敘述句不加。 */
 const isQuotedFlavor = (canonFlavor) => !!canonFlavor && /^["“]/.test(canonFlavor.trim())
 
@@ -82,21 +85,29 @@ function actionTypeEn(v) { return v ? labels['action-types'][v]?.en ?? v : '—'
 // ---- 逐條組卡 ----
 
 const groups = [
-  { key: 'abilities', type: 'ability', badge: '招式', title: '招式', expected: 16 },
-  { key: 'conditions', type: 'condition', badge: '狀態', title: '狀態', expected: 9 },
-  { key: 'features', type: 'feature', badge: '特性', title: '職業特性', expected: 3 },
+  { key: 'abilities', type: 'ability', badge: '招式', title: '招式' },
+  { key: 'conditions', type: 'condition', badge: '狀態', title: '狀態' },
+  { key: 'features', type: 'feature', badge: '特性', title: '職業特性' },
 ]
 
-const rawEntries = groups.flatMap((g) => readdirSync(p(`data/canon/${g.key}`)).filter((n) => n.endsWith('.json')).sort().map((name) => {
-  const canon = read(p(`data/canon/${g.key}/${name}`))
-  const zh = read(p(`data/zh-Hant/${g.key}/${name}`))
-  return { group: g, canon, zh }
-}))
-
+// id → {group, canon, zh} 索引涵蓋全部 data/canon/，milestone 只決定「這次收錄哪些 id」，
+// 範圍完整性（有沒有缺、多、未配對）已由 scripts/verify-milestones.mjs 把關，這裡不重複判斷，
+// 只在 milestone 宣告的 id 對不到實際檔案時失敗——那是本腳本自己跑不下去的必要條件。
+const byId = new Map()
 for (const g of groups) {
-  const count = rawEntries.filter((e) => e.group === g).length
-  if (count !== g.expected) throw new Error(`${g.title}應有 ${g.expected} 筆，目前 ${count} 筆`)
+  for (const name of readdirSync(p(`data/canon/${g.key}`)).filter((n) => n.endsWith('.json')).sort()) {
+    const canon = read(p(`data/canon/${g.key}/${name}`))
+    const zh = read(p(`data/zh-Hant/${g.key}/${name}`))
+    byId.set(canon.id, { group: g, canon, zh })
+  }
 }
+
+const manifest = read(p(`releases/milestones/${milestone}.json`))
+const rawEntries = manifest.ids.map((id) => {
+  const found = byId.get(id)
+  if (!found) throw new Error(`milestone ${milestone} 宣告了 ${id}，但 data/canon/ 找不到對應檔案`)
+  return found
+})
 const idSet = new Set(rawEntries.map((e) => e.canon.id))
 
 /** 基本結果與效力結果合併成一行呈現（指南 §6.1b），標點仿照原文的 "text; P<LEVEL, effect" 寫法；
@@ -161,8 +172,8 @@ function abilityBody(canon, zh) {
   }
 
   ;(canon.extraCosts ?? []).forEach((ec, i) => {
-    zhHtml += `<p><b class="card-label">花費 ${ec.value} 怒火</b>${richText(zh.extraCosts[i].effect, idSet)}</p>`
-    enHtml += `<p><b class="card-label">Spend ${ec.value} Wrath</b>${esc(ec.raw ?? ec.effect)}</p>`
+    zhHtml += `<p><b class="card-label">花費 ${esc(costLabel(ec))}</b>${richText(zh.extraCosts[i].effect, idSet)}</p>`
+    enHtml += `<p><b class="card-label">Spend ${esc(costLabel(ec, 'en'))}</b>${esc(ec.raw ?? ec.effect)}</p>`
   })
 
   return { zhHtml: `${zhHtml}</div>`, enHtml: `${enHtml}</div>` }
@@ -209,7 +220,7 @@ function card(entry) {
   const category = CATEGORY_ZH(canon.abilityCategory)
   const level = canon.level != null ? `等級 ${canon.level}` : null
   const kinds = [group.badge, category, level].filter(Boolean).join('・')
-  const cost = canon.cost ? `<span class="card-cost">${esc(String(canon.cost.value))} 怒火</span>` : ''
+  const cost = canon.cost ? `<span class="card-cost">${esc(costLabel(canon.cost))}</span>` : ''
   const quoted = isQuotedFlavor(canon.flavor)
   const flavorZh = zh.flavor ? `<p class="card-flavor">${quoted ? `「${richText(zh.flavor, idSet)}」` : richText(zh.flavor, idSet)}</p>` : ''
   const flavorEn = canon.flavor ? `<p class="card-flavor">${esc(canon.flavor)}</p>` : ''
@@ -232,7 +243,7 @@ function card(entry) {
     <header class="card-head">
       <div class="card-title-row">
         <div><h3>${esc(canon.name)}</h3></div>
-        ${canon.cost ? `<span class="card-cost">${esc(String(canon.cost.value))} Wrath</span>` : ''}
+        ${canon.cost ? `<span class="card-cost">${esc(costLabel(canon.cost, 'en'))}</span>` : ''}
       </div>
       ${flavorEn}
     </header>
@@ -265,7 +276,6 @@ const sections = groups.map((g) => {
 })
 
 const total = rawEntries.length
-if (total !== 28) throw new Error(`應有 28 筆，目前 ${total} 筆`)
 
 /* 樣式與 web/src/styles.css 同一套 token 與卡片結構——驗收頁看到的必須就是網站的樣子。 */
 const CSS = `
@@ -435,7 +445,7 @@ const html = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M0 驗收清單（白話版）</title>
+<title>${esc(milestone.toUpperCase())} 驗收清單（白話版）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap">
@@ -445,7 +455,7 @@ const html = `<!doctype html>
 <div class="shell">
   <aside class="sidebar">
     <div>
-      <p class="eyebrow">DRAW STEEL · M0</p>
+      <p class="eyebrow">DRAW STEEL · ${esc(milestone.toUpperCase())}</p>
       <h1>擁有者驗收清單</h1>
     </div>
     <div class="progress">
@@ -482,7 +492,7 @@ const html = `<!doctype html>
 
 <script>
 (function () {
-  var STORE_KEY = 'ds-m0-owner-review-v1';
+  var STORE_KEY = 'ds-${milestone}-owner-review-v1';
   var entries = ${JSON.stringify(rawEntries.map((e) => ({ id: e.canon.id, nameZh: e.zh.nameZhHant, nameEn: e.canon.name, type: e.group.title })))};
   var state = {};
   try { state = JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch (e) { state = {}; }
@@ -570,7 +580,7 @@ const html = `<!doctype html>
 
   function buildExportText() {
     var lines = [];
-    lines.push('M0 驗收結果 — ' + new Date().toLocaleDateString('zh-TW'));
+    lines.push('${esc(milestone.toUpperCase())} 驗收結果 — ' + new Date().toLocaleDateString('zh-TW'));
     lines.push('');
     var byType = {};
     entries.forEach(function (en) {
@@ -621,5 +631,6 @@ const html = `<!doctype html>
 `
 
 mkdirSync(p('docs'), { recursive: true })
-writeFileSync(p('docs/m0-owner-review.html'), html, 'utf8')
-console.log(`docs/m0-owner-review.html：${total} 筆，白話對照版已產出`)
+const outputName = `docs/${milestone}-owner-review.html`
+writeFileSync(p(outputName), html, 'utf8')
+console.log(`${outputName}：${total} 筆，白話對照版已產出`)

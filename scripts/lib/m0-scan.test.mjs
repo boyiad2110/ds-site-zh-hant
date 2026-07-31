@@ -233,4 +233,33 @@ describe('m0-scan 迴歸', () => {
       assert.ok(miss && miss.has === false, '缺值必須顯示出來，不能靜默略過')
     } finally { rmSync(root, { recursive: true, force: true }) }
   })
+
+  test('feature 的 bulletList：lead 與 items 都要被通道 B 掃到（先前只掃 paragraph／definitionList）', () => {
+    const root = mkdtempSync(resolve(tmpdir(), 'ds-m0scan-'))
+    mkdirSync(resolve(root, 'data/canon/features'), { recursive: true })
+    mkdirSync(resolve(root, 'data/vocabulary'), { recursive: true })
+    const canon = {
+      id: 'feature.test.resource',
+      type: 'feature',
+      name: 'Test Resource',
+      sections: [{
+        heading: null,
+        blocks: [{
+          kind: 'bulletList',
+          lead: 'You gain 1 Victory.',
+          items: ['You gain a Recovery.', 'Nothing happens.'],
+        }],
+      }],
+    }
+    writeFileSync(resolve(root, 'data/canon/features/f.json'), JSON.stringify(canon), 'utf8')
+    writeFileSync(resolve(root, 'data/glossary.json'), JSON.stringify({
+      terms: [TERM('term.victory', 'Victory'), TERM('term.recovery', 'Recovery')],
+    }), 'utf8')
+    try {
+      const r = runScan(root)
+      const hitIds = r.prose.map((p) => p.id)
+      assert.ok(hitIds.includes('term.victory'), 'bulletList.lead 裡的 Victory 應該被掃到')
+      assert.ok(hitIds.includes('term.recovery'), 'bulletList.items[] 裡的 Recovery 應該被掃到')
+    } finally { rmSync(root, { recursive: true, force: true }) }
+  })
 })

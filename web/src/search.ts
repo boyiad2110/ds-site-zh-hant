@@ -55,7 +55,9 @@ export function applyFilters(entries: CatalogEntry[], query: string, filters: Fi
       && (!filters.type || entry.type === filters.type)
       && (!filters.category || entry.tags.abilityCategory === filters.category)
       && (!filters.action || entry.tags.actionType === filters.action)
-      && (!filters.cost || String(entry.tags.cost?.value ?? 0) === filters.cost)
+      && (!filters.cost || (filters.cost === 'none'
+        ? entry.tags.cost === null
+        : entry.tags.cost != null && `${entry.tags.cost.resource}:${entry.tags.cost.value}` === filters.cost))
       && (!filters.level || String(entry.level ?? '') === filters.level)
       && (!filters.keyword || entry.tags.keywords.includes(filters.keyword)))
     .sort((a, b) => b.result.score - a.result.score || a.entry.name.zhHant.localeCompare(b.entry.name.zhHant, 'zh-Hant'))

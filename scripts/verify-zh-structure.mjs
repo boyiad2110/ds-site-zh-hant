@@ -8,7 +8,9 @@
  * 檢查項目：
  *   1. 每個中文檔都有對應的正典條目（反之不強制——中文可以還沒跟上）
  *   2. `canonRef.id` 與檔案 id 一致
- *   3. feature：sections 數量、每個 section 的 blocks 數量、heading 有無，全部一致
+ *   3. feature：sections 數量、每個 section 的 blocks 數量、heading 有無，全部一致；
+ *      definitionList／bulletList 的 items 數量與每項非空（2026-07-31 補上 bulletList，
+ *      先前只驗 definitionList，因為 M0 沒有任何條目用到 bulletList）
  *   4. ability：powerRoll.tiers 數量與 threshold 一致、effect 段落數一致、
  *      flavor 存在性（正典非空 → 中文必須非空；正典 null → 中文可省略）、
  *      potencyEffect 與 canon potency.effect 對齊、trigger 存在性、
@@ -105,13 +107,31 @@ for (const [id, z] of zh) {
       if (cb.length !== zb.length) {
         fail(id, `sections[${i}].blocks 數量不符：正典 ${cb.length}、中文 ${zb.length}`)
       }
-      // definitionList 的項目數必須一致——少一個教團就是漏譯
+      // definitionList／bulletList 的項目數必須一致——少一個教團／少一個選項就是漏譯
       for (const [j, b] of cb.entries()) {
-        if (b.kind !== 'definitionList') continue
-        const zItems = zb[j]?.items
-        if (!Array.isArray(zItems)) { fail(id, `sections[${i}].blocks[${j}] 正典是 definitionList，中文缺 items`); continue }
-        if (zItems.length !== b.items.length) {
-          fail(id, `sections[${i}].blocks[${j}] 項目數不符：正典 ${b.items.length}、中文 ${zItems.length}`)
+        if (b.kind === 'definitionList') {
+          const zItems = zb[j]?.items
+          if (!Array.isArray(zItems)) { fail(id, `sections[${i}].blocks[${j}] 正典是 definitionList，中文缺 items`); continue }
+          if (zItems.length !== b.items.length) {
+            fail(id, `sections[${i}].blocks[${j}] 項目數不符：正典 ${b.items.length}、中文 ${zItems.length}`)
+          }
+        }
+        if (b.kind === 'bulletList') {
+          // lead：正典有非空字串 → 中文必須也是非空字串（與 flavor／trigger 同一套最小存在性判準）
+          const cLead = typeof b.lead === 'string' ? b.lead.trim() : ''
+          const zLead = typeof zb[j]?.lead === 'string' ? zb[j].lead.trim() : ''
+          if (cLead && !zLead) fail(id, `sections[${i}].blocks[${j}] 正典是 bulletList，中文缺 lead 或為空字串`)
+          // items：先查型別（字串會冒充成陣列，見檔頭說明），再查數量，再查每個元素非空
+          const cItems = b.items ?? []
+          const zItems = zhArray(id, `sections[${i}].blocks[${j}].items`, zb[j]?.items)
+          if (zItems === null) { /* 型別已錯 */ } else if (cItems.length !== zItems.length) {
+            fail(id, `sections[${i}].blocks[${j}] 項目數不符：正典 ${cItems.length}、中文 ${zItems.length}`)
+          } else {
+            for (const [k] of cItems.entries()) {
+              const s = zItems[k]
+              if (typeof s !== 'string' || !s.trim()) fail(id, `sections[${i}].blocks[${j}].items[${k}] 缺漏或為空字串`)
+            }
+          }
         }
       }
     }

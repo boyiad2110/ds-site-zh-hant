@@ -183,13 +183,24 @@ export function proseOf(item) {
             add(`section[${i}].block[${j}].item[${k}]`, it.text)
           }
         }
+        if (b.kind === 'bulletList') {
+          add(`section[${i}].block[${j}].lead`, b.lead)
+          for (const [k, txt] of (b.items ?? []).entries()) add(`section[${i}].block[${j}].item[${k}]`, txt)
+        }
       }
     }
   }
   return out
 }
 
-export function scan() {
+/**
+ * @param {Set<string> | string[] | null} [idFilter] 限定只掃這些 id（milestone 的
+ *   release manifest 用來凍結掃描範圍，即使 data/canon/ 之後加入其他 milestone 的
+ *   條目也不受影響）。省略時掃描 data/canon/ 全部檔案（既有呼叫端的行為不變）。
+ */
+export function scan(idFilter) {
+  const allowlist = idFilter ? new Set(idFilter) : null
+
   // ── 讀入 ───────────────────────────────────────────────
   const canonFiles = []
   const walk = (dir) => {
@@ -200,6 +211,7 @@ export function scan() {
   }
   walk(p('data/canon'))
   const canon = canonFiles.map((f) => JSON.parse(readFileSync(f, 'utf8')))
+    .filter((item) => !allowlist || allowlist.has(item.id))
 
   const glossary = JSON.parse(readFileSync(p('data/glossary.json'), 'utf8'))
   const vocabDir = p('data/vocabulary')

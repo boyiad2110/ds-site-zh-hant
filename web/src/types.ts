@@ -23,8 +23,8 @@ export interface CatalogEntry {
 }
 
 export interface Catalog {
-  release: string
-  sourceFingerprint: string
+  milestones: string[]
+  sourceFingerprints: Record<string, string>
   counts: { total: number; abilities: number; conditions: number; features: number }
   labels: Record<string, Record<string, { en: string; zhHant: string; aliasesZhHant?: string[] }>>
   terms: Record<string, { id: string; en: string; zhHant: string; aliasesEn: string[]; aliasesZhHant: string[] }>

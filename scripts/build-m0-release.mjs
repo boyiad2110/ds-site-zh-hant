@@ -29,7 +29,12 @@ import { createHash } from 'node:crypto'
 import { p } from './lib/root.mjs'
 import { scan, EXCLUSIONS, ENTITY_EXCLUSIONS, SENSE_ASSIGNMENTS } from './lib/m0-scan.mjs'
 
-const { canon, controlled, proseKept, entityNames, unresolvedSenses } = scan()
+// releases/m0.json 是 M0 的凍結快照——即使 data/canon/ 之後加入 M1（或更多）milestone
+// 的條目，這裡的掃描範圍也只鎖定 releases/milestones/m0.json 宣告的那 28 個 id，
+// 不會被撐大成累積內容。範圍完整性由 scripts/verify-milestones.mjs 另外把關，
+// 這裡不重複判斷、只負責「掃描範圍要凍結在哪些 id」。
+const m0Ids = JSON.parse(readFileSync(p('releases/milestones/m0.json'), 'utf8')).ids
+const { canon, controlled, proseKept, entityNames, unresolvedSenses } = scan(m0Ids)
 
 // 歧義詞義未指定就中止。猜錯會讓依賴清單指向錯誤的 id，而且不會有任何錯誤訊息。
 if (unresolvedSenses.length) {

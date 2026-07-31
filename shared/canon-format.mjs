@@ -27,6 +27,29 @@ export const CHARACTERISTICS = {
 /** 傷害算式裡才做成徽章；內文提到力量、敏捷時是寫字不是畫框（原版規則書同此）。 */
 export const ATTRIBUTE_NAMES_ZH = new Set(Object.values(CHARACTERISTICS).map((c) => c.zh))
 
+/**
+ * 英雄資源名稱。M0 只有懲戒者的怒火；新職業會有自己的資源（如導靈的 Piety，
+ * 中文譯名待擁有者裁定，不得由此處自行假定），逐一新增即可，不需要改呼叫端——
+ * 網站與驗收頁的「N 怒火」都曾寫死，一律改查這裡（2026-07-31 修正）。
+ * 查不到時退回顯示原始 resource 字串，不讓畫面空白，但也不會偽裝成已核准的譯名。
+ */
+export const RESOURCES = {
+  wrath: { zh: '怒火', en: 'Wrath' },
+}
+
+export function resourceLabel(resource, lang = 'zh') {
+  if (!resource) return ''
+  const found = RESOURCES[resource]
+  if (found) return found[lang] ?? resource
+  return lang === 'zh' ? resource : resource[0].toUpperCase() + resource.slice(1)
+}
+
+/** 「N 怒火」這類「數值＋資源名」的複合文字，成本徽章與 extraCosts 標題共用。 */
+export function costLabel(cost, lang = 'zh') {
+  if (!cost) return lang === 'zh' ? '無' : 'None'
+  return `${cost.value} ${resourceLabel(cost.resource, lang)}`
+}
+
 const DISTANCE_KINDS = {
   melee: { zh: '近戰', en: 'Melee' },
   ranged: { zh: '遠程', en: 'Ranged' },

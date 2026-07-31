@@ -366,18 +366,27 @@ M0 只驗證下列常見句型可否由組合規則產生：
 }
 ```
 
-區塊目前只有兩種，**遇到新版式再加，不預先發明**：
+區塊目前有三種，**遇到新版式再加，不預先發明**：
 
 | `kind` | 用途 | 欄位 | 出現在 |
 |---|---|---|---|
 | `paragraph` | 一般段落 | `text` | 全部 |
 | `definitionList` | 「**粗體詞**：說明」的清單 | `marker`（`"none"` 無項目符號／`"bullet"` 有）、`items[{term,text}]` | 教團、審判教團利益 |
+| `bulletList` | 一句引言＋條列選項（**沒有**各自的粗體詞，跟 `definitionList` 的差別在這裡） | `lead`（引言句）、`items[]`（純字串陣列） | 2026-07-31 前 M0 未使用；schema 與渲染路徑已備妥（`web/src/App.tsx`、`scripts/build-owner-review-html.mjs` 皆已支援），供 M1 起使用 |
 
 `marker` 存在的理由：教團三支是無項目符號的懸掛縮排，審判教團利益是 ¥ 項目符號清單，
 **版面不同但語意相同**，合併成同一種區塊會丟掉排版資訊。
 
+`bulletList` 與 `definitionList` 的分野：`definitionList` 的每個選項各自有一個**名稱**
+（教團名、益處對應的教團），`bulletList` 的選項只是條列的句子，沒有各自的專有名詞
+（例如「祈禱時擲骰結果為 1／2／3 分別如何」這種條列，選項本身不是一個個獨立的名詞）。
+**中文層存法**：`lead` 與 `items[]` 都存純文字，不含项目符號本身（符號由 renderer 畫）。
+`verify-zh-structure.mjs` 會查 `lead`（正典非空則中文非空）與 `items[]`
+（型別是陣列、數量一致、每項非空，與 `definitionList` 同一套最小存在性判準）。
+
 正規化檔（`_normalized/*.txt`）的行前綴：
-`name:` / `section:` / `p:` / `def: 詞 :: 說明`。
+`name:` / `section:` / `p:` / `def: 詞 :: 說明` / `lead:`（bulletList 的引言）
+/ `item:`（bulletList 的每個選項，一行一個）。
 
 #### (4) ⚠️ 既有 `_normalized/*.txt` 有兩套大小寫慣例（尚未處理）
 

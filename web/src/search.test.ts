@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import catalogData from '../public/data/catalog.m0.json'
+import catalogData from '../public/data/catalog.json'
 import { applyFilters, normalizeSearch, searchTokens } from './search'
 import type { Catalog, Filters } from './types'
 
@@ -23,13 +23,18 @@ describe('繁中搜尋與篩選', () => {
   })
 
   test('組合篩選只留下 5 怒火英雄招式', () => {
-    const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', category: 'heroic', cost: '5' })
+    const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', category: 'heroic', cost: 'wrath:5' })
     expect(results).toHaveLength(4)
-    expect(results.every((entry) => entry.tags.cost?.value === 5 && entry.tags.abilityCategory === 'heroic')).toBe(true)
+    expect(results.every((entry) => entry.tags.cost?.resource === 'wrath' && entry.tags.cost?.value === 5 && entry.tags.abilityCategory === 'heroic')).toBe(true)
   })
 
-  test('無怒火成本使用 0 作為網址篩選值', () => {
-    const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', cost: '0' })
+  test('成本篩選同時比對資源與數值，不同資源不會混在一起', () => {
+    const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', cost: 'piety:5' })
+    expect(results).toHaveLength(0)
+  })
+
+  test('無英雄資源成本使用 "none" 作為網址篩選值', () => {
+    const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', cost: 'none' })
     expect(results.length).toBeGreaterThan(0)
     expect(results.every((entry) => entry.tags.cost === null)).toBe(true)
   })

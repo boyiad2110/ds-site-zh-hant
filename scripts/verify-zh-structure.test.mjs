@@ -337,3 +337,84 @@ describe('verify-zh-structure：先前兩輪修掉的漏洞（回歸測試）', 
     assert.equal(r.status, 0, r.out)
   })
 })
+
+/** feature 型別的 bulletList 區塊：2026-07-31 補上，先前只驗過 definitionList，
+ * 因為 M0 沒有任何條目用到 bulletList（見 docs/translation-guide.md §4.7(3)）。 */
+describe('verify-zh-structure：feature 的 bulletList 區塊', () => {
+  const FEATURE_CANON = {
+    id: 'feature.test.resource',
+    type: 'feature',
+    name: 'Test Resource',
+    sections: [{
+      heading: 'Test in Combat',
+      blocks: [{
+        kind: 'bulletList',
+        lead: 'If you pray, your roll gains the following additional effects:',
+        items: ['If the roll is a 1, effect A.', 'If the roll is a 2, effect B.', 'If the roll is a 3, effect C.'],
+      }],
+    }],
+    origin: { kind: 'class', id: 'class.test' },
+    level: 1,
+  }
+  const FEATURE_ZH_OK = {
+    id: 'feature.test.resource',
+    nameZhHant: '測試資源',
+    sections: [{
+      heading: '測試·戰鬥中',
+      blocks: [{
+        kind: 'bulletList',
+        lead: '若你祈禱，你的擲骰獲得下列額外效果：',
+        items: ['若擲骰結果為 1，效果甲。', '若擲骰結果為 2，效果乙。', '若擲骰結果為 3，效果丙。'],
+      }],
+    }],
+    meta: { status: 'draft' },
+    canonRef: { id: 'feature.test.resource' },
+  }
+
+  function runFeature(mutate = (z) => z) {
+    const root = mkdtempSync(resolve(tmpdir(), 'ds-zh-feature-'))
+    try {
+      mkdirSync(resolve(root, 'data/canon/features'), { recursive: true })
+      mkdirSync(resolve(root, 'data/zh-Hant/features'), { recursive: true })
+      const zh = mutate(clone(FEATURE_ZH_OK))
+      writeFileSync(resolve(root, 'data/canon/features/f.json'), JSON.stringify(FEATURE_CANON), 'utf8')
+      writeFileSync(resolve(root, 'data/zh-Hant/features/f.json'), JSON.stringify(zh), 'utf8')
+      const r = spawnSync(process.execPath, [resolve(scriptsDir, 'verify-zh-structure.mjs')], {
+        env: { ...process.env, DS_DATA_ROOT: root },
+        encoding: 'utf8',
+      })
+      return { status: r.status, out: r.stdout + r.stderr }
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
+  }
+
+  test('0. 基準：bulletList 對得上時通過', () => {
+    const r = runFeature()
+    assert.equal(r.status, 0, r.out)
+  })
+
+  test('1. bulletList 少一個 item → 失敗（原文 3 個祈禱結果，少譯一個原本毫無徵兆）', () => {
+    const r = runFeature((z) => { z.sections[0].blocks[0].items = z.sections[0].blocks[0].items.slice(0, 2); return z })
+    assert.equal(r.status, 1, r.out)
+    assert.match(r.out, /項目數不符/)
+  })
+
+  test('2. bulletList 其中一個 item 是空字串 → 失敗', () => {
+    const r = runFeature((z) => { z.sections[0].blocks[0].items[1] = ''; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.match(r.out, /缺漏或為空字串/)
+  })
+
+  test('3. bulletList 缺 lead → 失敗', () => {
+    const r = runFeature((z) => { z.sections[0].blocks[0].lead = ''; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.match(r.out, /缺 lead/)
+  })
+
+  test('4. bulletList items 是字串而非陣列（長度剛好等於項目數）→ 失敗', () => {
+    const r = runFeature((z) => { z.sections[0].blocks[0].items = 'abc'; return z })
+    assert.equal(r.status, 1, r.out)
+    assert.match(r.out, /必須是陣列/)
+  })
+})

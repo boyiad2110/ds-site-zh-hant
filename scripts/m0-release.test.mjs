@@ -33,10 +33,16 @@ const manifest = JSON.parse(readFileSync(R('releases/m0.json'), 'utf8'))
 const byId = new Map(manifest.entries.map((e) => [e.id, e]))
 const usedBy = (id, entityId) => (byId.get(id)?.usedBy ?? []).includes(entityId)
 
+// 這份測試斷言的是「M0 這 28 條」的具體依賴，不是「data/canon/ 目前全部內容」——
+// 兩者現在剛好一樣，但 M1 加入 data/canon/ 後會不一樣。用 milestone 清單過濾，
+// 讓這份測試在 M1 開始建置後仍然只驗證 M0 那 28 條，不會被 M1 的內容混進來。
+const m0Ids = new Set(JSON.parse(readFileSync(R('releases/milestones/m0.json'), 'utf8')).ids)
+
 const canon = []
 for (const d of ['abilities', 'conditions', 'features']) {
   for (const f of readdirSync(R(`data/canon/${d}`))) {
-    canon.push(JSON.parse(readFileSync(R(`data/canon/${d}/${f}`), 'utf8')))
+    const entry = JSON.parse(readFileSync(R(`data/canon/${d}/${f}`), 'utf8'))
+    if (m0Ids.has(entry.id)) canon.push(entry)
   }
 }
 
@@ -44,7 +50,7 @@ for (const d of ['abilities', 'conditions', 'features']) {
 const usages = (() => {
   const code = `
     import { scan } from ${JSON.stringify(new URL('./lib/m0-scan.mjs', import.meta.url).href)}
-    console.log(JSON.stringify(scan().controlledUsages))
+    console.log(JSON.stringify(scan(${JSON.stringify([...m0Ids])}).controlledUsages))
   `
   const r = spawnSync(process.execPath, ['--input-type=module', '-e', code],
     { cwd: repoRoot, encoding: 'utf8' })

@@ -6,11 +6,15 @@
  *
  * 輸出：docs/m0-term-dependency.md
  */
-import { writeFileSync } from 'node:fs'
+import { writeFileSync, readFileSync } from 'node:fs'
 import { p } from './lib/root.mjs'
 import { scan, EXCLUSIONS, AMBIGUOUS } from './lib/m0-scan.mjs'
 
-const { canon, controlled, prose, candidates, proseExcluded } = scan()
+// 這是 M0 專用報告（檔名、標題都寫死 M0），掃描範圍要凍結在 releases/milestones/m0.json
+// 宣告的 id，不能隨 data/canon/ 加入 M1 而被撐大——否則 M1 的內容會被寫進
+// docs/m0-term-dependency.md，跟 build-m0-release.mjs 的凍結原則不一致。
+const m0Ids = JSON.parse(readFileSync(p('releases/milestones/m0.json'), 'utf8')).ids
+const { canon, controlled, prose, candidates, proseExcluded } = scan(m0Ids)
 
 const byStatus = (t) => t?.status ?? '（不在術語表）'
 const L = []

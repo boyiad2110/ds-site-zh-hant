@@ -1,0 +1,6 @@
+{
+  "$comment": "M1（導靈一級）的內容清單。目前為建設中，尚未有任何條目。Batch 2 開始逐筆加入 data/canon/ 條目時，同一個 commit 要把新條目 id 加進這裡的 ids——verify-milestones.mjs 靠這份清單、不是動態掃描數量，抓出「canon 多了檔案卻忘記宣告」或「宣告了卻還沒真的建立檔案」的落差。範圍定案於 docs/scope.md 裁決 #2（2026-07-31），本檔只是該範圍逐筆落實時的機器可讀清單，不是另一份範圍權威。",
+  "milestone": "m1",
+  "status": "in-progress",
+  "ids": []
+}

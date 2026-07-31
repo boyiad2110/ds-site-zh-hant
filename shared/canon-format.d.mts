@@ -48,6 +48,15 @@ export declare const GLYPH: { distance: string; target: string }
 export declare const TIER_GLYPHS: string[]
 export declare const CHARACTERISTICS: Record<string, { zh: string; en: string; mark: string }>
 export declare const ATTRIBUTE_NAMES_ZH: Set<string>
+export declare const RESOURCES: Record<string, { zh: string; en: string }>
+
+export interface Cost {
+  resource: string
+  value: number
+}
+
+export declare function resourceLabel(resource: string | null | undefined, lang?: Lang): string
+export declare function costLabel(cost: Cost | null | undefined, lang?: Lang): string
 
 export declare function characteristicLabel(value: Characteristic | null | undefined, lang?: Lang): string
 export declare function distanceLabel(distance: Distance | null | undefined, lang?: Lang): string

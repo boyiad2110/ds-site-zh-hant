@@ -8,7 +8,7 @@ import type { Catalog, CatalogEntry, EntryType, Filters } from './types'
 // 導致同一條規則出現兩種答案。這裡只取資料與 token，畫面仍由本檔負責。
 import {
   GLYPH, TIER_GLYPHS,
-  characteristicLabel, distanceLabel, parseRichText, plainText, potencyLabel, targetLabel,
+  characteristicLabel, costLabel, distanceLabel, parseRichText, plainText, potencyLabel, resourceLabel, targetLabel,
 } from '../../shared/canon-format.mjs'
 
 const typeLabels = { ability: '招式', condition: '狀態', feature: '特性' }
@@ -105,7 +105,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <span>非官方中文資料庫 · M0 驗收版</span>
+        <span>非官方中文資料庫</span>
         <span>資料來源：Draw Steel Heroes v1.01</span>
         <span>符號字型 Draw Steel Glyphs © 2025 MCDM Productions，採用 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 授權</span>
       </div>
@@ -126,7 +126,7 @@ function EntryRow({ entry, catalog, showKind }: { entry: CatalogEntry; catalog: 
           {showKind && <span className={`kind kind-${entry.type}`}>{typeLabels[entry.type]}</span>}
           {entry.tags.abilityCategory && <span>{label(catalog, 'ability-categories', entry.tags.abilityCategory)}</span>}
           {entry.tags.actionType && <span>{label(catalog, 'action-types', entry.tags.actionType)}</span>}
-          {entry.tags.cost && <span className="cost">{entry.tags.cost.value} 怒火</span>}
+          {entry.tags.cost && <span className="cost">{costLabel(entry.tags.cost)}</span>}
         </span>
       </Link>
     </li>
@@ -152,7 +152,7 @@ function Home({ catalog }: { catalog: Catalog }) {
       <section className="frontispiece">
         <h1>英雄爭鋒</h1>
         <p className="frontispiece-en">Draw Steel 中文資料庫</p>
-        <p className="frontispiece-lede">懲戒者第 1 等級的招式、狀態與職業特性，共 {catalog.counts.total} 筆。中文對照英文正典，跑團時直接查。</p>
+        <p className="frontispiece-lede">Draw Steel 招式、狀態與職業特性中文對照，共 {catalog.counts.total} 筆。中文對照英文正典，跑團時直接查。</p>
         <form className="hero-search" role="search" onSubmit={submit}>
           <SearchIcon />
           <label className="sr-only" htmlFor="home-search">搜尋規則</label>
@@ -195,7 +195,7 @@ function Home({ catalog }: { catalog: Catalog }) {
       </div>
 
       <p className="colophon">
-        本站為非官方中文資料庫，目前收錄 M0 範圍共 {catalog.counts.total} 筆，皆已逐筆核對英文正典。
+        本站為非官方中文資料庫，目前收錄共 {catalog.counts.total} 筆，皆已逐筆核對英文正典。
         每筆條目頁底都能展開原文對照。資料來源：Draw Steel Heroes v1.01。
       </p>
     </main>
@@ -221,15 +221,34 @@ function Compendium({ catalog }: { catalog: Catalog }) {
   const results = useMemo(() => applyFilters(catalog.entries, query, filters), [catalog, query, params.toString()])
   const hasFilters = Boolean(query) || Object.values(filters).some(Boolean)
   const keywords = [...new Set(catalog.entries.flatMap((entry) => entry.tags.keywords))].sort()
-  /** 等級篩選只有在資料真的有多個等級時才有意義；M0 全是等級 1，就不顯示這個選項。 */
+  /** 等級篩選只有在資料真的有多個等級時才有意義；目前全是等級 1，就不顯示這個選項。 */
   const levels = [...new Set(catalog.entries.map((entry) => entry.level).filter((value): value is number => value != null))].sort((a, b) => a - b)
-  const costLabels: Record<string, string> = { '0': '無怒火成本', '3': '3 怒火', '5': '5 怒火' }
+  /** 成本篩選值是 "資源:數值"（如 wrath:5）或 "none"（無英雄資源成本），
+   * 不能只比數值——不同資源（如怒火／導靈的 Piety）的相同數值不該被同一個篩選值混在一起。
+   * 選項由 catalog 實際資料動態算出，不寫死特定資源。 */
+  const costOptions = useMemo(() => {
+    const combos = new Map<string, { resource: string; value: number }>()
+    let hasNone = false
+    for (const entry of catalog.entries) {
+      if (entry.tags.cost) combos.set(`${entry.tags.cost.resource}:${entry.tags.cost.value}`, entry.tags.cost)
+      else hasNone = true
+    }
+    return {
+      hasNone,
+      combos: [...combos.entries()].sort(([, a], [, b]) => a.resource.localeCompare(b.resource) || a.value - b.value),
+    }
+  }, [catalog])
+  const costFilterLabel = (value: string): string => {
+    if (value === 'none') return '無成本'
+    const [resource, amount] = value.split(':')
+    return costLabel({ resource, value: Number(amount) })
+  }
   const activeFilters = [
     query && { key: 'q', text: `搜尋：${query}` },
     filters.type && { key: 'type', text: typeLabels[filters.type as EntryType] ?? filters.type },
     filters.category && { key: 'category', text: label(catalog, 'ability-categories', filters.category) },
     filters.action && { key: 'action', text: label(catalog, 'action-types', filters.action) },
-    filters.cost && { key: 'cost', text: costLabels[filters.cost] ?? `${filters.cost} 怒火` },
+    filters.cost && { key: 'cost', text: costFilterLabel(filters.cost) },
     filters.level && { key: 'level', text: `等級 ${filters.level}` },
     filters.keyword && { key: 'keyword', text: label(catalog, 'ability-keywords', filters.keyword) },
   ].filter(Boolean) as { key: string; text: string }[]
@@ -258,8 +277,10 @@ function Compendium({ catalog }: { catalog: Catalog }) {
         <FilterSelect id="filter-action" labelText="動作類型" value={filters.action} onChange={(v) => update('action', v)}>
           <option value="">全部動作</option>{Object.entries(catalog.labels['action-types']).map(([value, item]) => <option key={value} value={value}>{item.zhHant}</option>)}
         </FilterSelect>
-        <FilterSelect id="filter-cost" labelText="怒火成本" value={filters.cost} onChange={(v) => update('cost', v)}>
-          <option value="">全部成本</option><option value="0">無怒火成本</option><option value="3">3 怒火</option><option value="5">5 怒火</option>
+        <FilterSelect id="filter-cost" labelText="英雄資源成本" value={filters.cost} onChange={(v) => update('cost', v)}>
+          <option value="">全部成本</option>
+          {costOptions.hasNone && <option value="none">無成本</option>}
+          {costOptions.combos.map(([value, cost]) => <option key={value} value={value}>{costLabel(cost)}</option>)}
         </FilterSelect>
         <FilterSelect id="filter-keyword" labelText="關鍵詞" value={filters.keyword} onChange={(v) => update('keyword', v)}>
           <option value="">全部關鍵詞</option>{keywords.map((value) => <option key={value} value={value}>{label(catalog, 'ability-keywords', value)}</option>)}
@@ -365,7 +386,7 @@ function EffectSection({ z, c, byId }: { z: any; c: any; byId: Map<string, Catal
       </Fragment>)}
     </>}
     {extraCosts.map((item, index) => <p key={index}>
-      <b className="card-label">花費 {c.extraCosts[index].value} 怒火</b><RichText text={item.effect} byId={byId} />
+      <b className="card-label">花費 {costLabel(c.extraCosts[index])}</b><RichText text={item.effect} byId={byId} />
     </p>)}
   </>
 }
@@ -391,7 +412,7 @@ function Detail({ catalog }: { catalog: Catalog }) {
   const { type, slug } = useParams()
   const entry = catalog.entries.find((item) => item.type === type && item.slug === slug)
   const byId = useMemo(() => new Map(catalog.entries.map((item) => [item.id, item])), [catalog])
-  if (!entry) return <main className="state-page"><h1>找不到這筆規則</h1><p>它可能不在 M0 收錄範圍內，或網址已變更。</p><Link className="link-button" to="/compendium">回到規則庫</Link></main>
+  if (!entry) return <main className="state-page"><h1>找不到這筆規則</h1><p>它可能不在目前收錄範圍內，或網址已變更。</p><Link className="link-button" to="/compendium">回到規則庫</Link></main>
   const z = entry.content.zhHant
   const c = entry.content.canon
   const isDraft = entry.reviewStatus.canon !== 'verified' || entry.reviewStatus.zhHant !== 'reviewed'
@@ -414,7 +435,7 @@ function Detail({ catalog }: { catalog: Catalog }) {
             <h1>{entry.name.zhHant}</h1>
             <p className="sheet-en">{entry.name.en}</p>
           </div>
-          {entry.tags.cost && <span className="card-cost">{entry.tags.cost.value} 怒火</span>}
+          {entry.tags.cost && <span className="card-cost">{costLabel(entry.tags.cost)}</span>}
         </div>
         {z.flavor && <p className="card-flavor">{isQuotedFlavor(c.flavor) ? `「${z.flavor}」` : z.flavor}</p>}
       </header>

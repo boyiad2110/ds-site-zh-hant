@@ -2,18 +2,38 @@ import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { p } from './lib/root.mjs'
 
+// 通用產生器：一次只產一個 milestone 的 JSON 稽核版驗收表，milestone 由呼叫時指定。
+// 範圍完整性（缺、多、未配對 id）已由 scripts/verify-milestones.mjs 把關，這裡不重複判斷。
+// 省略參數時預設 m0，保留舊有「不帶參數」的呼叫方式仍然可用。
+const milestone = process.argv[2] ?? 'm0'
+
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
 const groups = [
-  { key: 'abilities', title: '招式', expected: 16 },
-  { key: 'conditions', title: '狀態', expected: 9 },
-  { key: 'features', title: '職業特性', expected: 3 },
+  { key: 'abilities', title: '招式' },
+  { key: 'conditions', title: '狀態' },
+  { key: 'features', title: '職業特性' },
 ]
 const fence = (value) => `\n\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\`\n`
 const clean = (value) => JSON.parse(JSON.stringify(value, (key, item) =>
   ['$comment', 'normalizedHash'].includes(key) ? undefined : item))
 
+// id → {group, canon, zh} 索引涵蓋全部 data/canon/；milestone 只決定這次收錄哪些 id。
+const byId = new Map()
+for (const group of groups) {
+  const canonDir = p(`data/canon/${group.key}`)
+  const zhDir = p(`data/zh-Hant/${group.key}`)
+  for (const name of readdirSync(canonDir).filter((n) => n.endsWith('.json')).sort()) {
+    const canon = read(resolve(canonDir, name))
+    const zh = read(resolve(zhDir, name))
+    byId.set(canon.id, { group, canon, zh })
+  }
+}
+
+const manifest = read(p(`releases/milestones/${milestone}.json`))
+const upper = milestone.toUpperCase()
+
 const lines = [
-  '# M0 · 28 筆內容逐筆驗收表',
+  `# ${upper} · ${manifest.ids.length} 筆內容逐筆驗收表`,
   '',
   '> 這份文件是擁有者驗收閘門，不是核准紀錄。所有未勾選條目維持現有狀態；工具不得自行把 Canon 改為 `verified`，也不得把繁中草稿改為 `reviewed`。',
   '',
@@ -21,7 +41,7 @@ const lines = [
   '',
   '逐筆核對來源頁碼、英文正典、繁中譯文、TI 決策與結構注意事項。每一筆請只勾選一個結果；需要修改時，直接在該條目的「擁有者備註」下補充。',
   '',
-  '- [ ] 我已完成全部 28 筆驗收',
+  `- [ ] 我已完成全部 ${manifest.ids.length} 筆驗收`,
   '- [ ] 可將核准條目的 Canon 升為 `verified`',
   '- [ ] 可將核准的繁中草稿升為 `reviewed`',
   '',
@@ -30,13 +50,10 @@ const lines = [
 
 let total = 0
 for (const group of groups) {
-  const canonDir = p(`data/canon/${group.key}`)
-  const zhDir = p(`data/zh-Hant/${group.key}`)
-  const entries = readdirSync(canonDir).filter((name) => name.endsWith('.json')).sort().map((name) => ({
-    canon: read(resolve(canonDir, name)),
-    zh: read(resolve(zhDir, name)),
-  }))
-  if (entries.length !== group.expected) throw new Error(`${group.title}應有 ${group.expected} 筆，目前 ${entries.length} 筆`)
+  const entries = manifest.ids
+    .map((id) => byId.get(id))
+    .filter((entry) => entry?.group === group)
+  if (entries.length === 0) continue
   total += entries.length
   lines.push('', `## ${group.title} · ${entries.length} 筆`, '')
 
@@ -61,7 +78,7 @@ for (const group of groups) {
       '',
       '**擁有者裁決**',
       '',
-      '- [ ] 核准，內容與結構皆可進入正式 M0',
+      `- [ ] 核准，內容與結構皆可進入正式 ${upper}`,
       '- [ ] 需要修改',
       '',
       '擁有者備註：',
@@ -73,8 +90,13 @@ for (const group of groups) {
   }
 }
 
-if (total !== 28) throw new Error(`M0 驗收表應有 28 筆，目前 ${total} 筆`)
-lines.splice(7, 0, `本次清單共 ${total} 筆：16 招式、9 狀態、3 職業特性。`)
+for (const id of manifest.ids) {
+  if (!byId.has(id)) throw new Error(`milestone ${milestone} 宣告了 ${id}，但 data/canon/ 找不到對應檔案`)
+}
+
+const byGroupCount = groups.map((g) => `${manifest.ids.map((id) => byId.get(id)).filter((e) => e?.group === g).length} ${g.title}`).join('、')
+lines.splice(7, 0, `本次清單共 ${total} 筆：${byGroupCount}。`)
 mkdirSync(p('docs'), { recursive: true })
-writeFileSync(p('docs/m0-owner-review.md'), `${lines.join('\n')}\n`, 'utf8')
-console.log(`docs/m0-owner-review.md：${total} 筆待逐筆驗收`)
+const outputName = `docs/${milestone}-owner-review.md`
+writeFileSync(p(outputName), `${lines.join('\n')}\n`, 'utf8')
+console.log(`${outputName}：${total} 筆待逐筆驗收`)

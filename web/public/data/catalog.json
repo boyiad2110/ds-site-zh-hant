@@ -1,6 +1,10 @@
 {
-  "release": "m0",
-  "sourceFingerprint": "ea2b8880d75b2cb2",
+  "milestones": [
+    "m0"
+  ],
+  "sourceFingerprints": {
+    "m0": "ea2b8880d75b2cb2"
+  },
   "counts": {
     "total": 28,
     "abilities": 16,
