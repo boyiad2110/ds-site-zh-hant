@@ -1,0 +1,62 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.blessing-of-fortunate-weather",
+  "nameZhHant": "天氣祝福",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "每當你完成休整時，你可以決定 100 格範圍內的天氣狀況。你所設定的天氣會跟隨你穿過任何尋常的戶外地點，直到你完成另一次休整為止。從以下天氣類型中選擇 1 種，每種都會為你和你的盟友提供 1 項好處："
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "晴朗",
+              "text": "若使用`搜索`或`導航`技能進行考驗，你和你的盟友的檢定會獲得 1 個優勢。"
+            },
+            {
+              "term": "多霧",
+              "text": "若使用`躲藏`技能進行考驗，你和你的盟友的檢定會獲得 1 個優勢。"
+            },
+            {
+              "term": "陰天",
+              "text": "若使用`耐力`技能進行考驗，你和你的盟友的檢定會獲得 1 個優勢。"
+            },
+            {
+              "term": "降水",
+              "text": "當地面泥濘或積雪時，若使用`追蹤`技能進行考驗，你和你的盟友的檢定會獲得 1 個優勢。"
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "若你與另一個使用此特性或類似特性的生物處於相同區域，但對方選擇了不同的天氣效果，這些效果會在重疊區域互相抵消。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 風暴：天氣祝福",
+    "commonProcessing": [
+      "正典為 definitionList（Clear/Foggy/Overcast/Precipitation 各自帶專有名詞），比照 150dpi 圖像 out/conduit/page-04.png 核對版式為懸掛縮排、無項目符號，marker 定為 none",
+      "4 個天氣選項的規則本體（技能與優勢）與舊譯相符，但舊譯 4 項皆省略「You and your allies」（你和你的盟友的），只寫「檢定會獲得 1 個優勢」；正典明確限定是「你和你的盟友的」檢定，草稿依正典逐項補回，非改寫語意",
+      "降水一項舊譯把「when the ground is muddy or snowy」放在句尾，正典在句首，草稿依正典語序調整（保留子句邊界，非改寫語意）",
+      "Respite＝休整（既有 approved 術語，TI-18）：舊譯「長休」已訂正為「休整」"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.blessing-of-fortunate-weather",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

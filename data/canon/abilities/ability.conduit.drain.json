@@ -1,0 +1,59 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.drain",
+  "type": "ability",
+  "name": "Drain",
+  "aliasesEn": [],
+  "flavor": "You drain the energy from your target to revitalize yourself or an ally.",
+  "keywords": [
+    "magic",
+    "melee",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + I corruption damage",
+        "raw": "2 + I corruption damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + I corruption damage",
+        "raw": "5 + I corruption damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "7 + I corruption damage",
+        "raw": "7 + I corruption damage"
+      }
+    ]
+  },
+  "effect": [
+    "You or one ally within distance can spend a Recovery."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 99,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "d5020ea2f71e03a4b605b0a3459b0b81f166f41d19e36c3ff5e9f5f316a5c65b"
+  }
+}

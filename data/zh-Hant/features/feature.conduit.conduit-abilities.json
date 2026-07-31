@@ -1,0 +1,56 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.conduit-abilities",
+  "nameZhHant": "神導士招式",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你的訓練與信仰讓你專精於強化盟友與削弱敵人的魔法，同時能在戰鬥中與夥伴並肩作戰，維持自身的戰鬥力。"
+        }
+      ]
+    },
+    {
+      "heading": "招牌招式",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "從以下選項中選擇 2 項招牌招式。招牌招式可以任意使用。",
+          "items": [
+            "[賜福聖光](ability.conduit.blessed-light)",
+            "[奪元術](ability.conduit.drain)",
+            "[神聖鞭笞](ability.conduit.holy-lash)",
+            "[天降光霖](ability.conduit.lightfall)",
+            "[犧牲奉獻](ability.conduit.sacrificial-offer)",
+            "[恍惚詛咒](ability.conduit.staggering-curse)",
+            "[勇士禱詞](ability.conduit.warriors-prayer)",
+            "[凋零箭](ability.conduit.wither)"
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士招式（sources/notion-export/class-notion/conduit/神導士招式 239f74afd25b80eb8f74ce7e7a785c42.md）段落標題與導言",
+    "commonProcessing": [
+      "2026-07-31 Reviewer 第二輪複核：原條目只有導言句、未列出或連結任何選項，已改用 bulletList 列出全部 8 個招牌招式，每項為 [中文名](id) 站內連結，逐一對應已建檔的 ability 條目",
+      "「招牌招式」導言：舊譯（神導士招式.md）「選擇 2 項招牌招式。招牌招式可以任意使用。」逐句相符，僅補回舊譯省略的「從以下選項中」（from the following options）",
+      "本批依 M1 指示排除 Quick Build（「Blessed Light, Staggering Curse.」）",
+      "正典來源修正：本條目原本涵蓋跨 pdfPage 5/6/8 的內容但只標示單一頁碼，已拆分為 3 個條目（本條目、feature.conduit.triggered-action、feature.conduit.heroic-abilities），各自 source 對應實際印刷頁，見對齊報告",
+      "2026-07-31 擁有者第三輪驗收裁決：條目中文名稱由「神導士招式總覽」改為「神導士招式」"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.conduit-abilities",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

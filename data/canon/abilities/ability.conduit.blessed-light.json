@@ -1,0 +1,59 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.blessed-light",
+  "type": "ability",
+  "name": "Blessed Light",
+  "aliasesEn": [],
+  "flavor": "Burning radiance falls upon your foe, transferring some of their energy to a nearby ally.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I holy damage",
+        "raw": "3 + I holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + I holy damage",
+        "raw": "5 + I holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + I holy damage",
+        "raw": "8 + I holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "One ally within distance gains a number of surges equal to the tier outcome of your power roll."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 99,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "7088fdf6f206e24a29c1d5d17f9ff1d48816f992fc4f4729d7e00f8dec250691"
+  }
+}

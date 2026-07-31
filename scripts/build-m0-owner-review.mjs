@@ -83,7 +83,7 @@ for (const group of groups) {
       '',
       '擁有者備註：',
       '',
-      '> ',
+      '>',
       '',
       '---',
     )
@@ -98,5 +98,5 @@ const byGroupCount = groups.map((g) => `${manifest.ids.map((id) => byId.get(id))
 lines.splice(7, 0, `本次清單共 ${total} 筆：${byGroupCount}。`)
 mkdirSync(p('docs'), { recursive: true })
 const outputName = `docs/${milestone}-owner-review.md`
-writeFileSync(p(outputName), `${lines.join('\n')}\n`, 'utf8')
+writeFileSync(p(outputName), `${lines.join('\n').replace(/[ \t]+$/gm, '')}\n`, 'utf8')
 console.log(`${outputName}：${total} 筆待逐筆驗收`)

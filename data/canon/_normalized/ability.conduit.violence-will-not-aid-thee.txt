@@ -1,0 +1,12 @@
+name: Violence Will Not Aid Thee
+flavor: After some holy lightning, your enemy will think twice about their next attack.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+cost: 3 Piety
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + Intuition
+tier≤11.text: 3 + I lightning damage
+tier12-16.text: 6 + I lightning damage
+tier17+.text: 9 + I lightning damage
+effect: The first time on a turn that the target deals damage to another creature, the target of this ability takes 1d10 lightning damage (save ends).

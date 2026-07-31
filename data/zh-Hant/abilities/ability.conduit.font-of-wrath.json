@@ -1,0 +1,26 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.font-of-wrath",
+  "nameZhHant": "神怒之泉",
+  "aliasesZhHant": [],
+  "flavor": "戰場上湧現一道璀璨的神聖光柱，攻擊周圍的敵人。",
+  "effect": [
+    "你召喚 1 個`體型`為 2 且不會受傷的靈體，出現在射程內的未占據空間。靈體會持續到你下個回合結束。你和你的盟友可以穿越靈體的空間，但敵人無法。每個敵人在每個戰鬥輪中首次移動至靈體 2 格內，或在該處開始其回合時，會各自受到等於你`直覺`的神聖傷害。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 神怒之泉（同上檔）",
+    "commonProcessing": [
+      "2026-07-31 Reviewer 複核指出：舊譯「每輪 1 次，當任何敵人首次…時」的句式會讓人誤讀成「整個效果每輪只觸發 1 次（只影響 1 個敵人）」，但正典「for the first time in a combat round」的限定對象是**每個敵人各自**（同一輪內可以有多個不同敵人各自觸發 1 次）。已改為「每個敵人在每個戰鬥輪中首次…時，會各自受到…」，把「每輪限定」明確綁定在「每個敵人」身上，消除歧義"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.font-of-wrath",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 101
+  }
+}

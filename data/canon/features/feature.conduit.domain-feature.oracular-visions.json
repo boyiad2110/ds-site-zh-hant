@@ -1,0 +1,36 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.domain-feature.oracular-visions",
+  "type": "feature",
+  "name": "Oracular Visions",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your deity rewards you with hazy visions of things to come. Each time you earn 1 or more Victories, you earn an equal number of fate points."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Whenever you or a creature within 10 squares makes a test, you can spend 1 fate point to tap into a vision of the outcome, granting that creature an edge on the test. You lose any remaining fate points when you finish a respite."
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "domain",
+    "id": "domain.fate"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "ee2e847f82ffc9ec798048a7f3bdf8af6a7f3a3025a6f0e920c804e5fdc289c2"
+  }
+}

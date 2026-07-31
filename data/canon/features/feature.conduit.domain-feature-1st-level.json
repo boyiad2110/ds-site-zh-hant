@@ -1,5 +1,5 @@
 {
-  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收已核准內容與結構，但⚠️ 對照表目前只收錄自然（Nature）1 列，作為結構樣本；其餘 11 個領域留待 M1 完整抽取時比照補上（definitionList.items 會從 1 筆擴充為 12 筆），id 與現有內容不變。canonReviewStatus 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 verified。",
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 2 建立自然領域樣本；同日 Batch 3 補齊其餘 11 列，12 列齊全。canonReviewStatus 仍為 draft，待擁有者審核全部 12 個領域後升級。自然列內容與 Batch 2 完全相同，未改動。",
   "id": "feature.conduit.domain-feature-1st-level",
   "type": "feature",
   "name": "1st-Level Domain Feature",
@@ -17,23 +17,70 @@
           "marker": "none",
           "items": [
             {
+              "term": "Creation",
+              "text": "Hands of the Maker (Crafting)"
+            },
+            {
+              "term": "Death",
+              "text": "Grave Speech (Lore)"
+            },
+            {
+              "term": "Fate",
+              "text": "Oracular Visions (Lore)"
+            },
+            {
+              "term": "Knowledge",
+              "text": "Blessing of Comprehension (Lore)"
+            },
+            {
+              "term": "Life",
+              "text": "Revitalizing Ritual (Exploration)"
+            },
+            {
+              "term": "Love",
+              "text": "Blessing of Compassion (Interpersonal)"
+            },
+            {
               "term": "Nature",
               "text": "Faithful Friend (Exploration)"
+            },
+            {
+              "term": "Protection",
+              "text": "Protective Circle (Exploration)"
+            },
+            {
+              "term": "Storm",
+              "text": "Blessing of Fortunate Weather (Exploration)"
+            },
+            {
+              "term": "Sun",
+              "text": "Inner Light (Lore)"
+            },
+            {
+              "term": "Trickery",
+              "text": "Inspired Deception (Intrigue)"
+            },
+            {
+              "term": "War",
+              "text": "Sanctified Weapon (Exploration)"
             }
           ]
         }
       ]
     }
   ],
-  "origin": { "kind": "class", "id": "class.conduit" },
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-05-conduit",
     "version": "1.01",
     "pdfPage": 4,
     "printedPage": 97,
     "checkedAt": "2026-07-31",
-    "normalizedHash": "cc5203193ef413da81356ff8ae3f8b84bc355c633a8da4f3e945e0062ddb4c16"
+    "normalizedHash": "30271a1789c99e6ebc1b5c461bb300797fe8b449182b14fbff66bd23083fff9c"
   }
 }

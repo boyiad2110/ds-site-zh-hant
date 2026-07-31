@@ -1,0 +1,54 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.healing-grace",
+  "type": "ability",
+  "name": "Healing Grace",
+  "aliasesEn": [],
+  "usageNote": "You have the following ability, which you can use once on your turn.",
+  "flavor": "Your divine energy restores the righteous.",
+  "keywords": [
+    "magic",
+    "ranged"
+  ],
+  "actionType": "maneuver",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "Self or one ally",
+  "effect": [
+    "The target can spend a Recovery."
+  ],
+  "extraCosts": [
+    {
+      "resource": "piety",
+      "value": 1,
+      "open": true,
+      "lead": "For each piety spent, choose one of the following enhancements:",
+      "options": [
+        "You can target one additional ally within distance.",
+        "You can end one effect on a target that is ended by a saving throw or that ends at the end of their turn.",
+        "A prone target can stand up.",
+        "A target can spend 1 additional Recovery."
+      ],
+      "raw": "Spend 1+ Piety: For each piety spent, choose one of the following enhancements: You can target one additional ally within distance. You can end one effect on a target that is ended by a saving throw or that ends at the end of their turn. A prone target can stand up. A target can spend 1 additional Recovery."
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "36e5f176180d2d9e52975dc6f20d4896fc0c8c8cd38f3ba4643c1f3f5e8b4ec8"
+  }
+}

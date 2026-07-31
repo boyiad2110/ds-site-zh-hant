@@ -1,0 +1,42 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.drain",
+  "nameZhHant": "奪元術",
+  "aliasesZhHant": [],
+  "flavor": "你汲取目標的能量來恢復自己或盟友的體力。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + `直覺`腐朽傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `直覺`腐朽傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "7 + `直覺`腐朽傷害"
+      }
+    ]
+  },
+  "effect": [
+    "你自己或射程內的 1 個盟友可以花費 1 點`復元力`。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 奪元術（同上檔）",
+    "commonProcessing": [
+      "數值與效果與舊譯逐字相符，僅套用格式規則"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.drain",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

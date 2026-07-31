@@ -1,0 +1,32 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.word-of-judgment",
+  "nameZhHant": "審判之聲",
+  "aliasesZhHant": [],
+  "flavor": "你的神聖言語削弱了敵人的攻勢。",
+  "trigger": "當目標即將受到招式檢定的傷害時。",
+  "effect": [
+    "針對目標的該次檢定承受 1 個劣勢。"
+  ],
+  "extraCosts": [
+    {
+      "effect": "針對目標的該次檢定承受雙劣勢。"
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 觸發式動作 · 審判之聲（同上檔）",
+    "commonProcessing": [
+      "trigger／effect／extraCosts 與舊譯逐句相符，僅套用格式規則"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.word-of-judgment",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

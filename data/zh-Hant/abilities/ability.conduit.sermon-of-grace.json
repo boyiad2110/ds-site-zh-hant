@@ -1,0 +1,27 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.sermon-of-grace",
+  "nameZhHant": "恩典布道",
+  "aliasesZhHant": [],
+  "flavor": "你以聖者的偉大事蹟來鼓舞你的盟友。",
+  "effect": [
+    "每個目標都可以花費 1 點`復元力`。此外，每個目標也可以使用免費反應動作來解除 1 個能夠透過豁免解除或 EoT 的狀態或效果，或從伏地狀態起身。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 恩典布道（同上檔）",
+    "commonProcessing": [
+      "「免費觸發式動作」→「免費反應動作」：套用附錄 A 已裁決的 Free Triggered Action＝免費反應動作（term-applied，非本輪新裁決）",
+      "動作類型：舊譯標「主動動作」為誤植（無此動作類型），正典為 Main action，訂正為主要動作"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.sermon-of-grace",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 101
+  }
+}

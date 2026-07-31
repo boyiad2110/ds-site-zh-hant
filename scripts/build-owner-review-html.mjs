@@ -172,8 +172,17 @@ function abilityBody(canon, zh) {
   }
 
   ;(canon.extraCosts ?? []).forEach((ec, i) => {
-    zhHtml += `<p><b class="card-label">花費 ${esc(costLabel(ec))}</b>${richText(zh.extraCosts[i].effect, idSet)}</p>`
-    enHtml += `<p><b class="card-label">Spend ${esc(costLabel(ec, 'en'))}</b>${esc(ec.raw ?? ec.effect)}</p>`
+    const zec = zh.extraCosts[i]
+    if (ec.options) {
+      // options/lead 形狀（治癒恩典「花費 1+ 虔誠，逐點選 1 項」）——2026-07-31 擁有者實際
+      // 驗收時發現這裡曾經完全沒有輸出（舊版只讀 .effect，這個形狀沒有 .effect），
+      // 比照 web/src/App.tsx 已修正的呈現方式：無序清單，不用 <ol>。
+      zhHtml += `<p><b class="card-label">花費 ${esc(costLabel(ec))}</b>${richText(zec.lead, idSet)}</p><ul>${zec.options.map((o) => `<li>${richText(o, idSet)}</li>`).join('')}</ul>`
+      enHtml += `<p><b class="card-label">Spend ${esc(costLabel(ec, 'en'))}</b>${esc(ec.lead)}</p><ul>${ec.options.map((o) => `<li>${esc(o)}</li>`).join('')}</ul>`
+    } else {
+      zhHtml += `<p><b class="card-label">花費 ${esc(costLabel(ec))}</b>${richText(zec.effect, idSet)}</p>`
+      enHtml += `<p><b class="card-label">Spend ${esc(costLabel(ec, 'en'))}</b>${esc(ec.raw ?? ec.effect)}</p>`
+    }
   })
 
   return { zhHtml: `${zhHtml}</div>`, enHtml: `${enHtml}</div>` }
@@ -632,5 +641,9 @@ const html = `<!doctype html>
 
 mkdirSync(p('docs'), { recursive: true })
 const outputName = `docs/${milestone}-owner-review.html`
-writeFileSync(p(outputName), html, 'utf8')
+// 模板裡不少 ${可能為空字串的片段} 各自佔一行，值為空時該行只剩模板本身的縮排空白，
+// 逐次重新產出都會讓這些行在 git diff 裡顯示成「新增一行純空白」，git diff --check 會擋下來。
+// 逐行去除行尾空白（不影響 HTML／CSS／JS 語意，也不影響 <pre> 內容的視覺呈現——
+// 換行前的空白本來就不影響顯示）。
+writeFileSync(p(outputName), html.replace(/[ \t]+$/gm, ''), 'utf8')
 console.log(`${outputName}：${total} 筆，白話對照版已產出`)

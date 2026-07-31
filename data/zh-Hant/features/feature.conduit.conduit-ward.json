@@ -1,0 +1,60 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.conduit-ward",
+  "nameZhHant": "神導士護咒",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "神明賜予你一道護咒，保護你免受無信者的侵擾。從以下選項中選擇 1 種護咒。作為休整活動，你可以向神明祈禱來更換你的護咒和禱詞。"
+        },
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "堡壘護咒",
+              "text": "神明賜予你神聖的氣息，時刻保護著你。你的豁免獲得 +1 加值。"
+            },
+            {
+              "term": "靈敏護咒",
+              "text": "神明在你體內灌注神聖的迅捷之力。每當 1 個相鄰的生物對你造成傷害時，你可以在傷害結算後遁移最多等於你`直覺`的格數。"
+            },
+            {
+              "term": "聖域護咒",
+              "text": "當敵人來犯時，你的神明會庇護你。在 1 個生物對你造成傷害後，該生物無法再對你發動打擊，直到你傷害他或他的 1 個盟友，或直到他下個回合結束。"
+            },
+            {
+              "term": "靈體護咒",
+              "text": "無形的靈體會在你陷入危險時環繞在你身邊。每當 1 個相鄰的生物對你造成傷害時，他會受到等於你`直覺`的腐朽傷害。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士護咒（sources/notion-export/class-notion/conduit/神導士護咒 239f74afd25b80b6a111dd0be2bbdd43.md）",
+    "commonProcessing": [
+      "「(see Prayer above)」比照 TI-5～7 既有裁決省略頁面內參照，舊譯本身已省略，做法一致",
+      "本批依指示排除本條目 Quick Build（「Bastion Ward.」）",
+      "堡壘護咒／聖域護咒／靈體護咒與舊譯逐句相符，僅套用格式規則",
+      "舊譯原將導言拆成 2 段（「…選擇 1 種護咒。」／「作為長休活動，你可以…」），正典為單一連續段落，草稿依正典合併為 1 段，文字仍逐句取自舊譯，僅段落邊界調整",
+      "Respite＝休整（既有 approved 術語，TI-18）：舊譯「長休」已訂正為「休整」",
+      "2026-07-31 Reviewer 複核，擁有者確認：靈敏護咒舊譯「遁移最多等於你`直覺` ×2 的格數」為錯誤，正典（pdfPage 6／printedPage 99，已用 -layout 文字抽取與 150dpi 圖像 out/conduit/page-06.png 雙重核對）為「shift up to a number of squares equal to your Intuition score」，並無 ×2，訂正為「等於你`直覺`的格數」定案，不再列為待裁"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.conduit-ward",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

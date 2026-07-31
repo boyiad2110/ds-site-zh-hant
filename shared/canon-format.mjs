@@ -45,10 +45,13 @@ export function resourceLabel(resource, lang = 'zh') {
   return lang === 'zh' ? resource : resource[0].toUpperCase() + resource.slice(1)
 }
 
-/** 「N 怒火」這類「數值＋資源名」的複合文字，成本徽章與 extraCosts 標題共用。 */
+/**
+ * 「N 怒火」這類「數值＋資源名」的複合文字，成本徽章與 extraCosts 標題共用。
+ * `cost.open`（2026-07-31 M1 治癒恩典新增，擁有者已核准）＝原文的「1+」，數值後補「+」。
+ */
 export function costLabel(cost, lang = 'zh') {
   if (!cost) return lang === 'zh' ? '無' : 'None'
-  return `${cost.value} ${resourceLabel(cost.resource, lang)}`
+  return `${cost.value}${cost.open ? '+' : ''} ${resourceLabel(cost.resource, lang)}`
 }
 
 const DISTANCE_KINDS = {
@@ -56,7 +59,10 @@ const DISTANCE_KINDS = {
   ranged: { zh: '遠程', en: 'Ranged' },
   self: { zh: '自身', en: 'Self' },
 }
-const AREA_SHAPES = { cube: { zh: '立方', en: 'cube' } }
+// burst 是 2026-07-31 M1 Batch 3 新增的區域形狀（天降光霖 2 爆發、恩典布道 4 爆發），擁有者已核准。
+// 與 cube 不同：burst 沒有「within」（原文本身沒有這個限定詞，隱含以自身為中心），
+// distanceLabel／composeDistance 需視 within 是否存在分開組字，見下。
+const AREA_SHAPES = { cube: { zh: '立方', en: 'cube' }, burst: { zh: '爆發', en: 'burst' } }
 
 const TARGETS_ZH = {
   'One creature': '1 個生物',
@@ -68,6 +74,15 @@ const TARGETS_ZH = {
   // 2026-07-31 M1 樣本新增：純自身鎖定的招式（如忠誠好友）target 就是單獨的 "Self"，
   // 與 distance.kind:"self" 用同一個「自身」，不需要另外的中文譯文欄位。
   Self: '自身',
+  // 2026-07-31 M1 Batch 3 新增：沿用「One enemy＝1 個敵人」「Each enemy in the area＝區域內每個敵人」
+  // 已核准的組合公式（數量／each ＋ 對象 ＋ 範圍），僅代入神導士招式實際出現的對象與數量。
+  // 「One dead creature」的 dead 是新出現的修飾語，套用 §4.4 willing 同款「修飾＋對象」公式，
+  // 擁有者已核准套用方式。
+  'One ally': '1 個盟友',
+  'Each ally in the area': '區域內每個盟友',
+  'Four allies': '4 個盟友',
+  'One dead creature': '1 個已死亡的生物',
+  Special: '特殊',
 }
 
 /**
@@ -91,9 +106,11 @@ export function distanceLabel(distance, lang = 'zh') {
   }
   if (distance.kind === 'area') {
     const shape = AREA_SHAPES[distance.area?.shape]?.[lang] ?? distance.area?.shape ?? ''
+    const within = distance.area?.within
+    if (within == null) return lang === 'zh' ? `${distance.area?.size ?? ''} ${shape}`.trim() : `${distance.area?.size ?? ''} ${shape}`.trim()
     return lang === 'zh'
-      ? `${distance.area?.within ?? ''} 格內 ${distance.area?.size ?? ''} ${shape}`.trim()
-      : `${distance.area?.size ?? ''} ${shape} within ${distance.area?.within ?? ''}`.trim()
+      ? `${within} 格內 ${distance.area?.size ?? ''} ${shape}`.trim()
+      : `${distance.area?.size ?? ''} ${shape} within ${within}`.trim()
   }
   const name = DISTANCE_KINDS[distance.kind]?.[lang] ?? distance.kind
   return distance.value != null ? `${name} ${distance.value}` : name
@@ -145,7 +162,10 @@ export function plainText(text) {
 export function composeDistance(distance) {
   if (!distance) return ''
   if (distance.kind === 'choice') return (distance.options ?? []).map(composeDistance).join(' or ')
-  if (distance.kind === 'area') return `${distance.area?.size} ${distance.area?.shape} within ${distance.area?.within}`
+  if (distance.kind === 'area') {
+    const within = distance.area?.within
+    return within == null ? `${distance.area?.size} ${distance.area?.shape}` : `${distance.area?.size} ${distance.area?.shape} within ${within}`
+  }
   const name = DISTANCE_KINDS[distance.kind]?.en ?? distance.kind
   return distance.value != null ? `${name} ${distance.value}` : name
 }
@@ -156,9 +176,18 @@ export function composeCharacteristic(value) {
   return ''
 }
 
+/**
+ * `options`／`lead`（無 `effect`）是 2026-07-31 M1 Batch 3 新增的形狀，擁有者已核准——治癒恩典的
+ * 「Spend 1+ Piety: For each piety spent, choose one of the following enhancements: …」，
+ * 花費是開放式（`open: true`＝原文的「1+」），且效果是條列選項而非單一句子，
+ * 既有的「resource/value/effect」形狀裝不下，故新增此形狀。
+ * 沿用既有 extraCosts 的扁平欄位風格（resource/value 在頂層，不是巢狀 cost）。
+ */
 export function composeExtraCost(extraCost) {
   const resource = extraCost.resource ? extraCost.resource[0].toUpperCase() + extraCost.resource.slice(1) : ''
-  return `Spend ${extraCost.value} ${resource}: ${extraCost.effect}`
+  const value = `${extraCost.value}${extraCost.open ? '+' : ''}`
+  if (extraCost.options) return `Spend ${value} ${resource}: ${extraCost.lead} ${extraCost.options.join(' ')}`
+  return `Spend ${value} ${resource}: ${extraCost.effect}`
 }
 
 /** 效力記號，例如 P<WEAK —— 原版規則書的寫法。 */

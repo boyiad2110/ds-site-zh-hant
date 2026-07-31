@@ -1,0 +1,41 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.font-of-wrath",
+  "type": "ability",
+  "name": "Font of Wrath",
+  "aliasesEn": [],
+  "flavor": "A brilliant column of holy light appears on the battlefield, striking out at nearby enemies.",
+  "keywords": [
+    "magic",
+    "ranged"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 3
+  },
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "Special",
+  "effect": [
+    "You summon a spirit of size 2 who can't be harmed, and who appears in an unoccupied space within distance. The spirit lasts until the end of your next turn. You and your allies can move through the spirit's space, but enemies can't. Any enemy who moves within 2 squares of the spirit for the first time in a combat round or starts their turn there takes holy damage equal to your Intuition score."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "fbf7f958c587cd165d23fea3b6e3fa545a91cbc09928a5589cfd361aa31f8643"
+  }
+}

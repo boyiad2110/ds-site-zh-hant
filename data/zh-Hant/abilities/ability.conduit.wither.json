@@ -1,0 +1,42 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.wither",
+  "nameZhHant": "凋零箭",
+  "aliasesZhHant": [],
+  "flavor": "你射出一道汲取敵人生命力的神聖能量箭矢。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `直覺`腐朽傷害",
+        "potencyEffect": "目標的下次檢定承受 1 個劣勢"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `直覺`腐朽傷害",
+        "potencyEffect": "目標的下次檢定承受 1 個劣勢"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + `直覺`腐朽傷害",
+        "potencyEffect": "目標的下次檢定承受 1 個劣勢"
+      }
+    ]
+  },
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 凋零箭（同上檔）",
+    "commonProcessing": [
+      "數值與效果與舊譯逐字相符，僅套用 N-1（potencyEffect 不重複效力記號）與格式規則"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.wither",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 100
+  }
+}

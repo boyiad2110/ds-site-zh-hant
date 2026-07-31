@@ -1,0 +1,32 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.domain-feature.blessing-of-comprehension",
+  "type": "feature",
+  "name": "Blessing of Comprehension",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You can interpret diagrams and charts even if you don't understand the language associated with them. You are considered fluent in all languages for the purpose of understanding the project source for any research or crafting project (see Chapter 12: Downtime Projects)."
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "domain",
+    "id": "domain.knowledge"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 4,
+    "printedPage": 97,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "d47c6bdb16c118fc0dac07fc8b1a788f16dfca82dfd2611c4c00eb2e8112b059"
+  }
+}

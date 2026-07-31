@@ -29,8 +29,11 @@ describe('繁中搜尋與篩選', () => {
   })
 
   test('成本篩選同時比對資源與數值，不同資源不會混在一起', () => {
+    // M1 Batch 3 加入 4 個 5 虔誠招式後，piety:5 不再是空集合——
+    // 改驗證篩選結果只含 piety/5，不會混進同數值的 wrath 招式（原測試的真正意圖）。
     const results = applyFilters(catalog.entries, '', { ...empty, type: 'ability', cost: 'piety:5' })
-    expect(results).toHaveLength(0)
+    expect(results.length).toBeGreaterThan(0)
+    expect(results.every((entry) => entry.tags.cost?.resource === 'piety' && entry.tags.cost?.value === 5)).toBe(true)
   })
 
   test('無英雄資源成本使用 "none" 作為網址篩選值', () => {
@@ -41,8 +44,8 @@ describe('繁中搜尋與篩選', () => {
 })
 
 describe('累積式 catalog（M0＋M1）', () => {
-  test('正好包含 18 招式、9 狀態、7 特性（M0 16/9/3 ＋ M1 樣本 2/0/4）', () => {
-    expect(catalog.counts).toEqual({ total: 34, abilities: 18, conditions: 9, features: 7 })
+  test('正好包含 39 招式、9 狀態、21 特性（M0 16/9/3 ＋ M1 Batch 3 23/0/18）', () => {
+    expect(catalog.counts).toEqual({ total: 69, abilities: 39, conditions: 9, features: 21 })
   })
 
   test('milestones 標示兩者皆有內容', () => {
@@ -50,8 +53,8 @@ describe('累積式 catalog（M0＋M1）', () => {
   })
 
   test('路由與 id 唯一且所有條目都有繁中名稱', () => {
-    expect(new Set(catalog.entries.map((entry) => entry.id)).size).toBe(34)
-    expect(new Set(catalog.entries.map((entry) => `${entry.type}/${entry.slug}`)).size).toBe(34)
+    expect(new Set(catalog.entries.map((entry) => entry.id)).size).toBe(69)
+    expect(new Set(catalog.entries.map((entry) => `${entry.type}/${entry.slug}`)).size).toBe(69)
     expect(catalog.entries.every((entry) => entry.name.zhHant.length > 0)).toBe(true)
   })
 

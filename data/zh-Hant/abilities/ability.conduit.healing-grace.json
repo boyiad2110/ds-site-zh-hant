@@ -1,0 +1,41 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.healing-grace",
+  "nameZhHant": "治癒恩典",
+  "aliasesZhHant": [],
+  "usageNote": "你擁有以下招式，你的每回合可以使用 1 次。",
+  "flavor": "你的神聖能量可以治療正義之士。",
+  "effect": [
+    "目標可以花費 1 點`復元力`。"
+  ],
+  "extraCosts": [
+    {
+      "lead": "每花費 1 點`虔誠`，選擇以下 1 種效果：",
+      "options": [
+        "你可以額外指定射程內的 1 個盟友作為目標。",
+        "你可以為目標解除 1 個能夠透過豁免解除或 EoT 的狀態或效果。",
+        "目標可以從伏地狀態起身。",
+        "目標可以額外花費 1 點`復元力`。"
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 治癒恩典（sources/notion-export/class-notion/conduit/治癒恩典 239f74afd25b80b4a56ce0b58082eecc.md）",
+    "commonProcessing": [
+      "舊譯將 4 個加值選項合併寫成一段連續文字（用「-」條列），本批依正典的條列結構拆成 options[]，逐句取自舊譯原句",
+      "\"prone\" 狀態連結：舊譯原句含 Notion 內部連結，本批僅取純文字「伏地」，不建立站內連結（比照 TI-16 以外的既有作法，未連結的狀態名稱維持純文字）",
+      "2026-07-31 Reviewer 複核，擁有者確認接受 extraCosts 的 options/lead/open 新結構與 usageNote 新欄位，不再列為待裁",
+      "2026-07-31 Reviewer 複核：第 1 項加值選項舊譯「你可以指定射程內的另一個盟友作為目標」未明確表達正典「one additional ally」的「額外」語意，已訂正為「你可以額外指定射程內的 1 個盟友作為目標」"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.healing-grace",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

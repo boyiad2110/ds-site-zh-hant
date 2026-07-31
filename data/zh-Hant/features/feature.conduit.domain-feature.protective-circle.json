@@ -1,0 +1,35 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.protective-circle",
+  "nameZhHant": "守護結界",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你可以花費 10 分鐘不間斷地在地面上創造 1 道守護結界，大小足以容納 1 個`體型` 1 的生物。此結界持續 24 小時、直到你創造另一個守護結界，或是直到你解消它（無需動作）。只有你在繪製結界時指定的生物可以進出此區域。若生物處於守護結界內，他無法成為打擊的目標。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 守護：守護結界",
+    "commonProcessing": [
+      "段落順序依正典重排（結界持續時間提前、可進出對象在後），內容仍逐句取自舊譯或正典直譯，非改寫語意",
+      "「或是直到你解消它」：舊譯原句為「或是直接解消它」，經與正典「until you dismiss it」核對，正典是「持續24小時、直到你創造另一個、或直到你解消它」三個並列的 until 子句，判斷舊譯「直接」為誤植（形近「直到」），已訂正為「直到」",
+      "2026-07-31 Reviewer 複核，擁有者確認：舊譯「你必須指定 1 個生物。只有該生物可以進出結界」將可指定對象限定為恰好 1 個，但正典（pdfPage 5／printedPage 98，已用 150dpi 圖像 out/conduit/page-05.png 核對）為「Only creatures you designate（複數）at the time of drawing the circle can enter and exit the area」，未明文限定僅 1 個，訂正為「你在繪製結界時指定的生物可以進出」定案，不再列為待裁"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.protective-circle",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.corruptions-curse",
+  "type": "ability",
+  "name": "Corruption's Curse",
+  "aliasesEn": [],
+  "flavor": "Cursed by you, your enemy takes more damage from your allies.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 5
+  },
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I corruption damage",
+        "potency": {
+          "characteristic": "might",
+          "level": "weak",
+          "effect": "damage weakness 5 (save ends)"
+        },
+        "raw": "3 + I corruption damage; M<WEAK, damage weakness 5 (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + I corruption damage",
+        "potency": {
+          "characteristic": "might",
+          "level": "average",
+          "effect": "damage weakness 5 (save ends)"
+        },
+        "raw": "6 + I corruption damage; M<AVERAGE, damage weakness 5 (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + I corruption damage",
+        "potency": {
+          "characteristic": "might",
+          "level": "strong",
+          "effect": "damage weakness 5 (save ends)"
+        },
+        "raw": "9 + I corruption damage; M<STRONG, damage weakness 5 (save ends)"
+      }
+    ]
+  },
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "866885e85c74fd80cb53e72d0459dc6d8aac5ef0b14e670477edb996c5e6d5f6"
+  }
+}

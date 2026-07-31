@@ -1,0 +1,17 @@
+name: Corruption's Curse
+flavor: Cursed by you, your enemy takes more damage from your allies.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+cost: 5 Piety
+distance: Ranged 10
+target: One creature or object
+powerRoll: Power Roll + Intuition
+tier≤11.text: 3 + I corruption damage
+tier≤11.potency: M<WEAK
+tier≤11.potencyEffect: damage weakness 5 (save ends)
+tier12-16.text: 6 + I corruption damage
+tier12-16.potency: M<AVERAGE
+tier12-16.potencyEffect: damage weakness 5 (save ends)
+tier17+.text: 9 + I corruption damage
+tier17+.potency: M<STRONG
+tier17+.potencyEffect: damage weakness 5 (save ends)

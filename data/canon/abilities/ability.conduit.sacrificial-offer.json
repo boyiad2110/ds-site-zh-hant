@@ -1,0 +1,59 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.sacrificial-offer",
+  "type": "ability",
+  "name": "Sacrificial Offer",
+  "aliasesEn": [],
+  "flavor": "Divine magic tears at your foe and defends a nearby friend.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + I corruption damage",
+        "raw": "2 + I corruption damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "4 + I corruption damage",
+        "raw": "4 + I corruption damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "6 + I corruption damage",
+        "raw": "6 + I corruption damage"
+      }
+    ]
+  },
+  "effect": [
+    "Choose yourself or one ally within distance. That character can impose a bane on one power roll made against them before the end of their next turn."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 7,
+    "printedPage": 100,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "a0eb8f7ccd471cfa39e42e5860a27d2ae96003306c227c55e685b23a33bce960"
+  }
+}

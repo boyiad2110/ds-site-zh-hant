@@ -1,0 +1,40 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.triggered-action",
+  "nameZhHant": "反應動作",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "從以下選項中選擇 1 個反應動作。",
+          "items": [
+            "[引導之聲](ability.conduit.word-of-guidance)",
+            "[審判之聲](ability.conduit.word-of-judgment)"
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 觸發式動作（sources/notion-export/class-notion/conduit/觸發式動作 239f74afd25b80b68c83c8c2b4c904da.md）段落標題",
+    "commonProcessing": [
+      "2026-07-31 Reviewer 第二輪複核：從合併條目拆出為獨立條目，來源頁碼改為精確的 pdfPage 5／printedPage 98（原合併條目誤標為 99）",
+      "導言「Triggered Action」：舊譯原文用已廢棄的舊術語「觸發式動作」作段落標題，已依附錄 A 既有裁決訂正為「反應動作」（term-applied，非新裁決）；內文「從以下選項中選擇 1 個觸發式動作」同步訂正並補回舊譯省略的「從以下選項中」",
+      "已改用 bulletList 列出全部 2 個反應動作，每項為 [中文名](id) 站內連結",
+      "本批依 M1 指示排除 Quick Build（「Word of Guidance.」）"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.triggered-action",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

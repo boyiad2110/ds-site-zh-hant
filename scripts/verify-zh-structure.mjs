@@ -149,6 +149,14 @@ for (const [id, z] of zh) {
       if (!zf) fail(id, `正典有 flavor，中文缺漏或為空字串`)
     }
 
+    // usageNote 的最小存在性檢查（2026-07-31 M1 Batch 3 新增欄位，Reviewer 複核要求補上）：
+    // 與 flavor 同一套判準——正典非空字串則中文必須非空，避免這個框外說明句漏譯仍通過驗證。
+    const cu = typeof c.usageNote === 'string' ? c.usageNote.trim() : ''
+    if (cu) {
+      const zu = typeof z.usageNote === 'string' ? z.usageNote.trim() : ''
+      if (!zu) fail(id, `正典有 usageNote，中文缺漏或為空字串`)
+    }
+
     const ct = c.powerRoll?.tiers ?? []
     const zt = zhArray(id, 'powerRoll.tiers', z.powerRoll?.tiers) ?? []
     if (ct.length && ct.length !== zt.length) {
@@ -200,16 +208,34 @@ for (const [id, z] of zh) {
       if (!zTrig) fail(id, '正典有 trigger，中文缺漏或為空字串')
     }
 
-    // (2) extraCosts：數量一致，且每個 effect 非空
+    // (2) extraCosts：數量一致；一般形狀每個 effect 非空，
+    //     options 形狀（2026-07-31 M1 治癒恩典「花費 1+ 虔誠，逐點選 1 項」新增，擁有者已核准）比照
+    //     followUpActions 驗 lead 與每個 options 非空、數量一致
     const cx = c.extraCosts ?? []
     const zx = zhArray(id, 'extraCosts', z.extraCosts)
     if (zx === null) { /* 型別已錯 */ } else if (cx.length !== zx.length) {
       fail(id, `extraCosts 數量不符：正典 ${cx.length}、中文 ${zx.length}`)
     } else {
-      for (const [i] of cx.entries()) {
-        const e = zx[i]?.effect
-        if (typeof e !== 'string' || !e.trim()) {
-          fail(id, `extraCosts[${i}].effect 缺漏或為空字串`)
+      for (const [i, cCost] of cx.entries()) {
+        const zCost = zx[i] ?? {}
+        if (cCost.options) {
+          const cOpts = cCost.options ?? []
+          const zOpts = zhArray(id, `extraCosts[${i}].options`, zCost.options)
+          if (zOpts === null) { /* 型別已錯 */ } else if (cOpts.length !== zOpts.length) {
+            fail(id, `extraCosts[${i}].options 數量不符：正典 ${cOpts.length}、中文 ${zOpts.length}`)
+          } else {
+            for (const [j] of cOpts.entries()) {
+              const s = zOpts[j]
+              if (typeof s !== 'string' || !s.trim()) fail(id, `extraCosts[${i}].options[${j}] 缺漏或為空字串`)
+            }
+          }
+          const zLead = typeof zCost.lead === 'string' ? zCost.lead.trim() : ''
+          if (!zLead) fail(id, `extraCosts[${i}].lead 缺漏或為空字串`)
+        } else {
+          const e = zCost.effect
+          if (typeof e !== 'string' || !e.trim()) {
+            fail(id, `extraCosts[${i}].effect 缺漏或為空字串`)
+          }
         }
       }
     }

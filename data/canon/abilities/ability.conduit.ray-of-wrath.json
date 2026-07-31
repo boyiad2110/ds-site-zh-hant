@@ -1,0 +1,60 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.ray-of-wrath",
+  "type": "ability",
+  "name": "Ray of Wrath",
+  "aliasesEn": [],
+  "usageNote": "You have the following ability, which can be used as a ranged free strike.",
+  "flavor": "You unleash a blast of holy light upon your foe.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 + I damage",
+        "raw": "2 + I damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "4 + I damage",
+        "raw": "4 + I damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "6 + I damage",
+        "raw": "6 + I damage"
+      }
+    ]
+  },
+  "effect": [
+    "You can have this ability deal holy damage."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "40e832d47e41fd45535e6bfba13dc7a8243a1c7141e9f39ec08c99841caca3ca"
+  }
+}

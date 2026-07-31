@@ -1,0 +1,12 @@
+name: Conduit Abilities
+p: Your training and faith let you specialize in magic that buffs your allies, debuffs your foes, and allows you to hold your own in combat alongside your friends.
+section: Signature Abilities
+lead: Choose two signature abilities from the following options. Signature abilities can be used at will.
+item: Blessed Light
+item: Drain
+item: Holy Lash
+item: Lightfall
+item: Sacrificial Offer
+item: Staggering Curse
+item: Warrior's Prayer
+item: Wither

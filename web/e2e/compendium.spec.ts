@@ -47,6 +47,11 @@ test('手機版沒有水平溢位且主要流程可操作', async ({ page }) => 
 /** 每一筆條目都要真的畫得出來。資料層的驗證只保證欄位齊全，不保證渲染路徑走得通——
  * 基礎打擊的 powerRoll.characteristic 是物件而非字串，就曾讓那兩頁整頁空白。 */
 test('全部條目頁都渲染得出來，且沒有 runtime 錯誤（累積式 catalog，數量隨 milestone 增加）', async ({ page }) => {
+  // 單一測試逐筆開啟 catalog 全部條目頁，總時間隨 milestone 增加而增加——
+  // 2026-07-31 M1 Batch 3 補齊神導士一級後（67 筆），mobile 專案的預設 30s
+  // 逾時已不夠用（desktop 約 22s，mobile 模擬較慢會超時）。改用隨筆數估算的
+  // 逾時（每筆 1s，至少 60s），避免下一個 milestone 加入條目後又重演同樣的逾時。
+  test.setTimeout(Math.max(60000, catalog.entries.length * 1000))
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(String(error)))
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()) })

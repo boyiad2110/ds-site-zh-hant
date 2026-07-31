@@ -1,0 +1,74 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.curse-of-terror",
+  "type": "ability",
+  "name": "Curse of Terror",
+  "aliasesEn": [],
+  "flavor": "Fear of divine judgment overwhelms your foe.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 5
+  },
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "6 + I holy damage",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "weak",
+          "effect": "frightened (save ends)"
+        },
+        "raw": "6 + I holy damage; I<WEAK, frightened (save ends)"
+      },
+      {
+        "threshold": "12-16",
+        "text": "9 + I holy damage",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "average",
+          "effect": "frightened (save ends)"
+        },
+        "raw": "9 + I holy damage; I<AVERAGE, frightened (save ends)"
+      },
+      {
+        "threshold": "17+",
+        "text": "13 + I holy damage",
+        "potency": {
+          "characteristic": "intuition",
+          "level": "strong",
+          "effect": "frightened (save ends)"
+        },
+        "raw": "13 + I holy damage; I<STRONG, frightened (save ends)"
+      }
+    ]
+  },
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "29eef37b53fb96f2f8d3d6857579191e210727f5e14efde70b45eff3cf89ee69"
+  }
+}

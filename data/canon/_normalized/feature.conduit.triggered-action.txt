@@ -1,0 +1,4 @@
+name: Triggered Action
+lead: Choose one of the following triggered actions.
+item: Word of Guidance
+item: Word of Judgment

@@ -1,0 +1,34 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.blessing-of-comprehension",
+  "nameZhHant": "通曉祝福",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "即使你不懂圖表和圖解所使用的語言，你也能解讀它們。當你試圖理解任何製造類或研究類專案的來源資料時，你視為精通所有語言。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 知識：通曉祝福",
+    "commonProcessing": [
+      "「(see Chapter 12: Downtime Projects)」比照 TI-5～7 省略頁面內章節參照，舊譯已省略，做法一致",
+      "其餘與舊譯逐句相符"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.blessing-of-comprehension",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

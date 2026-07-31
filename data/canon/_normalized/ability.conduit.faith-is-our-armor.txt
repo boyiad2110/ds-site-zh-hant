@@ -1,0 +1,12 @@
+name: Faith Is Our Armor
+flavor: The heroes' armor glows with golden light, granting divine protection.
+keywords: Magic, Ranged
+actionType: Maneuver
+cost: 5 Piety
+distance: Ranged 10
+target: Four allies
+powerRoll: Power Roll + Intuition
+tier≤11.text: The target gains 5 temporary Stamina.
+tier12-16.text: The target gains 10 temporary Stamina.
+tier17+.text: The target gains 15 temporary Stamina.
+effect: You can target yourself instead of one ally with this ability.

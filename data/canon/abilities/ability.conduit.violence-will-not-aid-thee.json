@@ -1,0 +1,62 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.violence-will-not-aid-thee",
+  "type": "ability",
+  "name": "Violence Will Not Aid Thee",
+  "aliasesEn": [],
+  "flavor": "After some holy lightning, your enemy will think twice about their next attack.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 3
+  },
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I lightning damage",
+        "raw": "3 + I lightning damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + I lightning damage",
+        "raw": "6 + I lightning damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + I lightning damage",
+        "raw": "9 + I lightning damage"
+      }
+    ]
+  },
+  "effect": [
+    "The first time on a turn that the target deals damage to another creature, the target of this ability takes 1d10 lightning damage (save ends)."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "fc304f8e534fce1de91b38d7cff586b26d4e2aeb786c186ba99c9a53941693ff"
+  }
+}

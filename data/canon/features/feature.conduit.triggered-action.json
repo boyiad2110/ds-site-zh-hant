@@ -1,0 +1,36 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.triggered-action",
+  "type": "feature",
+  "name": "Triggered Action",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "Choose one of the following triggered actions.",
+          "items": [
+            "Word of Guidance",
+            "Word of Judgment"
+          ]
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "5e76c0e37ed0ed78954442e6f97d238c5103b3917eca3cb718d2572ef7b6e95d"
+  }
+}

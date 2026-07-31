@@ -1,0 +1,68 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.heroic-abilities",
+  "nameZhHant": "英雄招式",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你可以運用`虔誠`使出多種英雄招式。"
+        }
+      ]
+    },
+    {
+      "heading": "3 虔誠招式",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "從以下選項中選擇 1 項費用為 3 點`虔誠`的英雄招式。",
+          "items": [
+            "[喚雷降世](ability.conduit.call-the-thunder-down)",
+            "[神怒之泉](ability.conduit.font-of-wrath)",
+            "[審判之鎚](ability.conduit.judgments-hammer)",
+            "[暴力無濟於事](ability.conduit.violence-will-not-aid-thee)"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5 虔誠招式",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "從以下選項中選擇 1 項費用為 5 點`虔誠`的英雄招式。",
+          "items": [
+            "[腐化詛咒](ability.conduit.corruptions-curse)",
+            "[恐懼詛咒](ability.conduit.curse-of-terror)",
+            "[神恩護體](ability.conduit.faith-is-our-armor)",
+            "[恩典布道](ability.conduit.sermon-of-grace)"
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神導士招式（同上檔）「英雄招式」「3 費虔誠招式」「5 費虔誠招式」段落標題與導言",
+    "commonProcessing": [
+      "2026-07-31 Reviewer 第二輪複核：從合併條目拆出為獨立條目，來源頁碼改為精確的 pdfPage 8／printedPage 101（原合併條目誤標為 99）",
+      "「英雄招式」導言：舊譯「你可以運用`虔誠`使出多種英雄招式」逐句相符",
+      "「3 虔誠招式」導言：舊譯「選擇 1 項費用為 3 點`虔誠`的英雄招式」逐句相符，僅補回「從以下選項中」",
+      "「5 虔誠招式」導言：舊譯原文誤植為「選擇 1 項費用為 3 點虔誠的英雄招式」（複製 3 費招式段落時忘記把 3 改成 5），已依正典訂正為「5 點」，並補回「從以下選項中」",
+      "已改用 bulletList 分別列出全部 4 個 3 虔誠招式與 4 個 5 虔誠招式，每項為 [中文名](id) 站內連結",
+      "本批依 M1 指示排除 Quick Build（「Violence Will Not Aid Thee.」3 費／「Curse of Terror.」5 費）"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.heroic-abilities",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 101
+  }
+}

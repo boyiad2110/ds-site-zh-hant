@@ -1,0 +1,32 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.domain-feature.revitalizing-ritual",
+  "type": "feature",
+  "name": "Revitalizing Ritual",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Each time you finish a respite, you can choose yourself or one ally who is also finishing a respite to gain the benefit of a divine ritual. The chosen character gains a bonus to their recovery value equal to your level that lasts until you finish another respite."
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "domain",
+    "id": "domain.life"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "b73b619c328382fcb893db913bca89c04a246c1038259b1ed24b6e22db5cc326"
+  }
+}

@@ -1,0 +1,11 @@
+name: Sacrificial Offer
+flavor: Divine magic tears at your foe and defends a nearby friend.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + Intuition
+tier≤11.text: 2 + I corruption damage
+tier12-16.text: 4 + I corruption damage
+tier17+.text: 6 + I corruption damage
+effect: Choose yourself or one ally within distance. That character can impose a bane on one power roll made against them before the end of their next turn.

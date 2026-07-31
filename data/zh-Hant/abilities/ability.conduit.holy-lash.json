@@ -1,0 +1,40 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.holy-lash",
+  "nameZhHant": "神聖鞭笞",
+  "aliasesZhHant": [],
+  "flavor": "一道神聖能量的捲鬚迸射而出，將敵人拉向你。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `直覺`神聖傷害；垂直拉動 2"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `直覺`神聖傷害；垂直拉動 3"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + `直覺`神聖傷害；垂直拉動 4"
+      }
+    ]
+  },
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 神聖鞭笞（同上檔）",
+    "commonProcessing": [
+      "N-2：階層內「傷害；垂直拉動 N」原文以分號連接兩子句，中文比照合併",
+      "2026-07-31 Reviewer 複核，擁有者確認：舊譯第 3 階「垂直拉動 3」為錯誤，正典（pdfPage 6／printedPage 99，已用 -layout 文字抽取與 150dpi 圖像 out/conduit/page-06.png 雙重核對）為「vertical pull 4」，訂正為「垂直拉動 4」定案，不再列為待裁"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.holy-lash",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

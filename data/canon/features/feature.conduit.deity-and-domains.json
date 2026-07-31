@@ -1,0 +1,36 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.deity-and-domains",
+  "type": "feature",
+  "name": "Deity and Domains",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Choose a god or saint who your character reveres from Chapter 14: Gods and Religion, or ask your Director about the deities in your campaign world. With the Director's permission, you can also create your own deity and choose four domains to be part of their portfolio."
+        },
+        {
+          "kind": "paragraph",
+          "text": "After choosing your deity, pick two domains from their portfolio. The two domains you pick make up your subclass, and your choice of domains determines many of the features you’ll gain as you gain new levels."
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 2,
+    "printedPage": 95,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "fcdcbb0d9a17e99ee08fc8159e66732cdfa03135bf1717313f3cc19b2ad6fe3e"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.faith-is-our-armor",
+  "nameZhHant": "神恩護體",
+  "aliasesZhHant": [],
+  "flavor": "英雄的護甲閃耀著金色光芒，賜予神聖的防護。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "目標獲得 5 點`臨時體力`"
+      },
+      {
+        "threshold": "12-16",
+        "text": "目標獲得 10 點`臨時體力`"
+      },
+      {
+        "threshold": "17+",
+        "text": "目標獲得 15 點`臨時體力`"
+      }
+    ]
+  },
+  "effect": [
+    "你可以將其中 1 個目標改為指定自己。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 神恩護體（同上檔）",
+    "commonProcessing": [
+      "本招式無威力擲骰的判定屬性標記（三階直接寫結果句，不是「N + 屬性傷害」型），tiers[].text 逐字沿用舊譯"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.faith-is-our-armor",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 101
+  }
+}

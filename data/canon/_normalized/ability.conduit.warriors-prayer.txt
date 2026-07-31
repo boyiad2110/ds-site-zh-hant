@@ -1,0 +1,11 @@
+name: Warrior's Prayer
+flavor: Your quickly uttered prayer lends aggressive divine energy to a friend engaged in melee.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + Intuition
+tier≤11.text: 3 + I holy damage
+tier12-16.text: 6 + I holy damage
+tier17+.text: 9 + I holy damage
+effect: You or one ally within distance gains temporary Stamina equal to your Intuition score.

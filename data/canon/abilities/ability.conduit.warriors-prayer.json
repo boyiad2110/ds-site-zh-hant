@@ -1,0 +1,59 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.warriors-prayer",
+  "type": "ability",
+  "name": "Warrior's Prayer",
+  "aliasesEn": [],
+  "flavor": "Your quickly uttered prayer lends aggressive divine energy to a friend engaged in melee.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I holy damage",
+        "raw": "3 + I holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "6 + I holy damage",
+        "raw": "6 + I holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "9 + I holy damage",
+        "raw": "9 + I holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "You or one ally within distance gains temporary Stamina equal to your Intuition score."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 7,
+    "printedPage": 100,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "e9bf23fdbea30397b541b354c374917666075c68effd6ded42e10efaba4e0025"
+  }
+}

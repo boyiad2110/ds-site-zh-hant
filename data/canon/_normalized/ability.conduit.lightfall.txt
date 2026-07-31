@@ -1,0 +1,11 @@
+name: Lightfall
+flavor: A rain of holy light scours your enemies and repositions your allies.
+keywords: Area, Magic
+actionType: Main action
+distance: 2 burst
+target: Each enemy in the area
+powerRoll: Power Roll + Intuition
+tier≤11.text: 2 holy damage
+tier12-16.text: 3 holy damage
+tier17+.text: 5 holy damage
+effect: You can teleport yourself and each ally in the area to unoccupied spaces in the area.

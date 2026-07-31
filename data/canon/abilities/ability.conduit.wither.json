@@ -1,0 +1,71 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.wither",
+  "type": "ability",
+  "name": "Wither",
+  "aliasesEn": [],
+  "flavor": "A bolt of holy energy saps the life from a foe.",
+  "keywords": [
+    "magic",
+    "ranged",
+    "strike"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One creature or object",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + I corruption damage",
+        "potency": {
+          "characteristic": "presence",
+          "level": "weak",
+          "effect": "the target takes a bane on their next power roll"
+        },
+        "raw": "3 + I corruption damage; P<WEAK, the target takes a bane on their next power roll"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + I corruption damage",
+        "potency": {
+          "characteristic": "presence",
+          "level": "average",
+          "effect": "the target takes a bane on their next power roll"
+        },
+        "raw": "5 + I corruption damage; P<AVERAGE, the target takes a bane on their next power roll"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + I corruption damage",
+        "potency": {
+          "characteristic": "presence",
+          "level": "strong",
+          "effect": "the target takes a bane on their next power roll"
+        },
+        "raw": "8 + I corruption damage; P<STRONG, the target takes a bane on their next power roll"
+      }
+    ]
+  },
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 7,
+    "printedPage": 100,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "04b9161ccc398cafa2dce47fd34a0571d1bc02cba39034c4bf6eba04810d48ac"
+  }
+}

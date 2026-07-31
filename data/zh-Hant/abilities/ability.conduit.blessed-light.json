@@ -1,0 +1,42 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.blessed-light",
+  "nameZhHant": "賜福聖光",
+  "aliasesZhHant": [],
+  "flavor": "熾熱的聖光落在敵人身上，並將部分能量轉移至附近的盟友。",
+  "powerRoll": {
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "3 + `直覺`神聖傷害"
+      },
+      {
+        "threshold": "12-16",
+        "text": "5 + `直覺`神聖傷害"
+      },
+      {
+        "threshold": "17+",
+        "text": "8 + `直覺`神聖傷害"
+      }
+    ]
+  },
+  "effect": [
+    "射程內的 1 個盟友獲得等於你檢定階級結果的`鬥志`。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 神導士招式 · 賜福聖光（sources/notion-export/class-notion/conduit/神導士招式 239f74afd25b80eb8f74ce7e7a785c42.md）",
+    "commonProcessing": [
+      "數值與效果與舊譯逐字相符，僅套用 N-1／N-2 與 inline code 格式規則"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.blessed-light",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 99
+  }
+}

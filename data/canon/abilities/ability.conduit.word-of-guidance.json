@@ -1,0 +1,47 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.word-of-guidance",
+  "type": "ability",
+  "name": "Word of Guidance",
+  "aliasesEn": [],
+  "flavor": "You invigorate an attacking ally with divine energy.",
+  "keywords": [
+    "magic",
+    "ranged"
+  ],
+  "actionType": "triggered",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One ally",
+  "trigger": "The target makes an ability roll for a damage-dealing ability.",
+  "effect": [
+    "The power roll gains an edge."
+  ],
+  "extraCosts": [
+    {
+      "resource": "piety",
+      "value": 1,
+      "effect": "The power roll has a double edge.",
+      "raw": "Spend 1 Piety: The power roll has a double edge."
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "58c26bb0080feb5d2c8aa62a16f2dc5d883c214ed5a4302e6174f09ddca2e2f9"
+  }
+}

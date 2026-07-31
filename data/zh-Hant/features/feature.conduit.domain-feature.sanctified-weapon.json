@@ -1,0 +1,34 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.sanctified-weapon",
+  "nameZhHant": "聖化武器",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "作為 1 個休整活動，你可以祝福 1 件武器。任何生物若使用聖化武器發動招式並造成檢定傷害，該傷害會獲得 +1 加值。此效果會持續到你完成下次休整為止。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 戰爭：聖化武器",
+    "commonProcessing": [
+      "與舊譯逐句相符，僅套用格式規則",
+      "Respite＝休整（既有 approved 術語，TI-18）：舊譯「長休」已訂正為「休整」"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.sanctified-weapon",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

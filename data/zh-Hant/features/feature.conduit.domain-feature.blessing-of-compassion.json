@@ -1,0 +1,38 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.blessing-of-compassion",
+  "nameZhHant": "溫慈祝福",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你散發著一種魔法氣息，能安撫願意與你進行社交互動的人。當你協助其他生物進行考驗時，你會獲得 1 個優勢。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "此外，當談判開始時，若你在場，你可以讓 1 個 NPC 的`耐心`增加 1 點（最多 5 點），且首次影響該 NPC 的考驗會獲得 1 個優勢。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 慈愛：溫慈祝福",
+    "commonProcessing": [
+      "與舊譯逐句相符，僅套用格式規則",
+      "2026-07-31 Reviewer 複核，擁有者確認條目名稱採舊譯短式「溫慈祝福」（草稿曾一度改譯為「慈愛祝福」，已改回，不再列為待裁）"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.blessing-of-compassion",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

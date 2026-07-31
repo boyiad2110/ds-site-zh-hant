@@ -1,0 +1,61 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.lightfall",
+  "type": "ability",
+  "name": "Lightfall",
+  "aliasesEn": [],
+  "flavor": "A rain of holy light scours your enemies and repositions your allies.",
+  "keywords": [
+    "area",
+    "magic"
+  ],
+  "actionType": "main",
+  "cost": null,
+  "distance": {
+    "kind": "area",
+    "area": {
+      "shape": "burst",
+      "size": 2
+    },
+    "raw": "2 burst"
+  },
+  "target": "Each enemy in the area",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 holy damage",
+        "raw": "2 holy damage"
+      },
+      {
+        "threshold": "12-16",
+        "text": "3 holy damage",
+        "raw": "3 holy damage"
+      },
+      {
+        "threshold": "17+",
+        "text": "5 holy damage",
+        "raw": "5 holy damage"
+      }
+    ]
+  },
+  "effect": [
+    "You can teleport yourself and each ally in the area to unoccupied spaces in the area."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "signature",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 99,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "b8b2660cb2fb489a73a48c7bc073c61f4dc2c7260f204f72cc51c65e5ad424c5"
+  }
+}

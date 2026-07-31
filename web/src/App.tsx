@@ -385,9 +385,16 @@ function EffectSection({ z, c, byId }: { z: any; c: any; byId: Map<string, Catal
         <p><RichText text={item.constraint} byId={byId} /></p>
       </Fragment>)}
     </>}
-    {extraCosts.map((item, index) => <p key={index}>
-      <b className="card-label">花費 {costLabel(c.extraCosts[index])}</b><RichText text={item.effect} byId={byId} />
-    </p>)}
+    {extraCosts.map((item, index) => <Fragment key={index}>
+      <p>
+        <b className="card-label">花費 {costLabel(c.extraCosts[index])}</b>
+        <RichText text={item.effect ?? item.lead} byId={byId} />
+      </p>
+      {/* extraCosts 的 options 是無順序的加值選項（治癒恩典：每花費 1 點虔誠任選 1 項），
+          用 ul 而非 ol——與下方 followUpActions 的 ol 刻意不同，後者是既有招式（如審判）
+          已核准呈現，未在本次變動範圍內。 */}
+      {item.options && <ul>{item.options.map((option: string, optionIndex: number) => <li key={optionIndex}><RichText text={option} byId={byId} /></li>)}</ul>}
+    </Fragment>)}
   </>
 }
 
@@ -438,6 +445,7 @@ function Detail({ catalog }: { catalog: Catalog }) {
           {entry.tags.cost && <span className="card-cost">{costLabel(entry.tags.cost)}</span>}
         </div>
         {z.flavor && <p className="card-flavor">{isQuotedFlavor(c.flavor) ? `「${z.flavor}」` : z.flavor}</p>}
+        {z.usageNote && <p className="card-usage-note"><RichText text={z.usageNote} byId={byId} /></p>}
       </header>
       {entry.type === 'ability' && <AbilityContent entry={entry} catalog={catalog} byId={byId} />}
       {entry.type === 'condition' && <ConditionContent items={z.text ?? []} byId={byId} />}

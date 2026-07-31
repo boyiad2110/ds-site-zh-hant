@@ -1,0 +1,47 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.word-of-judgment",
+  "type": "ability",
+  "name": "Word of Judgment",
+  "aliasesEn": [],
+  "flavor": "Your holy word saps an attacking enemy's strength.",
+  "keywords": [
+    "magic",
+    "ranged"
+  ],
+  "actionType": "triggered",
+  "cost": null,
+  "distance": {
+    "kind": "ranged",
+    "value": 10,
+    "raw": "Ranged 10"
+  },
+  "target": "One ally",
+  "trigger": "The target would take damage from an ability that uses a power roll.",
+  "effect": [
+    "The power roll takes a bane against the target."
+  ],
+  "extraCosts": [
+    {
+      "resource": "piety",
+      "value": 1,
+      "effect": "The power roll has a double bane against the target.",
+      "raw": "Spend 1 Piety: The power roll has a double bane against the target."
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 5,
+    "printedPage": 98,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "796a98a55a66d0b236be046739e86e527e8686d32bab8e6e61acce62e8fd9481"
+  }
+}

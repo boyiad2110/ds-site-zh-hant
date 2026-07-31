@@ -1,0 +1,27 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.hands-of-the-maker",
+  "nameZhHant": "造物之手",
+  "aliasesZhHant": [],
+  "flavor": "你僅靠心智的力量就能製作物品。",
+  "effect": [
+    "你可以創造 1 個`體型` 1S 以下的尋常物體。你可以同時維持的自創物體數量等於你的`直覺`。無論距離多遠，你只需要一個念頭就能摧毀你所創造的物體（無需動作）。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 領域特性 · 創造：造物之手（同上檔）",
+    "commonProcessing": [
+      "flavor 逐字取自舊譯，與正典「craft objects with the power of your mind」意象一致，非本批改寫",
+      "2026-07-31 Reviewer 複核，擁有者確認：舊譯「數量等於你的`氣場`」為錯誤，正典（pdfPage 4／printedPage 97，已用 -layout 文字抽取與 150dpi 圖像 out/conduit/page-04.png 雙重核對）為「equal to your Intuition score」，訂正為`直覺`定案，不再列為待裁"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.hands-of-the-maker",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

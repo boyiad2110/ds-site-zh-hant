@@ -1,0 +1,12 @@
+name: Ray of Wrath
+usageNote: You have the following ability, which can be used as a ranged free strike.
+flavor: You unleash a blast of holy light upon your foe.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+distance: Ranged 10
+target: One creature or object
+powerRoll: Power Roll + Intuition
+tier≤11.text: 2 + I damage
+tier12-16.text: 4 + I damage
+tier17+.text: 6 + I damage
+effect: You can have this ability deal holy damage.

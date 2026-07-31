@@ -1,0 +1,37 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.grave-speech",
+  "type": "ability",
+  "name": "Grave Speech",
+  "aliasesEn": [],
+  "flavor": "You commune with the lingering soul of the recently dead.",
+  "keywords": [
+    "magic"
+  ],
+  "actionType": "maneuver",
+  "cost": null,
+  "distance": {
+    "kind": "melee",
+    "value": 1,
+    "raw": "Melee 1"
+  },
+  "target": "One dead creature",
+  "effect": [
+    "You can speak to the target if they are a creature who has died within the last 24 hours and who can speak a language you know, even if they are just a head. The target regards you as they would have in life, and you might need to make tests to influence them and convince them to speak with you. The trauma of dying can make a creature's memory of that event hazy, but the target otherwise knows all they knew in life. After 1 minute, the effect ends. You can't use this ability on the same creature twice."
+  ],
+  "origin": {
+    "kind": "domain",
+    "id": "domain.death"
+  },
+  "abilityCategory": "inherent",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 4,
+    "printedPage": 97,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "4180c509f628ea54fb8413c64d4431187c91cd750294ee0ada2b070bd1c12c26"
+  }
+}

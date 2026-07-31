@@ -1,0 +1,66 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.call-the-thunder-down",
+  "type": "ability",
+  "name": "Call the Thunder Down",
+  "aliasesEn": [],
+  "flavor": "You ask your saint for thunder and your prayer is answered.",
+  "keywords": [
+    "area",
+    "magic",
+    "ranged"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 3
+  },
+  "distance": {
+    "kind": "area",
+    "area": {
+      "shape": "cube",
+      "size": 3,
+      "within": 10
+    },
+    "raw": "3 cube within 10"
+  },
+  "target": "Each enemy in the area",
+  "powerRoll": {
+    "characteristic": "intuition",
+    "tiers": [
+      {
+        "threshold": "≤11",
+        "text": "2 sonic damage; push 1",
+        "raw": "2 sonic damage; push 1"
+      },
+      {
+        "threshold": "12-16",
+        "text": "3 sonic damage; push 2",
+        "raw": "3 sonic damage; push 2"
+      },
+      {
+        "threshold": "17+",
+        "text": "5 sonic damage; push 3",
+        "raw": "5 sonic damage; push 3"
+      }
+    ]
+  },
+  "effect": [
+    "You can push each willing ally in the area the same distance, ignoring stability."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "f61a03b01309c0855f6f0c8df6bd1357d14f46a5941e1f23798ba4f192d8e34a"
+  }
+}

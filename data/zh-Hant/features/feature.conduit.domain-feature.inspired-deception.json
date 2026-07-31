@@ -1,0 +1,34 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.inspired-deception",
+  "nameZhHant": "靈光詐現",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "神明以魔法眷顧你的詭詐行為。每當你使用你擁有的`隱密類`技能進行考驗時，你可以用`直覺`取代原本需要的屬性進行檢定。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 詭術：靈光詐現",
+    "commonProcessing": [
+      "技能組 Intrigue＝隱密類（2026-07-31 Reviewer 複核，擁有者確認 5 個技能組譯名定案：Crafting＝工藝類、Lore＝學識類、Exploration＝探索類、Interpersonal＝交涉類、Intrigue＝隱密類，適用全部 M1 條目，不再列為待裁）",
+      "2026-07-31 Reviewer 複核，擁有者確認：舊譯「你可以用`氣場`取代原本需要的屬性」為錯誤，正典（pdfPage 5／printedPage 98，已用 -layout 文字抽取與 150dpi 圖像 out/conduit/page-05.png 雙重核對）為「you can use Intuition」，訂正為`直覺`定案，不再列為待裁"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.inspired-deception",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

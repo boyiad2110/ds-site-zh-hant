@@ -1,0 +1,11 @@
+name: Blessed Light
+flavor: Burning radiance falls upon your foe, transferring some of their energy to a nearby ally.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+distance: Ranged 10
+target: One creature or object
+powerRoll: Power Roll + Intuition
+tier≤11.text: 3 + I holy damage
+tier12-16.text: 5 + I holy damage
+tier17+.text: 8 + I holy damage
+effect: One ally within distance gains a number of surges equal to the tier outcome of your power roll.

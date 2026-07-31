@@ -1,5 +1,5 @@
 {
-  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。M1 Batch 2 樣本，2026-07-31 第一輪驗收已核准內容與結構，但⚠️ 對照表目前只收錄自然（Nature）1 列，其餘 11 個領域待 M1 完整抽取時比照補上，故 meta.status 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 reviewed。",
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 Batch 3 補齊其餘 11 列；intro 段落與自然列內容沿用 Batch 2 已核准文字，逐字未動。",
   "id": "feature.conduit.domain-feature-1st-level",
   "nameZhHant": "1 級領域特性",
   "aliasesZhHant": [],
@@ -16,8 +16,52 @@
           "marker": "none",
           "items": [
             {
+              "term": "創造",
+              "text": "[造物之手](ability.conduit.hands-of-the-maker)（工藝類技能）"
+            },
+            {
+              "term": "死亡",
+              "text": "[墳墓低語](ability.conduit.grave-speech)（學識類技能）"
+            },
+            {
+              "term": "命運",
+              "text": "[晦澀異象](feature.conduit.domain-feature.oracular-visions)（學識類技能）"
+            },
+            {
+              "term": "知識",
+              "text": "[通曉祝福](feature.conduit.domain-feature.blessing-of-comprehension)（學識類技能）"
+            },
+            {
+              "term": "生命",
+              "text": "[活力儀式](feature.conduit.domain-feature.revitalizing-ritual)（探索類技能）"
+            },
+            {
+              "term": "慈愛",
+              "text": "[溫慈祝福](feature.conduit.domain-feature.blessing-of-compassion)（交涉類技能）"
+            },
+            {
               "term": "自然",
               "text": "[忠誠好友](ability.conduit.faithful-friend)（探索類技能）"
+            },
+            {
+              "term": "守護",
+              "text": "[守護結界](feature.conduit.domain-feature.protective-circle)（探索類技能）"
+            },
+            {
+              "term": "風暴",
+              "text": "[天氣祝福](feature.conduit.domain-feature.blessing-of-fortunate-weather)（探索類技能）"
+            },
+            {
+              "term": "太陽",
+              "text": "[晨光庇護](feature.conduit.domain-feature.inner-light)（學識類技能）"
+            },
+            {
+              "term": "詭術",
+              "text": "[靈光詐現](feature.conduit.domain-feature.inspired-deception)（隱密類技能）"
+            },
+            {
+              "term": "戰爭",
+              "text": "[聖化武器](feature.conduit.domain-feature.sanctified-weapon)（探索類技能）"
             }
           ]
         }
@@ -25,17 +69,21 @@
     }
   ],
   "meta": {
-    "status": "draft",
+    "status": "reviewed",
     "translationSource": "舊 Notion 神導士 · 領域特性（sources/notion-export/class-notion/conduit/領域特性 239f74afd25b80ecb057dab212ed9548.md）",
     "commonProcessing": [
       "2026-07-31 擁有者裁決：句尾「(Quick Build: Revitalizing Ritual and the Heal skill from the Life domain.)」補譯，Quick Build 統一用已批准譯名「推薦選項」（TI-11）",
-      "「Revitalizing Ritual」譯「活力儀式」，取自舊譯 sources/notion-export/class-notion/conduit/領域特性…md 的生命領域列（非本批樣本範圍，僅取其譯名）",
-      "「Heal」（技能名）2026-07-31 擁有者正式裁決定稿為「醫療」，與 glossary 既有的 term.heal（zhHant「治療」，approved，類別「規則/主要動作」，指戰鬥中的治療主要動作）是不同詞義，不得混用。此裁決尚未寫入 data/decisions.json——原因與待辦見本檔外的對話紀錄，需要另外處理正典術語流程與 releases/m0.json 指紋的連動",
-      "definitionList 項目格式為「[具名特性或招式](id)（技能組）」，比照舊譯「造物之手（工藝類技能）」這類既有寫法，技能組維持「OO類技能」的既定格式",
-      "「忠誠好友」已建為獨立招式條目（ability.conduit.faithful-friend），故用行內連結；其餘 11 個領域授予的特性／招式尚未建檔，留待 M1 正式抽取時比照建立並補上連結"
+      "「Revitalizing Ritual」譯「活力儀式」，取自舊譯 sources/notion-export/class-notion/conduit/領域特性…md 的生命領域列",
+      "「Heal」（技能名）2026-07-31 擁有者正式裁決定稿為「醫療」，與 glossary 既有的 term.heal（zhHant「治療」，approved，類別「規則/主要動作」，指戰鬥中的治療主要動作）是不同詞義，不得混用。此裁決尚未寫入 data/decisions.json——原因與待辦見對話紀錄，需要另外處理正典術語流程與 releases/m0.json 指紋的連動",
+      "definitionList 項目格式為「[具名特性或招式](id)（技能組）」，比照舊譯「造物之手（工藝類技能）」這類既有寫法",
+      "2026-07-31 Batch 3：其餘 11 列已補上。創造／死亡兩列授予的是完整招式卡（造物之手／墳墓低語），連結指向 ability.* id；其餘 9 列授予純散文特性，連結指向本批新建的 feature.conduit.domain-feature.* id",
+      "技能組 Crafting＝工藝類、Lore＝學識類、Exploration＝探索類、Interpersonal＝交涉類、Intrigue＝隱密類（2026-07-31 Reviewer 複核，擁有者確認定案，不再列為待裁）",
+      "慈愛領域列連結文字採「溫慈祝福」（Reviewer 複核後擁有者確認條目名稱定案，見 feature.conduit.domain-feature.blessing-of-compassion 對齊備註）"
     ],
     "decisions": [],
-    "pendingOwnerDecisions": []
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
   },
   "canonRef": {
     "id": "feature.conduit.domain-feature-1st-level",

@@ -1,0 +1,62 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.heroic-abilities",
+  "type": "feature",
+  "name": "Heroic Abilities",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You make use of a number of heroic abilities, all of which channel piety to empower them."
+        }
+      ]
+    },
+    {
+      "heading": "3-Piety Ability",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "Choose one heroic ability from the following options, each of which costs 3 piety to use.",
+          "items": [
+            "Call the Thunder Down",
+            "Font of Wrath",
+            "Judgment's Hammer",
+            "Violence Will Not Aid Thee"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5-Piety Ability",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "Choose one heroic ability from the following options, each of which costs 5 piety to use.",
+          "items": [
+            "Corruption's Curse",
+            "Curse of Terror",
+            "Faith Is Our Armor",
+            "Sermon of Grace"
+          ]
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "cfedc4f613060d92ce48e4fe194d93f3d74631954bfbae40c3eadd4817d700a1"
+  }
+}

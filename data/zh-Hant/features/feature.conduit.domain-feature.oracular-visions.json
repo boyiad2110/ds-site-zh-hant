@@ -1,0 +1,38 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.oracular-visions",
+  "nameZhHant": "晦澀異象",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "你的神明賜予你朦朧的未來景象。每當你獲得 1 點以上的`勝利值`時，你會獲得等量的命運點。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "每當你自己或 10 格內的 1 個生物進行考驗時，你可以花費 1 點命運點來洞察結果，讓該生物的考驗獲得 1 個優勢。當你完成休整時，你會失去所有剩餘的命運點。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 命運：晦澀異象",
+    "commonProcessing": [
+      "舊譯原為單一段落，正典版式為兩段，草稿依正典段落邊界拆分，文字仍逐句取自舊譯",
+      "Respite＝休整（既有 approved 術語，TI-18）：舊譯「長休」已訂正為「休整」"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.oracular-visions",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

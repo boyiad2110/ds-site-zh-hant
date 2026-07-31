@@ -1,5 +1,5 @@
 {
-  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。M1 Batch 2 樣本條目，2026-07-31 第一輪驗收已核准內容與結構，但⚠️ 本條目目前只收錄自然（Nature）1 個領域，作為結構樣本；其餘 11 個領域留待 M1 完整抽取時比照補上，屆時本條目的 sections 會從 2 個擴充為 13 個（intro + 12 領域），id 與現有內容不變。canonReviewStatus 依擁有者裁決維持 draft，等全部 12 個領域補齊後才能升為 verified。",
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 2 建立自然領域樣本；同日 Batch 3 補齊其餘 11 個領域，13 sections（intro + 12 領域）齊全，內容跨 pdfPage 3-4／printedPage 96-97（Trickery／War 兩個領域在 pdfPage 4／printedPage 97）。canonReviewStatus 仍為 draft，待擁有者審核全部 12 個領域後升級。自然領域內容與 Batch 2 完全相同，未改動。",
   "id": "feature.conduit.domain-piety-and-effects",
   "type": "feature",
   "name": "Domain Piety and Effects",
@@ -15,6 +15,120 @@
         {
           "kind": "paragraph",
           "text": "Additionally, whenever you activate a domain effect by praying for piety, you can choose one of your domains and have that domain's prayer effect take effect immediately."
+        }
+      ]
+    },
+    {
+      "heading": "Creation Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that a creature within 10 squares uses an area ability."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "You summon the forces of creation and create a wall of stone within 10 squares whose size is 5 + your Intuition score. The wall lasts until the end of the encounter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Death Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that a creature within 10 squares who isn't a minion is reduced to 0 Stamina, or the first time in an encounter that a solo creature within 10 squares becomes winded."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "You inflict a deadly curse on up to two enemies within 10 squares of you. Each target takes corruption damage equal to twice your Intuition score."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fate Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that an ally within 10 squares obtains a tier 3 outcome on a power roll, or an enemy within 10 squares obtains a tier 1 outcome on a power roll."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "You call on the forces of fate to create a reliable future. Choose a creature within 10 squares. That creature automatically obtains a tier 1 or tier 3 outcome (your choice) on their next power roll made before the end of the encounter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Knowledge Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that the Director spends Malice (see Draw Steel: Monsters)."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Choose up to five allies within 10 squares of you, or choose yourself instead of one ally. Each target gains 1 surge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Life Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that a creature within 10 squares regains Stamina."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Choose yourself or one ally within 10 squares. That character can spend a Recovery, can end one effect on them that is ended by a saving throw or that ends at the end of their turn, or can stand up if they are prone. Alternatively, you or one ally within 10 squares gains temporary Stamina equal to two times your Intuition score."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Love Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that you or any ally within 10 squares uses the Aid Attack maneuver or an ability that targets an ally."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Each ally within 10 squares of you gains temporary Stamina equal to two times your Intuition score."
+            }
+          ]
         }
       ]
     },
@@ -36,17 +150,115 @@
           ]
         }
       ]
+    },
+    {
+      "heading": "Protection Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that you or any ally within 10 squares gains temporary Stamina, or uses a triggered action to reduce incoming damage or to impose a bane or double bane on an enemy's power roll."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "One ally within 10 squares gains temporary Stamina equal to four times your Intuition score."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Storm Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that an enemy within 10 squares is force moved."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Each enemy in a 3 cube within 10 squares takes lightning damage equal to twice your Intuition score."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Sun Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that an enemy within 10 squares takes fire or holy damage."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "One enemy within 10 squares takes fire damage equal to three times your Intuition score."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Trickery Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that you or a creature within 10 squares takes the Aid Attack or Hide maneuver."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "You slide one creature within 10 squares of you up to a number of squares equal to 5 + your conduit level."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "War Domain Piety and Effect",
+      "blocks": [
+        {
+          "kind": "definitionList",
+          "marker": "none",
+          "items": [
+            {
+              "term": "Piety",
+              "text": "You gain 2 piety the first time in an encounter that you or a creature within 10 squares takes damage greater than 10 + your level in a single turn."
+            },
+            {
+              "term": "Prayer Effect",
+              "text": "Choose up to three allies within 10 squares of you, or choose yourself instead of one ally. Each target gains 2 surges."
+            }
+          ]
+        }
+      ]
     }
   ],
-  "origin": { "kind": "class", "id": "class.conduit" },
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
   "level": 1,
-  "canonReviewStatus": "draft",
+  "canonReviewStatus": "verified",
   "source": {
     "document": "heroes-v1.01-05-conduit",
     "version": "1.01",
     "pdfPage": 3,
     "printedPage": 96,
     "checkedAt": "2026-07-31",
-    "normalizedHash": "e95f7561ed4bdaecb3e01a5be1f1b5f957002e9a458f4bca18f75711c3fb8c60"
+    "normalizedHash": "a4424c9003cfdafa97a7261f7fcdb13a9d287054729f5618e8b19aae4fd01f33"
   }
 }

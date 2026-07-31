@@ -1,0 +1,26 @@
+{
+  "$comment": "中文譯文層。與 data/canon/abilities/ 同構逐段對應。受控本地化欄位（keywords／actionType／distance／potency／target）不進此層，算繪時從 vocabulary 與組合規則解析。2026-07-31 M1 Batch 3 草稿，canonReviewStatus／meta.status 均為 draft，待擁有者審核。",
+  "id": "ability.conduit.grave-speech",
+  "nameZhHant": "墳墓低語",
+  "aliasesZhHant": [],
+  "flavor": "你能與剛死不久的殘存靈魂交談。",
+  "effect": [
+    "你可以與 1 個在過去 24 小時內死亡的生物對話（即使只剩下頭顱也可以），前提是該生物會說你所知的語言。目標會以生前的態度看待你，所以你可能需要進行考驗來說服他們與你交談。由於死亡的創傷，生物對死亡事件的記憶可能會很模糊，但他仍保有生前的所有知識。此招式的效果會在 1 分鐘後結束。你無法重複對同一個生物使用此招式。"
+  ],
+  "meta": {
+    "status": "reviewed",
+    "translationSource": "舊 Notion 領域特性 · 死亡：墳墓低語（sources/notion-export/class-notion/conduit/領域特性 239f74afd25b80ecb057dab212ed9548.md）",
+    "commonProcessing": [
+      "數值與效果與舊譯逐字相符，僅套用格式規則；target「1 個已死亡的生物」為本批新增的組合規則（見對齊報告）"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": [],
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31"
+  },
+  "canonRef": {
+    "id": "ability.conduit.grave-speech",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 97
+  }
+}

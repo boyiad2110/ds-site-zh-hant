@@ -1,0 +1,17 @@
+name: Curse of Terror
+flavor: Fear of divine judgment overwhelms your foe.
+keywords: Magic, Ranged, Strike
+actionType: Main action
+cost: 5 Piety
+distance: Ranged 10
+target: One creature
+powerRoll: Power Roll + Intuition
+tier≤11.text: 6 + I holy damage
+tier≤11.potency: I<WEAK
+tier≤11.potencyEffect: frightened (save ends)
+tier12-16.text: 9 + I holy damage
+tier12-16.potency: I<AVERAGE
+tier12-16.potencyEffect: frightened (save ends)
+tier17+.text: 13 + I holy damage
+tier17+.potency: I<STRONG
+tier17+.potencyEffect: frightened (save ends)

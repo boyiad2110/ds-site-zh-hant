@@ -1,0 +1,41 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.deity-and-domains",
+  "nameZhHant": "神明與領域",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "從《諸神與宗教》的內容中，選擇 1 位你的角色信奉的神明或聖者，或向你的`GM`詢問你的戰役世界中有哪些神祇。經`GM`許可，你也可以自創屬於自己的神明，並選擇 4 個領域作為祂的神職範疇。"
+        },
+        {
+          "kind": "paragraph",
+          "text": "選擇後，從祂的神職範疇中選擇 2 個領域。你選擇的這 2 個領域會組成你的子範型，你的選擇將決定你在升級時獲得的許多特性。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 神明與領域（sources/notion-export/class-notion/conduit/神明與領域 239f74afd25b80388175fb94debf34c9.md）",
+    "commonProcessing": [
+      "第 2 段（選擇領域）與舊譯逐句相符，僅套用格式規則",
+      "第 1 段舊譯明顯簡化（只有「請參考『諸神 & 宗教』，選擇 1 位你信奉的神明或聖者」1 句），漏譯「或向 GM 詢問戰役世界神祇」「經 GM 許可可自創神明並選 4 個領域」整段規則。本批依正典 pdfPage 2／printedPage 95 全新起草補齊，非改寫已核准譯文",
+      "章節名「Chapter 14: Gods and Religion」比照 TI-5～7 既有裁決（見 data/translation-issues.json），省略章節編號與「見第…章」字樣，僅譯出章節主題，2026-07-31 Reviewer 複核擁有者確認譯名定為「諸神與宗教」，不再列為待裁；不建立站內連結（本站無該章節內容）",
+      "Director＝GM 為既有 approved 術語（term.director），Malice 未出現於本條目",
+      "本批依 M1 指示排除本條目自身的 Quick Build（「Adûn for deity, and Life and Protection as domains.」）——僅 Prayer 與 1st-Level Domain Feature 的 Quick Build 經批准納入，此為既定範圍執行，非待裁事項"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.deity-and-domains",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 95
+  }
+}

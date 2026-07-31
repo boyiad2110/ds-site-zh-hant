@@ -1,0 +1,36 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.domain-feature.blessing-of-compassion",
+  "type": "feature",
+  "name": "Blessing of Compassion",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You exude a magic presence that can soothe those willing to socially engage with you. You gain an edge on any test made to assist another creature with a test."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Additionally, when you are present at the start of a negotiation, one NPC of your choice has their patience increased by 1 (to a maximum of 5), and the first test made to influence them gains an edge."
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "domain",
+    "id": "domain.love"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 4,
+    "printedPage": 97,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "7a3ad588c749942be844756f418d860107c791e8239765c4f1a6125e0cf83dd6"
+  }
+}

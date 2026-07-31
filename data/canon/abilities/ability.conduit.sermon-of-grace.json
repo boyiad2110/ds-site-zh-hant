@@ -1,0 +1,44 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "ability.conduit.sermon-of-grace",
+  "type": "ability",
+  "name": "Sermon of Grace",
+  "aliasesEn": [],
+  "flavor": "You inspire your allies with tales of your saint's great deeds.",
+  "keywords": [
+    "area",
+    "magic"
+  ],
+  "actionType": "main",
+  "cost": {
+    "resource": "piety",
+    "value": 5
+  },
+  "distance": {
+    "kind": "area",
+    "area": {
+      "shape": "burst",
+      "size": 4
+    },
+    "raw": "4 burst"
+  },
+  "target": "Each ally in the area",
+  "effect": [
+    "Each target can spend a Recovery. Additionally, each target can use a free triggered action to end one effect on them that is ended by a saving throw or that ends at the end of their turn, or to stand up if prone."
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "abilityCategory": "heroic",
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 8,
+    "printedPage": 101,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "b19712a03e2ef164546d0d468a0613e62ee847cd2f1c8ad9353527853025323e"
+  }
+}

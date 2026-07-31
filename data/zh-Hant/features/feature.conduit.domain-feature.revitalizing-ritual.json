@@ -1,0 +1,36 @@
+{
+  "$comment": "中文譯文層。與 data/canon/features/ 同構逐段對應。2026-07-31 M1 Batch 3 草稿，待擁有者審核。",
+  "id": "feature.conduit.domain-feature.revitalizing-ritual",
+  "nameZhHant": "活力儀式",
+  "aliasesZhHant": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "每當你完成休整時，你可以選擇自己或另 1 個同樣完成休整的盟友，獲得神聖儀式的好處。目標的`復元值`會獲得等於你等級的加值，持續到你完成下次休整為止。"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "status": "reviewed",
+    "reviewedBy": "owner",
+    "reviewedAt": "2026-07-31",
+    "translationSource": "舊 Notion 領域特性 · 生命：活力儀式",
+    "commonProcessing": [
+      "第 1 句與舊譯逐句相符",
+      "Respite＝休整（既有 approved 術語，TI-18）：舊譯「長休」已訂正為「休整」",
+      "2026-07-31 Reviewer 複核，擁有者確認：舊譯「`復元值`會獲得 +1 加值」（固定值）為錯誤，正典（pdfPage 5／printedPage 98，已用 150dpi 圖像 out/conduit/page-05.png 核對）為「a bonus...equal to your level」（等於等級，會隨等級成長；1 級時數值恰好相同，但規則本身不同），訂正為「等於你等級的加值」定案",
+      "2026-07-31 擁有者最終驗收裁決：「另一個」改為「另 1 個」，與已核准的晨光庇護（feature.conduit.domain-feature.inner-light）用字一致"
+    ],
+    "decisions": [],
+    "pendingOwnerDecisions": []
+  },
+  "canonRef": {
+    "id": "feature.conduit.domain-feature.revitalizing-ritual",
+    "document": "heroes-v1.01-05-conduit",
+    "printedPage": 98
+  }
+}

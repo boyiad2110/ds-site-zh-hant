@@ -1,0 +1,12 @@
+name: Call the Thunder Down
+flavor: You ask your saint for thunder and your prayer is answered.
+keywords: Area, Magic, Ranged
+actionType: Main action
+cost: 3 Piety
+distance: 3 cube within 10
+target: Each enemy in the area
+powerRoll: Power Roll + Intuition
+tier≤11.text: 2 sonic damage; push 1
+tier12-16.text: 3 sonic damage; push 2
+tier17+.text: 5 sonic damage; push 3
+effect: You can push each willing ally in the area the same distance, ignoring stability.

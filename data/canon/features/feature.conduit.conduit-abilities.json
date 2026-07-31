@@ -1,0 +1,51 @@
+{
+  "$comment": "英文正典。人工核對後手動維護。normalizedHash 對 data/canon/_normalized/<id>.txt 計算，可用 scripts/verify-canon-hash.mjs 重驗。2026-07-31 M1 Batch 3 新增。",
+  "id": "feature.conduit.conduit-abilities",
+  "type": "feature",
+  "name": "Conduit Abilities",
+  "aliasesEn": [],
+  "sections": [
+    {
+      "heading": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your training and faith let you specialize in magic that buffs your allies, debuffs your foes, and allows you to hold your own in combat alongside your friends."
+        }
+      ]
+    },
+    {
+      "heading": "Signature Abilities",
+      "blocks": [
+        {
+          "kind": "bulletList",
+          "lead": "Choose two signature abilities from the following options. Signature abilities can be used at will.",
+          "items": [
+            "Blessed Light",
+            "Drain",
+            "Holy Lash",
+            "Lightfall",
+            "Sacrificial Offer",
+            "Staggering Curse",
+            "Warrior's Prayer",
+            "Wither"
+          ]
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "kind": "class",
+    "id": "class.conduit"
+  },
+  "level": 1,
+  "canonReviewStatus": "verified",
+  "source": {
+    "document": "heroes-v1.01-05-conduit",
+    "version": "1.01",
+    "pdfPage": 6,
+    "printedPage": 99,
+    "checkedAt": "2026-07-31",
+    "normalizedHash": "d95f07733a152a4ffd1cada69080fd9f6a487bfe9e02940925ac9ea527072bcc"
+  }
+}
