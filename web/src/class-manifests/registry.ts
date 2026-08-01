@@ -1,4 +1,5 @@
 import type { ClassManifestRegistry } from './types'
+import { censorManifest } from './censorManifest'
 import { conduitManifest } from './conduitManifest'
 
 /**
@@ -7,5 +8,6 @@ import { conduitManifest } from './conduitManifest'
  */
 export const classManifestRegistry: ClassManifestRegistry = Object.freeze({
   [conduitManifest.classId]: conduitManifest,
+  [censorManifest.classId]: censorManifest,
 })
-export const classManifestOrder: readonly string[] = Object.freeze([conduitManifest.classId])
+export const classManifestOrder: readonly string[] = Object.freeze([conduitManifest.classId, censorManifest.classId])

@@ -112,6 +112,12 @@ export function ClassShell({ catalog, manifest, registry, order, pageState, acti
 
   useEffect(() => setTocOpen(false), [location.pathname, location.hash])
 
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = `${manifest.name.zhHant}｜${manifest.name.en}｜英雄爭鋒`
+    return () => { document.title = previousTitle }
+  }, [manifest.classId, manifest.name.en, manifest.name.zhHant])
+
   if (pageState === 'detail' && (!activeEntry || !manifestContainsEntry(manifest, activeEntry.id))) {
     throw new Error('ClassShell detail 必須提供 manifest 已收錄的條目')
   }

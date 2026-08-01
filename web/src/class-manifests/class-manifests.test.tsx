@@ -3,12 +3,14 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, test } from 'vitest'
 import catalogData from '../../public/data/catalog.json'
+import milestoneM0Data from '../../../releases/milestones/m0.json'
 import milestoneData from '../../../releases/milestones/m1.json'
 import type { Catalog, CatalogEntry } from '../types'
 import { ClassShell } from './ClassShell'
 import { validateManifestIntegrity, validateRegistryIntegrity } from './integrity'
 import { manifestEntryIds, resolveClassEntry, resolveEntryRoute } from './resolver'
 import { classManifestOrder, classManifestRegistry } from './registry'
+import { censorManifest } from './censorManifest'
 import { conduitManifest } from './conduitManifest'
 import type { ClassManifest, ManifestEntry } from './types'
 import { fixtureClassManifest, fixtureOrder, fixtureRegistry } from './__fixtures__/classManifest'
@@ -22,9 +24,9 @@ describe('Manifest integrity validation', () => {
     expect(validateRegistryIntegrity(fixtureRegistry, fixtureOrder, catalog)).toEqual([])
   })
 
-  test('production registry 只包含神導士，且通過完整性驗證', () => {
-    expect(classManifestOrder).toEqual(['class.conduit'])
-    expect(classManifestRegistry).toEqual({ 'class.conduit': conduitManifest })
+  test('production registry 依核准順序包含神導士與懲戒者，且通過完整性驗證', () => {
+    expect(classManifestOrder).toEqual(['class.conduit', 'class.censor'])
+    expect(classManifestRegistry).toEqual({ 'class.conduit': conduitManifest, 'class.censor': censorManifest })
     expect(validateRegistryIntegrity(classManifestRegistry, classManifestOrder, catalog)).toEqual([])
   })
 
@@ -52,6 +54,26 @@ describe('Manifest integrity validation', () => {
       'feature.conduit.conduit-ward', 'feature.conduit.domain-piety-and-effects',
       'feature.conduit.domain-feature-1st-level',
     ])
+  })
+
+  test('懲戒者 manifest scope 與正式 M0 class ids 完全相等', () => {
+    const manifestIds = manifestEntryIds(censorManifest)
+    const milestoneIds = new Set(milestoneM0Data.ids.filter((id) => id.startsWith('ability.censor.') || id.startsWith('feature.censor.')))
+    expect(milestoneIds.size).toBe(17)
+    expect(manifestIds).toEqual(milestoneIds)
+    expect(manifestIds.size).toBe(17)
+  })
+
+  test('懲戒者章節順序與 presentation 是獨立契約', () => {
+    expect(censorManifest.sections.map((section) => section.id)).toEqual([
+      'wrath', 'censor-order', 'inherent-abilities', 'signature-abilities',
+      'three-wrath-abilities', 'five-wrath-abilities', 'judgment-order-benefit',
+    ])
+    const manifestEntries = censorManifest.sections.reduce<ManifestEntry[]>((all, section) => [...all, ...section.entries], [])
+    expect(manifestEntries.filter((entry) => entry.presentation === 'expanded').map((entry) => entry.id)).toEqual([
+      'feature.censor.wrath', 'feature.censor.censor-order', 'feature.censor.judgment-order-benefit',
+    ])
+    expect(manifestEntries.filter((entry) => (entry.presentation ?? 'summary') === 'summary')).toHaveLength(14)
   })
 
   test('generic validator rejects empty and duplicate IDs', () => {
@@ -82,6 +104,9 @@ describe('範型 route resolver', () => {
   const arrest = byId.get('ability.censor.arrest')!
   const unrelated = byId.get('ability.censor.back-blasphemer')!
   const domainAbility = byId.get('ability.conduit.faithful-friend')!
+  const censorJudgment = byId.get('ability.censor.judgment')!
+  const basicStrike = byId.get('ability.basic.melee-weapon-free-strike')!
+  const bleeding = byId.get('condition.bleeding')!
 
   test('manifest 內條目使用 class-scoped URL，外部條目使用 standalone URL', () => {
     expect(resolveEntryRoute({ currentManifest: fixtureClassManifest, entry: arrest })).toBe('/compendium/classes/class.fixture/ability/censor-arrest')
@@ -101,6 +126,14 @@ describe('範型 route resolver', () => {
     expect(domainAbility.origin).toEqual({ kind: 'domain', id: 'domain.nature' })
   })
 
+  test('懲戒者 class-scoped route 只解析 manifest 明確收錄的條目', () => {
+    expect(resolveEntryRoute({ currentManifest: censorManifest, entry: censorJudgment })).toBe('/compendium/classes/class.censor/ability/censor-judgment')
+    expect(resolveClassEntry({ registry: classManifestRegistry, catalog, classId: 'class.censor', type: censorJudgment.type, slug: censorJudgment.slug })?.entry.id).toBe(censorJudgment.id)
+    expect(resolveClassEntry({ registry: classManifestRegistry, catalog, classId: 'class.censor', type: basicStrike.type, slug: basicStrike.slug })).toBeNull()
+    expect(resolveClassEntry({ registry: classManifestRegistry, catalog, classId: 'class.censor', type: bleeding.type, slug: bleeding.slug })).toBeNull()
+    expect(resolveEntryRoute({ currentManifest: censorManifest, entry: basicStrike })).toBe('/compendium/ability/basic-melee-weapon-free-strike')
+  })
+
   test('未知 class、未知條目與未列入 manifest 的條目都被拒絕', () => {
     expect(resolveClassEntry({ registry: fixtureRegistry, catalog, classId: 'unknown', type: arrest.type, slug: arrest.slug })).toBeNull()
     expect(resolveClassEntry({ registry: fixtureRegistry, catalog, classId: fixtureClassManifest.classId, type: 'ability', slug: 'missing' })).toBeNull()
@@ -110,13 +143,17 @@ describe('範型 route resolver', () => {
 })
 
 describe('ClassIndex', () => {
-  test('從 registry/order 產生神導士入口，而非硬寫專用頁面', async () => {
+  test('從 registry/order 產生兩個範型入口，而非硬寫專用頁面', async () => {
     const { ClassIndex } = await import('./ClassRoutes')
     render(<MemoryRouter><ClassIndex /></MemoryRouter>)
     expect(screen.getByRole('heading', { level: 1, name: '範型' })).toBeInTheDocument()
-    const link = screen.getByRole('link', { name: /神導士.*Conduit/ })
-    expect(link).toHaveAttribute('href', '/compendium/classes/class.conduit')
-    expect(link).toHaveTextContent('41 筆條目')
+    const links = screen.getAllByRole('link').filter((link) => link.classList.contains('class-index-card'))
+    expect(links).toHaveLength(2)
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      '/compendium/classes/class.conduit', '/compendium/classes/class.censor',
+    ])
+    expect(links[0]).toHaveTextContent('41 筆條目')
+    expect(links[1]).toHaveTextContent('17 筆條目')
     expect(screen.queryByText('尚未收錄')).not.toBeInTheDocument()
   })
 })

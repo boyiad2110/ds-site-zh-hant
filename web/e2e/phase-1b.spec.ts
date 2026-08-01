@@ -33,7 +33,7 @@ const classPageBaselines = [
 ] as const
 
 for (const baseline of classPageBaselines) {
-  test(`Phase 1B visual baseline: ${baseline.label}`, async ({ page }, testInfo) => {
+  test(`class browsing visual baseline: ${baseline.label}`, async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== baseline.project, `baseline belongs to ${baseline.project}`)
     await page.setViewportSize(baseline.viewport)
     await page.goto(baseline.path)
@@ -48,6 +48,7 @@ test('Phase 1B top-level navigation has one active page', async ({ page }) => {
     { path: '/compendium/search', label: '規則庫' },
     { path: '/compendium/classes', label: '範型' },
     { path: '/compendium/classes/class.conduit', label: '範型' },
+    { path: '/compendium/classes/class.censor', label: '範型' },
   ]
 
   for (const current of cases) {
@@ -69,8 +70,9 @@ test('Phase 1B class index has valid headings, no console errors, and no overflo
   await page.goto('/compendium/classes')
   await expect(page.getByRole('heading', { name: '範型', level: 1 })).toBeVisible()
   await expect(page.locator('main.class-index > header > h1')).toHaveCount(1)
-  await expect(page.locator('main.class-index > ul > li > a h2')).toHaveCount(1)
-
+  await expect(page.locator('main.class-index > ul > li > a h2')).toHaveCount(2)
+  await expect(page.locator('main.class-index > ul > li > a').nth(0)).toHaveAttribute('href', '/compendium/classes/class.conduit')
+  await expect(page.locator('main.class-index > ul > li > a').nth(1)).toHaveAttribute('href', '/compendium/classes/class.censor')
   const widths = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
   expect(widths.scroll).toBeLessThanOrEqual(widths.client)
 
