@@ -4,6 +4,21 @@ import AxeBuilder from '@axe-core/playwright'
 
 const catalog = JSON.parse(readFileSync(new URL('../public/data/catalog.json', import.meta.url), 'utf8'))
 
+const visualBaselines = [
+  { name: 'ability-card', path: '/compendium/ability/censor-arrest' },
+  { name: 'feature-card', path: '/compendium/feature/censor-wrath' },
+  { name: 'condition-card', path: '/compendium/condition/bleeding' },
+]
+
+for (const baseline of visualBaselines) {
+  test(`${baseline.name} 視覺基線`, async ({ page }) => {
+    await page.goto(baseline.path)
+    await page.evaluate(() => document.fonts.ready)
+    await page.addStyleTag({ content: '.site-header { display: none !important; }' })
+    await expect(page.locator('.rule-card')).toHaveScreenshot(`${baseline.name}.png`, { animations: 'disabled' })
+  })
+}
+
 test('搜尋、篩選與網址狀態', async ({ page }) => {
   await page.goto('/compendium')
   await page.getByLabel('搜尋規則庫').fill('當場拘捕')
@@ -17,6 +32,21 @@ test('搜尋、篩選與網址狀態', async ({ page }) => {
   await expect(page.getByText('4 筆結果')).toBeVisible()
   await page.reload()
   await expect(page.getByLabel('英雄資源成本')).toHaveValue('wrath:5')
+})
+
+test('搜尋別名路由與正式 NotFound', async ({ page }) => {
+  await page.goto('/compendium/search?q=審判')
+  await expect(page.getByLabel('搜尋規則庫')).toHaveValue('審判')
+  await expect(page.getByLabel('快速搜尋')).toHaveCount(0)
+  await expect(page.getByRole('link', { name: /審判/ }).first()).toBeVisible()
+
+  await page.goto('/compendium/classes')
+  await expect(page.getByRole('heading', { name: '尚未收錄' })).toBeVisible()
+
+  for (const path of ['/compendium/classes/unknown', '/compendium/classes/unknown/ability/missing', '/不存在的頁面']) {
+    await page.goto(path)
+    await expect(page.getByRole('heading', { name: '找不到這個頁面' })).toBeVisible()
+  }
 })
 
 test('深層連結、Potency 條件與英文正典', async ({ page }) => {
@@ -64,8 +94,8 @@ test('全部條目頁都渲染得出來，且沒有 runtime 錯誤（累積式 c
   }
 })
 
-test('首頁與條目頁沒有嚴重無障礙問題', async ({ page }) => {
-  for (const path of ['/', '/compendium/ability/censor-arrest']) {
+test('首頁、搜尋、條目與 NotFound 沒有嚴重無障礙問題', async ({ page }) => {
+  for (const path of ['/', '/compendium/search', '/compendium/ability/censor-arrest', '/不存在的頁面']) {
     await page.goto(path)
     const report = await new AxeBuilder({ page }).analyze()
     const severe = report.violations.filter((item) => ['critical', 'serious'].includes(item.impact ?? ''))

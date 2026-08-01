@@ -4,37 +4,27 @@ import { Link, NavLink, Route, Routes, useLocation, useNavigate, useParams, useS
 import { loadCatalog } from './catalog'
 import { applyFilters } from './search'
 import type { Catalog, CatalogEntry, EntryType, Filters } from './types'
+import { EntryDetail, entryTypeLabels } from './entry/EntryDetail'
+import { buildEntryRoute, buildSearchRoute, isCompendiumSearchPage } from './routes'
+import { NotFound } from './NotFound'
+import { ClassEntryRoute, ClassIndex, ClassOverviewRoute } from './class-manifests/ClassRoutes'
+import { validateRegistryIntegrity } from './class-manifests/integrity'
+import { classManifestOrder, classManifestRegistry } from './class-manifests/registry'
 // 與驗收頁共用同一份轉換規則（shared/canon-format.mjs）——先前兩邊各寫一份，
 // 導致同一條規則出現兩種答案。這裡只取資料與 token，畫面仍由本檔負責。
-import {
-  GLYPH, TIER_GLYPHS,
-  characteristicLabel, costLabel, distanceLabel, parseRichText, plainText, potencyLabel, resourceLabel, targetLabel,
-} from '../../shared/canon-format.mjs'
+import { costLabel, plainText } from '../../shared/canon-format.mjs'
 
-const typeLabels = { ability: '招式', condition: '狀態', feature: '特性' }
+const typeLabels = entryTypeLabels
 const typeNames: Record<EntryType, { zhHant: string; en: string }> = {
   ability: { zhHant: '招式', en: 'Abilities' },
   condition: { zhHant: '狀態', en: 'Conditions' },
-  feature: { zhHant: '職業特性', en: 'Features' },
+  feature: { zhHant: '範型特性', en: 'Features' },
 }
 const typeOrder: EntryType[] = ['ability', 'condition', 'feature']
 const tocIndex = ['一', '二', '三']
-/** 符號本身對輔助技術沒有意義（字型把 o、á 這些拉丁字元畫成圖示），一律隱藏並補等值文字。 */
-function Glyph({ char, label }: { char: string; label: string }) {
-  return <span className="glyph-wrap"><span className="glyph" aria-hidden="true">{char}</span><span className="sr-only">{label}</span></span>
-}
-
-function routeOf(entry: CatalogEntry) {
-  return `/compendium/${entry.type}/${entry.slug}`
-}
 
 function label(catalog: Catalog, group: string, value?: string | null) {
   return value ? catalog.labels[group]?.[value]?.zhHant ?? value : '—'
-}
-
-/** flavor 只有在原文本身是引言（book 用引號標出角色台詞）時才加中文引號；純敘述句不加。 */
-function isQuotedFlavor(canonFlavor?: string | null): boolean {
-  return !!canonFlavor && /^["“]/.test(canonFlavor.trim())
 }
 
 function SearchIcon() {
@@ -46,36 +36,16 @@ function SearchIcon() {
   )
 }
 
-/** 標記解析由 shared 的 parseRichText 負責，這裡只把中立 token 畫成 JSX。
- * attributeBadges 只在傷害算式（powerRoll 階層文字）開啟——原版規則書也只有那裡把屬性做成方框，
- * 內文提到力量、敏捷時是寫字不是畫框。徽章用中文加黑底白字，與效力記號同一套視覺。 */
-function RichText({ text, byId, attributeBadges = false }: { text: string; byId: Map<string, CatalogEntry>; attributeBadges?: boolean }) {
-  return <>{parseRichText(text).map((token, index) => {
-    if (token.kind === 'ref') {
-      const target = byId.get(token.id)
-      return target
-        ? <Link key={index} className="entity-link" to={routeOf(target)}>{token.text}</Link>
-        : <span key={index}>{token.text}</span>
-    }
-    if (token.kind === 'term') {
-      return attributeBadges && token.isAttribute
-        ? <span key={index} className="attr-tag">{token.text}</span>
-        : <strong key={index} className="term">{token.text}</strong>
-    }
-    return <Fragment key={index}>{token.text}</Fragment>
-  })}</>
-}
-
 function Header() {
   const navigate = useNavigate()
   const location = useLocation()
   const [draft, setDraft] = useState('')
-  const onCompendium = location.pathname === '/compendium'
+  const onCompendium = isCompendiumSearchPage(location.pathname)
 
   const submit = (event: FormEvent) => {
     event.preventDefault()
     const value = draft.trim()
-    navigate(value ? `/compendium?q=${encodeURIComponent(value)}` : '/compendium')
+    navigate(buildSearchRoute(value ? { q: value } : undefined))
   }
 
   return (
@@ -116,7 +86,7 @@ function Footer() {
 function EntryRow({ entry, catalog, showKind }: { entry: CatalogEntry; catalog: Catalog; showKind: boolean }) {
   return (
     <li>
-      <Link className="entry-row" to={routeOf(entry)}>
+      <Link className="entry-row" to={buildEntryRoute(entry)}>
         <span>
           <span className="entry-name">{entry.name.zhHant}</span>
           <span className="entry-en">{entry.name.en}</span>
@@ -144,7 +114,7 @@ function Home({ catalog }: { catalog: Catalog }) {
   const submit = (event: FormEvent) => {
     event.preventDefault()
     const value = draft.trim()
-    navigate(value ? `/compendium?q=${encodeURIComponent(value)}` : '/compendium')
+    navigate(buildSearchRoute(value ? { q: value } : undefined))
   }
 
   return (
@@ -152,7 +122,7 @@ function Home({ catalog }: { catalog: Catalog }) {
       <section className="frontispiece">
         <h1>英雄爭鋒</h1>
         <p className="frontispiece-en">Draw Steel 中文資料庫</p>
-        <p className="frontispiece-lede">Draw Steel 招式、狀態與職業特性中文對照，共 {catalog.counts.total} 筆。中文對照英文正典，跑團時直接查。</p>
+        <p className="frontispiece-lede">Draw Steel 招式、狀態與範型特性中文對照，共 {catalog.counts.total} 筆。中文對照英文正典，跑團時直接查。</p>
         <form className="hero-search" role="search" onSubmit={submit}>
           <SearchIcon />
           <label className="sr-only" htmlFor="home-search">搜尋規則</label>
@@ -165,7 +135,7 @@ function Home({ catalog }: { catalog: Catalog }) {
       <ul className="toc-list">
         {typeOrder.map((type, index) => (
           <li key={type}>
-            <Link className="toc-row" to={`/compendium?type=${type}`}>
+            <Link className="toc-row" to={buildSearchRoute({ type })}>
               <span className="toc-index">{tocIndex[index]}</span>
               <strong>{typeNames[type].zhHant}</strong>
               <small>{typeNames[type].en}</small>
@@ -181,15 +151,15 @@ function Home({ catalog }: { catalog: Catalog }) {
         <h3>狀態</h3>
         <ul className="link-list">
           {byType('condition').map((entry) => (
-            <li key={entry.id}><Link to={routeOf(entry)}>{entry.name.zhHant}</Link></li>
+            <li key={entry.id}><Link to={buildEntryRoute(entry)}>{entry.name.zhHant}</Link></li>
           ))}
         </ul>
       </div>
       <div className="quick-group">
-        <h3>職業特性</h3>
+        <h3>範型特性</h3>
         <ul className="link-list">
           {byType('feature').map((entry) => (
-            <li key={entry.id}><Link to={routeOf(entry)}>{entry.name.zhHant}<small>{entry.name.en}</small></Link></li>
+            <li key={entry.id}><Link to={buildEntryRoute(entry)}>{entry.name.zhHant}<small>{entry.name.en}</small></Link></li>
           ))}
         </ul>
       </div>
@@ -327,137 +297,12 @@ function Compendium({ catalog }: { catalog: Catalog }) {
   )
 }
 
-/** 招式排版仿原版規則書的卡片：名稱＋費用同行、引言在關鍵詞上方、射程與目標用官方符號、
- * 段落標題內嵌成粗體引導詞，全卡只有兩條分隔線。 */
-function AbilityContent({ entry, catalog, byId }: { entry: CatalogEntry; catalog: Catalog; byId: Map<string, CatalogEntry> }) {
-  const c = entry.content.canon
-  const z = entry.content.zhHant
-  const tiers = c.powerRoll?.tiers ?? []
-  return <>
-    <div className="card-bar">
-      <div className="bar-row">
-        {entry.tags.keywords.length > 0 && <ul className="sheet-keywords">
-          {entry.tags.keywords.map((keyword) => <li key={keyword}>{label(catalog, 'ability-keywords', keyword)}</li>)}
-        </ul>}
-        <span>{label(catalog, 'action-types', c.actionType)}</span>
-      </div>
-      <div className="bar-row">
-        <span><Glyph char={GLYPH.distance} label="射程" />{distanceLabel(c.distance)}</span>
-        <span><Glyph char={GLYPH.target} label="目標" />{targetLabel(c.target)}</span>
-      </div>
-    </div>
-    <div className="card-body">
-      {c.trigger && <p><b className="card-label">觸發</b><RichText text={z.trigger} byId={byId} /></p>}
-      {tiers.length > 0 && <>
-        <p className="power-roll-label">檢定 ＋ {characteristicLabel(c.powerRoll.characteristic)}</p>
-        <div className="tier-list">{tiers.map((tier: any, index: number) => {
-          const zTier = z.powerRoll.tiers[index]
-          return <p className="tier" key={tier.threshold}>
-            <Glyph char={TIER_GLYPHS[index] ?? ''} label={tier.threshold} />
-            <span>
-              <RichText text={zTier.text} byId={byId} attributeBadges />
-              {tier.potency && <>；<span className="potency-tag">{potencyLabel(tier.potency, catalog.labels['potency-levels'])}</span>，<RichText text={zTier.potencyEffect} byId={byId} /></>}
-            </span>
-          </p>
-        })}</div>
-      </>}
-      <EffectSection z={z} c={c} byId={byId} />
-    </div>
-  </>
-}
-
-/** 招式的效果、追加花費、後續戰術，統一在同一個「效果」段落下方連續呈現——
- * 原版規則書把後續戰術寫在同一個 Effect: 段落裡，故不獨立成方框；
- * 但 extraCosts（花費 N 怒火）在書上是自己的引言＋句子，比照 Trigger／Effect 給獨立標題。 */
-function EffectSection({ z, c, byId }: { z: any; c: any; byId: Map<string, CatalogEntry> }) {
-  const effect: string[] = z.effect ?? []
-  const followUpActions: any[] = z.followUpActions ?? []
-  const extraCosts: any[] = z.extraCosts ?? []
-  return <>
-    {(effect.length > 0 || followUpActions.length > 0) && <>
-      {effect.map((text, index) => <p key={`e${index}`}>
-        {index === 0 && <b className="card-label">效果</b>}
-        <RichText text={text} byId={byId} />
-      </p>)}
-      {followUpActions.map((item, index) => <Fragment key={`f${index}`}>
-        <p>{effect.length === 0 && index === 0 && <b className="card-label">效果</b>}<RichText text={item.lead} byId={byId} /></p>
-        <ol>{item.options.map((option: string, optionIndex: number) => <li key={optionIndex}><RichText text={option} byId={byId} /></li>)}</ol>
-        <p><RichText text={item.constraint} byId={byId} /></p>
-      </Fragment>)}
-    </>}
-    {extraCosts.map((item, index) => <Fragment key={index}>
-      <p>
-        <b className="card-label">花費 {costLabel(c.extraCosts[index])}</b>
-        <RichText text={item.effect ?? item.lead} byId={byId} />
-      </p>
-      {/* extraCosts 的 options 是無順序的加值選項（治癒恩典：每花費 1 點虔誠任選 1 項），
-          用 ul 而非 ol——與下方 followUpActions 的 ol 刻意不同，後者是既有招式（如審判）
-          已核准呈現，未在本次變動範圍內。 */}
-      {item.options && <ul>{item.options.map((option: string, optionIndex: number) => <li key={optionIndex}><RichText text={option} byId={byId} /></li>)}</ul>}
-    </Fragment>)}
-  </>
-}
-
-/** 狀態沒有標題——條目名稱本身就是標題，再加一個「規則」小標只是多一條分隔線。 */
-function ConditionContent({ items, byId }: { items: string[]; byId: Map<string, CatalogEntry> }) {
-  return <div className="card-body">{items.map((text) => <p key={text}><RichText text={text} byId={byId} /></p>)}</div>
-}
-
-function FeatureContent({ entry, byId }: { entry: CatalogEntry; byId: Map<string, CatalogEntry> }) {
-  const sections = entry.content.zhHant.sections ?? []
-  return <div className="card-body">{sections.map((section: any, index: number) => <section className="rule-section" key={index}>
-    {section.heading && <h2>{section.heading}</h2>}
-    {section.blocks.map((block: any, blockIndex: number) => <Fragment key={blockIndex}>
-      {block.kind === 'paragraph' && <p><RichText text={block.text} byId={byId} /></p>}
-      {block.kind === 'bulletList' && <><p><RichText text={block.lead} byId={byId} /></p><ul>{block.items.map((item: string) => <li key={item}><RichText text={item} byId={byId} /></li>)}</ul></>}
-      {block.kind === 'definitionList' && <dl className="definition-list">{block.items.map((item: any) => <div key={item.term}><dt>{item.term}</dt><dd><RichText text={item.text} byId={byId} /></dd></div>)}</dl>}
-    </Fragment>)}
-  </section>)}</div>
-}
-
 function Detail({ catalog }: { catalog: Catalog }) {
   const { type, slug } = useParams()
   const entry = catalog.entries.find((item) => item.type === type && item.slug === slug)
   const byId = useMemo(() => new Map(catalog.entries.map((item) => [item.id, item])), [catalog])
-  if (!entry) return <main className="state-page"><h1>找不到這筆規則</h1><p>它可能不在目前收錄範圍內，或網址已變更。</p><Link className="link-button" to="/compendium">回到規則庫</Link></main>
-  const z = entry.content.zhHant
-  const c = entry.content.canon
-  const isDraft = entry.reviewStatus.canon !== 'verified' || entry.reviewStatus.zhHant !== 'reviewed'
-
-  return <main className="detail">
-    <nav className="breadcrumb" aria-label="麵包屑"><Link to="/compendium">規則庫</Link><span>/</span><Link to={`/compendium?type=${entry.type}`}>{typeLabels[entry.type]}</Link><span>/</span><span>{entry.name.zhHant}</span></nav>
-    {isDraft && <div className="notice"><strong>逐筆驗收中：</strong>這筆內容尚未獲得完整的擁有者核准；可先檢查呈現與資料結構。</div>}
-    {/* 不用斜線也不用紅色——那兩者在本站都是「可點擊的麵包屑」的視覺語彙。 */}
-    <p className="sheet-kind">
-      <span className="sheet-kind-label">分類</span>
-      {[typeLabels[entry.type],
-        entry.tags.abilityCategory && label(catalog, 'ability-categories', entry.tags.abilityCategory),
-        entry.level && `等級 ${entry.level}`,
-      ].filter(Boolean).join('・')}
-    </p>
-    <article className="rule-card">
-      <header className="card-head">
-        <div className="card-title-row">
-          <div>
-            <h1>{entry.name.zhHant}</h1>
-            <p className="sheet-en">{entry.name.en}</p>
-          </div>
-          {entry.tags.cost && <span className="card-cost">{costLabel(entry.tags.cost)}</span>}
-        </div>
-        {z.flavor && <p className="card-flavor">{isQuotedFlavor(c.flavor) ? `「${z.flavor}」` : z.flavor}</p>}
-        {z.usageNote && <p className="card-usage-note"><RichText text={z.usageNote} byId={byId} /></p>}
-      </header>
-      {entry.type === 'ability' && <AbilityContent entry={entry} catalog={catalog} byId={byId} />}
-      {entry.type === 'condition' && <ConditionContent items={z.text ?? []} byId={byId} />}
-      {entry.type === 'feature' && <FeatureContent entry={entry} byId={byId} />}
-    </article>
-    {entry.relatedIds.length > 0 && <section className="related">
-      <h2>相關條目</h2>
-      <ul>{entry.relatedIds.map((id) => { const related = byId.get(id)!; return <li key={id}><Link to={routeOf(related)}><span className={`kind kind-${related.type}`}>{typeLabels[related.type]}</span><strong>{related.name.zhHant}</strong><small>{related.name.en}</small></Link></li> })}</ul>
-    </section>}
-    <details className="canon-panel"><summary><span>核對英文正典</span><small>English canon</small></summary><div><h2>{c.name}</h2>{c.flavor && <blockquote>{c.flavor}</blockquote>}<pre>{JSON.stringify(c, (key, value) => ['$comment', 'normalizedHash'].includes(key) ? undefined : value, 2)}</pre></div></details>
-    <p className="sheet-foot">Draw Steel Heroes v{entry.source.version} · 印刷頁 {entry.source.printedPage}</p>
-  </main>
+  if (!entry) return <NotFound />
+  return <main className="detail"><EntryDetail entry={entry} catalog={catalog} byId={byId} /></main>
 }
 
 export default function App() {
@@ -466,5 +311,16 @@ export default function App() {
   useEffect(() => { loadCatalog().then(setCatalog).catch((reason) => setError(reason instanceof Error ? reason.message : String(reason))) }, [])
   if (error) return <main className="state-page"><h1>無法載入規則資料</h1><p>{error}</p></main>
   if (!catalog) return <main className="state-page" aria-live="polite"><p>載入中…</p></main>
-  return <div className="app-shell"><Header /><Routes><Route path="/" element={<Home catalog={catalog} />} /><Route path="/compendium" element={<Compendium catalog={catalog} />} /><Route path="/compendium/:type/:slug" element={<Detail catalog={catalog} />} /><Route path="*" element={<Detail catalog={catalog} />} /></Routes><Footer /></div>
+  const registryIssues = validateRegistryIntegrity(classManifestRegistry, classManifestOrder, catalog)
+  if (registryIssues.length > 0) return <main className="state-page"><h1>範型瀏覽設定無效</h1><p>{registryIssues[0].message}</p></main>
+  return <div className="app-shell"><Header /><Routes>
+    <Route path="/" element={<Home catalog={catalog} />} />
+    <Route path="/compendium" element={<Compendium catalog={catalog} />} />
+    <Route path="/compendium/search" element={<Compendium catalog={catalog} />} />
+    <Route path="/compendium/classes" element={<ClassIndex />} />
+    <Route path="/compendium/classes/:classId" element={<ClassOverviewRoute catalog={catalog} />} />
+    <Route path="/compendium/classes/:classId/:type/:slug" element={<ClassEntryRoute catalog={catalog} />} />
+    <Route path="/compendium/:type/:slug" element={<Detail catalog={catalog} />} />
+    <Route path="*" element={<NotFound />} />
+  </Routes><Footer /></div>
 }
