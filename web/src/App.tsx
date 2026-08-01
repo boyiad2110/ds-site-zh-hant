@@ -5,7 +5,7 @@ import { loadCatalog } from './catalog'
 import { applyFilters } from './search'
 import type { Catalog, CatalogEntry, EntryType, Filters } from './types'
 import { EntryDetail, entryTypeLabels } from './entry/EntryDetail'
-import { buildEntryRoute, buildSearchRoute, isCompendiumSearchPage } from './routes'
+import { buildEntryRoute, buildSearchRoute, CLASS_INDEX_PATH, isCompendiumSearchPage } from './routes'
 import { NotFound } from './NotFound'
 import { ClassEntryRoute, ClassIndex, ClassOverviewRoute } from './class-manifests/ClassRoutes'
 import { validateRegistryIntegrity } from './class-manifests/integrity'
@@ -41,6 +41,7 @@ function Header() {
   const location = useLocation()
   const [draft, setDraft] = useState('')
   const onCompendium = isCompendiumSearchPage(location.pathname)
+  const isClassArea = location.pathname === CLASS_INDEX_PATH || location.pathname.startsWith(`${CLASS_INDEX_PATH}/`)
 
   const submit = (event: FormEvent) => {
     event.preventDefault()
@@ -57,7 +58,8 @@ function Header() {
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <NavLink to="/" end>總覽</NavLink>
-          <NavLink to="/compendium">規則庫</NavLink>
+          <NavLink to="/compendium" end={isClassArea}>規則庫</NavLink>
+          <NavLink to={CLASS_INDEX_PATH}>範型</NavLink>
         </nav>
         {!onCompendium && (
           <form className="header-search" role="search" onSubmit={submit}>

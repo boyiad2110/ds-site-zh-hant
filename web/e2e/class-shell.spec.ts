@@ -33,3 +33,38 @@ test('test-only ClassShell 手機版支援鍵盤展開、無溢位且通過 axe'
   const severe = report.violations.filter((item) => ['critical', 'serious'].includes(item.impact ?? ''))
   expect(severe, severe.map((item) => `${item.id}: ${item.help}`).join('\n')).toEqual([])
 })
+
+test('正式神導士 ClassShell 桌面版可導覽且無水平溢位', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 })
+  await page.goto('/compendium/classes/class.conduit')
+  await expect(page.getByRole('heading', { name: '神導士', level: 1 })).toBeVisible()
+  await expect(page.getByRole('navigation', { name: '範型切換' }).first()).toBeVisible()
+  await expect(page.getByRole('navigation', { name: '目前範型章節' }).first()).toBeVisible()
+  const widths = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
+  expect(widths.scroll).toBeLessThanOrEqual(widths.client)
+})
+
+test('正式神導士 ClassShell 手機版可用鍵盤操作並通過 axe', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 760 })
+  await page.goto('/compendium/classes/class.conduit')
+  await expect(page.locator('.class-sidebar-desktop')).toBeHidden()
+  await expect(page.locator('.class-sidebar-mobile')).toBeVisible()
+
+  const selector = page.getByLabel('選擇範型')
+  await selector.focus()
+  await page.keyboard.press('Tab')
+  const toggle = page.getByRole('button', { name: /章節目錄/ })
+  await expect(toggle).toBeFocused()
+  await page.keyboard.press('Enter')
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+  const sectionLink = page.getByRole('link', { name: '領域內嵌招式' }).last()
+  await expect(sectionLink).toBeVisible()
+  await sectionLink.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+
+  const widths = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
+  expect(widths.scroll).toBeLessThanOrEqual(widths.client)
+  const report = await new AxeBuilder({ page }).analyze()
+  const severe = report.violations.filter((item) => ['critical', 'serious'].includes(item.impact ?? ''))
+  expect(severe, severe.map((item) => `${item.id}: ${item.help}`).join('\n')).toEqual([])
+})

@@ -41,12 +41,30 @@ test('搜尋別名路由與正式 NotFound', async ({ page }) => {
   await expect(page.getByRole('link', { name: /審判/ }).first()).toBeVisible()
 
   await page.goto('/compendium/classes')
-  await expect(page.getByRole('heading', { name: '尚未收錄' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: '範型', level: 1 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: '神導士', level: 2 })).toBeVisible()
+  await expect(page.getByRole('link', { name: /神導士.*Conduit/ })).toHaveAttribute('href', '/compendium/classes/class.conduit')
 
   for (const path of ['/compendium/classes/unknown', '/compendium/classes/unknown/ability/missing', '/不存在的頁面']) {
     await page.goto(path)
     await expect(page.getByRole('heading', { name: '找不到這個頁面' })).toBeVisible()
   }
+})
+
+test('神導士分類首頁、主從總覽與 domain 深層路由', async ({ page }) => {
+  await page.goto('/compendium/classes')
+  await page.getByRole('link', { name: /神導士.*Conduit/ }).click()
+  await expect(page).toHaveURL('/compendium/classes/class.conduit')
+  await expect(page.getByRole('heading', { name: '神導士', level: 1 })).toBeVisible()
+  await expect(page.locator('section#signature-abilities > h2')).toHaveText('招牌招式')
+  await expect(page.locator('section#domain-abilities > h2')).toHaveText('領域內嵌招式')
+
+  await page.goto('/compendium/classes/class.conduit/ability/conduit-faithful-friend')
+  await expect(page.getByRole('heading', { name: '忠誠好友', level: 1 })).toBeVisible()
+  await expect(page.getByRole('navigation', { name: '麵包屑' })).toContainText('神導士')
+
+  await page.goto('/compendium/classes/class.conduit/feature/conduit-domain-feature-blessing-of-compassion')
+  await expect(page.getByRole('heading', { name: '溫慈祝福', level: 1 })).toBeVisible()
 })
 
 test('深層連結、Potency 條件與英文正典', async ({ page }) => {

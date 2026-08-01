@@ -2,7 +2,7 @@ import type { Catalog } from '../types'
 import type { ClassManifest, ClassManifestRegistry, ClassSection } from './types'
 
 export type ManifestIntegrityIssue = {
-  code: 'registry-key-mismatch' | 'duplicate-section-id' | 'duplicate-entry-id' | 'missing-entry' | 'duplicate-order-id' | 'unknown-order-id' | 'unordered-registry-id'
+  code: 'registry-key-mismatch' | 'empty-section-id' | 'empty-entry-id' | 'duplicate-section-id' | 'duplicate-entry-id' | 'missing-entry' | 'empty-order-id' | 'duplicate-order-id' | 'unknown-order-id' | 'unordered-registry-id'
   message: string
 }
 
@@ -13,14 +13,20 @@ export function validateManifestIntegrity(manifest: ClassManifest, catalog: Cata
   const catalogIds = new Set(catalog.entries.map((entry) => entry.id))
 
   for (const section of manifest.sections) {
-    if (sectionIds.has(section.id)) {
+    if (!section.id.trim()) {
+      issues.push({ code: 'empty-section-id', message: `${manifest.classId} 的 section id 不得為空` })
+    } else if (sectionIds.has(section.id)) {
       issues.push({ code: 'duplicate-section-id', message: `${manifest.classId} 重複使用 section id：${section.id}` })
     }
-    sectionIds.add(section.id)
+    if (section.id.trim()) sectionIds.add(section.id)
 
     const validateSection = {
       entries: () => {
         for (const item of section.entries) {
+          if (!item.id.trim()) {
+            issues.push({ code: 'empty-entry-id', message: `${manifest.classId} 的條目 ID 不得為空` })
+            continue
+          }
           if (entryIds.has(item.id)) {
             issues.push({ code: 'duplicate-entry-id', message: `${manifest.classId} 重複收錄條目：${item.id}` })
           }
@@ -47,6 +53,10 @@ export function validateRegistryIntegrity(registry: ClassManifestRegistry, order
 
   const seenOrderIds = new Set<string>()
   for (const classId of order) {
+    if (!classId.trim()) {
+      issues.push({ code: 'empty-order-id', message: '範型顯示順序中的 classId 不得為空' })
+      continue
+    }
     if (seenOrderIds.has(classId)) {
       issues.push({ code: 'duplicate-order-id', message: `範型顯示順序重複：${classId}` })
     }

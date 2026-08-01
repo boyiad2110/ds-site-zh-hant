@@ -12,7 +12,8 @@ export type EntrySection = {
   entries: readonly ManifestEntry[]
 }
 
-// Phase 1A 只有 entries；日後新增變體時擴充此 union，renderer 以 exhaustiveness check 防漏。
+// Sections currently contain entry groups; add new variants with an
+// exhaustive renderer check when the presentation model needs to expand.
 export type ClassSection = EntrySection
 
 export type ClassManifest = {

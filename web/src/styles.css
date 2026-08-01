@@ -242,12 +242,18 @@ main { flex: 1; }
 .site-footer a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
 .site-footer a:hover { color: var(--accent); }
 
-/* ── 範型主從殼層（Phase 1A 架構；正式 manifest 尚未加入） ─ */
+/* ── 範型分類與主從殼層 ─ */
 .class-index { width: 100%; max-width: var(--page); margin: 0 auto; padding: clamp(30px,5vw,56px) clamp(18px,4vw,40px) 90px; }
-.class-index-list { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--rule); }
-.class-index-list li { border-bottom: 1px solid var(--rule); }
-.class-index-list a { display: block; padding: 16px 4px; font-family: var(--serif); font-size: 23px; }
-.class-index-list a:hover { color: var(--accent); background: var(--bg-2); }
+.class-index-list { list-style: none; display: grid; gap: 16px; margin: 30px 0 0; padding: 0; }
+.class-index-list li { min-width: 0; }
+.class-index-card { display: grid; gap: 14px; padding: 22px 24px; border: 1px solid var(--rule-2); background: var(--bg-2); }
+.class-index-card:hover { border-color: var(--accent); color: var(--accent); }
+.class-index-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.class-index-card-head h2 { display: block; margin: 0; font-family: var(--serif); font-size: clamp(25px,4vw,34px); }
+.class-index-card-head small { display: block; margin-top: 3px; color: var(--ink-3); font-size: 14px; letter-spacing: .08em; }
+.class-index-card-arrow { color: var(--accent); font-size: 26px; }
+.class-index-card-note { color: var(--ink-2); font-size: 16px; }
+.class-index-card-meta { color: var(--ink-3); font-size: 14px; letter-spacing: .08em; }
 
 .class-shell { width: 100%; max-width: 1240px; margin: 0 auto; padding: 30px clamp(18px,3vw,36px) 90px; display: grid; grid-template-columns: minmax(210px,240px) minmax(0,780px); justify-content: center; align-items: start; gap: clamp(28px,4vw,56px); }
 .class-sidebar { min-width: 0; }
@@ -305,6 +311,10 @@ main { flex: 1; }
   .tier { grid-template-columns: 64px minmax(0,1fr); }
   .toc-row { flex-wrap: wrap; }
   .toc-dots { display: none; }
+}
+
+@media (max-width: 320px) {
+  html, body { min-width: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
